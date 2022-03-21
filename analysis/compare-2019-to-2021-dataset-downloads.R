@@ -51,6 +51,10 @@ contracts_comparison <- bind_rows(contracts_2019_by_year, contracts_2021_by_year
 contracts_comparison_gc_wide <- contracts_comparison %>%
   ungroup() %>%
   select(year, dataset, value) %>%
+  mutate(dataset = recode(dataset,
+                          `count_2019` = "dataset_2019",
+                          `count_2021` = "dataset_2021"
+  )) %>%
   group_by(year, dataset) %>%
   summarize(value = sum(value))
 
