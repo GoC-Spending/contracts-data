@@ -1,0 +1,7 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+
+# Ignore source CSV files since they're too big for GitHub
+data/source/*
