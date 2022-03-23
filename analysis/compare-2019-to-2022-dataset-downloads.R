@@ -1,10 +1,10 @@
 # Load the libraries + the main CSV
 source("load.R")
 
-contracts_2021 <- contracts %>%
+contracts_2022 <- contracts %>%
   mutate(gen_contract_year = year(`contract_date`))
 
-ggplot(contracts_2021) +
+ggplot(contracts_2022) +
   geom_bar(aes(x = gen_contract_year)) + 
   xlim(c(2002, 2022))
 
@@ -31,16 +31,16 @@ contracts_2019_by_year <- contracts_2019 %>%
     year = gen_contract_year
   )
 
-contracts_2021_by_year <- contracts_2021 %>%
+contracts_2022_by_year <- contracts_2022 %>%
   group_by(owner_org, gen_contract_year) %>%
   summarize(count = n()) %>%
   rename(
-    count_2021 = count,
+    count_2022 = count,
     year = gen_contract_year
   )
 
 # Merge the counts from both datasets into one tibble
-contracts_comparison <- bind_rows(contracts_2019_by_year, contracts_2021_by_year) %>%
+contracts_comparison <- bind_rows(contracts_2019_by_year, contracts_2022_by_year) %>%
   arrange(owner_org, year) %>%
   pivot_longer(
     cols = starts_with("count"),
@@ -53,13 +53,13 @@ contracts_comparison_gc_wide <- contracts_comparison %>%
   select(year, dataset, value) %>%
   mutate(dataset = recode(dataset,
                           `count_2019` = "dataset_2019",
-                          `count_2021` = "dataset_2021"
+                          `count_2022` = "dataset_2022"
   )) %>%
   group_by(year, dataset) %>%
   summarize(value = sum(value))
 
 
-# Plot a comparison of the 2019 vs. 2021 dataset downloads:
+# Plot a comparison of the 2019 vs. 2022 dataset downloads:
 ggplot(contracts_comparison_gc_wide) +
   geom_point(aes(x = year, y = value, color = dataset)) +
   geom_line(aes(x = year, y = value, color = dataset), linetype = "longdash", alpha = 0.5) + 
