@@ -5,6 +5,6 @@ library(skimr)
 library(janitor)
 
 contracts <- read_csv(
-  "data/source/2022-03-11-contracts.csv"
+  "data/source/2022-03-24-contracts.csv"
 )
 
