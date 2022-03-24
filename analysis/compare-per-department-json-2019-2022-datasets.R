@@ -48,6 +48,12 @@ departments_json <- contracts_json %>%
 contracts_2022 <- contracts_2022 %>%
   mutate(gen_owner_org_short = str_extract(owner_org, "^[^-]+"))
 
+contracts_2019 <- contracts_2019 %>%
+  mutate(gen_owner_org_short = str_extract(owner_org, "^[^-]+"))
+
+# TODO: Confirm if we should look for an intersection across all 3 datasets, or if it's okay to use first and last.
+# If so we can create a departments_2019 vector below as well.
+
 # Use the short version of owner_org generated above
 departments_2022 <- contracts_2022 %>%
   select("gen_owner_org_short") %>%
@@ -58,6 +64,10 @@ departments_2022 <- contracts_2022 %>%
 contracts_2022_limited_to_common_departments <- contracts_2022 %>%
   filter(gen_owner_org_short %in% intersect(departments_json, departments_2022))
   
+contracts_2019_limited_to_common_departments <- contracts_2019 %>%
+  filter(gen_owner_org_short %in% intersect(departments_json, departments_2022))
+
+
 contracts_json_limited_to_common_departments <- contracts_json %>%
   filter(gen_owner_org_short %in% intersect(departments_json, departments_2022))
 
@@ -76,7 +86,7 @@ contracts_json_by_year <- contracts_json_limited_to_common_departments %>%
     year = gen_contract_year
   )
 
-# Recalaculating this with the smaller number of departments
+# Recalculating this with the smaller number of departments
 contracts_2022_by_year <- contracts_2022_limited_to_common_departments %>%
   group_by(gen_owner_org_short, gen_contract_year) %>%
   summarize(count = n()) %>%
@@ -85,9 +95,17 @@ contracts_2022_by_year <- contracts_2022_limited_to_common_departments %>%
     year = gen_contract_year
   )
 
+contracts_2019_by_year <- contracts_2019_limited_to_common_departments %>%
+  group_by(gen_owner_org_short, gen_contract_year) %>%
+  summarize(count = n()) %>%
+  rename(
+    count_2019 = count,
+    year = gen_contract_year
+  )
+
 # Merge into one tibble
 # (temporarily) skipping contracts_2019_by_year
-contracts_comparison <- bind_rows(contracts_2022_by_year, contracts_json_by_year) %>%
+contracts_comparison <- bind_rows(contracts_2019_by_year, contracts_2022_by_year, contracts_json_by_year) %>%
   arrange(gen_owner_org_short, year) %>%
   pivot_longer(
     cols = starts_with("count"),
@@ -112,4 +130,4 @@ ggplot(contracts_comparison_gc_wide) +
   geom_point(aes(x = year, y = value, color = dataset)) +
   geom_line(aes(x = year, y = value, color = dataset), linetype = "longdash", alpha = 0.5) + 
   xlim(c(2002, 2022)) +
-  ylim(c(0, 75000))
+  ylim(c(0, 65000))
