@@ -131,3 +131,51 @@ ggplot(contracts_comparison_gc_wide) +
   geom_line(aes(x = year, y = value, color = dataset), linetype = "longdash", alpha = 0.5) + 
   xlim(c(2002, 2022)) +
   ylim(c(0, 65000))
+
+
+# Find the N largest depts by number of contracts (in the 2022 data)
+limit_to <- 9
+
+largest_depts_2022 <- contracts_2022 %>%
+  group_by(gen_owner_org_short) %>%
+  summarize(count = n()) %>%
+  arrange(desc(count))
+
+#
+largest_depts_common_departments <- largest_depts_2022 %>%
+  filter(gen_owner_org_short %in% intersect(departments_json, departments_2022)) %>%
+  # NOTE: Temporarily exclude DND/PWGSC to make it easier to see others
+  #filter(! gen_owner_org_short %in% c("dnd", "pwgsc")) %>%
+  slice_max(count, n = limit_to) %>%
+  pull(gen_owner_org_short)
+
+
+# Instead of an overall GC-wide sum, do this individually for each department
+contracts_comparison_by_dept <- contracts_comparison %>%
+  ungroup() %>%
+  select(gen_owner_org_short, year, dataset, value) %>%
+  filter(gen_owner_org_short %in% largest_depts_common_departments) %>%
+  mutate(dataset = recode(dataset,
+                          `count_2019` = "dataset_2019",
+                          `count_2022` = "dataset_2022",
+                          `count_json` = "dataset_2018_json"
+  )) %>%
+  group_by(gen_owner_org_short, year, dataset) %>%
+  summarize(value = sum(value)) %>%
+  arrange(gen_owner_org_short, year, dataset)
+
+ggplot(contracts_comparison_by_dept) +
+  geom_point(aes(x = year, y = value, color = dataset)) +
+  geom_line(aes(x = year, y = value, color = dataset), linetype = "longdash", alpha = 0.5) + 
+  xlim(c(2002, 2022)) +
+  ylim(c(0, 5000)) + 
+  facet_wrap(~ gen_owner_org_short)
+
+# Review a specific department
+contracts_comparison_by_dept %>%
+  filter(gen_owner_org_short == "dnd") %>%
+  ggplot() +
+  geom_point(aes(x = year, y = value, color = dataset)) +
+  geom_line(aes(x = year, y = value, color = dataset), linetype = "longdash", alpha = 0.5) + 
+  xlim(c(2002, 2022)) +
+  ylim(c(0, 25000))
