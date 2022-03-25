@@ -104,7 +104,6 @@ contracts_2019_by_year <- contracts_2019_limited_to_common_departments %>%
   )
 
 # Merge into one tibble
-# (temporarily) skipping contracts_2019_by_year
 contracts_comparison <- bind_rows(contracts_2019_by_year, contracts_2022_by_year, contracts_json_by_year) %>%
   arrange(gen_owner_org_short, year) %>%
   pivot_longer(
@@ -145,7 +144,7 @@ largest_depts_2022 <- contracts_2022 %>%
 largest_depts_common_departments <- largest_depts_2022 %>%
   filter(gen_owner_org_short %in% intersect(departments_json, departments_2022)) %>%
   # NOTE: Temporarily exclude DND/PWGSC to make it easier to see others
-  #filter(! gen_owner_org_short %in% c("dnd", "pwgsc")) %>%
+  filter(! gen_owner_org_short %in% c("dnd", "pwgsc")) %>%
   slice_max(count, n = limit_to) %>%
   pull(gen_owner_org_short)
 
@@ -179,3 +178,23 @@ contracts_comparison_by_dept %>%
   geom_line(aes(x = year, y = value, color = dataset), linetype = "longdash", alpha = 0.5) + 
   xlim(c(2002, 2022)) +
   ylim(c(0, 25000))
+
+# Review the three "big ones"
+contracts_comparison %>%
+  ungroup() %>%
+  select(gen_owner_org_short, year, dataset, value) %>%
+  filter(gen_owner_org_short %in% c("dnd", "pwgsc", "ssc")) %>%
+  mutate(dataset = recode(dataset,
+                          `count_2019` = "dataset_2019",
+                          `count_2022` = "dataset_2022",
+                          `count_json` = "dataset_2018_json"
+  )) %>%
+  group_by(gen_owner_org_short, year, dataset) %>%
+  summarize(value = sum(value)) %>%
+  arrange(gen_owner_org_short, year, dataset) %>%
+  ggplot() +
+  geom_point(aes(x = year, y = value, color = dataset)) +
+  geom_line(aes(x = year, y = value, color = dataset), linetype = "longdash", alpha = 0.5) + 
+  xlim(c(2002, 2022)) +
+  ylim(c(0, 25000)) + 
+  facet_wrap(~ gen_owner_org_short)
