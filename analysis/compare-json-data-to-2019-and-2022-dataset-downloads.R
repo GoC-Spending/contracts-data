@@ -9,10 +9,10 @@ json_contracts_data_clean <- read_csv(
 )
 
 # Compare to 2019 and 2022 datasets
-# TODO review ("192876 failed to parse.")
 contracts_json <- json_contracts_data_clean %>%
-  mutate(contract_date = as_date(contract_date)) %>%
-  mutate(gen_contract_year = year(`contract_date`))
+  mutate(gen_contract_year = str_extract(`contract_date`, "(?:19|20)\\d{2}")) %>%
+  filter(! is.na(gen_contract_year)) %>%
+  mutate(gen_contract_year = year(as.Date(`gen_contract_year`,format="%Y")))
 
 contracts_json_by_year <- contracts_json %>%
   group_by(owner_org, gen_contract_year) %>%
@@ -49,3 +49,4 @@ ggplot(contracts_comparison_gc_wide) +
   geom_line(aes(x = year, y = value, color = dataset), linetype = "longdash", alpha = 0.5) + 
   xlim(c(2002, 2022)) +
   ylim(c(0, 100000))
+
