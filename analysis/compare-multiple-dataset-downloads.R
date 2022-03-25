@@ -138,6 +138,10 @@ contracts_comparison_delta %>%
   arrange(desc(year)) %>%
   View()
 
+# Export a CSV for more analysis
+contracts_comparison_delta %>% write_csv("data/out/multiple-dataset-comparison-delta.csv")
+
+
 # Need to re-pivot before charting back into tidy data
 contracts_comparison_delta_tidy <- contracts_comparison_delta %>%
   select(
