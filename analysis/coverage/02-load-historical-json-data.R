@@ -2,6 +2,8 @@
 # https://github.com/GoC-Spending/goc-spending-data
 # and converts it to a CSV file with similar column names as the open.canada.ca dataset
 
+# Note: if the "data/source/json-archive-contracts.csv" CSV file already exists, this script does not need to be run again.
+
 # Load data handling libraries
 library(tidyverse)
 library(lubridate)

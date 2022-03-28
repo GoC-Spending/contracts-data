@@ -2,7 +2,7 @@
 # to more recent downloads of the open.canada.ca data.
 
 # Load the libraries and previous data
-source("analysis/compare-2019-to-2022-dataset-downloads.R")
+source("analysis/coverage/01-compare-2019-to-2022-dataset-downloads.R")
 
 json_contracts_data_clean <- read_csv(
   "data/source/json-archive-contracts.csv"

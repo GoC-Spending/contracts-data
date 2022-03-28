@@ -1,5 +1,5 @@
 # Import previous libraries and data
-source("analysis/compare-json-data-to-2019-and-2022-dataset-downloads.R")
+source("analysis/coverage/03-compare-json-data-to-2019-and-2022-dataset-downloads.R")
 
 # Create a conversion table for department acronyms
 department_conversion_table = tribble(
