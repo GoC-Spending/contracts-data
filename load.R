@@ -6,6 +6,7 @@ library(janitor)
 library(purrr)
 
 # Define column types for each column in the contracts dataset
+# Y/N values are converted to TRUE/FALSE further below
 contract_col_types <- cols(
   
   reference_number = col_character(),
@@ -42,14 +43,14 @@ contract_col_types <- cols(
   limited_tendering_reason = col_character(),
   trade_agreement_exceptions = col_character(),
   aboriginal_business = col_character(),
-  aboriginal_business_incidental = col_character(),
+  aboriginal_business_incidental = col_character(), # Y/N
   intellectual_property = col_character(),
-  potential_commercial_exploitation = col_character(),
-  former_public_servant = col_character(),
+  potential_commercial_exploitation = col_character(), # Y/N
+  former_public_servant = col_character(), # Y/N
   contracting_entity = col_character(),
   standing_offer_number = col_character(),
   instrument_type = col_factor(),
-  ministers_office = col_character(),
+  ministers_office = col_character(), # Y/N
   number_of_bids = col_number(),
   article_6_exceptions = col_character(),
   award_criteria = col_character(),
@@ -61,10 +62,23 @@ contract_col_types <- cols(
   
 )
 
+
+# Import the CSV file
 contracts <- read_csv(
   "data/source/2022-03-24-contracts.csv",
   col_types = contract_col_types
 ) %>%
   clean_names()
 
+
+# Convert Y/N values to logical TRUE/FALSE values, for specific columns
+contracts <- contracts %>%
+  mutate(
+    across(c(aboriginal_business_incidental, potential_commercial_exploitation, former_public_servant, ministers_office),
+           ~ recode(., 
+                    "N" = FALSE, 
+                    "Y" = TRUE,
+                    .default = as.logical(NA))
+    )
+  )
 
