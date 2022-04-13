@@ -83,18 +83,6 @@ contracts <- contracts %>%
   )
 
 
-
-
-# TESTING (2022-04-12)
-
-contracts %>% count(owner_org, sort=TRUE)
-
-sum(is.na(contracts$reference_number))
-sum(is.na(contracts$reporting_period))
-
-ggplot(contracts) + 
-  geom_bar(mapping = aes(x = reporting_period))
-
 # Use the reporting period if it exists, otherwise get it from the reference number
 # Store it in d_reporting_period (derived reporting period)
 contracts <- contracts %>%
@@ -105,6 +93,7 @@ contracts <- contracts %>%
       TRUE ~ get_reporting_period_from_date(contract_date)
     )
   )
+
 
 # For grouping/comparison purposes, get the fiscal year from the reporting period
 contracts <- contracts %>%
@@ -124,7 +113,6 @@ contracts <- contracts %>%
   )
  
 
-
 # Create a start date using (in order of priority)
 # contract_period_start, contract_date
 # (original logic in assureRequiredContractValues in the PHP code)
@@ -136,6 +124,7 @@ contracts <- contracts %>%
       TRUE ~ NA_Date_
     )
   )
+
 
 # Create an end date using the row-wise largest of:
 # delivery_date, contract_period_start, contract_date
@@ -159,40 +148,51 @@ contracts <- contracts %>%
 
 
 
+# TESTING (2022-04-12)
+
+# contracts %>% count(owner_org, sort=TRUE)
+# 
+# sum(is.na(contracts$reference_number))
+# sum(is.na(contracts$reporting_period))
+# 
+# ggplot(contracts) + 
+#   geom_bar(mapping = aes(x = reporting_period))
+
+
 # TESTING (2022-04-13)
 
-sum(is.na(contracts$d_reporting_period))
-
-ggplot(contracts) + 
-  geom_bar(mapping = aes(x = d_reporting_period))
-
-ggplot(contracts) + 
-  geom_bar(mapping = aes(x = d_reporting_year))
-
-contracts %>%
-  filter(is.na(d_reporting_year)) %>%
-  select(reference_number, vendor_name, owner_org, contract_date, d_reporting_period, d_reporting_year, everything()) #%>%
-  #count(owner_org, sort=TRUE)
-
-sum(is.na(contracts$reference_number))
-
-contracts %>% count(reference_number, sort=TRUE)
-contracts %>% count(d_reference_number, sort=TRUE)
-
-contracts %>% 
-  get_dupes(d_reference_number)
-
-
-contracts %>%
-  select(vendor_name, owner_org, contract_date, contract_period_start, d_start_date, everything())
-
-sum(is.na(contracts$contract_period_start))
-sum(is.na(contracts$contract_date))
-sum(is.na(contracts$d_start_date))
-
-
-contracts %>%
-  select(contract_date, contract_period_start, delivery_date, d_start_date, d_end_date, vendor_name, owner_org, everything())
+# sum(is.na(contracts$d_reporting_period))
+# 
+# ggplot(contracts) + 
+#   geom_bar(mapping = aes(x = d_reporting_period))
+# 
+# ggplot(contracts) + 
+#   geom_bar(mapping = aes(x = d_reporting_year))
+# 
+# contracts %>%
+#   filter(is.na(d_reporting_year)) %>%
+#   select(reference_number, vendor_name, owner_org, contract_date, d_reporting_period, d_reporting_year, everything()) #%>%
+#   #count(owner_org, sort=TRUE)
+# 
+# sum(is.na(contracts$reference_number))
+# 
+# contracts %>% count(reference_number, sort=TRUE)
+# contracts %>% count(d_reference_number, sort=TRUE)
+# 
+# contracts %>% 
+#   get_dupes(d_reference_number)
+# 
+# 
+# contracts %>%
+#   select(vendor_name, owner_org, contract_date, contract_period_start, d_start_date, everything())
+# 
+# sum(is.na(contracts$contract_period_start))
+# sum(is.na(contracts$contract_date))
+# sum(is.na(contracts$d_start_date))
+# 
+# 
+# contracts %>%
+#   select(contract_date, contract_period_start, delivery_date, d_start_date, d_end_date, vendor_name, owner_org, everything())
 
 
 contracts %>% 
