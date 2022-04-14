@@ -1,6 +1,10 @@
 # Load libraries and helper functions
 source("lib/helpers.R")
 
+# Start time
+run_start_time <- now()
+paste("Start time:", run_start_time)
+
 # "data/source/2022-03-24-contracts.csv"
 # "data/testing/2022-04-13-sample-contracts.csv"
 contracts_data_source <- "data/source/2022-03-24-contracts.csv"
@@ -163,7 +167,7 @@ contracts <- contracts %>%
     d_amendment_group_id = NA_character_,
   )
 
-# Test 1
+# Amendment finding across all contracts:
 reference_numbers <- contracts %>% pull(d_reference_number)
 
 # Create a temporary array that matches origin contract reference numbers
@@ -243,6 +247,9 @@ for (i in seq_along(reference_numbers)) {
 }
 
 
+run_end_time <- now()
+paste("Start time was:", run_start_time)
+paste("End time was:", run_end_time)
 
 
 # TESTING (2022-04-12)
