@@ -95,6 +95,11 @@ contracts <- contracts %>%
   )
 
 
+# Sort the contracts dataset by ascending reporting period, then owner_org
+contracts <- contracts %>%
+  arrange(d_reporting_period, owner_org)
+  
+
 # For grouping/comparison purposes, get the fiscal year from the reporting period
 contracts <- contracts %>%
   mutate(
@@ -136,6 +141,7 @@ contracts <- contracts %>%
   ungroup()
 
 
+
 # To identify amendment groups, the approach is:
 # same owner_org
 # same vendor (once normalized)
@@ -143,10 +149,102 @@ contracts <- contracts %>%
 # OR
 # same owner_org
 # same vendor (once normalized)
-# original_value == contract_value
+# original_value == contract_value of the original row(?)
 # same start date (to confirm if derived values / closest year helps)
 
+# *not* part of an existing amendment group
 
+# New columns added
+# d_is_amendment
+# d_amendment_group_id
+contracts <- contracts %>%
+  mutate(
+    d_is_amendment = FALSE,
+    d_amendment_group_id = NA_character_,
+  )
+
+# Test 1
+reference_numbers <- contracts %>% pull(d_reference_number)
+
+# Create a temporary array that matches origin contract reference numbers
+# to amendment reference numbers.
+# This would be a nested array of different lengths if we were doing it in PHP!
+amendment_groups <- tibble(origin_reference_number = character(), amendment_reference_number = character())
+
+for (i in seq_along(reference_numbers)) {
+  #output[[i]] <- median(df[[i]])
+  #sprintf("ref: %s", contracts[[i]])
+  print("=======")
+  print(reference_numbers[[i]])
+  
+  # 1. Pull up the current contract
+  current_contract <- contracts %>%
+    filter(
+      d_reference_number == reference_numbers[[i]]
+    ) %>%
+    slice_head()
+  
+  print(current_contract$owner_org)
+  
+  #break
+  
+  # 2. Find the matching contracts by procurement_id
+  matching_reference_numbers <- contracts %>%
+    filter(
+      d_reference_number != current_contract$d_reference_number, # Don't re-select the same row (Note: need to add the amendment group ID to the original row somehow?)
+      owner_org == current_contract$owner_org,
+      vendor_name == current_contract$vendor_name,
+      procurement_id == current_contract$procurement_id,
+      is.na(d_amendment_group_id), # Don't re-run existing amendments
+    ) %>%
+    pull(d_reference_number)
+    # mutate(
+    #   d_is_amendment = TRUE,
+    #   d_amendment_group_id = current_contract$d_reference_number,
+    # )
+  
+  print(matching_reference_numbers)
+  
+  # Update the amendment groups tibble (not used beyond this yet)
+  amendment_groups <- amendment_groups %>% 
+    add_row(
+      origin_reference_number = current_contract$d_reference_number, 
+      amendment_reference_number = matching_reference_numbers, # (character vector with, in some cases, multiple amendment reference numbers)
+      )
+  
+  # 3. Update the corresponding rows
+  # Note: not sure if there's a way to avoid the repetition below.
+  contracts <- contracts %>%
+    mutate(
+      d_amendment_group_id = case_when(
+        d_reference_number %in% matching_reference_numbers ~ current_contract$d_reference_number,
+        TRUE ~ d_amendment_group_id,
+      ),
+      d_is_amendment = case_when(
+        d_reference_number %in% matching_reference_numbers ~ TRUE,
+        TRUE ~ d_is_amendment,
+      ),
+    )
+  
+  # 4. Update the original contract to include the d_amendment_group_id
+  # (but not a d_is_amendment flag)
+  if(length(matching_reference_numbers) >= 1) {
+    print("... updating amendment group ID to")
+    print(current_contract$d_reference_number)
+    contracts <- contracts %>%
+      mutate(
+        d_amendment_group_id = case_when(
+          d_reference_number == current_contract$d_reference_number ~ current_contract$d_reference_number,
+          TRUE ~ d_amendment_group_id,
+        ),
+      )
+  }
+
+
+}
+
+
+contracts %>% relocate(d_reference_number, d_amendment_group_id, d_is_amendment) %>% View()
 
 # TESTING (2022-04-12)
 
@@ -195,9 +293,10 @@ contracts <- contracts %>%
 #   select(contract_date, contract_period_start, delivery_date, d_start_date, d_end_date, vendor_name, owner_org, everything())
 
 
-contracts %>% 
-  filter(contract_value > 1000000) %>%
-  filter(owner_org == "ssc-spc") %>%
-  relocate(d_reference_number, vendor_name, d_start_date, d_end_date, contract_value, original_value, amendment_value, procurement_id, description_en) %>%
-  sample_n(20) #%>%
-  #write_csv("data/testing/2022-04-13-sample-contracts.csv")
+# contracts %>% 
+#   filter(contract_value > 1000000) %>%
+#   filter(owner_org == "ssc-spc") %>%
+#   relocate(d_reference_number, vendor_name, d_start_date, d_end_date, contract_value, original_value, amendment_value, procurement_id, description_en) %>%
+#   sample_n(20) #%>%
+#   #write_csv("data/testing/2022-04-13-sample-contracts.csv")
+
