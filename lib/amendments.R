@@ -6,6 +6,8 @@
 source("lib/_libraries.R")
 
 
+# Version 1
+# Note: this is spectacularly slow (30+ hours?) on the full contract dataset:
 find_amendment_groups_v1 <- function(contracts) {
   # To identify amendment groups, the approach is:
   # same owner_org
@@ -109,4 +111,78 @@ find_amendment_groups_v1 <- function(contracts) {
   
   return(contracts)
 
+}
+
+
+
+# Version 2, using group_by functions
+find_amendment_groups_v2 <- function(contracts) {
+  # To identify amendment groups, the approach is:
+  # same owner_org
+  # same vendor (once normalized)
+  # same procurement_id
+  # OR
+  # same owner_org
+  # same vendor (once normalized)
+  # original_value == contract_value of the original row(?)
+  # same start date (to confirm if derived values / closest year helps)
+  
+  # *not* part of an existing amendment group
+  
+  # New columns added
+  contracts <- contracts %>%
+    mutate(
+      d_is_amendment = FALSE,
+      d_amendment_group_id = NA_character_,
+      d_number_of_amendments = NA_integer_,
+      d_amendment_via = NA_character_,
+    )
+  
+  contracts <- contracts %>%
+    group_by(owner_org, vendor_name, procurement_id) %>%
+    mutate(
+      d_amendment_group_id = first(d_reference_number),
+      d_number_of_amendments = n() - 1,
+      d_amendment_via = case_when(
+        is.na(d_amendment_via) && d_number_of_amendments >= 1 ~ "procurement_id", # for procurement_id
+        TRUE ~ d_amendment_via,
+      ),
+    ) %>%
+    ungroup()
+  
+  # Second case (matching original values & start dates)
+  
+  # Ensure that there's an "original value" to compare to, even in the first contract's case where it might only be listed in contract_value
+  contracts <- contracts %>%
+    mutate(
+      d_original_original_value = case_when(
+        original_value > 0 ~ original_value, # Also takes care of NA entries
+        TRUE ~ contract_value
+      )
+    )
+  
+  contracts <- contracts %>%
+    group_by(owner_org, vendor_name, d_original_original_value, d_start_date) %>%
+    mutate(
+      d_amendment_group_id = first(d_reference_number),
+      d_number_of_amendments = n() - 1,
+      d_amendment_via = case_when(
+        is.na(d_amendment_via) && d_number_of_amendments >= 1 ~ "original_value", # for original value + start date
+        TRUE ~ d_amendment_via,
+      ),
+    ) %>%
+    ungroup()
+  
+  
+  # For both cases at once, flag amendment entries
+  contracts <- contracts %>%
+    mutate(
+      d_is_amendment = case_when(
+        d_amendment_group_id != d_reference_number ~ TRUE,
+        TRUE ~ d_is_amendment, # Don't change the previous value, if the line above isn't true.
+      )
+    )
+  
+  return(contracts)
+  
 }

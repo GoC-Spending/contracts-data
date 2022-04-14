@@ -147,8 +147,7 @@ contracts <- contracts %>%
 
 
 # Find amendment groups based on procurement_id, or on start date + contract value 
-# Note: this is spectacularly slow (30+ hours?) on the full contract dataset:
-contracts <- find_amendment_groups_v1(contracts)
+contracts <- find_amendment_groups_v2(contracts)
 
 
 run_end_time <- now()
@@ -213,4 +212,4 @@ paste("End time was:", run_end_time)
 
 # Testing (2022-04-14)
 
-# contracts %>% relocate(d_reference_number, d_amendment_group_id, d_is_amendment) %>% View()
+# contracts %>% relocate(d_reference_number, d_amendment_group_id, d_is_amendment, d_number_of_amendments, d_amendment_via) %>% View()
