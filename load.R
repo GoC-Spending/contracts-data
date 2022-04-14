@@ -146,6 +146,10 @@ contracts <- contracts %>%
   ungroup()
 
 
+# TODO: Add vendor name normalization here, before amendments are found and combined below.
+
+
+
 # Find amendment groups based on procurement_id, or on start date + contract value 
 contracts <- find_amendment_groups_v2(contracts)
 
