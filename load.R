@@ -150,6 +150,43 @@ contracts <- contracts %>%
 contracts <- find_amendment_groups_v2(contracts)
 
 
+
+# Contract spending by day
+# Simplified version (linearized across the total duration as per the last amendment; doesn't account for changes in spending per-amendment in stages)
+# For each amendment group, find the original row's start date, and the last row's end date
+contract_spending_overall <- contracts %>%
+  select(d_reference_number, vendor_name, d_start_date, d_end_date, contract_value, d_amendment_group_id, owner_org, d_number_of_amendments) %>%
+  group_by(d_amendment_group_id) %>%
+  mutate(
+    d_overall_start_date = first(d_start_date),
+    d_overall_end_date = last(d_end_date),
+    d_overall_contract_value = last(contract_value),
+    d_daily_contract_value = d_overall_contract_value / as.integer(d_overall_end_date - d_overall_start_date + 1) # The +1 is added so it's inclusive of the start and end dates themselves.
+  ) %>%
+  ungroup()
+
+# With thanks to
+# https://github.com/lchski/parliamentarians-analysis/blob/master/analysis/members.R#L7-L13
+contract_spending_by_date <- contract_spending_overall %>%
+  select(owner_org, vendor_name, d_amendment_group_id, d_overall_start_date, d_overall_end_date, d_daily_contract_value) %>%
+  distinct() %>% # Since the same data is now in each row, don't multiple-count contracts with amendments
+  pivot_longer(
+    c(d_overall_start_date, d_overall_end_date),
+    values_to = "date",
+    names_to = NULL
+    ) %>%
+  group_by(d_amendment_group_id) %>%
+  complete(date = full_seq(date, 1), nesting(owner_org, vendor_name, d_daily_contract_value)) %>%
+  ungroup()
+
+# Test
+contract_spending_by_date %>%
+  group_by(d_amendment_group_id, vendor_name) %>%
+  summarise(
+    overall_total = sum(d_daily_contract_value)
+  )
+# (matches the overall total amounts in contract_spending_overall)
+
 run_end_time <- now()
 paste("Start time was:", run_start_time)
 paste("End time was:", run_end_time)
