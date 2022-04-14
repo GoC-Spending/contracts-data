@@ -1,12 +1,7 @@
 # Helper functions for analyzing Government of Canada
 # Proactive Disclosure of Contracts Data
 
-# Load exploratory libraries
-library(tidyverse)
-library(lubridate)
-library(skimr)
-library(janitor)
-library(purrr)
+source("lib/_libraries.R")
 
 
 # Generate the matching quarter ("Q3") from a given date ("2018-02-03")
