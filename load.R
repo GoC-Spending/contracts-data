@@ -1,6 +1,7 @@
 # Load libraries and helper functions
 source("lib/helpers.R")
 source("lib/amendments.R")
+source("lib/vendors.R")
 
 # Start time
 run_start_time <- now()
@@ -146,9 +147,24 @@ contracts <- contracts %>%
   ungroup()
 
 
-# TODO: Add vendor name normalization here, before amendments are found and combined below.
+# Add vendor name normalization here, before amendments are found and combined below.
+# For simplicity, the normalized names are stored in d_vendor_name
+contracts <- contracts %>%
+  mutate(
+    d_clean_vendor_name = clean_vendor_names(vendor_name)
+  ) %>%
+  left_join(vendor_matching, by = c("d_clean_vendor_name" = "company_name")) %>%
+  rename(d_normalized_vendor_name = "parent_company")
 
-
+# For companies that aren't in the normalization table
+# include their regular names anyway:
+contracts <- contracts %>%
+  mutate(
+    d_vendor_name = case_when(
+      !is.na(d_normalized_vendor_name) ~ d_normalized_vendor_name,
+      TRUE ~ d_clean_vendor_name,
+    )
+  )
 
 # Find amendment groups based on procurement_id, or on start date + contract value 
 contracts <- find_amendment_groups_v2(contracts)
@@ -254,3 +270,8 @@ paste("End time was:", run_end_time)
 # Testing (2022-04-14)
 
 # contracts %>% relocate(d_reference_number, d_amendment_group_id, d_is_amendment, d_number_of_amendments, d_amendment_via) %>% View()
+
+
+# Testing (2022-04-18)
+
+# contracts %>% select(vendor_name, d_clean_vendor_name, d_normalized_vendor_name, d_vendor_name) %>% View()
