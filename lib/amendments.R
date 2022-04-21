@@ -52,7 +52,7 @@ find_amendment_groups_v1 <- function(contracts) {
       filter(
         d_reference_number != current_contract$d_reference_number, # Don't re-select the same row
         owner_org == current_contract$owner_org,
-        vendor_name == current_contract$vendor_name,
+        d_vendor_name == current_contract$d_vendor_name,
         procurement_id == current_contract$procurement_id,
         is.na(d_amendment_group_id), # Don't re-run existing amendments
       ) %>%
@@ -63,7 +63,7 @@ find_amendment_groups_v1 <- function(contracts) {
       filter(
         d_reference_number != current_contract$d_reference_number, # Don't re-select the same row
         owner_org == current_contract$owner_org,
-        vendor_name == current_contract$vendor_name,
+        d_vendor_name == current_contract$d_vendor_name,
         original_value == current_contract$contract_value,
         d_start_date == current_contract$d_start_date, # Note: does normalizing the start date have unexpected consequences here? Do amendments sometimes have new, later, start dates?
         is.na(d_amendment_group_id), # Don't re-run existing amendments
@@ -139,7 +139,7 @@ find_amendment_groups_v2 <- function(contracts) {
     )
   
   contracts <- contracts %>%
-    group_by(owner_org, vendor_name, procurement_id) %>%
+    group_by(owner_org, d_vendor_name, procurement_id) %>%
     mutate(
       d_amendment_group_id = first(d_reference_number),
       d_number_of_amendments = n() - 1,
@@ -162,7 +162,7 @@ find_amendment_groups_v2 <- function(contracts) {
     )
   
   contracts <- contracts %>%
-    group_by(owner_org, vendor_name, d_original_original_value, d_start_date) %>%
+    group_by(owner_org, d_vendor_name, d_original_original_value, d_start_date) %>%
     mutate(
       d_amendment_group_id = first(d_reference_number),
       d_number_of_amendments = n() - 1,

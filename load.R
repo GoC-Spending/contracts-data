@@ -175,7 +175,8 @@ contracts <- find_amendment_groups_v2(contracts)
 # Simplified version (linearized across the total duration as per the last amendment; doesn't account for changes in spending per-amendment in stages)
 # For each amendment group, find the original row's start date, and the last row's end date
 contract_spending_overall <- contracts %>%
-  select(d_reference_number, vendor_name, d_start_date, d_end_date, contract_value, d_amendment_group_id, owner_org, d_number_of_amendments) %>%
+  arrange(d_reporting_period, owner_org) %>% # This is done above, but for safety, doing it again here to ensure that the first() and last() calls below work properly.
+  select(d_reference_number, d_vendor_name, d_start_date, d_end_date, contract_value, d_amendment_group_id, owner_org, d_number_of_amendments) %>%
   group_by(d_amendment_group_id) %>%
   mutate(
     d_overall_start_date = first(d_start_date),
@@ -188,7 +189,7 @@ contract_spending_overall <- contracts %>%
 # With thanks to
 # https://github.com/lchski/parliamentarians-analysis/blob/master/analysis/members.R#L7-L13
 contract_spending_by_date <- contract_spending_overall %>%
-  select(owner_org, vendor_name, d_amendment_group_id, d_overall_start_date, d_overall_end_date, d_daily_contract_value) %>%
+  select(owner_org, d_vendor_name, d_amendment_group_id, d_overall_start_date, d_overall_end_date, d_daily_contract_value) %>%
   distinct() %>% # Since the same data is now in each row, don't multiple-count contracts with amendments
   pivot_longer(
     c(d_overall_start_date, d_overall_end_date),
@@ -196,15 +197,17 @@ contract_spending_by_date <- contract_spending_overall %>%
     names_to = NULL
     ) %>%
   group_by(d_amendment_group_id) %>%
-  complete(date = full_seq(date, 1), nesting(owner_org, vendor_name, d_daily_contract_value)) %>%
+  complete(date = full_seq(date, 1), nesting(owner_org, d_vendor_name, d_daily_contract_value)) %>%
   ungroup()
 
-# Test
-contract_spending_by_date %>%
-  group_by(d_amendment_group_id, vendor_name) %>%
+
+# Example summary: overall total (over all time and all contracts) by vendor
+summary_overall_total_by_vendor <- contract_spending_by_date %>%
+  group_by(d_amendment_group_id, d_vendor_name) %>%
   summarise(
     overall_total = sum(d_daily_contract_value)
-  )
+  ) %>%
+  arrange(desc(overall_total))
 # (matches the overall total amounts in contract_spending_overall)
 
 run_end_time <- now()
