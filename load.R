@@ -7,6 +7,11 @@ source("lib/vendors.R")
 run_start_time <- now()
 paste("Start time:", run_start_time)
 
+# Summary parameters (used below)
+summary_start_fiscal_year_short <- 2017
+summary_end_fiscal_year_short <- 2020
+summary_total_vendor_rows <- 200
+
 # "data/source/2022-03-24-contracts.csv"
 # "data/testing/2022-04-13-sample-contracts.csv"
 contracts_data_source <- "data/source/2022-03-24-contracts.csv"
@@ -200,15 +205,63 @@ contract_spending_by_date <- contract_spending_overall %>%
   complete(date = full_seq(date, 1), nesting(owner_org, d_vendor_name, d_daily_contract_value)) %>%
   ungroup()
 
+# Add (short) fiscal year, for grouping calculations
+contract_spending_by_date <- contract_spending_by_date %>%
+  mutate(
+    d_fiscal_year_short = get_short_fiscal_year_from_date(date)
+  ) 
 
-# Example summary: overall total (over all time and all contracts) by vendor
+# Filter to just the requested fiscal year range
+# (defined in the parameters at the top)
+# Note: this applies to all of the calculations that follow.
+contract_spending_by_date <- contract_spending_by_date %>%
+  filter(
+    d_fiscal_year_short >= summary_start_fiscal_year_short,
+    d_fiscal_year_short <= summary_end_fiscal_year_short,
+  ) 
+  
+# Summary 1: overall total (over all time and all contracts) by vendor
 summary_overall_total_by_vendor <- contract_spending_by_date %>%
-  group_by(d_amendment_group_id, d_vendor_name) %>%
+  group_by(d_vendor_name) %>%
   summarise(
     overall_total = sum(d_daily_contract_value)
   ) %>%
-  arrange(desc(overall_total))
-# (matches the overall total amounts in contract_spending_overall)
+  arrange(desc(overall_total)) %>%
+  slice_head(n = summary_total_vendor_rows)
+
+# Breakdown by fiscal year (for selected fiscal years)
+# First, pull out the top n vendors
+top_n_vendors <- summary_overall_total_by_vendor %>%
+  pull(d_vendor_name)
+
+# Then, for those top n vendors, group by fiscal year
+summary_total_by_vendor_and_fiscal_year <- contract_spending_by_date %>%
+  filter(d_vendor_name %in% top_n_vendors) %>%
+  group_by(d_vendor_name, d_fiscal_year_short) %>%
+  summarise(
+    total = sum(d_daily_contract_value)
+  ) %>%
+  ungroup() %>%
+  mutate(
+    d_fiscal_year = convert_start_year_to_fiscal_year(d_fiscal_year_short)
+  ) %>%
+  select(d_vendor_name, d_fiscal_year, total)
+  
+
+# Export CSV files of the summary tables
+summary_overall_total_by_vendor %>% 
+  mutate(
+    # For CSV purposes, at the very end, round numbers to two decimal points
+    overall_total = round(overall_total, digits = 2)
+  ) %>%
+  write_csv(str_c("data/out/s01_summary_overall_total_by_vendor_", summary_start_fiscal_year_short, "_to_", summary_end_fiscal_year_short, ".csv"))
+
+summary_total_by_vendor_and_fiscal_year %>% 
+  mutate(
+    # TODO: determine how to make this a reusable function later.
+    total = round(total, digits = 2)
+  ) %>%
+  write_csv("data/out/s02_summary_total_by_vendor_and_fiscal_year.csv")
 
 run_end_time <- now()
 paste("Start time was:", run_start_time)
