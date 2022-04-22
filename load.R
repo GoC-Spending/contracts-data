@@ -207,22 +207,13 @@ contract_spending_by_date <- contract_spending_overall %>%
 
 # Add (short) fiscal year, for grouping calculations
 contract_spending_by_date <- contract_spending_by_date %>%
+  # TODO: update or refactor get_short_fiscal_year_from_date to match this, if helpful.
   mutate(
-    d_fiscal_year_short_v1 = get_short_fiscal_year_from_date(date)
-  ) %>%
-  mutate(
-    date_minus_90_days = date - months(3), # Need to use months instead of - days(90) to account for leap years with a Feb. 29
-    d_fiscal_year_short_v2 = year(date_minus_90_days)
-  ) %>%
-  mutate(
-    d_fiscal_year_short_v3 = case_when(
+    d_fiscal_year_short = case_when(
       month(date) <= 3 ~ year(date) - 1,
       month(date) <= 12 ~ year(date),
       TRUE ~ NA_real_,
     )
-  ) %>%
-  mutate(
-    d_fiscal_year_short = d_fiscal_year_short_v3,
   )
 
 # Filter to just the requested fiscal year range
