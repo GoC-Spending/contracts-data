@@ -201,6 +201,12 @@ contract_spending_overall <- contracts %>%
   ) %>%
   ungroup()
 
+# TODO: Confirm if this is unhelpful later.
+# Removes the original "contracts" object to save on system memory:
+print("Reminder: removing the 'contracts' data frame to save memory.")
+rm(contracts)
+
+
 # With thanks to
 # https://github.com/lchski/parliamentarians-analysis/blob/master/analysis/members.R#L7-L13
 contract_spending_by_date <- contract_spending_overall %>%
