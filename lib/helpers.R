@@ -122,11 +122,11 @@ is_valid_reporting_period <- function(reporting_period) {
   # TODO confirm if there's a better way of doing this; currently repeats the regex above.
   # Note that this would still accept e.g. "1870-2020-Q6" and other logically invalid examples.
   expected_reporting_period <- str_extract(reporting_period, "(\\d{4}-\\d{4}-Q\\d{1})")
-  
-  if(is.na(expected_reporting_period)) {
-    return(FALSE)
-  }
-  return(as.logical(expected_reporting_period == reporting_period))
+
+  return(as.logical(
+    is.na(expected_reporting_period) == FALSE & 
+      expected_reporting_period == reporting_period)
+  )
   
 }
 

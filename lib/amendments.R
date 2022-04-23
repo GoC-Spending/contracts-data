@@ -144,7 +144,7 @@ find_amendment_groups_v2 <- function(contracts) {
       d_amendment_group_id = first(d_reference_number),
       d_number_of_amendments = n() - 1,
       d_amendment_via = case_when(
-        is.na(d_amendment_via) && d_number_of_amendments >= 1 ~ "procurement_id", # for procurement_id
+        is.na(d_amendment_via) & d_number_of_amendments >= 1 ~ "procurement_id", # for procurement_id
         TRUE ~ d_amendment_via,
       ),
     ) %>%
@@ -167,7 +167,7 @@ find_amendment_groups_v2 <- function(contracts) {
       d_amendment_group_id = first(d_reference_number),
       d_number_of_amendments = n() - 1,
       d_amendment_via = case_when(
-        is.na(d_amendment_via) && d_number_of_amendments >= 1 ~ "original_value", # for original value + start date
+        is.na(d_amendment_via) & d_number_of_amendments >= 1 ~ "original_value", # for original value + start date
         TRUE ~ d_amendment_via,
       ),
     ) %>%
