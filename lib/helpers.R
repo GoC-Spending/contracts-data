@@ -4,6 +4,38 @@
 source("lib/_libraries.R")
 
 
+# Downloads the contracts CSV file from the open government website if it hasn't already been downloaded today.
+# Thanks to
+# https://github.com/lchski/change-in-the-ranks-analysis/blob/main/load/download-announcement-pages.R#L4-L47
+get_contracts_csv_locally_or_from_url <- function(contract_col_types) {
+  url <- "https://open.canada.ca/data/dataset/d8f85d91-7dec-4fd1-8055-483b77225d8b/resource/fac950c0-00d5-4ec1-a4d3-9cbebf98a305/download/contracts.csv"
+  local_path <- str_c("data/source/", today(), "-contracts.csv")
+  
+  file_is_already_downloaded <- file_exists(local_path)
+  
+  if (! file_is_already_downloaded) {
+    print("Starting to download file.")
+    
+    # Thanks to
+    # https://stackoverflow.com/a/35283374/756641
+    options(timeout=1200) # 20 minutes
+    # TODO: Add tryCatch error handling here.
+    download.file(url, local_path)
+  }
+  
+  # Import the CSV file
+  contracts <- read_csv(
+    local_path,
+    col_types = contract_col_types
+  ) %>%
+    clean_names()
+  
+  return(contracts)
+  
+}
+
+
+
 # Generate the matching quarter ("Q3") from a given date ("2018-02-03")
 get_quarter_from_date <- function(date) {
   

@@ -14,7 +14,8 @@ summary_total_vendor_rows <- 200
 
 # "data/source/2022-03-24-contracts.csv"
 # "data/testing/2022-04-13-sample-contracts.csv"
-contracts_data_source <- "data/source/2022-03-24-contracts.csv"
+contracts_data_source <- "data/testing/2022-04-13-sample-contracts.csv"
+download_remotely <- TRUE
 
 # Define column types for each column in the contracts dataset
 # Y/N values are converted to TRUE/FALSE further below
@@ -74,12 +75,21 @@ contract_col_types <- cols(
 )
 
 
-# Import the CSV file
-contracts <- read_csv(
-  contracts_data_source,
-  col_types = contract_col_types
-) %>%
-  clean_names()
+# Download the contracts csv file, list it for today (if not already downloaded) and then parse it:
+if(download_remotely) {
+  print("Downloading remotely (if not already downloaded today)")
+  contracts <- get_contracts_csv_locally_or_from_url(contract_col_types)
+} else {
+  print("Using the local copy stored at:")
+  print(contracts_data_source)
+  # Previous version (for local operations)
+  # Import the CSV file
+  contracts <- read_csv(
+    contracts_data_source,
+    col_types = contract_col_types
+  ) %>%
+    clean_names()
+}
 
 
 # Convert Y/N values to logical TRUE/FALSE values, for specific columns
