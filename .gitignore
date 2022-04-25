@@ -6,5 +6,8 @@
 # Ignore source CSV files since they're too big for GitHub
 data/source/*.csv
 
+# Ignore testing/work-in-progress CSV files
+data/testing/tmp*.csv
+
 # Ignore the tmp/ folder for example PDF exports etc.
 tmp/
