@@ -10,12 +10,13 @@ paste("Start time:", run_start_time)
 # Summary parameters (used below)
 summary_start_fiscal_year_short <- 2017
 summary_end_fiscal_year_short <- 2020
-summary_total_vendor_rows <- 200
+summary_total_vendor_rows <- 400
 
 # "data/source/2022-03-24-contracts.csv"
 # "data/testing/2022-04-13-sample-contracts.csv"
 contracts_data_source <- "data/testing/2022-04-13-sample-contracts.csv"
 download_remotely <- TRUE
+update_summary_csv_files <- TRUE
 
 # Define column types for each column in the contracts dataset
 # Y/N values are converted to TRUE/FALSE further below
@@ -201,6 +202,12 @@ contract_spending_overall <- contracts %>%
   ) %>%
   ungroup()
 
+# Maintain a set of contract vendor names for normalization troubleshooting later
+vendor_names <- contracts %>%
+  select(vendor_name, d_clean_vendor_name, d_normalized_vendor_name, d_vendor_name) %>%
+  distinct() %>%
+  arrange(d_clean_vendor_name)
+
 # TODO: Confirm if this is unhelpful later.
 # Removes the original "contracts" object to save on system memory:
 print("Reminder: removing the 'contracts' data frame to save memory.")
@@ -270,19 +277,26 @@ summary_total_by_vendor_and_fiscal_year <- contract_spending_by_date %>%
   
 
 # Export CSV files of the summary tables
-summary_overall_total_by_vendor %>% 
-  mutate(
-    # For CSV purposes, at the very end, round numbers to two decimal points
-    overall_total = round(overall_total, digits = 2)
-  ) %>%
-  write_csv(str_c("data/out/s01_summary_overall_total_by_vendor_", summary_start_fiscal_year_short, "_to_", summary_end_fiscal_year_short, ".csv"))
-
-summary_total_by_vendor_and_fiscal_year %>% 
-  mutate(
-    # TODO: determine how to make this a reusable function later.
-    total = round(total, digits = 2)
-  ) %>%
-  write_csv("data/out/s02_summary_total_by_vendor_and_fiscal_year.csv")
+if(update_summary_csv_files) {
+  
+  summary_overall_total_by_vendor %>% 
+    mutate(
+      # For CSV purposes, at the very end, round numbers to two decimal points
+      overall_total = round(overall_total, digits = 2)
+    ) %>%
+    write_csv(str_c("data/out/s01_summary_overall_total_by_vendor_", summary_start_fiscal_year_short, "_to_", summary_end_fiscal_year_short, ".csv"))
+  
+  summary_total_by_vendor_and_fiscal_year %>% 
+    mutate(
+      # TODO: determine how to make this a reusable function later.
+      total = round(total, digits = 2)
+    ) %>%
+    write_csv("data/out/s02_summary_total_by_vendor_and_fiscal_year.csv")
+  
+  vendor_names %>%
+    write_csv("data/testing/tmp_vendor_names.csv")
+  
+}
 
 run_end_time <- now()
 paste("Start time was:", run_start_time)
