@@ -3,7 +3,8 @@
 
 source("lib/_libraries.R")
 
-vendor_matching_file <- "../goc-spending-vendors/vendor_data.csv"
+#vendor_matching_file <- "../goc-spending-vendors/vendor_data.csv"
+vendor_matching_file <- "data/vendors/vendor_normalization_data.csv"
 
 
 # Convert to consistent capitalization and spacing
@@ -60,7 +61,8 @@ clean_vendor_names <- function(vendor_name) {
     "SP Z O O",
     "BV",
     "B V",
-    "SAS"
+    "SAS",
+    "S A",
     )
   
   # Include a leading and trailing space for the suffixes below
