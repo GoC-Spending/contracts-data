@@ -62,7 +62,7 @@ clean_vendor_names <- function(vendor_name) {
     "BV",
     "B V",
     "SAS",
-    "S A",
+    "S A"
     )
   
   # Include a leading and trailing space for the suffixes below
