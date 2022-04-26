@@ -4,7 +4,7 @@ source("lib/amendments.R")
 source("lib/vendors.R")
 
 # Set to TRUE to update the vendor normalization table
-option_update_vendor_csv <- FALSE
+option_update_vendor_csv <- TRUE
 
 vendor_names <- read_csv(
   "data/testing/tmp_vendor_names.csv",
@@ -16,23 +16,24 @@ vendor_names <- vendor_names %>%
   arrange(d_clean_vendor_name)
 
 
-# If the contracts data is already loaded, you can search it as follows
+# Search for a specific keyword in the list of all (clean) vendor names.
 # Thanks to
 # https://stackoverflow.com/a/24821141 and
 # https://stackoverflow.com/a/40233929
-contract_spending_overall %>%
-  filter(str_detect(d_vendor_name, "TOROMONT")) %>%
+vendor_names %>%
+  filter(str_detect(d_vendor_name, "DEXTERRA")) %>%
   select(d_vendor_name) %>%
   distinct() %>%
   rename(
     company_name = d_vendor_name
   ) %>%
   mutate(
-    parent_company = "TOROMONT"
+    parent_company = "DEXTERRA"
   ) %>%
   relocate(parent_company, company_name) %>%
+  arrange(company_name) %>%
   write_csv("data/testing/tmp-vendor-exports.csv")
-
+  # Note: to review manually before adding to the vendor matching CSV
 
 # vendor_matching <- vendor_matching %>%
 #   add_row(parent_company = "SIGNATURE SUR LE SAINT LAURENT",
@@ -51,18 +52,19 @@ contract_spending_overall %>%
 #           company_name = "LEONARDO GERMANY FKA SELEX ES GMBH"
 #   )
 
-vendors_to_add <- tribble(
-  ~parent_company, ~company_name,
-  "LEONARDO", "LEONARDO MW",
-  "LEONARDO", "LEONARDO UK",
-  "LEONARDO", "LEONARDO DRS",
-  
-)
+# vendors_to_add <- tribble(
+#   ~parent_company, ~company_name,
+#   "LEONARDO", "LEONARDO MW",
+#   "LEONARDO", "LEONARDO UK",
+#   "LEONARDO", "LEONARDO DRS",
+#   
+# )
 
 
 # Update the vendor matching CSV file
 if(option_update_vendor_csv) {
   vendor_matching %>% 
+    filter(parent_company != company_name) %>%
     distinct() %>% 
     arrange(parent_company) %>%
     write_csv(vendor_matching_file)
