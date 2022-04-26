@@ -14,9 +14,9 @@ summary_total_vendor_rows <- 400
 
 # "data/source/2022-03-24-contracts.csv"
 # "data/testing/2022-04-13-sample-contracts.csv"
-contracts_data_source <- "data/testing/2022-04-13-sample-contracts.csv"
-download_remotely <- TRUE
-update_summary_csv_files <- TRUE
+option_contracts_data_source <- "data/testing/2022-04-13-sample-contracts.csv"
+option_download_remotely <- TRUE
+option_update_summary_csv_files <- TRUE
 
 # Define column types for each column in the contracts dataset
 # Y/N values are converted to TRUE/FALSE further below
@@ -77,16 +77,16 @@ contract_col_types <- cols(
 
 
 # Download the contracts csv file, list it for today (if not already downloaded) and then parse it:
-if(download_remotely) {
+if(option_download_remotely) {
   print("Downloading remotely (if not already downloaded today)")
   contracts <- get_contracts_csv_locally_or_from_url(contract_col_types)
 } else {
   print("Using the local copy stored at:")
-  print(contracts_data_source)
+  print(option_contracts_data_source)
   # Previous version (for local operations)
   # Import the CSV file
   contracts <- read_csv(
-    contracts_data_source,
+    option_contracts_data_source,
     col_types = contract_col_types
   ) %>%
     clean_names()
@@ -277,7 +277,7 @@ summary_total_by_vendor_and_fiscal_year <- contract_spending_by_date %>%
   
 
 # Export CSV files of the summary tables
-if(update_summary_csv_files) {
+if(option_update_summary_csv_files) {
   
   summary_overall_total_by_vendor %>% 
     mutate(
