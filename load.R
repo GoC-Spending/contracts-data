@@ -11,6 +11,7 @@ paste("Start time:", run_start_time)
 summary_start_fiscal_year_short <- 2017
 summary_end_fiscal_year_short <- 2020
 summary_total_vendor_rows <- 400
+summary_per_owner_org_vendor_rows <- 100
 
 # "data/source/2022-03-24-contracts.csv"
 # "data/testing/2022-04-13-sample-contracts.csv"
@@ -297,7 +298,7 @@ get_summary_overall_total_by_vendor_by_owner <- function(owner_org) {
       overall_total = sum(d_daily_contract_value)
     ) %>%
     arrange(desc(overall_total)) %>%
-    slice_head(n = summary_total_vendor_rows)
+    slice_head(n = summary_per_owner_org_vendor_rows)
     
   return(output)
   
