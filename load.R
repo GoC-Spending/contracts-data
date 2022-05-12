@@ -366,6 +366,7 @@ if(option_update_summary_csv_files) {
   
   # Make per-owner org output directories, if needed
   # Note: if these directories already exist, this still works as-is.
+  # https://fs.r-lib.org/reference/create.html
   owner_org_output_paths <- str_c("data/out/", owner_orgs)
   dir_create(owner_org_output_paths)
   
