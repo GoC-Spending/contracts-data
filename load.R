@@ -208,6 +208,13 @@ vendor_names <- contracts %>%
   distinct() %>%
   arrange(d_clean_vendor_name)
 
+# Get a list of all owner organizations (departments/agencies)
+owner_orgs <- contracts %>%
+  select(owner_org) %>%
+  distinct() %>%
+  arrange(owner_org) %>%
+  pull(owner_org)
+
 # TODO: Confirm if this is unhelpful later.
 # Removes the original "contracts" object to save on system memory:
 print("Reminder: removing the 'contracts' data frame to save memory.")
@@ -276,6 +283,70 @@ summary_total_by_vendor_and_fiscal_year <- contract_spending_by_date %>%
   select(d_vendor_name, d_fiscal_year, total)
   
 
+# For each owner org, get a list of the top n companies
+
+# Define a reusable function
+get_summary_overall_total_by_vendor_by_owner <- function(owner_org) {
+  
+  # Thanks to
+  # https://stackoverflow.com/a/46763370/756641
+  output <- contract_spending_by_date %>%
+    filter(owner_org == !!owner_org) %>%
+    group_by(d_vendor_name) %>%
+    summarise(
+      overall_total = sum(d_daily_contract_value)
+    ) %>%
+    arrange(desc(overall_total)) %>%
+    slice_head(n = summary_total_vendor_rows)
+    
+  return(output)
+  
+}
+
+# Reusable function to get a per-fiscal year breakdown
+# TODO: if this was called first, it'd be more efficient since it
+# re-does the summary in the previous function above.
+# In that case, you could do this first, and then sum it all up, 
+# to get the results of the previous function.
+get_summary_total_by_vendor_and_fiscal_year_by_owner <- function(owner_org) {
+  
+  top_n_vendors <- get_summary_overall_total_by_vendor_by_owner(owner_org) %>%
+    pull(d_vendor_name)
+  
+  # Then, for those top n vendors, group by fiscal year
+  output <- contract_spending_by_date %>%
+    filter(owner_org == !!owner_org) %>%
+    filter(d_vendor_name %in% top_n_vendors) %>%
+    group_by(d_vendor_name, d_fiscal_year_short) %>%
+    summarise(
+      total = sum(d_daily_contract_value)
+    ) %>%
+    ungroup() %>%
+    mutate(
+      d_fiscal_year = convert_start_year_to_fiscal_year(d_fiscal_year_short)
+    ) %>%
+    select(d_vendor_name, d_fiscal_year, total)
+  
+  return(output)
+  
+}
+
+vendors_by_owner_org <- tibble(owner_org = owner_orgs)
+
+# vendors_by_owner_org %>%
+#   mutate(vendors = pmap(.l = list(owner_org),
+#                         .f = function()))
+
+# With thanks to
+# https://jennybc.github.io/purrr-tutorial/index.html
+vendors_by_owner_org <- vendors_by_owner_org %>%
+    mutate(
+      summary_overall_total_by_vendor = map(owner_org, get_summary_overall_total_by_vendor_by_owner),
+      summary_total_by_vendor_and_fiscal_year = map(owner_org, get_summary_total_by_vendor_and_fiscal_year_by_owner),
+      )
+
+
+
 # Export CSV files of the summary tables
 if(option_update_summary_csv_files) {
   
@@ -293,6 +364,23 @@ if(option_update_summary_csv_files) {
     ) %>%
     write_csv("data/out/s02_summary_total_by_vendor_and_fiscal_year.csv")
   
+  # Make per-owner org output directories, if needed
+  # Note: if these directories already exist, this still works as-is.
+  owner_org_output_paths <- str_c("data/out/", owner_orgs)
+  dir_create(owner_org_output_paths)
+  
+  # List-based per-owner summaries, from
+  # vendors_by_owner_org
+  summary_overall_total_by_vendor_paths <- str_c("data/out/", vendors_by_owner_org$owner_org, "/", "summary_overall_total_by_vendor", ".csv")
+  pwalk(list(vendors_by_owner_org$summary_overall_total_by_vendor, summary_overall_total_by_vendor_paths), write_csv)
+  
+  # List-based per-owner, by year summaries
+  # also from vendors_by_owner_org
+  summary_total_by_vendor_and_fiscal_year_paths <- str_c("data/out/", vendors_by_owner_org$owner_org, "/", "summary_total_by_vendor_and_fiscal_year", ".csv")
+  pwalk(list(vendors_by_owner_org$summary_total_by_vendor_and_fiscal_year, summary_total_by_vendor_and_fiscal_year_paths), write_csv)
+  
+  # Note: temporary for manual vendor name normalization work.
+  # TODO: remove this later.
   vendor_names %>%
     write_csv("data/testing/tmp_vendor_names.csv")
   
