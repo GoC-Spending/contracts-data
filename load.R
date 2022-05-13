@@ -164,6 +164,19 @@ contracts <- contracts %>%
   ungroup()
 
 
+# Temp: get descriptions and object codes
+# Note: this only includes descriptions with at least 10 entries.
+# (Shortens the total list from 12k to 3k rows.)
+contract_descriptions_object_codes <- contracts %>%
+  select(description_en, economic_object_code) %>%
+  group_by(description_en, economic_object_code) %>%
+  add_count(economic_object_code) %>%
+  distinct() %>%
+  filter(n >= 10) %>%
+  arrange(desc(n))
+  
+
+
 # Add vendor name normalization here, before amendments are found and combined below.
 # For simplicity, the normalized names are stored in d_vendor_name
 contracts <- contracts %>%
@@ -385,6 +398,9 @@ if(option_update_summary_csv_files) {
   # TODO: remove this later.
   vendor_names %>%
     write_csv("data/testing/tmp_vendor_names.csv")
+  
+  contract_descriptions_object_codes %>%
+    write_csv("data/testing/tmp_descriptions_object_codes.csv")
   
 }
 
