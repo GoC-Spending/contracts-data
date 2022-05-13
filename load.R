@@ -232,7 +232,7 @@ owner_orgs <- contracts %>%
 # TODO: Confirm if this is unhelpful later.
 # Removes the original "contracts" object to save on system memory:
 print("Reminder: removing the 'contracts' data frame to save memory.")
-rm(contracts)
+#rm(contracts)
 
 
 # With thanks to
@@ -381,17 +381,17 @@ if(option_update_summary_csv_files) {
   # Make per-owner org output directories, if needed
   # Note: if these directories already exist, this still works as-is.
   # https://fs.r-lib.org/reference/create.html
-  owner_org_output_paths <- str_c("data/out/", owner_orgs)
+  owner_org_output_paths <- str_c("data/out/departments/", owner_orgs)
   dir_create(owner_org_output_paths)
   
   # List-based per-owner summaries, from
   # vendors_by_owner_org
-  summary_overall_total_by_vendor_paths <- str_c("data/out/", vendors_by_owner_org$owner_org, "/", "summary_overall_total_by_vendor", ".csv")
+  summary_overall_total_by_vendor_paths <- str_c("data/out/departments/", vendors_by_owner_org$owner_org, "/", "summary_overall_total_by_vendor", ".csv")
   pwalk(list(vendors_by_owner_org$summary_overall_total_by_vendor, summary_overall_total_by_vendor_paths), write_csv)
   
   # List-based per-owner, by year summaries
   # also from vendors_by_owner_org
-  summary_total_by_vendor_and_fiscal_year_paths <- str_c("data/out/", vendors_by_owner_org$owner_org, "/", "summary_total_by_vendor_and_fiscal_year", ".csv")
+  summary_total_by_vendor_and_fiscal_year_paths <- str_c("data/out/departments/", vendors_by_owner_org$owner_org, "/", "summary_total_by_vendor_and_fiscal_year", ".csv")
   pwalk(list(vendors_by_owner_org$summary_total_by_vendor_and_fiscal_year, summary_total_by_vendor_and_fiscal_year_paths), write_csv)
   
   # Note: temporary for manual vendor name normalization work.
@@ -399,8 +399,19 @@ if(option_update_summary_csv_files) {
   vendor_names %>%
     write_csv("data/testing/tmp_vendor_names.csv")
   
+  # TODO: remove this later.
   contract_descriptions_object_codes %>%
     write_csv("data/testing/tmp_descriptions_object_codes.csv")
+  
+  # TODO: remove this later
+  contracts %>%
+    relocate(
+      d_reference_number,
+      vendor_name,
+      d_clean_vendor_name,
+      d_normalized_vendor_name
+    ) %>%
+    write_csv("data/testing/tmp_contracts_clean_names.csv")
   
 }
 
