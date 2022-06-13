@@ -189,14 +189,30 @@ contracts <- contracts %>%
 # Temp: get descriptions and object codes
 # Note: this only includes descriptions with at least 10 entries.
 # (Shortens the total list from 12k to 3k rows.)
+# For consistency, just the economic object codes are selected and counted at first.
+# Then, the left join and distinct() calls below add in example descriptions for ease of reference, from the chronologically most recent time in the data set that the economic object code is used.
 contract_descriptions_object_codes <- contracts %>%
-  select(d_description_en, d_economic_object_code) %>%
-  group_by(d_description_en, d_economic_object_code) %>%
+  select(d_economic_object_code) %>%
+  group_by(d_economic_object_code) %>%
   add_count(d_economic_object_code, name = "count") %>%
   distinct() %>%
-  filter(n >= 10) %>%
+  #filter(n >= 10) %>%
   arrange(desc(count))
   
+# Use a version of contracts in reverse chronological order
+# to get higher-quality descriptions (more recent seem to be higher-quality)
+# TODO: Confirm if this is a computationally-expensive procedure!
+# Note: only three fields are currently kept; revisit this if this is useful for other operations.
+contracts_reversed <- contracts %>%
+  arrange(desc(d_reporting_period)) %>%
+  select(d_reference_number, d_reporting_period, d_economic_object_code, d_description_en)
+
+# Thanks to
+# https://www.marsja.se/how-to-remove-duplicates-in-r-rows-columns-dplyr/
+contract_descriptions_object_codes <- contract_descriptions_object_codes %>%
+  left_join(contracts_reversed, by = "d_economic_object_code") %>%
+  select(d_economic_object_code, count, d_description_en) %>%
+  distinct(d_economic_object_code, .keep_all = TRUE)
 
 
 # Add vendor name normalization here, before amendments are found and combined below.
