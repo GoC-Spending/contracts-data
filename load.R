@@ -163,17 +163,39 @@ contracts <- contracts %>%
   ) %>%
   ungroup()
 
+# Get slightly cleaner versions of descriptions and object codes
+# 1. Detect any object codes *in* the description text, based on 3- or 4-digit numbers.
+# 2. Add missing object codes.
+# 3. Remove object codes from description text.
+# 3. Clean up description text with str_squish and str_to_sentence.
+contracts <- contracts %>%
+  mutate(
+    d_description_en_economic_object_code = str_extract(description_en, "\\d{3,4}"),
+    d_description_en = str_extract(description_en, "\\D+"),
+  ) %>%
+  mutate(
+    d_economic_object_code = case_when(
+      !is.na(economic_object_code) ~ economic_object_code,
+      !is.na(d_description_en_economic_object_code) ~ d_description_en_economic_object_code,
+      TRUE ~ NA_character_
+    )
+  ) %>%
+  mutate(
+    d_economic_object_code = str_pad(d_economic_object_code, 4, side = "left", pad = "0"),
+    d_description_en = str_to_sentence(str_squish(d_description_en))
+  )
+
 
 # Temp: get descriptions and object codes
 # Note: this only includes descriptions with at least 10 entries.
 # (Shortens the total list from 12k to 3k rows.)
 contract_descriptions_object_codes <- contracts %>%
-  select(description_en, economic_object_code) %>%
-  group_by(description_en, economic_object_code) %>%
-  add_count(economic_object_code) %>%
+  select(d_description_en, d_economic_object_code) %>%
+  group_by(d_description_en, d_economic_object_code) %>%
+  add_count(d_economic_object_code, name = "count") %>%
   distinct() %>%
   filter(n >= 10) %>%
-  arrange(desc(n))
+  arrange(desc(count))
   
 
 
