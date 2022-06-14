@@ -2,6 +2,7 @@
 source("lib/helpers.R")
 source("lib/amendments.R")
 source("lib/vendors.R")
+source("lib/categories.R")
 
 # Start time
 run_start_time <- now()
@@ -170,8 +171,9 @@ contracts <- contracts %>%
 # 3. Clean up description text with str_squish and str_to_sentence.
 contracts <- contracts %>%
   mutate(
-    d_description_en_economic_object_code = str_extract(description_en, "\\d{3,4}"),
-    d_description_en = str_extract(description_en, "\\D+"),
+    d_description_en_economic_object_code = str_extract(description_en, "^\\d{3,4}"),
+    #d_description_en = str_extract(description_en, "\\D+"),
+    d_description_en = description_en,
   ) %>%
   mutate(
     d_economic_object_code = case_when(
@@ -186,9 +188,14 @@ contracts <- contracts %>%
   )
 
 
+# Add in industry categories (where these exist) using the category matching table.
+contracts <- contracts %>%
+  left_join(category_matching, by = "d_economic_object_code")
+
 # Temp: get descriptions and object codes
 # Note: this only includes descriptions with at least 10 entries.
 # (Shortens the total list from 12k to 3k rows.)
+# Note: review if "category" should be included here first.
 # For consistency, just the economic object codes are selected and counted at first.
 # Then, the left join and distinct() calls below add in example descriptions for ease of reference, from the chronologically most recent time in the data set that the economic object code is used.
 contract_descriptions_object_codes <- contracts %>%
@@ -205,13 +212,13 @@ contract_descriptions_object_codes <- contracts %>%
 # Note: only three fields are currently kept; revisit this if this is useful for other operations.
 contracts_reversed <- contracts %>%
   arrange(desc(d_reporting_period)) %>%
-  select(d_reference_number, d_reporting_period, d_economic_object_code, d_description_en)
+  select(d_reference_number, d_reporting_period, d_economic_object_code, d_description_en, category)
 
 # Thanks to
 # https://www.marsja.se/how-to-remove-duplicates-in-r-rows-columns-dplyr/
 contract_descriptions_object_codes <- contract_descriptions_object_codes %>%
   left_join(contracts_reversed, by = "d_economic_object_code") %>%
-  select(d_economic_object_code, count, d_description_en) %>%
+  select(d_economic_object_code, count, d_description_en, category) %>%
   distinct(d_economic_object_code, .keep_all = TRUE)
 
 
