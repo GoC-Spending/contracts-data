@@ -251,7 +251,7 @@ contracts <- find_amendment_groups_v2(contracts)
 # For each amendment group, find the original row's start date, and the last row's end date
 contract_spending_overall <- contracts %>%
   arrange(d_reporting_period, owner_org) %>% # This is done above, but for safety, doing it again here to ensure that the first() and last() calls below work properly.
-  select(d_reference_number, d_vendor_name, d_start_date, d_end_date, contract_value, d_amendment_group_id, owner_org, d_number_of_amendments, d_economic_object_code, d_description_en, comments_en, additional_comments_en) %>%
+  select(d_reference_number, d_vendor_name, d_start_date, d_end_date, contract_value, d_amendment_group_id, owner_org, d_number_of_amendments, d_economic_object_code, d_description_en, category, comments_en, additional_comments_en) %>%
   group_by(d_amendment_group_id) %>%
   mutate(
     d_overall_start_date = first(d_start_date),
