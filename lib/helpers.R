@@ -151,6 +151,20 @@ get_fiscal_year_from_reporting_period <- function(reporting_period) {
 }
 
 
+# Helper function to look up examples by economic object code
+get_examples_by_economic_object_code <- function(requested_economic_object_code) {
+  
+  requested_economic_object_code <- str_pad(requested_economic_object_code, 4, side = "left", pad = "0")
+  
+  output <- contracts %>%
+    filter(d_economic_object_code == !!requested_economic_object_code) %>%
+    select(d_vendor_name, d_description_en, owner_org) %>%
+    slice_sample(n = 10)
+  
+  return(output)
+}
+
+
 # TESTING (2022-04-12)
 
 # get_fiscal_year_from_date("2022-03-31")
