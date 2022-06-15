@@ -316,6 +316,10 @@ contract_spending_by_date <- contract_spending_by_date %>%
     d_fiscal_year_short <= summary_end_fiscal_year_short,
   ) 
   
+
+
+# #########################
+
 # Summary 1: overall total (over all time and all contracts) by vendor
 summary_overall_total_by_vendor <- contract_spending_by_date %>%
   group_by(d_vendor_name) %>%
@@ -330,7 +334,7 @@ summary_overall_total_by_vendor <- contract_spending_by_date %>%
 top_n_vendors <- summary_overall_total_by_vendor %>%
   pull(d_vendor_name)
 
-# Then, for those top n vendors, group by fiscal year
+# Summary 2: Then, for those top n vendors, group by fiscal year
 summary_total_by_vendor_and_fiscal_year <- contract_spending_by_date %>%
   filter(d_vendor_name %in% top_n_vendors) %>%
   group_by(d_vendor_name, d_fiscal_year_short) %>%
@@ -343,6 +347,30 @@ summary_total_by_vendor_and_fiscal_year <- contract_spending_by_date %>%
   ) %>%
   select(d_vendor_name, d_fiscal_year, total)
   
+
+# Summary 3: Get an overall total by category
+summary_overall_total_by_category <- contract_spending_by_date %>%
+  group_by(category) %>%
+  summarise(
+    overall_total = sum(d_daily_contract_value, na.rm = TRUE)
+  ) %>%
+  arrange(desc(overall_total))
+
+
+# Summary 4: Get an overall total by fiscal year and category
+summary_overall_total_by_category_and_fiscal_year <- contract_spending_by_date %>%
+  group_by(category, d_fiscal_year_short) %>%
+  summarise(
+    total = sum(d_daily_contract_value, na.rm = TRUE)
+  ) %>%
+  ungroup() %>%
+  mutate(
+    d_fiscal_year = convert_start_year_to_fiscal_year(d_fiscal_year_short)
+  ) %>%
+  select(category, d_fiscal_year, total)
+
+
+# #########################
 
 # For each owner org, get a list of the top n companies
 
@@ -433,6 +461,7 @@ get_summary_total_by_fiscal_year_by_owner_org <- function(owner_org) {
 
 
 
+# #########################
 
 # Create a list-column and provide calculations for each department
 vendors_by_owner_org <- tibble(owner_org = owner_orgs)
@@ -532,6 +561,20 @@ if(option_update_summary_csv_files) {
       total = round(total, digits = 2)
     ) %>%
     write_csv("data/out/s02_summary_total_by_vendor_and_fiscal_year.csv")
+  
+  summary_overall_total_by_category %>% 
+    mutate(
+      # TODO: determine how to make this a reusable function later.
+      overall_total = round(overall_total, digits = 2)
+    ) %>%
+    write_csv("data/out/s03_summary_overall_total_by_category.csv")
+  
+  summary_overall_total_by_category_and_fiscal_year %>% 
+    mutate(
+      # TODO: determine how to make this a reusable function later.
+      total = round(total, digits = 2)
+    ) %>%
+    write_csv("data/out/s04_summary_overall_total_by_category_and_fiscal_year.csv")
   
   # Make per-owner org output directories, if needed
   # Note: if these directories already exist, this still works as-is.
