@@ -282,8 +282,10 @@ print("Reminder: removing the 'contracts' data frame to save memory.")
 
 # With thanks to
 # https://github.com/lchski/parliamentarians-analysis/blob/master/analysis/members.R#L7-L13
+# Note: if new columns are added to input dataframes, 
+# they must be added to the complete() function call below.
 contract_spending_by_date <- contract_spending_overall %>%
-  select(owner_org, d_vendor_name, d_amendment_group_id, d_overall_start_date, d_overall_end_date, d_daily_contract_value) %>%
+  select(owner_org, d_vendor_name, d_amendment_group_id, category, d_overall_start_date, d_overall_end_date, d_daily_contract_value) %>%
   distinct() %>% # Since the same data is now in each row, don't multiple-count contracts with amendments
   pivot_longer(
     c(d_overall_start_date, d_overall_end_date),
@@ -291,7 +293,7 @@ contract_spending_by_date <- contract_spending_overall %>%
     names_to = NULL
     ) %>%
   group_by(d_amendment_group_id) %>%
-  complete(date = full_seq(date, 1), nesting(owner_org, d_vendor_name, d_daily_contract_value)) %>%
+  complete(date = full_seq(date, 1), nesting(owner_org, d_vendor_name, d_daily_contract_value, category)) %>%
   ungroup()
 
 # Add (short) fiscal year, for grouping calculations
@@ -390,11 +392,8 @@ get_summary_total_by_vendor_and_fiscal_year_by_owner <- function(owner_org) {
   
 }
 
+# Create a list-column and provide calculations for each department
 vendors_by_owner_org <- tibble(owner_org = owner_orgs)
-
-# vendors_by_owner_org %>%
-#   mutate(vendors = pmap(.l = list(owner_org),
-#                         .f = function()))
 
 # With thanks to
 # https://jennybc.github.io/purrr-tutorial/index.html
@@ -403,6 +402,72 @@ vendors_by_owner_org <- vendors_by_owner_org %>%
       summary_overall_total_by_vendor = map(owner_org, get_summary_overall_total_by_vendor_by_owner),
       summary_total_by_vendor_and_fiscal_year = map(owner_org, get_summary_total_by_vendor_and_fiscal_year_by_owner),
       )
+
+
+
+# For each of the top n vendors, get a per-fiscal year breakdown
+get_summary_total_by_fiscal_year_by_vendor <- function(requested_vendor_name) {
+  
+  output <- contract_spending_by_date %>%
+    filter(d_vendor_name == !!requested_vendor_name) %>%
+    group_by(d_fiscal_year_short) %>%
+    summarise(
+      total = sum(d_daily_contract_value)
+    ) %>%
+    ungroup() %>%
+    mutate(
+      d_fiscal_year = convert_start_year_to_fiscal_year(d_fiscal_year_short)
+    ) %>%
+    select(d_fiscal_year, total)
+  
+  return(output)
+}
+
+# For each of the top n vendors, get a per-fiscal year breakdown
+get_summary_total_by_fiscal_year_and_owner_org_by_vendor <- function(requested_vendor_name) {
+  
+  output <- contract_spending_by_date %>%
+    filter(d_vendor_name == !!requested_vendor_name) %>%
+    group_by(owner_org, d_fiscal_year_short) %>%
+    summarise(
+      total = sum(d_daily_contract_value)
+    ) %>%
+    ungroup() %>%
+    mutate(
+      d_fiscal_year = convert_start_year_to_fiscal_year(d_fiscal_year_short)
+    ) %>%
+    select(owner_org, d_fiscal_year, total)
+  
+  return(output)
+}
+
+# For each of the top n vendors, get a per-category breakdown
+get_summary_total_by_category_by_vendor <- function(requested_vendor_name) {
+  
+  output <- contract_spending_by_date %>%
+    filter(d_vendor_name == !!requested_vendor_name) %>%
+    group_by(category) %>%
+    summarise(
+      total = sum(d_daily_contract_value)
+    ) %>%
+    ungroup() %>%
+    select(category, total) %>%
+    mutate(
+      percentage = total / sum(total)
+    )
+  
+  return(output)
+}
+
+# Summary by vendor
+summary_vendors = tibble(vendor = top_n_vendors)
+
+summary_vendors <- summary_vendors %>%
+  mutate(
+    summary_by_fiscal_year = map(vendor, get_summary_total_by_fiscal_year_by_vendor),
+    summary_by_fiscal_year_and_owner_org = map(vendor, get_summary_total_by_fiscal_year_and_owner_org_by_vendor),
+    summary_by_category = map(vendor, get_summary_total_by_category_by_vendor),
+  )
 
 
 
@@ -438,6 +503,37 @@ if(option_update_summary_csv_files) {
   # also from vendors_by_owner_org
   summary_total_by_vendor_and_fiscal_year_paths <- str_c("data/out/departments/", vendors_by_owner_org$owner_org, "/", "summary_total_by_vendor_and_fiscal_year", ".csv")
   pwalk(list(vendors_by_owner_org$summary_total_by_vendor_and_fiscal_year, summary_total_by_vendor_and_fiscal_year_paths), write_csv)
+  
+  
+  # Per-vendor summaries
+  # Make directories if needed
+  vendor_output_paths <- str_c("data/out/vendors/", get_vendor_filename_from_vendor_name(summary_vendors$vendor))
+  dir_create(vendor_output_paths)
+  
+  # Fiscal year summaries
+  pwalk(
+    list(
+      summary_vendors$summary_by_fiscal_year,
+      str_c("data/out/vendors/", get_vendor_filename_from_vendor_name(summary_vendors$vendor), "/", "summary_by_fiscal_year", ".csv")
+      ), 
+    write_csv)
+  
+  # Fiscal year and owner org summaries
+  pwalk(
+    list(
+      summary_vendors$summary_by_fiscal_year_and_owner_org,
+      str_c("data/out/vendors/", get_vendor_filename_from_vendor_name(summary_vendors$vendor), "/", "summary_by_fiscal_year_and_owner_org", ".csv")
+    ), 
+    write_csv)
+  
+  # Category summaries
+  pwalk(
+    list(
+      summary_vendors$summary_by_category,
+      str_c("data/out/vendors/", get_vendor_filename_from_vendor_name(summary_vendors$vendor), "/", "summary_by_category", ".csv")
+    ), 
+    write_csv)
+  
   
   # Note: temporary for manual vendor name normalization work.
   # TODO: remove this later.

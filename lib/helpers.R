@@ -164,6 +164,9 @@ get_examples_by_economic_object_code <- function(requested_economic_object_code)
   return(output)
 }
 
+get_vendor_filename_from_vendor_name <- function(vendor_name) {
+  return(str_to_lower(str_replace_all(vendor_name, " ", "_")))
+}
 
 # TESTING (2022-04-12)
 
