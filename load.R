@@ -392,6 +392,48 @@ get_summary_total_by_vendor_and_fiscal_year_by_owner <- function(owner_org) {
   
 }
 
+# Get a category summary by department or agency
+get_summary_total_by_category_by_owner_org <- function(owner_org) {
+  
+  output <- contract_spending_by_date %>%
+    filter(owner_org == !!owner_org) %>%
+    group_by(category) %>%
+    summarise(
+      total = sum(d_daily_contract_value)
+    ) %>%
+    ungroup() %>%
+    select(category, total) %>%
+    mutate(
+      percentage = total / sum(total)
+    ) %>%
+    arrange(desc(total))
+  
+  return(output)
+  
+}
+
+# Get a fiscal year overall summary by department or agency
+get_summary_total_by_fiscal_year_by_owner_org <- function(owner_org) {
+  
+  output <- contract_spending_by_date %>%
+    filter(owner_org == !!owner_org) %>%
+    group_by(d_fiscal_year_short) %>%
+    summarise(
+      total = sum(d_daily_contract_value)
+    ) %>%
+    ungroup() %>%
+    mutate(
+      d_fiscal_year = convert_start_year_to_fiscal_year(d_fiscal_year_short)
+    ) %>%
+    select(d_fiscal_year, total)
+  
+  return(output)
+  
+}
+
+
+
+
 # Create a list-column and provide calculations for each department
 vendors_by_owner_org <- tibble(owner_org = owner_orgs)
 
@@ -401,6 +443,8 @@ vendors_by_owner_org <- vendors_by_owner_org %>%
     mutate(
       summary_overall_total_by_vendor = map(owner_org, get_summary_overall_total_by_vendor_by_owner),
       summary_total_by_vendor_and_fiscal_year = map(owner_org, get_summary_total_by_vendor_and_fiscal_year_by_owner),
+      summary_total_by_fiscal_year_by_owner_org = map(owner_org, get_summary_total_by_fiscal_year_by_owner_org),
+      summary_total_by_category_by_owner_org = map(owner_org, get_summary_total_by_category_by_owner_org),
       )
 
 
@@ -454,7 +498,8 @@ get_summary_total_by_category_by_vendor <- function(requested_vendor_name) {
     select(category, total) %>%
     mutate(
       percentage = total / sum(total)
-    )
+    ) %>%
+    arrange(desc(total))
   
   return(output)
 }
@@ -503,6 +548,21 @@ if(option_update_summary_csv_files) {
   # also from vendors_by_owner_org
   summary_total_by_vendor_and_fiscal_year_paths <- str_c("data/out/departments/", vendors_by_owner_org$owner_org, "/", "summary_total_by_vendor_and_fiscal_year", ".csv")
   pwalk(list(vendors_by_owner_org$summary_total_by_vendor_and_fiscal_year, summary_total_by_vendor_and_fiscal_year_paths), write_csv)
+  
+  # Per-fiscal year summaries by owner org
+  pwalk(
+    list(
+      vendors_by_owner_org$summary_total_by_fiscal_year_by_owner_org,
+      str_c("data/out/departments/", vendors_by_owner_org$owner_org, "/", "summary_total_by_fiscal_year_by_owner_org", ".csv")
+    ), 
+    write_csv)
+  
+  pwalk(
+    list(
+      vendors_by_owner_org$summary_total_by_category_by_owner_org,
+      str_c("data/out/departments/", vendors_by_owner_org$owner_org, "/", "summary_total_by_category_by_owner_org", ".csv")
+    ), 
+    write_csv)
   
   
   # Per-vendor summaries
