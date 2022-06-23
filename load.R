@@ -727,3 +727,42 @@ paste("End time was:", run_end_time)
 # Testing (2022-04-18)
 
 # contracts %>% select(vendor_name, d_clean_vendor_name, d_normalized_vendor_name, d_vendor_name) %>% View()
+
+
+# Testing (2022-06-23)
+
+# # Review for repeated amendment group IDs / incomplete grouping of related amendments
+# # Note: come back to this and tweak the grouping parameters.
+# contract_spending_overall %>%
+#   select(owner_org, d_vendor_name, d_amendment_group_id, d_overall_contract_value, d_description_en, d_economic_object_code, category, d_overall_start_date, d_overall_end_date, d_daily_contract_value) %>%
+#   distinct() %>%
+#   arrange(desc(d_overall_contract_value)) %>% 
+#   View()
+# 
+# contract_spending_overall %>%
+#   select(owner_org, d_amendment_group_id, d_overall_contract_value, d_vendor_name, d_description_en, d_economic_object_code, category, d_overall_start_date, d_overall_end_date, d_daily_contract_value) %>%
+#   distinct() %>%
+#   arrange(desc(d_overall_contract_value)) %>% 
+#   filter(is.na(d_economic_object_code)) %>% 
+#   #View()
+#   write_csv(str_c("data/testing/", today(), "-contracts-without-economic-object-codes.csv"))
+# 
+# # Temporarily exclude DND
+# contract_spending_overall %>%
+#   select(owner_org, d_amendment_group_id, d_overall_contract_value, d_vendor_name, d_description_en, d_economic_object_code, category, d_overall_start_date, d_overall_end_date, d_daily_contract_value, comments_en, additional_comments_en) %>%
+#   distinct() %>%
+#   arrange(desc(d_overall_contract_value)) %>% 
+#   filter(is.na(d_economic_object_code)) %>% 
+#   filter(owner_org != "dnd-mdn") %>% 
+#   #View()
+#   write_csv(str_c("data/testing/", today(), "-contracts-without-economic-object-codes-exclude-dnd.csv"))
+# 
+# # Filter for just more recent contracts
+# contract_spending_overall %>%
+#   select(owner_org, d_amendment_group_id, d_overall_contract_value, d_vendor_name, d_description_en, d_economic_object_code, category, d_overall_start_date, d_overall_end_date, d_daily_contract_value) %>%
+#   distinct() %>%
+#   arrange(desc(d_overall_contract_value)) %>% 
+#   filter(is.na(d_economic_object_code)) %>% 
+#   filter(d_overall_end_date > "2017-03-31") %>% 
+#   #View()
+#   write_csv(str_c("data/testing/", today(), "-contracts-without-economic-object-codes-recent.csv"))
