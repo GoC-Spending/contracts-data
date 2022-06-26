@@ -733,11 +733,45 @@ paste("End time was:", run_end_time)
 
 # # Review for repeated amendment group IDs / incomplete grouping of related amendments
 # # Note: come back to this and tweak the grouping parameters.
+# # Note: category should be replaced with d_most_recent_category
 # contract_spending_overall %>%
 #   select(owner_org, d_vendor_name, d_amendment_group_id, d_overall_contract_value, d_description_en, d_economic_object_code, category, d_overall_start_date, d_overall_end_date, d_daily_contract_value) %>%
 #   distinct() %>%
-#   arrange(desc(d_overall_contract_value)) %>% 
-#   View()
+#   arrange(desc(d_overall_contract_value)) %>%
+#   slice_head(n = 100) %>%
+#   #View()
+#   write_csv(str_c("data/testing/", today(), "-contracts-spending-overall-largest.csv"))
+# 
+# # Specific large-scale vendors for testing purposes
+# tmp_key_vendors = c(
+#   "BGIS",
+#   "SIGNATURE SUR LE SAINT LAURENT"
+#   )
+# 
+# tmp_key_reference_numbers <- contract_spending_overall %>%
+#   select(owner_org, d_vendor_name, d_amendment_group_id, d_overall_contract_value, d_description_en, d_economic_object_code, category, d_overall_start_date, d_overall_end_date, d_daily_contract_value) %>%
+#   distinct() %>%
+#   filter(d_vendor_name %in% tmp_key_vendors) %>%
+#   arrange(desc(d_overall_contract_value)) %>%
+#   slice_head(n = 30) %>%
+#   pull(d_amendment_group_id)
+# 
+# contracts %>%
+#   filter(d_reference_number %in% tmp_key_reference_numbers) %>%
+#   arrange(contract_date) %>%
+#   select(
+#     d_reference_number,
+#     d_vendor_name,
+#     d_amendment_group_id,
+#     d_number_of_amendments,
+#     procurement_id,
+#     original_value,
+#     starts_with("d_"), everything()
+#     ) %>%
+#   #View()
+#   write_csv(str_c("data/testing/", today(), "-contracts-key-amendment-testing.csv"))
+# 
+
 # 
 # contract_spending_overall %>%
 #   select(owner_org, d_amendment_group_id, d_overall_contract_value, d_vendor_name, d_description_en, d_economic_object_code, category, d_overall_start_date, d_overall_end_date, d_daily_contract_value) %>%
