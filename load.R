@@ -254,6 +254,8 @@ contract_spending_overall <- contracts %>%
   select(d_reference_number, d_vendor_name, d_start_date, d_end_date, contract_value, d_amendment_group_id, owner_org, d_number_of_amendments, d_economic_object_code, d_description_en, category, comments_en, additional_comments_en) %>%
   group_by(d_amendment_group_id) %>%
   mutate(
+    d_most_recent_category = last(category),
+    d_most_recent_description_en = last(d_description_en),
     d_overall_start_date = first(d_start_date),
     d_overall_end_date = last(d_end_date),
     d_overall_contract_value = last(contract_value),
@@ -285,7 +287,7 @@ print("Reminder: removing the 'contracts' data frame to save memory.")
 # Note: if new columns are added to input dataframes, 
 # they must be added to the complete() function call below.
 contract_spending_by_date <- contract_spending_overall %>%
-  select(owner_org, d_vendor_name, d_amendment_group_id, category, d_overall_start_date, d_overall_end_date, d_daily_contract_value) %>%
+  select(owner_org, d_vendor_name, d_amendment_group_id, d_most_recent_category, d_overall_start_date, d_overall_end_date, d_daily_contract_value) %>%
   distinct() %>% # Since the same data is now in each row, don't multiple-count contracts with amendments
   pivot_longer(
     c(d_overall_start_date, d_overall_end_date),
@@ -293,7 +295,7 @@ contract_spending_by_date <- contract_spending_overall %>%
     names_to = NULL
     ) %>%
   group_by(d_amendment_group_id) %>%
-  complete(date = full_seq(date, 1), nesting(owner_org, d_vendor_name, d_daily_contract_value, category)) %>%
+  complete(date = full_seq(date, 1), nesting(owner_org, d_vendor_name, d_daily_contract_value, d_most_recent_category)) %>%
   ungroup()
 
 # Add (short) fiscal year, for grouping calculations
@@ -350,7 +352,7 @@ summary_total_by_vendor_and_fiscal_year <- contract_spending_by_date %>%
 
 # Summary 3: Get an overall total by category
 summary_overall_total_by_category <- contract_spending_by_date %>%
-  group_by(category) %>%
+  group_by(d_most_recent_category) %>%
   summarise(
     overall_total = sum(d_daily_contract_value, na.rm = TRUE)
   ) %>%
@@ -359,7 +361,7 @@ summary_overall_total_by_category <- contract_spending_by_date %>%
 
 # Summary 4: Get an overall total by fiscal year and category
 summary_overall_total_by_category_and_fiscal_year <- contract_spending_by_date %>%
-  group_by(category, d_fiscal_year_short) %>%
+  group_by(d_most_recent_category, d_fiscal_year_short) %>%
   summarise(
     total = sum(d_daily_contract_value, na.rm = TRUE)
   ) %>%
@@ -367,7 +369,7 @@ summary_overall_total_by_category_and_fiscal_year <- contract_spending_by_date %
   mutate(
     d_fiscal_year = convert_start_year_to_fiscal_year(d_fiscal_year_short)
   ) %>%
-  select(category, d_fiscal_year, total)
+  select(d_most_recent_category, d_fiscal_year, total)
 
 
 # #########################
@@ -425,12 +427,12 @@ get_summary_total_by_category_by_owner_org <- function(owner_org) {
   
   output <- contract_spending_by_date %>%
     filter(owner_org == !!owner_org) %>%
-    group_by(category) %>%
+    group_by(d_most_recent_category) %>%
     summarise(
       total = sum(d_daily_contract_value)
     ) %>%
     ungroup() %>%
-    select(category, total) %>%
+    select(d_most_recent_category, total) %>%
     mutate(
       percentage = total / sum(total)
     ) %>%
@@ -519,12 +521,12 @@ get_summary_total_by_category_by_vendor <- function(requested_vendor_name) {
   
   output <- contract_spending_by_date %>%
     filter(d_vendor_name == !!requested_vendor_name) %>%
-    group_by(category) %>%
+    group_by(d_most_recent_category) %>%
     summarise(
       total = sum(d_daily_contract_value)
     ) %>%
     ungroup() %>%
-    select(category, total) %>%
+    select(d_most_recent_category, total) %>%
     mutate(
       percentage = total / sum(total)
     ) %>%
