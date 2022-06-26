@@ -1,0 +1,101 @@
+owner_org,d_vendor_name,d_amendment_group_id,d_overall_contract_value,d_description_en,d_economic_object_code,category,d_overall_start_date,d_overall_end_date,d_daily_contract_value
+pwgsc-tpsgc,BGIS,pwgsc-tpsgc-C-2020-2021-Q2-00339,5723000000,Other professional services not elsewhere specified,0499,2_professional_services,2014-11-07,2028-09-30,1127240.496356116
+pwgsc-tpsgc,BGIS,pwgsc-tpsgc-C-2021-2022-Q2-01845,5723000000,Office buildings,0630,1_facilities_and_construction,2014-11-07,2028-03-31,1169391.0911319985
+pwgsc-tpsgc,BGIS,pwgsc-tpsgc-C-2021-2022-Q2-01845,5723000000,Industrial buildings,1350,1_facilities_and_construction,2014-11-07,2028-03-31,1169391.0911319985
+infc,SIGNATURE SUR LE SAINT LAURENT,infc-C-2018-2019-Q1-00035,5031364910.17,Engineering consultants - construction,0422,1_facilities_and_construction,2015-06-15,2050-03-31,395889.91346053977
+infc,SIGNATURE SUR LE SAINT LAURENT,infc-C-2018-2019-Q4-0010,4809296529.71,Engineering consultants - construction,0422,1_facilities_and_construction,2015-06-15,2050-03-31,378416.5968770163
+dnd-mdn,LOCKHEED MARTIN,dnd-mdn-C-2021-2022-Q4-00379,4808234473.81,Aircraft,0676,5_transportation_and_logistics,2007-12-20,2009-12-18,6586622.566863014
+dnd-mdn,PLENARY PROPERTIES LTAP,dnd-mdn-C-2010-2011-Q4-01781,4160474985,Operation govt owned facility,NA,NA,2011-01-31,2012-12-31,5935057.039942939
+dnd-mdn,IRVING SHIPBUILDING,dnd-mdn-C-2017-2018-Q2-00018,3276494495.17,Engineering consultants-other,0423,1_facilities_and_construction,2015-01-05,2025-12-31,816266.6903761834
+dnd-mdn,SIKORSKY AIRCRAFT,dnd-mdn-C-2004-2005-Q3-00746,3235008851,Helicopters (military) repair and overhaul,NA,NA,2004-11-23,2024-03-31,457633.1660772386
+dnd-mdn,AIRBUS,dnd-mdn-C-2019-2020-Q4-00052,2900107494.23,Other equipment and parts,1249,6_industrial_products_and_services,2016-12-01,2028-11-30,661671.7988204426
+pwgsc-tpsgc,PCL CONSTRUCTORS,pwgsc-tpsgc-C-2021-2022-Q2-01435,2858077450.79,Miscellaneous expenditures not elsewhere classified,3259,NA,2017-05-26,2029-03-31,660369.096762939
+dnd-mdn,IRVING SHIPBUILDING,dnd-mdn-C-2014-2015-Q3-04131,2610430783,Marine architect and engineering services,NA,NA,2014-12-23,2022-01-31,1005171.6530612245
+pwgsc-tpsgc,BGIS,pwgsc-tpsgc-C-2020-2021-Q2-00398,2493783659,Other professional services not elsewhere specified,0499,2_professional_services,2013-08-09,2025-05-30,578201.6366798052
+dnd-mdn,VANCOUVER SHIPYARDS,dnd-mdn-C-2020-2021-Q2-00001,2447262476,Ships and boats parts,1257,5_transportation_and_logistics,2020-06-10,2028-03-30,858387.3995089442
+dnd-mdn,SIKORSKY AIRCRAFT,dnd-mdn-C-2014-2015-Q1-01625,2342493108,Helicopters (military) repair and overhaul,NA,NA,2014-05-14,2026-03-31,539744.9557603686
+dnd-mdn,GENERAL DYNAMICS,dnd-mdn-C-2019-2020-Q2-03449,2038575499.6,"Combat, assault and tactical vehicles, wheeled",1261,5_transportation_and_logistics,2019-09-05,2025-06-30,958878.4099717779
+dnd-mdn,GENERAL DYNAMICS,dnd-mdn-C-2019-2020-Q2-03449,2038575499.6,Road motor vehicles,1261,5_transportation_and_logistics,2019-09-05,2025-06-30,958878.4099717779
+pwgsc-tpsgc,BGIS,pwgsc-tpsgc-C-2020-2021-Q2-00996,1891000000,Other professional services not elsewhere specified,0499,2_professional_services,2015-10-02,2028-09-30,398272.9570345409
+pwgsc-tpsgc,BGIS,pwgsc-tpsgc-C-2021-2022-Q2-01846,1891000000,Architectural services,0421,1_facilities_and_construction,2014-11-07,2028-03-31,386391.4997956682
+dnd-mdn,SIKORSKY AIRCRAFT,dnd-mdn-C-2004-2005-Q3-00779,1817337272,"Aircraft, rotary wing",NA,NA,2004-11-23,2012-11-30,620251.628668942
+dnd-mdn,LOCKHEED MARTIN,dnd-mdn-C-2018-2019-Q2-00004,1808011801,Weapons (including parts),1271,3_information_technology,2008-11-07,2019-03-31,476168.5017118778
+dnd-mdn,KF AEROSPACE,dnd-mdn-C-2005-2006-Q3-00783,1767669554,"Pilot training services, aircraft",NA,NA,2005-10-28,2027-08-27,221679.15149235012
+dnd-mdn,KF AEROSPACE,dnd-mdn-C-2005-2006-Q3-00783,1767669554,Engineering consultants - other,0423,1_facilities_and_construction,2005-10-28,2027-08-27,221679.15149235012
+dnd-mdn,KF AEROSPACE,dnd-mdn-C-2005-2006-Q3-00783,1767669554,Engineering consultants-other,0423,1_facilities_and_construction,2005-10-28,2027-08-27,221679.15149235012
+ssc-spc,MICROSOFT CANADA,ssc-spc-C-2020-2021-Q3-00031,1558242438.34,License/maintenance fees for client software related to distributed computing environment (dce),0582,3_information_technology,2019-03-18,2026-03-31,606084.184496305
+ssc-spc,MICROSOFT CANADA,ssc-spc-C-2020-2021-Q2-00021,1552441924.48,License/maintenance fees for client software related to distributed computing environment (dce),0582,3_information_technology,2019-03-18,2026-03-31,603828.0530844029
+ssc-spc,MICROSOFT CANADA,ssc-spc-C-2020-2021-Q1-00090,1551064465.25,License/maintenance fees for client software related to distributed computing environment (dce),0582,3_information_technology,2019-03-18,2026-03-31,603292.2852003112
+ssc-spc,MICROSOFT CANADA,ssc-spc-C-2019-2020-Q4-01041,1487022175.03,License/maintenance fees for client software related to distributed computing environment (dce),0582,3_information_technology,2019-03-18,2026-03-31,578382.7985336445
+pwgsc-tpsgc,BGIS,pwgsc-tpsgc-C-2020-2021-Q2-01233,1464000000,Other professional services not elsewhere specified,0499,2_professional_services,2014-11-07,2028-09-30,288359.26728382905
+pwgsc-tpsgc,BGIS,pwgsc-tpsgc-C-2021-2022-Q2-01844,1464000000,Office buildings,0630,1_facilities_and_construction,2014-11-07,2028-03-31,299141.8062934205
+dnd-mdn,LOCKHEED MARTIN,dnd-mdn-C-2007-2008-Q3-02044,1440766040,"Aircraft, fixed wing",NA,NA,2007-12-20,2013-12-20,656984.058367533
+dnd-mdn,LOCKHEED MARTIN,dnd-mdn-C-2008-2009-Q3-01351,1405926667,Ship and boat propulsion components,NA,NA,2008-11-07,2019-03-31,370273.0226494601
+pwgsc-tpsgc,BGIS,pwgsc-tpsgc-C-2016-2017-Q4-02351,1394868718,Afd property management,0630,1_facilities_and_construction,2013-08-15,2021-03-31,500670.75305096916
+dnd-mdn,IRVING SHIPBUILDING,dnd-mdn-C-2007-2008-Q4-02816,1284893409,"Vessels, miscellaneous",NA,NA,2008-03-31,2021-12-31,255751.0766321656
+dnd-mdn,IRVING SHIPBUILDING,dnd-mdn-C-2007-2008-Q4-02816,1284893409,Ships and boats,0675,5_transportation_and_logistics,2008-03-31,2021-12-31,255751.0766321656
+dnd-mdn,THE BOEING COMPANY,dnd-mdn-C-2009-2010-Q1-04611,1156286928,Miscellaneous aircraft accessories and components,NA,NA,2009-06-30,2014-06-30,632888.3021346469
+pwgsc-tpsgc,BGIS,pwgsc-tpsgc-C-2020-2021-Q2-01414,1129000000,Other professional services not elsewhere specified,0499,2_professional_services,2014-11-07,2028-09-30,222375.41855426432
+pwgsc-tpsgc,BGIS,pwgsc-tpsgc-C-2021-2022-Q2-01847,1129000000,Office buildings,0630,1_facilities_and_construction,2014-11-07,2028-03-31,230690.64160196157
+pwgsc-tpsgc,BGIS,pwgsc-tpsgc-C-2020-2021-Q2-01106,1117000000,Other professional services not elsewhere specified,0499,2_professional_services,2015-07-22,2022-03-31,456850.71574642125
+pwgsc-tpsgc,BGIS,pwgsc-tpsgc-C-2021-2022-Q2-01848,1117000000,Office buildings,0630,1_facilities_and_construction,2014-11-07,2028-03-31,228238.65958316307
+ssc-spc,MICROSOFT CANADA,ssc-spc-C-2021-2022-Q2-00018,1079396751.45,License/maintenance fees for client software related to distributed computing environment (dce),0582,3_information_technology,2019-03-18,2026-04-29,415152.5967115385
+ssc-spc,MICROSOFT CANADA,ssc-spc-C-2021-2022-Q1-00077,1076318241.74,License/maintenance fees for client software related to distributed computing environment (dce),0582,3_information_technology,2019-03-18,2026-04-01,418475.21062986006
+pwgsc-tpsgc,PCL CONSTRUCTORS,pwgsc-tpsgc-C-2016-2017-Q4-00622,1067314189.93,Construction services,0881,1_facilities_and_construction,2011-07-28,2020-04-01,336585.994932198
+pwgsc-tpsgc,PCL CONSTRUCTORS,pwgsc-tpsgc-C-2016-2017-Q4-00622,1067314189.93,Miscellaneous expenditures not elsewhere classified,3259,NA,2011-07-28,2020-04-01,336585.994932198
+dnd-mdn,GENERAL DYNAMICS,dnd-mdn-C-2011-2012-Q3-01127,1064516500,"Combat, assault and tactical vehicles, wheeled",NA,NA,2011-10-21,2018-10-20,416314.6265154478
+ssc-spc,MICROSOFT CANADA,ssc-spc-C-2020-2021-Q4-00127,1031511074.3599999,License/maintenance fees for client software related to distributed computing environment (dce),0582,3_information_technology,2019-03-18,2026-04-01,401054.0724572317
+dnd-mdn,GENERAL DYNAMICS,dnd-mdn-C-2018-2019-Q2-00003,1027352845,Road motor vehicles,1261,5_transportation_and_logistics,2008-05-22,2022-03-31,202953.94014223627
+dnd-mdn,CALIAN,dnd-mdn-C-2017-2018-Q3-01586,995555367,Hospital services,0450,4_medical,2017-10-02,2022-03-31,606306.5572472594
+dnd-mdn,CASCADE AEROSPACE,dnd-mdn-C-2020-2021-Q2-00002,966163550,Aircraft,0676,5_transportation_and_logistics,2005-10-24,2022-03-31,160946.7849408629
+pwgsc-tpsgc,BGIS,pwgsc-tpsgc-C-2021-2022-Q2-01843,952000000.11,Office buildings,0630,1_facilities_and_construction,2014-11-07,2028-03-31,194523.9068471598
+pwgsc-tpsgc,BGIS,pwgsc-tpsgc-C-2020-2021-Q2-00736,952000000,Other professional services not elsewhere specified,0499,2_professional_services,2014-11-07,2022-09-30,329982.6689774697
+dnd-mdn,THALES,dnd-mdn-C-2017-2018-Q2-00703,920000000,Ships and boats,0675,5_transportation_and_logistics,2017-06-01,2025-09-30,302233.9027595269
+esdc-edsc,D H PARTNERSHIP,esdc-edsc-C-2016-2017-Q4-00239,896967710,Service provider fees related to loan administration,0816,NA,2006-12-21,2019-03-31,200037.40187332738
+ssc-spc,MICROSOFT CANADA,ssc-spc-C-2019-2020-Q1-00083,879114384.2,License/maintenance fees for client software related to distributed computing environment (dce),0582,3_information_technology,2019-03-18,2026-03-31,341934.8052119798
+esdc-edsc,D H PARTNERSHIP,esdc-edsc-C-2017-2018-Q3-00191,860217709.99,Service provider fees related to loan administration,0816,NA,2006-12-12,2019-03-31,191457.313596706
+dnd-mdn,MACK TRUCKS,dnd-mdn-C-2017-2018-Q4-00060,830397135.57,Road motor vehicles parts,1263,5_transportation_and_logistics,2015-06-11,2021-05-21,382319.12319060776
+csa-asc,MACDONALD DETTWILER AND ASSOCIATES,csa-asc-C-2018-2019-Q2-00079,829883896.6,Satellite and spacecraft acquisition and parts,1253,3_information_technology,2013-01-09,2022-02-18,249364.15162259617
+csa-asc,MACDONALD DETTWILER AND ASSOCIATES,csa-asc-C-2021-2022-Q1-00099,829374426.71,Satellite and spacecraft acquisition and parts,1253,3_information_technology,2022-02-18,2022-02-18,829374426.71
+dnd-mdn,MACK TRUCKS,dnd-mdn-C-2015-2016-Q1-02989,787136071,"Trucks and truck tractors, wheeled",NA,NA,2015-06-11,2020-06-10,430835.2879036672
+dfo-mpo,CHANTIER DAVIE CANADA,dfo-mpo-C-2018-2019-Q2-01248,782743750,Ships and boats,1256,5_transportation_and_logistics,2018-08-10,2020-03-31,1304572.9166666667
+dnd-mdn,SEASPAN VICTORIA SHIPYARDS,dnd-mdn-C-2007-2008-Q4-02469,768944394,"Vessels, miscellaneous",NA,NA,2008-03-17,2021-12-31,152628.89916633585
+dnd-mdn,SEASPAN VICTORIA SHIPYARDS,dnd-mdn-C-2007-2008-Q4-02469,768944394,Ships and boats,0675,5_transportation_and_logistics,2008-03-17,2021-12-31,152628.89916633585
+dnd-mdn,SEASPAN VICTORIA SHIPYARDS,dnd-mdn-C-2007-2008-Q4-02469,768944394,"Vessels, miscellaneous",0675,5_transportation_and_logistics,2008-03-17,2021-12-31,152628.89916633585
+dnd-mdn,SNC LAVALIN,dnd-mdn-C-2019-2020-Q2-00002,760838423.1700001,"Technical engineering and maintenance services (tems) (excludes requirements related to armament, r&d and r&o)",0420,1_facilities_and_construction,2011-09-26,2023-09-15,173985.46150697462
+dnd-mdn,SNC LAVALIN,dnd-mdn-C-2019-2020-Q2-00002,760838423.1700001,Engineering services not elsewhere specified,0420,1_facilities_and_construction,2011-09-26,2023-09-15,173985.46150697462
+dnd-mdn,GENERAL DYNAMICS,dnd-mdn-C-2016-2017-Q3-00934,757660469,"Combat, assault and tactical vehicles, wheeled",NA,NA,2016-11-04,2018-10-20,1058185.0125698324
+phac-aspc,SWITCH HEALTH HOLDINGS,phac-aspc-C-2021-2022-Q2-00409,751640265.91,Other health services not elsewhere specified,0451,4_medical,2021-02-20,2022-05-31,1612961.9440128754
+esdc-edsc,D H PARTNERSHIP,esdc-edsc-C-2016-2017-Q3-00026,698925473.3399999,Service provider fees related to loan administration,0816,NA,2006-12-21,2017-03-31,186181.53258923814
+dnd-mdn,CAE,dnd-mdn-C-2008-2009-Q4-02743,696558834.2700001,"Converters, electrical, nonrotating",NA,NA,2009-02-12,2032-12-31,79843.97458390647
+dnd-mdn,CAE,dnd-mdn-C-2008-2009-Q4-02743,696558834.2700001,Weapons (including parts),1271,3_information_technology,2009-02-12,2032-12-31,79843.97458390647
+dnd-mdn,CAE,dnd-mdn-C-2008-2009-Q4-02743,696558834.2700001,Training aids - operation & maintenance,1271,3_information_technology,2009-02-12,2032-12-31,79843.97458390647
+dnd-mdn,SERCO,dnd-mdn-C-2020-2021-Q4-04740,692545384.9399999,Operation and maintenance services of a technical/scientific facility,0859,2_professional_services,2021-10-01,2031-09-30,189634.55228368015
+dnd-mdn,SERCO,dnd-mdn-C-2020-2021-Q4-04740,692545384.9399999,Other business services not elsewhere specified,0859,2_professional_services,2021-10-01,2031-09-30,189634.55228368015
+dnd-mdn,FEDERAL FLEET SERVICES,dnd-mdn-C-2015-2016-Q3-02931,691560000,"Transportation services, not elsewhere specified",0566,5_transportation_and_logistics,2017-11-10,2023-01-29,362642.8945988464
+dnd-mdn,FEDERAL FLEET SERVICES,dnd-mdn-C-2015-2016-Q3-02931,691560000,Rental of ships,0566,5_transportation_and_logistics,2017-11-10,2023-01-29,362642.8945988464
+dnd-mdn,TEXTRON SYSTEMS,dnd-mdn-C-2012-2013-Q1-03111,681780527,"Combat, assault and tactical vehicles, wheeled",NA,NA,2012-06-07,2013-04-01,2280202.431438127
+ssc-spc,IBM CANADA,ssc-spc-C-2021-2022-Q1-00423,659537132.02,"Computer equipment related to production and operations (p&o) environment-all servers, storage, printers etc (includes all related parts and peripherals)",0672,3_information_technology,2021-06-25,2025-06-24,451428.5640109514
+ssc-spc,IBM CANADA,ssc-spc-C-2021-2022-Q1-00423,659537132.02,"License/maintenance fees for operating system and utility software related to servers, storage, peripherals and components",0584,3_information_technology,2021-06-25,2025-06-24,451428.5640109514
+dnd-mdn,VANCOUVER SHIPYARDS,dnd-mdn-C-2015-2016-Q3-03882,652320137.88,"Vessels, miscellaneous",NA,NA,2015-12-17,2024-12-17,198333.8819945272
+dnd-mdn,VANCOUVER SHIPYARDS,dnd-mdn-C-2015-2016-Q3-03882,652320137.88,Ships and boats,1256,5_transportation_and_logistics,2015-12-17,2024-12-17,198333.8819945272
+dnd-mdn,BELL TEXTRON,dnd-mdn-C-2010-2011-Q4-00531,640710000,"Engineering and technical services - aerospace related, military",NA,NA,2011-01-13,2020-03-31,190347.5935828877
+esdc-edsc,D H PARTNERSHIP,esdc-edsc-C-2016-2017-Q1-00038,635755473.3399999,Service provider fees related to loan administration,0816,NA,2006-12-21,2017-03-31,169354.14846563662
+dfo-mpo,VANCOUVER SHIPYARDS,dfo-mpo-C-2017-2018-Q2-01356,632513305.61,Architectural services,0421,1_facilities_and_construction,2015-06-18,2018-03-31,621329.376827112
+dfo-mpo,VANCOUVER SHIPYARDS,dfo-mpo-C-2019-2020-Q2-01412,632513305.61,Architectural services,0421,1_facilities_and_construction,2015-06-18,2018-03-31,621329.376827112
+ssc-spc,BELL CANADA,ssc-spc-C-2017-2018-Q4-00205,624032834.22,Voice communications services,0230,2_professional_services,2017-06-26,2023-09-30,272741.6233479021
+dnd-mdn,BAE SYSTEMS,dnd-mdn-C-2008-2009-Q4-02438,607719238,"Guns, over 30 mm up to 75 mm",NA,NA,2009-02-09,2016-12-31,210794.04717308359
+pwgsc-tpsgc,PCL CONSTRUCTORS,pwgsc-tpsgc-C-2017-2018-Q1-01663,598077450.8,Construction services,0881,1_facilities_and_construction,2017-04-17,2029-03-31,136953.84721776962
+dnd-mdn,"NASITTUQ",dnd-mdn-C-2021-2022-Q4-03468,591565976.07,Other equipment,0665,6_industrial_products_and_services,2022-04-01,2029-03-31,231351.57452874465
+dnd-mdn,IRVING SHIPBUILDING,dnd-mdn-C-2019-2020-Q2-02006,575000000,"Vessels, miscellaneous - repair",0675,5_transportation_and_logistics,2019-07-11,2024-07-10,314723.59058565955
+dnd-mdn,CHANTIER DAVIE CANADA,dnd-mdn-C-2019-2020-Q2-02108,574875000,"Vessels, miscellaneous - repair",0675,5_transportation_and_logistics,2019-07-15,2024-07-14,314655.1724137931
+dnd-mdn,IMP GROUP,dnd-mdn-C-2005-2006-Q1-01601,566375000,"Aircraft, fixed wing - repair and overhaul (military)",NA,NA,2005-06-30,2015-03-31,159004.77259966312
+vac-acc,WCG INTERNATIONAL CONSULTANTS,vac-acc-C-2021-2022-Q1-00071,560283401.55,Other health services not specified elsewhere,0451,4_medical,2021-07-01,2026-12-31,278747.96097014926
+dnd-mdn,SEASPAN VICTORIA SHIPYARDS,dnd-mdn-C-2019-2020-Q2-02107,560000000,"Vessels, miscellaneous - repair",0675,5_transportation_and_logistics,2019-07-15,2024-07-14,306513.40996168583
+esdc-edsc,D H PARTNERSHIP,esdc-edsc-C-2014-2015-Q4-00076,549498313.65,Service provider fees related to loan administration,0816,NA,2016-12-12,2016-12-12,549498313.65
+dfo-mpo,"NAVTECH",dfo-mpo-C-2019-2020-Q1-01582,541405777.5,Repair of ships and boats,0675,5_transportation_and_logistics,2019-04-02,2020-03-31,1483303.5
+dnd-mdn,LOCKHEED MARTIN,dnd-mdn-C-2018-2019-Q1-00002,538859053.62,Engineering services not elsewhere specified,0420,1_facilities_and_construction,2008-11-07,2021-11-06,113491.79730834035
+dnd-mdn,BABCOCK INTERNATIONAL GROUP,dnd-mdn-C-2013-2014-Q1-03649,531000000,Submarines,NA,NA,2013-06-27,2018-06-30,290163.9344262295
+dnd-mdn,WEIR CANADA,dnd-mdn-C-2017-2018-Q4-00004,530460000,Engineering services not elsewhere specified,0420,1_facilities_and_construction,2009-10-01,2022-03-31,116201.53340635268
+pwgsc-tpsgc,COMPUTERSHARE INVESTOR SERVICES,pwgsc-tpsgc-C-2019-2020-Q2-01283,522764203.18,Office buildings,0630,1_facilities_and_construction,2012-12-01,2037-12-23,57107.734671182
+dnd-mdn,L3 COMMUNICATIONS,dnd-mdn-C-2018-2019-Q3-00006,515800000,Aircraft,0676,5_transportation_and_logistics,2013-07-12,2028-03-31,95927.0968941789
