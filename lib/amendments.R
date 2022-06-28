@@ -161,11 +161,19 @@ find_amendment_groups_v2 <- function(contracts) {
       )
     )
   
+  # Note: Need to be careful here not to accidentally interfere with
+  # contracts that were previously grouped in the first case.
   contracts <- contracts %>%
     group_by(owner_org, d_vendor_name, d_original_original_value, d_start_date) %>%
     mutate(
-      d_amendment_group_id = first(d_reference_number),
-      d_number_of_amendments = n() - 1,
+      d_amendment_group_id = case_when(
+        is.na(d_amendment_via) ~ first(d_reference_number),
+        TRUE ~ d_amendment_group_id,
+      ),
+      d_number_of_amendments = case_when(
+        is.na(d_amendment_via) ~ n() - 1,
+        TRUE ~ d_number_of_amendments,
+      ),
       d_amendment_via = case_when(
         is.na(d_amendment_via) & d_number_of_amendments >= 1 ~ "original_value", # for original value + start date
         TRUE ~ d_amendment_via,
