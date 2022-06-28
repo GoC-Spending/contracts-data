@@ -743,7 +743,7 @@ paste("End time was:", run_end_time)
 #   slice_head(n = 100) %>%
 #   #View()
 #   write_csv(str_c("data/testing/", today(), "-contracts-spending-overall-largest.csv"))
-# 
+# # 
 # # Specific large-scale vendors for testing purposes
 # tmp_key_vendors = c(
 #   "BGIS",
@@ -759,7 +759,7 @@ paste("End time was:", run_end_time)
 #   pull(d_amendment_group_id)
 # 
 # contracts %>%
-#   filter(d_reference_number %in% tmp_key_reference_numbers) %>%
+#   filter(d_amendment_group_id %in% tmp_key_reference_numbers) %>%
 #   arrange(contract_date) %>%
 #   select(
 #     d_reference_number,
