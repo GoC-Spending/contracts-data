@@ -16,9 +16,11 @@ summary_per_owner_org_vendor_rows <- 100
 
 # "data/source/2022-03-24-contracts.csv"
 # "data/testing/2022-04-13-sample-contracts.csv"
+# "data/testing/2022-06-28-contracts-key-amendment-testing.csv"
 option_contracts_data_source <- "data/testing/2022-04-13-sample-contracts.csv"
 option_download_remotely <- TRUE
 option_update_summary_csv_files <- TRUE
+option_remove_derived_columns <- TRUE
 
 # Define column types for each column in the contracts dataset
 # Y/N values are converted to TRUE/FALSE further below
@@ -92,6 +94,16 @@ if(option_download_remotely) {
     col_types = contract_col_types
   ) %>%
     clean_names()
+  
+  if(option_remove_derived_columns) {
+    # If you're loading previously exported contracts testing data
+    # remove the derived columns and the (joined) category column.
+    # This avoids column name overlap conflicts later.
+    # Note: This only applies to locally-loaded files (since the source data CSV from open.canada.ca doesn't include the derived columns.)
+    contracts <- contracts %>%
+      select(!starts_with("d_")) %>%
+      select(! category)
+  }
 }
 
 
@@ -741,8 +753,8 @@ paste("End time was:", run_end_time)
 #   distinct() %>%
 #   arrange(desc(d_overall_contract_value)) %>%
 #   slice_head(n = 100) %>%
-#   #View()
-#   write_csv(str_c("data/testing/", today(), "-contracts-spending-overall-largest.csv"))
+#   View()
+#   #write_csv(str_c("data/testing/", today(), "-contracts-spending-overall-largest.csv"))
 # # 
 # # Specific large-scale vendors for testing purposes
 # tmp_key_vendors = c(
