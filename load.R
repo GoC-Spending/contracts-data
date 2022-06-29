@@ -270,6 +270,12 @@ contract_spending_overall <- contracts %>%
     d_most_recent_description_en = last(d_description_en),
     d_overall_start_date = first(d_start_date),
     d_overall_end_date = last(d_end_date),
+    # In some amendment cases, later amendment entries mean that the last(d_end_date) is earlier in time than the first(d_start_date).
+    # To handle those cases, we'll set the d_overall_start_date to be the same as the d_overall_end_date - before doing the d_daily_contract_value calculation below.
+    d_overall_start_date = case_when(
+      d_overall_start_date > d_overall_end_date ~ d_overall_end_date,
+      TRUE ~ d_overall_start_date,
+    ),
     d_overall_contract_value = last(contract_value),
     d_daily_contract_value = d_overall_contract_value / as.integer(d_overall_end_date - d_overall_start_date + 1) # The +1 is added so it's inclusive of the start and end dates themselves.
   ) %>%
