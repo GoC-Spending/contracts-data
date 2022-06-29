@@ -747,9 +747,8 @@ paste("End time was:", run_end_time)
 
 # # Review for repeated amendment group IDs / incomplete grouping of related amendments
 # # Note: come back to this and tweak the grouping parameters.
-# # Note: category should be replaced with d_most_recent_category
 # contract_spending_overall %>%
-#   select(owner_org, d_vendor_name, d_amendment_group_id, d_overall_contract_value, d_description_en, d_economic_object_code, category, d_overall_start_date, d_overall_end_date, d_daily_contract_value) %>%
+#   select(owner_org, d_vendor_name, d_amendment_group_id, d_overall_contract_value, d_description_en, d_economic_object_code, d_most_recent_category, d_overall_start_date, d_overall_end_date, d_daily_contract_value) %>%
 #   distinct() %>%
 #   arrange(desc(d_overall_contract_value)) %>%
 #   slice_head(n = 100) %>%
