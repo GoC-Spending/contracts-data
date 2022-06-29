@@ -1,8 +1,8 @@
 d_most_recent_category,total,percentage
-3_information_technology,3393615246.619872,0.9979327858345282
-1_facilities_and_construction,2961061.224489796,8.707351488136132e-4
-NA,2449068.213645457,7.201775356167127e-4
-2_professional_services,1075639.5762847087,3.163045663425813e-4
-5_transportation_and_logistics,367699.7253235429,1.0812646236434587e-4
-6_industrial_products_and_services,137424.94999999998,4.0411435366241515e-5
-9_human_capital,38968.05,1.1459016968341396e-5
+3_information_technology,Inf,NA
+1_facilities_and_construction,2961061.224489796,0
+NA,2449068.213645457,0
+2_professional_services,1075639.5762847087,0
+5_transportation_and_logistics,367699.7253235429,0
+6_industrial_products_and_services,137424.94999999998,0
+9_human_capital,38968.05,0
