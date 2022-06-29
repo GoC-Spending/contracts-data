@@ -102,7 +102,7 @@ if(option_download_remotely) {
     # Note: This only applies to locally-loaded files (since the source data CSV from open.canada.ca doesn't include the derived columns.)
     contracts <- contracts %>%
       select(!starts_with("d_")) %>%
-      select(! category)
+      select(!starts_with("category"))
   }
 }
 
@@ -203,6 +203,25 @@ contracts <- contracts %>%
 # Add in industry categories (where these exist) using the category matching table.
 contracts <- contracts %>%
   left_join(category_matching, by = "d_economic_object_code")
+
+
+# Note: to add here, additional category matching based on contract descriptions, typical company activities based on other contract entries, etc.
+
+# Add in industry categories (where these exist) using the description matching table.
+contracts <- contracts %>%
+  left_join(description_matching, by = "d_description_en")
+
+# Use the category derived from economic object code, if it exists
+# Otherwise use the category derived from the description field.
+contracts <- contracts %>%
+  mutate(
+    category = NA_character_,
+    category = case_when(
+      !is.na(category_by_economic_object_code) ~ category_by_economic_object_code,
+      !is.na(category_by_description) ~ category_by_description,
+      TRUE ~ NA_character_
+    )
+  )
 
 # Temp: get descriptions and object codes
 # Note: this only includes descriptions with at least 10 entries.
@@ -843,4 +862,22 @@ paste("End time was:", run_end_time)
 #   distinct() %>%
 #   arrange(category) %>%
 #   #View()
-#   write_csv(str_c("data/testing/", today(), "-description-category-matching.csv"))
+#   write_csv(str_c("data/testing/tmp-", today(), "-description-category-matching.csv"))
+
+# contract_spending_overall %>%
+#   filter(
+#     d_overall_start_date >= ymd(str_c(summary_start_fiscal_year_short,"04","01")),
+#     d_overall_start_date <= ymd(str_c(summary_end_fiscal_year_short,"03","31")),
+#   )  %>%
+#   select(category, d_description_en) %>%
+#   distinct() %>%
+#   arrange(category) %>%
+#   filter(!is.na(category)) %>%
+#   #View()
+#   bind_rows(description_matching) %>%
+#   arrange(category) %>%
+#   distinct() %>%
+#   #View()
+#   # Note: overwrites the existing description matching file (!)
+#   write_csv(description_matching_file)
+
