@@ -831,3 +831,16 @@ paste("End time was:", run_end_time)
 #   distinct() %>%
 #   #View()
 #   write_csv(str_c("data/testing/", today(), "-contracts-without-economic-object-codes-recent-abridged.csv"))
+
+# Testing (2022-06-29)
+
+# contract_spending_overall %>%
+#   filter(
+#     d_overall_start_date >= ymd(str_c(summary_start_fiscal_year_short,"04","01")),
+#     d_overall_start_date <= ymd(str_c(summary_end_fiscal_year_short,"03","31")),
+#   )  %>%
+#   select(d_description_en, category) %>%
+#   distinct() %>%
+#   arrange(category) %>%
+#   #View()
+#   write_csv(str_c("data/testing/", today(), "-description-category-matching.csv"))
