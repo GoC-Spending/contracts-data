@@ -923,3 +923,20 @@ paste("End time was:", run_end_time)
 # contract_spending_overall %>%
 #   write_csv(str_c("data/testing/tmp-", today(), "-contract-spending-overall.csv"))
 
+# Testing (2022-07-05)
+
+# vendor_name_to_look_up <- "AMAZON"
+# 
+# contracts %>%
+#   filter(str_detect(d_vendor_name, vendor_name_to_look_up)) %>%
+#   select(d_vendor_name, d_description_en, owner_org, contract_value) %>%
+#   arrange(d_vendor_name) %>%
+#   View()
+# 
+# contracts %>%
+#   filter(str_detect(d_vendor_name, vendor_name_to_look_up)) %>%
+#   select(d_vendor_name) %>%
+#   arrange(d_vendor_name) %>%
+#   View()
+# 
+# # See vendor-normalization.R for more

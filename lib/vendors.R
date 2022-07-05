@@ -92,14 +92,16 @@ vendor_matching <- read_csv(
 
 # Re-clean vendor normalization CSV file
 
-regenerate_vendor_normalization_csv <- function() {
+regenerate_vendor_normalization_csv <- function(reload_csv_first = TRUE) {
   
-  vendor_matching <- read_csv(
-    vendor_matching_file,
-  ) %>%
-    clean_names()
+  if(reload_csv_first) {
+    vendor_matching <- read_csv(
+      vendor_matching_file,
+    ) %>%
+      clean_names()
+  }
   
-  vendor_matching_v1 <- vendor_matching %>%
+  vendor_matching <- vendor_matching %>%
     mutate(
       parent_company = clean_vendor_names(parent_company),
       company_name = clean_vendor_names(company_name),

@@ -15,20 +15,21 @@ vendor_names <- vendor_names %>%
   distinct() %>%
   arrange(d_clean_vendor_name)
 
+vendor_name_to_look_up <- "AMAZON"
 
 # Search for a specific keyword in the list of all (clean) vendor names.
 # Thanks to
 # https://stackoverflow.com/a/24821141 and
 # https://stackoverflow.com/a/40233929
 vendor_names %>%
-  filter(str_detect(d_vendor_name, "DEXTERRA")) %>%
+  filter(str_detect(d_vendor_name, vendor_name_to_look_up)) %>%
   select(d_vendor_name) %>%
   distinct() %>%
   rename(
     company_name = d_vendor_name
   ) %>%
   mutate(
-    parent_company = "DEXTERRA"
+    parent_company = clean_vendor_names(vendor_name_to_look_up)
   ) %>%
   relocate(parent_company, company_name) %>%
   arrange(company_name) %>%
@@ -61,12 +62,38 @@ vendor_names %>%
 # )
 
 
-# Update the vendor matching CSV file
-if(option_update_vendor_csv) {
-  vendor_matching %>% 
-    filter(parent_company != company_name) %>%
-    distinct() %>% 
-    arrange(parent_company) %>%
-    write_csv(vendor_matching_file)
-}
+# # Update the vendor matching CSV file
+# if(option_update_vendor_csv) {
+#   vendor_matching %>% 
+#     filter(parent_company != company_name) %>%
+#     distinct() %>% 
+#     arrange(parent_company, company_name) %>%
+#     write_csv(vendor_matching_file)
+# }
 
+
+
+# Similar to the above, but using contracts data loaded in the environment:
+contracts %>%
+  filter(str_detect(d_vendor_name, vendor_name_to_look_up)) %>%
+  select(d_vendor_name) %>%
+  distinct() %>%
+  rename(
+    company_name = d_vendor_name
+  ) %>%
+  mutate(
+    parent_company = clean_vendor_names(vendor_name_to_look_up)
+  ) %>%
+  relocate(parent_company, company_name) %>%
+  arrange(company_name) %>%
+  write_csv("data/testing/tmp-vendor-exports.csv")
+
+# Once reviewed, load this back into the vendor normalization table
+new_vendor_matching_rows <- read_csv("data/testing/tmp-vendor-exports.csv")
+
+vendor_matching <- vendor_matching %>%
+  bind_rows(new_vendor_matching_rows)
+
+if(option_update_vendor_csv) {
+  regenerate_vendor_normalization_csv(FALSE)
+}
