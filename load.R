@@ -881,3 +881,45 @@ paste("End time was:", run_end_time)
 #   # Note: overwrites the existing description matching file (!)
 #   write_csv(description_matching_file)
 
+# Testing (2022-06-30)
+
+# contract_spending_overall %>% 
+#   filter(is.na(category)) %>% 
+#   arrange(desc(contract_value)) %>% 
+#   View()
+# 
+# 
+# contract_spending_overall %>% 
+#   filter(is.na(category)) %>% 
+#   filter(
+#     d_overall_end_date >= ymd(str_c(summary_start_fiscal_year_short,"04","01")),
+#     d_overall_start_date <= ymd(str_c(summary_end_fiscal_year_short,"03","31"))
+#   ) %>%
+#   arrange(desc(d_overall_contract_value)) %>% 
+#   select(d_vendor_name, d_overall_contract_value, d_most_recent_description_en, d_amendment_group_id, d_overall_start_date, d_overall_end_date) %>%
+#   distinct() %>%
+#   #View()
+#   write_csv(str_c("data/testing/tmp-", today(), "-description-category-matching.csv"))
+# 
+# contracts %>% 
+#   filter(is.na(category)) %>% 
+#   arrange(desc(contract_value)) %>% 
+#   View()
+
+
+# Testing (2022-07-04)
+
+# contracts %>%
+#   filter(d_economic_object_code == "3252") %>%
+#   arrange(desc(contract_value)) %>%
+#   select(owner_org, d_vendor_name, contract_value, d_description_en, comments_en, additional_comments_en, d_start_date, d_end_date, d_amendment_group_id, d_economic_object_code, starts_with("category")) %>%
+#   View()
+# 
+# Export of the current state for reviewing without parsing runs:
+# 
+# contracts %>%
+#   write_csv(str_c("data/testing/tmp-", today(), "-contracts.csv"))
+# 
+# contract_spending_overall %>%
+#   write_csv(str_c("data/testing/tmp-", today(), "-contract-spending-overall.csv"))
+
