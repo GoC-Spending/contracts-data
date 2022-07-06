@@ -964,3 +964,19 @@ paste("End time was:", run_end_time)
 #   select(owner_org, d_vendor_name, procurement_id, reference_number, contract_value, d_description_en, comments_en, additional_comments_en, d_start_date, d_end_date, d_amendment_group_id, original_value, d_economic_object_code) %>%
 #   bind_rows(example_contracts_appendages) %>%
 #   write_csv(str_c("data/testing/", today(), "-sample-contracts-procurement-id-suffixes.csv"))
+
+# # Load these back in for testing
+# example_contracts <- read_csv("data/testing/2022-07-05-sample-contracts-procurement-id-mixup.csv")
+# 
+# example_contracts %>%
+#   mutate(
+#     d_procurement_id = case_when(
+#       str_detect(procurement_id, "\\d{4}-\\d{4}-Q\\d-") ~ reference_number,
+#       TRUE ~ procurement_id
+#     ),
+#     d_reference_number = case_when(
+#       str_detect(procurement_id, "\\d{4}-\\d{4}-Q\\d-") ~ procurement_id,
+#       TRUE ~ reference_number
+#     )
+#   ) %>%
+#   View()
