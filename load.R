@@ -118,6 +118,18 @@ contracts <- contracts %>%
     )
   )
 
+# Correct any accidentally-switched reference numbers and procurement IDs
+contracts <- contracts %>%
+  mutate(
+    d_procurement_id = case_when(
+      str_detect(procurement_id, "\\d{4}-\\d{4}-Q\\d-") ~ reference_number,
+      TRUE ~ procurement_id
+    ),
+    d_reference_number = case_when(
+      str_detect(procurement_id, "\\d{4}-\\d{4}-Q\\d-") ~ procurement_id,
+      TRUE ~ reference_number
+    )
+  )
 
 # Use the reporting period if it exists, otherwise get it from the reference number
 # Store it in d_reporting_period (derived reporting period)
@@ -125,7 +137,7 @@ contracts <- contracts %>%
   mutate(
     d_reporting_period = case_when(
       is_valid_reporting_period(reporting_period) ~ reporting_period,
-      !is.na(get_reporting_period_from_reference_number(reference_number)) ~ get_reporting_period_from_reference_number(reference_number),
+      !is.na(get_reporting_period_from_reference_number(d_reference_number)) ~ get_reporting_period_from_reference_number(d_reference_number),
       TRUE ~ get_reporting_period_from_date(contract_date)
     )
   )
@@ -150,7 +162,7 @@ contracts <- contracts %>%
 # contracts %>% get_dupes(d_reference_number)
 contracts <- contracts %>%
   mutate(
-    d_reference_number = str_c(owner_org, "-", reference_number)
+    d_reference_number = str_c(owner_org, "-", d_reference_number)
   )
  
 
