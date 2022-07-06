@@ -11,6 +11,9 @@ paste("Start time:", run_start_time)
 # Summary parameters (used below)
 summary_start_fiscal_year_short <- 2017
 summary_end_fiscal_year_short <- 2020
+summary_vendor_annual_total_threshold <- 1000000
+
+# Note: to be deprecated
 summary_total_vendor_rows <- 400
 summary_per_owner_org_vendor_rows <- 100
 
@@ -384,15 +387,26 @@ contract_spending_by_date <- contract_spending_by_date %>%
 
 
 # #########################
+# Summaries
+# #########################
+
+# Helper variables
+# e.g. 4 (years inclusive from the start to end of the coverage range)
+summary_total_years <- summary_end_fiscal_year_short - summary_start_fiscal_year_short + 1L
+# e.g. "2017_to_2020"
+summary_overall_years_file_suffix <- str_c(summary_start_fiscal_year_short, "_to_", summary_end_fiscal_year_short)
 
 # Summary 1: overall total (over all time and all contracts) by vendor
+# Note: this includes all vendors with an average annual total of at least the summary_vendor_annual_total_threshold over the summary coverage range (start to end years).
 summary_overall_total_by_vendor <- contract_spending_by_date %>%
   group_by(d_vendor_name) %>%
   summarise(
     overall_total = sum(d_daily_contract_value)
   ) %>%
   arrange(desc(overall_total)) %>%
-  slice_head(n = summary_total_vendor_rows)
+  filter(
+    overall_total >= summary_vendor_annual_total_threshold * summary_total_years
+  )
 
 # Breakdown by fiscal year (for selected fiscal years)
 # First, pull out the top n vendors
@@ -444,14 +458,15 @@ get_summary_overall_total_by_vendor_by_owner <- function(owner_org) {
   
   # Thanks to
   # https://stackoverflow.com/a/46763370/756641
+  # Note: this uses the same overall top_n_vendors calculated previously (based on average annual spending above the summary threshold amount).
   output <- contract_spending_by_date %>%
     filter(owner_org == !!owner_org) %>%
+    filter(d_vendor_name %in% top_n_vendors) %>%
     group_by(d_vendor_name) %>%
     summarise(
       overall_total = sum(d_daily_contract_value)
     ) %>%
-    arrange(desc(overall_total)) %>%
-    slice_head(n = summary_per_owner_org_vendor_rows)
+    arrange(desc(overall_total))
     
   return(output)
   
@@ -618,7 +633,7 @@ if(option_update_summary_csv_files) {
       # For CSV purposes, at the very end, round numbers to two decimal points
       overall_total = round(overall_total, digits = 2)
     ) %>%
-    write_csv(str_c("data/out/s01_summary_overall_total_by_vendor_", summary_start_fiscal_year_short, "_to_", summary_end_fiscal_year_short, ".csv"))
+    write_csv(str_c("data/out/s01_summary_overall_total_by_vendor_", summary_overall_years_file_suffix, ".csv"))
   
   summary_total_by_vendor_and_fiscal_year %>% 
     mutate(
@@ -632,14 +647,14 @@ if(option_update_summary_csv_files) {
       # TODO: determine how to make this a reusable function later.
       overall_total = round(overall_total, digits = 2)
     ) %>%
-    write_csv("data/out/s03_summary_overall_total_by_category.csv")
+    write_csv(str_c("data/out/s03_summary_overall_total_by_category_", summary_overall_years_file_suffix, ".csv"))
   
   summary_overall_total_by_category_and_fiscal_year %>% 
     mutate(
       # TODO: determine how to make this a reusable function later.
       total = round(total, digits = 2)
     ) %>%
-    write_csv("data/out/s04_summary_overall_total_by_category_and_fiscal_year.csv")
+    write_csv("data/out/s04_summary_total_by_category_and_fiscal_year.csv")
   
   # Make per-owner org output directories, if needed
   # Note: if these directories already exist, this still works as-is.
@@ -649,7 +664,7 @@ if(option_update_summary_csv_files) {
   
   # List-based per-owner summaries, from
   # vendors_by_owner_org
-  summary_overall_total_by_vendor_paths <- str_c("data/out/departments/", vendors_by_owner_org$owner_org, "/", "summary_overall_total_by_vendor", ".csv")
+  summary_overall_total_by_vendor_paths <- str_c("data/out/departments/", vendors_by_owner_org$owner_org, "/", "summary_overall_total_by_vendor_", summary_overall_years_file_suffix, ".csv")
   pwalk(list(vendors_by_owner_org$summary_overall_total_by_vendor, summary_overall_total_by_vendor_paths), write_csv)
   
   # List-based per-owner, by year summaries
@@ -668,7 +683,7 @@ if(option_update_summary_csv_files) {
   pwalk(
     list(
       vendors_by_owner_org$summary_total_by_category_by_owner_org,
-      str_c("data/out/departments/", vendors_by_owner_org$owner_org, "/", "summary_total_by_category_by_owner_org", ".csv")
+      str_c("data/out/departments/", vendors_by_owner_org$owner_org, "/", "summary_total_by_category_by_owner_org_", summary_overall_years_file_suffix, ".csv")
     ), 
     write_csv)
   
@@ -698,7 +713,7 @@ if(option_update_summary_csv_files) {
   pwalk(
     list(
       summary_vendors$summary_by_category,
-      str_c("data/out/vendors/", get_vendor_filename_from_vendor_name(summary_vendors$vendor), "/", "summary_by_category", ".csv")
+      str_c("data/out/vendors/", get_vendor_filename_from_vendor_name(summary_vendors$vendor), "/", "summary_by_category_", summary_overall_years_file_suffix, ".csv")
     ), 
     write_csv)
   
