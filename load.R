@@ -624,6 +624,15 @@ summary_vendors <- summary_vendors %>%
   )
 
 
+# Get a summary for each of the industry categories
+industry_categories <- contracts %>%
+  select(category) %>%
+  distinct() %>%
+  arrange(category) %>%
+  pull(category)
+
+
+# #########################
 
 # Export CSV files of the summary tables
 if(option_update_summary_csv_files) {
