@@ -912,7 +912,7 @@ paste("End time was:", run_end_time)
 # contracts %>%
 #   filter(d_economic_object_code == "3252") %>%
 #   arrange(desc(contract_value)) %>%
-#   select(owner_org, d_vendor_name, contract_value, d_description_en, comments_en, additional_comments_en, d_start_date, d_end_date, d_amendment_group_id, d_economic_object_code, starts_with("category")) %>%
+#   select(owner_org, d_vendor_name, contract_value, d_description_en, comments_en, additional_comments_en, d_start_date, d_end_date, d_amendment_group_id, procurement_id, original_value, d_economic_object_code, starts_with("category")) %>%
 #   View()
 # 
 # Export of the current state for reviewing without parsing runs:
@@ -940,3 +940,27 @@ paste("End time was:", run_end_time)
 #   View()
 # 
 # # See vendor-normalization.R for more
+
+# # Procurement ID mixups (in which departments mistakenly switched the procurement_id and reference_number values)
+# contracts %>%
+#   filter(str_detect(procurement_id, "-Q")) %>%
+#   arrange(desc(contract_value)) %>%
+#   select(owner_org, d_vendor_name, procurement_id, reference_number, contract_value, d_description_en, comments_en, additional_comments_en, d_start_date, d_end_date, d_amendment_group_id, original_value, d_economic_object_code) %>%
+#   slice_sample(n = 40) %>%
+#   write_csv(str_c("data/testing/", today(), "-sample-contracts-procurement-id-mixup.csv"))
+# 
+# # Procurement ID "appendages" (suffixes at the end with e.g. the initials of the contracting officer at the time)
+# example_contracts_appendages <- contracts %>%
+#   filter(str_detect(procurement_id, "/")) %>%
+#   filter(contract_value > 100000) %>%
+#   filter(d_start_date > "2017-01-01") %>%
+#   arrange(desc(contract_value)) %>%
+#   select(owner_org, d_vendor_name, procurement_id, reference_number, contract_value, d_description_en, comments_en, additional_comments_en, d_start_date, d_end_date, d_amendment_group_id, original_value, d_economic_object_code) %>%
+#   slice_sample(n = 40)
+# 
+# contracts %>%
+#   filter(d_vendor_name == "D H PARTNERSHIP") %>%
+#   arrange(desc(contract_value)) %>%
+#   select(owner_org, d_vendor_name, procurement_id, reference_number, contract_value, d_description_en, comments_en, additional_comments_en, d_start_date, d_end_date, d_amendment_group_id, original_value, d_economic_object_code) %>%
+#   bind_rows(example_contracts_appendages) %>%
+#   write_csv(str_c("data/testing/", today(), "-sample-contracts-procurement-id-suffixes.csv"))
