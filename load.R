@@ -131,6 +131,20 @@ contracts <- contracts %>%
     )
   )
 
+# Remove any suffixes (of 3 characters/digits or less) from procurement IDs, to improve the accuracy of procurement ID-based amendment grouping.
+# Note: This could be refactored using regexes instead of a multi-stage mutate with string locations. The code below reverses the order of the procurement ID, finds the first "/" (used to denote suffixes in procurement IDs), and if it exists and is less than or equal to 4 characters (including the "/") then it uses the procurement ID with that suffix portion removed.
+contracts <- contracts %>%
+  mutate(
+    d_procurement_id_suffix_reversed_id = stri_reverse(d_procurement_id),
+    d_procurement_id_suffix_pos = str_locate(d_procurement_id_suffix_reversed_id, "/")[,"start"],
+    d_procurement_id_suffix_remainder = str_sub(d_procurement_id_suffix_reversed_id, start = d_procurement_id_suffix_pos + 1L),
+    d_procurement_id = case_when(
+      d_procurement_id_suffix_pos <= 4 ~ stri_reverse(d_procurement_id_suffix_remainder),
+      TRUE ~ d_procurement_id
+    )
+  ) %>%
+  select(! starts_with("d_procurement_id_suffix"))
+
 # Use the reporting period if it exists, otherwise get it from the reference number
 # Store it in d_reporting_period (derived reporting period)
 contracts <- contracts %>%
@@ -991,4 +1005,24 @@ paste("End time was:", run_end_time)
 #       TRUE ~ reference_number
 #     )
 #   ) %>%
+#   View()
+
+# # Load these back in for testing
+# example_contracts <- read_csv("data/testing/2022-07-05-sample-contracts-procurement-id-suffixes.csv")
+# 
+# example_contracts %>%
+#   rename(
+#     d_procurement_id = "procurement_id"
+#   ) %>%
+#   mutate(
+#     d_procurement_id_suffix_reversed_id = stri_reverse(d_procurement_id),
+#     d_procurement_id_suffix_pos = str_locate(d_procurement_id_suffix_reversed_id, "/")[,"start"],
+#     d_procurement_id_suffix_remainder = str_sub(d_procurement_id_suffix_reversed_id, start = d_procurement_id_suffix_pos + 1L),
+#     d_procurement_id = case_when(
+#       d_procurement_id_suffix_pos <= 4 ~ stri_reverse(d_procurement_id_suffix_remainder),
+#       TRUE ~ d_procurement_id
+#     )
+#   ) %>%
+#   relocate(owner_org, d_vendor_name, starts_with("d_procurement_id")) %>%
+#   select(! starts_with("d_procurement_id_suffix")) %>%
 #   View()
