@@ -1050,3 +1050,14 @@ paste("End time was:", run_end_time)
 #   relocate(owner_org, d_vendor_name, starts_with("d_procurement_id")) %>%
 #   select(! starts_with("d_procurement_id_suffix")) %>%
 #   View()
+
+# Testing (2022-07-06)
+
+# tibble(parent_company = top_n_vendors) %>%
+#   write_csv(str_c("data/testing/", today(), "-vendors-above-annual-threshold.csv"))
+# 
+# contracts %>%
+#   select(d_vendor_name) %>%
+#   distinct() %>%
+#   arrange(d_vendor_name) %>%
+#   write_csv(str_c("data/testing/", today(), "-all-vendors.csv"))
