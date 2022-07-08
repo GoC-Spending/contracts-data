@@ -18,6 +18,22 @@ all_vendor_names <- all_vendor_names %>%
     "company_name" = d_vendor_name
   )
 
+
+# In order to match against company_name entries,
+# re-add in the parent_company cells as company_name entries too
+parent_company_entries <- vendor_matching %>%
+  select(parent_company) %>%
+  mutate(
+    company_name = parent_company
+  )
+
+# This causes duplicates, but they're removed again in the
+# regenerate_vendor_normalization_csv function
+vendor_matching <- vendor_matching %>%
+  bind_rows(parent_company_entries) %>%
+  arrange(parent_company, company_name) %>%
+  distinct()
+
 matched_vendors <- all_vendor_names %>%
   stringdist_inner_join(vendor_matching, by = "company_name", method="jw", distance_col = "distance", max_dist = 0.2)
 
@@ -25,12 +41,14 @@ matched_vendors <- all_vendor_names %>%
 matched_vendors %>%
   select(company_name.x, company_name.y, distance, parent_company) %>%
   filter(distance < 0.09) %>%
+  filter(distance != 0) %>%
+  distinct() %>%
   arrange(parent_company, company_name.x) %>%
-  write_csv(str_c("data/testing/tmp-", today(), "-vendor-fuzzy-matching-comprehensive.csv"))
+  write_csv(str_c("data/testing/tmp-", today(), "-vendor-fuzzy-matching-comprehensive-02.csv"))
 
 
 # Reimport manually matching-flagged data
-matching_results <- read_csv(str_c("data/testing/tmp-2022-07-08-vendor-fuzzy-matching-comprehensive.csv"))
+matching_results <- read_csv(str_c("data/testing/tmp-2022-07-08-vendor-fuzzy-matching-comprehensive-02.csv"))
 
 matching_results <- matching_results %>%
   filter(!is.na(matching))
@@ -52,3 +70,5 @@ vendor_matching <- vendor_matching %>%
 if(option_update_vendor_csv) {
   regenerate_vendor_normalization_csv(FALSE)
 }
+
+# Note: after the vendor_matching table is regenerated, to do another comparison, we'll need to re-run the full data analysis first to create a new set of all vendor names (to avoid re-manually confirming non-normalized names).
