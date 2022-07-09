@@ -17,7 +17,9 @@ clean_vendor_names <- function(vendor_name) {
   vendor_name <- stringi::stri_trans_general(vendor_name, "Latin-ASCII; upper")
   
   # Remove any punctuation
-  vendor_name <- str_replace_all(vendor_name, "[[:punct:]]", " ")
+  # Thanks to
+  # https://stackoverflow.com/questions/53119840/is-not-matched-by-punct-when-using-stringrstr-replace-all#comment93134999_53119992
+  vendor_name <- str_replace_all(vendor_name, "[[\\p{P}][\\p{S}]\\d\\s]+", " ")
   
   # Vendor suffixes previously listed here:
   # https://github.com/GoC-Spending/goc-spending-laravel/blob/master/app/VendorData.php#L17-L57
