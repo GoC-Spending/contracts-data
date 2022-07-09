@@ -10,8 +10,9 @@ source("lib/vendors.R")
 
 # Set to TRUE to update the vendor normalization table
 option_update_vendor_csv <- TRUE
+option_add_threshold_vendors <- TRUE
 
-all_vendor_names <- read_csv(str_c("data/testing/2022-07-06-all-vendors.csv"))
+all_vendor_names <- read_csv(str_c("data/testing/2022-07-08-all-vendors.csv"))
 
 all_vendor_names <- all_vendor_names %>%
   rename(
@@ -26,6 +27,20 @@ parent_company_entries <- vendor_matching %>%
   mutate(
     company_name = parent_company
   )
+
+if(option_add_threshold_vendors) {
+  threshold_vendors <- read_csv(str_c("data/testing/2022-07-08-vendors-above-annual-threshold.csv")) %>%
+    mutate(
+      company_name = parent_company
+    )
+  
+  vendor_matching <- vendor_matching %>%
+    bind_rows(threshold_vendors) %>%
+    arrange(parent_company, company_name) %>%
+    distinct()
+}
+
+
 
 # This causes duplicates, but they're removed again in the
 # regenerate_vendor_normalization_csv function
