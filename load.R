@@ -23,6 +23,7 @@ summary_per_owner_org_vendor_rows <- 100
 option_contracts_data_source <- "data/testing/2022-04-13-sample-contracts.csv"
 option_download_remotely <- TRUE
 option_update_summary_csv_files <- TRUE
+option_remove_existing_summary_folders <- TRUE
 option_remove_derived_columns <- TRUE
 
 # Define column types for each column in the contracts dataset
@@ -665,48 +666,63 @@ if(option_update_summary_csv_files) {
     ) %>%
     write_csv("data/out/s04_summary_total_by_category_and_fiscal_year.csv")
   
+  
+  # If requested, first delete the vendors/ and departments/ folders recursively
+  output_vendor_path <- "data/out/vendors/"
+  output_department_path <- "data/out/departments/"
+  
+  if(option_remove_existing_summary_folders) {
+    if(dir_exists(output_vendor_path)) {
+      dir_delete(output_vendor_path)
+    }
+    if(dir_exists(output_department_path)) {
+      dir_delete(output_department_path)
+    }
+  }
+  
+  
   # Make per-owner org output directories, if needed
   # Note: if these directories already exist, this still works as-is.
   # https://fs.r-lib.org/reference/create.html
-  owner_org_output_paths <- str_c("data/out/departments/", owner_orgs)
+  owner_org_output_paths <- str_c(output_department_path, owner_orgs)
   dir_create(owner_org_output_paths)
   
   # List-based per-owner summaries, from
   # vendors_by_owner_org
-  summary_overall_total_by_vendor_paths <- str_c("data/out/departments/", vendors_by_owner_org$owner_org, "/", "summary_overall_total_by_vendor_", summary_overall_years_file_suffix, ".csv")
+  summary_overall_total_by_vendor_paths <- str_c(output_department_path, vendors_by_owner_org$owner_org, "/", "summary_overall_total_by_vendor_", summary_overall_years_file_suffix, ".csv")
   pwalk(list(vendors_by_owner_org$summary_overall_total_by_vendor, summary_overall_total_by_vendor_paths), write_csv)
   
   # List-based per-owner, by year summaries
   # also from vendors_by_owner_org
-  summary_total_by_vendor_and_fiscal_year_paths <- str_c("data/out/departments/", vendors_by_owner_org$owner_org, "/", "summary_total_by_vendor_and_fiscal_year", ".csv")
+  summary_total_by_vendor_and_fiscal_year_paths <- str_c(output_department_path, vendors_by_owner_org$owner_org, "/", "summary_total_by_vendor_and_fiscal_year", ".csv")
   pwalk(list(vendors_by_owner_org$summary_total_by_vendor_and_fiscal_year, summary_total_by_vendor_and_fiscal_year_paths), write_csv)
   
   # Per-fiscal year summaries by owner org
   pwalk(
     list(
       vendors_by_owner_org$summary_total_by_fiscal_year_by_owner_org,
-      str_c("data/out/departments/", vendors_by_owner_org$owner_org, "/", "summary_total_by_fiscal_year_by_owner_org", ".csv")
+      str_c(output_department_path, vendors_by_owner_org$owner_org, "/", "summary_total_by_fiscal_year_by_owner_org", ".csv")
     ), 
     write_csv)
   
   pwalk(
     list(
       vendors_by_owner_org$summary_total_by_category_by_owner_org,
-      str_c("data/out/departments/", vendors_by_owner_org$owner_org, "/", "summary_total_by_category_by_owner_org_", summary_overall_years_file_suffix, ".csv")
+      str_c(output_department_path, vendors_by_owner_org$owner_org, "/", "summary_total_by_category_by_owner_org_", summary_overall_years_file_suffix, ".csv")
     ), 
     write_csv)
   
   
   # Per-vendor summaries
   # Make directories if needed
-  vendor_output_paths <- str_c("data/out/vendors/", get_vendor_filename_from_vendor_name(summary_vendors$vendor))
+  vendor_output_paths <- str_c(output_vendor_path, get_vendor_filename_from_vendor_name(summary_vendors$vendor))
   dir_create(vendor_output_paths)
   
   # Fiscal year summaries
   pwalk(
     list(
       summary_vendors$summary_by_fiscal_year,
-      str_c("data/out/vendors/", get_vendor_filename_from_vendor_name(summary_vendors$vendor), "/", "summary_by_fiscal_year", ".csv")
+      str_c(output_vendor_path, get_vendor_filename_from_vendor_name(summary_vendors$vendor), "/", "summary_by_fiscal_year", ".csv")
       ), 
     write_csv)
   
@@ -714,7 +730,7 @@ if(option_update_summary_csv_files) {
   pwalk(
     list(
       summary_vendors$summary_by_fiscal_year_and_owner_org,
-      str_c("data/out/vendors/", get_vendor_filename_from_vendor_name(summary_vendors$vendor), "/", "summary_by_fiscal_year_and_owner_org", ".csv")
+      str_c(output_vendor_path, get_vendor_filename_from_vendor_name(summary_vendors$vendor), "/", "summary_by_fiscal_year_and_owner_org", ".csv")
     ), 
     write_csv)
   
@@ -722,7 +738,7 @@ if(option_update_summary_csv_files) {
   pwalk(
     list(
       summary_vendors$summary_by_category,
-      str_c("data/out/vendors/", get_vendor_filename_from_vendor_name(summary_vendors$vendor), "/", "summary_by_category_", summary_overall_years_file_suffix, ".csv")
+      str_c(output_vendor_path, get_vendor_filename_from_vendor_name(summary_vendors$vendor), "/", "summary_by_category_", summary_overall_years_file_suffix, ".csv")
     ), 
     write_csv)
   
