@@ -109,6 +109,7 @@ regenerate_vendor_normalization_csv <- function(reload_csv_first = TRUE) {
       company_name = clean_vendor_names(company_name),
     ) %>%
     filter(parent_company != company_name) %>%
+    distinct(company_name, .keep_all = TRUE) %>%
     arrange(parent_company, company_name) %>%
     distinct() %>%
     write_csv(vendor_matching_file)
