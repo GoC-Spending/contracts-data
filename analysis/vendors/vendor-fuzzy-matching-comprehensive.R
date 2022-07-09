@@ -49,6 +49,7 @@ vendor_matching <- vendor_matching %>%
   arrange(parent_company, company_name) %>%
   distinct()
 
+# Note: this can be time and memory-intensive.
 matched_vendors <- all_vendor_names %>%
   stringdist_inner_join(vendor_matching, by = "company_name", method="jw", distance_col = "distance", max_dist = 0.2)
 
@@ -61,6 +62,10 @@ matched_vendors %>%
   arrange(parent_company, company_name.x) %>%
   write_csv(str_c("data/testing/tmp-", today(), "-vendor-fuzzy-matching-comprehensive-02.csv"))
 
+
+# ###########
+# Pause here to manually determine matching rows, with a "matching" column
+# in a spreadsheet editor.
 
 # Reimport manually matching-flagged data
 matching_results <- read_csv(str_c("data/testing/tmp-2022-07-08-vendor-fuzzy-matching-comprehensive-02.csv"))
