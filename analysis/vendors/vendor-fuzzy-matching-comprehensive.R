@@ -68,7 +68,7 @@ matched_vendors %>%
 # in a spreadsheet editor.
 
 # Reimport manually matching-flagged data
-matching_results <- read_csv(str_c("data/testing/tmp-2022-07-08-vendor-fuzzy-matching-comprehensive-02.csv"))
+matching_results <- read_csv(str_c("data/testing/tmp-2022-07-09-vendor-fuzzy-matching-comprehensive.csv"))
 
 matching_results <- matching_results %>%
   filter(!is.na(matching))
