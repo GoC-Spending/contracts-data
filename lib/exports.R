@@ -56,3 +56,14 @@ remove_existing_summary_folders <- function() {
     print("Not removing existing summary folders.")
   }
 }
+
+# Create summary folders
+# output_path should be one of output_vendor_path, output_department_path, etc.
+# entities should be a vector of e.g. department acronyms, or vendor name slugs, to use as folder names
+create_summary_folders <- function(output_path, entities) {
+  print(str_c("Generating summary folders in: ", output_path))
+  # Note: if these directories already exist, this still works as-is.
+  # https://fs.r-lib.org/reference/create.html
+  owner_org_output_paths <- str_c(output_path, get_vendor_filename_from_vendor_name(entities))
+  dir_create(owner_org_output_paths)
+}

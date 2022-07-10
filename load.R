@@ -673,10 +673,7 @@ if(option_update_summary_csv_files) {
   remove_existing_summary_folders()
   
   # Make per-owner org output directories, if needed
-  # Note: if these directories already exist, this still works as-is.
-  # https://fs.r-lib.org/reference/create.html
-  owner_org_output_paths <- str_c(output_department_path, owner_orgs)
-  dir_create(owner_org_output_paths)
+  create_summary_folders(output_department_path, owner_orgs)
   
   # List-based per-owner summaries, from
   # vendors_by_owner_org
@@ -706,8 +703,7 @@ if(option_update_summary_csv_files) {
   
   # Per-vendor summaries
   # Make directories if needed
-  vendor_output_paths <- str_c(output_vendor_path, get_vendor_filename_from_vendor_name(summary_vendors$vendor))
-  dir_create(vendor_output_paths)
+  create_summary_folders(output_vendor_path, summary_vendors$vendor)
   
   # Fiscal year summaries
   pwalk(
