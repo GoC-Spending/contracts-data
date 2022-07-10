@@ -3,6 +3,7 @@ source("lib/helpers.R")
 source("lib/amendments.R")
 source("lib/vendors.R")
 source("lib/categories.R")
+source("lib/exports.R")
 
 # Start time
 run_start_time <- now()
