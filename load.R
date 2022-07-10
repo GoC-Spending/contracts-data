@@ -668,18 +668,8 @@ if(option_update_summary_csv_files) {
   
   
   # If requested, first delete the vendors/ and departments/ folders recursively
-  output_vendor_path <- "data/out/vendors/"
-  output_department_path <- "data/out/departments/"
-  
-  if(option_remove_existing_summary_folders) {
-    if(dir_exists(output_vendor_path)) {
-      dir_delete(output_vendor_path)
-    }
-    if(dir_exists(output_department_path)) {
-      dir_delete(output_department_path)
-    }
-  }
-  
+  # See exports.R for more details
+  remove_existing_summary_folders()
   
   # Make per-owner org output directories, if needed
   # Note: if these directories already exist, this still works as-is.
