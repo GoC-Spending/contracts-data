@@ -18,7 +18,7 @@ get_contracts_csv_locally_or_from_url <- function(contract_col_types) {
     
     # Thanks to
     # https://stackoverflow.com/a/35283374/756641
-    options(timeout=1200) # 20 minutes
+    options(timeout=2400) # 40 minutes
     # TODO: Add tryCatch error handling here.
     download.file(url, local_path)
   }
