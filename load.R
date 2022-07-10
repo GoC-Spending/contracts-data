@@ -9,6 +9,8 @@ source("lib/exports.R")
 run_start_time <- now()
 paste("Start time:", run_start_time)
 
+# Options =======================================
+
 # Summary parameters (used below)
 summary_start_fiscal_year_short <- 2017
 summary_end_fiscal_year_short <- 2020
@@ -26,6 +28,8 @@ option_download_remotely <- TRUE
 option_update_summary_csv_files <- TRUE
 option_remove_existing_summary_folders <- TRUE
 option_remove_derived_columns <- TRUE
+
+# Data import ===================================
 
 # Define column types for each column in the contracts dataset
 # Y/N values are converted to TRUE/FALSE further below
@@ -111,6 +115,7 @@ if(option_download_remotely) {
   }
 }
 
+# Initial data mutations ========================
 
 # Convert Y/N values to logical TRUE/FALSE values, for specific columns
 contracts <- contracts %>%
@@ -207,6 +212,8 @@ contracts <- contracts %>%
   ) %>%
   ungroup()
 
+# Categorizing into an industry category ========
+
 # Get slightly cleaner versions of descriptions and object codes
 # 1. Detect any object codes *in* the description text, based on 3- or 4-digit numbers.
 # 2. Add missing object codes.
@@ -284,6 +291,8 @@ contract_descriptions_object_codes <- contract_descriptions_object_codes %>%
   distinct(d_economic_object_code, .keep_all = TRUE)
 
 
+# Vendor name normalization =====================
+
 # Add vendor name normalization here, before amendments are found and combined below.
 # For simplicity, the normalized names are stored in d_vendor_name
 contracts <- contracts %>%
@@ -303,10 +312,13 @@ contracts <- contracts %>%
     )
   )
 
+# Amendment group identification ================
+
 # Find amendment groups based on procurement_id, or on start date + contract value 
 contracts <- find_amendment_groups_v2(contracts)
 
 
+# Calculate contract spending over time =========
 
 # Contract spending by day
 # Simplified version (linearized across the total duration as per the last amendment; doesn't account for changes in spending per-amendment in stages)
@@ -388,9 +400,7 @@ contract_spending_by_date <- contract_spending_by_date %>%
   
 
 
-# #########################
-# Summaries
-# #########################
+# Summaries =====================================
 
 # Helper variables
 # e.g. 4 (years inclusive from the start to end of the coverage range)
@@ -451,7 +461,7 @@ summary_overall_total_by_category_and_fiscal_year <- contract_spending_by_date %
   select(d_most_recent_category, d_fiscal_year, total)
 
 
-# #########################
+# Summary by owner_org (functions) ========================
 
 # For each owner org, get a list of the top n companies
 
@@ -543,7 +553,7 @@ get_summary_total_by_fiscal_year_by_owner_org <- function(owner_org) {
 
 
 
-# #########################
+# Summary by owner_org ========================
 
 # Create a list-column and provide calculations for each department
 vendors_by_owner_org <- tibble(owner_org = owner_orgs)
@@ -634,7 +644,7 @@ industry_categories <- contracts %>%
   pull(category)
 
 
-# #########################
+# Export CSV files of summary tables =============
 
 # Export CSV files of the summary tables
 if(option_update_summary_csv_files) {
