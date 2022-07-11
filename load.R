@@ -739,29 +739,10 @@ if(option_update_summary_csv_files) {
   # Make directories if needed
   create_summary_folders(output_vendor_path, summary_vendors$vendor)
   
-  # Fiscal year summaries
-  pwalk(
-    list(
-      summary_vendors$summary_by_fiscal_year,
-      str_c(output_vendor_path, get_vendor_filename_from_vendor_name(summary_vendors$vendor), "/", "summary_by_fiscal_year", ".csv")
-      ), 
-    write_csv)
+  # Export vendor summaries using the reusable function
+  export_summary(summary_vendors, output_vendor_path)
   
-  # Fiscal year and owner org summaries
-  pwalk(
-    list(
-      summary_vendors$summary_by_fiscal_year_and_owner_org,
-      str_c(output_vendor_path, get_vendor_filename_from_vendor_name(summary_vendors$vendor), "/", "summary_by_fiscal_year_and_owner_org", ".csv")
-    ), 
-    write_csv)
   
-  # Category summaries
-  pwalk(
-    list(
-      summary_vendors$summary_by_category,
-      str_c(output_vendor_path, get_vendor_filename_from_vendor_name(summary_vendors$vendor), "/", "summary_by_category_", summary_overall_years_file_suffix, ".csv")
-    ), 
-    write_csv)
   
   
   # Note: temporary for manual vendor name normalization work.
