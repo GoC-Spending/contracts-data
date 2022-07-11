@@ -652,11 +652,14 @@ get_summary_total_by_category_by_vendor <- function(requested_vendor_name) {
 # Summary by vendor
 summary_vendors = tibble(vendor = top_n_vendors)
 
+# Thanks to
+# https://stackoverflow.com/a/26003971/756641
+# For the concatenation below to include the "overall years" file suffix
 summary_vendors <- summary_vendors %>%
   mutate(
     summary_by_fiscal_year = map(vendor, get_summary_total_by_fiscal_year_by_vendor),
     summary_by_fiscal_year_and_owner_org = map(vendor, get_summary_total_by_fiscal_year_and_owner_org_by_vendor),
-    summary_by_category = map(vendor, get_summary_total_by_category_by_vendor),
+    !!str_c("summary_by_category", "_", summary_overall_years_file_suffix) := map(vendor, get_summary_total_by_category_by_vendor),
   )
 
 
