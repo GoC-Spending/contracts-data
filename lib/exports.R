@@ -147,31 +147,24 @@ get_summary_overall_by_fiscal_year_by_vendor <- function(summary_type) {
 }
 
 # Export all of the summary_overall list-columns at once
-# TODO: abstract this into a function that can handle all listcolumns in summary_overall
-export_summary_overall <- function(summary_overall) {
+# In a generic way that's reusable for (for example) summary_vendors and other future summary listcolumns.
+export_summary <- function(summary_listcolumn_df, output_path) {
   
   # For example: summary_type
-  entity_column <- names(summary_overall)[1]
+  entity_column <- names(summary_listcolumn_df)[1]
   
   # List columns, e.g. everything except the first column
-  listcolumns <- names(summary_overall)[2:length(summary_overall)]
+  listcolumns <- names(summary_listcolumn_df)[2:length(summary_listcolumn_df)]
   
   for(listcolumn in listcolumns) {
     export_individual_listcolumn(
       listcolumn, 
-      summary_overall[[listcolumn]],
-      output_overall_path,
-      summary_overall[[entity_column]]
+      summary_listcolumn_df[[listcolumn]],
+      output_path,
+      summary_listcolumn_df[[entity_column]]
     )
   }
-  
-  # # Note: First of several planned listcolumns here
-  # export_individual_listcolumn(
-  #   "summary_overall_by_fiscal_year_by_vendor", 
-  #   summary_overall$summary_overall_by_fiscal_year_by_vendor,
-  #   output_overall_path,
-  #   summary_overall$summary_type
-  #   )
+
 }
 
 export_individual_listcolumn <- function(filename, listcolumn_data, output_path, entities) {

@@ -427,9 +427,7 @@ summary_overall <- summary_overall %>%
 create_summary_folders(output_overall_path, summary_overall$summary_type)
 
 # Note: work in progress here on summary exports
-export_summary_overall(summary_overall)
-
-stop("Here")
+export_summary(summary_overall, output_overall_path)
 
 # Previous summary approach =====================
 # Note: will replace this with map functions in the near future.
