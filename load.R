@@ -24,8 +24,8 @@ summary_per_owner_org_vendor_rows <- 100
 # "data/testing/2022-04-13-sample-contracts.csv"
 # "data/testing/2022-06-28-contracts-key-amendment-testing.csv"
 option_contracts_data_source <- "data/testing/2022-04-13-sample-contracts.csv"
-option_download_remotely <- FALSE
-option_update_summary_csv_files <- FALSE
+option_download_remotely <- TRUE
+option_update_summary_csv_files <- TRUE
 option_remove_existing_summary_folders <- TRUE
 option_remove_derived_columns <- TRUE
 
@@ -428,6 +428,7 @@ create_summary_folders(output_overall_path, summary_overall$summary_type)
 
 # Note: work in progress here on summary exports
 export_summary(summary_overall, output_overall_path)
+
 
 # Previous summary approach =====================
 # Note: will replace this with map functions in the near future.
