@@ -24,8 +24,8 @@ summary_per_owner_org_vendor_rows <- 100
 # "data/testing/2022-04-13-sample-contracts.csv"
 # "data/testing/2022-06-28-contracts-key-amendment-testing.csv"
 option_contracts_data_source <- "data/testing/2022-04-13-sample-contracts.csv"
-option_download_remotely <- TRUE
-option_update_summary_csv_files <- TRUE
+option_download_remotely <- FALSE
+option_update_summary_csv_files <- FALSE
 option_remove_existing_summary_folders <- TRUE
 option_remove_derived_columns <- TRUE
 
@@ -407,6 +407,32 @@ contract_spending_by_date <- contract_spending_by_date %>%
 summary_total_years <- summary_end_fiscal_year_short - summary_start_fiscal_year_short + 1L
 # e.g. "2017_to_2020"
 summary_overall_years_file_suffix <- str_c(summary_start_fiscal_year_short, "_to_", summary_end_fiscal_year_short)
+
+# Determine which vendors have enough spending (e.g. averaging $1M per year in the time range, as defined in summary_vendor_annual_total_threshold)
+summary_included_vendors <- get_summary_included_vendors()
+
+# For overall (government-wide) summaries that will appear on the homepage, first create a list-column with the different summary types (core public service departments, DND, and all departments)
+summary_overall = tibble(summary_type = c("core", "dnd", "all"))
+
+# Note: to add, summaries across "all time" of the specified time range
+# plus filename labels for these that indicate the time range
+summary_overall <- summary_overall %>%
+  mutate(
+    summary_overall_by_fiscal_year_by_vendor = map(summary_type, get_summary_overall_by_fiscal_year_by_vendor),
+    #summary_overall_by_fiscal_year_by_category = map(summary_type, get_summary_overall_by_fiscal_year_by_category),
+    #summary_overall_by_fiscal_year_by_owner_org = map(summary_type, get_summary_overall_by_fiscal_year_by_owner_org),
+  )
+
+# Make output directories, if needed
+create_summary_folders(output_overall_path, summary_overall$summary_type)
+
+# Note: work in progress here on summary exports
+export_summary_overall(summary_overall)
+
+stop("Here")
+
+# Previous summary approach =====================
+# Note: will replace this with map functions in the near future.
 
 # Summary 1: overall total (over all time and all contracts) by vendor
 # Note: this includes all vendors with an average annual total of at least the summary_vendor_annual_total_threshold over the summary coverage range (start to end years).
