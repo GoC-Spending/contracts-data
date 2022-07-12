@@ -146,6 +146,43 @@ get_summary_overall_by_fiscal_year_by_vendor <- function(summary_type) {
   return(summary_total_by_vendor_and_fiscal_year)
 }
 
+get_summary_overall_by_fiscal_year_by_category <- function(summary_type) {
+  summary_overall_total_by_category_and_fiscal_year <- contract_spending_by_date %>%
+    filter_by_summary_type(summary_type) %>%
+    group_by(d_most_recent_category, d_fiscal_year_short) %>%
+    summarise(
+      total = sum(d_daily_contract_value, na.rm = TRUE)
+    ) %>%
+    ungroup() %>%
+    mutate(
+      d_fiscal_year = convert_start_year_to_fiscal_year(d_fiscal_year_short)
+    ) %>%
+    select(d_most_recent_category, d_fiscal_year, total) %>%
+    exports_round_totals()
+  
+  return(summary_overall_total_by_category_and_fiscal_year)
+}
+
+get_summary_overall_by_fiscal_year_by_owner_org <- function(summary_type) {
+  summary_overall_by_fiscal_year_by_owner_org <- contract_spending_by_date %>%
+    filter_by_summary_type(summary_type) %>%
+    group_by(owner_org, d_fiscal_year_short) %>%
+    summarise(
+      total = sum(d_daily_contract_value, na.rm = TRUE)
+    ) %>%
+    ungroup() %>%
+    mutate(
+      d_fiscal_year = convert_start_year_to_fiscal_year(d_fiscal_year_short)
+    ) %>%
+    select(owner_org, d_fiscal_year, total) %>%
+    arrange(owner_org, d_fiscal_year) %>%
+    exports_round_totals()
+  
+  return(summary_overall_by_fiscal_year_by_owner_org)
+}
+
+# Generic export listcolumn to CSV functions ====
+
 # Export all of the summary_overall list-columns at once
 # In a generic way that's reusable for (for example) summary_vendors and other future summary listcolumns.
 export_summary <- function(summary_listcolumn_df, output_path) {
