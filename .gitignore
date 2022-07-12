@@ -11,3 +11,9 @@ data/testing/tmp*.csv
 
 # Ignore the tmp/ folder for example PDF exports etc.
 tmp/
+
+# OS stuff
+.DS_Store
+
+# Big `contracts.csv`
+data/contracts.csv
