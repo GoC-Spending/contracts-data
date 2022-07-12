@@ -111,16 +111,16 @@ filter_by_summary_type <- function(input_df, summary_type) {
   if(summary_type == "core") {
     included_orgs <- owner_org_types %>%
       filter(!is.na(is_core)) %>%
-      pull(department)
+      pull(owner_org)
     
   } else if(summary_type == "dnd") {
     included_orgs <- owner_org_types %>%
       filter(!is.na(is_dnd)) %>%
-      pull(department)
+      pull(owner_org)
     
   } else {
     included_orgs <- owner_org_types %>%
-      pull(department)
+      pull(owner_org)
   }
   output <- input_df %>%
     filter(owner_org %in% included_orgs)
