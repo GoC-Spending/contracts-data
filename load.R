@@ -1100,3 +1100,8 @@ paste("End time was:", run_end_time)
 #   select(d_reference_number, d_procurement_id, contract_value, everything()) %>% 
 #   View()
 
+# contracts %>% 
+#   select(owner_org, owner_org_title) %>% 
+#   distinct() %>% 
+#   arrange(owner_org) %>% 
+#   write_csv(str_c("data/testing/tmp-", today(), "-owner-orgs.csv"))
