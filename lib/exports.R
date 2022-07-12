@@ -106,7 +106,7 @@ get_summary_included_vendors <- function() {
   return(top_n_vendors)
 }
 
-# TODO: Load these from a CSV file for easier updating, rather than hard-coding them here.
+# Filter according to a set of departments/agencies.
 filter_by_summary_type <- function(input_df, summary_type) {
   if(summary_type == "core") {
     included_orgs <- owner_org_types %>%
@@ -128,57 +128,107 @@ filter_by_summary_type <- function(input_df, summary_type) {
   return(output)
 }
 
-get_summary_overall_by_fiscal_year_by_vendor <- function(summary_type) {
-  summary_total_by_vendor_and_fiscal_year <- contract_spending_by_date %>%
-    filter(d_vendor_name %in% summary_included_vendors) %>%
+# For operations that group by vendor_name, limit this to the threshold set of vendors to avoid giant CSV files with every single vendor.
+filter_vendors_if_required <- function(input_df, filter_vendors = FALSE) {
+  
+  if(filter_vendors) {
+    input_df <- input_df %>%
+      filter(d_vendor_name %in% summary_included_vendors)
+  }
+  
+  return(input_df)
+  
+}
+
+# Reusable function for all "summary overall by fiscal year by X" functions
+get_summary_overall_by_fiscal_year_by_criteria <- function(summary_type, grouping_column, filter_vendors = FALSE) {
+  
+  # Thanks to
+  # https://stackoverflow.com/a/66253244/756641
+  # https://stackoverflow.com/a/55165966/756641
+  # https://stackoverflow.com/a/61180370/756641
+  # re: variable handling for grouping_column
+  # Note: not sure why the handling is different for group_by versus select, but the code below works as expected.
+  # Using !!! in the group_by function (in place of across(all_of())) does not work.
+  
+  summary_overall_total_by_fiscal_year_by_criteria <- contract_spending_by_date %>%
     filter_by_summary_type(summary_type) %>%
-    group_by(d_vendor_name, d_fiscal_year_short) %>%
+    filter_vendors_if_required(filter_vendors) %>%
+    group_by(across(all_of(grouping_column)), d_fiscal_year_short) %>%
     summarise(
-      total = sum(d_daily_contract_value)
+      total = sum(d_daily_contract_value, na.rm = TRUE)
     ) %>%
     ungroup() %>%
     mutate(
       d_fiscal_year = convert_start_year_to_fiscal_year(d_fiscal_year_short)
     ) %>%
-    select(d_vendor_name, d_fiscal_year, total) %>%
+    select(!!!grouping_column, d_fiscal_year, total) %>%
     exports_round_totals()
   
-  return(summary_total_by_vendor_and_fiscal_year)
+  return(summary_overall_total_by_fiscal_year_by_criteria)
+  
+}
+
+get_summary_overall_by_fiscal_year_by_vendor <- function(summary_type) {
+  
+  return(get_summary_overall_by_fiscal_year_by_criteria(summary_type, "d_vendor_name", TRUE))
+  
+  # summary_total_by_vendor_and_fiscal_year <- contract_spending_by_date %>%
+  #   filter(d_vendor_name %in% summary_included_vendors) %>%
+  #   filter_by_summary_type(summary_type) %>%
+  #   group_by(d_vendor_name, d_fiscal_year_short) %>%
+  #   summarise(
+  #     total = sum(d_daily_contract_value)
+  #   ) %>%
+  #   ungroup() %>%
+  #   mutate(
+  #     d_fiscal_year = convert_start_year_to_fiscal_year(d_fiscal_year_short)
+  #   ) %>%
+  #   select(d_vendor_name, d_fiscal_year, total) %>%
+  #   exports_round_totals()
+  # 
+  # return(summary_total_by_vendor_and_fiscal_year)
 }
 
 get_summary_overall_by_fiscal_year_by_category <- function(summary_type) {
-  summary_overall_total_by_category_and_fiscal_year <- contract_spending_by_date %>%
-    filter_by_summary_type(summary_type) %>%
-    group_by(d_most_recent_category, d_fiscal_year_short) %>%
-    summarise(
-      total = sum(d_daily_contract_value, na.rm = TRUE)
-    ) %>%
-    ungroup() %>%
-    mutate(
-      d_fiscal_year = convert_start_year_to_fiscal_year(d_fiscal_year_short)
-    ) %>%
-    select(d_most_recent_category, d_fiscal_year, total) %>%
-    exports_round_totals()
   
-  return(summary_overall_total_by_category_and_fiscal_year)
+  return(get_summary_overall_by_fiscal_year_by_criteria(summary_type, "d_most_recent_category"))
+  # 
+  # summary_overall_total_by_category_and_fiscal_year <- contract_spending_by_date %>%
+  #   filter_by_summary_type(summary_type) %>%
+  #   group_by(d_most_recent_category, d_fiscal_year_short) %>%
+  #   summarise(
+  #     total = sum(d_daily_contract_value, na.rm = TRUE)
+  #   ) %>%
+  #   ungroup() %>%
+  #   mutate(
+  #     d_fiscal_year = convert_start_year_to_fiscal_year(d_fiscal_year_short)
+  #   ) %>%
+  #   select(d_most_recent_category, d_fiscal_year, total) %>%
+  #   exports_round_totals()
+  # 
+  # return(summary_overall_total_by_category_and_fiscal_year)
 }
 
 get_summary_overall_by_fiscal_year_by_owner_org <- function(summary_type) {
-  summary_overall_by_fiscal_year_by_owner_org <- contract_spending_by_date %>%
-    filter_by_summary_type(summary_type) %>%
-    group_by(owner_org, d_fiscal_year_short) %>%
-    summarise(
-      total = sum(d_daily_contract_value, na.rm = TRUE)
-    ) %>%
-    ungroup() %>%
-    mutate(
-      d_fiscal_year = convert_start_year_to_fiscal_year(d_fiscal_year_short)
-    ) %>%
-    select(owner_org, d_fiscal_year, total) %>%
-    arrange(owner_org, d_fiscal_year) %>%
-    exports_round_totals()
   
-  return(summary_overall_by_fiscal_year_by_owner_org)
+  return(get_summary_overall_by_fiscal_year_by_criteria(summary_type, "owner_org"))
+  
+  # summary_overall_by_fiscal_year_by_owner_org <- contract_spending_by_date %>%
+  #   filter_by_summary_type(summary_type) %>%
+  #   group_by(owner_org, d_fiscal_year_short) %>%
+  #   summarise(
+  #     total = sum(d_daily_contract_value, na.rm = TRUE)
+  #   ) %>%
+  #   ungroup() %>%
+  #   mutate(
+  #     d_fiscal_year = convert_start_year_to_fiscal_year(d_fiscal_year_short)
+  #   ) %>%
+  #   select(owner_org, d_fiscal_year, total) %>%
+  #   arrange(owner_org, d_fiscal_year) %>%
+  #   exports_round_totals()
+  # 
+  # return(summary_overall_by_fiscal_year_by_owner_org)
 }
 
 # Generic export listcolumn to CSV functions ====
