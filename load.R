@@ -421,6 +421,9 @@ summary_overall <- summary_overall %>%
     summary_overall_by_fiscal_year_by_vendor = map(summary_type, get_summary_overall_by_fiscal_year_by_vendor),
     summary_overall_by_fiscal_year_by_category = map(summary_type, get_summary_overall_by_fiscal_year_by_category),
     summary_overall_by_fiscal_year_by_owner_org = map(summary_type, get_summary_overall_by_fiscal_year_by_owner_org),
+    !!str_c("summary_overall_by_vendor", "_", summary_overall_years_file_suffix) := map(summary_type, get_summary_overall_by_vendor),
+    !!str_c("summary_overall_by_category", "_", summary_overall_years_file_suffix) := map(summary_type, get_summary_overall_by_category),
+    !!str_c("summary_overall_by_owner_org", "_", summary_overall_years_file_suffix) := map(summary_type, get_summary_overall_by_owner_org),
   )
 
 # Make output directories, if needed

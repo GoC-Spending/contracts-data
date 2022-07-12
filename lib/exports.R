@@ -231,6 +231,44 @@ get_summary_overall_by_fiscal_year_by_owner_org <- function(summary_type) {
   # return(summary_overall_by_fiscal_year_by_owner_org)
 }
 
+# For overall totals (in the overall year range) without fiscal year grouping:
+get_summary_overall_by_criteria <- function(summary_type, grouping_column, filter_vendors = FALSE) {
+
+  
+  summary_overall_total_by_criteria <- contract_spending_by_date %>%
+    filter_by_summary_type(summary_type) %>%
+    filter_vendors_if_required(filter_vendors) %>%
+    group_by(across(all_of(grouping_column))) %>%
+    summarise(
+      total = sum(d_daily_contract_value, na.rm = TRUE)
+    ) %>%
+    ungroup() %>%
+    select(!!!grouping_column, total) %>%
+    arrange(desc(total)) %>%
+    exports_round_totals()
+  
+  return(summary_overall_total_by_criteria)
+  
+}
+
+get_summary_overall_by_vendor <- function(summary_type) {
+  
+  return(get_summary_overall_by_criteria(summary_type, "d_vendor_name", TRUE))
+  
+}
+
+get_summary_overall_by_category <- function(summary_type) {
+  
+  return(get_summary_overall_by_criteria(summary_type, "d_most_recent_category"))
+  
+}
+
+get_summary_overall_by_owner_org <- function(summary_type) {
+  
+  return(get_summary_overall_by_criteria(summary_type, "owner_org"))
+  
+}
+
 # Generic export listcolumn to CSV functions ====
 
 # Export all of the summary_overall list-columns at once
