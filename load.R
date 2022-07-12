@@ -1086,3 +1086,17 @@ paste("End time was:", run_end_time)
 #   distinct() %>%
 #   arrange(d_vendor_name) %>%
 #   write_csv(str_c("data/testing/", today(), "-all-vendors.csv"))
+
+# Testing (2022-07-11)
+
+# contract_spending_by_date %>%
+#   filter_by_summary_type("core") %>%
+#   filter_vendors_if_required(TRUE) %>%
+#   View()
+# 
+# contracts %>% 
+#   filter(d_vendor_name == "VANCOUVER SHIPYARDS") %>% 
+#   arrange(desc(contract_value )) %>% 
+#   select(d_reference_number, d_procurement_id, contract_value, everything()) %>% 
+#   View()
+
