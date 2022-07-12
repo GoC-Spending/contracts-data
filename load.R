@@ -1100,6 +1100,13 @@ paste("End time was:", run_end_time)
 #   select(d_reference_number, d_procurement_id, contract_value, everything()) %>% 
 #   View()
 
+# contracts %>%
+#   filter(d_vendor_name == "CAE") %>%
+#   filter_by_summary_type("core") %>%
+#   arrange(desc(contract_value )) %>%
+#   select(d_reference_number, d_procurement_id, contract_value, everything()) %>%
+#   View()
+
 # contracts %>% 
 #   select(owner_org, owner_org_title) %>% 
 #   distinct() %>% 
