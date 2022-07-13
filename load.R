@@ -408,6 +408,12 @@ summary_total_years <- summary_end_fiscal_year_short - summary_start_fiscal_year
 # e.g. "2017_to_2020"
 summary_overall_years_file_suffix <- str_c(summary_start_fiscal_year_short, "_to_", summary_end_fiscal_year_short)
 
+
+# If requested, first delete the vendors/ and departments/ folders recursively
+# See exports.R for more details
+remove_existing_summary_folders()
+
+
 # Determine which vendors have enough spending (e.g. averaging $1M per year in the time range, as defined in summary_vendor_annual_total_threshold)
 summary_included_vendors <- get_summary_included_vendors()
 
@@ -708,10 +714,7 @@ if(option_update_summary_csv_files) {
     ) %>%
     write_csv("data/out/s04_summary_total_by_category_and_fiscal_year.csv")
   
-  
-  # If requested, first delete the vendors/ and departments/ folders recursively
-  # See exports.R for more details
-  remove_existing_summary_folders()
+
   
   # Make per-owner org output directories, if needed
   create_summary_folders(output_department_path, owner_orgs)

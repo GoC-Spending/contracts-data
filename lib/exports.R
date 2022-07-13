@@ -59,7 +59,7 @@ write_csv_if_enabled <- function(...) {
 
 # If the option is enabled, then remove the summary folders if they exist (for vendors and departments, which might have old entities sitting around).
 remove_existing_summary_folders <- function() {
-  if(option_remove_existing_summary_folders) {
+  if(option_update_summary_csv_files & option_remove_existing_summary_folders) {
     print("Removing existing summary folders.")
     if(dir_exists(output_vendor_path)) {
       dir_delete(output_vendor_path)
