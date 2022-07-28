@@ -9,7 +9,7 @@ category,d_description_en
 1_facilities_and_construction,Rental of office buildings
 1_facilities_and_construction,"Plumbing equipment and fittings, including parts"
 1_facilities_and_construction,Office buildings
-1_facilities_and_construction,Protection services (security guard services st. Anthony airport)
+8_security_and_protection,Protection services (security guard services st. Anthony airport)
 1_facilities_and_construction,Other buildings
 1_facilities_and_construction,"Electric lighting, distribution and control equipment"
 1_facilities_and_construction,"Heating, air-conditioning and refrigeration equipment"
@@ -64,8 +64,8 @@ category,d_description_en
 1_facilities_and_construction,Schools and other educational buildings
 1_facilities_and_construction,"Armouries, barracks, drill halls, ect."
 1_facilities_and_construction,Capital lease-tangible capital assets
-1_facilities_and_construction,Scientific consultants
-1_facilities_and_construction,Other business services not elsewhere specified
+2_professional_services,Scientific consultants
+2_professional_services,Other business services not elsewhere specified
 1_facilities_and_construction,Bottled water
 1_facilities_and_construction,Other vehicles
 1_facilities_and_construction,"Heating, air-conditioning and refrigeration equipment maintenance"
@@ -152,7 +152,7 @@ category,d_description_en
 1_facilities_and_construction,"Engineering works, not elsewhere specified"
 1_facilities_and_construction,Materials inspection and quality assurance
 1_facilities_and_construction,Architectural & engineering services - restoration/conservation heritage building structures
-1_facilities_and_construction,Military (r&d)
+11_defence,Military (r&d)
 1_facilities_and_construction,Glazing and window glass installation
 1_facilities_and_construction,"Technical engineering and maintenance services (tems) (excludes requirements related to armament, r&d and r&o)"
 1_facilities_and_construction,Construction of educational buildings
@@ -178,7 +178,7 @@ category,d_description_en
 1_facilities_and_construction,"Heaters, water (domestic)"
 1_facilities_and_construction,"Roofing, siding and sheet metal installation services"
 1_facilities_and_construction,Commercial security guard and related services
-1_facilities_and_construction,Business services
+2_professional_services,Business services
 1_facilities_and_construction,Waste disposal equipment
 1_facilities_and_construction,"Leasing of hotel, restaurant buildings etc."
 1_facilities_and_construction,Water supply
@@ -271,7 +271,7 @@ category,d_description_en
 1_facilities_and_construction,"Information retrieval services, database"
 1_facilities_and_construction,Water plumbing and drain laying work
 1_facilities_and_construction,Recreational services
-1_facilities_and_construction,Informatics professional services
+3_information_technology,Informatics professional services
 1_facilities_and_construction,"Plumbing fixtures, institutional"
 1_facilities_and_construction,Capital lease - tangible capital assets
 1_facilities_and_construction,Aircraft parts
@@ -361,7 +361,7 @@ category,d_description_en
 1_facilities_and_construction,Elevator maintenance (buildings)
 1_facilities_and_construction,Masonry work
 1_facilities_and_construction,Space and water heating equipment
-1_facilities_and_construction,"Informatics professional and consulting services, software development and implementation"
+3_information_technology,"Informatics professional and consulting services, software development and implementation"
 1_facilities_and_construction,"Rental of exhibit space - all others except canada, u.s.a. and europe"
 1_facilities_and_construction,Refrigeration and air conditioning components - installation
 1_facilities_and_construction,Land and building appraisal
@@ -511,7 +511,7 @@ category,d_description_en
 1_facilities_and_construction,Property & facilities mgmt
 1_facilities_and_construction,Property management - airfield and communication facilities
 1_facilities_and_construction,Property management - conservation and development facilities
-1_facilities_and_construction,Protection services
+8_security_and_protection,Protection services
 1_facilities_and_construction,Refrigeration equipment - repair
 1_facilities_and_construction,Renting const / demolitn equip
 1_facilities_and_construction,Rigid wall shelters
@@ -604,7 +604,7 @@ category,d_description_en
 10_office_management,Mobilier et ameublement du bureau incluant des pièces
 10_office_management,"Location de machinerie, de mobilier et d'installation de bureau, et d'autres équipements"
 10_office_management,Office furniture and furnishings
-10_office_management,Other professional services
+2_professional_services,Other professional services
 10_office_management,Other office equipment & parts
 10_office_management,Office furniture and furnishings including parts
 10_office_management,Beverages and tobacco
@@ -618,7 +618,7 @@ category,d_description_en
 10_office_management,Chairs for vancouver office
 10_office_management,Chairs
 10_office_management,Rental of audio-visual equipment - toronto hearing
-10_office_management,Consulting services in strategic planning
+2_professional_services,Consulting services in strategic planning
 10_office_management,Microfilm/microfiche scanner for the library
 10_office_management,Rental - other (specify)
 10_office_management,Services d'imprimerie
@@ -628,7 +628,7 @@ category,d_description_en
 10_office_management,"Acquisition of office furniture and furnishings, including parts"
 10_office_management,Rental- other
 10_office_management,Temporary help services
-10_office_management,Tuition fees and costs of attending courses including seminars not elsewhere specified
+9_human_capital,Tuition fees and costs of attending courses including seminars not elsewhere specified
 10_office_management,1239 otr office equip & parts - headsets
 10_office_management,1231 office equip & parts - office furniture
 10_office_management,Utility services
@@ -647,7 +647,7 @@ category,d_description_en
 10_office_management,0321 – printing services
 10_office_management,"1143 – printed matter, including books, newspapers, pictures, manuscripts and forms"
 10_office_management,"Materials and supplies, office and stationers supplies"
-10_office_management,Other professional services not elsewhere specified
+2_professional_services,Other professional services not elsewhere specified
 10_office_management,Rental of office machines and equipment
 10_office_management,"Office furniture and furnishings, incl. Parts"
 10_office_management,"Printed matter, incl books, newspapers, pictures, manuscripts & forms"
@@ -858,7 +858,7 @@ category,d_description_en
 10_office_management,Digital photocopiers
 10_office_management,Educational services
 10_office_management,Photocopying machine
-10_office_management,Informatics professional
+3_information_technology,Informatics professional
 10_office_management,Util services waste disposal
 10_office_management,Office stationery and supplies
 10_office_management,"Accommodation and food services, n.e.s."
@@ -1471,7 +1471,7 @@ category,d_description_en
 2_professional_services,0499 other professional servcs- research
 2_professional_services,0499 other professional servcs - writing
 2_professional_services,0859 other business services - research
-2_professional_services,0460 protection services
+8_security_and_protection,0460 protection services
 2_professional_services,0859 other business services - display stand
 2_professional_services,0859 other business services - photography
 2_professional_services,0859 other business services - events management
@@ -1545,7 +1545,7 @@ category,d_description_en
 2_professional_services,Services de conseillers en gestion
 2_professional_services,Services laboratoire autre que santé et bien-être
 2_professional_services,Management consultants
-2_professional_services,Client software related to distributed computing environment (dce)
+3_information_technology,Client software related to distributed computing environment (dce)
 2_professional_services,External legal opinion
 2_professional_services,Suspense account (debit) - other government departments
 2_professional_services,0351 communications professional services not elsewhere specified (graphic design)
@@ -1558,7 +1558,7 @@ category,d_description_en
 2_professional_services,0230 voice communications services (inc analog/digital voice comm services)
 2_professional_services,Automated news services
 2_professional_services,"Professional services, telecommunications"
-2_professional_services,Informatics training
+9_human_capital,Informatics training
 2_professional_services,Ergonomic services
 2_professional_services,Temporary help services - professional and technical
 2_professional_services,Public opinion research qualitative
@@ -1620,7 +1620,7 @@ category,d_description_en
 2_professional_services,Professional services / program research analysis
 2_professional_services,"Human resources support services (hrss): organization and classification, staffing and compensation"
 2_professional_services,Project management services
-2_professional_services,Ground handling services
+5_transportation_and_logistics,Ground handling services
 2_professional_services,General office help
 2_professional_services,Demolition work
 2_professional_services,"Investigative services, public servant disclosure protection act (psdpa)"
@@ -1686,7 +1686,7 @@ category,d_description_en
 2_professional_services,Management consulting - project executive level 3
 2_professional_services,"Temporary help services - intermediate administration clerks, call center agents and correspondence officers"
 2_professional_services,Other professional services not elsewhere specified - alternative dispute resolution services
-2_professional_services,Tuition fees
+9_human_capital,Tuition fees
 2_professional_services,Communications professional services not elsewhere speified
 2_professional_services,Privacy impact assessment
 2_professional_services,Advise and support - transition
@@ -1719,10 +1719,10 @@ category,d_description_en
 2_professional_services,"Replenishable field medical sets, kits, and outfits"
 2_professional_services,"Winches, hoists, cranes and derricks"
 2_professional_services,Graphic design services
-2_professional_services,"Informatics professional and consulting services - maintenance operations, support"
+3_information_technology,"Informatics professional and consulting services - maintenance operations, support"
 2_professional_services,Driver training
 2_professional_services,Commercial testing laboratory services
-2_professional_services,"Informatics professional and consulting services, requirements, analysis, feasibility studies"
+3_information_technology,"Informatics professional and consulting services, requirements, analysis, feasibility studies"
 2_professional_services,Telecommunications network services
 2_professional_services,Environmental impact studies
 2_professional_services,Ground effect vehicles - rental
@@ -2626,7 +2626,7 @@ category,d_description_en
 3_information_technology,Information technology and telecommunications consultants - security specialist
 3_information_technology,Information technology and telecommunications consultants - platform analyst
 3_information_technology,Information technology and telecommunications consultants - expert consultant of federal electoral system
-3_information_technology,Other professional services not elsewhere specified -
+2_professional_services,Other professional services not elsewhere specified -
 3_information_technology,Information technology and telecommunications consultants - performance tester
 3_information_technology,Computer services (includes information technology (it) solutions/deliverables as well as it managed services)
 3_information_technology,License/maintenace fees for clients software related to distributed computing environment (dce)
@@ -2696,7 +2696,7 @@ category,d_description_en
 3_information_technology,0588 rental of computers - client computing domain - desktop/personal/portable
 3_information_technology,0332 - audio-visual services
 3_information_technology,0584 licence/maintenance fees for server operating system and utility software
-3_information_technology,Data &; database access services
+3_information_technology,Data &
 3_information_technology,Software maintenance renewal
 3_information_technology,0332 audio-visual services
 3_information_technology,Amendment 001 to add additional licenses
@@ -4059,7 +4059,7 @@ category,d_description_en
 9_human_capital,Compensation services
 9_human_capital,Human resources (staffing and classification)
 9_human_capital,Organization and classification services
-9_human_capital,Elec subsc &; elec publicatns
+9_human_capital,Elec subsc &
 9_human_capital,Amendment 001 to increase the total value
 9_human_capital,Tuition fees and costs of attending courses including seminar
 9_human_capital,"Tuition fees and costs of attending courses including seminar, not elsewhere specified"
