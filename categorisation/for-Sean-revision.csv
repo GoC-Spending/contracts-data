@@ -1,76 +1,76 @@
 ,economic_object_code,description_en,category
 0,414,Human resources services,2_professional_services
-1,0494,0493 Interpretation services,
-2,0473,0473 Information Technology and Telecommunications Consultants,
-3,0492,0492 Research Contracts,
-4,0859,0859 Other business services not elsewhere specified,
-5,0447,0447 Tuition fees and costs of attending courses including semina,
-6,0351,Communications professional services not elsewhere specified,2_professional_services
-7,0499,Other professional services not elsewhere specified,2_professional_services
-8,0491,Management consulting,2_professional_services
-9,0493,Interpretation services,2_professional_services
-10,473,0473 Information Technology and Telecommunications Consultants,
-11,499,0499 Other professional services not elsewhere specified,
-12,351,0351 Communications professional services not elsewhere specified,
-13,1231,"1231 Office furniture and furnishings, incl. Parts",
-14,0332,0332 Audio visual services,
-15,0424,0424 Interpretation Services,
-16,0361,0361 Communications - Web Services Subscriptions,
+1,494,0493 Interpretation services,2_professional_services
+2,473,0473 Information Technology and Telecommunications Consultants,3_information_technology
+3,492,0492 Research Contracts,2_professional_services
+4,859,0859 Other business services not elsewhere specified,
+5,447,0447 Tuition fees and costs of attending courses including semina,9_human_capital
+6,351,Communications professional services not elsewhere specified,2_professional_services
+7,499,Other professional services not elsewhere specified,2_professional_services
+8,491,Management consulting,2_professional_services
+9,493,Interpretation services,2_professional_services
+10,473,0473 Information Technology and Telecommunications Consultants,3_information_technology
+11,499,0499 Other professional services not elsewhere specified,2_professional_services
+12,351,0351 Communications professional services not elsewhere specified,2_professional_services
+13,1231,"1231 Office furniture and furnishings, incl. Parts",10_office_management
+14,332,0332 Audio visual services,3_information_technology
+15,424,0424 Interpretation Services,2_professional_services
+16,361,0361 Communications - Web Services Subscriptions,9_human_capital
 17,813,Temporary help services,2_professional_services
 18,494,Translation services,2_professional_services
 19,491,Management consulting,2_professional_services
-20,1284,Client software related to Distributed Computing ,
+20,1284,Client software related to Distributed Computing,3_information_technology
 21,447,Tuition fees and costs of attending courses including seminars not elsewhere specified,9_human_capital
 22,448,Purchase of training packages and courses,9_human_capital
 23,332,Audio-visual services,3_information_technology
 24,1223,"Image/Video communications equipment (includes telepresence/video conferencing equipment, cabling, parts and peripherals)",3_information_technology
 25,361,Electronic subscriptions and electronic publications,9_human_capital
-26,859,Other business services not elsewhere specified,2_professional_services
+26,859,Other business services not elsewhere specified,
 27,1249,Other equipment and Parts,6_industrial_products_and_services
 28,1283,Computer equipment related to Distributed Computing Environment (DCE) - Desktop/personal/portable (includes all related parts and peripherals),3_information_technology
-29,533,"Rental of machinery, office furniture and fixtures and other equipment",
+29,533,"Rental of machinery, office furniture and fixtures and other equipment",10_office_management
 30,493,Interpretation services,2_professional_services
 31,460,Protection services,8_security_and_protection
 32,1285,Application software (including COTS) and application development and delivery software,3_information_technology
-33,672,"Computer equipment related to production and operations (P&O) environment - All servers, storage, printers, etc. (includes all related parts and peripherals)",
+33,672,"Computer equipment related to production and operations (P&O) environment - All servers, storage, printers, etc. (includes all related parts and peripherals)",3_information_technology
 34,583,License/Maintenance fees for application software (including COTS) and application development and delivery software,3_information_technology
 35,585,License/Maintenance fees for networking software,3_information_technology
 36,446,Training consultants,9_human_capital
 37,401,Accounting and audit services,2_professional_services
 38,582,License/Maintenance fees for client software related to Distributed Computing Environment (DCE),3_information_technology
 39,212,POSTAGE AND PARCEL POST,10_office_management
-40,668,"IMAGE/VIDEO COMMUNICATIONS EQUIPMENT (INCLUDES TELEPRESENCE/VIDEO CONFERENCING EQUIPMENT, CABLING, PARTS AND PERIFERALS)",
-41,1282,"COMPUTER EQUIPMENT RELATED TO PRODUCTION AND OPERATIONS (P&O) ENVIRONMENT - ALL SERVERS, STORAGE, PRINTERS, ETC. (INCLUDES ALL RELATED PARTS AND PERIFERALS)",
+40,668,"IMAGE/VIDEO COMMUNICATIONS EQUIPMENT (INCLUDES TELEPRESENCE/VIDEO CONFERENCING EQUIPMENT, CABLING, PARTS AND PERIFERALS)",3_information_technology
+41,1282,"COMPUTER EQUIPMENT RELATED TO PRODUCTION AND OPERATIONS (P&O) ENVIRONMENT - ALL SERVERS, STORAGE, PRINTERS, ETC. (INCLUDES ALL RELATED PARTS AND PERIFERALS)",3_information_technology
 42,301,ADVERTISING SERVICES,2_professional_services
 43,1289,"Communications/Networking equipment (includes analog, digital and combined analog/digital equipment, cabling, parts and peripherals)",3_information_technology
-44,0813,Temporary help services,2_professional_services
-45,0533,"Rental of machinery, office furniture and fixtures and other equipment",
-46,0672,"Computer equipment related to production and operations (P&O) environment - All servers, storage, printers, etc. (includes all related parts and peripherals)",
-47,0403,Financial management services,2_professional_services
-48,0446,Training consultants,9_human_capital
-49,0210,Transportation of things not elsewhere specified,5_transportation_and_logistics
-50,0582,License/Maintenance Fees Client Software,
+44,813,Temporary help services,2_professional_services
+45,533,"Rental of machinery, office furniture and fixtures and other equipment",10_office_management
+46,672,"Computer equipment related to production and operations (P&O) environment - All servers, storage, printers, etc. (includes all related parts and peripherals)",3_information_technology
+47,403,Financial management services,2_professional_services
+48,446,Training consultants,9_human_capital
+49,210,Transportation of things not elsewhere specified,5_transportation_and_logistics
+50,582,License/Maintenance Fees Client Software,3_information_technology
 51,584,"License/Maintenance fees for operating system and utility software related to servers, storage, peripherals and components",3_information_technology
 52,1287,Networking software,3_information_technology
-53,0819,Non-professional personal service contracts not elsewhere specified,
-54,0585,License/Maintenance fees for networking software,3_information_technology
+53,819,Non-professional personal service contracts not elsewhere specified,2_professional_services
+54,585,License/Maintenance fees for networking software,3_information_technology
 55,311,Publishing services,2_professional_services
 56,410,Legal services,2_professional_services
-57,0410,Legal services,2_professional_services
+57,410,Legal services,2_professional_services
 58,341,Communications Research Services,2_professional_services
-59,0664,"Communications/Networking equipment (includes analog, digital and combined analog/digital equipment, cabling, parts and peripherals)",3_information_technology
-60,0583,License/Maintenance fees for application software (including COTS) and application development and delivery software,3_information_technology
-61,0584,"License/Maintenance fees for operating system and utility software related to servers, storage, peripherals and components",3_information_technology
+59,664,"Communications/Networking equipment (includes analog, digital and combined analog/digital equipment, cabling, parts and peripherals)",3_information_technology
+60,583,License/Maintenance fees for application software (including COTS) and application development and delivery software,3_information_technology
+61,584,"License/Maintenance fees for operating system and utility software related to servers, storage, peripherals and components",3_information_technology
 62,1286,"Operating system and utility software related to servers, storage, peripherals and components",3_information_technology
-63,0460,Protection services,8_security_and_protection
-64,0448,Purchase of training packages and courses,9_human_capital
-65,1291,Image/Video communications software (includes telepresence/video conferencing software),
-66,0311,Publishing Services,2_professional_services
-67,0401,Accounting and audit services,2_professional_services
-68,0590,License/Maintenance fees for image/video communications software (includes telepresence/video conferencing software),3_information_technology
-69,0665,Other equipment,3_information_technology
-70,0668,"Image/Video communications equipment (includes telepresence/video conferencing equipment, cabling, parts, and peripherals)",3_information_technology
-71,819,Non-professional personal service contracts not elsewhere specified,
+63,460,Protection services,8_security_and_protection
+64,448,Purchase of training packages and courses,9_human_capital
+65,1291,Image/Video communications software (includes telepresence/video conferencing software),3_information_technology
+66,311,Publishing Services,2_professional_services
+67,401,Accounting and audit services,2_professional_services
+68,590,License/Maintenance fees for image/video communications software (includes telepresence/video conferencing software),3_information_technology
+69,665,Other equipment,3_information_technology
+70,668,"Image/Video communications equipment (includes telepresence/video conferencing equipment, cabling, parts, and peripherals)",3_information_technology
+71,819,Non-professional personal service contracts not elsewhere specified,2_professional_services
 72,630,Office buildings,1_facilities_and_construction
 73,821,Membership fees,9_human_capital
 74,210,Transportation of things not elsewhere specified,5_transportation_and_logistics
@@ -94,13 +94,13 @@
 92,431,Scientific consultants,2_professional_services
 93,1339,Other engineering works,1_facilities_and_construction
 94,1124,Diesel fuel,5_transportation_and_logistics
-95,628,Other engineering works ,1_facilities_and_construction
+95,628,Other engineering works,1_facilities_and_construction
 96,1122,Gasoline,5_transportation_and_logistics
 97,1219,Other machinery and parts,6_industrial_products_and_services
-98,703,Sewer and water,10_office_management
+98,703,Sewer and water,1_facilities_and_construction
 99,1126,Heavy fuel oil,5_transportation_and_logistics
-100,1340,Office buildings ,1_facilities_and_construction
-101,496,Services related to the remediation of contaminated sites ,1_facilities_and_construction
+100,1340,Office buildings,1_facilities_and_construction
+101,496,Services related to the remediation of contaminated sites,1_facilities_and_construction
 102,421,Architectural services,1_facilities_and_construction
 103,660,"Measuring, controlling, laboratory, medical and optical instruments, apparatus and accessories",1_facilities_and_construction
 104,1245,Safety and sanitation equipment and parts,6_industrial_products_and_services
@@ -111,65 +111,65 @@
 109,655,Processing machinery,6_industrial_products_and_services
 110,1263,Road motor vehicles Parts,5_transportation_and_logistics
 111,1350,Industrial buildings,1_facilities_and_construction
-112,495,Services related to the assessment of potentially contaminated sites,
+112,495,Services related to the assessment of potentially contaminated sites,1_facilities_and_construction
 113,607,"Highways, roads and streets",1_facilities_and_construction
-114,1141,Wood and articles of wood ,6_industrial_products_and_services
+114,1141,Wood and articles of wood,6_industrial_products_and_services
 115,1179,Miscellaneous manufactured articles,6_industrial_products_and_services
 116,1174,Horticultural products,6_industrial_products_and_services
 117,619,Electric power installations,1_facilities_and_construction
 118,1115,"Miscellaneous food, food materials and food preparations",10_office_management
 119,1241,"Plumbing equipment and fittings, including parts",1_facilities_and_construction
 120,6086,Payments made in accordance with authorities,
-121,522,"Rental of image/video communications equipment (includes telepresence/video conferencing equipment, cabling, parts and peripherals)",
+121,522,"Rental of image/video communications equipment (includes telepresence/video conferencing equipment, cabling, parts and peripherals)",3_information_technology
 122,1130,"Inorganic and organic chemicals, including plastics, rubber and products, and excluding tires and tubes",6_industrial_products_and_services
 123,1128,"Other mineral fuels, oils and products",6_industrial_products_and_services
 124,423,Engineering consultants-Other,1_facilities_and_construction
 125,321,Printing services,10_office_management
-126,682,Road motor vehicles - Non-military ,5_transportation_and_logistics
+126,682,Road motor vehicles - Non-military,5_transportation_and_logistics
 127,352,Advertising services,2_professional_services
 128,635,Industrial buildings,1_facilities_and_construction
 129,540,Rental of motor and other vehicles,5_transportation_and_logistics
-130,1171,"Medical supplies, instruments, and apparatus",
+130,1171,"Medical supplies, instruments, and apparatus",4_medical
 131,1343,Commercial buildings,1_facilities_and_construction
 132,1143,"Printed matter, including books, newspapers, pictures, manuscripts and forms",10_office_management
-133,705,Waste disposal,10_office_management
+133,705,Waste disposal,1_facilities_and_construction
 134,1172,Office and stationers supplies,10_office_management
 135,1212,Tools and implements,6_industrial_products_and_services
 136,497,Services related to the care and maintenance of contaminated sites,1_facilities_and_construction
 137,1211,Special industry machinery,6_industrial_products_and_services
 138,3422,Suspense account (debit)-Other government departments,
 139,1164,Miscellaneous metal products,6_industrial_products_and_services
-140,570,Rental-Other,10_office_management
+140,570,Rental-Other,1_facilities_and_construction
 141,1239,Other office equipment and Parts,10_office_management
 142,1152,Other clothing,6_industrial_products_and_services
 143,1267,"Miscellaneous vehicles Parts, Including Tires and Tubes",5_transportation_and_logistics
 144,1159,"Miscellaneous textiles, headgear, umbrellas, etc.",6_industrial_products_and_services
-145,492,Research contracts ,2_professional_services
+145,492,Research contracts,2_professional_services
 146,646,Residential buildings,1_facilities_and_construction
 147,1316,"Roads, highways and airport runways",1_facilities_and_construction
-148,673,Computer equipment related to Distributed Computing Environment (DCE)-Desktop/personal/portable (includes all related parts and peripherals),
+148,673,Computer equipment related to Distributed Computing Environment (DCE)-Desktop/personal/portable (includes all related parts and peripherals),3_information_technology
 149,1142,Paper and paperboard,6_industrial_products_and_services
 150,514,Rental of other buildings,1_facilities_and_construction
 151,1134,Photographic or cinematography goods,10_office_management
-152,0341,Communications Research Services,2_professional_services
-153,0822,Hospitality,10_office_management
-154,0321,Printing Services,10_office_management
-155,0362,Data and Database Access Services,9_human_capital
-156,0213,Courier Services,5_transportation_and_logistics
-157,0301,Advertising Services,2_professional_services
-158,0821,Membership Fees,9_human_capital
-159,0630,Office Buildings,1_facilities_and_construction
+152,341,Communications Research Services,2_professional_services
+153,822,Hospitality,10_office_management
+154,321,Printing Services,10_office_management
+155,362,Data and Database Access Services,9_human_capital
+156,213,Courier Services,5_transportation_and_logistics
+157,301,Advertising Services,2_professional_services
+158,821,Membership Fees,9_human_capital
+159,630,Office Buildings,1_facilities_and_construction
 160,362,Data and Database Access Services,9_human_capital
-161,812,Computer Services (includes IT solutions / deliverables as well as IT Managed Services),
+161,812,Computer Services (includes IT solutions / deliverables as well as IT Managed Services),3_information_technology
 162,3259,Miscellaneous Expenditures not Elsewhere Classified,
-163,1173,"House Furnishing, excluding Furniture",
+163,1173,"House Furnishing, excluding Furniture",1_facilities_and_construction
 164,1273,Ammunition,9_human_capital
 165,3425,Reallocation of Expenditures/Costs Within a Department,
 166,1151,Uniforms,6_industrial_products_and_services
 167,231,Data Communications Services,3_information_technology
 168,1256,Ships and Boats,5_transportation_and_logistics
 169,230,Voice Communications Services,2_professional_services
-170,1271,Weapons (Including Parts),
+170,1271,Weapons (Including Parts),11_defence
 171,510,Rental of Residential Buildings,1_facilities_and_construction
 172,"""NA""",,
 173,452,Welfare Services,4_medical
@@ -177,71 +177,71 @@
 175,4531,Rental of non-residential buildings,1_facilities_and_construction
 176,823,Conference fees,9_human_capital
 177,639,Institutional buildings,1_facilities_and_construction
-178,265,Non-public servant travel - Other travel,
+178,265,Non-public servant travel - Other travel,7_travel
 179,675,Ships and boats,5_transportation_and_logistics
-180,1153,Footwear,
+180,1153,Footwear,6_industrial_products_and_services
 181,512,Rental of Industrial and Commercial Buildings,1_facilities_and_construction
 182,1356,Schools and Other Educational Buildings,1_facilities_and_construction
-183,0811,Contracted Building Cleaning,1_facilities_and_construction
-184,261,Non-Public Servant Travel-Support core mandate activities,
-185,0673,Computer Equipment related to Distributed Computing Environment (DCE)-Desktop/Personal/Portable (Includes all related parts and peripherals),
-186,0570,Rental-Other,10_office_management
-187,0812,Computer Services (includes IT solutions / deliverables as well as IT Managed Services),
+183,811,Contracted Building Cleaning,1_facilities_and_construction
+184,261,Non-Public Servant Travel-Support core mandate activities,7_travel
+185,673,Computer Equipment related to Distributed Computing Environment (DCE)-Desktop/Personal/Portable (Includes all related parts and peripherals),3_information_technology
+186,570,Rental-Other,1_facilities_and_construction
+187,812,Computer Services (includes IT solutions / deliverables as well as IT Managed Services),3_information_technology
 188,1246,Other Furniture and Fixtures Including Parts,10_office_management
 189,671,Other Office Equipment,10_office_management
-190,0230,Cleaning and Maintenance,
+190,230,Cleaning and Maintenance,2_professional_services
 191,852,Real Estate Services,2_professional_services
-192,701,Electricity,10_office_management
+192,701,Electricity,1_facilities_and_construction
 193,450,Hospital Services,4_medical
-194,251,Public Servant Travel-Support core mandate activities,
-195,709,Other Utility Services,10_office_management
+194,251,Public Servant Travel-Support core mandate activities,7_travel
+195,709,Other Utility Services,1_facilities_and_construction
 196,891,Personal Services,2_professional_services
-197,0660,"Measuring, Controlling, Laboratory, Medical and Optical Instruments, Apparatus and Accessories",1_facilities_and_construction
-198,0671,Other Office Equipment,10_office_management
-199,0431,Scientific Consultants,2_professional_services
-200,0251,Public Servant Travel-Support core mandate activities,
-201,0451,Other Health Services not Elsewhere Specified,4_medical
-202,0512,Rental of Industrial and Commercial Buildings,1_facilities_and_construction
-203,,Laboratory Equipment,
-204,0682,Motor Vehicle Repairs and Maintenance,
-205,0352,Public Relations Services,2_professional_services
-206,0524,Rental computer software,
-207,0472,Information tech consultants,
-208,0561,Rental of aircraft,5_transportation_and_logistics
-209,1226,Comp eqpt-Network/servers,
+197,660,"Measuring, Controlling, Laboratory, Medical and Optical Instruments, Apparatus and Accessories",1_facilities_and_construction
+198,671,Other Office Equipment,10_office_management
+199,431,Scientific Consultants,2_professional_services
+200,251,Public Servant Travel-Support core mandate activities,7_travel
+201,451,Other Health Services not Elsewhere Specified,4_medical
+202,512,Rental of Industrial and Commercial Buildings,1_facilities_and_construction
+203,,Laboratory Equipment,6_industrial_products_and_services
+204,682,Motor Vehicle Repairs and Maintenance,5_transportation_and_logistics
+205,352,Public Relations Services,2_professional_services
+206,524,Rental computer software,3_information_technology
+207,472,Information tech consultants,3_information_technology
+208,561,Rental of aircraft,5_transportation_and_logistics
+209,1226,Comp eqpt-Network/servers,3_information_technology
 210,1229,Computer equipment parts,3_information_technology
-211,1227,Comp eqpt-Desk/pers/port,
-212,0669,Telecommunication equipment,
+211,1227,Comp eqpt-Desk/pers/port,3_information_technology
+212,669,Telecommunication equipment,3_information_technology
 213,1228,Computer software,3_information_technology
-214,0525,Rental of computer equipment,3_information_technology
-215,1221,Voice comm equipment,
-216,0220,Telephone & other voice svcs,3_information_technology
-217,0201,Travel-PS,
-218,1216,Computer equipment ,3_information_technology
-219,0223,Digital channel comm svcs,
-220,0232,Video Communications Services,
-221,0331,Exposition services,2_professional_services
-222,0878,Warranty Extension,1_facilities_and_construction
-223,1222,Data comm equipment,
-224,1225,Telecomm eqpt parts,
-225,0445,Tuition Fees for Courses Where Employees Take Training on Their Own Time ,9_human_capital
-226,0420,Engineering and architectural services (including research),
-227,0353,Other communications professional services ,2_professional_services
-228,0226,Data communication svcs,
-229,0423,Engineering consultants-Other,1_facilities_and_construction
-230,0474,Information Management services,3_information_technology
+214,525,Rental of computer equipment,3_information_technology
+215,1221,Voice comm equipment,3_information_technology
+216,220,Telephone & other voice svcs,3_information_technology
+217,201,Travel-PS,7_travel
+218,1216,Computer equipment,3_information_technology
+219,223,Digital channel comm svcs,3_information_technology
+220,232,Video Communications Services,3_information_technology
+221,331,Exposition services,2_professional_services
+222,878,Warranty Extension,1_facilities_and_construction
+223,1222,Data comm equipment,3_information_technology
+224,1225,Telecomm eqpt parts,3_information_technology
+225,445,Tuition Fees for Courses Where Employees Take Training on Their Own Time,9_human_capital
+226,420,Engineering and architectural services (including research),1_facilities_and_construction
+227,353,Other communications professional services,2_professional_services
+228,226,Data communication svcs,3_information_technology
+229,423,Engineering consultants-Other,1_facilities_and_construction
+230,474,Information Management services,3_information_technology
 231,475,Information Technology services,3_information_technology
-232,0404,Communications services,2_professional_services
+232,404,Communications services,2_professional_services
 233,4623,Information Technology services,3_information_technology
-234,0475,Information Technology services,3_information_technology
-235,640,"Buildings and/or installations for telecommunications, computers and/or electronic/automated office systems-Repairs and Maintenance",
+234,475,Information Technology services,3_information_technology
+235,640,"Buildings and/or installations for telecommunications, computers and/or electronic/automated office systems-Repairs and Maintenance",1_facilities_and_construction
 236,590,License/Maintenance fees for image/video communications software (includes telepresence/video conferencing software),3_information_technology
-237,0231,Data communications services,3_information_technology
-238,0495,Services related to the assessment of potentially contaminated sites,
-239,0640,"Buildings and/or installations for telecommunications, computers and/or electronic/automated office systems-Repairs and Maintenance",
-240,0587,"Rental of computer equipment related to production and operations (P&O) environment-All servers, storage, printers, etc. (includes all related parts and peripherals)",
-241,0402,Human resources management services,2_professional_services
-242,0522,"Rental of image/video communications equipment (includes telepresence/video conferencing equipment, cabling, parts and peripherals)",
+237,231,Data communications services,3_information_technology
+238,495,Services related to the assessment of potentially contaminated sites,1_facilities_and_construction
+239,640,"Buildings and/or installations for telecommunications, computers and/or electronic/automated office systems-Repairs and Maintenance",1_facilities_and_construction
+240,587,"Rental of computer equipment related to production and operations (P&O) environment-All servers, storage, printers, etc. (includes all related parts and peripherals)",3_information_technology
+241,402,Human resources management services,2_professional_services
+242,522,"Rental of image/video communications equipment (includes telepresence/video conferencing equipment, cabling, parts and peripherals)",3_information_technology
 243,474,Information Management services,3_information_technology
 244,4620,Human resources management services,2_professional_services
 245,404,Communications services,2_professional_services
@@ -249,184 +249,184 @@
 247,5130,Maintenance of value adjustments,
 248,402,Human resources management services,2_professional_services
 249,4565,Other health services,4_medical
-250,587,"Rental of computer equipment related to production and operations (P&O) environment-All servers, storage, printers, etc. (includes all related parts and peripherals)",
-251,4510,Licence fees,
+250,587,"Rental of computer equipment related to production and operations (P&O) environment-All servers, storage, printers, etc. (includes all related parts and peripherals)",3_information_technology
+251,4510,Licence fees,3_information_technology
 252,407,Acquisition services,2_professional_services
 253,4529,Rental of parking space,1_facilities_and_construction
-254,0514,Rental of other buildings,1_facilities_and_construction
+254,514,Rental of other buildings,1_facilities_and_construction
 255,4593,Miscellaneous,
-256,0405,Real property services,
+256,405,Real property services,1_facilities_and_construction
 257,4621,Financial management services,2_professional_services
 258,2412,Assistance to encourage employment,4_medical
 259,2411,2411 Payments to universities in aid of research,2_professional_services
-260,0881,0881 Construction services,
+260,881,0881 Construction services,1_facilities_and_construction
 261,4624,Communications services,2_professional_services
-262,4559,Supplementary Inspection services,
+262,4559,Supplementary Inspection services,2_professional_services
 263,4546,Sales of information products,2_professional_services
-264,0670,Computer equipment - hardware and software,
-265,0852,Real Estate services,2_professional_services
-266,0221,Basic data communications services (excluding enhanced telecommunications services),3_information_technology
-267,0823,Conference fees,9_human_capital
+264,670,Computer equipment - hardware and software,3_information_technology
+265,852,Real Estate services,2_professional_services
+266,221,Basic data communications services (excluding enhanced telecommunications services),3_information_technology
+267,823,Conference fees,9_human_capital
 268,822,Hospitality,10_office_management
-269,0709,Other public utility services,
-270,0212,Postage and parcel post,10_office_management
-271,0421,Architectural services,1_facilities_and_construction
-272,0444,Teachers and instructors on contract,9_human_capital
-273,0540,Rental of motor and other vehicles,5_transportation_and_logistics
-274,0476,Information technology consultants,
+269,709,Other public utility services,1_facilities_and_construction
+270,212,Postage and parcel post,10_office_management
+271,421,Architectural services,1_facilities_and_construction
+272,444,Teachers and instructors on contract,9_human_capital
+273,540,Rental of motor and other vehicles,5_transportation_and_logistics
+274,476,Information technology consultants,3_information_technology
 275,1232,"Office furniture and furnishings, including parts",10_office_management
 276,1370,Residential buildings,1_facilities_and_construction
-277,0658,"Electric lighting, distribution and control equipment",1_facilities_and_construction
-278,0851,Banking services,2_professional_services
-279,0815,Collection agency fees and charges,2_professional_services
-280,0000,"Rental of machinery, office furniture & fixtures",10_office_management
-281,0520,Rental of voice communications equipment,
-282,0860,Other business services - outside government,2_professional_services
-283,0854,Motor Vehicle Licences,5_transportation_and_logistics
-284,0202,Travel - non-public servants,7_travel
-285,0471,Telecommunications Consultants,3_information_technology
-286,031,Publishing services,2_professional_services
-287,046,Protection services,8_security_and_protection
+277,658,"Electric lighting, distribution and control equipment",1_facilities_and_construction
+278,851,Banking services,2_professional_services
+279,815,Collection agency fees and charges,2_professional_services
+280,0,"Rental of machinery, office furniture & fixtures",10_office_management
+281,520,Rental of voice communications equipment,3_information_technology
+282,860,Other business services - outside government,2_professional_services
+283,854,Motor Vehicle Licences,5_transportation_and_logistics
+284,202,Travel - non-public servants,7_travel
+285,471,Telecommunications Consultants,3_information_technology
+286,31,Publishing services,2_professional_services
+287,46,Protection services,8_security_and_protection
 288,1220,Voice communications equipment,3_information_technology
-289,041,Legal services,2_professional_services
+289,41,Legal services,2_professional_services
 290,1233,"Office furniture and furnishings, including parts",10_office_management
 291,1234,"Office furniture and furnishings, including parts",10_office_management
 292,1235,"Office furniture and furnishings, including parts",10_office_management
 293,1236,"Office furniture and furnishings, including parts",10_office_management
 294,1224,"Digital communications equipment for integrated voice, data (message/text, and computer) or image/video communications",3_information_technology
 295,1230,"Office furniture and furnishings, incl. parts",10_office_management
-296,0253,Public Servant Travel - Support internal governanc,
-297,Offi,"furniture and furnishings, including parts",
-298,670,Computer equipment - hardware and software,
-299,472,Information technology consultants ,
-300,220,Telephone and other voice services (excluding enhanced telecommunications services) ,
-301,854,Motor vehicle licences                            ,5_transportation_and_logistics
+296,253,Public Servant Travel - Support internal governanc,7_travel
+297,Offi,"furniture and furnishings, including parts",1_facilities_and_construction
+298,670,Computer equipment - hardware and software,3_information_technology
+299,472,Information technology consultants ,3_information_technology
+300,220,Telephone and other voice services (excluding enhanced telecommunications services) ,3_information_technology
+301,854,Motor vehicle licences,5_transportation_and_logistics
 302,232,Image/Video communications services (includes telepresence/video conferencing services),3_information_technology
 303,511,Rental of office buildings,1_facilities_and_construction
-304,0511,Rental of office buildings,1_facilities_and_construction
+304,511,Rental of office buildings,1_facilities_and_construction
 305,2049,Other non-recoverable payments to persons,5_transportation_and_logistics
 306,445,Tuition fees for courses where employees take training on their own time,9_human_capital
 307,207,Employee Relocation in Canada,7_travel
 308,403,Financial management services,2_professional_services
 309,1113,Dairy Products and Other Animal Products,10_office_management
-310,664,"Communications/ Networking Equipment (includes analog, digital and combined analog/digital equipment, cabling, parts and peripherals)",
+310,664,"Communications/ Networking Equipment (includes analog, digital and combined analog/digital equipment, cabling, parts and peripherals)",3_information_technology
 311,892,Recreational Services,2_professional_services
 312,815,Collection Agency Fees and Charges,2_professional_services
-313,1161,Non-ferrous Metals,
-314,589,Rental - Communications Networking Equipment,
+313,1161,Non-ferrous Metals,6_industrial_products_and_services
+314,589,Rental - Communications Networking Equipment,3_information_technology
 315,221,Basic Data Communications Services (Excluding Enhanced Telecommunications Services),3_information_technology
 316,669,Telecommunications Equipment,3_information_technology
 317,227,Other Communications Services,2_professional_services
 318,3718,Suspense Account (credit balance) - Other Government Departments,
 319,201,Travel - Public Servants,7_travel
-320,702,Natural Gas,10_office_management
+320,702,tural Gas,1_facilities_and_construction
 321,202,Travel - Non-public Servants,7_travel
 322,471,Telecommunications Consultants,3_information_technology
 323,1132,Pharmaceutical and Other Medicinal Products,4_medical
-324,520,Rental of Voice Communications Equipment,
-325,440,"Education - Elementary, Secondary, College, University and Special Education",
+324,520,Rental of Voice Communications Equipment,3_information_technology
+325,440,"Education - Elementary, Secondary, College, University and Special Education",9_human_capital
 326,226,Data Communications Services (Including All Non-voice Telecommunications Services),3_information_technology
 327,561,Rental of Aircraft,5_transportation_and_logistics
 328,580,Rental of Analog Communications / Networking Equipment,3_information_technology
 329,586,License/Maintenance fees for IT Security Software,3_information_technology
-330,1133,"Explosives, Pyrotechnic Products, etc.",
+330,1133,"Explosives, Pyrotechnic Products, etc.",6_industrial_products_and_services
 331,683,Miscellaneous Vehicles,5_transportation_and_logistics
-332,0588,0588 Rental of Computers -Client Computing Domain - Desktop/Personal/Portable,
+332,588,0588 Rental of Computers -Client Computing Domain - Desktop/Personal/Portable,3_information_technology
 333,1295,1295 - Communications/Networking Equipment >$5K,3_information_technology
-334,0261,0261 - NonPublic Servant-Operational,
-335,0481,0481 - Storage/Warehousing,
-336,0440,0446 - Training Consultants & Instructors,
-337,0322,0322 - Copier Fleet,
-338,0496,0496 - Service Contracts,
-339,0263,0263 - Hotel Services,
-340,0579,0579 - Cloud Services,3_information_technology
-341,0443,0443 - Staff Development Training,9_human_capital
-342,263,0263 -Hotel Services,
-343,025,Air Charter Services,5_transportation_and_logistics
+334,261,0261 - NonPublic Servant-Operational,7_travel
+335,481,0481 - Storage/Warehousing,3_information_technology
+336,440,0446 - Training Consultants & Instructors,9_human_capital
+337,322,0322 - Copier Fleet,10_office_management
+338,496,0496 - Service Contracts,1_facilities_and_construction
+339,263,0263 - Hotel Services,7_travel
+340,579,0579 - Cloud Services,3_information_technology
+341,443,0443 - Staff Development Training,9_human_capital
+342,263,0263 -Hotel Services,7_travel
+343,25,Air Charter Services,5_transportation_and_logistics
 344,122,Purchase of 16 laptops,3_information_technology
-345,0466,Microsoft Office Training Sessions,
-346,0252,Charter Flights from Iqaluit to Cambridge Bay,
-347,044,Project Management Training,9_human_capital
-348,089,Display setup and Teardown,2_professional_services
-349,0430,Scientific services,2_professional_services
-350,0453,Physicians and surgeons,4_medical
-351,0422,Engineering consultants-Construction,1_facilities_and_construction
-352,0264,Non-public servant travel-Support employee training,
+345,466,Microsoft Office Training Sessions,2_professional_services
+346,252,Charter Flights from Iqaluit to Cambridge Bay,7_travel
+347,44,Project Management Training,9_human_capital
+348,89,Display setup and Teardown,2_professional_services
+349,430,Scientific services,2_professional_services
+350,453,Physicians and surgeons,4_medical
+351,422,Engineering consultants-Construction,1_facilities_and_construction
+352,264,Non-public servant travel-Support employee training,7_travel
 353,6299,Net increase or decrease in other liability,
-354,0207,Employee relocation in Canada,7_travel
-355,0655,Processing Machinery,6_industrial_products_and_services
+354,207,Employee relocation in Canada,7_travel
+355,655,Processing Machinery,6_industrial_products_and_services
 356,1253,Satellite and spacecraft acquisition and parts,3_information_technology
-357,0656,"Heating, air-conditioning and refrigeration equipment",1_facilities_and_construction
-358,0611,Waterworks and sewage systems,1_facilities_and_construction
-359,0607,"Highways, roads, and streets",1_facilities_and_construction
-360,0645,Other buildings,1_facilities_and_construction
-361,0199,Others,
-362,0683,Miscellaneous vehicles,5_transportation_and_logistics
+357,656,"Heating, air-conditioning and refrigeration equipment",1_facilities_and_construction
+358,611,Waterworks and sewage systems,1_facilities_and_construction
+359,607,"Highways, roads, and streets",1_facilities_and_construction
+360,645,Other buildings,1_facilities_and_construction
+361,199,Others,
+362,683,Miscellaneous vehicles,5_transportation_and_logistics
 363,199,Other (specify),2_professional_services
 364,453,Physicians and surgeons,4_medical
 365,6099,Net Increases or Decreases in Other Specified Purpose Accounts,
-366,0743,Information technology and telecommunications consultants,3_information_technology
+366,743,Information technology and telecommunications consultants,3_information_technology
 367,3452,Usage of Inventory,5_transportation_and_logistics
-368,1358,Other Institution Buildings,
+368,1358,Other Institution Buildings,1_facilities_and_construction
 369,1125,Light Fuel Oil,5_transportation_and_logistics
 370,455,Dental Services,4_medical
-371,0455,Dental Services,4_medical
+371,455,Dental Services,4_medical
 372,444,Teachers and Instructors on Contract,9_human_capital
-373,0452,Welfare Services,4_medical
+373,452,Welfare Services,4_medical
 374,1369,Other Non-residential Buildings,1_facilities_and_construction
-375,0639,Institutional Buildings,1_facilities_and_construction
-376,254,Public Servant Travel - Employee Training,
-377,0705,Waste Disposal,10_office_management
-378,0628,Other Engineering Installations,
-379,0262,Non-Public Servant Travel - Stakeholder Engagement,
-380,0702,Natural Gas,10_office_management
-381,0265,Non-Public Servant Travel - Other Reasons,
+375,639,Institutional Buildings,1_facilities_and_construction
+376,254,Public Servant Travel - Employee Training,7_travel
+377,705,Waste Disposal,1_facilities_and_construction
+378,628,Other Engineering Installations,1_facilities_and_construction
+379,262,Non-Public Servant Travel - Stakeholder Engagement,7_travel
+380,702,tural Gas,1_facilities_and_construction
+381,265,Non-Public Servant Travel - Other Reasons,7_travel
 382,1148,"ted Matter, Including Books, Newspapers, Pictures, Manuscripts and Forms",10_office_management
-383,0891,Personal Services,2_professional_services
-384,0450,Hospital Services,4_medical
-385,0586,License/Maintenance fees for IT Security Software,3_information_technology
-386,0703,Sewer and Water,10_office_management
-387,0255,Public Servant Travel - Other Reasons,
+383,891,Personal Services,2_professional_services
+384,450,Hospital Services,4_medical
+385,586,License/Maintenance fees for IT Security Software,3_information_technology
+386,703,Sewer and Water,1_facilities_and_construction
+387,255,Public Servant Travel - Other Reasons,7_travel
 388,454,Paramedical Personnel,4_medical
 389,264,Non-Public Servant Travel - Training,7_travel
 390,501,Rental of Land,1_facilities_and_construction
-391,1116,Beverages and Tobacco ,10_office_management
-392,262,Non-Public Servant Travel - Stakeholder Engagement,
-393,1176,Glass or Glass Products,
+391,1116,Beverages and Tobacco,10_office_management
+392,262,Non-Public Servant Travel - Stakeholder Engagement,7_travel
+393,1176,Glass or Glass Products,6_industrial_products_and_services
 394,851,Banking Services,2_professional_services
-395,0315,On line publishing services,2_professional_services
-396,0589,"Rental of communications/networking equipment (includes analog, digital and combined analog/digital equipment, cabling, parts and peripherals)",3_information_technology
+395,315,On line publishing services,2_professional_services
+396,589,"Rental of communications/networking equipment (includes analog, digital and combined analog/digital equipment, cabling, parts and peripherals)",3_information_technology
 397,4562,File Folders,10_office_management
-398,0119,Transportation Mail Services,5_transportation_and_logistics
-399,4619,"Replacement, and install to fit, eight (8) CR Laurence manufactured speak-thru communicators",
-400,0899,Court Reporting - Saskatchewan,
+398,119,Transportation Mail Services,5_transportation_and_logistics
+399,4619,"Replacement, and install to fit, eight (8) CR Laurence manufactured speak-thru communicators",3_information_technology
+400,899,Court Reporting - Saskatchewan,2_professional_services
 401,3250,Court Usher - Montreal,2_professional_services
-402,2302,Occupational Health and Safety Training Services,
-403,0454,Medical Services,
-404,223,Cabling services - NCR,
+402,2302,Occupational Health and Safety Training Services,2_professional_services
+403,454,Medical Services,4_medical
+404,223,Cabling services - NCR,3_information_technology
 405,322,Imaging services,10_office_management
-406,255,Public Servant Travel—Other reasons,
+406,255,Public Servant Travel—Other reasons,7_travel
 407,0,,
 408,855,Acquisition and contract charges,2_professional_services
-409,44,Training and educational services,
-410,035,Communications Professional Services,2_professional_services
+409,44,Training and educational services,9_human_capital
+410,35,Communications Professional Services,2_professional_services
 411,525,RENTAL OF COMPUTER EQUIPMENT,3_information_technology
 412,3142,COMMISSION AND REMUNERATION ON BONDS,2_professional_services
-413,449,LANGUAGE TRAINING - INDIVIDUAL,
-414,1281,DIGITAL COMMUNICATIONS/NETWORKING EQUIPMENT,
-415,588,RENTAL OF COMPUTERS - CLIENT COMPUTING DOMAIN,
-416,406,Material Services - Storage Capacity and Adhoc Services,
+413,449,LANGUAGE TRAINING - INDIVIDUAL,9_human_capital
+414,1281,DIGITAL COMMUNICATIONS/NETWORKING EQUIPMENT,3_information_technology
+415,588,RENTAL OF COMPUTERS - CLIENT COMPUTING DOMAIN,3_information_technology
+416,406,Material Services - Storage Capacity and Adhoc Services,2_professional_services
 417,211,Transportation of Things not Elsewhere Specified,5_transportation_and_logistics
-418,0407,Acquisition Services - Procurement Specialist,
-419,0406,Material Services - Alternate Format Materials,
-420,3459, Amortization of Other Assets Accounts,
+418,407,Acquisition Services - Procurement Specialist,2_professional_services
+419,406,Material Services - Alternate Format Materials,2_professional_services
+420,3459,Amortization of Other Assets Accounts,
 421,481,Consultants en technologie de l’information et télécommunications,3_information_technology
 422,479,Consultants en technologie de l’information et télécommunications,3_information_technology
 423,476,Consultants en technologie de l’information et télécommunications,3_information_technology
 424,477,Consultants en technologie de l’information et télécommunications,3_information_technology
 425,480,Consultants en technologie de l’information et télécommunications,3_information_technology
 426,478,Consultants en technologie de l’information et télécommunications,3_information_technology
-427,222,Enhanced Telecommunications Services ,3_information_technology
+427,222,Enhanced Telecommunications Services,3_information_technology
 428,482,0582 – License/Maintenance fees for Client Software related to Distributed Computing Environment (DCE),3_information_technology
 429,816,Service provider fees related to loan administration,2_professional_services
 430,2434,Assistance to non-profit organizations to encourage employment,9_human_capital
@@ -436,89 +436,89 @@
 434,101,Civilian Regular Time-Continuing Employment,9_human_capital
 435,2103,Payments Under Agricultural Income Disaster Assistance (AIDA),9_human_capital
 436,6003,Contributions by Government Employees for Past Services or in Arrears,9_human_capital
-437,102,"Civilian Regular Time-Part-time, Seasonal, Casual and Student",
-438,252,Public Servant Travel-Stakeholder engagement,
-439,1123,1123 Aviation fuel,
-440,1244,1244 Radar equipment and parts,
-441,0222,0222 Enhanced telecommunications services,
-442,1257,1257 Ships and boats parts,
-443,0120,0120 Civilian allowances to compensate employees for certain expenses,
-444,0675,0675 Repair - Ships and boats - Repair & Maintenance,
-445,0566,0566 Rental of ships,
+437,102,"Civilian Regular Time-Part-time, Seasonal, Casual and Student",9_human_capital
+438,252,Public Servant Travel-Stakeholder engagement,7_travel
+439,1123,1123 Aviation fuel,5_transportation_and_logistics
+440,1244,1244 Radar equipment and parts,11_defence
+441,222,0222 Enhanced telecommunications services,3_information_technology
+442,1257,1257 Ships and boats parts,5_transportation_and_logistics
+443,120,0120 Civilian allowances to compensate employees for certain expenses,9_human_capital
+444,675,0675 Repair - Ships and boats - Repair & Maintenance,5_transportation_and_logistics
+445,566,0566 Rental of ships,5_transportation_and_logistics
 446,7099,7099 Net Increase or Decrease in Other Transactions,
-447,0601,0601 Repair / Maintenance - Marine installations,
-448,0701,0701 Electricity,
-449,0635,0635 Repair - Industrial buildings,
-450,0101,0101 Civilian Regular Time-Continuing Employment,
-451,0855,0855 Acquisition and contract charges,
-452,0676,0676 Repair - Aircraft,
-453,2041,2041 Transfer Payments to persons for research and development ( incl. Scholarships ),
+447,601,0601 Repair / Maintenance - Marine installations,1_facilities_and_construction
+448,701,0701 Electricity,1_facilities_and_construction
+449,635,0635 Repair - Industrial buildings,1_facilities_and_construction
+450,101,0101 Civilian Regular Time-Continuing Employment,9_human_capital
+451,855,0855 Acquisition and contract charges,2_professional_services
+452,676,0676 Repair - Aircraft,5_transportation_and_logistics
+453,2041,2041 Transfer Payments to persons for research and development ( incl. Scholarships ),9_human_capital
 454,3472,3472 Incremental recoveries  from other appropriations (credit),
-455,1127,1127 Lubricating fuel and greases,
+455,1127,1127 Lubricating fuel and greases,5_transportation_and_logistics
 456,4843,4843 Sales of surplus Crown assets,
-457,0646,0646 Repair - Residential buildings,
-458,4566,4566 Engineering and scientific fees,
+457,646,0646 Repair - Residential buildings,1_facilities_and_construction
+458,4566,4566 Engineering and scientific fees,2_professional_services
 459,8225,8225 Payments,
-460,1250,1250 Aircraft - Acquisition,
-461,4527,4527 Rental of machinery and equipment,
-462,1310,1310 Marine installations - Acquisition,
-463,0501,0501 Rental of land,
-464,1280,1280 Analog Communications / Networking,
-465,0666,0666 NOT USED 2013-14 Repair and Maintenance of Analog Communications/Networking Equipment,
-466,1251,1251 Aircraft Parts,
-467,0125,0125 Civilian isolated post allowance,
+460,1250,1250 Aircraft - Acquisition,5_transportation_and_logistics
+461,4527,4527 Rental of machinery and equipment,1_facilities_and_construction
+462,1310,1310 Marine installations - Acquisition,1_facilities_and_construction
+463,501,0501 Rental of land,1_facilities_and_construction
+464,1280,1280 Analog Communications / Networking,3_information_technology
+465,666,0666 NOT USED 2013-14 Repair and Maintenance of Analog Communications/Networking Equipment,3_information_technology
+466,1251,1251 Aircraft Parts,5_transportation_and_logistics
+467,125,0125 Civilian isolated post allowance,9_human_capital
 468,2319,2319 Payments to other international organizations,
-469,0254,0254 Public Servant Travel-Employee training,
-470,0592,0592 Rental of Computers - Client Computing Domain  ,
-471,0591,0591 Rental of Computers - Client Computing Domain  ,
-472,0208,0208 Employee relocation outside Canada and or return,
+469,254,0254 Public Servant Travel-Employee training,7_travel
+470,592,0592 Rental of Computers - Client Computing Domain,3_information_technology
+471,591,0591 Rental of Computers - Client Computing Domain,3_information_technology
+472,208,0208 Employee relocation outside Canada and or return,7_travel
 473,566,Rental of ships,5_transportation_and_logistics
-474,405,Real Property Services,
+474,405,Real Property Services,1_facilities_and_construction
 475,601,Marine installations,5_transportation_and_logistics
-476,0227,Other Communications Services,2_professional_services
-477,0012,Miscellaneous Manufactured Articles,6_industrial_products_and_services
-478,0910,Other Office Equipment and Parts,10_office_management
+476,227,Other Communications Services,2_professional_services
+477,12,Miscellaneous Manufactured Articles,6_industrial_products_and_services
+478,910,Other Office Equipment and Parts,10_office_management
 479,1210,Office Building,1_facilities_and_construction
-480,0425,Other Professional Services,3_information_technology
+480,425,Other Professional Services,3_information_technology
 481,1214,CommVault Upgrade,3_information_technology
-482,0504,Storage of furniture,1_facilities_and_construction
-483,0309,Promotional Items: Helix Pens & Pads,
-484,1360,"Buildings or installations for telecommunications, computer and/or office systems",
-485,0497,Services Related to the Care and Maintenance of Contaminated Sites,1_facilities_and_construction
-486,0619,Repair of Engineering works - Electric power installations,
-487,0510,Rental of residential buildings,1_facilities_and_construction
+482,504,Storage of furniture,1_facilities_and_construction
+483,309,Promotional Items: Helix Pens & Pads,10_office_management
+484,1360,"Buildings or installations for telecommunications, computer and/or office systems",1_facilities_and_construction
+485,497,Services Related to the Care and Maintenance of Contaminated Sites,1_facilities_and_construction
+486,619,Repair of Engineering works - Electric power installations,1_facilities_and_construction
+487,510,Rental of residential buildings,1_facilities_and_construction
 488,1335,"Bridges, trestles, culverts, overpasses and viaducts",1_facilities_and_construction
 489,XXXX,Default - deleted line object (system requirement),
 490,1301,Acquisition of Land,1_facilities_and_construction
-491,2449,Other transfer payments to non-profit institutions,
-492,0102,"Salaries and Wages - Civilian regular time - part-time, seasonal, and casual",
+491,2449,Other transfer payments to non-profit institutions,9_human_capital
+492,102,"Salaries and Wages - Civilian regular time - part-time, seasonal, and casual",9_human_capital
 493,676,Aircraft,5_transportation_and_logistics
 494,5299,Net increase or decrease in cash account,
 495,2139,Other non-recoverable subsidies to industry,5_transportation_and_logistics
-496,0521,Rental of data (message/text and computer) communications equipment,
+496,521,Rental of data (message/text and computer) communications equipment,3_information_technology
 497,3251,Damage and other claims against the Crown,
-498,555,Capital Lease - Purchase of All Types of Assets,
+498,555,Capital Lease - Purchase of All Types of Assets,3_information_technology
 499,2032,Payments to Aboriginal people,9_human_capital
 500,7,#,
-501,0634,Commercial buildings,1_facilities_and_construction
+501,634,Commercial buildings,1_facilities_and_construction
 502,208,Employee relocation outside Canada and/or return,7_travel
 503,2329,Other transfer payments outside Canada to or on behalf of international organizations and foreign countries,2_professional_services
 504,5399,Net Increase or Decrease in Accounts receivable,
-505,0124,Civilian-Foreign service allowance,
+505,124,Civilian-Foreign service allowance,9_human_capital
 506,2303,Payments for development assistance to Canadian non-government organizations,
-507,0186,Other supplementary personnel costs,9_human_capital
+507,186,Other supplementary personnel costs,9_human_capital
 508,1163,Cutlery,10_office_management
-509,0126,Other civilian allowances and benefits,9_human_capital
+509,126,Other civilian allowances and benefits,9_human_capital
 510,1288,Security Software,3_information_technology
-511,0113,Other salaries and wages,9_human_capital
-512,0631,Office buildings,1_facilities_and_construction
+511,113,Other salaries and wages,9_human_capital
+512,631,Office buildings,1_facilities_and_construction
 513,5030,Acquisition of other advances with cash,
 514,2304,Other Payments for Development Assistance to Foreign Countries,
-515,0892,Recreational services,2_professional_services
+515,892,Recreational services,2_professional_services
 516,6081,Deposits received,
-517,0174,Employer contribution to hospital and medical plans,9_human_capital
+517,174,Employer contribution to hospital and medical plans,9_human_capital
 518,2301,Purchase of goods for development assistance,2_professional_services
-519,0173,Employer contribution to other pension programs including Judges Act,9_human_capital
+519,173,Employer contribution to other pension programs including Judges Act,9_human_capital
 520,2330,Other transfer payments outside Canada,2_professional_services
 521,2431,Payments to national organizations,9_human_capital
 522,124,Civilian - Foreign service allowance,9_human_capital
@@ -527,62 +527,62 @@
 525,253,Public servant travel -Â Internal governance,7_travel
 526,173,Employer contribution to other pension programs including Judges Act,9_human_capital
 527,2035,Assistance to immigrants and refugees,7_travel
-528,524,Rental of computer software,
+528,524,Rental of computer software,3_information_technology
 529,323,Other Professional Services and Related Costs,2_professional_services
-530,416,Management Consulting ,2_professional_services
-531,924,Acquisition of Server Operating System and Utility Software ,3_information_technology
+530,416,Management Consulting,2_professional_services
+531,924,Acquisition of Server Operating System and Utility Software,3_information_technology
 532,327,Data and Database Access Services,9_human_capital
-533,408,Management Consulting ,2_professional_services
+533,408,Management Consulting,2_professional_services
 534,324,Other Professional Services and Related Costs,2_professional_services
 535,470,Other Professional Services and Related Costs,2_professional_services
 536,411,Information Technology Specialists,2_professional_services
 537,920,Data and Database Access Services,9_human_capital
 538,462,Other Professional Services and Related Costs,2_professional_services
 539,434,Other Professional Services and Related Costs,2_professional_services
-540,521,Renewal of Annual Licenses/Maintenance for Software - Application Sofware,
-541,715,Other Miscellaneous Products and Goods ,10_office_management
-542,911,Acquisition of Computer Equipment related to Distributed Computing Environment ,3_information_technology
-543,409,Program Evaluation and Program Audit ,2_professional_services
-544,326,Electronic-Web Services Subscriptions and Publications ,9_human_capital
-545,915,"Acquisition of Computer Equipment related to Production and Operations (P&O) environment - Servers, Storage (includes related parts and peripherals) ",3_information_technology
-546,507,Rental of AV and interpreting equipment ,
-547,502,Rental of Meeting Room and Office Space ,1_facilities_and_construction
+540,521,Renewal of Annual Licenses/Maintenance for Software - Application Sofware,3_information_technology
+541,715,Other Miscellaneous Products and Goods,10_office_management
+542,911,Acquisition of Computer Equipment related to Distributed Computing Environment,3_information_technology
+543,409,Program Evaluation and Program Audit,2_professional_services
+544,326,Electronic-Web Services Subscriptions and Publications,9_human_capital
+545,915,"Acquisition of Computer Equipment related to Production and Operations (P&O) environment - Servers, Storage (includes related parts and peripherals)",3_information_technology
+546,507,Rental of AV and interpreting equipment,1_facilities_and_construction
+547,502,Rental of Meeting Room and Office Space,1_facilities_and_construction
 548,400,Research Services,2_professional_services
-549,040,Business Services,
+549,40,Business Services,2_professional_services
 550,608,"Runways, landing fields and tarmac",1_facilities_and_construction
-551,459,Miscellaneous,
+551,459,Miscellaneous,4_medical
 552,681,Road motor vehicles-Military,11_defence
-553,045,Health and Welfare Services,
+553,45,Health and Welfare Services,4_medical
 554,1112,"Meat, fish and their preparations",10_office_management
 555,1114,"Vegetables and fruits, edible products, fats and preparations",10_office_management
 556,513,Rental of institutional buildings,1_facilities_and_construction
 557,1357,"Hospitals, sanatoria, clinics and first-aid stations",1_facilities_and_construction
 558,1363,"Armouries, barracks, drill halls, etc.",1_facilities_and_construction
-559,030,ADVERTISING SERVICES,2_professional_services
-560,1175,Precious metals &amp; stones and its products,
-561,070,Utility Services,10_office_management
-562,7229,7229 V1 MESS/GALLEY UTENSILS CUTLERY GLASSWARE,
-563,9235,9235 V1 PLUMBING SUPPLIES,
-564,7219,7219 V1 CONSTRUCTION ENGIN MAT NOT ELSEWHERE SPECIFIED,
-565,7232,"7232 V1 FABRICATED MATERIAL TEXTILE, INSUL, PROTECT",
-566,7410,7410 V1 TOOLS & EQP'T INCLUDING HAND TOOLS & CUTTING INS,
-567,7202,7202 V1 LUMBER AND GENERAL WOOD PRODUCTS,
-568,9130,"9130 - Liquid Propellants and Fuels, Petroleum Base",
-569,5999,5999 - Miscellaneous Electrical and Electronic Components,
-570,086,Temporary Help Services,2_professional_services
-571,048,MANAGEMENT CONSULTING,2_professional_services
+559,30,ADVERTISING SERVICES,2_professional_services
+560,1175,Precious metals &amp; stones and its products,6_industrial_products_and_services
+561,70,Utility Services,10_office_management
+562,7229,7229 V1 MESS/GALLEY UTENSILS CUTLERY GLASSWARE,6_industrial_products_and_services
+563,9235,9235 V1 PLUMBING SUPPLIES,6_industrial_products_and_services
+564,7219,7219 V1 CONSTRUCTION ENGIN MAT NOT ELSEWHERE SPECIFIED,6_industrial_products_and_services
+565,7232,"7232 V1 FABRICATED MATERIAL TEXTILE, INSUL, PROTECT",6_industrial_products_and_services
+566,7410,7410 V1 TOOLS & EQP'T INCLUDING HAND TOOLS & CUTTING INS,6_industrial_products_and_services
+567,7202,7202 V1 LUMBER AND GENERAL WOOD PRODUCTS,6_industrial_products_and_services
+568,9130,"9130 - Liquid Propellants and Fuels, Petroleum Base",5_transportation_and_logistics
+569,5999,5999 - Miscellaneous Electrical and Electronic Components,1_facilities_and_construction
+570,86,Temporary Help Services,2_professional_services
+571,48,MANAGEMENT CONSULTING,2_professional_services
 572,6012,Contributions by government-As employer,9_human_capital
 573,8295,Other payments,
 574,667,Digital Communications/Networking Equipment (Inclu,3_information_technology
-575,890,Other administrative service that is designated by order of the Governor in Council ,2_professional_services
+575,890,Other administrative service that is designated by order of the Governor in Council,2_professional_services
 576,3254,Removal of low value amounts related to program expenditures,
 577,35,Public relations services,2_professional_services
 578,7035,Information Technology and Telecommunications Consultants,3_information_technology
-579,0001,Accounting and Audit services,2_professional_services
-580,0427,Information technology and telecommunications consultants,3_information_technology
+579,1,Accounting and Audit services,2_professional_services
+580,427,Information technology and telecommunications consultants,3_information_technology
 581,810,Temporary Help Services,2_professional_services
-582,053,"Rental of Machinery, Office Furniture and Fixtures and Other Equipment",
-583,057,Rental Other,
+582,53,"Rental of Machinery, Office Furniture and Fixtures and Other Equipment",10_office_management
+583,57,Rental Other,1_facilities_and_construction
 584,8481,Safety Equipment,6_industrial_products_and_services
 585,4608,temporary help services,2_professional_services
 586,881,Construction services,1_facilities_and_construction
@@ -591,26 +591,26 @@
 589,3433,Reallocation of expenditures/costs within revolving funds,
 590,7029,Other allowances,
 591,4519,Other Revenue from Rights and Royalties,
-592,E199,Environmental Services,
-593,E108,Northern Contaminated Site Environmental Clean-up Work/Services,
-594,D302, Informatics Professional Services,3_information_technology
-595,R019," Human Resource Services, Business Consulting/Change Management; Project Management Services",
+592,E199,Environmental Services,1_facilities_and_construction
+593,E108,Northern Contaminated Site Environmental Clean-up Work/Services,1_facilities_and_construction
+594,D302,Informatics Professional Services,3_information_technology
+595,R019,"Human Resource Services, Business Consulting/Change Management; Project Management Services",2_professional_services
 596,C119,Engineering Services - Buildings,
 597,3429,Other,
 598,127,Military and Royal Canadian Mounted Police (RCMP) members-Allowances and benefits,9_human_capital
 599,3421,General administrative services charged by other departments or by other programs within a department,
-600,27,27 monitor,
-601,666,666 Repair/Maint Analog Communication/ Networking Eqpt,
-602,3451,Amortization expenses for capital assets,
-603,40,Business Services,
-604,284, Client software related to Distributed Computing Environment (DCE),3_information_technology
+600,27,27 monitor,3_information_technology
+601,666,666 Repair/Maint Analog Communication/ Networking Eqpt,3_information_technology
+602,3451,Amortization expenses for capital assets,3_information_technology
+603,40,Business Services,2_professional_services
+604,284,Client software related to Distributed Computing Environment (DCE),3_information_technology
 605,624,Repair of office equipment,1_facilities_and_construction
-606,962,Assets - Purchased Application Software (including COTS) and Application Development and Delivery Software > $10K                                     ,3_information_technology
-607,746,Purchase of Computer Equipment related to Distributed Computing Environment (DCE) - Desktop/Personal/Portable < $10K                                  ,3_information_technology
+606,962,Assets - Purchased Application Software (including COTS) and Application Development and Delivery Software > $10K,3_information_technology
+607,746,Purchase of Computer Equipment related to Distributed Computing Environment (DCE) - Desktop/Personal/Portable < $10K,3_information_technology
 608,424,IT Consultants - IT Security Services,3_information_technology
-609,737,Writing instruments,
-610,300,ADVERTISING SERVICES ,2_professional_services
-611,961,PURCHASE OF SOFTWARE > $10K - ASSETS                                                                                                                  ,3_information_technology
+609,737,Writing instruments,10_office_management
+610,300,ADVERTISING SERVICES,2_professional_services
+611,961,PURCHASE OF SOFTWARE > $10K - ASSETS,3_information_technology
 612,427,Computer Services - IT Solutions / Deliverables - Application / Database Development and Maintenance (ADDM),3_information_technology
 613,9015,Office furniture and funishing,10_office_management
 614,467,Real estate broker service,2_professional_services
@@ -619,33 +619,33 @@
 617,798,Book edition,10_office_management
 618,685,Building demolition works,1_facilities_and_construction
 619,1373,Security cameras,1_facilities_and_construction
-620,768,Manufacturing of street lights,
+620,768,Manufacturing of street lights,1_facilities_and_construction
 621,625,Arboriculture works,1_facilities_and_construction
 622,779,Lightning equipment,1_facilities_and_construction
-623,0787,Network Switchs,3_information_technology
+623,787,Network Switchs,3_information_technology
 624,662,"Sprinkler Systems, Installation and Repair",1_facilities_and_construction
-625,0768,Update of the parking meters doors,
+625,768,Update of the parking meters doors,1_facilities_and_construction
 626,1265,Tree equipment,1_facilities_and_construction
 627,4567,Simulator and flight training fees,5_transportation_and_logistics
-628,0106,Flight school services ,5_transportation_and_logistics
+628,106,Flight school services,5_transportation_and_logistics
 629,2321,Management consulting services,2_professional_services
-630,0498,Media Monitoring: ,
-631,0853,YEAR 1 Microsoft Volume Licensing  Assurance Renewal    ,
+630,498,Media Monitoring:,2_professional_services
+631,853,YEAR 1 Microsoft Volume Licensing  Assurance Renewal,3_information_technology
 632,299,Usage of inventory,5_transportation_and_logistics
-633,051,Rental of other buildings,1_facilities_and_construction
-634,0608,"Runways, landing fields and tarmac",1_facilities_and_construction
-635,054,Rental of motor and other vehicles,5_transportation_and_logistics
-636,034,Communications Research Services,2_professional_services
+633,51,Rental of other buildings,1_facilities_and_construction
+634,608,"Runways, landing fields and tarmac",1_facilities_and_construction
+635,54,Rental of motor and other vehicles,5_transportation_and_logistics
+636,34,Communications Research Services,2_professional_services
 637,130,Acquisition of land,1_facilities_and_construction
 638,3249,Court awards to industry,
-639,026,Travel - non-public servants,7_travel
+639,26,Travel - non-public servants,7_travel
 640,2639,Rental or License/Maintenance Fees for Application Security Software and Application Development and Delivery Security Software,3_information_technology
 641,7870,Computer Software,3_information_technology
-642,858,858  OTHER BUSINESS SERVICES NOT ELSEWHERE SPECIFIED,
-643,820,820  NON-PROFESSIONAL PERSONAL SERVICE CONTRACTS NOT ELSEWHERE SPECIFIED,
-644,814,814 TEMPORARY HELP SERVICES - NURSING,
-645,0449,0499 OTHER PROFESSIONAL SERVCS,2_professional_services
-646,049,0499 OTHER PROFESSIONAL SERVCS,2_professional_services
-647,0553,"0553 - RENTAL OF MACHINERY, OFFOCE FURNITURE AND FIXTURES AND OTHER EQUIPMENT",10_office_management
+642,858,858  OTHER BUSINESS SERVICES NOT ELSEWHERE SPECIFIED,2_professional_services
+643,820,820  NON-PROFESSIONAL PERSONAL SERVICE CONTRACTS NOT ELSEWHERE SPECIFIED,2_professional_services
+644,814,814 TEMPORARY HELP SERVICES - NURSING,4_medical
+645,449,0499 OTHER PROFESSIONAL SERVCS,2_professional_services
+646,49,0499 OTHER PROFESSIONAL SERVCS,2_professional_services
+647,553,"0553 - RENTAL OF MACHINERY, OFFOCE FURNITURE AND FIXTURES AND OTHER EQUIPMENT",10_office_management
 648,581,License/Maintenance fees for client software related to Distributed Computing Environment (DCE),3_information_technology
-649,003,Amendment 003 issued to increase the volume of work,
+649,3,Amendment 003 issued to increase the volume of work,
