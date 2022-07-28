@@ -23,7 +23,7 @@ summary_per_owner_org_vendor_rows <- 100
 # "data/source/2022-03-24-contracts.csv"
 # "data/testing/2022-04-13-sample-contracts.csv"
 # "data/testing/2022-06-28-contracts-key-amendment-testing.csv"
-option_contracts_data_source <- "data/testing/2022-04-13-sample-contracts.csv"
+option_contracts_data_source <- "data/testing/2022-07-28-sample-contracts.csv"
 option_download_remotely <- TRUE
 option_update_summary_csv_files <- TRUE
 option_remove_existing_summary_folders <- TRUE
