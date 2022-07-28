@@ -278,6 +278,8 @@ contracts <- contracts %>%
 contracts <- contracts %>%
   left_join(vendor_specific_category_matching, by = c("d_economic_object_code", "d_vendor_name"))
 
+# Note: these left joins create several versions of the same row, in cases where multiple category options match. Be sure to use distinct() as needed in subsequent cases before tallying up totals.
+
 # Use the category derived from economic object code, if it exists
 # Otherwise use the category derived from the description field.
 # TODO: Confirm if this order should be adjusted (e.g. prioritize description over economic object code).
