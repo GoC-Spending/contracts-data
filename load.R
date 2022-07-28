@@ -272,12 +272,20 @@ contracts <- contracts %>%
 contracts <- contracts %>%
   left_join(description_matching, by = "d_description_en")
 
+# Add in vendor-specific (edge case) categories based on vendor names and economic object codes.
+# Uses a combination join, described in the documentation here:
+# https://dplyr.tidyverse.org/reference/mutate-joins.html#arguments
+contracts <- contracts %>%
+  left_join(vendor_specific_category_matching, by = c("d_economic_object_code", "d_vendor_name"))
+
 # Use the category derived from economic object code, if it exists
 # Otherwise use the category derived from the description field.
+# TODO: Confirm if this order should be adjusted (e.g. prioritize description over economic object code).
 contracts <- contracts %>%
   mutate(
     category = NA_character_,
     category = case_when(
+      !is.na(category_by_vendor_and_economic_object_code) ~ category_by_vendor_and_economic_object_code,
       !is.na(category_by_economic_object_code) ~ category_by_economic_object_code,
       !is.na(category_by_description) ~ category_by_description,
       TRUE ~ NA_character_

@@ -30,3 +30,20 @@ description_matching <- read_csv(
   rename(
     category_by_description = category
   )
+
+
+# For edge cases (large dollar value contracts with erroneous or generic economic object codes), match these here.
+
+vendor_specific_category_matching_file <- "data/categories/economic_object_codes_and_vendors_to_category.csv"
+
+vendor_specific_category_matching <- read_csv(
+  vendor_specific_category_matching_file,
+) %>%
+  clean_names() %>%
+  mutate(
+    economic_object_code = str_pad(economic_object_code, 4, side = "left", pad = "0")
+  ) %>%
+  rename(
+    d_economic_object_code = economic_object_code,
+    category_by_vendor_and_economic_object_code = category
+  )
