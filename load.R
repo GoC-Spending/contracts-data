@@ -212,6 +212,29 @@ contracts <- contracts %>%
   ) %>%
   ungroup()
 
+
+# Vendor name normalization =====================
+
+# Add vendor name normalization here, before amendments are found and combined below.
+# For simplicity, the normalized names are stored in d_vendor_name
+contracts <- contracts %>%
+  mutate(
+    d_clean_vendor_name = clean_vendor_names(vendor_name)
+  ) %>%
+  left_join(vendor_matching, by = c("d_clean_vendor_name" = "company_name")) %>%
+  rename(d_normalized_vendor_name = "parent_company")
+
+# For companies that aren't in the normalization table
+# include their regular names anyway:
+contracts <- contracts %>%
+  mutate(
+    d_vendor_name = case_when(
+      !is.na(d_normalized_vendor_name) ~ d_normalized_vendor_name,
+      TRUE ~ d_clean_vendor_name,
+    )
+  )
+
+
 # Categorizing into an industry category ========
 
 # Get slightly cleaner versions of descriptions and object codes
@@ -290,27 +313,6 @@ contract_descriptions_object_codes <- contract_descriptions_object_codes %>%
   select(d_economic_object_code, count, d_description_en, category) %>%
   distinct(d_economic_object_code, .keep_all = TRUE)
 
-
-# Vendor name normalization =====================
-
-# Add vendor name normalization here, before amendments are found and combined below.
-# For simplicity, the normalized names are stored in d_vendor_name
-contracts <- contracts %>%
-  mutate(
-    d_clean_vendor_name = clean_vendor_names(vendor_name)
-  ) %>%
-  left_join(vendor_matching, by = c("d_clean_vendor_name" = "company_name")) %>%
-  rename(d_normalized_vendor_name = "parent_company")
-
-# For companies that aren't in the normalization table
-# include their regular names anyway:
-contracts <- contracts %>%
-  mutate(
-    d_vendor_name = case_when(
-      !is.na(d_normalized_vendor_name) ~ d_normalized_vendor_name,
-      TRUE ~ d_clean_vendor_name,
-    )
-  )
 
 # Amendment group identification ================
 
