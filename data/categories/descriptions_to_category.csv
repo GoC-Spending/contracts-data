@@ -412,8 +412,6 @@ category,d_description_en
 1_facilities_and_construction,"Bridges, trestles, culverts, overpasses & viaducts"
 1_facilities_and_construction,"Electric lighting, distribution and control eqpt"
 1_facilities_and_construction,A&e services related to const.
-1_facilities_and_construction,Accommodation and/or food support services
-1_facilities_and_construction,Air conditioning equipment
 1_facilities_and_construction,Airport electrical service and maintenance.
 1_facilities_and_construction,Airport management
 1_facilities_and_construction,"Alarm and signal systems, miscellaneous - repair, overhaul and maintenance"
@@ -423,7 +421,6 @@ category,d_description_en
 1_facilities_and_construction,Asphalt and joint sealing services
 1_facilities_and_construction,Bldg completion & finishing
 1_facilities_and_construction,"Blind, window"
-1_facilities_and_construction,"Boilers, repair and cleaning services"
 1_facilities_and_construction,"Bridges, fixed and floating"
 1_facilities_and_construction,Building electrical controls - installation and repair
 1_facilities_and_construction,"Cabinets, lockers, bins and shelving"
@@ -432,49 +429,29 @@ category,d_description_en
 1_facilities_and_construction,Chillers - installation and repair
 1_facilities_and_construction,"Chillers, maintenance"
 1_facilities_and_construction,Cleaning and maintenance
-1_facilities_and_construction,"Cleaning services, duct-exhaust system - light fixtures"
 1_facilities_and_construction,Commissionaire services
 1_facilities_and_construction,"Compressors - repair, overhaul, modification and maintenance"
-1_facilities_and_construction,Compressors and vacuum pumps
 1_facilities_and_construction,Compressors and vacuum pumps - rental
-1_facilities_and_construction,Conference space and facilities
-1_facilities_and_construction,"Construction equipment rental, with operator"
-1_facilities_and_construction,Construction inspection services
-1_facilities_and_construction,"Construction material, miscellaneous"
-1_facilities_and_construction,Construction materials testing
-1_facilities_and_construction,Construction of other buildings
-1_facilities_and_construction,"Construction services, not elsewhere specified"
 1_facilities_and_construction,Construction work - civil eng
 1_facilities_and_construction,Construction works - buildings
-1_facilities_and_construction,Contracted building cleaning
 1_facilities_and_construction,Contracted building cleaning (janitorial services wabush airport)
 1_facilities_and_construction,Cubicle disassembling and removal - phase 1 & 2
 1_facilities_and_construction,Custodial services
 1_facilities_and_construction,"Deicing compound, salt and sand mixture for road surfaces"
 1_facilities_and_construction,"Design engineering, communications"
 1_facilities_and_construction,"Device, locking, hasp locking, single drawer, ssc/ses 402, dss qpl"
-1_facilities_and_construction,"Door and window hardware, installation and replacement"
 1_facilities_and_construction,Drafting and design services
 1_facilities_and_construction,"Draperies, awnings and shades"
 1_facilities_and_construction,"Draperies/curtains, cloth-supply and installation (including hardware)"
-1_facilities_and_construction,Ductwork - repair and cleaning services
 1_facilities_and_construction,Earthmoving and excavating equipment
 1_facilities_and_construction,Earthmoving and excavating equipment - rental
 1_facilities_and_construction,Earthmoving and excavating equipment - repair
-1_facilities_and_construction,"Electric lighting, distribution and control equipment"
-1_facilities_and_construction,Electrical installations and major repairs
 1_facilities_and_construction,Elevator installation
 1_facilities_and_construction,Elevator installation / modernization
-1_facilities_and_construction,Elevator maintenance (buildings)
 1_facilities_and_construction,Elevators - repair
-1_facilities_and_construction,Engineering services
-1_facilities_and_construction,Engineering services - buildings
 1_facilities_and_construction,Environmental chambers and related equipment
 1_facilities_and_construction,Environmental engineering services - real property
-1_facilities_and_construction,Environmental services
-1_facilities_and_construction,Fence construction
 1_facilities_and_construction,Fencing and railing work
-1_facilities_and_construction,"Fencing, fences and gates - installation"
 1_facilities_and_construction,"Fencing, fences, gates and components"
 1_facilities_and_construction,Filter
 1_facilities_and_construction,Filter and networks
@@ -483,43 +460,23 @@ category,d_description_en
 1_facilities_and_construction,Floor coverings
 1_facilities_and_construction,Floor coverings - installation
 1_facilities_and_construction,Floor coverings - repair
-1_facilities_and_construction,"Forestry services - pruning, felling, seeding, etc."
-1_facilities_and_construction,Gas fitting construction work
 1_facilities_and_construction,"General contractor services, n.e.s."
-1_facilities_and_construction,"General contractor services, not elsewhere specified"
 1_facilities_and_construction,"Gravel, road"
-1_facilities_and_construction,Grounds maintenance
-1_facilities_and_construction,Hazardous chemical waste disposal services
 1_facilities_and_construction,Hazardous chemicals removal
 1_facilities_and_construction,Hazardous material spill containment and clean-up equipment and material
-1_facilities_and_construction,Hazardous substance removal and disposal -building related
 1_facilities_and_construction,Hearing room equipment and installation
-1_facilities_and_construction,"Heat, ventilation & air conditioning maintenance"
 1_facilities_and_construction,"Heating and cooling plant, inspection services"
-1_facilities_and_construction,"Heating, air-conditioning and refrigeration equipment"
-1_facilities_and_construction,"Heating, ventilation and air conditioning maintenance & inspection services"
-1_facilities_and_construction,"Highways, roads, railways, airfield runways"
-1_facilities_and_construction,"Hotels, motels and commercial accommodation"
-1_facilities_and_construction,"Hydrants, fire - repair and overhaul"
 1_facilities_and_construction,Incinerators
-1_facilities_and_construction,Industrial boilers
-1_facilities_and_construction,"Industrial boilers, heating plant control system - repair and overhaul/servicing"
 1_facilities_and_construction,Inspection services
 1_facilities_and_construction,"Inspection, sewage pipe"
 1_facilities_and_construction,Installation work
 1_facilities_and_construction,Kitchen equipment and appliances
-1_facilities_and_construction,Kitchen equipment and appliances - repair and overhaul
-1_facilities_and_construction,Landscaping and horticultural services
 1_facilities_and_construction,Lawn and garden services
-1_facilities_and_construction,"Leasing of hotel, restaurant buildings etc."
-1_facilities_and_construction,Leasing of office space
 1_facilities_and_construction,Leasing of public entertainment buildings
 1_facilities_and_construction,"Lighting equipment, aerodrome, including marker lights"
 1_facilities_and_construction,"Lighting maintenance (washing, relamping and repairing services)"
 1_facilities_and_construction,Lock sets
-1_facilities_and_construction,Masonry work
 1_facilities_and_construction,"Mattress, bed, inner spring, fire retardant ticking"
-1_facilities_and_construction,"Mechanical contractor services, not elsewhere specified"
 1_facilities_and_construction,Millwork - repair
 1_facilities_and_construction,"Mineral construction materials, bulk"
 1_facilities_and_construction,Miscellaneous construction equipment
@@ -529,14 +486,12 @@ category,d_description_en
 1_facilities_and_construction,Miscellaneous prefabricated structure - aluminum
 1_facilities_and_construction,Non-hazardous waste recycling - real property
 1_facilities_and_construction,Northern contaminated site environmental clean-up work/services
-1_facilities_and_construction,Office buildings
 1_facilities_and_construction,Oil road spreading services
 1_facilities_and_construction,Operation and maintenance of eastmain airport
 1_facilities_and_construction,Operation and maintenance services of a technical/scientific facility
 1_facilities_and_construction,Operation govt owned facility
 1_facilities_and_construction,Operations & maintenance of a military base
 1_facilities_and_construction,Other architect and engineering services - real property
-1_facilities_and_construction,Other building completion and finishing
 1_facilities_and_construction,Other business services not elsewhere specified - building automation system maintenance
 1_facilities_and_construction,"Other business services not elsewhere specified - garbage collection services for the airport in wabush, nl"
 1_facilities_and_construction,Other business services not elsewhere specified - maintenance and operation service - eastmain airport
@@ -544,15 +499,8 @@ category,d_description_en
 1_facilities_and_construction,Other business services not elsewhere specified - snow removal services
 1_facilities_and_construction,"Other business services not elsewhere specified - snow removal services at the marystown, nl, ferry terminal"
 1_facilities_and_construction,Other business services not elsewhere specified. - exploitation & maintenance havre st-pierre airport
-1_facilities_and_construction,"Other construction quality control, testing, inspect. and tech. Services"
 1_facilities_and_construction,Other custodial and related services
-1_facilities_and_construction,Other installation work
-1_facilities_and_construction,Overhead door - maintenance
-1_facilities_and_construction,Painting services - interior
 1_facilities_and_construction,Painting work
-1_facilities_and_construction,Paving contractor services (except mud jacking)
-1_facilities_and_construction,Plumbing contractor services
-1_facilities_and_construction,Plumbing fixtures and accessories
 1_facilities_and_construction,Plumbing fixtures and accessories - rental
 1_facilities_and_construction,Pontoons and floating docks
 1_facilities_and_construction,Portable toilets
@@ -561,26 +509,16 @@ category,d_description_en
 1_facilities_and_construction,"Power transmission equipment, miscellaneous"
 1_facilities_and_construction,Prefabricated and portable buildings
 1_facilities_and_construction,Property & facilities mgmt
-1_facilities_and_construction,Property and facilities management - buildings
 1_facilities_and_construction,Property management - airfield and communication facilities
 1_facilities_and_construction,Property management - conservation and development facilities
 1_facilities_and_construction,Protection services
-1_facilities_and_construction,Refrigeration equipment
 1_facilities_and_construction,Refrigeration equipment - repair
-1_facilities_and_construction,Rental of other buildings
 1_facilities_and_construction,Renting const / demolitn equip
 1_facilities_and_construction,Rigid wall shelters
-1_facilities_and_construction,"Roofing, siding and sheet metal installation services"
 1_facilities_and_construction,Sand
 1_facilities_and_construction,Sanitary services
-1_facilities_and_construction,Septic tank/latrine service
 1_facilities_and_construction,Service contract for the operation and maintenance of the wemindji airport in the james bay.
 1_facilities_and_construction,Services of individuals - general labourers and trade helpers
-1_facilities_and_construction,Services related to the remediation of contaminated sites
-1_facilities_and_construction,Sewage treatment
-1_facilities_and_construction,Sewers and drains
-1_facilities_and_construction,Sewers/ drainage
-1_facilities_and_construction,Signs
 1_facilities_and_construction,Signs
 1_facilities_and_construction,Signs and identification plates
 1_facilities_and_construction,Sirc fit-up
@@ -591,19 +529,12 @@ category,d_description_en
 1_facilities_and_construction,Specialized services for the development of the requirements for the alarm system for the new location
 1_facilities_and_construction,Specialized services in physical security for the relocation project
 1_facilities_and_construction,Stone and aggregate
-1_facilities_and_construction,"Tanks, fuel, oil cleaning services"
 1_facilities_and_construction,"Tanks, oil storage"
-1_facilities_and_construction,"Tanks, oil storage - repair and overhaul"
 1_facilities_and_construction,Technical engineering and maintenance services (tems)
-1_facilities_and_construction,Tents and tarpaulins
 1_facilities_and_construction,Traffic line marking
-1_facilities_and_construction,Trash/garbage collection services
-1_facilities_and_construction,Waste disposal equipment
 1_facilities_and_construction,Waste recycling services
 1_facilities_and_construction,Water treatment chemicals
-1_facilities_and_construction,Water treatment services
 1_facilities_and_construction,"Waterways, harbours, dams and other water works"
-1_facilities_and_construction,Welding contractor services
 1_facilities_and_construction,Wildlife control (airports)
 1_facilities_and_construction,Window cleaning
 10_office_management,"Rental of machinery, office furniture and fixtures and other equipment"
@@ -689,7 +620,6 @@ category,d_description_en
 10_office_management,Rental of audio-visual equipment - toronto hearing
 10_office_management,Consulting services in strategic planning
 10_office_management,Microfilm/microfiche scanner for the library
-10_office_management,Natural gas
 10_office_management,Rental - other (specify)
 10_office_management,Services d'imprimerie
 10_office_management,Non-professional personal service contracts
@@ -697,7 +627,6 @@ category,d_description_en
 10_office_management,"Materials and supplies, photographic or cinematography goods"
 10_office_management,"Acquisition of office furniture and furnishings, including parts"
 10_office_management,Rental- other
-10_office_management,Special industry machinery
 10_office_management,Temporary help services
 10_office_management,Tuition fees and costs of attending courses including seminars not elsewhere specified
 10_office_management,1239 otr office equip & parts - headsets
@@ -714,7 +643,6 @@ category,d_description_en
 10_office_management,"0533 rental of machinery, office furniture and fixtures and other equipment"
 10_office_management,0570 - rental - others
 10_office_management,0321 - printing services
-10_office_management,Office furniture
 10_office_management,Cutlery
 10_office_management,0321 – printing services
 10_office_management,"1143 – printed matter, including books, newspapers, pictures, manuscripts and forms"
@@ -740,16 +668,13 @@ category,d_description_en
 10_office_management,3 workstations 10th floor
 10_office_management,Workspaces 6th floor reception desk
 10_office_management,Furniture for secretary general's office
-10_office_management,"Hotels, motels and commercial accommodation"
 10_office_management,Land use studies
 10_office_management,Electronic printing direct mail
 10_office_management,Rental – other
 10_office_management,0819 non-professional personal service contracts not elsewhere
-10_office_management,Other business services not elsewhere specified
 10_office_management,Rental of printers related to distributed computing environment (includes all related parts and peripherals)
 10_office_management,0321 printing services
 10_office_management,1231 office furnishg furniture
-10_office_management,0819 non-professiopnal personal service contracts not elsewhere specified (cemetery maintenance)
 10_office_management,"0533 rental of mahinery, office furniture and fixtures and other equipment (photocopier)"
 10_office_management,Workstaions - tcc
 10_office_management,Table for boardroom
@@ -807,27 +732,16 @@ category,d_description_en
 10_office_management,Non-professional personal service
 10_office_management,Furniture for ground floor project
 10_office_management,"Lunches, boxed"
-10_office_management,Gas services
-10_office_management,Hazardous chemicals removal
 10_office_management,Food catering services
 10_office_management,"Meat, poultry and fish"
 10_office_management,Miscellaneous furniture and fixtures
-10_office_management,Miscellaneous items
 10_office_management,"Washing machines and dryers, laundry, domestic, all types"
-10_office_management,"Construction equipment rental, with operator"
 10_office_management,Information products
 10_office_management,Office information system equipment - rent
 10_office_management,Books and pamphlets
 10_office_management,Office furniture - installation
-10_office_management,Trash/garbage collection services
-10_office_management,"Cabinets, lockers, bins and shelving"
-10_office_management,Leasing of other buildings
-10_office_management,Waste recycling services
 10_office_management,Professional services / waste management services
 10_office_management,Electricity services
-10_office_management,"Maintenance, repair, modification, rebuilding & installation of equipment related to ships"
-10_office_management,"Prefabricated constructions, supply and erection"
-10_office_management,Water supply
 10_office_management,"Groceries, miscellaneous (replaced by gsin n8920zc)"
 10_office_management,Dairy
 10_office_management,Special dietary foods and food speciality preparations (replaced by gsin n8940z)
@@ -835,18 +749,12 @@ category,d_description_en
 10_office_management,Sweepers and snow removal equipment - repair and overhaul
 10_office_management,Logistics support services military aerospace related - technical publications and data management
 10_office_management,Office supplies - installation
-10_office_management,Sewage treatment
 10_office_management,Adp input-output and storage devices - maintenance
-10_office_management,Septic tank/latrine service
 10_office_management,"Interconnecting panels and supported components, can/cgsb-44.220 see cgsb - qpl"
-10_office_management,"Maintenance and repair shop specialized equipment, miscellaneous - rental"
 10_office_management,"Hand tools, power-driven - rental"
-10_office_management,Northern contaminated site environmental clean-up work/services
 10_office_management,"Cabinets, lockers, bins and shelving - installation"
-10_office_management,Sanitary services
 10_office_management,Miscellaneous office machines - rent
 10_office_management,"Groceries, miscellaneous"
-10_office_management,Hazardous chemical waste disposal services
 10_office_management,Photocopying machines - lease
 10_office_management,Miscellaneous items - rental
 10_office_management,"Ships and vessels, bilge and tank pumping and disposal of waste water and oil products"
@@ -866,7 +774,6 @@ category,d_description_en
 10_office_management,"Utility services, not elsewhere specified"
 10_office_management,"Table, work, bench type, metal"
 10_office_management,Standard forms
-10_office_management,Sewage treatment equipment - repair
 10_office_management,"Trucks and truck tractors, wheeled - rental"
 10_office_management,"Water, potable, bottled (replaced by gsin n8960zc)"
 10_office_management,Chair (office)
@@ -881,24 +788,17 @@ category,d_description_en
 10_office_management,Non-prof. Services
 10_office_management,Office equipment & furniture
 10_office_management,0570 - rental – other
-10_office_management,Kitchen equipment and appliances
 10_office_management,Air conditioning equipment - leasing
-10_office_management,"Product/material - design, development, formulation, modification: science and technology related (r&d)"
 10_office_management,"Automatic data processing equipment, system configuration"
 10_office_management,Floor polishers and vacuum cleaning equipment
-10_office_management,"Containers, cargo handling, metal non-refrigerated (for container shipping method)"
 10_office_management,"Photocopying machines, full colour"
 10_office_management,"Fuels, solid"
 10_office_management,"Truck, tractor, gasoline powered - rental"
 10_office_management,"Hiring of ships' crews, pilots, etc."
-10_office_management,Middle distillate fuels
 10_office_management,Audio and video technical services
-10_office_management,Passenger motor vehicles - rental
 10_office_management,"Meat, poultry and fish (replaced by gsin n8905z)"
-10_office_management,Grounds maintenance
 10_office_management,Tailoring services
 10_office_management,"Rack, storage"
-10_office_management,Conference space and facilities
 10_office_management,Composite food packages
 10_office_management,"Rack, storage, metal"
 10_office_management,"Household and commercial furnishings and appliances, miscellaneous - rental"
@@ -908,25 +808,19 @@ category,d_description_en
 10_office_management,"Hardware, commercial"
 10_office_management,"Vessels, marine, miscellaneous - recompression chamber- refit, repair, overhaul, modification and maintenence"
 10_office_management,"Food, cooking baking and serving equipment - installation"
-10_office_management,Military communications (research)
 10_office_management,Ground effect vehicles - leasing
-10_office_management,Business services
-10_office_management,Other custodial and related services
 10_office_management,Aviation fuel
 10_office_management,Telephone and telegraph equipment
-10_office_management,Hazardous substance removal and disposal -building related
 10_office_management,Adp input-output and storage devices - rental
 10_office_management,"Filing cabinets, lateral"
 10_office_management,Office information system equipment - lease
 10_office_management,"Table, work"
 10_office_management,"Converters, electrical, nonrotating"
 10_office_management,Document management and printing
-10_office_management,Snow plowing and removal
 10_office_management,Desk
 10_office_management,Office information system equipment
 10_office_management,Chair rotary multi task
 10_office_management,"Printers, page, laser - maintenance"
-10_office_management,Miscellaneous furniture and fixtures - recovering
 10_office_management,Wilderness training
 10_office_management,"Trucks and truck tractors, wheeled - production design"
 10_office_management,Optical scanning services
@@ -959,7 +853,6 @@ category,d_description_en
 10_office_management,"Acquisition of machinery and equipment, including parts and consumable tools"
 10_office_management,Furniture
 10_office_management,None professional personnel services contract not elsewhere specified.
-10_office_management,Engineering consultants-other
 10_office_management,Information technology and telecommunications consultants
 10_office_management,"Printed matter, including books, newspapers, pictu"
 10_office_management,Digital photocopiers
@@ -975,114 +868,68 @@ category,d_description_en
 10_office_management,"Beverages, non-alcoholic (replaced by gsin n8960z)"
 10_office_management,Bread and rolls
 10_office_management,Bread and rolls (replaced by gsin n8920zj)
-10_office_management,"Cleaning and maintenance, janitorial"
 10_office_management,Coffee
 10_office_management,"Coffee, tea and cocoa"
-10_office_management,Composite food packages
-10_office_management,Dairy
 10_office_management,Dry cleaning services
 10_office_management,"Fish, food"
 10_office_management,Flat printing
 10_office_management,Flat printing / loose leaf printing
-10_office_management,Food catering services
 10_office_management,"Frozen products, various"
 10_office_management,Fruits and vegetables
-10_office_management,Fruits and vegetables (replaced by gsin n8915z)
-10_office_management,"Groceries, miscellaneous"
-10_office_management,"Groceries, miscellaneous (replaced by gsin n8920zc)"
-10_office_management,Hospitality
-10_office_management,Household furnishings
-10_office_management,Household furniture
 10_office_management,"Juice, concentrate"
 10_office_management,Laundry and dry cleaning services
 10_office_management,Laundry services
 10_office_management,Linen supply service
-10_office_management,"Lunches, boxed"
 10_office_management,"Lunches, boxed (replaced by gsin n8970zb)"
 10_office_management,Meals
-10_office_management,"Meat, poultry and fish"
-10_office_management,"Meat, poultry and fish (replaced by gsin n8905z)"
-10_office_management,Miscellaneous office machines
-10_office_management,Miscellaneous office machines - rent
 10_office_management,Miscellaneous office machines maintenance only
 10_office_management,Office and stationers paper supplies
-10_office_management,Office and stationers supplies
-10_office_management,Office devices and accessories
 10_office_management,Office devices and accessories - lease
-10_office_management,Office furniture
-10_office_management,Office furniture
-10_office_management,Office supplies
-10_office_management,Office supplies - installation
 10_office_management,Offset printing and variable imaging
 10_office_management,Other business services - outside government paper shredding service
-10_office_management,Photocopying machine
 10_office_management,Photographic developing and finishing equipment
 10_office_management,Photographic equipment and accessories
 10_office_management,Photographic equipment and accessories - repair and overhaul
 10_office_management,Photographic supplies
 10_office_management,"Plotters, on line"
-10_office_management,"Printed matter, including books, newspapers, pictures, manuscripts and forms"
 10_office_management,Printing of envelopes
-10_office_management,Printing services
 10_office_management,"Printing, duplicating and bookbinding equipment"
 10_office_management,"Printing, duplicating and bookbinding equipment - photocopiers"
 10_office_management,"Printing, duplicating and bookbinding equipment maintenance only"
 10_office_management,"Printing, duplicating and bookbinding equipment, leasing"
-10_office_management,Publications
 10_office_management,Publishing services
 10_office_management,Publishing support services
 10_office_management,Recreational and gymnastic equipment
 10_office_management,Recreational and gymnastic equipment - rental
 10_office_management,Recreational and gymnastic equipment - repair
 10_office_management,"Rental machinery, office furniture/fixtures & other"
-10_office_management,"Rental of machinery, office furniture & fixtures"
-10_office_management,"Rental of machinery, office furniture and fixtures and other equipment"
-10_office_management,"Rental of machinery, office furniture and fixtures and other equipment"
 10_office_management,"Rentl of mach, office furnt & fixtrs & oth eqpmt"
 10_office_management,Retrofit boardroom
 10_office_management,Services of individuals - cook (chef)
 10_office_management,Soft drinks
-10_office_management,Special dietary foods and food speciality preparations (replaced by gsin n8940z)
 10_office_management,Tableware
-10_office_management,Tailoring services
 10_office_management,"Toner, cartridge, virgin, for various types of printers and facsimile machines"
-10_office_management,"Water, potable, bottled (replaced by gsin n8960zc)"
 10_office_management,"Water, potable, bulk (replaced by gsin n8960zf)"
 11_defence,Radar equipment and parts
 11_defence,Road motor vehicles-military
 11_defence,Road motor vehicles - military
-11_defence,"Trucks and truck tractors, wheeled - production design"
-11_defence,"Hardware, commercial"
 11_defence,"Trucks and truck tractors, wheeled - repair"
 11_defence,Studs
-11_defence,Ground effect vehicles - repair
 11_defence,Ground effect vehicles
 11_defence,"Vehicular components, miscellaneous"
-11_defence,Miscellaneous items
-11_defence,Water purification equipment
-11_defence,"Technical engineering and maintenance services (tems) (excludes requirements related to armament, r&d and r&o)"
 11_defence,"Radar equipment, except airborne"
-11_defence,"Maintenance, repair, modification, rebuilding & installation of equipment related to ships"
-11_defence,Miscellaneous items - repairs
 11_defence,"Guns, through 30mm - repair"
-11_defence,Tents and tarpaulins
-11_defence,"Converters, electrical, nonrotating"
-11_defence,Miscellaneous electric power and distribution equipment
 11_defence,"Combat, assault, and tactical vehicles, tracked"
 11_defence,Motor vehicle maintenance and repair shop specialized equipment
 11_defence,Tanks and tracked self-propelled weapons and vehicles w/wo amphibian capabilities
-11_defence,Vehicular furniture and accessories
 11_defence,Miscellaneous hardware - repair
-11_defence,Miscellaneous fabricated nonmetallic material
 11_defence,"Buses, repairs and service"
 11_defence,Power and hand pumps
-11_defence,Laboratory equipment and supplies - repair
 11_defence,"Engines, gasoline (except aircraft, marine and outboard motors)"
 11_defence,"Shears, hand, workshop tools"
 11_defence,Acoustical analysis/technology (r&d)
 11_defence,Airborne combat support training - fighter and trainer aircraft only
 11_defence,Airborne satellite communication system
-11_defence,Aircraft (military) miscellaneous communications equipment - repair and overhaul
 11_defence,Aircraft (military) navigational instruments - repair and overhaul
 11_defence,"Aircraft air conditioning, heating and pressurizing equipment"
 11_defence,Aircraft and glider dry leases
@@ -1127,7 +974,6 @@ category,d_description_en
 11_defence,"Centrifuge accessories (includes rotors, shields, tubes)"
 11_defence,Combat ships and landing vessels
 11_defence,"Combat, assault and tactical vehicles, wheeled"
-11_defence,"Combat, assault, and tactical vehicles, tracked"
 11_defence,"Combat, assault, and tactical vehicles, wheeled - repair"
 11_defence,Conveyors - repair and overhaul
 11_defence,"Conveyors, towlines and monorail"
@@ -1140,7 +986,6 @@ category,d_description_en
 11_defence,Electronic specialties
 11_defence,"Engine fuel system components, aircraft (military) - repair and overhaul"
 11_defence,"Engine fuel system components, aircraft and missile prime movers"
-11_defence,"Engine fuel system components, non-aircraft"
 11_defence,"Engineering and technical services - aerospace related, military"
 11_defence,Engineering and technical services - ammunition related
 11_defence,Engineering and technical services - combat vehicles related
@@ -1153,19 +998,16 @@ category,d_description_en
 11_defence,Fire control directors
 11_defence,"Fire control maintenance and repair shop specialized equipment, unless installed in a vehicle, aircraft, or ship"
 11_defence,"Fire control radar equipment, except airborne"
-11_defence,Fire control systems - repair
 11_defence,"Fire control systems, complete"
 11_defence,Firearm training
 11_defence,Flight instruments
 11_defence,Flying training
 11_defence,"Gas turbines and jet engines, aircraft, prime moving and components"
-11_defence,Ground effect vehicles - repair
 11_defence,Ground effect vehicles (civilian) - repair and overhaul
 11_defence,Ground effect vehicles (military) - repair and overhaul
 11_defence,Guided missiles
 11_defence,"Guns, 75 mm through 125 mm, unless installed in a vehicle, aircraft, ship"
 11_defence,"Guns, through 30 mm, unless installed in a vehicle, aircraft, ship"
-11_defence,"Guns, through 30mm - repair"
 11_defence,Hazard-detecting instruments and apparatus
 11_defence,Hazard-detecting instruments and apparatus - repair and overhaul
 11_defence,"Helicopter rotor blades, drive, mechanisms and components"
@@ -1173,7 +1015,6 @@ category,d_description_en
 11_defence,"Launchers, grenade, rocket and pyrotechnic"
 11_defence,"Launchers, torpedo and depth charges, unless installed in a vehicle, aircraft, ship"
 11_defence,Logistics support for u.s. Manufactured military equipment currently operated by canadian armed forces (colog)
-11_defence,"Maintenance, repair, modification, rebuilding & installation of equipment related to ships"
 11_defence,Marine architect and engineering services
 11_defence,Marine consulting
 11_defence,Marine hardware and hull items
@@ -1182,13 +1023,10 @@ category,d_description_en
 11_defence,Marine radar equipment
 11_defence,Marine systems and engineering
 11_defence,Materials handling equipment/nonself -propelled
-11_defence,Materials inspection and quality assurance
-11_defence,Military (r&d)
 11_defence,Miscellaneous aircraft accessories and components
 11_defence,Miscellaneous aircraft accessories and components (miliatry) - repair and overhaul
 11_defence,Miscellaneous ammunition
 11_defence,"Miscellaneous engine accessories, aircraft (miliatry) - repair and overhaul"
-11_defence,Miscellaneous fire control equipment
 11_defence,Miscellaneous weapons
 11_defence,Naval architecture
 11_defence,Naval architecture - consulting services
@@ -1208,7 +1046,6 @@ category,d_description_en
 11_defence,Radar defence systems (r&d)
 11_defence,"Radar equipment (military), except airborne - repair and overhaul"
 11_defence,"Radar equipment, airborne"
-11_defence,"Radar equipment, except airborne"
 11_defence,"Radar equipment, except airborne, production design"
 11_defence,Radar technology (r&d)
 11_defence,"Radio and television communications data and telemetry equipment, airborne"
@@ -1224,7 +1061,6 @@ category,d_description_en
 11_defence,"Rockets, rocket ammunition and rocket components"
 11_defence,Ship and boat propulsion components
 11_defence,Ship and marine
-11_defence,Ship and marine miscellaneous equipment
 11_defence,Ship and marine miscellaneous equipment - repair
 11_defence,Ship mooring services
 11_defence,Shipboard alarm and signal systems
@@ -1242,21 +1078,16 @@ category,d_description_en
 11_defence,"Vessels, miscellaneous"
 11_defence,"Weapons maintenance and repair shop specialized equipment, excludes airborne weapons maintenance and repair shop equipment"
 11_defence,Weapons systems specific vehicular accessories
-2_professional_services,Other professional services not elsewhere specified
-2_professional_services,Other business services not elsewhere specified
 2_professional_services,Legal services
 2_professional_services,Communications professional services not elsewhere specified
-2_professional_services,Temporary help services
 2_professional_services,Public relations services
 2_professional_services,Communications research services
 2_professional_services,0494 - translation services
 2_professional_services,0481 - storage/warehousing
-2_professional_services,0496 - service contracts
 2_professional_services,0351 - communication prof. Services
 2_professional_services,4073 other business services
 2_professional_services,Other professional servs not elsewh.specified
 2_professional_services,Comm. prof. services not elsewhere specified
-2_professional_services,Recreational services
 2_professional_services,Communications professional services not elsewhere specified - french proofreading services
 2_professional_services,Communications professional services not elsewhere specified - french comparative editing services
 2_professional_services,Communications professional services not elsewhere specified - english editing services
@@ -1267,16 +1098,13 @@ category,d_description_en
 2_professional_services,Scientific consultants (specify)
 2_professional_services,Accounting and audit services
 2_professional_services,Management consulting services
-2_professional_services,Publishing services
 2_professional_services,Comm. Prof. Services
 2_professional_services,Other business services
 2_professional_services,"Management consulting , except other depts or prog"
 2_professional_services,0230 voice communications services (includes analog and/or digital voice communication services)
 2_professional_services,Scientific services
 2_professional_services,Advertising services
-2_professional_services,Scientific consultants
 2_professional_services,Translation services
-2_professional_services,Other professional services
 2_professional_services,Acquisition and contract charges
 2_professional_services,Services related to the assessment of potentially contaminated sites
 2_professional_services,Communications professional services
@@ -1326,7 +1154,6 @@ category,d_description_en
 2_professional_services,Voice communications services (includes analog and/or digital voice communication services)
 2_professional_services,0499 other professional services not elsewhere specified
 2_professional_services,Transl. Serv. - operating expenses
-2_professional_services,Miscellaneous expenditures not elsewhere classified
 2_professional_services,Electronic map production using existing and new data.
 2_professional_services,Editing services
 2_professional_services,Media control systems
@@ -1343,16 +1170,13 @@ category,d_description_en
 2_professional_services,0859 other business services - calligraphy service
 2_professional_services,Professional services
 2_professional_services,Communication services
-2_professional_services,Business services
 2_professional_services,Graphic and exhibit design
 2_professional_services,To provide legal opinions to the rules committee
 2_professional_services,Translation & revision services
 2_professional_services,Miscellaneous
-2_professional_services,Services related to the monitoring of previously contaminated sites
 2_professional_services,Other professional service - not elsewhere specified
 2_professional_services,0351 - communication professional services
 2_professional_services,0311 - publishing services
-2_professional_services,0499 - other professional services
 2_professional_services,0491 - management consulting
 2_professional_services,Other professional services not elsewhere specifie
 2_professional_services,Installation and modifications to workstations
@@ -1376,7 +1200,6 @@ category,d_description_en
 2_professional_services,Other prof. Services
 2_professional_services,0410 legal services
 2_professional_services,Transl. Serv. / Operating expenses
-2_professional_services,Tuition fees and costs of attending courses including seminars not elsewhere specified
 2_professional_services,Training consultants
 2_professional_services,Other equipment and parts
 2_professional_services,Speech writing services
@@ -1400,7 +1223,6 @@ category,d_description_en
 2_professional_services,Court usher services - vancouver
 2_professional_services,Data entry person - senior - ths
 2_professional_services,Internal audit - pass
-2_professional_services,Information technology and telecommunications consultants
 2_professional_services,Translation services - various internal and external documents
 2_professional_services,Operation of the national do not call list
 2_professional_services,Digital client services strategy
@@ -1408,7 +1230,6 @@ category,d_description_en
 2_professional_services,Media monitoring - amendment to increase the value
 2_professional_services,Analysis of economic shortfall/surplus from tv production
 2_professional_services,Information products - media & entertainment module
-2_professional_services,Consulting services in strategic planning
 2_professional_services,Crtc wide license to access the kagan information platform.
 2_professional_services,Communications services
 2_professional_services,Management consulting - business process consultant
@@ -1436,7 +1257,6 @@ category,d_description_en
 2_professional_services,Other professional services not elsewhere specified. Coaching and team building
 2_professional_services,Other business
 2_professional_services,Diesel fuel
-2_professional_services,Other vehicles
 2_professional_services,Road motor vehicles
 2_professional_services,Lawyer service
 2_professional_services,0859 other business services - career transition services
@@ -1567,7 +1387,6 @@ category,d_description_en
 2_professional_services,Court usher - toronto
 2_professional_services,Data entry - senior
 2_professional_services,Data centre services
-2_professional_services,Information products
 2_professional_services,The wire report is the leading news service covering canada's rapidly converging telecom and media sectors.
 2_professional_services,Advertising - digital advertising campaign on the wireless code
 2_professional_services,Consultation on canada's large telecommunications carriers' sales pratices - online survey and focus groups.
@@ -1615,7 +1434,6 @@ category,d_description_en
 2_professional_services,0493 interpretation services
 2_professional_services,Executive coaching - change of name and addition of 30 hours
 2_professional_services,Por - public opinion research - wireless code survey
-2_professional_services,Protection services
 2_professional_services,Accounting and audit services - internal controls audit services
 2_professional_services,Accounting and audit services - certified auditor services
 2_professional_services,Accounting and audit services - it security audit services
@@ -1769,7 +1587,6 @@ category,d_description_en
 2_professional_services,0494 translation services
 2_professional_services,Court reporting services
 2_professional_services,Education and training services
-2_professional_services,Marine installations
 2_professional_services,Other health services not elsewhere specified
 2_professional_services,Amendment 002 to increase the total quantity.
 2_professional_services,Amendment 001 to exercise the option year
@@ -1795,62 +1612,31 @@ category,d_description_en
 2_professional_services,Proservices operation support specialist
 2_professional_services,Accounting and auditing services
 2_professional_services,Advertising
-2_professional_services,Services of individuals - general labourers and trade helpers
 2_professional_services,"Temporary help services, general office support"
 2_professional_services,Educational services - business training
 2_professional_services,Temporary help services - administrative
 2_professional_services,"Training aids, aeronautical"
-2_professional_services,Professional services / program advisory services
 2_professional_services,Military logistics (research)
-2_professional_services,Logistics support services military aerospace related - technical publications and data management
-2_professional_services,Landscaping and horticultural services
-2_professional_services,Consulting services
-2_professional_services,"Product/material - design, development, formulation, modification: science and technology related (r&d)"
 2_professional_services,Professional services / program research analysis
-2_professional_services,Engineering services - construction management
-2_professional_services,"Technical engineering and maintenance services (tems) (excludes requirements related to armament, r&d and r&o)"
-2_professional_services,Lawn and garden services
-2_professional_services,Grounds maintenance
-2_professional_services,"Human resource services, business consulting/change management; project management services (supply arrangement tsps)"
-2_professional_services,Snow plowing and removal
-2_professional_services,"Informatics professional and consulting services, software development and implementation"
 2_professional_services,"Human resources support services (hrss): organization and classification, staffing and compensation"
-2_professional_services,"Other construction quality control, testing, inspect. and tech. Services"
-2_professional_services,Informatics professional services
 2_professional_services,Project management services
 2_professional_services,Ground handling services
 2_professional_services,General office help
-2_professional_services,Miscellaneous business services
 2_professional_services,Demolition work
 2_professional_services,"Investigative services, public servant disclosure protection act (psdpa)"
-2_professional_services,Water supply
 2_professional_services,Legal services/litigation/lawyers
 2_professional_services,Harassment (investigative services)
-2_professional_services,Military (r&d)
 2_professional_services,End-to-end learning services (excludes cots training)
-2_professional_services,"Wire and cable, electrical"
 2_professional_services,"Hydrographic maps, charts and geodetic products"
 2_professional_services,Weather reporting/observation services
-2_professional_services,Fence construction
 2_professional_services,"Service and trade equipment, miscellaneous"
 2_professional_services,Satellite data processing and related services
-2_professional_services,Food catering services
-2_professional_services,Passenger motor vehicles - rental
-2_professional_services,Miscellaneous items
-2_professional_services,Equipment and materials testing
 2_professional_services,"Truck, forklift"
-2_professional_services,Meals
 2_professional_services,Fixed wing aircraft - airplane charter
-2_professional_services,"Leasing of hotel, restaurant buildings etc."
-2_professional_services,Miscellaneous items - rental
-2_professional_services,Laundry services
 2_professional_services,Training design
-2_professional_services,Water quality support services
-2_professional_services,"Maintenance, repair, modification, rebuilding & installation of equipment related to ships"
 2_professional_services,Alternative dispute resolution services
 2_professional_services,Chaplain services miscellaneous
 2_professional_services,Facilities operations service
-2_professional_services,Marine systems and engineering
 2_professional_services,Cross-cultural training
 2_professional_services,Conduct of training
 2_professional_services,Operations planning
@@ -1860,43 +1646,26 @@ category,d_description_en
 2_professional_services,Word processing services
 2_professional_services,Educational services - adp training
 2_professional_services,"Vehicles, wheeled, standard military pattern - repair and overhaul"
-2_professional_services,"Lunches, boxed"
 2_professional_services,Administrative management and planning services
 2_professional_services,Services related to water transportation
-2_professional_services,Services of individuals - cook (chef)
-2_professional_services,Hazardous chemicals removal
-2_professional_services,Architectural & engineering inspection services
-2_professional_services,Miscellaneous aircraft accessories and components
 2_professional_services,Public opinion research - quantitative & qualitative
 2_professional_services,Materiel management
-2_professional_services,"Engineering works, not elsewhere specified"
-2_professional_services,Oil road spreading services
 2_professional_services,Professional services / financial analysis
 2_professional_services,"System design, development and testing: science and technology related (r&d)"
 2_professional_services,Adp software
-2_professional_services,Adp input-output and storage devices
 2_professional_services,Helmets (personal armour)
-2_professional_services,Wilderness training
-2_professional_services,"Automatic data processing equipment, system configuration"
 2_professional_services,"Engines, gasoline - repair and overhaul (except aircraft)"
 2_professional_services,Surveying services
-2_professional_services,"Information retrieval services, database"
 2_professional_services,Video production services
 2_professional_services,Programming services
-2_professional_services,Combat ships and landing vessels
-2_professional_services,Waste recycling services
-2_professional_services,Other architectural and engineering services - real property
 2_professional_services,Language training services
 2_professional_services,"Educational services, n.e.s."
 2_professional_services,"Vehicular components, miscellaneous - repair"
 2_professional_services,Threat and risk assessment services
-2_professional_services,"General contractor services, not elsewhere specified"
-2_professional_services,Engineering services - buildings
 2_professional_services,Certifications and accreditations for products and institutions other than educational institutions
 2_professional_services,Miscellaneous engines and components - repair
 2_professional_services,Laundry supplies (n.e.s.)
 2_professional_services,Communication marketing management
-2_professional_services,"Electrical contractor services, class a licence"
 2_professional_services,"Mining, rock drilling, earth boring and associated equipment - repair"
 2_professional_services,Other professional services not elsewhere specified - investigative services
 2_professional_services,Accounting and audit services - audit services
@@ -1926,8 +1695,6 @@ category,d_description_en
 2_professional_services,Review of northern project mangement office standard operating procedures
 2_professional_services,Leadership development senior resource
 2_professional_services,0499 - other professional services not elseswhere specified
-2_professional_services,Engineering services
-2_professional_services,Paving contractor services (except mud jacking)
 2_professional_services,Educational studies
 2_professional_services,Environmental site investigation
 2_professional_services,Computer assisted learning
@@ -1935,20 +1702,13 @@ category,d_description_en
 2_professional_services,Data collection services
 2_professional_services,Monitoring
 2_professional_services,Insurance services
-2_professional_services,"Pilot training services, aircraft"
 2_professional_services,Health and welfare services
-2_professional_services,"Portable toilets, rental"
-2_professional_services,Commercial security guard and related services
 2_professional_services,Data analysis - performance of a survey
-2_professional_services,Laundry and dry cleaning services
 2_professional_services,Technical writing services
 2_professional_services,Marine training
-2_professional_services,Miscellaneous construction equipment
 2_professional_services,Graphic design services - including website
-2_professional_services,Architectural & engineering services - restoration/conservation heritage building structures
 2_professional_services,Problem solving/decision making training courses
 2_professional_services,Personnel management: staffing
-2_professional_services,Elevators - repair
 2_professional_services,Systems and statistical analysis
 2_professional_services,Environmental professional consulting services - real property related
 2_professional_services,Events planning and management
@@ -1956,20 +1716,14 @@ category,d_description_en
 2_professional_services,"Sets, kits and outfits, food preparation and serving - repair"
 2_professional_services,Career path planning training courses
 2_professional_services,Advertising related services
-2_professional_services,Gas services
 2_professional_services,"Replenishable field medical sets, kits, and outfits"
 2_professional_services,"Winches, hoists, cranes and derricks"
 2_professional_services,Graphic design services
 2_professional_services,"Informatics professional and consulting services - maintenance operations, support"
 2_professional_services,Driver training
-2_professional_services,Environmental services
-2_professional_services,System engineering services
-2_professional_services,Construction inspection services
 2_professional_services,Commercial testing laboratory services
 2_professional_services,"Informatics professional and consulting services, requirements, analysis, feasibility studies"
-2_professional_services,Miscellaneous items - leasing
 2_professional_services,Telecommunications network services
-2_professional_services,"Fencing, fences, gates and components"
 2_professional_services,Environmental impact studies
 2_professional_services,Ground effect vehicles - rental
 2_professional_services,Chemical analysis instruments - repair and overhaul
@@ -1987,7 +1741,6 @@ category,d_description_en
 2_professional_services,Audit services
 2_professional_services,Application software
 2_professional_services,Human resources support services - classification
-2_professional_services,Fabrication of exhibits
 2_professional_services,Monuments restoration
 2_professional_services,Human resources support services - staffing
 2_professional_services,Web design - marketing & corporate branding
@@ -2040,11 +1793,8 @@ category,d_description_en
 2_professional_services,Les services professionnels de communication non s
 2_professional_services,Staffing consultant
 2_professional_services,This multi-year fixed-term agreement was competitively sourced for the services of agents to conduct prosecutions on behalf of the dpp
-2_professional_services,Engineering consultants - construction
 2_professional_services,Laundry and dry cleaning
-2_professional_services,Informatics professional
 2_professional_services,Maintenance agreement - pc software
-2_professional_services,Photocopying machine
 2_professional_services,Cloud technology
 2_professional_services,Regulatory studies
 2_professional_services,"Labour, moving or installation services"
@@ -2053,8 +1803,6 @@ category,d_description_en
 2_professional_services,Other professional services fees and related costs
 2_professional_services,A&e services gen non-const.
 2_professional_services,Access to information and privacy consultant for the review and processing of atip requests. This contract was competitively sourced. This contract includes an amendment. The original contract was reported when it was awarded
-2_professional_services,Administrative management and planning services
-2_professional_services,Administrative services
 2_professional_services,Administrative support services
 2_professional_services,Administrative support studies
 2_professional_services,Advertising creative services
@@ -2064,75 +1812,45 @@ category,d_description_en
 2_professional_services,Audio visual production services
 2_professional_services,"Audit services, not elsewhere specified"
 2_professional_services,"Audit, comprehensive"
-2_professional_services,Banking services
 2_professional_services,Binders printed
-2_professional_services,Books and pamphlets
 2_professional_services,Books and pamphlets - repair
 2_professional_services,Business continuity plan/threat & risk assessment - consulting services
-2_professional_services,Business services
-2_professional_services,Business training
 2_professional_services,Cadd drafting and technical services - building systems
 2_professional_services,Certification and accreditation - emergent care training
 2_professional_services,Certification and accreditation-medical training
-2_professional_services,Certifications and accreditations for products and institutions other than educational institutions
-2_professional_services,Chaplain services miscellaneous
 2_professional_services,Classification consultant services
-2_professional_services,Collection agency fees and charges
-2_professional_services,Commercial testing laboratory services
 2_professional_services,Commericial testing laboratory services
 2_professional_services,Communication project management services
-2_professional_services,Communication promotional material (including printing and identification)
 2_professional_services,Communication support products
 2_professional_services,Communication telemarketing
-2_professional_services,Communications professional services not elsewhere specified - media monitoring services
-2_professional_services,Computer assisted learning
-2_professional_services,Conduct of training
-2_professional_services,Consulting services
 2_professional_services,Consulting services office communications systems-systems
 2_professional_services,"Consulting services, n.e.s."
 2_professional_services,Copying services
 2_professional_services,Corporate membership subscription fees
 2_professional_services,Counselling services
 2_professional_services,Court reporting and transciption services
-2_professional_services,Cross-cultural training
-2_professional_services,Data collection services
 2_professional_services,Data entry services
 2_professional_services,Design and layout of annual report
 2_professional_services,Development of methodology
 2_professional_services,"Digital maps, charts and geodetic products"
-2_professional_services,Driver training
-2_professional_services,Educational services - business training
 2_professional_services,Educational services-business training
-2_professional_services,"Educational services, n.e.s."
 2_professional_services,Electromagnetic technology (r&d)
 2_professional_services,Electronic subscriptions and electronic publications
-2_professional_services,End-to-end learning services (excludes cots training)
 2_professional_services,Engineering (r&d)
 2_professional_services,Engineering consultants - other - advanced technology vehicle mileage
 2_professional_services,Engineering studies
 2_professional_services,English teacher
-2_professional_services,Environmental impact studies
 2_professional_services,Evaluation & performance measurement services
-2_professional_services,Events planning and management
 2_professional_services,Executive search services
-2_professional_services,Financial accounting services
 2_professional_services,"Financial and related services, n.e.s."
 2_professional_services,Financial management
 2_professional_services,Financial/procurement suppot and coaching services
 2_professional_services,First aid training courses
-2_professional_services,Funeral services
-2_professional_services,General office help
-2_professional_services,Graphic design services
 2_professional_services,"Human resource services, business consulting/change management; project management services"
-2_professional_services,"Human resource services, business consulting/change management; project management services (supply arrangement tsps)"
-2_professional_services,"Human resources support services (hrss): organization and classification, staffing and compensation"
 2_professional_services,Human ressources services
 2_professional_services,Insurance associated risk management
 2_professional_services,Internal and external audits (supply arrangement pass)
-2_professional_services,Language training services
-2_professional_services,Legal services/litigation/lawyers
 2_professional_services,Library subscriptions
-2_professional_services,Logistics support services military aerospace related - technical publications and data management
 2_professional_services,Management consulting - commission of experts of the supervisory authority of the international aircraft registry (cesais)
 2_professional_services,Management consulting - fleet management support services
 2_professional_services,Management consulting - grain monitoring program
@@ -2147,30 +1865,14 @@ category,d_description_en
 2_professional_services,Manufacture and commercialization of government concepts
 2_professional_services,Map production: digital mapping
 2_professional_services,Marine management
-2_professional_services,Media monitoring services
-2_professional_services,Miscellaneous business services
-2_professional_services,Miscellaneous communications services
 2_professional_services,Miscellaneous items (includes only those items of goods which cannot conceivably be classified in any existing classes).
 2_professional_services,Natural sciences
 2_professional_services,Newswire services
 2_professional_services,Online news database
-2_professional_services,Other business services not elsewhere specified
-2_professional_services,Other professional services not otherwise specified
 2_professional_services,Pest management training
-2_professional_services,"Product/material - design, development, formulation, modification: science and technology related (r&d)"
-2_professional_services,Professional services / financial analysis
-2_professional_services,Professional services / program advisory services
-2_professional_services,Professional services / program research analysis
-2_professional_services,Professional services / waste management services
 2_professional_services,Program review services
-2_professional_services,Project management services
-2_professional_services,Public opinion research - quantitative
 2_professional_services,Purchase of training packages and courses
-2_professional_services,Recreational services
-2_professional_services,Research contracts
-2_professional_services,Safety training courses
 2_professional_services,Scientific data collection - field (r&d)
-2_professional_services,Scientific services
 2_professional_services,"Scientific services - monitoring and research of shellfish life in the harbor of gaspé, quebec - 2016 mandate"
 2_professional_services,Search and rescue training
 2_professional_services,Secretarial and stenographic courses
@@ -2181,36 +1883,23 @@ category,d_description_en
 2_professional_services,Social studies and humanities
 2_professional_services,Standing offer agreement
 2_professional_services,Subscriptions
-2_professional_services,System engineering services
 2_professional_services,Technical / vocational training
-2_professional_services,"Technical engineering and maintenance services (tems) (excludes requirements related to armament, r&d and r&o)"
-2_professional_services,Technical investigations and engineering services (ties) (marine)
-2_professional_services,Temporary help services - administrative
-2_professional_services,Temporary help services - professional and technical
 2_professional_services,Temporary help services - professional services - access to information and privacy (atip) - senior
-2_professional_services,"Temporary help services, general office support"
 2_professional_services,"Temporary help, n.e.s."
 2_professional_services,Threat risk assessments - base building
 2_professional_services,Training and curriculum development
 2_professional_services,Training consultants - provide professional training services on change management and leadership development
-2_professional_services,Training design
 2_professional_services,Training subscription
 2_professional_services,Transcription services
 2_professional_services,Translation service for annual report
-2_professional_services,Translation services
-2_professional_services,Translation services
-2_professional_services,Translation services
 2_professional_services,Veterinary services
 2_professional_services,Vocational and psychometric testing
 2_professional_services,Water quality studies
-2_professional_services,Water quality support services
-2_professional_services,Wilderness training
 2_professional_services,"Writing (copy writing, tech writing, editorial, translation manual, musicology)"
 2_professional_services,"Writing services (including, editing, adaptation, etc.)"
 3_information_technology,Rental of computers - servers
 3_information_technology,"Rental of computer equipment related to production and operations (p&o) environment—all servers, storage, printers etc (includes all related parts and peripherals)"
 3_information_technology,Computer services (includes it solutions / deliverables as well as it managed services)
-3_information_technology,Information technology and telecommunications consultants
 3_information_technology,Weapons (including parts)
 3_information_technology,License/maintenance fees for client software
 3_information_technology,Computer equipment related to distributed computing environment (dce)-desktop/personal/portable (includes all related parts and peripherals)
@@ -2240,12 +1929,10 @@ category,d_description_en
 3_information_technology,License/maintenance fees for operating system and utility software
 3_information_technology,License/maintenance fees for application software and application development and delivery software
 3_information_technology,"Operating system and utility software related to servers, storage, peripherals and components"
-3_information_technology,Client software related to distributed computing environment (dce)
 3_information_technology,Csdc annual maintenance
 3_information_technology,Microsoft enterprise agreement
 3_information_technology,Lic/maint fees client software
 3_information_technology,License/maintenace fees for application software
-3_information_technology,Application software
 3_information_technology,Computer equipment-client domain
 3_information_technology,Networking software
 3_information_technology,Data communications services
@@ -2268,15 +1955,12 @@ category,d_description_en
 3_information_technology,Programmer/analyst for it services
 3_information_technology,Internet domain name renewals 3 yrs
 3_information_technology,Touch screens and hardware
-3_information_technology,"Communications/networking equipment (includes analog, digital and combined analog/digital equipment, cabling, parts and peripherals)"
 3_information_technology,"Computer equipment related to production and operations (p&o) environment-all servers, storage, printers etc (includes all related parts and peripherals)"
 3_information_technology,Computer equipment
 3_information_technology,Real property services
 3_information_technology,Audio-visual services
-3_information_technology,Scientific services
 3_information_technology,"Computer equipment related to production and operations (p&o) environment-all servers, storage, printers, etc. (includes all rel"
 3_information_technology,"Communications/networking equipment (includes analog, digital and combined analog/digital equipment, cabling, parts and peripher"
-3_information_technology,Data and database access services
 3_information_technology,1285 - application software & development
 3_information_technology,0582 - maintenance fee client software
 3_information_technology,Computer equipment related to distributed computing environment (dce) - desktop/personal/portable (includes all related parts and peripherals)
@@ -2311,7 +1995,6 @@ category,d_description_en
 3_information_technology,Data & database access services
 3_information_technology,Communications/networking equipment
 3_information_technology,License and maintenance fees for client software
-3_information_technology,License and maintenance fees for application software
 3_information_technology,Image/video communications services (includes telepresence/video conferencing services)
 3_information_technology,Image/video equipment
 3_information_technology,Info technology and telecomm consultants
@@ -2324,7 +2007,6 @@ category,d_description_en
 3_information_technology,Acq. Computer equipment-client computing domain
 3_information_technology,Rental of video/image communications equipment
 3_information_technology,Acquisition of client software
-3_information_technology,Information technology consultants
 3_information_technology,Computer services
 3_information_technology,"License/maintenance fees for application software (including cots), and application development and delivery software"
 3_information_technology,License/maintenance fees for application software (including cots) and appl
@@ -2376,7 +2058,6 @@ category,d_description_en
 3_information_technology,"Computer equipment related to production and operations (p&o) environment - all servers, storage, printers, etc. (includes all related parts and peripherals)"
 3_information_technology,Web analytics services on an ad-hoc basis
 3_information_technology,"Ultrablock usb3 write blocker kit, ssd and usb flashdrive"
-3_information_technology,"Electric lighting, distribution and control equipment"
 3_information_technology,Satellite and spacecraft acquisition and parts
 3_information_technology,"Rental of computer equipment related to production and operations (p&o) environment - all servers, storage, printers, etc. (includes all related parts and peripherals)"
 3_information_technology,Services de gestion de l’information
@@ -2430,7 +2111,6 @@ category,d_description_en
 3_information_technology,Purchase of hp desktop pc's
 3_information_technology,Utm firewall solutions checkpoint
 3_information_technology,Install & update of av equipment 605-16
-3_information_technology,Other professional services not elsewhere specified
 3_information_technology,0473 -information technology and telecommunications consultants
 3_information_technology,0582 - maintenance client software
 3_information_technology,0583 - maintenance application software
@@ -2577,7 +2257,6 @@ category,d_description_en
 3_information_technology,Access to ncfta website tools for 1 year
 3_information_technology,Server operating system and utility software
 3_information_technology,"Communications / network services (includes services for analog, digital or combined analog & digital, parts, peripherals and cabling)"
-3_information_technology,Engineering consultants-other
 3_information_technology,1223 – image/video communications equipment
 3_information_technology,0474 – information management services
 3_information_technology,1285 – application software (including cots) and application development and delivery software
@@ -2616,7 +2295,6 @@ category,d_description_en
 3_information_technology,License/maintenance fees for client software related to distributed computing environmentalnment (dce)
 3_information_technology,Computer equipment related to distributed computing environmentalnment (dce)-desktop/personal/portable (includes all related parts and peripherals)
 3_information_technology,"Computer equipment related to production and operations (p&o) environmentalnment-all servers, storage, printers, etc. (includes all related parts and peripherals)"
-3_information_technology,Informatics professional services
 3_information_technology,Assets - purchased application software (including cots) and application development and delivery software > $10k
 3_information_technology,Purchase of computer equipment related to distributed computing environment (dce) - desktop/personal/portable < $10k
 3_information_technology,Computer services - it solutions / deliverables - application / database development and maintenance (addm)_x000d_
@@ -2626,7 +2304,6 @@ category,d_description_en
 3_information_technology,"Application software (including cots) and application development and delivery software - st. Anthony and wabush, nl"
 3_information_technology,Digital (incl digital voice) communication / networking equipment (including related parts and peripherals)
 3_information_technology,Licence/maintenance fees for netwroking s/w
-3_information_technology,Management consulting
 3_information_technology,Digital (incl digital voice) communication /networking equipment (incl related parts and peripherals)
 3_information_technology,Rental or license/maintenance fees for application security software and application development and delivery security software
 3_information_technology,"Computer equipment related to production and operations (p&o) environment - all servers, storage, printers etc/imprimantes, etc. (y compris pièces et périphériques"
@@ -2637,7 +2314,6 @@ category,d_description_en
 3_information_technology,Surface pro microsoft
 3_information_technology,Dell power edge r830 server
 3_information_technology,Toshiba portege laptop
-3_information_technology,Lawyer service
 3_information_technology,1282 comp eq-srvr (parts_x0016_peri) - laptops
 3_information_technology,0812 comptr serv ogd - software purchase and license
 3_information_technology,Main licens - software and maintenace
@@ -2694,12 +2370,10 @@ category,d_description_en
 3_information_technology,License/maintenance fees for app.software
 3_information_technology,Acquisition of application software & development
 3_information_technology,License/maintenance fees - server op.system & util
-3_information_technology,Engineering services not elsewhere specified
 3_information_technology,"Rental of image/video communications equipment (includes telepresence/video conferencing equipment, cabling, parts and peripherals"
 3_information_technology,0582 - license/maintenance fees for client software related to distributed computing environment (dce)
 3_information_technology,0583 - license/maintenance fees for application software (including cots) and application development and delivery software
 3_information_technology,"1289 - communications/networking equipment (includes analog, digital and combined analog/digital equipment, cabling, parts and peripherals)"
-3_information_technology,Other professional serv. Not elsewhere specified
 3_information_technology,Computer equipment - client computing domain - desktop/personal/portable (includes related parts and peripherals)
 3_information_technology,Rental of computers -client computing domain - desktop/personal/portable
 3_information_technology,Digtl (incl digtl voice) communctn / netwrkng equipmnt (incl reltd parts & periphrls)
@@ -2760,7 +2434,6 @@ category,d_description_en
 3_information_technology,Opentext software maintenance and support
 3_information_technology,Database analyst / im administrator
 3_information_technology,Accellion licenses renewal
-3_information_technology,Miscellaneous weapons
 3_information_technology,Information technology and telecommunications consultants - technical architect
 3_information_technology,Information technology and telecommunications consultants - business analyst and erp functional analyst
 3_information_technology,Information technology and telecommunications consultants - database administrator
@@ -2835,11 +2508,8 @@ category,d_description_en
 3_information_technology,"0672 - computer equipment related to production and operations (p&o) environment - all servers, storage, printers, etc. (Includes all related parts and peripherals)"
 3_information_technology,0588 - rental of computer equipment related to distributed computing environment (dce) - desktop/personal/portable (includes all related parts and peripherals)
 3_information_technology,1223 image/video communications equipment (incl related parts and peripherals)
-3_information_technology,Informatics training
-3_information_technology,Imaging services
 3_information_technology,Tape drives
 3_information_technology,Network switches
-3_information_technology,Temporary help services
 3_information_technology,Computer servers
 3_information_technology,Hard disc arrays
 3_information_technology,Audioconferencing systems
@@ -2907,7 +2577,6 @@ category,d_description_en
 3_information_technology,Antidote 9 add'l licenses & renewal of maintenance
 3_information_technology,Court usher services - toronto
 3_information_technology,Court usher services - winnipeg
-3_information_technology,Court usher services - vancouver
 3_information_technology,Renewal freebalance software
 3_information_technology,Add'l licenses & renewal of maintenance
 3_information_technology,Renewal of cisco technical support
@@ -2971,7 +2640,6 @@ category,d_description_en
 3_information_technology,Conseillers en ti application
 3_information_technology,"Miscellaneous textiles, headgear, umbrellas, etc."
 3_information_technology,Rental of computer
-3_information_technology,Other business services
 3_information_technology,Network equipment acquisition
 3_information_technology,License/maintenance fees for software
 3_information_technology,"Communications/network services (includes services for analog, digital or combined analog & digital, parts, peripherals and cabling)"
@@ -3002,7 +2670,6 @@ category,d_description_en
 3_information_technology,0475 information technolgoy services
 3_information_technology,1221 voice communic equip
 3_information_technology,1282 comp eq-srvr (partsperi)
-3_information_technology,0859 other business services
 3_information_technology,Amendment to exercise option year
 3_information_technology,Required to add additional licenses to the contract
 3_information_technology,Tbips - sa - programmer/analyst - powerbuilder developer - amd 002
@@ -3016,9 +2683,6 @@ category,d_description_en
 3_information_technology,License/maintenance fees for application software (including cots) and
 3_information_technology,0585 - maintenance fee network software
 3_information_technology,0473 - it & telecommunications consultants
-3_information_technology,Data analysis - performance of a survey
-3_information_technology,Adp software
-3_information_technology,Information products
 3_information_technology,Information technology and telecommunications consultants - programmer and software developer services
 3_information_technology,Information technology and telecommunications consultants - database administrator services
 3_information_technology,Information technology and telecommunications consultants - performance tester services
@@ -3064,92 +2728,53 @@ category,d_description_en
 3_information_technology,0582 - license/maintenance workstation sw
 3_information_technology,Study of evolution of services by other public broadcasters
 3_information_technology,Miscellaneous electrical components
-3_information_technology,Training subscription
 3_information_technology,"Rental of image/video communications equipment (includes telepresence/video conferencing equipment, cabling, parts and periphera"
-3_information_technology,System engineering services
-3_information_technology,"Converters, electrical, nonrotating"
-3_information_technology,Driver training
-3_information_technology,"Automatic data processing equipment, system configuration"
-3_information_technology,Audio visual production services
 3_information_technology,Adp support equipment
 3_information_technology,Geophysical instruments
-3_information_technology,Court reporting services
 3_information_technology,"Mounts, shock and vibration"
-3_information_technology,Radio television services
 3_information_technology,Adp software maintenance - other than microcomputer
 3_information_technology,Training aids
 3_information_technology,"Radio and television communications equipment, except airborne - rent"
 3_information_technology,"Computer services, not elsewhere specified"
-3_information_technology,Miscellaneous items
 3_information_technology,Computer and data processing services
 3_information_technology,"Local area networks, systems and components"
-3_information_technology,"Radio and television communications equipment, except airborne"
 3_information_technology,Computer systems security (r&d)
-3_information_technology,"Armament training devices, refer to parent weapon system"
-3_information_technology,"Antennas, waveguides and related equipment"
 3_information_technology,"Case, shipping with moulded foam inserts"
 3_information_technology,"Global positioning system, navigation equipment (except airborne)"
 3_information_technology,"Monitor, crt or lcd, microcomputer etc."
 3_information_technology,Medical advisory services
 3_information_technology,Adp software - installation
-3_information_technology,Video recording and reproduction equipment
-3_information_technology,Fire alarm & detection systems - installation and repair
-3_information_technology,Military communications (research)
-3_information_technology,Professional services / program advisory services
 3_information_technology,Video recording and reproducing equipment - repair
-3_information_technology,Adp input-output and storage devices - maintenance
-3_information_technology,Adp input-output and storage devices
-3_information_technology,"Guns, through 30 mm, unless installed in a vehicle, aircraft, ship"
 3_information_technology,"Switching systems, special design"
 3_information_technology,"Scanners, document"
 3_information_technology,Fire control designating and indicating equipment
-3_information_technology,Underwater sound equipment
 3_information_technology,"Adp central processing unit (cpu, computer) digital"
 3_information_technology,"Professional special services, edp, not elsewhere specified"
-3_information_technology,"Informatics professional and consulting services - maintenance operations, support"
 3_information_technology,"Adp central processing unit (cpu,computer) digital - maintenance"
-3_information_technology,Computer supplies
 3_information_technology,Adp components
 3_information_technology,"Headsets, handsets, microphones and speakers"
 3_information_technology,Mini and micro computer control devices
-3_information_technology,Electrical hardware and supplies
 3_information_technology,"Computers cpu, digital, micro"
-3_information_technology,Office supplies
 3_information_technology,"Guns, over 30 mm up to 75 mm, unless intsalled in a vehicle, aircraft, or ship"
 3_information_technology,"Cable, cord, and wire assemblies, communication equipment"
 3_information_technology,"Engine accessories, miscellaneous, non-aircraft"
-3_information_technology,"Antennas, waveguides and related equipment - repair and overhaul"
 3_information_technology,Capacitors
-3_information_technology,Commissionaire services
-3_information_technology,Temporary help services - professional and technical
 3_information_technology,Adpe system configuration - installation
-3_information_technology,Laboratory equipment and supplies
 3_information_technology,Add on memories (internal/external)
-3_information_technology,Miscellaneous office machines
 3_information_technology,Telecommunications/digital data network
 3_information_technology,"Electrical and electronic assemblies, boards, cards and associated hardware"
-3_information_technology,"Alarm, signal, and security detection systems , miscellaneous"
 3_information_technology,Communications security equipment and components
-3_information_technology,"Maintenance, repair, modification, rebuilding & installation of equipment related to ships"
-3_information_technology,Miscellaneous communications equipment
 3_information_technology,"Computers, micro, laptop"
 3_information_technology,"Computers, digital systems, special purpose, includes artificial intelligence, array, parallel, vector etc."
-3_information_technology,Miscellaneous business services
-3_information_technology,Miscellaneous electrical and electronic components - repair and overhaul
-3_information_technology,"Information retrieval services, database"
 3_information_technology,"Adp central processing unit (cpu, computer) analog"
 3_information_technology,"Software suppliers, application, business, personnel management, edp"
 3_information_technology,"Automatic data processing equipment, system configuration - repair"
 3_information_technology,Social media monitoring
-3_information_technology,Equipment and materials testing
 3_information_technology,"Computers, digital systems, micro"
-3_information_technology,Electronic modules
 3_information_technology,"Computers, digital systems, personal/portable (may include operating system software) other than ibm compatible"
 3_information_technology,"Electrical and electronic properties, measuring and testing instruments - repair and overhaul"
 3_information_technology,"Computers, digital systems - large scale (may include operating system software) ibm plug compatible"
-3_information_technology,Telecommunications network services
 3_information_technology,Camera-recorder
-3_information_technology,"Radio navigation equipment, except airborne"
 3_information_technology,Computer equipment related to distributed computing environment (dce)-desktop/personal/portable (includes all related parts and peripherals
 3_information_technology,Rental of computer equipment related to distributed computing environment (dce)-desktop/personal/portable (includes all related parts and peripherals
 3_information_technology,Information technology and telecommunications consultants - senior database administrator
@@ -3165,7 +2790,6 @@ category,d_description_en
 3_information_technology,"Image/video communications equipment (includes telepresence/ video conferencing equipment, cabling, parts and peripherals)"
 3_information_technology,Application software & application development
 3_information_technology,Rental of software
-3_information_technology,Voice communications services
 3_information_technology,Analog communication/networking equipment (including related parts & peripherals)
 3_information_technology,Training- simulator
 3_information_technology,1282 comp eq-srvr (parts?Peri)
@@ -3176,29 +2800,18 @@ category,d_description_en
 3_information_technology,0672 - repairs & maintenance of informatique technology infrastructure equipment - servers
 3_information_technology,1289 - it infrastructure equipment >$5000
 3_information_technology,0582 - license & maintenance fees - workstation software
-3_information_technology,"Human resources support services (hrss): organization and classification, staffing and compensation"
-3_information_technology,Professional services / financial analysis
 3_information_technology,Video recording and reproducing equipment rental
-3_information_technology,Specialized shipping and storage containers
 3_information_technology,Television systems
 3_information_technology,"Cameras, motion picture"
 3_information_technology,Radio transmitters-hf (except airborne)
-3_information_technology,Consulting services
-3_information_technology,"Technical engineering and maintenance services (tems) (excludes requirements related to armament, r&d and r&o)"
-3_information_technology,Photographic equipment and accessories
-3_information_technology,Snow plowing and removal
 3_information_technology,Carrier systems telephone
 3_information_technology,Communications security equipment and components - repair
-3_information_technology,"Cabinets, lockers, bins and shelving - installation"
 3_information_technology,Drawings and specifications
 3_information_technology,"Guns, through 30mm - production design"
 3_information_technology,Photographic projection equipment
 3_information_technology,"Adp central processing unit (cpu, computer) digital - installation"
 3_information_technology,"Computers, digital systems, large scale (may include operating system software) - maintenance"
-3_information_technology,Audio and video technical services
-3_information_technology,"Informatics professional and consulting services, requirements, analysis, feasibility studies"
 3_information_technology,Other telecommunications services
-3_information_technology,"Informatics professional and consulting services, software development and implementation"
 3_information_technology,Electrical and electronic properties measuring and testing instruments
 3_information_technology,Plotters (stand alone)
 3_information_technology,"Computer software, medical and health care - other than microcomputers"
@@ -3206,10 +2819,7 @@ category,d_description_en
 3_information_technology,"Hand tools, nonedged, nonpowered"
 3_information_technology,"Printers, page, laser"
 3_information_technology,"Camera, cctv, low light level (lll) application"
-3_information_technology,"Printing, duplicating and bookbinding equipment"
 3_information_technology,"Computer software, laboratory and scientific"
-3_information_technology,Miscellaneous fire control equipment
-3_information_technology,"Toner, cartridge, virgin, for various types of printers and facsimile machines"
 3_information_technology,"Camera, video"
 3_information_technology,"Telephones, cellular"
 3_information_technology,"Security devices, encryption, etc. - maintenance"
@@ -3217,25 +2827,18 @@ category,d_description_en
 3_information_technology,"Headsets, handsets, microphones and speakers - repair"
 3_information_technology,Office information system equipment - maintenance
 3_information_technology,"Optical instruments, test equipment, components and accessories"
-3_information_technology,Technical / vocational training
 3_information_technology,Intercommunication systems
 3_information_technology,Miscellaneous chemical specialities
 3_information_technology,"Cameras, still picture"
-3_information_technology,Marine hardware and hull items - repair
 3_information_technology,"Switching devices (data, modems, peripherals, video etc.) - maintenance"
 3_information_technology,"Radio and television communications equipment, except airborne - leasing"
 3_information_technology,Informatics systems integration
 3_information_technology,"Printers, ink jet"
 3_information_technology,"Switching systems, electronic"
 3_information_technology,Radio transmitters-vlf (except airborne)
-3_information_technology,Communications services
 3_information_technology,"Informatics professional and consulting services, systems management, project management, edp management consulting"
-3_information_technology,Office devices and accessories
-3_information_technology,Business services
 3_information_technology,"Computers, miscellaneous systems, hybrid computer (including turnkey)"
 3_information_technology,"Terminals, display, non-intelligent"
-3_information_technology,Photographic equipment and accessories - repair and overhaul
-3_information_technology,Conventional military weapons/equipment (r&d)
 3_information_technology,"Batteries, rechargeable"
 3_information_technology,Audiovisual services
 3_information_technology,Information technology and telecommunications consultants - enterprise architect level 3
@@ -3280,7 +2883,6 @@ category,d_description_en
 3_information_technology,Computer equipment -desktop/personal/portable
 3_information_technology,Acquisition of informatics equipment and parts
 3_information_technology,Computer equipment-client computing domain
-3_information_technology,Other professional services
 3_information_technology,Storage drives
 3_information_technology,"0584 license/maintenance fees for operating system and utility software related to servers, storage, peripherals and components"
 3_information_technology,Security equipment
@@ -3325,7 +2927,6 @@ category,d_description_en
 3_information_technology,Computer equipment related to distributed computing environment —desktop/personal/portable
 3_information_technology,Licenses for on-premise client software
 3_information_technology,O365 intergration services for public service commission
-3_information_technology,Informatics professional
 3_information_technology,Hazard detecting installation
 3_information_technology,Rental of computers - desktop/personal/portable
 3_information_technology,"Computer equip personal/portable (expense < $ 10,000 per unit)"
@@ -3342,62 +2943,34 @@ category,d_description_en
 3_information_technology,Accesspro bundle
 3_information_technology,Accounting and calculating machines
 3_information_technology,"Adp central processing unit (cpu, computer) analog - maintenance"
-3_information_technology,"Adp central processing unit (cpu, computer) digital"
 3_information_technology,"Adp central processing unit (cpu, computer) hybrid - maintenance"
-3_information_technology,Adp components
-3_information_technology,Adp input-output and storage devices
 3_information_technology,Adp input-output and storage devices - leasing of equipment
-3_information_technology,Adp input-output and storage devices - maintenance
-3_information_technology,Adp input-output and storage devices - rental
 3_information_technology,Adp input-output and storage devices maintenance only
-3_information_technology,Adp software
-3_information_technology,Adp software - installation
 3_information_technology,Adp software (other than microcomputers) technology assisted training
-3_information_technology,Adp software maintenance - other than microcomputer
-3_information_technology,Adp support equipment
 3_information_technology,Adpe system configuration
 3_information_technology,Adpe system configuration - lease
 3_information_technology,Adpe system configuration - microcomputer only
 3_information_technology,Airlock re-configuration
-3_information_technology,Appli. Software (inc. Cots) appli. Devel. and deli
-3_information_technology,"Automatic data processing equipment, system configuration"
 3_information_technology,Business systems
-3_information_technology,"Cable, cord, and wire assemblies, communication equipment"
 3_information_technology,Cablevision service
 3_information_technology,"Camera, cctv, medical/microscope application, high resolution"
-3_information_technology,"Camera, video"
 3_information_technology,Cctv equipment
 3_information_technology,Communication training devices
-3_information_technology,Communications security equipment and components
-3_information_technology,Comp. Equip.-client computing domain-desktop/pers.
-3_information_technology,Computer and data processing services
 3_information_technology,Computer equipment related to distributed computing
-3_information_technology,Computer equipment related to distributed computing environment (dce) - desktop/personal/portable (includes all related parts and peripherals)
-3_information_technology,Computer services
-3_information_technology,Computer services - except other depts.
 3_information_technology,"Computer software, computer aided design/computer aided mfg/ computer integrated manufacturing (cad/cam/cim) - other than microcomputers"
 3_information_technology,"Computer software, data base management, information retrieval - microcomputers only"
 3_information_technology,"Computer software, engineering, scientific, mathematical, statistical, modeling, simulation, emulation, energy - microcomputers only"
 3_information_technology,"Computer software, engineering, scientific, mathematical, statistical, modeling, simulation, emulation, energy - other than microcomputers"
-3_information_technology,"Computer software, laboratory and scientific"
 3_information_technology,"Computer software, military applications, emergency planning civil - other than microcomputers"
-3_information_technology,"Computers, digital systems, large scale (may include operating system software) - maintenance"
 3_information_technology,Configure and implement tacacs
-3_information_technology,Data and database access services
 3_information_technology,Data transmission service
-3_information_technology,Digital control systems - installation and repair
 3_information_technology,"Digital photocopiers, printers and multifunctional devices (mfds) - lease"
 3_information_technology,Digitizers
-3_information_technology,"Electrical and electronic assemblies, boards, cards and associated hardware"
 3_information_technology,Extend the current network to accommodate new workstations
 3_information_technology,Fiber optic accessories and supplies
 3_information_technology,Fiber optic cable assemblies and harnesses
-3_information_technology,Fiber optic cables
 3_information_technology,Fiber optic devices
 3_information_technology,Fiber optic switches
-3_information_technology,"Global positioning system, navigation equipment (except airborne)"
-3_information_technology,"Headsets, handsets, microphones and speakers"
-3_information_technology,"Headsets, handsets, microphones and speakers - repair"
 3_information_technology,Image analysis systems
 3_information_technology,Info tech & teleco consltnts
 3_information_technology,Info tech & telecom consltnts - business system analyst & programmer/analysts
@@ -3433,56 +3006,32 @@ category,d_description_en
 3_information_technology,Info. Technology and telecommunication consultants programmer analyst level 2
 3_information_technology,Info. Technology and telecommunication consultants project manager level 2
 3_information_technology,Info. Technology and telecommunication consultants system analyst level 2
-3_information_technology,Informatics professional
-3_information_technology,"Informatics professional and consulting services - maintenance operations, support"
-3_information_technology,"Informatics professional and consulting services, software development and implementation"
-3_information_technology,"Informatics professional and consulting services, systems management, project management, edp management consulting"
-3_information_technology,Informatics professional services
-3_information_technology,Informatics systems integration
-3_information_technology,Informatics training
-3_information_technology,Information products
-3_information_technology,"Information retrieval services, database"
 3_information_technology,Installation services for new network
 3_information_technology,"Intercommunication and public address systems, airborne"
 3_information_technology,It secuiryt engineer support services
 3_information_technology,Lic/mtce fees for netwrkng s/w
-3_information_technology,License / maintenance fees for client software
 3_information_technology,License/ maintenance fees for client software related to distributed computing environment (dce)
-3_information_technology,License/maintenance fees for application software (including cots) and application development and delivery software
 3_information_technology,License/maintenance fees for application software (including cots) and application development and delivery sofware
-3_information_technology,License/maintenance fees for client software related to distributed computing environment (dce)
 3_information_technology,Main licens
 3_information_technology,Microsfot enterprise agreement true-up
 3_information_technology,Microsoft volume licensing
-3_information_technology,Miscellaneous communications equipment
 3_information_technology,Network infrastructure upgrade
-3_information_technology,Networking software
 3_information_technology,Other cryptologic equipment and components
 3_information_technology,Other qc & testing services
 3_information_technology,Product testing
-3_information_technology,Programming services
 3_information_technology,Quality control services
 3_information_technology,Recovery of costs for technical support
 3_information_technology,Satellite communications technology
-3_information_technology,Satellite data processing and related services
 3_information_technology,Satellite transmission
 3_information_technology,Shared case management system program services and for the purchase of licences
 3_information_technology,Sms license renewal
-3_information_technology,"Software suppliers, application, business, personnel management, edp"
-3_information_technology,Switches
 3_information_technology,Systems integration of informatics commodities and services
-3_information_technology,Technical investigation and engineering services - acoustic and underwater systems (hardware/software)
 3_information_technology,Telecommunications - voice messaging
-3_information_technology,Telecommunications network services
-3_information_technology,Telephone and telegraph equipment
-3_information_technology,Threat and risk assessment services
 3_information_technology,"Uninterruptible power supply (u.p.s.) - single phase, 2kva and above - repair"
 3_information_technology,Upgrade of records manager(in-house)
-3_information_technology,Video recording and reproduction equipment
 3_information_technology,Website content maintenance and updating
 4_medical,Welfare services
 4_medical,Physicians and surgeons
-4_medical,Other health services not elsewhere specified
 4_medical,Dental services
 4_medical,0451 - health services
 4_medical,Oth health servs not elsewhere spc
@@ -3496,7 +3045,6 @@ category,d_description_en
 4_medical,0451 other health services - occupational therapist
 4_medical,0451 other health services not elsewhere specified
 4_medical,Health services
-4_medical,Other professional services not elsewhere specified
 4_medical,Health services not elsewhere specified
 4_medical,Physicians & surgeons
 4_medical,Medical services
@@ -3511,34 +3059,22 @@ category,d_description_en
 4_medical,"Medical and surgical instruments, equipment and supplies"
 4_medical,Drugs and biologicals
 4_medical,Fire control computing sights and devices
-4_medical,Legal services/litigation/lawyers
-4_medical,Counselling services
-4_medical,Miscellaneous items
-4_medical,"Product/material - design, development, formulation, modification: science and technology related (r&d)"
 4_medical,"Toilet soap, shaving preparations, and dentifrices"
-4_medical,Professional services / program advisory services
 4_medical,Other environmental studies
 4_medical,Chemical processing equipment
 4_medical,"Brush, cleaning, tools and parts, nylon bristles"
 4_medical,Chemical and pharmaceutical products manufacturing machinery
-4_medical,Medical advisory services
 4_medical,Medical supplies
 4_medical,Para-medical personnel
 4_medical,Other health services not specified elsewhere
-4_medical,Management consulting services
 4_medical,Employee assistance program - eap
 4_medical,Aed
 4_medical,Dental chair
 4_medical,"Dental instruments, equipment and supplies - repair"
 4_medical,"Dental instruments, equipment, and supplies"
-4_medical,Drugs and biologicals
-4_medical,"Health and allied services, not elsewhere specified"
-4_medical,Health and welfare services
 4_medical,"Hospital furniture, equipment, utensils and supplies"
 4_medical,"Imaging equipment and supplies: medical, dental, veterinary"
 4_medical,Medical (r&d)
-4_medical,Medical advisory services
-4_medical,"Medical and surgical instruments, equipment and supplies"
 4_medical,"Medical and surgical instruments, equipment and supplies - repair"
 4_medical,Medicated cosmetics and toiletries
 4_medical,Miscellaneous chemicals specialties laboratory and medical application only
@@ -3546,16 +3082,11 @@ category,d_description_en
 4_medical,Other health services not elsewhere specified employee assistance programs
 4_medical,Pharmaceutical services
 4_medical,Vaccines (r&d)
-5_transportation_and_logistics,Courier services
 5_transportation_and_logistics,"Transportation services, not elsewhere specified"
-5_transportation_and_logistics,Road motor vehicles
 5_transportation_and_logistics,Rental of aircraft
-5_transportation_and_logistics,Aircraft parts
 5_transportation_and_logistics,Rental of motor and other vehicles
 5_transportation_and_logistics,Gasoline
 5_transportation_and_logistics,Lubricating fuel and greases
-5_transportation_and_logistics,Diesel fuel
-5_transportation_and_logistics,Other vehicles
 5_transportation_and_logistics,Heavy fuel oil
 5_transportation_and_logistics,Transportation of things
 5_transportation_and_logistics,Transportation of things not elsewhere specified
@@ -3565,12 +3096,9 @@ category,d_description_en
 5_transportation_and_logistics,Road motor vehicles parts
 5_transportation_and_logistics,Motor vehicle licences
 5_transportation_and_logistics,Ships and boats parts
-5_transportation_and_logistics,Rental of ships
-5_transportation_and_logistics,Marine installations
 5_transportation_and_logistics,Repair of ships and boats
 5_transportation_and_logistics,Aircraft
 5_transportation_and_logistics,Ships and boats
-5_transportation_and_logistics,Aviation fuel
 5_transportation_and_logistics,"Miscellaneous vehicles parts, including tires and tubes"
 5_transportation_and_logistics,Road motor vehicles-non-military
 5_transportation_and_logistics,Transportation not elsewhere specified
@@ -3578,20 +3106,12 @@ category,d_description_en
 5_transportation_and_logistics,Repair and maintenance motor vehicle - regular
 5_transportation_and_logistics,Transportation of things not elsewhere specified (
 5_transportation_and_logistics,Rental-motor vehicles
-5_transportation_and_logistics,Data and database access services
 5_transportation_and_logistics,Purchase of forklift
 5_transportation_and_logistics,Relocation & install of acx x-ray machine
 5_transportation_and_logistics,Repair of road motor vehicles - non-military
 5_transportation_and_logistics,Road motor vehicules
 5_transportation_and_logistics,Usage of inventory
-5_transportation_and_logistics,Other equipment and parts
 5_transportation_and_logistics,"Salt, sulphur, ores, earth and stone"
-5_transportation_and_logistics,"Heating, air-conditioning and refrigeration equipment"
-5_transportation_and_logistics,Tuition fees and costs of attending courses including seminars not elsewhere specified
-5_transportation_and_logistics,Temporary help services
-5_transportation_and_logistics,"Electric lighting, distribution and control equipment and parts"
-5_transportation_and_logistics,Sewer and water
-5_transportation_and_logistics,Management consulting
 5_transportation_and_logistics,Flight training
 5_transportation_and_logistics,Rental of motor and other vehicles (specify)
 5_transportation_and_logistics,Agricultural subsidies
@@ -3606,7 +3126,6 @@ category,d_description_en
 5_transportation_and_logistics,"Diesel fuel -st. Anthony, nl"
 5_transportation_and_logistics,"Light fuel oil -st. Anthony, nl"
 5_transportation_and_logistics,Purchase of court vehicles chrysler 300 awd's
-5_transportation_and_logistics,Relocation services
 5_transportation_and_logistics,Move of shelving’s and boxes from 90 sparks ottawa
 5_transportation_and_logistics,0210 transportation of things not elsewhere specified
 5_transportation_and_logistics,Repair and overhaul of aircraft components
@@ -3616,7 +3135,6 @@ category,d_description_en
 5_transportation_and_logistics,"Purchase 3 vehicles - 2 sedans, 1 mini van"
 5_transportation_and_logistics,1261 - road motor vehicles
 5_transportation_and_logistics,Public servant travel - employee training
-5_transportation_and_logistics,Small craft
 5_transportation_and_logistics,Buoys - repair
 5_transportation_and_logistics,Minivans or vans
 5_transportation_and_logistics,Light trucks or sport utility vehicles
@@ -3624,7 +3142,6 @@ category,d_description_en
 5_transportation_and_logistics,Passenger motor vehicle
 5_transportation_and_logistics,"Miscellaneous vehicles parts, incl. tires and tube"
 5_transportation_and_logistics,1261 road motor vehicles
-5_transportation_and_logistics,Rental services
 5_transportation_and_logistics,Purchase snowmobile
 5_transportation_and_logistics,Ship and boats
 5_transportation_and_logistics,Transpotation services
@@ -3639,100 +3156,55 @@ category,d_description_en
 5_transportation_and_logistics,"Trucks, oth vehicles for transp. of goods"
 5_transportation_and_logistics,Repair of aircraft
 5_transportation_and_logistics,Fire fighting equipment
-5_transportation_and_logistics,Miscellaneous items
 5_transportation_and_logistics,"Hand tools, edged, nonpowered"
-5_transportation_and_logistics,"Diesel fuel, automotive"
 5_transportation_and_logistics,"Truck, firefighting"
 5_transportation_and_logistics,"Vessels, miscellaneous - repair"
 5_transportation_and_logistics,"Oils and greases, cutting, lubricating, and hydraulic"
-5_transportation_and_logistics,"Vehicular components, miscellaneous"
 5_transportation_and_logistics,Trucking
 5_transportation_and_logistics,Hose and flexible tubing
-5_transportation_and_logistics,Passenger motor vehicles - rental
-5_transportation_and_logistics,Tanks and tracked self-propelled weapons and vehicles w/wo amphibian capabilities
-5_transportation_and_logistics,Ground effect vehicles
 5_transportation_and_logistics,"Warehouse trucks and tractors, self-propelled"
-5_transportation_and_logistics,"Truck, forklift"
 5_transportation_and_logistics,"Trucks and truck tractors, wheeled"
-5_transportation_and_logistics,"Fans, air circulators and blower equipment"
 5_transportation_and_logistics,Trailers
-5_transportation_and_logistics,"Trucks and truck tractors, wheeled - rental"
-5_transportation_and_logistics,Logistics support services military aerospace related - technical publications and data management
 5_transportation_and_logistics,Ships and vessels - asbestos removal
 5_transportation_and_logistics,Passenger motor vehicles
 5_transportation_and_logistics,"Fuel oil, heating"
-5_transportation_and_logistics,Earthmoving and excavating equipment
-5_transportation_and_logistics,Middle distillate fuels
 5_transportation_and_logistics,"Liquid propellants and fuels, petroleum base"
 5_transportation_and_logistics,"Motor passengers, mail and merchandise transportation service"
-5_transportation_and_logistics,Marine life saving and diving equipment
-5_transportation_and_logistics,Aircraft and glider dry leases
 5_transportation_and_logistics,"Vehicles, all terrain, atv, wheeled (except military configuration)"
 5_transportation_and_logistics,"Jacks, automotive"
-5_transportation_and_logistics,"Maintenance, repair, modification, rebuilding & installation of equipment related to ships"
-5_transportation_and_logistics,"General contractor services, not elsewhere specified"
 5_transportation_and_logistics,"Gases, compressed and liquified"
-5_transportation_and_logistics,"Loaders, front end - rentals"
-5_transportation_and_logistics,Earthmoving and excavating equipment - rental
-5_transportation_and_logistics,Miscellaneous construction equipment - rental
-5_transportation_and_logistics,"Ships and vessels deck coverings - repair, overhaul, and maintenance"
 5_transportation_and_logistics,Scaffolding
-5_transportation_and_logistics,"Vessels, miscellaneous"
-5_transportation_and_logistics,"Converters, electrical, nonrotating"
-5_transportation_and_logistics,"Fuels, solid"
 5_transportation_and_logistics,Bus passenger service
-5_transportation_and_logistics,Military communications (research)
 5_transportation_and_logistics,"Firefighting equipment, marine systems - repair, overhaul and modification"
 5_transportation_and_logistics,"Vehicular brake, steering, axle, wheel and track components"
-5_transportation_and_logistics,"Hardware, commercial"
 5_transportation_and_logistics,Diesel engines and components - repair
-5_transportation_and_logistics,Miscellaneous aircraft accessories and components
 5_transportation_and_logistics,"Ladders, extension and stepladder"
-5_transportation_and_logistics,Fixed wing aircraft - airplane charter
 5_transportation_and_logistics,"Bus, shuttle services"
 5_transportation_and_logistics,"Buses, highway type"
-5_transportation_and_logistics,General marine construction work
 5_transportation_and_logistics,"Materials handling equipment, miscellaneous"
-5_transportation_and_logistics,"Ships and vessels - sand blasting, repainting, and refinishing"
-5_transportation_and_logistics,Ground effect vehicles - rental
 5_transportation_and_logistics,Miscellaneous aircraft accessories and components - rental
 5_transportation_and_logistics,Marine fuel
-5_transportation_and_logistics,Airframe structural components
 5_transportation_and_logistics,"Gasoline, automotive, unleaded"
-5_transportation_and_logistics,Miscellaneous items - rental
 5_transportation_and_logistics,Rotary wing aircraft - helicopter charter
-5_transportation_and_logistics,Parachute operations
 5_transportation_and_logistics,Vehicular power transmission components
-5_transportation_and_logistics,"Trucks and truck tractors, wheeled - repair"
-5_transportation_and_logistics,Ground effect vehicles - repair
-5_transportation_and_logistics,Airborne combat support training - fighter and trainer aircraft only
 5_transportation_and_logistics,Freight and cargo services
 5_transportation_and_logistics,"Hose assemblies, oxygen system, aircraft"
 5_transportation_and_logistics,"Clothing, special purpose"
 5_transportation_and_logistics,Specialized flight clothing and accessories
 5_transportation_and_logistics,Transportation (r&d)
 5_transportation_and_logistics,Bus services
-5_transportation_and_logistics,"Aircraft, fixed wing"
 5_transportation_and_logistics,Transportation
 5_transportation_and_logistics,"Periscopes, fire control, marine and non-specific components"
 5_transportation_and_logistics,"Explosive ordnance disposal tools, underwater"
-5_transportation_and_logistics,Miscellaneous furniture and fixtures
 5_transportation_and_logistics,"Tires and tubes, pneumatic, except aircraft"
-5_transportation_and_logistics,"Ammunition, 75mm through 125mm"
-5_transportation_and_logistics,Motor vehicle maintenance and repair shop specialized equipment
 5_transportation_and_logistics,"Container, shipping, fibreboard, palletized"
-5_transportation_and_logistics,"Construction services, not elsewhere specified"
 5_transportation_and_logistics,Vehicular power transmission components - repair
 5_transportation_and_logistics,Water transportation
 5_transportation_and_logistics,"Propellers, marine - repair and overhaul"
 5_transportation_and_logistics,"Engine fuel system components, non-aircraft - repair"
-5_transportation_and_logistics,"Valves, nonpowered"
 5_transportation_and_logistics,Passenger motor vehicles (buses and ambulances) - rental (under 90 days)
 5_transportation_and_logistics,"Loaders, front end"
-5_transportation_and_logistics,Office devices and accessories
 5_transportation_and_logistics,"Mowers, lawn"
-5_transportation_and_logistics,Vehicular furniture and accessories
-5_transportation_and_logistics,Miscellaneous chemical specialities
 5_transportation_and_logistics,"Lift, hydraulic, aerial work"
 5_transportation_and_logistics,Safety and rescue equipment
 5_transportation_and_logistics,Air
@@ -3741,78 +3213,49 @@ category,d_description_en
 5_transportation_and_logistics,Engine instruments - repair
 5_transportation_and_logistics,"Mining, rock drilling, earch boring and related equipment"
 5_transportation_and_logistics,Woodworking machines
-5_transportation_and_logistics,"Power transmission equipment, miscellaneous"
 5_transportation_and_logistics,"Radio navigation equipment (military), except airborne - repair and overhaul"
 5_transportation_and_logistics,"Household and commercial furnishings and appliances, miscellaneous - leasing"
 5_transportation_and_logistics,"Lubricating oil, gear"
 5_transportation_and_logistics,Buses
 5_transportation_and_logistics,"Motors, outboard - repair"
-5_transportation_and_logistics,Specialized shipping and storage containers
-5_transportation_and_logistics,Combat ships and landing vessels
-5_transportation_and_logistics,Ground handling services
 5_transportation_and_logistics,"Motorcycles, motor scooters and bicycles"
 5_transportation_and_logistics,"Vehicular brake, steering, axle, wheel and track components - repair and overhaul"
 5_transportation_and_logistics,Individual equipment
-5_transportation_and_logistics,"Hand tools, nonedged, nonpowered"
 5_transportation_and_logistics,"Additives and conditioners, fuel oil"
 5_transportation_and_logistics,"Vehicular cab, body and frame structural components"
-5_transportation_and_logistics,Materials handling equipment/nonself -propelled
 5_transportation_and_logistics,"Tractor, wheeled, agricultural, 2 wheel drive"
 5_transportation_and_logistics,Electric portable and hand lighting equipment
 5_transportation_and_logistics,"Rope, fibrous"
-5_transportation_and_logistics,"Combat, assault, and tactical vehicles, tracked"
 5_transportation_and_logistics,Grenades
 5_transportation_and_logistics,Climbing equipment set
-5_transportation_and_logistics,Power and hand pumps
 5_transportation_and_logistics,"Bearings, mounted"
 5_transportation_and_logistics,"Spreaders, sand/salt, truck mounting"
-5_transportation_and_logistics,"Combat, assault and tactical vehicles, wheeled"
 5_transportation_and_logistics,Road clearing and cleaning equipment
-5_transportation_and_logistics,Airfield specialized trucks and trailers
 5_transportation_and_logistics,"Truck, (dump, stake, van) diesel powered, to 27,499 lbs. Gvwr"
-5_transportation_and_logistics,"Headsets, handsets, microphones and speakers"
 5_transportation_and_logistics,"Bearings, plain, unmounted"
 5_transportation_and_logistics,"Platforms, telescoping"
-5_transportation_and_logistics,Other professional services not otherwise specified
-5_transportation_and_logistics,"Trucks, miscellaneous - rental (under 90 days)"
 5_transportation_and_logistics,"Tractors, wheeled"
 5_transportation_and_logistics,"Sweepers, warehouse, riding type, self-propelled"
-5_transportation_and_logistics,Miscellaneous construction equipment
 5_transportation_and_logistics,Switches - repair
-5_transportation_and_logistics,Training aids
-5_transportation_and_logistics,Filter and networks
 5_transportation_and_logistics,"Shipping containers, food, bulk, insulated plastic construction"
-5_transportation_and_logistics,Marine hardware and hull items
 5_transportation_and_logistics,Lighting naphtha
-5_transportation_and_logistics,Hazardous material spill containment and clean-up equipment and material
 5_transportation_and_logistics,Cranes and crane-shovels
 5_transportation_and_logistics,"Warehouse trucks and tractors, self-propelled - leasing"
-5_transportation_and_logistics,"Aircraft hydraulic, vacuum and de-icing system components"
 5_transportation_and_logistics,"Liquid propellant fuels and oxidizers, chemical base"
-5_transportation_and_logistics,Miscellaneous business services
 5_transportation_and_logistics,"Shipboard miscellaneous equipment - repair, overhaul, modification and calibration"
 5_transportation_and_logistics,"Hydraulic fluid, fire resistant"
-5_transportation_and_logistics,Ship and marine miscellaneous equipment - repair
-5_transportation_and_logistics,Aircraft landing gear components
-5_transportation_and_logistics,"Ships, small craft, pontoons, and floating docks - production design"
 5_transportation_and_logistics,Miscellaneous special industry machinery - rental
 5_transportation_and_logistics,Aircraft alarm and signal systems
 5_transportation_and_logistics,"Fencing, fences, gates and components - repair"
-5_transportation_and_logistics,Firearm training
 5_transportation_and_logistics,"Truck, fire, crash"
 5_transportation_and_logistics,Relays and solenoids
 5_transportation_and_logistics,"Rivets, aircraft"
-5_transportation_and_logistics,Ship and marine miscellaneous equipment
 5_transportation_and_logistics,Cranes and crane shovels - rental
-5_transportation_and_logistics,"Ammunition, over 125mm"
 5_transportation_and_logistics,Commercial and industrial gas cylinders
 5_transportation_and_logistics,Diver suit and accessories
 5_transportation_and_logistics,"Trailer, tilt deck"
 5_transportation_and_logistics,"Lubricant oil, aircraft"
-5_transportation_and_logistics,Snow plowing and removal
 5_transportation_and_logistics,Packing and gasket material
-5_transportation_and_logistics,"Lighting equipment, aerodrome, including marker lights"
-5_transportation_and_logistics,Switches
 5_transportation_and_logistics,"Truck, dump, diesel, to 27,499 gvwr - rental"
 5_transportation_and_logistics,"Truck, forklift, electric"
 5_transportation_and_logistics,"Truck, maintenance, diesel, 27,500 gvwr and up"
@@ -3824,94 +3267,52 @@ category,d_description_en
 5_transportation_and_logistics,"Crimping, installing and removal tools, connector"
 5_transportation_and_logistics,"Trucks, miscellaneous - leasing (over 90 days)"
 5_transportation_and_logistics,Padlocks
-5_transportation_and_logistics,"Ammunition, through 30mm"
 5_transportation_and_logistics,"Pressure, temperature and humidity measuring and controlling instruments"
-5_transportation_and_logistics,Operation training devices
-5_transportation_and_logistics,Engineering services - construction management
 5_transportation_and_logistics,"Food, cooking, baking and serving equipment"
 5_transportation_and_logistics,"Locks, flush"
 5_transportation_and_logistics,Chain and wire rope
 5_transportation_and_logistics,"Vehicular cab, body and frame structural components (except military configuration)"
-5_transportation_and_logistics,Aircraft ground servicing equipment
 5_transportation_and_logistics,"Torpedos and components, inert"
 5_transportation_and_logistics,"Liquid and gas flow, liquid level and mechanical motion measuring instruments, aeronautical only - repair and overhaul"
-5_transportation_and_logistics,Road clearing and cleaning equipment - repair
-5_transportation_and_logistics,"Aircraft air conditioning, heating and pressurizing equipment"
 5_transportation_and_logistics,"Tires, solid and cushion"
 5_transportation_and_logistics,"Gears, pulleys, sprockets and transmission chain, non-standard"
 5_transportation_and_logistics,Passenger motor vehicles - leasing
 5_transportation_and_logistics,Nuts and washers
 5_transportation_and_logistics,"Engine air oil filters, strainers and cleaners, non-aircraft - repair"
 5_transportation_and_logistics,Diesel engines and components
-5_transportation_and_logistics,"Centrifugals, separators, and pressure and vacuum filters"
 5_transportation_and_logistics,Truck
 5_transportation_and_logistics,Vehicle repair
 5_transportation_and_logistics,Tractor repair
 5_transportation_and_logistics,Vehicles
 5_transportation_and_logistics,Rental ships & boats
 5_transportation_and_logistics,Transportation of things not elsewhere spcecified
-5_transportation_and_logistics,Other business services not elsewhere specified
 5_transportation_and_logistics,"Ships and boats parts - acquisition of aircraft and ships, including parts"
 5_transportation_and_logistics,"Air charter fees/ may 14 & 17, 2018 (pilimmaksaivik)"
-5_transportation_and_logistics,Aircraft
 5_transportation_and_logistics,Armoured car service
-5_transportation_and_logistics,Aviation fuel
-5_transportation_and_logistics,Aviation fuel
 5_transportation_and_logistics,"Batteries, dry, alkaline"
 5_transportation_and_logistics,"Batteries, primary"
-5_transportation_and_logistics,"Batteries, rechargeable"
 5_transportation_and_logistics,"Batteries, rechargeable - repair"
 5_transportation_and_logistics,"Blades, snowplow"
 5_transportation_and_logistics,"Blocks, tackle, rigging and slings"
-5_transportation_and_logistics,Bus passenger service
-5_transportation_and_logistics,Bus services
-5_transportation_and_logistics,"Buses, repairs and service"
 5_transportation_and_logistics,"Buses, school - special type, 5 to 24 passengers"
 5_transportation_and_logistics,Courier service
-5_transportation_and_logistics,Courier services
-5_transportation_and_logistics,Cranes and crane-shovels
-5_transportation_and_logistics,Diesel engines and components
-5_transportation_and_logistics,Diesel engines and components - repair
-5_transportation_and_logistics,Diesel fuel
 5_transportation_and_logistics,Electric vehicular lights and fixtures
 5_transportation_and_logistics,"Engine accessories, miscellaneous"
-5_transportation_and_logistics,"Engine accessories, miscellaneous, non-aircraft"
 5_transportation_and_logistics,"Engine air and oil filters, strainers and cleaners, non-aircraft"
-5_transportation_and_logistics,"Engine air oil filters, strainers and cleaners, non-aircraft - repair"
-5_transportation_and_logistics,"Engines, gasoline - repair and overhaul (except aircraft)"
-5_transportation_and_logistics,Fire fighting equipment
 5_transportation_and_logistics,Firefighting equipment - complete fire trucks and trailers only
-5_transportation_and_logistics,Firefighting equipment - repair and overhaul
-5_transportation_and_logistics,"Firefighting equipment, marine systems - repair, overhaul and modification"
 5_transportation_and_logistics,Fixed wing aircraft
 5_transportation_and_logistics,Fixed wing aircraft (airplane)
-5_transportation_and_logistics,Freight and cargo services
 5_transportation_and_logistics,Fuel / lubricant / oil / waxes
-5_transportation_and_logistics,"Fuel oil, heating"
 5_transportation_and_logistics,Fuel oils
-5_transportation_and_logistics,"Fuels, solid"
-5_transportation_and_logistics,Gas services
-5_transportation_and_logistics,Gasoline
-5_transportation_and_logistics,Household and commercial utility containers
 5_transportation_and_logistics,Lease / rental of eqpt
 5_transportation_and_logistics,"Lifts, motor vehicle"
-5_transportation_and_logistics,Light fuel oil
-5_transportation_and_logistics,"Liquid propellants and fuels, petroleum base"
 5_transportation_and_logistics,Lubricating and fuel dispensing equipment - repair and overhaul
 5_transportation_and_logistics,"Lubricating oil, engine"
 5_transportation_and_logistics,Lubrication and fuel dispensing equipment
 5_transportation_and_logistics,Maintenance & repair of eqpt
-5_transportation_and_logistics,Materiel management
-5_transportation_and_logistics,Middle distillate fuels
 5_transportation_and_logistics,Miscellaneous engines and components
-5_transportation_and_logistics,Miscellaneous engines and components - repair
-5_transportation_and_logistics,"Motor passengers, mail and merchandise transportation service"
-5_transportation_and_logistics,Motor vehicle maintenance and repair shop specialized equipment
 5_transportation_and_logistics,Motor vehicle maintenance and repair shop specialized equipment - repair
 5_transportation_and_logistics,Motor vehicle maintenance and repair shop specialized equipment repair
-5_transportation_and_logistics,"Motorcycles, motor scooters and bicycles"
-5_transportation_and_logistics,"Motors, electrical"
-5_transportation_and_logistics,"Motors, electrical - repair and overhaul"
 5_transportation_and_logistics,"Operation, maintenance and servicing of crown owned or leased aircraft"
 5_transportation_and_logistics,Other business services not elsewhere specified - emergency response services
 5_transportation_and_logistics,Other business services not elsewhere specified - on-site emergency response services (aircraft rescue and firefighting)
@@ -3919,26 +3320,13 @@ category,d_description_en
 5_transportation_and_logistics,Other business services not elsewhere specified (emergency response services)
 5_transportation_and_logistics,Outfitting services - inuit qaujimajatuqangit day (pilimmaksaivik)
 5_transportation_and_logistics,Packaging and packing bulk materials
-5_transportation_and_logistics,Packing and gasket material
-5_transportation_and_logistics,Passenger motor vehicles
-5_transportation_and_logistics,Passenger motor vehicles - leasing
-5_transportation_and_logistics,Passenger motor vehicles - rental
 5_transportation_and_logistics,Passenger motor vehicles - repair
 5_transportation_and_logistics,Passenger motor vehicles - repair and overhaul - ford motors
 5_transportation_and_logistics,Passenger motor vehicles - repair and overhaul - general motors
-5_transportation_and_logistics,Passenger motor vehicles (buses and ambulances) - rental (under 90 days)
-5_transportation_and_logistics,Relocation services
-5_transportation_and_logistics,Road clearing and cleaning equipment
-5_transportation_and_logistics,Road clearing and cleaning equipment - repair
-5_transportation_and_logistics,Road motor vehicles
-5_transportation_and_logistics,Rotary wing aircraft - helicopter charter
-5_transportation_and_logistics,Safety and rescue equipment
 5_transportation_and_logistics,Safety and sanitation equipment and parts - alarm and signal systems
-5_transportation_and_logistics,Services related to water transportation
 5_transportation_and_logistics,Snowmobile
 5_transportation_and_logistics,Snowmobile - rental
 5_transportation_and_logistics,"Snowmobile, spare parts"
-5_transportation_and_logistics,Specialized shipping and storage containers
 5_transportation_and_logistics,Specialized shipping and storage containers - rental
 5_transportation_and_logistics,Storage and warehousing
 5_transportation_and_logistics,Storage tanks - repair
@@ -3949,65 +3337,37 @@ category,d_description_en
 5_transportation_and_logistics,"Tracked vehicle, firefighting"
 5_transportation_and_logistics,Tractors wheeled - rental
 5_transportation_and_logistics,Tractors wheeled - repair and overhaul
-5_transportation_and_logistics,Trailers
 5_transportation_and_logistics,Trailers - repair
-5_transportation_and_logistics,Transportation (r&d)
 5_transportation_and_logistics,Transportation and charters
-5_transportation_and_logistics,Transportation of things not elsewhere specified
-5_transportation_and_logistics,"Transportation services, not elsewhere specified"
 5_transportation_and_logistics,Truck and tractor attachments
-5_transportation_and_logistics,"Truck, forklift - rental"
 5_transportation_and_logistics,"Truck, forklift - repair and overhaul"
 5_transportation_and_logistics,"Truck, forklift, electric, narrow aisle - rental"
-5_transportation_and_logistics,"Trucks and truck tractors, wheeled"
-5_transportation_and_logistics,"Trucks and truck tractors, wheeled - rental"
-5_transportation_and_logistics,"Trucks and truck tractors, wheeled - repair"
 5_transportation_and_logistics,Vehicle towing services
-5_transportation_and_logistics,"Vehicles, all terrain, atv, wheeled (except military configuration)"
-5_transportation_and_logistics,"Vehicles, wheeled, standard military pattern - repair and overhaul"
-5_transportation_and_logistics,"Vehicular brake, steering, axle, wheel and track components"
-5_transportation_and_logistics,"Vehicular cab, body and frame structural components"
 5_transportation_and_logistics,"Vehicular cab, body and frame structural components - production design"
 5_transportation_and_logistics,"Vehicular cab, body and frame structural components - repair"
 5_transportation_and_logistics,"Vehicular cab, body and frame structural components, repainting and refinishing"
-5_transportation_and_logistics,"Vehicular components, miscellaneous"
-5_transportation_and_logistics,"Vehicular components, miscellaneous - repair"
 5_transportation_and_logistics,"Vehicular components, miscellaneous, n.e.s. (By company)"
-5_transportation_and_logistics,Vehicular furniture and accessories
-5_transportation_and_logistics,Vehicular power transmission components
-5_transportation_and_logistics,Vehicular power transmission components - repair
 5_transportation_and_logistics,"Vehicular power transmission components, for tracked and wheeled vehicles - repair and overhaul"
 5_transportation_and_logistics,"Vehicular, windshield assembly - repair and overhaul"
 5_transportation_and_logistics,Vessel charter
-5_transportation_and_logistics,"Warehouse trucks and tractors, self-propelled"
 5_transportation_and_logistics,"Warehouse trucks and tractors, self-propelled - rental"
 5_transportation_and_logistics,"Warehouse trucks and tractors, self-propelled - repair and overhaul"
-5_transportation_and_logistics,Water transportation
-5_transportation_and_logistics,"Winches, hoists, cranes and derricks"
 5_transportation_and_logistics,"Winches, hoists, cranes, and derricks - rental"
 5_transportation_and_logistics,"Winches, hoists, cranes, and derricks - repair"
 6_industrial_products_and_services,Other clothing
-6_industrial_products_and_services,"Miscellaneous textiles, headgear, umbrellas, etc."
 6_industrial_products_and_services,Machinery
 6_industrial_products_and_services,Other equipment
 6_industrial_products_and_services,Miscellaneous chemical products
 6_industrial_products_and_services,Miscellaneous manufactured articles
 6_industrial_products_and_services,Processing machinery
-6_industrial_products_and_services,Other equipment and parts
-6_industrial_products_and_services,Usage of inventory
-6_industrial_products_and_services,"Measuring, controlling, laboratory, medical and optical instruments, apparatus and accessories"
 6_industrial_products_and_services,"Measuring, controlling, laboratory, medical and optical equipment and parts"
-6_industrial_products_and_services,Ferrous metals
 6_industrial_products_and_services,Other equipment - purchased repair and maintenance
 6_industrial_products_and_services,"Inorganic and organic chemicals, including plastics, rubber and products, and excluding tires and tubes"
-6_industrial_products_and_services,Special industry machinery
 6_industrial_products_and_services,Horticultural products
-6_industrial_products_and_services,Other machinery and parts
 6_industrial_products_and_services,"Live animals, including their fodder"
 6_industrial_products_and_services,"Other mineral fuels, oils and products"
 6_industrial_products_and_services,Safety and sanitation equipment and parts
 6_industrial_products_and_services,Miscellaneous metal products
-6_industrial_products_and_services,"Salt, sulphur, ores, earth and stone"
 6_industrial_products_and_services,Uniforms
 6_industrial_products_and_services,Paper and paperboard
 6_industrial_products_and_services,"Live animals, incl. their fodder"
@@ -4029,17 +3389,11 @@ category,d_description_en
 6_industrial_products_and_services,"Miscellaneous textiles, headgear, umbrellas, etc"
 6_industrial_products_and_services,"Tools, and implements"
 6_industrial_products_and_services,Footwear
-6_industrial_products_and_services,Acquisition of other machinery and parts
 6_industrial_products_and_services,Multifunction machines
 6_industrial_products_and_services,1179 misc manufacturd prds - lapel pins
 6_industrial_products_and_services,1179 misc manufacturd prds - commemorative items
 6_industrial_products_and_services,Repair of machinery and equipment
 6_industrial_products_and_services,Repair - other equipment
-6_industrial_products_and_services,Application software (including cots) and application development and delivery software
-6_industrial_products_and_services,Other vehicles
-6_industrial_products_and_services,Road motor vehicles
-6_industrial_products_and_services,"Office furniture and furnishings, including parts"
-6_industrial_products_and_services,Other engineering installations
 6_industrial_products_and_services,1179 misc manufacturd prds - license agreement
 6_industrial_products_and_services,Shelving and installation at warehouse
 6_industrial_products_and_services,Evacuation chairs
@@ -4051,7 +3405,6 @@ category,d_description_en
 6_industrial_products_and_services,0665 other equipment
 6_industrial_products_and_services,1179 – miscellaneous manufactured articles
 6_industrial_products_and_services,0665 – repair of other equipment
-6_industrial_products_and_services,Computer equipment - client domain
 6_industrial_products_and_services,"Inorganic and organic chemicals, including plastics, rubber and products, and excluding tires and tubes - wabush, nl"
 6_industrial_products_and_services,"Other equipment and parts - wabush, nl"
 6_industrial_products_and_services,Paper & paperboard
@@ -4070,7 +3423,6 @@ category,d_description_en
 6_industrial_products_and_services,Repair of other equipment
 6_industrial_products_and_services,1179 misc manufacturd prds
 6_industrial_products_and_services,0665 other equipment - security equipment
-6_industrial_products_and_services,0665 other equipment - audio visual equipment
 6_industrial_products_and_services,Ergonomic requirements - courtrooms
 6_industrial_products_and_services,"Replacement, and install to fit, speak-thru communicators"
 6_industrial_products_and_services,Security fobs - toronto
@@ -4078,12 +3430,10 @@ category,d_description_en
 6_industrial_products_and_services,Tools & implements
 6_industrial_products_and_services,Aircraft interface electronics
 6_industrial_products_and_services,Automated external defibrillators aed or hard paddles
-6_industrial_products_and_services,Office devices and accessories
 6_industrial_products_and_services,Card reader - parts and install
 6_industrial_products_and_services,Security cameras - kent
 6_industrial_products_and_services,Walk through metal detector units
 6_industrial_products_and_services,1179 - miscellaneous mfg articles
-6_industrial_products_and_services,Computer equipment related to distributed computing environment (dce)-desktop/personal/portable (includes all related parts and peripherals)
 6_industrial_products_and_services,1179 misc manufactured prds - license agreement
 6_industrial_products_and_services,1151 - uniforms
 6_industrial_products_and_services,Install security fob system
@@ -4092,103 +3442,56 @@ category,d_description_en
 6_industrial_products_and_services,Safety & sanitation equipment & parts
 6_industrial_products_and_services,"Valve, gate, non-powered"
 6_industrial_products_and_services,General hardware
-6_industrial_products_and_services,Miscellaneous items
 6_industrial_products_and_services,Miscellaneous construction equipment - leasing
 6_industrial_products_and_services,"Heaters, gas or oil, rentals"
 6_industrial_products_and_services,"Buildings, prefabricated, wood"
-6_industrial_products_and_services,Fire fighting equipment
-6_industrial_products_and_services,"Lifts, motor vehicle"
 6_industrial_products_and_services,Steel strip
 6_industrial_products_and_services,Sprayer
 6_industrial_products_and_services,"Cameras, motion picture - repair"
-6_industrial_products_and_services,Adp software
-6_industrial_products_and_services,Laboratory equipment and supplies
 6_industrial_products_and_services,"Plastics, fabricated materials"
 6_industrial_products_and_services,Abrasive materials
-6_industrial_products_and_services,Air conditioning equipment
 6_industrial_products_and_services,"Boots, combat"
 6_industrial_products_and_services,Refrigeration and air conditioning components - repair
-6_industrial_products_and_services,Carpet cleaning
-6_industrial_products_and_services,Middle distillate fuels
-6_industrial_products_and_services,Safety and rescue equipment
 6_industrial_products_and_services,Bending and forming machines
 6_industrial_products_and_services,Envelopes
 6_industrial_products_and_services,"Concrete, ready-mix"
-6_industrial_products_and_services,Miscellaneous electric power and distribution equipment
-6_industrial_products_and_services,"Valves, powered"
-6_industrial_products_and_services,Marine life saving and diving equipment
 6_industrial_products_and_services,"Valve, gate, powered"
 6_industrial_products_and_services,"Filter, fluid, water purification"
 6_industrial_products_and_services,"Batteries, dry, lithium"
 6_industrial_products_and_services,"Valves, regulating fluid pressure and temperature, non-powered"
-6_industrial_products_and_services,Hazard-detecting instruments and apparatus
 6_industrial_products_and_services,Heaters
-6_industrial_products_and_services,Drugs and biologicals
 6_industrial_products_and_services,"Generators and generator sets, electrical - rental"
-6_industrial_products_and_services,Power and hand pumps
 6_industrial_products_and_services,Miscellaneous electric power and distribution equipment - repair
 6_industrial_products_and_services,"Maintenance and repair shop specialized equipment, miscellaneous"
-6_industrial_products_and_services,Switches
 6_industrial_products_and_services,"Heaters, water, gas or oil (domestic)"
-6_industrial_products_and_services,Industrial boilers
 6_industrial_products_and_services,"Indicator, liquid level"
-6_industrial_products_and_services,Hose and flexible tubing
 6_industrial_products_and_services,Water testing kits
 6_industrial_products_and_services,"Valve, ball, non-powered"
 6_industrial_products_and_services,"Motors, outboard"
-6_industrial_products_and_services,"Valves, nonpowered"
-6_industrial_products_and_services,"Ships and vessels - sand blasting, repainting, and refinishing"
-6_industrial_products_and_services,"Power transmission equipment, miscellaneous"
-6_industrial_products_and_services,Electrical hardware and supplies
-6_industrial_products_and_services,Materials inspection and quality assurance
 6_industrial_products_and_services,"Hose, pipe, tube, lubrication, and railing fittings"
-6_industrial_products_and_services,Miscellaneous items - repairs
-6_industrial_products_and_services,"Vehicular components, miscellaneous"
-6_industrial_products_and_services,Filter and networks
 6_industrial_products_and_services,Manual presses
 6_industrial_products_and_services,Navigational instruments - production design
-6_industrial_products_and_services,Laboratory equipment and supplies - repair
 6_industrial_products_and_services,Kitchen hand tools and utensils
-6_industrial_products_and_services,Logistics support services military aerospace related - technical publications and data management
 6_industrial_products_and_services,Cutlery and flatware
-6_industrial_products_and_services,"Electrical and electronic assemblies, boards, cards and associated hardware"
 6_industrial_products_and_services,"Machine tools, miscellaneous"
-6_industrial_products_and_services,"Generators and generator sets, electrical"
 6_industrial_products_and_services,Space heating equipment and domestic water heaters - rental
 6_industrial_products_and_services,Trailers - rental
 6_industrial_products_and_services,"Sets, kits, and outfits of hand tools"
-6_industrial_products_and_services,Ship and boat propulsion components
-6_industrial_products_and_services,"Maintenance, repair, modification, rebuilding & installation of equipment related to ships"
-6_industrial_products_and_services,"Converters, electrical, nonrotating"
-6_industrial_products_and_services,Ship and marine miscellaneous equipment - repair
-6_industrial_products_and_services,"Cable, cord, and wire assemblies, communication equipment"
-6_industrial_products_and_services,Ground handling services
 6_industrial_products_and_services,"Transformers,distribution and power station - rental"
 6_industrial_products_and_services,"Chlorine, liquid"
 6_industrial_products_and_services,"Pipe, tube and rigid tubing"
 6_industrial_products_and_services,"Boxes, cartons and crates"
-6_industrial_products_and_services,Kitchen equipment and appliances
 6_industrial_products_and_services,Preservative and sealing compounds
 6_industrial_products_and_services,"Cabinets, lockers, bins and shelving - repair"
 6_industrial_products_and_services,"Post, metal signs, u channel and telescopic type"
-6_industrial_products_and_services,"Explosive ordnance disposal tools, surface"
-6_industrial_products_and_services,"Fans, air circulators and blower equipment"
 6_industrial_products_and_services,"Gloves (clothing, special purpose)"
-6_industrial_products_and_services,Kitchen equipment and appliances - repair and overhaul
-6_industrial_products_and_services,Water purification equipment
 6_industrial_products_and_services,"Night vision equipment, emitted and reflected radiation - repair"
 6_industrial_products_and_services,Badges and insignia
 6_industrial_products_and_services,"Grating, metal"
-6_industrial_products_and_services,"Hardware, commercial"
 6_industrial_products_and_services,Athletic and sporting equipment
-6_industrial_products_and_services,"Boilers, repair and cleaning services"
-6_industrial_products_and_services,"Shelving, storage and display, steel, commercial"
 6_industrial_products_and_services,Chillers (industrial)
 6_industrial_products_and_services,"Sets, kits and outfits, food preparation and serving"
-6_industrial_products_and_services,Informatics professional services
-6_industrial_products_and_services,"Dryers, dehydrators and anhydrators"
 6_industrial_products_and_services,Materials handling equipment/non self propelled - leasing
-6_industrial_products_and_services,Miscellaneous business services
 6_industrial_products_and_services,"Aggregate, construction, fire clay, crushed"
 6_industrial_products_and_services,"Bag, plastic"
 6_industrial_products_and_services,"Hand tools, power-driven"
@@ -4196,115 +3499,57 @@ category,d_description_en
 6_industrial_products_and_services,Nonelectrical lighting fixtures
 6_industrial_products_and_services,"Paints, dopes, varnishes and related products"
 6_industrial_products_and_services,"Tool box portable, metal"
-6_industrial_products_and_services,Miscellaneous construction equipment
 6_industrial_products_and_services,Drums and cans
-6_industrial_products_and_services,Miscellaneous electrical and electronic components - repair and overhaul
 6_industrial_products_and_services,"Pest, disease and frost control equipment - repair"
 6_industrial_products_and_services,Security control systems - installation and repair
 6_industrial_products_and_services,"Tents and tarpaulins, repairs"
-6_industrial_products_and_services,"Automatic data processing equipment, system configuration"
-6_industrial_products_and_services,Miscellaneous chemical specialities
-6_industrial_products_and_services,Ranges
 6_industrial_products_and_services,Precast concrete products
-6_industrial_products_and_services,"Hand tools, nonedged, nonpowered"
 6_industrial_products_and_services,"Drill bits, counterbores and countersinks, hand and machine"
 6_industrial_products_and_services,"Lugs, terminals and terminal strips"
-6_industrial_products_and_services,Miscellaneous fabricated nonmetallic material
-6_industrial_products_and_services,Refrigeration and air conditioning components
-6_industrial_products_and_services,"Other construction quality control, testing, inspect. and tech. Services"
-6_industrial_products_and_services,Space and water heating equipment
 6_industrial_products_and_services,"Doors, steel"
 6_industrial_products_and_services,Camping equipment
-6_industrial_products_and_services,Specialized ammunition handling and servicing equipment
-6_industrial_products_and_services,"Cleaning and maintenance, janitorial"
-6_industrial_products_and_services,Office supplies
-6_industrial_products_and_services,"Oils and greases, cutting, lubricating, and hydraulic"
-6_industrial_products_and_services,"Imaging equipment and supplies: medical, dental, veterinary"
-6_industrial_products_and_services,Packaging and packing bulk materials
-6_industrial_products_and_services,"Alarm, signal, and security detection systems , miscellaneous"
 6_industrial_products_and_services,Air handling units (industrial)
-6_industrial_products_and_services,"Mineral construction materials, bulk"
 6_industrial_products_and_services,Food preparation and serving equipement
 6_industrial_products_and_services,"Machine tools, portable - repair"
-6_industrial_products_and_services,Electronic modules
 6_industrial_products_and_services,"Springs, extension and compression"
-6_industrial_products_and_services,"Alarm and signal systems, miscellaneous - installation and services"
-6_industrial_products_and_services,"Additives and conditioners, fuel oil"
-6_industrial_products_and_services,"Liquid propellants and fuels, petroleum base"
 6_industrial_products_and_services,Metal finishing equipment
-6_industrial_products_and_services,Compressors and vacuum pumps
 6_industrial_products_and_services,"Electrical and electronic assemblies, boards, cards, and associated hardware - repair"
-6_industrial_products_and_services,Firefighting equipment - repair and overhaul
 6_industrial_products_and_services,"Racks, bicycle"
-6_industrial_products_and_services,Consulting services
-6_industrial_products_and_services,Office furniture
 6_industrial_products_and_services,"Targets, n.e.s."
-6_industrial_products_and_services,Diesel engines and components
 6_industrial_products_and_services,Individual equipment - repair
-6_industrial_products_and_services,Electrical and electronic properties measuring and testing instruments
-6_industrial_products_and_services,"Miscellaneous household and commercial appliances, electrical - repair"
-6_industrial_products_and_services,"General contractor services, not elsewhere specified"
 6_industrial_products_and_services,"Compressors, portable"
-6_industrial_products_and_services,Communication promotional material (including printing and identification)
 6_industrial_products_and_services,Electronic identification devices - rfid
 6_industrial_products_and_services,Outerwear
-6_industrial_products_and_services,Books and pamphlets
-6_industrial_products_and_services,Specialized shipping and storage containers
-6_industrial_products_and_services,"Shipping containers, food, bulk, insulated plastic construction"
 6_industrial_products_and_services,"Plate, sheet, strip, foil and leaf"
 6_industrial_products_and_services,"Plates, sheet, strip and foil, nonferrous base metal"
-6_industrial_products_and_services,"Materials handling equipment, miscellaneous"
-6_industrial_products_and_services,"Batteries, rechargeable"
 6_industrial_products_and_services,Bags and sacks
-6_industrial_products_and_services,"Construction material, miscellaneous"
 6_industrial_products_and_services,"Tool box, portable"
-6_industrial_products_and_services,"Vehicular components, miscellaneous - repair"
-6_industrial_products_and_services,"Pressure, temperature and humidity measuring and controlling instruments"
-6_industrial_products_and_services,Miscellaneous electrical and electronic components
 6_industrial_products_and_services,Test equipment and inspection gages
-6_industrial_products_and_services,Motor vehicle maintenance and repair shop specialized equipment
-6_industrial_products_and_services,Armament training devices - repair
 6_industrial_products_and_services,Tools and attachments for woodworking machinery - rental
-6_industrial_products_and_services,Parachutes and associated equipment
-6_industrial_products_and_services,Training aids
-6_industrial_products_and_services,Business training
 6_industrial_products_and_services,"Combat, assault, and tactical vehicles, tracked - repair"
 6_industrial_products_and_services,"Repainting and refinishing, small aircraft"
 6_industrial_products_and_services,"Coating system, polyurethane for aerospace application"
-6_industrial_products_and_services,"Wire and cable, electrical"
-6_industrial_products_and_services,Office furniture - installation
-6_industrial_products_and_services,Individual equipment
 6_industrial_products_and_services,Millwork
 6_industrial_products_and_services,"Welding equipment, miscellaneous"
 6_industrial_products_and_services,"Fittings for rope, cable and chain"
-6_industrial_products_and_services,Household furniture
 6_industrial_products_and_services,"Radiators, steam and hot water (domestic)"
 6_industrial_products_and_services,"Compressors, reciprocating, power driven, air conditioning equipment (industrial) except marine, armoured fighting vehicles and aircraft"
-6_industrial_products_and_services,Stationery and record forms
 6_industrial_products_and_services,Floor polishers and vacuum cleaning equipment - repair
 6_industrial_products_and_services,Cleaning and polishing compounds and preparations
 6_industrial_products_and_services,"Vehicular power transmission components, armoured fighting vehicle, s.m.p."
 6_industrial_products_and_services,"Electronic message signs (led,lcd,etc.)"
 6_industrial_products_and_services,"Gas generating and dispensing systems, fixed or mobile - repair"
 6_industrial_products_and_services,"Dental instruments, equipment, and supplies - installation"
-6_industrial_products_and_services,"Gasoline, automotive, unleaded"
-6_industrial_products_and_services,Floor polishers and vacuum cleaning equipment
-6_industrial_products_and_services,Lumber and related basic wood material
 6_industrial_products_and_services,"Brass instruments (horns, bugles, trumpets, etc)"
-6_industrial_products_and_services,"Clothing, special purpose"
 6_industrial_products_and_services,Tools and hardware boxes
 6_industrial_products_and_services,Screws
 6_industrial_products_and_services,Musical instruments
 6_industrial_products_and_services,Medical equipment surgical/diagnostic and accessories
 6_industrial_products_and_services,Cutting tools for machine tools
 6_industrial_products_and_services,"Mounters and demounters, tire"
-6_industrial_products_and_services,"Armor, personal"
 6_industrial_products_and_services,Air conditioning equipment - repair and overhaul
 6_industrial_products_and_services,Flags and pennants
-6_industrial_products_and_services,Commercial and industrial gas cylinders
 6_industrial_products_and_services,Collective modular support system
-6_industrial_products_and_services,Photographic equipment and accessories - repair and overhaul
-6_industrial_products_and_services,"Cabinets, lockers, bins and shelving"
 6_industrial_products_and_services,"Connectors, electrical"
 6_industrial_products_and_services,"Insulation, thermal"
 6_industrial_products_and_services,Flowmeter (includes gas and liquid)
@@ -4313,52 +3558,25 @@ category,d_description_en
 6_industrial_products_and_services,"Vehicular power transmission components, for tracked and wheeled vehicles, military configuration"
 6_industrial_products_and_services,"Levels, bench, carpenter and machinist"
 6_industrial_products_and_services,Structural shapes
-6_industrial_products_and_services,"Air conditioning equipment, industrial - repair"
-6_industrial_products_and_services,Recreational and gymnastic equipment
-6_industrial_products_and_services,"Electronic countermeasures, counter-countermeasures and quick reaction capability equipment"
-6_industrial_products_and_services,"Dental instruments, equipment, and supplies"
-6_industrial_products_and_services,"Hand tools, edged, nonpowered"
 6_industrial_products_and_services,"Fittings, chain, cable marine"
 6_industrial_products_and_services,Meteorological instruments and apparatus
 6_industrial_products_and_services,Medical equipment surgical/diagnostic and accessories - repair and overhaul
 6_industrial_products_and_services,"Poles, line construction"
-6_industrial_products_and_services,"Liquid and gas flow, liquid level and mechanical motion measuring instruments"
 6_industrial_products_and_services,"Cable, cord, and wire assemblies, communication equipment - installation"
 6_industrial_products_and_services,"Cabinets, storage"
-6_industrial_products_and_services,Equipment and materials testing
 6_industrial_products_and_services,Air purification equipment
-6_industrial_products_and_services,Underwater sound equipment
-6_industrial_products_and_services,"Batteries, primary"
 6_industrial_products_and_services,"Controls, pressure/temperature, recording - repair and overhaul"
 6_industrial_products_and_services,Chemical analysis instruments
-6_industrial_products_and_services,Miscellaneous office machines
-6_industrial_products_and_services,Seminars
-6_industrial_products_and_services,Electrical hardware and supplies - repair
-6_industrial_products_and_services,Unmanned aircraft
 6_industrial_products_and_services,Reels and spools
 6_industrial_products_and_services,Electric arc welding equipment
 6_industrial_products_and_services,Bars and rods
-6_industrial_products_and_services,"Hotels, motels and commercial accommodation"
-6_industrial_products_and_services,Computer supplies
 6_industrial_products_and_services,Circuit breakers
 6_industrial_products_and_services,"Tiles, bricks and blocks"
 6_industrial_products_and_services,Lumber
 6_industrial_products_and_services,Photocopying machines and accessories - repair
-6_industrial_products_and_services,"Laboratory, testing and inspection services, except medical/dental"
-6_industrial_products_and_services,Adp support equipment
-6_industrial_products_and_services,Freight and cargo services
-6_industrial_products_and_services,Camouflage and deception equipment
-6_industrial_products_and_services,Household furnishings
 6_industrial_products_and_services,"Furniture, office-refinishing and repair"
-6_industrial_products_and_services,Miscellaneous weapons
 6_industrial_products_and_services,"Fibre rope, cordage and twine"
-6_industrial_products_and_services,Information products
-6_industrial_products_and_services,"Heaters, water (domestic)"
-6_industrial_products_and_services,"Adp central processing unit (cpu, computer) digital"
-6_industrial_products_and_services,Amplifiers
 6_industrial_products_and_services,"Cabinets, laboratory, desiccating, vacuum (excludes desiccators)"
-6_industrial_products_and_services,"Loaders, front end"
-6_industrial_products_and_services,Photographic equipment and accessories
 6_industrial_products_and_services,"Clothing, special purpose - repair"
 6_industrial_products_and_services,"Cord, fibrous"
 6_industrial_products_and_services,"Instruments, measuring"
@@ -4366,16 +3584,11 @@ category,d_description_en
 6_industrial_products_and_services,"Air conditioning equipment, industrial"
 6_industrial_products_and_services,"Seats, aircraft ejection"
 6_industrial_products_and_services,"Manikins anatomical/physiology, medical training aid"
-6_industrial_products_and_services,Chemicals
-6_industrial_products_and_services,Photographic projection equipment
 6_industrial_products_and_services,Sealing compound
 6_industrial_products_and_services,"Footwear, men's"
-6_industrial_products_and_services,Ship and marine miscellaneous equipment
 6_industrial_products_and_services,Gymnasium equipment
-6_industrial_products_and_services,"Deicing compound, salt and sand mixture for road surfaces"
 6_industrial_products_and_services,Floats - marine
 6_industrial_products_and_services,Aluminum sheet
-6_industrial_products_and_services,"Antennas, waveguides and related equipment - repair and overhaul"
 6_industrial_products_and_services,Automatic data processing supplies - installation
 6_industrial_products_and_services,Automatic data processing supplies - maintenance
 6_industrial_products_and_services,Gage (measuring tool)
@@ -4384,145 +3597,85 @@ category,d_description_en
 6_industrial_products_and_services,Textile fabrics
 6_industrial_products_and_services,Fencing
 6_industrial_products_and_services,Metal screening
-6_industrial_products_and_services,Tableware
-6_industrial_products_and_services,"Hose, air duck, ventilating"
 6_industrial_products_and_services,Sodium
 6_industrial_products_and_services,"Cabinets, security, bulk storage, spec ssc/ses 110,dss qpl"
 6_industrial_products_and_services,Urea
-6_industrial_products_and_services,"Optical instruments, test equipment, components and accessories"
-6_industrial_products_and_services,Satellite data processing and related services
 6_industrial_products_and_services,Training aids - repair
 6_industrial_products_and_services,"Mats, slush - rental"
-6_industrial_products_and_services,Miscellaneous communications equipment
-6_industrial_products_and_services,"Service and trade equipment, miscellaneous"
-6_industrial_products_and_services,Shipboard alarm and signal systems
-6_industrial_products_and_services,Radar defence systems (r&d)
-6_industrial_products_and_services,"Blocks, tackle, rigging and slings"
-6_industrial_products_and_services,Materials handling equipment/nonself -propelled
 6_industrial_products_and_services,Optical components
 6_industrial_products_and_services,Miscellaneous communications equipment - production design
-6_industrial_products_and_services,"Maintenance and repair shop specialized equipment, miscellaneous - repair"
-6_industrial_products_and_services,Miscellaneous engines and components
 6_industrial_products_and_services,"Brooms, brushes, mops and sponges"
-6_industrial_products_and_services,Marine hardware and hull items
 6_industrial_products_and_services,Fiber optic kits and sets
-6_industrial_products_and_services,Aircraft (military) miscellaneous communications equipment - repair and overhaul
-6_industrial_products_and_services,"Computer software, engineering, scientific, mathematical, statistical, modeling, simulation, emulation, energy - microcomputers only"
 6_industrial_products_and_services,Coils and transformers
 6_industrial_products_and_services,"Optical instruments, test equipment, components and accessories - repair and overhaul"
 6_industrial_products_and_services,"Detectors, hazard, radiation"
-6_industrial_products_and_services,"Centrifugals, separators, and pressure and vacuum filters"
 6_industrial_products_and_services,"Fittings, hose, pipe and tube (except aircraft)"
-6_industrial_products_and_services,Miscellaneous items - rental
-6_industrial_products_and_services,Packing and gasket material
 6_industrial_products_and_services,O-ring
-6_industrial_products_and_services,"Filters, air, disposable"
-6_industrial_products_and_services,Chain and wire rope
-6_industrial_products_and_services,Prefabricated and portable buildings
 6_industrial_products_and_services,"Underwear and nightwear, men's"
 6_industrial_products_and_services,"Tarpaulin, canvas and protective covers, reinforced fabrics"
 6_industrial_products_and_services,"Generator set, diesel engine"
 6_industrial_products_and_services,"Tube, metallic and nonmetallic (except special purpose)"
 6_industrial_products_and_services,Multiplexers
-6_industrial_products_and_services,"Radio and television communications equipment, except airborne"
 6_industrial_products_and_services,"Generator set, gasoline engine"
-6_industrial_products_and_services,"Ships and vessels deck coverings - repair, overhaul, and maintenance"
-6_industrial_products_and_services,Aviation fuel
 6_industrial_products_and_services,Safety and rescue equipment - installation
-6_industrial_products_and_services,Professional services / program advisory services
 6_industrial_products_and_services,Specialized metal container manufacturing machinery and related equipment
 6_industrial_products_and_services,Miscellaneous special industry machinery
 6_industrial_products_and_services,"Locks, security, correctional services only"
-6_industrial_products_and_services,Lock sets
 6_industrial_products_and_services,"Right-of-way construction and maintenance equipment, railroad"
 6_industrial_products_and_services,"Lumber, hardwood"
 6_industrial_products_and_services,"Fuses, arresters, absorbers, and protectors"
 6_industrial_products_and_services,Fastening devices - repair
 6_industrial_products_and_services,"Condensing units, refrigerating (industrial)"
 6_industrial_products_and_services,"Bars and rods, nonferrous base metal"
-6_industrial_products_and_services,Plumbing contractor services
-6_industrial_products_and_services,"Antennas, waveguides and related equipment"
 6_industrial_products_and_services,Hydraulic fluid
 6_industrial_products_and_services,"Gas, propane"
 6_industrial_products_and_services,"Hand tools, power-driven - repair"
-6_industrial_products_and_services,Animal control services - trap and remove animals from populated areas
-6_industrial_products_and_services,Electrical control equipment - repair
 6_industrial_products_and_services,Concrete
 6_industrial_products_and_services,"Bead breakers, tire"
-6_industrial_products_and_services,Recreational services
-6_industrial_products_and_services,"Vehicular cab, body and frame structural components - production design"
 6_industrial_products_and_services,Construction of health buildings
 6_industrial_products_and_services,Lubricant and lubricating oil
 6_industrial_products_and_services,"Deicing and defrosting fluid, aircraft surfaces"
-6_industrial_products_and_services,Navigational instruments
 6_industrial_products_and_services,"Electric wire, and power and distribution equipment"
 6_industrial_products_and_services,Filters compressed air
 6_industrial_products_and_services,"Mattress, bed, foam (79/02)"
-6_industrial_products_and_services,Commercial security guard and related services
 6_industrial_products_and_services,"Filter, air (industrial)"
 6_industrial_products_and_services,Petroleum production and distribution equipment
 6_industrial_products_and_services,Roofing and siding materials
 6_industrial_products_and_services,"Sawing machines, table, band and radial arm (woodworking)"
-6_industrial_products_and_services,Household and commercial utility containers
 6_industrial_products_and_services,Hospital care services
-6_industrial_products_and_services,"Diesel fuel, automotive"
-6_industrial_products_and_services,Motor vehicle maintenance and repair shop specialized equipment - repair
 6_industrial_products_and_services,Metal bar (steel)
 6_industrial_products_and_services,"Television systems, cctv"
 6_industrial_products_and_services,"Disks and stones, abrasive"
 6_industrial_products_and_services,Jackets/trousers/coveralls/slacks/shorts
 6_industrial_products_and_services,Health and safety consultation and training
 6_industrial_products_and_services,Anti-pollution oil booms
-6_industrial_products_and_services,Electronic specialties
-6_industrial_products_and_services,Sand
 6_industrial_products_and_services,"Machinery, ice making (industrial)"
 6_industrial_products_and_services,"Fittings, hose"
 6_industrial_products_and_services,"Miscellaneous waxes, oils and fats"
-6_industrial_products_and_services,Pharmaceutical services
 6_industrial_products_and_services,Electrical insulators and insulating materials
 6_industrial_products_and_services,Personnel stairway evacuation (chair)
 6_industrial_products_and_services,"Gas welding, heat cutting, and metalizing equipment"
-6_industrial_products_and_services,Torque converters and speed changers
-6_industrial_products_and_services,"Fencing, fences, gates and components"
-6_industrial_products_and_services,Construction of other buildings
 6_industrial_products_and_services,"Engine cooling system components, non-aircraft"
-6_industrial_products_and_services,Firearm training
-6_industrial_products_and_services,"Batteries, dry, alkaline"
-6_industrial_products_and_services,Signs and identification plates
 6_industrial_products_and_services,"Indicator, wind direction and speed"
 6_industrial_products_and_services,Cleaning and polishing compound
 6_industrial_products_and_services,Wrapping and packaging machinery
 6_industrial_products_and_services,Marine hardware and hull items (small craft)
 6_industrial_products_and_services,"Taps, dies and collets, hand and machine"
-6_industrial_products_and_services,Refrigeration equipment - repair
 6_industrial_products_and_services,"Structures, prefabricated, miscellaneous"
-6_industrial_products_and_services,Small arms and accessories (law enforcement)
-6_industrial_products_and_services,"Food, cooking, baking and serving equipment"
 6_industrial_products_and_services,Towel
-6_industrial_products_and_services,Miscellaneous furniture and fixtures
 6_industrial_products_and_services,"Nuts, all types and materials (except aircraft)"
-6_industrial_products_and_services,"Household and commercial furnishings and appliances, miscellaneous - rental"
 6_industrial_products_and_services,"Laboratory equipment, special (n.e.s.)"
-6_industrial_products_and_services,Marine hardware and hull items - repair
-6_industrial_products_and_services,Scaffolding
 6_industrial_products_and_services,Industrial assembly machines
-6_industrial_products_and_services,"Box, shipping"
 6_industrial_products_and_services,Hatches
-6_industrial_products_and_services,"Night vision equipment, emitted and reflected radiation"
-6_industrial_products_and_services,Hazardous material spill containment and clean-up equipment and material
 6_industrial_products_and_services,"Gage, precision"
 6_industrial_products_and_services,"Gage, rain (precipitation)"
-6_industrial_products_and_services,Electricity services
-6_industrial_products_and_services,"Liquid propellant fuels and oxidizers, chemical base"
 6_industrial_products_and_services,"Plywood, softwood"
 6_industrial_products_and_services,"Mats, gymnasium"
 6_industrial_products_and_services,Miscellaneous communications equipment - leasing
 6_industrial_products_and_services,Miscellaneous printed matter
 6_industrial_products_and_services,Aircraft (military) miscellaneous communications equipment - installation
 6_industrial_products_and_services,"Connectors, electrical, commercial"
-6_industrial_products_and_services,Subsistence
 6_industrial_products_and_services,Truck and tractor attachments - repair
-6_industrial_products_and_services,"Dental instruments, equipment and supplies - repair"
 6_industrial_products_and_services,"Special tools automotive, gasoline and diesel"
 6_industrial_products_and_services,Shoptools and equipment - general
 6_industrial_products_and_services,Conveyors
@@ -4532,10 +3685,7 @@ category,d_description_en
 6_industrial_products_and_services,Packing and gasket material - repair
 6_industrial_products_and_services,"Boxes, cartons and crates - repair"
 6_industrial_products_and_services,"Chain, anchor and mooring"
-6_industrial_products_and_services,Adp components
-6_industrial_products_and_services,Miscellaneous electrical and electronic components - rental
 6_industrial_products_and_services,Lens optical (all types)
-6_industrial_products_and_services,Military communications (research)
 6_industrial_products_and_services,Degreasers
 6_industrial_products_and_services,"Valve, relief, safety, non-powered"
 6_industrial_products_and_services,Small arms and accessories (military) - repair & overhaul
@@ -4547,15 +3697,11 @@ category,d_description_en
 6_industrial_products_and_services,Sodium chloride (salt) can/cgsb-15.9-92
 6_industrial_products_and_services,"Transformers, distribution and power station - repair"
 6_industrial_products_and_services,Signs and identification plates - repair
-6_industrial_products_and_services,"Electrical and electronic properties, measuring and testing instruments - repair and overhaul"
 6_industrial_products_and_services,"Materials handling equipment, miscellaneous - repair"
 6_industrial_products_and_services,"Box, plastic"
-6_industrial_products_and_services,"Firefighting equipment, marine systems - repair, overhaul and modification"
-6_industrial_products_and_services,"Ammunition and nuclear ordnance boxes, packages and special containers"
 6_industrial_products_and_services,"Machine, bending, hand, brakes"
 6_industrial_products_and_services,Protein dna/rna sequencers
 6_industrial_products_and_services,"Dental instruments, equipment and supplies (n.e.s.)"
-6_industrial_products_and_services,Signs
 6_industrial_products_and_services,"Buildings, prefabricated, modular or sectional"
 6_industrial_products_and_services,"Electrical and electronic properties, measuring and testing instruments - installation"
 6_industrial_products_and_services,Urea (anti-icing chemical)
@@ -4566,7 +3712,6 @@ category,d_description_en
 6_industrial_products_and_services,"Modulators and demodulators, test"
 6_industrial_products_and_services,Inorganic and organic chemicals
 6_industrial_products_and_services,Water fountains
-6_industrial_products_and_services,Remote monitoring and control systems
 6_industrial_products_and_services,Système de chauffage et climatisation
 6_industrial_products_and_services,Cameras and antennas
 6_industrial_products_and_services,Camera repair services
@@ -4579,151 +3724,63 @@ category,d_description_en
 6_industrial_products_and_services,"R&m measuring, control, laboratory, medical institution"
 6_industrial_products_and_services,Creation and manufacture of backpacks for activities
 6_industrial_products_and_services,Special industrial machinery
-6_industrial_products_and_services,Other health services not elsewhere specified
-6_industrial_products_and_services,Information technology and telecommunications consultants
-6_industrial_products_and_services,Other professional services not elsewhere specified
-6_industrial_products_and_services,Other business services not elsewhere specified
-6_industrial_products_and_services,Non-professional personal service contracts not elsewhere specified
-6_industrial_products_and_services,Photocopying machine
 6_industrial_products_and_services,Measuring and control and optical equip.
 6_industrial_products_and_services,Safety and sanitation equipment and part
 6_industrial_products_and_services,Adhesives
 6_industrial_products_and_services,Aluminum
 6_industrial_products_and_services,"Analyzers, spectrum"
-6_industrial_products_and_services,Badges and insignia
-6_industrial_products_and_services,Bags and sacks
 6_industrial_products_and_services,Bolts
 6_industrial_products_and_services,"Bolts, all types and materials (except aircraft)"
-6_industrial_products_and_services,"Brooms, brushes, mops and sponges"
 6_industrial_products_and_services,"Bushings, rings, shims and spacers"
 6_industrial_products_and_services,"Cable, anchor and chain"
 6_industrial_products_and_services,Cables for switch boxes
-6_industrial_products_and_services,Camping equipment
 6_industrial_products_and_services,"Carbon dioxide, technical (dry ice)"
-6_industrial_products_and_services,Chain and wire rope
-6_industrial_products_and_services,Chemical analysis instruments
-6_industrial_products_and_services,Chemical analysis instruments - repair and overhaul
 6_industrial_products_and_services,"Chemical/biological studies and analyses, military"
-6_industrial_products_and_services,Chemicals
 6_industrial_products_and_services,"Chemicals, swimming pool"
-6_industrial_products_and_services,Cleaning and polishing compounds and preparations
 6_industrial_products_and_services,Clothing alterations and repairs
-6_industrial_products_and_services,"Clothing, special purpose"
 6_industrial_products_and_services,"Coil, flat and wire springs"
-6_industrial_products_and_services,"Converters, electrical, nonrotating"
-6_industrial_products_and_services,"Converters, electrical, nonrotating - repair and overhaul"
 6_industrial_products_and_services,"Converters, electrical, rotating"
 6_industrial_products_and_services,Dishwashing compound
 6_industrial_products_and_services,"Drafting, surveying and mapping instruments"
-6_industrial_products_and_services,"Dryers, dehydrators and anhydrators"
-6_industrial_products_and_services,Electric portable and hand lighting equipment
-6_industrial_products_and_services,"Electric wire, and power and distribution equipment - repair"
-6_industrial_products_and_services,Electrical and electronic properties measuring and testing instruments
-6_industrial_products_and_services,Electrical control equipment
-6_industrial_products_and_services,Electrical control equipment - repair
-6_industrial_products_and_services,Electrical hardware and supplies
-6_industrial_products_and_services,Electrical insulators and insulating materials
-6_industrial_products_and_services,Electrical power and distribution equipment - repair and overhaul
 6_industrial_products_and_services,Electron tubes and associated hardware
 6_industrial_products_and_services,Fastening devices
 6_industrial_products_and_services,Fertilizers
-6_industrial_products_and_services,"Fibre rope, cordage and twine"
-6_industrial_products_and_services,"Fittings for rope, cable and chain"
 6_industrial_products_and_services,"Fittings, pipe, cast iron and steel (underground use)"
-6_industrial_products_and_services,Flags and pennants
-6_industrial_products_and_services,"Food, cooking, baking and serving equipment"
-6_industrial_products_and_services,"Footwear, men's"
 6_industrial_products_and_services,"Frame, picture"
 6_industrial_products_and_services,Fuses and primers
-6_industrial_products_and_services,"Fuses, arresters, absorbers, and protectors"
 6_industrial_products_and_services,"Galley equipment, except aircraft - repair"
 6_industrial_products_and_services,"Gas burning equipment, propane - repair and overhaul"
 6_industrial_products_and_services,"Gas generating and dispensing systems, fixed or mobile"
-6_industrial_products_and_services,"Gas welding, heat cutting, and metalizing equipment"
 6_industrial_products_and_services,"Gas, natural, compressed"
-6_industrial_products_and_services,"Gas, propane"
-6_industrial_products_and_services,"Gases, compressed and liquified"
 6_industrial_products_and_services,"Gears, pulleys, sprockets and transmission chain"
-6_industrial_products_and_services,"Generator set, diesel engine"
-6_industrial_products_and_services,"Generators and generator sets, electrical"
 6_industrial_products_and_services,"Generators and generator sets, electrical - repair"
-6_industrial_products_and_services,Geophysical instruments
-6_industrial_products_and_services,Gymnasium equipment
-6_industrial_products_and_services,"Hand tools, edged, nonpowered"
-6_industrial_products_and_services,"Hand tools, nonedged, nonpowered"
-6_industrial_products_and_services,"Hand tools, power-driven - rental"
-6_industrial_products_and_services,"Hardware, commercial"
 6_industrial_products_and_services,Hoists - repair and overhaul
-6_industrial_products_and_services,Hose and flexible tubing
 6_industrial_products_and_services,Hose assemblies
 6_industrial_products_and_services,"Hose, hydraulic and pneumatic, high pressure"
-6_industrial_products_and_services,"Hose, pipe, tube, lubrication, and railing fittings"
-6_industrial_products_and_services,Individual equipment
 6_industrial_products_and_services,Ionization source for mass spectrometers
 6_industrial_products_and_services,"Jacks, hydraulic, lifting"
 6_industrial_products_and_services,Laboratory equipment
-6_industrial_products_and_services,Laboratory equipment and supplies
-6_industrial_products_and_services,Laboratory equipment and supplies - repair
 6_industrial_products_and_services,Laboratory robotics
-6_industrial_products_and_services,"Laboratory, testing and inspection services, except medical/dental"
-6_industrial_products_and_services,Lathes (metal working)
-6_industrial_products_and_services,"Lugs, terminals and terminal strips"
-6_industrial_products_and_services,Lumber
-6_industrial_products_and_services,Lumber and related basic wood material
-6_industrial_products_and_services,"Machine tools, miscellaneous"
 6_industrial_products_and_services,Machining centres and way-type machines
-6_industrial_products_and_services,"Maintenance and repair shop specialized equipment, miscellaneous"
-6_industrial_products_and_services,"Maintenance and repair shop specialized equipment, miscellaneous - rental"
-6_industrial_products_and_services,"Maintenance and repair shop specialized equipment, miscellaneous - repair"
-6_industrial_products_and_services,"Materials handling equipment, miscellaneous"
-6_industrial_products_and_services,"Measuring, controlling, laboratory, medical and optical instruments, apparatus and accessories"
 6_industrial_products_and_services,Metal bars / sheets / shapes
 6_industrial_products_and_services,Meteorological instruments and apparatus - repair and overhaul
-6_industrial_products_and_services,Miscellaneous chemical products
-6_industrial_products_and_services,Miscellaneous chemical specialities
-6_industrial_products_and_services,Miscellaneous electric power and distribution equipment
-6_industrial_products_and_services,Miscellaneous electrical and electronic components
-6_industrial_products_and_services,Miscellaneous special industry machinery
-6_industrial_products_and_services,"Miscellaneous waxes, oils and fats"
 6_industrial_products_and_services,Mosquito and other insect control
 6_industrial_products_and_services,Musical instrument parts and accessories
-6_industrial_products_and_services,Musical instruments
 6_industrial_products_and_services,"Nails, keys and pins"
-6_industrial_products_and_services,Nuts and washers
-6_industrial_products_and_services,"Oils and greases, cutting, lubricating, and hydraulic"
-6_industrial_products_and_services,"Optical instruments, test equipment, components and accessories"
-6_industrial_products_and_services,Optical scanning services
-6_industrial_products_and_services,Other equipment and parts
-6_industrial_products_and_services,Outerwear
-6_industrial_products_and_services,"Paints, dopes, varnishes and related products"
-6_industrial_products_and_services,Paper and paperboard
 6_industrial_products_and_services,Pesticides and insecticides support services
 6_industrial_products_and_services,Physical properties testing and inspection equipment - repair and overhaul
 6_industrial_products_and_services,Physical properties testing equipment
-6_industrial_products_and_services,"Pipe, tube and rigid tubing"
-6_industrial_products_and_services,"Plastics, fabricated materials"
-6_industrial_products_and_services,Power and hand pumps
 6_industrial_products_and_services,"Pressure vessels, compressed air"
-6_industrial_products_and_services,"Pressure, temperature and humidity measuring and controlling instruments"
 6_industrial_products_and_services,Pulp and paper industries machinery
 6_industrial_products_and_services,Punching and shearing machines
-6_industrial_products_and_services,Reels and spools
 6_industrial_products_and_services,"Rock, stone crushing services"
 6_industrial_products_and_services,"Service and trade equipment, miscellaneous - repair"
 6_industrial_products_and_services,"Skin and hand creams, lotions and foams; silicone based"
-6_industrial_products_and_services,Space and water heating equipment
 6_industrial_products_and_services,Spectrometer
 6_industrial_products_and_services,"Spectrometer, energy dispersive (edx)"
 6_industrial_products_and_services,Surveying equipment or instruments
-6_industrial_products_and_services,Test equipment and inspection gages
 6_industrial_products_and_services,Test kits
-6_industrial_products_and_services,Textile fabrics
 6_industrial_products_and_services,Thermovision and thermographic equipment
-6_industrial_products_and_services,Training aids
-6_industrial_products_and_services,"Valves, nonpowered"
-6_industrial_products_and_services,"Valves, powered"
-6_industrial_products_and_services,"Wire and cable, electrical"
-6_industrial_products_and_services,Wood and metal joinery and carpentry
 6_industrial_products_and_services,"X-ray apparatus (except medical, dental and veterinary)"
 7_travel,0261 - nonpublic servant core mandate
 7_travel,0261 - hotel services
@@ -4748,7 +3805,6 @@ category,d_description_en
 7_travel,Employee relocation in canada
 7_travel,Public servant travel-other reasons
 7_travel,Non-public servant travel - support core mandate activities
-7_travel,Public servant travel - employee training
 7_travel,Public servant travel-stakeholder engagement
 7_travel,Non-public servant travel—support core mandate
 7_travel,Public servant travel—stakeholder engagement
@@ -4756,7 +3812,6 @@ category,d_description_en
 7_travel,Non-public servant trav-support employee training
 7_travel,Non-public servant travel: charter flight fees
 7_travel,Non-public servant travel - operational activities
-7_travel,Other engineering installations
 7_travel,Public servant travel - training
 7_travel,Public servant travel - support core mandate activities
 7_travel,"Travel for national meetings, workshops and conferences attended primarily by transport canada participants"
@@ -4765,21 +3820,17 @@ category,d_description_en
 7_travel,Non-public servant travel - core mandate
 7_travel,Air charter - public servant travel
 7_travel,Non-public servant travel - other reasons
-7_travel,Corporate membership subscription fees
 7_travel,"Travel expenditures of non-public servants which support the departments' operational activities, legislative or legal requirements."
 7_travel,0262 non-public servant travel - stakeholder engagement
 7_travel,Public servant travel - stakeholder engagement
-7_travel,Professional services
 7_travel,Business continuity management
 7_travel,Public servant travel-other travel
 7_travel,Non-public servant travel - support employee training
 7_travel,Non-public servant travel - operationalâ activities
 7_travel,Public servant travel - other travel
 7_travel,Non-public servant travel - other travel
-7_travel,Other professional services not elsewhere specified
 7_travel,0251 public servant travel - support core mandate activities
 7_travel,Public servant travel - other reasons
-7_travel,Taxi services
 7_travel,Non-public servant travel-operational activities
 7_travel,Non-public servant travel
 7_travel,Charter flights from iqaluit to cambridge bay
@@ -4787,12 +3838,10 @@ category,d_description_en
 7_travel,Non-public servant travel - internal governance
 7_travel,0263 - voyage public servant governance
 7_travel,Non-public servant travel - key stakeholders
-7_travel,Application software (including cots) and application development and delivery software
 7_travel,Non-public servant travel - training
 7_travel,Non-public servant travel-support core mandate a
 7_travel,Nonpublicservant travel-support core mandate activ
 8_security_and_protection,Ammunition
-8_security_and_protection,Protection services
 8_security_and_protection,0460 - protection services
 8_security_and_protection,Security guard services
 8_security_and_protection,Commissionaire services montreal
@@ -4809,13 +3858,11 @@ category,d_description_en
 8_security_and_protection,Commissionaire services toronto
 8_security_and_protection,Commissionaire services ottawa - kent
 8_security_and_protection,Munitions and ammunition
-8_security_and_protection,0460 protection services
 8_security_and_protection,Commissionaire services-ottawa-kent location
 8_security_and_protection,Commissionaire services-ottawa-sparks location
 8_security_and_protection,Commissionaire services-ottawa-des
 8_security_and_protection,Commissionaire services-toronto location
 8_security_and_protection,"Explosives, fireworks, and pyrotechnic products, etc."
-8_security_and_protection,Commissionaire services
 8_security_and_protection,Commissionaire services - hamilton - escort duty
 8_security_and_protection,Amendment 01 for increase to call-up for commissionaire services - ncr - escort duties 2018-03-02
 8_security_and_protection,0460 – protection services
@@ -4854,21 +3901,12 @@ category,d_description_en
 8_security_and_protection,Security escort services - ncr
 8_security_and_protection,Stairwell strikes replacement
 8_security_and_protection,Security services
-8_security_and_protection,Commercial security guard and related services
-8_security_and_protection,Grenades
-8_security_and_protection,Pyrotechnics
 8_security_and_protection,Specialized ammunition handling and servicing equipment - rental
-8_security_and_protection,"Ammunition, through 30mm"
-8_security_and_protection,Translation services
 9_human_capital,"Education - elementary, secondary, college, university and special"
-9_human_capital,Electronic subscriptions and electronic publications
 9_human_capital,Teachers and instructors on contract
-9_human_capital,Tuition fees and costs of attending courses including seminars not elsewhere specified
 9_human_capital,Education—non-public servants
-9_human_capital,Training consultants
 9_human_capital,Training consultants (specify)
 9_human_capital,Electronic subscriptions and electronic publications expenses for electronic subscriptions and electronic publications including the electronic media monitoring program.
-9_human_capital,Purchase of training packages and courses
 9_human_capital,Training consultants - individual english coaching services
 9_human_capital,Membership fees
 9_human_capital,Other supplementary personnel costs
@@ -4880,7 +3918,6 @@ category,d_description_en
 9_human_capital,Human resources management services
 9_human_capital,0361 - electronic subscriptions
 9_human_capital,"Training consultants services acquired from training consultants, including teachers and instructors on a contract basis by government training institutions for public servants."
-9_human_capital,Conference fees
 9_human_capital,Tuition fees and costs of attending courses including seminars not elsewhere specified (specify)
 9_human_capital,Communications - electronic subscriptions and electronic publications
 9_human_capital,"Education - elementary, secondary, college, university and special education"
@@ -4912,15 +3949,11 @@ category,d_description_en
 9_human_capital,Tuition fees and costs of attending courses
 9_human_capital,Retirement training workshops
 9_human_capital,Web services subscriptions
-9_human_capital,Rental - other
-9_human_capital,Temporary help services
 9_human_capital,0447 tuition fees-other
-9_human_capital,Training and curriculum development
 9_human_capital,0361 - electronic subscription
 9_human_capital,"Language training - j. Wilson, s. Fisher, ka smith"
 9_human_capital,Leadership development course
 9_human_capital,Language training - christine brock
-9_human_capital,Por - public opinion research - wireless code survey
 9_human_capital,Language training - part-time group and individual
 9_human_capital,French language training
 9_human_capital,Civilian-foreign service allowance
@@ -4929,9 +3962,6 @@ category,d_description_en
 9_human_capital,Training consultants - behavioural science training
 9_human_capital,Tuition fees and costs of attending curses including seminars not elsewhere specified
 9_human_capital,Civilian regular time-continuing employment
-9_human_capital,Other vehicles
-9_human_capital,Other equipment and parts
-9_human_capital,Management consulting
 9_human_capital,"Membership fees include payments made to an accredited board, association, society or similar organization when departmental memberships are in direct support of a government program, or, when membership is a federal statutory requirement for individual employees to carry out the functions of their positions. This object excludes fees for subscriptions (e.g., periodicals or access to electronic media and research data bases) or for advisory and professional services (e.g., services provided to answer specific questions or to address issues and concerns)."
 9_human_capital,"Services acquired from training consultants, including teachers and instructors on a contract basis by government training institutions for public servants."
 9_human_capital,Training and educational services
@@ -4971,8 +4001,6 @@ category,d_description_en
 9_human_capital,"Human resources support services (hrss): organization and classi fication, staffing and compensation"
 9_human_capital,Awards ceremony
 9_human_capital,Duress alarm - monitoring - cas
-9_human_capital,Proservices - hr consultants
-9_human_capital,Research and development - book for federal court's 50th
 9_human_capital,Lexum
 9_human_capital,Quicklaw international subscription
 9_human_capital,Blended second language training
@@ -4987,7 +4015,6 @@ category,d_description_en
 9_human_capital,Human resource management services
 9_human_capital,Human resources management services - senior staffing consultant
 9_human_capital,Human resources management services - staffing consultant
-9_human_capital,Management consulting services
 9_human_capital,Unconscious bias - facilitating services
 9_human_capital,Advisory membership subsription
 9_human_capital,Training vouchers - it
@@ -5000,11 +4027,9 @@ category,d_description_en
 9_human_capital,Training consultants - project administrator for elearning materials
 9_human_capital,Training consultants - atip consultant
 9_human_capital,Training consultants - mental health and first aid training
-9_human_capital,Language training
 9_human_capital,Language training - tuition fees and costs of attending courses including seminars not elswhere specified
 9_human_capital,"Education - elementary, secondary, college, univer"
 9_human_capital,0447 tuition fees and costs of attending courses including seminars not elsewhere specified
-9_human_capital,Informatics professional services
 9_human_capital,0445 tuition fes trng-own time - language training
 9_human_capital,0445 tuition fes trng - language training
 9_human_capital,Subscription to lexis advance quicklaw online international content
@@ -5018,29 +4043,22 @@ category,d_description_en
 9_human_capital,Education-non-public servants
 9_human_capital,Human resources management services - job description writing services
 9_human_capital,Human resources management services - staffing consultant services
-9_human_capital,Data and database access services
 9_human_capital,Teachers contractuel
-9_human_capital,Other professional services
 9_human_capital,Services acquired from training consultants
 9_human_capital,Purchase of training packages & courses
 9_human_capital,0447 tuition fees and costs of attending courses including semina
 9_human_capital,0446 training consultants
-9_human_capital,Client software related to distributed computing environment (dce)
-9_human_capital,Informatics training
 9_human_capital,Amendment to increase the total value
 9_human_capital,Amendment to increase contract value
 9_human_capital,Education services
-9_human_capital,Language training services
 9_human_capital,Training analysis and design courses
 9_human_capital,Human resources management services - work description services
 9_human_capital,Teacher and instructor on contract
-9_human_capital,Tuition fees
 9_human_capital,Purchase of training packages and courses - training - emergency management exercises
 9_human_capital,0402 human resources management services
 9_human_capital,Compensation services
 9_human_capital,Human resources (staffing and classification)
 9_human_capital,Organization and classification services
-9_human_capital,Consulting services
 9_human_capital,Elec subsc &; elec publicatns
 9_human_capital,Amendment 001 to increase the total value
 9_human_capital,Tuition fees and costs of attending courses including seminar
@@ -5050,68 +4068,22 @@ category,d_description_en
 9_human_capital,Proservices change mgt consultant
 9_human_capital,Language consultant
 9_human_capital,0821 - membership fees
-9_human_capital,Career path planning training courses
 9_human_capital,News subscription
 9_human_capital,Edp training
-9_human_capital,Services of individuals - except consultants
-9_human_capital,Miscellaneous business services
-9_human_capital,"Human resource services, business consulting/change management; project management services (supply arrangement tsps)"
-9_human_capital,Miscellaneous items
-9_human_capital,"Pilot training services, aircraft"
-9_human_capital,Business training
-9_human_capital,Certification and accreditation - emergent care training
-9_human_capital,Library subscriptions
-9_human_capital,Technical / vocational training
-9_human_capital,Educational services - business training
-9_human_capital,"General contractor services, not elsewhere specified"
-9_human_capital,End-to-end learning services (excludes cots training)
-9_human_capital,"Educational services, n.e.s."
-9_human_capital,Certification and accreditation-medical training
-9_human_capital,Safety training courses
 9_human_capital,"Meeting, conference, convention and special event management services"
-9_human_capital,Business services
-9_human_capital,Professional services / program advisory services
-9_human_capital,Seminars
 9_human_capital,Pre-retirement related training courses
-9_human_capital,Training aids
-9_human_capital,Firearm training
-9_human_capital,Computer and data processing services
-9_human_capital,Recreational services
-9_human_capital,"Information retrieval services, database"
-9_human_capital,Books and pamphlets
-9_human_capital,Educational services - adp training
 9_human_capital,Human resources management services - human resources consultant level 2
 9_human_capital,"Education - elementary, secondary, college, university"
 9_human_capital,Defensive driving course
 9_human_capital,0446 - training consultants
-9_human_capital,Automated news services
-9_human_capital,License/maintenance fees for client software related to distributed computing environment (dce)
-9_human_capital,Information products
-9_human_capital,Military (r&d)
-9_human_capital,Books (printing products publications)
-9_human_capital,Management training
 9_human_capital,Editing - french text (writing service activity)
 9_human_capital,Budget control systems
-9_human_capital,Wilderness training
-9_human_capital,Conduct of training
-9_human_capital,Driver training
-9_human_capital,Airborne combat support training - fighter and trainer aircraft only
-9_human_capital,Military communications (research)
-9_human_capital,Harassment (investigative services)
-9_human_capital,Conference space and facilities
-9_human_capital,Cross-cultural training
 9_human_capital,Research project management services (r&d)
-9_human_capital,Search and rescue training
-9_human_capital,Other telecommunications services
 9_human_capital,Training consultants - social media monitoring
 9_human_capital,Human resources management services - human resources consultant level 3
 9_human_capital,Training consultants - management and communications training
 9_human_capital,Tuition fees and costs of attending courses.
 9_human_capital,Subscription
-9_human_capital,Audio-visual services
-9_human_capital,Project management training
-9_human_capital,Human resources consultant
 9_human_capital,Employee language training
 9_human_capital,Training consultants fees & expenses
-9_human_capital,Educational services
 9_human_capital,Electronic subscriptions and electronic publicatio
