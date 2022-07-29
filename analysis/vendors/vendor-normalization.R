@@ -74,6 +74,8 @@ vendor_names %>%
 
 
 # Similar to the above, but using contracts data loaded in the environment:
+vendor_name_to_look_up <- str_to_upper("adirondack")
+
 contracts %>%
   filter(str_detect(d_vendor_name, vendor_name_to_look_up)) %>%
   select(d_vendor_name) %>%
