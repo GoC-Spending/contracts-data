@@ -546,6 +546,21 @@ industry_categories <- contracts %>%
   arrange(category) %>%
   pull(category)
 
+# Note: review how NA categories are handled in these summary functions.
+# Currently NA data doesn't appear to be included (may need to handle is.na situations specifically).
+# Or, we could bulk-assign NA entries to an "other" category ahead of time.
+
+summary_categories = tibble(category = industry_categories) %>%
+  filter(!is.na(category))
+
+summary_categories <- summary_categories %>%
+  mutate(
+    !!str_c("summary_overall_total_by_vendor_by_category", "_", summary_overall_years_file_suffix) := map(category, get_summary_overall_total_by_vendor_by_category),
+    summary_total_by_vendor_and_fiscal_year_by_category = map(category, get_summary_total_by_vendor_and_fiscal_year_by_category),
+    !!str_c("summary_overall_total_by_owner_org_by_category", "_", summary_overall_years_file_suffix) := map(category, get_summary_overall_total_by_owner_org_by_category),
+    summary_total_by_owner_org_and_fiscal_year_by_category = map(category, get_summary_total_by_owner_org_and_fiscal_year_by_category),
+  )
+
 
 # Export CSV files of summary tables =============
 
@@ -617,6 +632,13 @@ if(option_update_summary_csv_files) {
   
   # Export vendor summaries using the reusable function
   export_summary(summary_vendors, output_vendor_path)
+  
+  # Per-category summaries
+  # Make directories if needed
+  create_summary_folders(output_category_path, summary_categories$category)
+  
+  # Export vendor summaries using the reusable function
+  export_summary(summary_categories, output_category_path)
   
   
   
