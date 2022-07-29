@@ -335,8 +335,9 @@ get_summary_overall_total_by_vendor_by_owner <- function(owner_org) {
 # to get the results of the previous function.
 get_summary_total_by_vendor_and_fiscal_year_by_owner <- function(owner_org) {
   
-  top_n_vendors <- get_summary_overall_total_by_vendor_by_owner(owner_org) %>%
-    pull(d_vendor_name)
+  # Note: update this to re-use the already generated shortlist (based on the annual threshold.)
+  # top_n_vendors <- get_summary_overall_total_by_vendor_by_owner(owner_org) %>%
+  #   pull(d_vendor_name)
   
   # Then, for those top n vendors, group by fiscal year
   output <- contract_spending_by_date %>%
@@ -530,3 +531,4 @@ get_summary_overall_total_by_owner_org_by_category <- function(category) {
   
   return(output)
   
+}
