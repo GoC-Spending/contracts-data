@@ -9,7 +9,9 @@ vendor_matching_file <- "data/vendors/vendor_normalization_data.csv"
 
 # Convert to consistent capitalization and spacing
 # Remove unexpected characters, accents, and suffixes
-clean_vendor_names <- function(vendor_name) {
+# This does a single pass; see below for clean_vendor_names that 
+# runs this function twice on the same input.
+single_clean_vendor_names <- function(vendor_name) {
   
   # Remove accented characters, and switch to uppercase
   # Thanks to
@@ -87,6 +89,13 @@ clean_vendor_names <- function(vendor_name) {
   
   return(str_squish(vendor_name))
   
+}
+
+# Handle occasional side cases where a suffix re-appears earlier in the name, leading to an inconsistency with the vendor matching table
+# This does two cleanup passes over the same input vendor name.
+# It's ...really efficient. 
+clean_vendor_names <- function(vendor_name) {
+  return(single_clean_vendor_names(single_clean_vendor_names(vendor_name)))
 }
 
 # Import the CSV file
