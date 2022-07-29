@@ -507,99 +507,9 @@ summary_overall_total_by_category_and_fiscal_year <- contract_spending_by_date %
   select(d_most_recent_category, d_fiscal_year, total)
 
 
-# Summary by owner_org (functions) ========================
+# Summary by owner_org and vendor ===============
 
-# For each owner org, get a list of the top n companies
-
-# Define a reusable function
-get_summary_overall_total_by_vendor_by_owner <- function(owner_org) {
-  
-  # Thanks to
-  # https://stackoverflow.com/a/46763370/756641
-  # Note: this uses the same overall top_n_vendors calculated previously (based on average annual spending above the summary threshold amount).
-  output <- contract_spending_by_date %>%
-    filter(owner_org == !!owner_org) %>%
-    filter(d_vendor_name %in% top_n_vendors) %>%
-    group_by(d_vendor_name) %>%
-    summarise(
-      overall_total = sum(d_daily_contract_value)
-    ) %>%
-    arrange(desc(overall_total))
-    
-  return(output)
-  
-}
-
-# Reusable function to get a per-fiscal year breakdown
-# TODO: if this was called first, it'd be more efficient since it
-# re-does the summary in the previous function above.
-# In that case, you could do this first, and then sum it all up, 
-# to get the results of the previous function.
-get_summary_total_by_vendor_and_fiscal_year_by_owner <- function(owner_org) {
-  
-  top_n_vendors <- get_summary_overall_total_by_vendor_by_owner(owner_org) %>%
-    pull(d_vendor_name)
-  
-  # Then, for those top n vendors, group by fiscal year
-  output <- contract_spending_by_date %>%
-    filter(owner_org == !!owner_org) %>%
-    filter(d_vendor_name %in% top_n_vendors) %>%
-    group_by(d_vendor_name, d_fiscal_year_short) %>%
-    summarise(
-      total = sum(d_daily_contract_value)
-    ) %>%
-    ungroup() %>%
-    mutate(
-      d_fiscal_year = convert_start_year_to_fiscal_year(d_fiscal_year_short)
-    ) %>%
-    select(d_vendor_name, d_fiscal_year, total)
-  
-  return(output)
-  
-}
-
-# Get a category summary by department or agency
-get_summary_total_by_category_by_owner_org <- function(owner_org) {
-  
-  output <- contract_spending_by_date %>%
-    filter(owner_org == !!owner_org) %>%
-    group_by(d_most_recent_category) %>%
-    summarise(
-      total = sum(d_daily_contract_value)
-    ) %>%
-    ungroup() %>%
-    select(d_most_recent_category, total) %>%
-    mutate(
-      percentage = total / sum(total)
-    ) %>%
-    arrange(desc(total))
-  
-  return(output)
-  
-}
-
-# Get a fiscal year overall summary by department or agency
-get_summary_total_by_fiscal_year_by_owner_org <- function(owner_org) {
-  
-  output <- contract_spending_by_date %>%
-    filter(owner_org == !!owner_org) %>%
-    group_by(d_fiscal_year_short) %>%
-    summarise(
-      total = sum(d_daily_contract_value)
-    ) %>%
-    ungroup() %>%
-    mutate(
-      d_fiscal_year = convert_start_year_to_fiscal_year(d_fiscal_year_short)
-    ) %>%
-    select(d_fiscal_year, total)
-  
-  return(output)
-  
-}
-
-
-
-# Summary by owner_org ========================
+# see exports.R for the functions that are used here.
 
 # Create a list-column and provide calculations for each department
 vendors_by_owner_org <- tibble(owner_org = owner_orgs)
@@ -614,62 +524,6 @@ vendors_by_owner_org <- vendors_by_owner_org %>%
       summary_total_by_category_by_owner_org = map(owner_org, get_summary_total_by_category_by_owner_org),
       )
 
-
-
-# For each of the top n vendors, get a per-fiscal year breakdown
-get_summary_total_by_fiscal_year_by_vendor <- function(requested_vendor_name) {
-  
-  output <- contract_spending_by_date %>%
-    filter(d_vendor_name == !!requested_vendor_name) %>%
-    group_by(d_fiscal_year_short) %>%
-    summarise(
-      total = sum(d_daily_contract_value)
-    ) %>%
-    ungroup() %>%
-    mutate(
-      d_fiscal_year = convert_start_year_to_fiscal_year(d_fiscal_year_short)
-    ) %>%
-    select(d_fiscal_year, total)
-  
-  return(output)
-}
-
-# For each of the top n vendors, get a per-fiscal year breakdown
-get_summary_total_by_fiscal_year_and_owner_org_by_vendor <- function(requested_vendor_name) {
-  
-  output <- contract_spending_by_date %>%
-    filter(d_vendor_name == !!requested_vendor_name) %>%
-    group_by(owner_org, d_fiscal_year_short) %>%
-    summarise(
-      total = sum(d_daily_contract_value)
-    ) %>%
-    ungroup() %>%
-    mutate(
-      d_fiscal_year = convert_start_year_to_fiscal_year(d_fiscal_year_short)
-    ) %>%
-    select(owner_org, d_fiscal_year, total)
-  
-  return(output)
-}
-
-# For each of the top n vendors, get a per-category breakdown
-get_summary_total_by_category_by_vendor <- function(requested_vendor_name) {
-  
-  output <- contract_spending_by_date %>%
-    filter(d_vendor_name == !!requested_vendor_name) %>%
-    group_by(d_most_recent_category) %>%
-    summarise(
-      total = sum(d_daily_contract_value)
-    ) %>%
-    ungroup() %>%
-    select(d_most_recent_category, total) %>%
-    mutate(
-      percentage = total / sum(total)
-    ) %>%
-    arrange(desc(total))
-  
-  return(output)
-}
 
 # Summary by vendor
 summary_vendors = tibble(vendor = top_n_vendors)
