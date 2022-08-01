@@ -1003,3 +1003,34 @@ paste("End time was:", run_end_time)
 #   distinct() %>% 
 #   arrange(owner_org) %>% 
 #   write_csv(str_c("data/testing/tmp-", today(), "-owner-orgs.csv"))
+
+# Testing (2022-08-01)
+
+# vendor_name_to_look_up <- "L3HARRIS"
+# 
+# contract_spending_overall %>%
+#   filter(d_vendor_name == vendor_name_to_look_up) %>%
+#   select(owner_org, d_amendment_group_id, d_overall_contract_value, d_overall_start_date, d_overall_end_date, d_most_recent_category, d_most_recent_description_en) %>%
+#   arrange(desc(d_overall_contract_value)) %>%
+#   distinct() %>%
+#   View()
+# 
+# contracts %>%
+#   filter(d_amendment_group_id == "csa-asc-C-2017-2018-Q1-00001") %>%
+#   View()
+# 
+# 
+# economic_object_code_name_to_look_up <- "0665"
+# 
+# contracts %>%
+#   filter(d_economic_object_code == economic_object_code_name_to_look_up) %>%
+#   arrange(desc(contract_value)) %>%
+#   select(owner_org, d_vendor_name, contract_value, d_description_en, comments_en, additional_comments_en, d_start_date, d_end_date, d_amendment_group_id, procurement_id, original_value, d_economic_object_code, starts_with("category")) %>%
+#   View()
+# 
+# contracts %>%
+#   filter(d_vendor_name == vendor_name_to_look_up) %>%
+#   select(owner_org, d_vendor_name, procurement_id, reference_number, contract_value, d_description_en, comments_en, additional_comments_en, d_start_date, d_end_date, d_amendment_group_id, original_value, d_economic_object_code, starts_with("category")) %>%
+#   arrange(desc(contract_value)) %>%
+#   distinct() %>%
+#   View()
