@@ -1,13 +1,13 @@
 owner_org,overall_total
 cic,319499958.87
 dnd-mdn,252409013.86
-pwgsc-tpsgc,158812582.45
+pwgsc-tpsgc,158679950.82
 dfatd-maecd,88629609.92
 csc-scc,62127676.45
 nrc-cnrc,58974890.6
 pc,56518196.77
 dfo-mpo,42631581.93
-esdc-edsc,36022005.45
+esdc-edsc,35958428.51
 rcmp-grc,33088871.03
 elections,28045090.43
 jus,27801930.7
@@ -18,8 +18,8 @@ tc,17527667.37
 cbsa-asfc,16902438.23
 ssc-spc,14263987.98
 hc-sc,12518302.66
-nrcan-rncan,12252729.91
-cfia-acia,10520054.54
+cfia-acia,12479505.25
+nrcan-rncan,12261153.12
 ppsc-sppc,8503769.24
 vac-acc,7601036.01
 pch,7000666.3
@@ -38,7 +38,7 @@ nfb-onf,2853939.55
 infc,2676510.09
 oag-bvg,2335562.46
 atssc-scdata,2217806.64
-nserc-crsng,1650510.83
+nserc-crsng,1682204.47
 csps-efpc,1535459.5
 iaac-aeic,1334281.12
 lac-bac,1328179.11
