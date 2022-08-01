@@ -899,26 +899,26 @@ category,d_description_en
 10_office_management,Workstations - procurement
 11_defence,Acoustical analysis/technology (r&d)
 11_defence,Airborne combat support training - fighter and trainer aircraft only
-11_defence,Airborne satellite communication system
+6_industrial_products_and_services,Airborne satellite communication system
 11_defence,Aircraft (military) navigational instruments - repair and overhaul
-11_defence,"Aircraft air conditioning, heating and pressurizing equipment"
-11_defence,Aircraft and glider dry leases
-11_defence,"Aircraft arresting barrier and barricade equipment, n.e.s."
-11_defence,Aircraft ground servicing equipment
-11_defence,"Aircraft hydraulic, vacuum and de-icing system components"
-11_defence,Aircraft landing equipment - repair
-11_defence,Aircraft landing gear components
-11_defence,Aircraft maintenance and repair shop specialized equipment
-11_defence,Aircraft propellers and components
-11_defence,Aircraft wheel and brake systems
-11_defence,Aircraft wheel and brake systems (civilian) - repair
-11_defence,"Aircraft, fixed wing"
+5_transportation_and_logistics,"Aircraft air conditioning, heating and pressurizing equipment"
+5_transportation_and_logistics,Aircraft and glider dry leases
+5_transportation_and_logistics,"Aircraft arresting barrier and barricade equipment, n.e.s."
+5_transportation_and_logistics,Aircraft ground servicing equipment
+5_transportation_and_logistics,"Aircraft hydraulic, vacuum and de-icing system components"
+5_transportation_and_logistics,Aircraft landing equipment - repair
+5_transportation_and_logistics,Aircraft landing gear components
+5_transportation_and_logistics,Aircraft maintenance and repair shop specialized equipment
+5_transportation_and_logistics,Aircraft propellers and components
+5_transportation_and_logistics,Aircraft wheel and brake systems
+5_transportation_and_logistics,Aircraft wheel and brake systems (civilian) - repair
+5_transportation_and_logistics,"Aircraft, fixed wing"
 11_defence,"Aircraft, fixed wing - (military) repair and overhaul"
 11_defence,"Aircraft, fixed wing - repair and overhaul (military)"
 11_defence,"Aircraft, rotary wing (military) - repair and overhaul"
-11_defence,Airfield specialized trucks and trailers
-11_defence,Airframe structural components
-11_defence,Airframe structural components - production design
+5_transportation_and_logistics,Airfield specialized trucks and trailers
+5_transportation_and_logistics,Airframe structural components
+5_transportation_and_logistics,Airframe structural components - production design
 11_defence,Ammunition (r&d)
 11_defence,"Ammunition and nuclear ordnance boxes, packages and special containers"
 11_defence,"Ammunition, 75mm through 125mm"
@@ -962,7 +962,7 @@ category,d_description_en
 11_defence,Engineering and technical services - ammunition related
 11_defence,Engineering and technical services - combat vehicles related
 11_defence,Engineering and technical services - weapon systems related
-11_defence,"Engines, gasoline (except aircraft, marine and outboard motors)"
+5_transportation_and_logistics,"Engines, gasoline (except aircraft, marine and outboard motors)"
 11_defence,Equipment & materials testing
 11_defence,Equipment and materials testing
 11_defence,Explosive ordnance disposal
@@ -973,11 +973,11 @@ category,d_description_en
 11_defence,"Fire control radar equipment, except airborne"
 11_defence,"Fire control systems, complete"
 11_defence,Firearm training
-11_defence,Flight instruments
-11_defence,Flying training
-11_defence,"Gas turbines and jet engines, aircraft, prime moving and components"
-11_defence,Ground effect vehicles
-11_defence,Ground effect vehicles (civilian) - repair and overhaul
+5_transportation_and_logistics,Flight instruments
+5_transportation_and_logistics,Flying training
+5_transportation_and_logistics,"Gas turbines and jet engines, aircraft, prime moving and components"
+5_transportation_and_logistics,Ground effect vehicles
+5_transportation_and_logistics,Ground effect vehicles (civilian) - repair and overhaul
 11_defence,Ground effect vehicles (military) - repair and overhaul
 11_defence,Guided missiles
 11_defence,"Guns, 75 mm through 125 mm, unless installed in a vehicle, aircraft, ship"
@@ -990,80 +990,80 @@ category,d_description_en
 11_defence,"Launchers, grenade, rocket and pyrotechnic"
 11_defence,"Launchers, torpedo and depth charges, unless installed in a vehicle, aircraft, ship"
 11_defence,Logistics support for u.s. Manufactured military equipment currently operated by canadian armed forces (colog)
-11_defence,Marine architect and engineering services
-11_defence,Marine consulting
-11_defence,Marine hardware and hull items
-11_defence,Marine hardware and hull items - repair
-11_defence,Marine life saving and diving equipment
-11_defence,Marine radar equipment
-11_defence,Marine systems and engineering
+5_transportation_and_logistics,Marine architect and engineering services
+5_transportation_and_logistics,Marine consulting
+5_transportation_and_logistics,Marine hardware and hull items
+5_transportation_and_logistics,Marine hardware and hull items - repair
+5_transportation_and_logistics,Marine life saving and diving equipment
+5_transportation_and_logistics,Marine radar equipment
+5_transportation_and_logistics,Marine systems and engineering
 11_defence,Materials handling equipment/nonself -propelled
 11_defence,Military (r&d)
-11_defence,Miscellaneous aircraft accessories and components
+5_transportation_and_logistics,Miscellaneous aircraft accessories and components
 11_defence,Miscellaneous aircraft accessories and components (miliatry) - repair and overhaul
 11_defence,Miscellaneous ammunition
 11_defence,"Miscellaneous engine accessories, aircraft (miliatry) - repair and overhaul"
 11_defence,Miscellaneous hardware - repair
 11_defence,Miscellaneous weapons
-11_defence,Motor vehicle maintenance and repair shop specialized equipment
-11_defence,Naval architecture
-11_defence,Naval architecture - consulting services
-11_defence,Naval architecture - design services
-11_defence,Navigational instruments
-11_defence,"Navigational instruments, airborne"
+5_transportation_and_logistics,Motor vehicle maintenance and repair shop specialized equipment
+5_transportation_and_logistics,Naval architecture
+5_transportation_and_logistics,Naval architecture - consulting services
+5_transportation_and_logistics,Naval architecture - design services
+5_transportation_and_logistics,Navigational instruments
+5_transportation_and_logistics,"Navigational instruments, airborne"
 11_defence,"Night vision equipment, emitted and reflected radiation"
 11_defence,Operation training devices
 11_defence,"Operation training devices, electronic, simulators, marine"
 11_defence,Optical sighting and ranging equipment
 11_defence,Other defense (r&d)
 11_defence,Parachute operations
-11_defence,Parachutes and associated equipment
-11_defence,"Parachutes, aerial pick-up delivery, recovery systems, and cargo tie down equipment"
+5_transportation_and_logistics,Parachutes and associated equipment
+5_transportation_and_logistics,"Parachutes, aerial pick-up delivery, recovery systems, and cargo tie down equipment"
 11_defence,"Pilot training services, aircraft"
-11_defence,Power and hand pumps
+6_industrial_products_and_services,Power and hand pumps
 11_defence,Pyrotechnics
 11_defence,Radar defence systems (r&d)
 11_defence,"Radar equipment (military), except airborne - repair and overhaul"
-11_defence,Radar equipment and parts
-11_defence,"Radar equipment, airborne"
-11_defence,"Radar equipment, except airborne"
-11_defence,"Radar equipment, except airborne, production design"
+5_transportation_and_logistics,Radar equipment and parts
+5_transportation_and_logistics,"Radar equipment, airborne"
+5_transportation_and_logistics,"Radar equipment, except airborne"
+5_transportation_and_logistics,"Radar equipment, except airborne, production design"
 11_defence,Radar technology (r&d)
 11_defence,"Radio and television communications data and telemetry equipment, airborne"
 11_defence,"Radio and television communications equipment, airborne"
 11_defence,"Radio and television communications equipment, except airborne"
-11_defence,"Radio navigation equipment, airborne"
-11_defence,"Radio navigation equipment, except airborne"
+5_transportation_and_logistics,"Radio navigation equipment, airborne"
+5_transportation_and_logistics,"Radio navigation equipment, except airborne"
 11_defence,Radio television services
 11_defence,"Radio transceivers and transmitter-receiver, hf (except airborne)"
 11_defence,Ranges
-11_defence,Refrigeration systems and components (marine)
+5_transportation_and_logistics,Refrigeration systems and components (marine)
 11_defence,"Rigid wall shelters, portable (military application)"
 11_defence,Road motor vehicles - military
 11_defence,Road motor vehicles-military
 11_defence,"Rockets, rocket ammunition and rocket components"
-11_defence,"Shears, hand, workshop tools"
-11_defence,Ship and boat propulsion components
-11_defence,Ship and marine
-11_defence,Ship and marine miscellaneous equipment - repair
-11_defence,Ship mooring services
-11_defence,Shipboard alarm and signal systems
-11_defence,Ships and vessels - non destructive testing
-11_defence,"Ships and vessels - sand blasting, repainting, and refinishing"
-11_defence,"Ships and vessels deck coverings - repair, overhaul, and maintenance"
-11_defence,Small craft
+6_industrial_products_and_services,"Shears, hand, workshop tools"
+5_transportation_and_logistics,Ship and boat propulsion components
+5_transportation_and_logistics,Ship and marine
+5_transportation_and_logistics,Ship and marine miscellaneous equipment - repair
+5_transportation_and_logistics,Ship mooring services
+5_transportation_and_logistics,Shipboard alarm and signal systems
+5_transportation_and_logistics,Ships and vessels - non destructive testing
+5_transportation_and_logistics,"Ships and vessels - sand blasting, repainting, and refinishing"
+5_transportation_and_logistics,"Ships and vessels deck coverings - repair, overhaul, and maintenance"
+5_transportation_and_logistics,Small craft
 11_defence,Specialized ammunition handling and servicing equipment
 11_defence,Studs
 11_defence,Submarines
 11_defence,Tanks and tracked self-propelled weapons and vehicles w/wo amphibian capabilities
 11_defence,"Tires and tubes, pneumatic, aircraft"
-11_defence,"Tractors, wheeled, aircraft towing"
-11_defence,"Trucks and truck tractors, wheeled - repair"
+5_transportation_and_logistics,"Tractors, wheeled, aircraft towing"
+5_transportation_and_logistics,"Trucks and truck tractors, wheeled - repair"
 11_defence,Underwater sound equipment
 11_defence,Underwater sound equipment - repair
 11_defence,Unmanned aircraft
-11_defence,"Vehicular components, miscellaneous"
-11_defence,"Vessels, miscellaneous"
+5_transportation_and_logistics,"Vehicular components, miscellaneous"
+5_transportation_and_logistics,"Vessels, miscellaneous"
 11_defence,"Weapons maintenance and repair shop specialized equipment, excludes airborne weapons maintenance and repair shop equipment"
 11_defence,Weapons systems specific vehicular accessories
 2_professional_services,0230 voice communications services (inc analog/digital voice comm services)

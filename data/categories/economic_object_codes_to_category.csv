@@ -196,7 +196,7 @@ economic_object_code,category
 660,1_facilities_and_construction
 662,1_facilities_and_construction
 664,3_information_technology
-665,3_information_technology
+665,6_industrial_products_and_services
 666,3_information_technology
 667,3_information_technology
 668,3_information_technology
@@ -320,7 +320,7 @@ economic_object_code,category
 1241,1_facilities_and_construction
 1242,1_facilities_and_construction
 1243,6_industrial_products_and_services
-1244,11_defence
+1244,6_industrial_products_and_services
 1245,6_industrial_products_and_services
 1246,10_office_management
 1249,6_industrial_products_and_services
