@@ -294,6 +294,26 @@ contracts <- contracts %>%
     )
   )
 
+
+# Specific handling for Department of National Defence
+# Because Transportation & Logistics and Information Technology have a
+# significant amount of overlap in economic object codes used between
+# civilian and military applications, we'll bulk update each of these
+# categories to "11_defence" for DND specifically.
+
+# Note: this isn't indicated in any other columns; it may be worth
+# adding a "category_by_departmental_override" column as a reminder
+# why these categories are what they are.
+contracts <- contracts %>%
+  mutate(
+    category = case_when(
+      owner_org == "dnd-mdn" & category == "3_information_technology" ~ "11_defence",
+      owner_org == "dnd-mdn" & category == "5_transportation_and_logistics" ~ "11_defence",
+      TRUE ~ category
+    )
+  )
+
+
 # Temp: get descriptions and object codes
 # Note: this only includes descriptions with at least 10 entries.
 # (Shortens the total list from 12k to 3k rows.)
@@ -1020,7 +1040,7 @@ paste("End time was:", run_end_time)
 #   View()
 # 
 # 
-# economic_object_code_name_to_look_up <- "0665"
+# economic_object_code_name_to_look_up <- "1244"
 # 
 # contracts %>%
 #   filter(d_economic_object_code == economic_object_code_name_to_look_up) %>%
@@ -1033,4 +1053,33 @@ paste("End time was:", run_end_time)
 #   select(owner_org, d_vendor_name, procurement_id, reference_number, contract_value, d_description_en, comments_en, additional_comments_en, d_start_date, d_end_date, d_amendment_group_id, original_value, d_economic_object_code, starts_with("category")) %>%
 #   arrange(desc(contract_value)) %>%
 #   distinct() %>%
+#   View()
+# 
+# contract_spending_overall %>%
+#   filter(owner_org == "tc") %>%
+#   filter(category == "11_defence") %>%
+#   select(owner_org, d_amendment_group_id, d_overall_contract_value, d_overall_start_date, d_overall_end_date, d_most_recent_category, d_most_recent_description_en) %>%
+#     arrange(desc(d_overall_contract_value)) %>%
+#     distinct() %>%
+#   View()
+# 
+# contracts %>%
+#   filter(d_amendment_group_id == "tc-TC-2012-2013-Q2-02004") %>%
+#   View()
+# 
+# example_contracts <- contracts %>%
+#   filter(owner_org %in% c("tc", "dnd-mdn")) %>%
+#   slice_sample(n = 20)
+# 
+# example_contracts %>%
+#   View()
+# 
+# example_contracts %>%
+#   mutate(
+#     category = case_when(
+#       owner_org == "dnd-mdn" & category == "3_information_technology" ~ "11_defence",
+#       owner_org == "dnd-mdn" & category == "5_transportation_and_logistics" ~ "11_defence",
+#       TRUE ~ category
+#     )
+#   ) %>%
 #   View()
