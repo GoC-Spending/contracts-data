@@ -1083,3 +1083,41 @@ paste("End time was:", run_end_time)
 #     )
 #   ) %>%
 #   View()
+
+# Testing (2022-08-02)
+
+# Review percentages per category
+
+# summary_categories$summary_overall_total_by_vendor_by_category_2017_to_2020[[5]]
+# 
+# total_it <- summary_overall %>% filter(summary_type == "all") %>% pull(summary_overall_by_category_2017_to_2020) %>% first() %>% filter(d_most_recent_category == "3_information_technology") %>% pull(total)
+# 
+# summary_categories$summary_overall_total_by_vendor_by_category_2017_to_2020[[5]] %>% slice(1:10) %>% pull(overall_total) %>% sum() / total_it
+# 
+# 
+# # More vendor/category exploration
+# vendor_name_to_look_up <- "ROGERS"
+# 
+# contract_spending_overall %>%
+#   filter(d_vendor_name == vendor_name_to_look_up) %>%
+#   select(owner_org, d_amendment_group_id, d_overall_contract_value, d_overall_start_date, d_overall_end_date, d_most_recent_category, d_most_recent_description_en) %>%
+#   arrange(desc(d_overall_contract_value)) %>%
+#   distinct() %>%
+#   View()
+# 
+# # ssc-spc-C-2017-2018-Q1-00615
+# # ssc-spc-C-2019-2020-Q1-00179
+# # esdc-edsc-C-2022-2023-Q1-00335
+# 
+# 
+# contracts %>%
+#   filter(d_amendment_group_id == "esdc-edsc-C-2022-2023-Q1-00335") %>%
+#   View()
+# 
+# economic_object_code_name_to_look_up <- "0491"
+# 
+# contracts %>%
+#   filter(d_economic_object_code == economic_object_code_name_to_look_up) %>%
+#   arrange(desc(contract_value)) %>%
+#   select(owner_org, d_vendor_name, contract_value, d_description_en, comments_en, additional_comments_en, d_start_date, d_end_date, d_amendment_group_id, procurement_id, original_value, d_economic_object_code, starts_with("category")) %>%
+#   View()
