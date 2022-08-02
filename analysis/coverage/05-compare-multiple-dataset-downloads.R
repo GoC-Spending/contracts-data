@@ -1,5 +1,8 @@
-# Load the libraries + the main CSV
-source("load.R")
+# Load the libraries
+source("lib/helpers.R")
+
+# Load the latest CSV file (or download today's if it doesn't already exist)
+contracts <- get_contracts_csv_locally_or_from_url(contract_col_types)
 
 # Minor mutate for the contract loaded in the source file
 contracts_2022 <- contracts %>%
@@ -80,7 +83,7 @@ contracts_comparison_gc_wide <- contracts_comparison %>%
 ggplot(contracts_comparison_gc_wide) +
   geom_point(aes(x = year, y = value, color = dataset)) +
   geom_line(aes(x = year, y = value, color = dataset), linetype = "longdash", alpha = 0.5) + 
-  xlim(c(2002, 2022))
+  xlim(c(2002, 2023))
 
 # Figure out per-year deltas (work in progress)
 contracts_comparison_delta <- contracts_comparison_gc_wide %>%
