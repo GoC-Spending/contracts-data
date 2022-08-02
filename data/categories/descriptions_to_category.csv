@@ -1066,8 +1066,8 @@ category,d_description_en
 5_transportation_and_logistics,"Vessels, miscellaneous"
 11_defence,"Weapons maintenance and repair shop specialized equipment, excludes airborne weapons maintenance and repair shop equipment"
 11_defence,Weapons systems specific vehicular accessories
-2_professional_services,0230 voice communications services (inc analog/digital voice comm services)
-2_professional_services,0230 voice communications services (includes analog and/or digital voice communication services)
+3_information_technology,0230 voice communications services (inc analog/digital voice comm services)
+3_information_technology,0230 voice communications services (includes analog and/or digital voice communication services)
 2_professional_services,0301 – advertising services
 2_professional_services,0301 advertising services
 2_professional_services,0311 - publishing / design services
@@ -1871,11 +1871,11 @@ category,d_description_en
 2_professional_services,Veterinary services
 2_professional_services,Video production services
 2_professional_services,Vocational and psychometric testing
-2_professional_services,Voice comm serv incl analog/digital
-2_professional_services,Voice communication services
-2_professional_services,Voice communications services
-2_professional_services,Voice communications services (includes analog and/or digital voice communication services)
-2_professional_services,"Voice communications services voice communications services charged by service providers (including common carriers), such as local telephone service, long-distance service, cellular services, teleconferences, wide area telephone service (wats) or 800 services, telephone directories, local circuits, dedicated intercity circuits and credit card services. It includes line, equipment and usage charges directly associated with providing these services, as well as installation and relocation charges, but excludes equipment purchased or rented from a third party. It includes enhanced voice services such as voice messaging service. Notes: 1. Charges for smart phone (e.g. Blackberry) usage that combine voice and data services are to be classified under object 0231."
+3_information_technology,Voice comm serv incl analog/digital
+3_information_technology,Voice communication services
+3_information_technology,Voice communications services
+3_information_technology,Voice communications services (includes analog and/or digital voice communication services)
+3_information_technology,"Voice communications services voice communications services charged by service providers (including common carriers), such as local telephone service, long-distance service, cellular services, teleconferences, wide area telephone service (wats) or 800 services, telephone directories, local circuits, dedicated intercity circuits and credit card services. It includes line, equipment and usage charges directly associated with providing these services, as well as installation and relocation charges, but excludes equipment purchased or rented from a third party. It includes enhanced voice services such as voice messaging service. Notes: 1. Charges for smart phone (e.g. Blackberry) usage that combine voice and data services are to be classified under object 0231."
 2_professional_services,Water quality studies
 2_professional_services,Weather reporting/observation services
 2_professional_services,Web design - marketing & corporate branding
