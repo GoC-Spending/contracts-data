@@ -1,5 +1,8 @@
-# Load the libraries + the main CSV
-source("load.R")
+# Load the libraries
+source("lib/helpers.R")
+
+# Load the latest CSV file (or download today's if it doesn't already exist)
+contracts <- get_contracts_csv_locally_or_from_url(contract_col_types)
 
 contracts <- contracts %>%
   mutate(gen_contract_year = year(`contract_date`))
