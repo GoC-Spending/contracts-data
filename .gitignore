@@ -17,3 +17,4 @@ tmp/
 
 # Big `contracts.csv`
 data/contracts.csv
+categorisation/rule_based_contracts.csv
