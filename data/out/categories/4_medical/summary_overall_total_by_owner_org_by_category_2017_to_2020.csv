@@ -1,7 +1,7 @@
 owner_org,overall_total
 phac-aspc,3510211798.69
-csc-scc,985577684.71
-dnd-mdn,854570380.44
+csc-scc,985598933.23
+dnd-mdn,842267448.48
 vac-acc,234119373.22
 isc-sac,175611609.03
 hc-sc,101514644.01
@@ -11,7 +11,7 @@ rcmp-grc,21155931.54
 cfia-acia,6284565.62
 esdc-edsc,3666470.45
 cra-arc,3399468.49
-tc,3066856.65
+tc,3047433.64
 dfo-mpo,3035803.32
 aandc-aadnc,2445392.54
 dfatd-maecd,2059360.37
@@ -20,7 +20,7 @@ statcan,1213515.96
 nrc-cnrc,1150953.2
 jus,826525.77
 pc,554814.02
-csa-asc,440238.37
+csa-asc,444069.64
 cas-satj,296337.37
 ec,214246.39
 pwgsc-tpsgc,212972.21
