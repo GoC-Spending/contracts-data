@@ -899,26 +899,26 @@ category,d_description_en
 10_office_management,Workstations - procurement
 11_defence,Acoustical analysis/technology (r&d)
 11_defence,Airborne combat support training - fighter and trainer aircraft only
-11_defence,Airborne satellite communication system
+6_industrial_products_and_services,Airborne satellite communication system
 11_defence,Aircraft (military) navigational instruments - repair and overhaul
-11_defence,"Aircraft air conditioning, heating and pressurizing equipment"
-11_defence,Aircraft and glider dry leases
-11_defence,"Aircraft arresting barrier and barricade equipment, n.e.s."
-11_defence,Aircraft ground servicing equipment
-11_defence,"Aircraft hydraulic, vacuum and de-icing system components"
-11_defence,Aircraft landing equipment - repair
-11_defence,Aircraft landing gear components
-11_defence,Aircraft maintenance and repair shop specialized equipment
-11_defence,Aircraft propellers and components
-11_defence,Aircraft wheel and brake systems
-11_defence,Aircraft wheel and brake systems (civilian) - repair
-11_defence,"Aircraft, fixed wing"
+5_transportation_and_logistics,"Aircraft air conditioning, heating and pressurizing equipment"
+5_transportation_and_logistics,Aircraft and glider dry leases
+5_transportation_and_logistics,"Aircraft arresting barrier and barricade equipment, n.e.s."
+5_transportation_and_logistics,Aircraft ground servicing equipment
+5_transportation_and_logistics,"Aircraft hydraulic, vacuum and de-icing system components"
+5_transportation_and_logistics,Aircraft landing equipment - repair
+5_transportation_and_logistics,Aircraft landing gear components
+5_transportation_and_logistics,Aircraft maintenance and repair shop specialized equipment
+5_transportation_and_logistics,Aircraft propellers and components
+5_transportation_and_logistics,Aircraft wheel and brake systems
+5_transportation_and_logistics,Aircraft wheel and brake systems (civilian) - repair
+5_transportation_and_logistics,"Aircraft, fixed wing"
 11_defence,"Aircraft, fixed wing - (military) repair and overhaul"
 11_defence,"Aircraft, fixed wing - repair and overhaul (military)"
 11_defence,"Aircraft, rotary wing (military) - repair and overhaul"
-11_defence,Airfield specialized trucks and trailers
-11_defence,Airframe structural components
-11_defence,Airframe structural components - production design
+5_transportation_and_logistics,Airfield specialized trucks and trailers
+5_transportation_and_logistics,Airframe structural components
+5_transportation_and_logistics,Airframe structural components - production design
 11_defence,Ammunition (r&d)
 11_defence,"Ammunition and nuclear ordnance boxes, packages and special containers"
 11_defence,"Ammunition, 75mm through 125mm"
@@ -962,7 +962,7 @@ category,d_description_en
 11_defence,Engineering and technical services - ammunition related
 11_defence,Engineering and technical services - combat vehicles related
 11_defence,Engineering and technical services - weapon systems related
-11_defence,"Engines, gasoline (except aircraft, marine and outboard motors)"
+5_transportation_and_logistics,"Engines, gasoline (except aircraft, marine and outboard motors)"
 11_defence,Equipment & materials testing
 11_defence,Equipment and materials testing
 11_defence,Explosive ordnance disposal
@@ -973,11 +973,11 @@ category,d_description_en
 11_defence,"Fire control radar equipment, except airborne"
 11_defence,"Fire control systems, complete"
 11_defence,Firearm training
-11_defence,Flight instruments
-11_defence,Flying training
-11_defence,"Gas turbines and jet engines, aircraft, prime moving and components"
-11_defence,Ground effect vehicles
-11_defence,Ground effect vehicles (civilian) - repair and overhaul
+5_transportation_and_logistics,Flight instruments
+5_transportation_and_logistics,Flying training
+5_transportation_and_logistics,"Gas turbines and jet engines, aircraft, prime moving and components"
+5_transportation_and_logistics,Ground effect vehicles
+5_transportation_and_logistics,Ground effect vehicles (civilian) - repair and overhaul
 11_defence,Ground effect vehicles (military) - repair and overhaul
 11_defence,Guided missiles
 11_defence,"Guns, 75 mm through 125 mm, unless installed in a vehicle, aircraft, ship"
@@ -990,84 +990,84 @@ category,d_description_en
 11_defence,"Launchers, grenade, rocket and pyrotechnic"
 11_defence,"Launchers, torpedo and depth charges, unless installed in a vehicle, aircraft, ship"
 11_defence,Logistics support for u.s. Manufactured military equipment currently operated by canadian armed forces (colog)
-11_defence,Marine architect and engineering services
-11_defence,Marine consulting
-11_defence,Marine hardware and hull items
-11_defence,Marine hardware and hull items - repair
-11_defence,Marine life saving and diving equipment
-11_defence,Marine radar equipment
-11_defence,Marine systems and engineering
+5_transportation_and_logistics,Marine architect and engineering services
+5_transportation_and_logistics,Marine consulting
+5_transportation_and_logistics,Marine hardware and hull items
+5_transportation_and_logistics,Marine hardware and hull items - repair
+5_transportation_and_logistics,Marine life saving and diving equipment
+5_transportation_and_logistics,Marine radar equipment
+5_transportation_and_logistics,Marine systems and engineering
 11_defence,Materials handling equipment/nonself -propelled
 11_defence,Military (r&d)
-11_defence,Miscellaneous aircraft accessories and components
+5_transportation_and_logistics,Miscellaneous aircraft accessories and components
 11_defence,Miscellaneous aircraft accessories and components (miliatry) - repair and overhaul
 11_defence,Miscellaneous ammunition
 11_defence,"Miscellaneous engine accessories, aircraft (miliatry) - repair and overhaul"
 11_defence,Miscellaneous hardware - repair
 11_defence,Miscellaneous weapons
-11_defence,Motor vehicle maintenance and repair shop specialized equipment
-11_defence,Naval architecture
-11_defence,Naval architecture - consulting services
-11_defence,Naval architecture - design services
-11_defence,Navigational instruments
-11_defence,"Navigational instruments, airborne"
+5_transportation_and_logistics,Motor vehicle maintenance and repair shop specialized equipment
+5_transportation_and_logistics,Naval architecture
+5_transportation_and_logistics,Naval architecture - consulting services
+5_transportation_and_logistics,Naval architecture - design services
+5_transportation_and_logistics,Navigational instruments
+5_transportation_and_logistics,"Navigational instruments, airborne"
 11_defence,"Night vision equipment, emitted and reflected radiation"
 11_defence,Operation training devices
 11_defence,"Operation training devices, electronic, simulators, marine"
 11_defence,Optical sighting and ranging equipment
 11_defence,Other defense (r&d)
 11_defence,Parachute operations
-11_defence,Parachutes and associated equipment
-11_defence,"Parachutes, aerial pick-up delivery, recovery systems, and cargo tie down equipment"
+5_transportation_and_logistics,Parachutes and associated equipment
+5_transportation_and_logistics,"Parachutes, aerial pick-up delivery, recovery systems, and cargo tie down equipment"
 11_defence,"Pilot training services, aircraft"
-11_defence,Power and hand pumps
+6_industrial_products_and_services,Power and hand pumps
 11_defence,Pyrotechnics
 11_defence,Radar defence systems (r&d)
 11_defence,"Radar equipment (military), except airborne - repair and overhaul"
-11_defence,Radar equipment and parts
-11_defence,"Radar equipment, airborne"
-11_defence,"Radar equipment, except airborne"
-11_defence,"Radar equipment, except airborne, production design"
+5_transportation_and_logistics,Radar equipment and parts
+5_transportation_and_logistics,"Radar equipment, airborne"
+5_transportation_and_logistics,"Radar equipment, except airborne"
+5_transportation_and_logistics,"Radar equipment, except airborne, production design"
 11_defence,Radar technology (r&d)
 11_defence,"Radio and television communications data and telemetry equipment, airborne"
 11_defence,"Radio and television communications equipment, airborne"
 11_defence,"Radio and television communications equipment, except airborne"
-11_defence,"Radio navigation equipment, airborne"
-11_defence,"Radio navigation equipment, except airborne"
+5_transportation_and_logistics,"Radio navigation equipment, airborne"
+5_transportation_and_logistics,"Radio navigation equipment, except airborne"
 11_defence,Radio television services
 11_defence,"Radio transceivers and transmitter-receiver, hf (except airborne)"
 11_defence,Ranges
-11_defence,Refrigeration systems and components (marine)
+5_transportation_and_logistics,Refrigeration systems and components (marine)
 11_defence,"Rigid wall shelters, portable (military application)"
 11_defence,Road motor vehicles - military
 11_defence,Road motor vehicles-military
 11_defence,"Rockets, rocket ammunition and rocket components"
-11_defence,"Shears, hand, workshop tools"
-11_defence,Ship and boat propulsion components
-11_defence,Ship and marine
-11_defence,Ship and marine miscellaneous equipment - repair
-11_defence,Ship mooring services
-11_defence,Shipboard alarm and signal systems
-11_defence,Ships and vessels - non destructive testing
-11_defence,"Ships and vessels - sand blasting, repainting, and refinishing"
-11_defence,"Ships and vessels deck coverings - repair, overhaul, and maintenance"
-11_defence,Small craft
+6_industrial_products_and_services,"Shears, hand, workshop tools"
+5_transportation_and_logistics,Ship and boat propulsion components
+5_transportation_and_logistics,Ship and marine
+5_transportation_and_logistics,Ship and marine miscellaneous equipment - repair
+5_transportation_and_logistics,Ship mooring services
+5_transportation_and_logistics,Shipboard alarm and signal systems
+5_transportation_and_logistics,Ships and vessels - non destructive testing
+5_transportation_and_logistics,"Ships and vessels - sand blasting, repainting, and refinishing"
+5_transportation_and_logistics,"Ships and vessels deck coverings - repair, overhaul, and maintenance"
+5_transportation_and_logistics,Small craft
 11_defence,Specialized ammunition handling and servicing equipment
 11_defence,Studs
 11_defence,Submarines
 11_defence,Tanks and tracked self-propelled weapons and vehicles w/wo amphibian capabilities
 11_defence,"Tires and tubes, pneumatic, aircraft"
-11_defence,"Tractors, wheeled, aircraft towing"
-11_defence,"Trucks and truck tractors, wheeled - repair"
+5_transportation_and_logistics,"Tractors, wheeled, aircraft towing"
+5_transportation_and_logistics,"Trucks and truck tractors, wheeled - repair"
 11_defence,Underwater sound equipment
 11_defence,Underwater sound equipment - repair
 11_defence,Unmanned aircraft
-11_defence,"Vehicular components, miscellaneous"
-11_defence,"Vessels, miscellaneous"
+5_transportation_and_logistics,"Vehicular components, miscellaneous"
+5_transportation_and_logistics,"Vessels, miscellaneous"
 11_defence,"Weapons maintenance and repair shop specialized equipment, excludes airborne weapons maintenance and repair shop equipment"
 11_defence,Weapons systems specific vehicular accessories
-2_professional_services,0230 voice communications services (inc analog/digital voice comm services)
-2_professional_services,0230 voice communications services (includes analog and/or digital voice communication services)
+3_information_technology,0230 voice communications services (inc analog/digital voice comm services)
+3_information_technology,0230 voice communications services (includes analog and/or digital voice communication services)
 2_professional_services,0301 – advertising services
 2_professional_services,0301 advertising services
 2_professional_services,0311 - publishing / design services
@@ -1112,7 +1112,7 @@ category,d_description_en
 2_professional_services,0499 – other professional services not elsewhere specified - facilitation services
 2_professional_services,0499 – other professional services not elsewhere specified - independent reviewer services
 2_professional_services,0499 – other professional services not elsewhere specified - insurance services
-2_professional_services,0499 – other professional services not elsewhere specified - it facilitator
+3_information_technology,0499 – other professional services not elsewhere specified - it facilitator
 2_professional_services,0499 – other professional services not elsewhere specified - senior procurement specialist
 2_professional_services,0499 other professional servcs
 2_professional_services,0499 other professional servcs - consultant
@@ -1130,10 +1130,10 @@ category,d_description_en
 2_professional_services,0499 other professional services - consultant
 2_professional_services,0499 other professional services - investigative services
 2_professional_services,0499 other professional services not elsewhere specified
-2_professional_services,"0584 - license/maintenance fees for operating system and utility software related to servers, storage, peripherals and components"
+3_information_technology,"0584 - license/maintenance fees for operating system and utility software related to servers, storage, peripherals and components"
 2_professional_services,0813 - temporary help services
 2_professional_services,0813 – temporary help services - advanced project administrator
-2_professional_services,0813 – temporary help services - wireless telecommunication analyst
+3_information_technology,0813 – temporary help services - wireless telecommunication analyst
 2_professional_services,0813 temp help services
 2_professional_services,0813 temporary help services
 2_professional_services,0859 – other business services not elsewhere specified - catering services
@@ -1174,7 +1174,7 @@ category,d_description_en
 2_professional_services,2017-2018 car fleet insurance
 2_professional_services,"3053 – communications services including design of graphics, art work, media relations"
 2_professional_services,4073 other business services
-2_professional_services,A&e services gen non-const.
+1_facilities_and_construction,A&e services gen non-const.
 2_professional_services,Access to information and privacy consultant for the review and processing of atip requests. This contract was competitively sourced. This contract includes an amendment. The original contract was reported when it was awarded
 2_professional_services,Access to s&p global information resources: crtc-wide licence to access the kagan platform
 2_professional_services,Accounting & audit services
@@ -1189,8 +1189,8 @@ category,d_description_en
 2_professional_services,Accounting and audit services - internal audit services
 2_professional_services,Accounting and audit services - internal controls audit
 2_professional_services,Accounting and audit services - internal controls audit services
-2_professional_services,Accounting and audit services - it security audit
-2_professional_services,Accounting and audit services - it security audit services
+3_information_technology,Accounting and audit services - it security audit
+3_information_technology,Accounting and audit services - it security audit services
 2_professional_services,Accounting and audit services - quality assurance specialist
 2_professional_services,Accounting and audit services (internal audit services)
 2_professional_services,Accounting and audit services (purchased from outs
@@ -1234,13 +1234,13 @@ category,d_description_en
 2_professional_services,Amendment to increase total value
 2_professional_services,Analysis of economic shortfall/surplus from tv production
 2_professional_services,Annual report
-2_professional_services,Application software
+3_information_technology,Application software
 2_professional_services,Archaeological/paleontological services
 2_professional_services,Assessment of potentially contaminated sites
 2_professional_services,Assistance to immigrants and refugees
 2_professional_services,Atip services
 2_professional_services,Audience segmentation market research report
-2_professional_services,Audio technica pro42 microphones
+3_information_technology,Audio technica pro42 microphones
 2_professional_services,Audio visual production services
 2_professional_services,Audit services
 2_professional_services,"Audit services, not elsewhere specified"
@@ -1266,11 +1266,11 @@ category,d_description_en
 2_professional_services,Certification and accreditation-medical training
 2_professional_services,Certifications and accreditations for products and institutions other than educational institutions
 2_professional_services,Chaplain services miscellaneous
-2_professional_services,Checkpoint firewall installation and configuration - proservices - amd 002
-2_professional_services,Chemical analysis instruments - repair and overhaul
+3_information_technology,Checkpoint firewall installation and configuration - proservices - amd 002
+6_industrial_products_and_services,Chemical analysis instruments - repair and overhaul
 2_professional_services,Chief audit executive - pass-sa - amd 001
 2_professional_services,Classification consultant services
-2_professional_services,Cloud technology
+3_information_technology,Cloud technology
 2_professional_services,Collection agency fees and charges
 2_professional_services,Comm. Prof. Services
 2_professional_services,Comm. prof. services not elsewhere specified
@@ -1317,8 +1317,8 @@ category,d_description_en
 2_professional_services,"Communications research services services such as: public environmental research and analysis, marketing research, communications evaluation (attitude surveys, opinion polls, focus groups, service assessment surveys, media analysis and other activities related to researching and analyzing the public environment)."
 2_professional_services,Communications services
 2_professional_services,Communications services - communication strategies and workshop facilitation services
-2_professional_services,Communications services - education website maintenance
-2_professional_services,Communications services - website maintenance and support services
+3_information_technology,Communications services - education website maintenance
+3_information_technology,Communications services - website maintenance and support services
 2_professional_services,"Communications services including design of graphics, art work, media relations"
 2_professional_services,Compensation consultant
 2_professional_services,Computer assisted learning
@@ -1367,15 +1367,15 @@ category,d_description_en
 2_professional_services,Data entry person - senior - ths
 2_professional_services,Data entry services
 2_professional_services,Data visualization initiative coordinator
-2_professional_services,Database administrator services
+3_information_technology,Database administrator services
 2_professional_services,Demolition work
 2_professional_services,Design and layout of annual report
 2_professional_services,Design of school group flyers
 2_professional_services,Development of methodology
-2_professional_services,Diesel fuel
+5_transportation_and_logistics,Diesel fuel
 2_professional_services,Digital client services strategy
 2_professional_services,"Digital maps, charts and geodetic products"
-2_professional_services,Driver training
+9_human_capital,Driver training
 2_professional_services,Editing services
 2_professional_services,Education and training services
 2_professional_services,Educational services - adp training
@@ -1383,18 +1383,18 @@ category,d_description_en
 2_professional_services,Educational services-business training
 2_professional_services,"Educational services, n.e.s."
 2_professional_services,Educational studies
-2_professional_services,Electromagnetic technology (r&d)
+6_industrial_products_and_services,Electromagnetic technology (r&d)
 2_professional_services,Electronic map production using existing and new data.
 2_professional_services,Electronic subscriptions and electronic publications
 2_professional_services,End-to-end learning services (excludes cots training)
-2_professional_services,Engineering (r&d)
+1_facilities_and_construction,Engineering (r&d)
 2_professional_services,Engineering consultants - other - advanced technology vehicle mileage
-2_professional_services,Engineering studies
-2_professional_services,"Engines, gasoline - repair and overhaul (except aircraft)"
+1_facilities_and_construction,Engineering studies
+5_transportation_and_logistics,"Engines, gasoline - repair and overhaul (except aircraft)"
 2_professional_services,English teacher
 2_professional_services,Environmental impact studies
-2_professional_services,Environmental professional consulting services - real property related
-2_professional_services,Environmental site investigation
+1_facilities_and_construction,Environmental professional consulting services - real property related
+1_facilities_and_construction,Environmental site investigation
 2_professional_services,Ergonomic services
 2_professional_services,Evaluation & performance measurement services
 2_professional_services,Events planning and management
@@ -1416,21 +1416,21 @@ category,d_description_en
 2_professional_services,Financial management services - senior independent financial advisor
 2_professional_services,Financial/procurement suppot and coaching services
 2_professional_services,First aid training courses
-2_professional_services,Fixed wing aircraft - airplane charter
-2_professional_services,"Floor plate, steel, double deck"
+5_transportation_and_logistics,Fixed wing aircraft - airplane charter
+6_industrial_products_and_services,"Floor plate, steel, double deck"
 2_professional_services,Freebalance fix
 2_professional_services,Funeral services
 2_professional_services,General office help
-2_professional_services,Glass or glass products
+6_industrial_products_and_services,Glass or glass products
 2_professional_services,Graphic and exhibit design
 2_professional_services,Graphic design services
 2_professional_services,Graphic design services - including website
-2_professional_services,Ground effect vehicles - rental
+5_transportation_and_logistics,Ground effect vehicles - rental
 2_professional_services,Guarding minds at work
 2_professional_services,Harassment (investigative services)
 2_professional_services,Harassment investigation
-2_professional_services,Health and welfare services
-2_professional_services,Helmets (personal armour)
+4_medical,Health and welfare services
+6_industrial_products_and_services,Helmets (personal armour)
 2_professional_services,Hr assistant - junior
 2_professional_services,"Human resource services, business consulting/change management; project management services"
 2_professional_services,Human resources consultant
@@ -1443,20 +1443,20 @@ category,d_description_en
 2_professional_services,"Hydrographic maps, charts and geodetic products"
 2_professional_services,Implementation of a strategic plan for the collection and publication of evidence on the communications sector in canada.
 2_professional_services,Information products - media & entertainment module
-2_professional_services,Information technology consultants
-2_professional_services,Information/records management specialist
+3_information_technology,Information technology consultants
+3_information_technology,Information/records management specialist
 2_professional_services,Installation and modifications to workstations
 2_professional_services,Insurance associated risk management
 2_professional_services,Insurance services
 2_professional_services,Internal and external audits (supply arrangement pass)
 2_professional_services,Internal audit - pass
 2_professional_services,Interpretation services
-2_professional_services,Intrusion testing
+3_information_technology,Intrusion testing
 2_professional_services,Inuktitut language training - nunavut
 2_professional_services,Inventory taking methodology
 2_professional_services,"Investigative services, public servant disclosure protection act (psdpa)"
-2_professional_services,It consultants
-2_professional_services,It enterprise infrastructure review
+3_information_technology,It consultants
+3_information_technology,It enterprise infrastructure review
 2_professional_services,Knowledge management consultant - proservices
 2_professional_services,"Labour, moving or installation services"
 2_professional_services,Language schooling
@@ -1471,8 +1471,8 @@ category,d_description_en
 2_professional_services,Legal services/litigation/lawyers
 2_professional_services,Les services professionnels de communication non s
 2_professional_services,Library subscriptions
-2_professional_services,License and maintenance fees for application software
-2_professional_services,Maintenance agreement - pc software
+3_information_technology,License and maintenance fees for application software
+3_information_technology,Maintenance agreement - pc software
 2_professional_services,Management consultants
 2_professional_services,Management consulting
 2_professional_services,Management consulting - alternative dispute resolution services
@@ -1533,15 +1533,15 @@ category,d_description_en
 2_professional_services,Map production: digital mapping
 2_professional_services,Marine management
 2_professional_services,Marine training
-2_professional_services,Materiel management
+5_transportation_and_logistics,Materiel management
 2_professional_services,Media coaching for the employees
 2_professional_services,Media control systems
 2_professional_services,Media monitoring - amendment to increase the value
 2_professional_services,Media monitoring services
-2_professional_services,Military logistics (research)
-2_professional_services,"Mining, rock drilling, earth boring and associated equipment - repair"
+11_defence,Military logistics (research)
+6_industrial_products_and_services,"Mining, rock drilling, earth boring and associated equipment - repair"
 2_professional_services,Miscellaneous
-2_professional_services,Miscellaneous engines and components - repair
+5_transportation_and_logistics,Miscellaneous engines and components - repair
 2_professional_services,Miscellaneous items (includes only those items of goods which cannot conceivably be classified in any existing classes).
 2_professional_services,Miscellaneous non-tax revenue
 2_professional_services,Monitoring
@@ -1551,7 +1551,7 @@ category,d_description_en
 2_professional_services,Newswire services
 2_professional_services,O-professional services not elsewhere specified
 2_professional_services,Occupational health and safety training services
-2_professional_services,Office furniture and equipment moving & storage
+10_office_management,Office furniture and equipment moving & storage
 2_professional_services,One-on-one executive coaching
 2_professional_services,Online news database
 2_professional_services,Operation of the national do not call list
@@ -1574,8 +1574,8 @@ category,d_description_en
 2_professional_services,"Other business services not elsewhere specified business services which cannot be classified under any other object code under the object other services in standard object 04. It includes forestry, agricultural, and surveying and mapping services not classified elsewhere, and services such as court reporting, library, cultural and photography services, storage and warehousing, etc. It excludes printing services as well as printed matter or publications. Notes: 1. Printing or publishing services will be classified in standard object 03, while those for printed matter or publications will be classified in standard object 07."
 2_professional_services,"Other business services not elsewhere specified, except thos"
 2_professional_services,Other business services not elsewhere specified.
-2_professional_services,Other equipment and parts
-2_professional_services,Other health services not elsewhere specified
+6_industrial_products_and_services,Other equipment and parts
+4_medical,Other health services not elsewhere specified
 2_professional_services,Other prof serv not othrws spi
 2_professional_services,Other prof. Services
 2_professional_services,Other professional serv. Not elsewhere specified
@@ -1595,8 +1595,8 @@ category,d_description_en
 2_professional_services,Other professional services not elsewhere specified - alternative dispute resolution services
 2_professional_services,Other professional services not elsewhere specified - alternative dispute solution consultant
 2_professional_services,Other professional services not elsewhere specified - audio visual services
-2_professional_services,Other professional services not elsewhere specified - business analyst
-2_professional_services,Other professional services not elsewhere specified - business analysts
+3_information_technology,Other professional services not elsewhere specified - business analyst
+3_information_technology,Other professional services not elsewhere specified - business analysts
 2_professional_services,Other professional services not elsewhere specified - business consulting services level 3
 2_professional_services,Other professional services not elsewhere specified - business system analyst
 2_professional_services,Other professional services not elsewhere specified - change management consultant - workplace renewal
@@ -1633,7 +1633,7 @@ category,d_description_en
 2_professional_services,Other professional services not elsewhere specified - insurance services
 2_professional_services,Other professional services not elsewhere specified - investigation services
 2_professional_services,Other professional services not elsewhere specified - investigative services
-2_professional_services,Other professional services not elsewhere specified - it technical writer
+3_information_technology,Other professional services not elsewhere specified - it technical writer
 2_professional_services,Other professional services not elsewhere specified - job description writing services
 2_professional_services,Other professional services not elsewhere specified - managed contact centre services
 2_professional_services,"Other professional services not elsewhere specified - meeting preparation, design and facilitation services"
@@ -1672,8 +1672,8 @@ category,d_description_en
 2_professional_services,Other professional services not elsewhere specified - survey result analyst
 2_professional_services,Other professional services not elsewhere specified - survey services
 2_professional_services,Other professional services not elsewhere specified - team building and individual coaching services
-2_professional_services,Other professional services not elsewhere specified - technical advisor
-2_professional_services,Other professional services not elsewhere specified - technical architect
+3_information_technology,Other professional services not elsewhere specified - technical advisor
+3_information_technology,Other professional services not elsewhere specified - technical architect
 2_professional_services,Other professional services not elsewhere specified - tools development for staffing processes
 2_professional_services,Other professional services not elsewhere specified - workshop development services
 2_professional_services,Other professional services not elsewhere specified - writing and editing services
@@ -1709,7 +1709,7 @@ category,d_description_en
 2_professional_services,Professional services / program research analysis
 2_professional_services,Professional services for a strategic advisor
 2_professional_services,Professional services not elsewhere specified
-2_professional_services,"Professional services, telecommunications"
+3_information_technology,"Professional services, telecommunications"
 2_professional_services,Professional writer
 2_professional_services,Program review services
 2_professional_services,Programming services
@@ -1724,8 +1724,8 @@ category,d_description_en
 2_professional_services,Proservices - hr policy development consultant - senior
 2_professional_services,Proservices - human resources consultant - senior
 2_professional_services,Proservices - organizational design classification consultant
-2_professional_services,Proservices - programmer analyst - amd 001
-2_professional_services,Proservices - programmer analyst - amd 002
+3_information_technology,Proservices - programmer analyst - amd 001
+3_information_technology,Proservices - programmer analyst - amd 002
 2_professional_services,Proservices business specialist
 2_professional_services,Proservices for staffing consultant
 2_professional_services,Proservices operation support specialist
@@ -1746,17 +1746,17 @@ category,d_description_en
 2_professional_services,"Qualitative research assignment to identify the communications outreach strategies of large telecommunication service providers to persons with disabilities, seniors, and youth"
 2_professional_services,Regulatory studies
 2_professional_services,Relocation services
-2_professional_services,Rental of ships
-2_professional_services,"Replenishable field medical sets, kits, and outfits"
+5_transportation_and_logistics,Rental of ships
+4_medical,"Replenishable field medical sets, kits, and outfits"
 2_professional_services,Research and development - book for federal court's 50th
 2_professional_services,Research contract
 2_professional_services,Research contracts
 2_professional_services,Research contracts (specify)
 2_professional_services,Review and development of executive job descriptions
 2_professional_services,Review of northern project mangement office standard operating procedures
-2_professional_services,Road motor vehicles
-2_professional_services,Safety training courses
-2_professional_services,Sas compatible with window 10 pro services
+5_transportation_and_logistics,Road motor vehicles
+9_human_capital,Safety training courses
+3_information_technology,Sas compatible with window 10 pro services
 2_professional_services,Satellite data processing and related services
 2_professional_services,Scientific consultants
 2_professional_services,Scientific consultants (specify)
@@ -1789,7 +1789,7 @@ category,d_description_en
 2_professional_services,Shredding services
 2_professional_services,Shredding services - pink road
 2_professional_services,Signage design and installation
-2_professional_services,Simulated phishing program - proservices
+3_information_technology,Simulated phishing program - proservices
 2_professional_services,Social studies and humanities
 2_professional_services,Sound testing - sparks
 2_professional_services,Speech writing services
@@ -1802,13 +1802,13 @@ category,d_description_en
 2_professional_services,Subscriptions
 2_professional_services,Surveying services
 2_professional_services,Suspense account (debit) - other government departments
-2_professional_services,"System design, development and testing: science and technology related (r&d)"
+3_information_technology,"System design, development and testing: science and technology related (r&d)"
 2_professional_services,Systems and statistical analysis
-2_professional_services,Tbips - programmer/analyst - intermediate - amd 002
+3_information_technology,Tbips - programmer/analyst - intermediate - amd 002
 2_professional_services,Technical / vocational training
-2_professional_services,Technical architect
+3_information_technology,Technical architect
 2_professional_services,Technical writing services
-2_professional_services,Telecommunications network services
+3_information_technology,Telecommunications network services
 2_professional_services,Temp help services
 2_professional_services,Temporary help services - administrative
 2_professional_services,Temporary help services - advanced project administrator
@@ -1831,7 +1831,7 @@ category,d_description_en
 2_professional_services,Temporary help services - professional services - access to information and privacy (atip) - senior
 2_professional_services,Temporary help services - project administration planning
 2_professional_services,Temporary help services - project administrator
-2_professional_services,Temporary help services - senior wireless telecom analyst
+3_information_technology,Temporary help services - senior wireless telecom analyst
 2_professional_services,Temporary help services - store services personnel
 2_professional_services,"Temporary help services acquired for general office help, secretarial, stenographic, technical or other temporary help, etc."
 2_professional_services,"Temporary help services, general office support"
@@ -1865,24 +1865,24 @@ category,d_description_en
 2_professional_services,Translation services services for language translation.
 2_professional_services,Translation/revision services
 2_professional_services,Translation/revision services - call-up
-2_professional_services,"Truck, forklift"
-2_professional_services,"Vehicles, wheeled, standard military pattern - repair and overhaul"
-2_professional_services,"Vehicular components, miscellaneous - repair"
+5_transportation_and_logistics,"Truck, forklift"
+5_transportation_and_logistics,"Vehicles, wheeled, standard military pattern - repair and overhaul"
+5_transportation_and_logistics,"Vehicular components, miscellaneous - repair"
 2_professional_services,Veterinary services
 2_professional_services,Video production services
 2_professional_services,Vocational and psychometric testing
-2_professional_services,Voice comm serv incl analog/digital
-2_professional_services,Voice communication services
-2_professional_services,Voice communications services
-2_professional_services,Voice communications services (includes analog and/or digital voice communication services)
-2_professional_services,"Voice communications services voice communications services charged by service providers (including common carriers), such as local telephone service, long-distance service, cellular services, teleconferences, wide area telephone service (wats) or 800 services, telephone directories, local circuits, dedicated intercity circuits and credit card services. It includes line, equipment and usage charges directly associated with providing these services, as well as installation and relocation charges, but excludes equipment purchased or rented from a third party. It includes enhanced voice services such as voice messaging service. Notes: 1. Charges for smart phone (e.g. Blackberry) usage that combine voice and data services are to be classified under object 0231."
+3_information_technology,Voice comm serv incl analog/digital
+3_information_technology,Voice communication services
+3_information_technology,Voice communications services
+3_information_technology,Voice communications services (includes analog and/or digital voice communication services)
+3_information_technology,"Voice communications services voice communications services charged by service providers (including common carriers), such as local telephone service, long-distance service, cellular services, teleconferences, wide area telephone service (wats) or 800 services, telephone directories, local circuits, dedicated intercity circuits and credit card services. It includes line, equipment and usage charges directly associated with providing these services, as well as installation and relocation charges, but excludes equipment purchased or rented from a third party. It includes enhanced voice services such as voice messaging service. Notes: 1. Charges for smart phone (e.g. Blackberry) usage that combine voice and data services are to be classified under object 0231."
 2_professional_services,Water quality studies
 2_professional_services,Weather reporting/observation services
-2_professional_services,Web design - marketing & corporate branding
+3_information_technology,Web design - marketing & corporate branding
 2_professional_services,"Winches, hoists, cranes and derricks"
 2_professional_services,Word processing services
 2_professional_services,Work climate analysis
-2_professional_services,World wide web www site design services
+3_information_technology,World wide web www site design services
 2_professional_services,"Writing (copy writing, tech writing, editorial, translation manual, musicology)"
 2_professional_services,"Writing services (including, editing, adaptation, etc.)"
 3_information_technology,0231 data communications services (inc analog & digital data communication services)

@@ -31,64 +31,6 @@ option_remove_derived_columns <- TRUE
 
 # Data import ===================================
 
-# Define column types for each column in the contracts dataset
-# Y/N values are converted to TRUE/FALSE further below
-contract_col_types <- cols(
-  
-  reference_number = col_character(),
-  procurement_id = col_character(),
-  vendor_name = col_character(),
-  vendor_postal_code = col_character(),
-  buyer_name = col_character(),
-  
-  contract_date = col_date(),
-  
-  economic_object_code = col_character(),
-  description_en = col_character(),
-  description_fr = col_character(),
-  
-  contract_period_start = col_date(),
-  delivery_date = col_date(),
-  
-  contract_value = col_number(),
-  original_value = col_number(),
-  amendment_value = col_number(),
-  
-  comments_en = col_character(),
-  comments_fr = col_character(),
-  additional_comments_en = col_character(),
-  additional_comments_fr = col_character(),
-  
-  agreement_type_code = col_character(),
-  trade_agreement = col_character(),
-  land_claims = col_character(),
-  commodity_type = col_factor(),
-  commodity_code = col_character(),
-  country_of_vendor = col_character(),
-  solicitation_procedure = col_factor(),
-  limited_tendering_reason = col_character(),
-  trade_agreement_exceptions = col_character(),
-  aboriginal_business = col_character(),
-  aboriginal_business_incidental = col_character(), # Y/N
-  intellectual_property = col_character(),
-  potential_commercial_exploitation = col_character(), # Y/N
-  former_public_servant = col_character(), # Y/N
-  contracting_entity = col_character(),
-  standing_offer_number = col_character(),
-  instrument_type = col_factor(),
-  ministers_office = col_character(), # Y/N
-  number_of_bids = col_number(),
-  article_6_exceptions = col_character(),
-  award_criteria = col_character(),
-  socioeconomic_indicator = col_character(),
-  reporting_period = col_character(),
-  
-  owner_org = col_character(),
-  owner_org_title = col_character(),
-  
-)
-
-
 # Download the contracts csv file, list it for today (if not already downloaded) and then parse it:
 if(option_download_remotely) {
   print("Downloading remotely (if not already downloaded today)")
@@ -280,19 +222,39 @@ contracts <- contracts %>%
 
 # Note: these left joins create several versions of the same row, in cases where multiple category options match. Be sure to use distinct() as needed in subsequent cases before tallying up totals.
 
-# Use the category derived from economic object code, if it exists
-# Otherwise use the category derived from the description field.
-# TODO: Confirm if this order should be adjusted (e.g. prioritize description over economic object code).
+# Update: use the category from the (edge cases) vendor + economic object code override.
+# Then, use the description field.
+# Then, use economic object codes.
 contracts <- contracts %>%
   mutate(
     category = NA_character_,
     category = case_when(
       !is.na(category_by_vendor_and_economic_object_code) ~ category_by_vendor_and_economic_object_code,
-      !is.na(category_by_economic_object_code) ~ category_by_economic_object_code,
       !is.na(category_by_description) ~ category_by_description,
+      !is.na(category_by_economic_object_code) ~ category_by_economic_object_code,
       TRUE ~ NA_character_
     )
   )
+
+
+# Specific handling for Department of National Defence
+# Because Transportation & Logistics and Information Technology have a
+# significant amount of overlap in economic object codes used between
+# civilian and military applications, we'll bulk update each of these
+# categories to "11_defence" for DND specifically.
+
+# Note: this isn't indicated in any other columns; it may be worth
+# adding a "category_by_departmental_override" column as a reminder
+# why these categories are what they are.
+contracts <- contracts %>%
+  mutate(
+    category = case_when(
+      owner_org == "dnd-mdn" & category == "3_information_technology" ~ "11_defence",
+      owner_org == "dnd-mdn" & category == "5_transportation_and_logistics" ~ "11_defence",
+      TRUE ~ category
+    )
+  )
+
 
 # Temp: get descriptions and object codes
 # Note: this only includes descriptions with at least 10 entries.
@@ -1003,3 +965,101 @@ paste("End time was:", run_end_time)
 #   distinct() %>% 
 #   arrange(owner_org) %>% 
 #   write_csv(str_c("data/testing/tmp-", today(), "-owner-orgs.csv"))
+
+# Testing (2022-08-01)
+
+# vendor_name_to_look_up <- "L3HARRIS"
+# 
+# contract_spending_overall %>%
+#   filter(d_vendor_name == vendor_name_to_look_up) %>%
+#   select(owner_org, d_amendment_group_id, d_overall_contract_value, d_overall_start_date, d_overall_end_date, d_most_recent_category, d_most_recent_description_en) %>%
+#   arrange(desc(d_overall_contract_value)) %>%
+#   distinct() %>%
+#   View()
+# 
+# contracts %>%
+#   filter(d_amendment_group_id == "csa-asc-C-2017-2018-Q1-00001") %>%
+#   View()
+# 
+# 
+# economic_object_code_name_to_look_up <- "1244"
+# 
+# contracts %>%
+#   filter(d_economic_object_code == economic_object_code_name_to_look_up) %>%
+#   arrange(desc(contract_value)) %>%
+#   select(owner_org, d_vendor_name, contract_value, d_description_en, comments_en, additional_comments_en, d_start_date, d_end_date, d_amendment_group_id, procurement_id, original_value, d_economic_object_code, starts_with("category")) %>%
+#   View()
+# 
+# contracts %>%
+#   filter(d_vendor_name == vendor_name_to_look_up) %>%
+#   select(owner_org, d_vendor_name, procurement_id, reference_number, contract_value, d_description_en, comments_en, additional_comments_en, d_start_date, d_end_date, d_amendment_group_id, original_value, d_economic_object_code, starts_with("category")) %>%
+#   arrange(desc(contract_value)) %>%
+#   distinct() %>%
+#   View()
+# 
+# contract_spending_overall %>%
+#   filter(owner_org == "tc") %>%
+#   filter(category == "11_defence") %>%
+#   select(owner_org, d_amendment_group_id, d_overall_contract_value, d_overall_start_date, d_overall_end_date, d_most_recent_category, d_most_recent_description_en) %>%
+#     arrange(desc(d_overall_contract_value)) %>%
+#     distinct() %>%
+#   View()
+# 
+# contracts %>%
+#   filter(d_amendment_group_id == "tc-TC-2012-2013-Q2-02004") %>%
+#   View()
+# 
+# example_contracts <- contracts %>%
+#   filter(owner_org %in% c("tc", "dnd-mdn")) %>%
+#   slice_sample(n = 20)
+# 
+# example_contracts %>%
+#   View()
+# 
+# example_contracts %>%
+#   mutate(
+#     category = case_when(
+#       owner_org == "dnd-mdn" & category == "3_information_technology" ~ "11_defence",
+#       owner_org == "dnd-mdn" & category == "5_transportation_and_logistics" ~ "11_defence",
+#       TRUE ~ category
+#     )
+#   ) %>%
+#   View()
+
+# Testing (2022-08-02)
+
+# Review percentages per category
+
+# summary_categories$summary_overall_total_by_vendor_by_category_2017_to_2020[[5]]
+# 
+# total_it <- summary_overall %>% filter(summary_type == "all") %>% pull(summary_overall_by_category_2017_to_2020) %>% first() %>% filter(d_most_recent_category == "3_information_technology") %>% pull(total)
+# 
+# summary_categories$summary_overall_total_by_vendor_by_category_2017_to_2020[[5]] %>% slice(1:10) %>% pull(overall_total) %>% sum() / total_it
+# 
+# 
+# # More vendor/category exploration
+# vendor_name_to_look_up <- "ROGERS"
+# 
+# contract_spending_overall %>%
+#   filter(d_vendor_name == vendor_name_to_look_up) %>%
+#   select(owner_org, d_amendment_group_id, d_overall_contract_value, d_overall_start_date, d_overall_end_date, d_most_recent_category, d_most_recent_description_en) %>%
+#   arrange(desc(d_overall_contract_value)) %>%
+#   distinct() %>%
+#   View()
+# 
+# # ssc-spc-C-2017-2018-Q1-00615
+# # ssc-spc-C-2019-2020-Q1-00179
+# # esdc-edsc-C-2022-2023-Q1-00335
+# 
+# 
+# contracts %>%
+#   filter(d_amendment_group_id == "esdc-edsc-C-2022-2023-Q1-00335") %>%
+#   View()
+# 
+# economic_object_code_name_to_look_up <- "0491"
+# 
+# contracts %>%
+#   filter(d_economic_object_code == economic_object_code_name_to_look_up) %>%
+#   arrange(desc(contract_value)) %>%
+#   select(owner_org, d_vendor_name, contract_value, d_description_en, comments_en, additional_comments_en, d_start_date, d_end_date, d_amendment_group_id, procurement_id, original_value, d_economic_object_code, starts_with("category")) %>%
+#   View()

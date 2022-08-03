@@ -1,5 +1,5 @@
 economic_object_code,d_vendor_name,category
-0859,SERCO,1_facilities_and_construction
+859,SERCO,1_facilities_and_construction
 3251,MICRO FOCUS CANADA,3_information_technology
 3252,ROGERS,3_information_technology
 3253,MONERIS,3_information_technology
@@ -15,3 +15,5 @@ economic_object_code,d_vendor_name,category
 7029,NOVA SCOTIA POWER,1_facilities_and_construction
 7099,AQUATIC INFORMATICS,3_information_technology
 7099,AXYS TECHNOLOGIES,3_information_technology
+199,MACDONALD DETTWILER AND ASSOCIATES,2_professional_services
+664,L3HARRIS,11_defence

@@ -92,10 +92,10 @@ single_clean_vendor_names <- function(vendor_name) {
 }
 
 # Handle occasional side cases where a suffix re-appears earlier in the name, leading to an inconsistency with the vendor matching table
-# This does two cleanup passes over the same input vendor name.
+# This does three (!) cleanup passes over the same input vendor name.
 # It's ...really efficient. 
 clean_vendor_names <- function(vendor_name) {
-  return(single_clean_vendor_names(single_clean_vendor_names(vendor_name)))
+  return(single_clean_vendor_names(single_clean_vendor_names(single_clean_vendor_names(vendor_name))))
 }
 
 # Import the CSV file

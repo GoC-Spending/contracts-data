@@ -14,6 +14,7 @@ tmp/
 
 # OS stuff
 .DS_Store
+.~lock.*
 
 # Big `contracts.csv`
 data/contracts.csv
