@@ -222,16 +222,16 @@ contracts <- contracts %>%
 
 # Note: these left joins create several versions of the same row, in cases where multiple category options match. Be sure to use distinct() as needed in subsequent cases before tallying up totals.
 
-# Update: use the category from the (edge cases) vendor + economic object code override.
-# Then, use the description field.
+# Update 2: use the category from the (edge cases) vendor + economic object code override.
 # Then, use economic object codes.
+# Then, use the description field.
 contracts <- contracts %>%
   mutate(
     category = NA_character_,
     category = case_when(
       !is.na(category_by_vendor_and_economic_object_code) ~ category_by_vendor_and_economic_object_code,
-      !is.na(category_by_description) ~ category_by_description,
       !is.na(category_by_economic_object_code) ~ category_by_economic_object_code,
+      !is.na(category_by_description) ~ category_by_description,
       TRUE ~ NA_character_
     )
   )
