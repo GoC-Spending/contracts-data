@@ -1063,3 +1063,13 @@ paste("End time was:", run_end_time)
 #   arrange(desc(contract_value)) %>%
 #   select(owner_org, d_vendor_name, contract_value, d_description_en, comments_en, additional_comments_en, d_start_date, d_end_date, d_amendment_group_id, procurement_id, original_value, d_economic_object_code, starts_with("category")) %>%
 #   View()
+
+# Testing (2022-08-11)
+
+# economic_object_code_name_to_look_up <- "2035"
+# 
+# contracts %>%
+#   filter(d_economic_object_code == str_pad(economic_object_code_name_to_look_up, 4, side = "left", pad = "0")) %>%
+#   arrange(desc(contract_value)) %>%
+#   select(owner_org, vendor_name, contract_value, d_description_en, comments_en, additional_comments_en, procurement_id, original_value, d_economic_object_code) %>%
+#   View()
