@@ -3,7 +3,7 @@
 1,494,0493 Interpretation services,2_professional_services
 2,473,0473 Information Technology and Telecommunications Consultants,3_information_technology
 3,492,0492 Research Contracts,2_professional_services
-4,859,0859 Other business services not elsewhere specified,
+4,859,0859 Other business services not elsewhere specified,2_professional_services
 5,447,0447 Tuition fees and costs of attending courses including semina,9_human_capital
 6,351,Communications professional services not elsewhere specified,2_professional_services
 7,499,Other professional services not elsewhere specified,2_professional_services
@@ -25,7 +25,7 @@
 23,332,Audio-visual services,3_information_technology
 24,1223,"Image/Video communications equipment (includes telepresence/video conferencing equipment, cabling, parts and peripherals)",3_information_technology
 25,361,Electronic subscriptions and electronic publications,9_human_capital
-26,859,Other business services not elsewhere specified,
+26,859,Other business services not elsewhere specified,2_professional_services
 27,1249,Other equipment and Parts,6_industrial_products_and_services
 28,1283,Computer equipment related to Distributed Computing Environment (DCE) - Desktop/personal/portable (includes all related parts and peripherals),3_information_technology
 29,533,"Rental of machinery, office furniture and fixtures and other equipment",10_office_management
