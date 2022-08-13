@@ -18,4 +18,4 @@ tmp/
 
 # Big `contracts.csv`
 data/contracts.csv
-categorisation/rule_based_contracts.csv
+categorisation/rule_based_contracts_v1.csv
