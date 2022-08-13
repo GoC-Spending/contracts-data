@@ -9,6 +9,7 @@ output_vendor_path <- "data/out/vendors/"
 output_department_path <- "data/out/departments/"
 output_category_path <- "data/out/categories/"
 output_overall_path <- "data/out/overall/"
+output_meta_path <- "data/out/meta/"
 
 option_round_totals_digits <- 2
 option_round_percentages_digits <- 4

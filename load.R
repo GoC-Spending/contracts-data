@@ -523,6 +523,31 @@ summary_categories <- summary_categories %>%
     summary_total_by_owner_org_and_fiscal_year_by_category = map(category, get_summary_total_by_owner_org_and_fiscal_year_by_category),
   )
 
+# Meta tables of vendors, categories, and depts ====
+
+meta_vendors <- tibble(name = top_n_vendors)
+
+meta_vendors <- meta_vendors %>%
+  mutate(
+    filepath = get_vendor_filename_from_vendor_name(name)
+  )
+
+# Note: update this once the names are split into English and French versions
+meta_departments <- owner_org_types %>%
+  rename(
+    name = owner_org_title,
+    filepath = owner_org
+  ) %>%
+  select(name, filepath)
+
+# Note: add friendly names for category labels
+meta_categories <- tibble(name = industry_categories)
+
+meta_categories <- meta_categories %>%
+  filter(!is.na(name)) %>%
+  mutate(
+    filepath = get_vendor_filename_from_vendor_name(name)
+  )
 
 # Export CSV files of summary tables =============
 
@@ -603,6 +628,16 @@ if(option_update_summary_csv_files) {
   export_summary(summary_categories, output_category_path)
   
   
+  # If necessary, create the "meta" folder
+  dir_create(output_meta_path)
+  
+  # Export meta files to that location
+  meta_vendors %>%
+    write_csv(str_c(output_meta_path, "vendors.csv"))
+  meta_departments %>%
+    write_csv(str_c(output_meta_path, "departments.csv"))
+  meta_categories %>%
+    write_csv(str_c(output_meta_path, "categories.csv"))
   
   
   # Note: temporary for manual vendor name normalization work.
