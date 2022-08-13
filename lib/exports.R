@@ -315,10 +315,10 @@ get_summary_overall_total_by_vendor_by_owner <- function(owner_org) {
   
   # Thanks to
   # https://stackoverflow.com/a/46763370/756641
-  # Note: this uses the same overall top_n_vendors calculated previously (based on average annual spending above the summary threshold amount).
+  # Note: this uses the same overall top_n_vendors (now summary_included_vendors) calculated previously (based on average annual spending above the summary threshold amount).
   output <- contract_spending_by_date %>%
     filter(owner_org == !!owner_org) %>%
-    filter(d_vendor_name %in% top_n_vendors) %>%
+    filter(d_vendor_name %in% summary_included_vendors) %>%
     group_by(d_vendor_name) %>%
     summarise(
       overall_total = sum(d_daily_contract_value)
@@ -337,13 +337,14 @@ get_summary_overall_total_by_vendor_by_owner <- function(owner_org) {
 get_summary_total_by_vendor_and_fiscal_year_by_owner <- function(owner_org) {
   
   # Note: update this to re-use the already generated shortlist (based on the annual threshold.)
+  # This shortlist now lives in summary_included_vendors
   # top_n_vendors <- get_summary_overall_total_by_vendor_by_owner(owner_org) %>%
   #   pull(d_vendor_name)
   
   # Then, for those top n vendors, group by fiscal year
   output <- contract_spending_by_date %>%
     filter(owner_org == !!owner_org) %>%
-    filter(d_vendor_name %in% top_n_vendors) %>%
+    filter(d_vendor_name %in% summary_included_vendors) %>%
     group_by(d_vendor_name, d_fiscal_year_short) %>%
     summarise(
       total = sum(d_daily_contract_value)
@@ -501,7 +502,7 @@ get_summary_total_by_vendor_and_fiscal_year_by_category <- function(category) {
   
   output <- contract_spending_by_date %>%
     filter(d_most_recent_category == !!category) %>%
-    filter(d_vendor_name %in% top_n_vendors) %>%
+    filter(d_vendor_name %in% summary_included_vendors) %>%
     group_by(d_vendor_name, d_fiscal_year_short) %>%
     summarise(
       total = sum(d_daily_contract_value)
@@ -540,7 +541,7 @@ get_summary_overall_total_by_vendor_by_category <- function(category) {
   
   output <- contract_spending_by_date %>%
     filter(d_most_recent_category == !!category) %>%
-    filter(d_vendor_name %in% top_n_vendors) %>%
+    filter(d_vendor_name %in% summary_included_vendors) %>%
     group_by(d_vendor_name) %>%
     summarise(
       overall_total = sum(d_daily_contract_value)
