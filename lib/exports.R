@@ -419,7 +419,7 @@ get_summary_total_by_fiscal_year_by_vendor <- function(requested_vendor_name) {
   return(output)
 }
 
-# For each of the top n vendors, get a per-fiscal year breakdown
+# For each of the top n vendors, get a per-fiscal year and per-owner_org breakdown
 get_summary_total_by_fiscal_year_and_owner_org_by_vendor <- function(requested_vendor_name) {
   
   output <- contract_spending_by_date %>%
@@ -433,6 +433,24 @@ get_summary_total_by_fiscal_year_and_owner_org_by_vendor <- function(requested_v
       d_fiscal_year = convert_start_year_to_fiscal_year(d_fiscal_year_short)
     ) %>%
     select(owner_org, d_fiscal_year, total)
+  
+  return(output)
+}
+
+# For each of the top n vendors, get a per-fiscal year and per-category breakdown
+get_summary_total_by_fiscal_year_and_category_by_vendor <- function(requested_vendor_name) {
+  
+  output <- contract_spending_by_date %>%
+    filter(d_vendor_name == !!requested_vendor_name) %>%
+    group_by(d_most_recent_category, d_fiscal_year_short) %>%
+    summarise(
+      total = sum(d_daily_contract_value)
+    ) %>%
+    ungroup() %>%
+    mutate(
+      d_fiscal_year = convert_start_year_to_fiscal_year(d_fiscal_year_short)
+    ) %>%
+    select(d_most_recent_category, d_fiscal_year, total)
   
   return(output)
 }
