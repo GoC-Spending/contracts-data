@@ -378,6 +378,25 @@ get_summary_total_by_category_by_owner_org <- function(owner_org) {
   
 }
 
+# Get a category and fiscal year summary by department or agency
+get_summary_total_by_category_and_fiscal_year <- function(owner_org) {
+  
+  output <- contract_spending_by_date %>%
+    filter(owner_org == !!owner_org) %>%
+    group_by(d_most_recent_category, d_fiscal_year_short) %>%
+    summarise(
+      total = sum(d_daily_contract_value)
+    ) %>%
+    ungroup() %>%
+    mutate(
+      d_fiscal_year = convert_start_year_to_fiscal_year(d_fiscal_year_short)
+    ) %>%
+    select(d_most_recent_category, d_fiscal_year, total)
+  
+  return(output)
+  
+}
+
 # Get a fiscal year overall summary by department or agency
 get_summary_total_by_fiscal_year_by_owner_org <- function(owner_org) {
   

@@ -474,16 +474,17 @@ summary_overall_total_by_category_and_fiscal_year <- contract_spending_by_date %
 # see exports.R for the functions that are used here.
 
 # Create a list-column and provide calculations for each department
-vendors_by_owner_org <- tibble(owner_org = owner_orgs)
+summary_departments <- tibble(owner_org = owner_orgs)
 
 # With thanks to
 # https://jennybc.github.io/purrr-tutorial/index.html
-vendors_by_owner_org <- vendors_by_owner_org %>%
+summary_departments <- summary_departments %>%
     mutate(
-      summary_overall_total_by_vendor = map(owner_org, get_summary_overall_total_by_vendor_by_owner),
+      !!str_c("summary_overall_total_by_vendor", "_", summary_overall_years_file_suffix) := map(owner_org, get_summary_overall_total_by_vendor_by_owner),
       summary_total_by_vendor_and_fiscal_year = map(owner_org, get_summary_total_by_vendor_and_fiscal_year_by_owner),
-      summary_total_by_fiscal_year_by_owner_org = map(owner_org, get_summary_total_by_fiscal_year_by_owner_org),
-      summary_total_by_category_by_owner_org = map(owner_org, get_summary_total_by_category_by_owner_org),
+      summary_total_by_category_and_fiscal_year = map(owner_org, get_summary_total_by_category_and_fiscal_year),
+      summary_total_by_fiscal_year = map(owner_org, get_summary_total_by_fiscal_year_by_owner_org),
+      !!str_c("summary_total_by_category", "_", summary_overall_years_file_suffix) := map(owner_org, get_summary_total_by_category_by_owner_org),
       )
 
 
@@ -586,32 +587,10 @@ if(option_update_summary_csv_files) {
 
   
   # Make per-owner org output directories, if needed
-  create_summary_folders(output_department_path, owner_orgs)
+  create_summary_folders(output_department_path, summary_departments$owner_org)
   
-  # List-based per-owner summaries, from
-  # vendors_by_owner_org
-  summary_overall_total_by_vendor_paths <- str_c(output_department_path, vendors_by_owner_org$owner_org, "/", "summary_overall_total_by_vendor_", summary_overall_years_file_suffix, ".csv")
-  pwalk(list(vendors_by_owner_org$summary_overall_total_by_vendor, summary_overall_total_by_vendor_paths), write_csv)
-  
-  # List-based per-owner, by year summaries
-  # also from vendors_by_owner_org
-  summary_total_by_vendor_and_fiscal_year_paths <- str_c(output_department_path, vendors_by_owner_org$owner_org, "/", "summary_total_by_vendor_and_fiscal_year", ".csv")
-  pwalk(list(vendors_by_owner_org$summary_total_by_vendor_and_fiscal_year, summary_total_by_vendor_and_fiscal_year_paths), write_csv)
-  
-  # Per-fiscal year summaries by owner org
-  pwalk(
-    list(
-      vendors_by_owner_org$summary_total_by_fiscal_year_by_owner_org,
-      str_c(output_department_path, vendors_by_owner_org$owner_org, "/", "summary_total_by_fiscal_year_by_owner_org", ".csv")
-    ), 
-    write_csv)
-  
-  pwalk(
-    list(
-      vendors_by_owner_org$summary_total_by_category_by_owner_org,
-      str_c(output_department_path, vendors_by_owner_org$owner_org, "/", "summary_total_by_category_by_owner_org_", summary_overall_years_file_suffix, ".csv")
-    ), 
-    write_csv)
+  # Export vendor summaries using the reusable function
+  export_summary(summary_departments, output_department_path)
   
   
   # Per-vendor summaries
