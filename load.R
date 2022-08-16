@@ -389,6 +389,7 @@ remove_existing_summary_folders()
 
 
 # Determine which vendors have enough spending (e.g. averaging $1M per year in the time range, as defined in summary_vendor_annual_total_threshold)
+# This replaces top_n_vendors
 summary_included_vendors <- get_summary_included_vendors()
 
 # For overall (government-wide) summaries that will appear on the homepage, first create a list-column with the different summary types (core public service departments, DND, and all departments)
