@@ -330,6 +330,14 @@ owner_orgs <- contracts %>%
   arrange(owner_org) %>%
   pull(owner_org)
 
+owner_org_names <- contracts %>%
+  select(owner_org, owner_org_title) %>%
+  distinct() %>%
+  arrange(owner_org) %>%
+  separate(col = owner_org_title,
+           into = c("owner_org_name_en", "owner_org_name_fr"),
+           sep = " \\| ")
+
 # TODO: Confirm if this is unhelpful later.
 # Removes the original "contracts" object to save on system memory:
 print("Reminder: removing the 'contracts' data frame to save memory.")
@@ -483,22 +491,21 @@ meta_vendors <- meta_vendors %>%
     filepath = get_vendor_filename_from_vendor_name(name)
   )
 
-# Note: update this once the names are split into English and French versions
-meta_departments <- owner_org_types %>%
+meta_departments <- owner_org_names %>%
   rename(
-    name = owner_org_title,
+    name = owner_org_name_en,
     filepath = owner_org
   ) %>%
   select(name, filepath)
 
 # Note: add friendly names for category labels
-meta_categories <- tibble(name = industry_categories)
+meta_categories <- category_labels %>%
+  rename(
+    name = category_name,
+    filepath = original_category
+  ) %>%
+  select(name, filepath)
 
-meta_categories <- meta_categories %>%
-  filter(!is.na(name)) %>%
-  mutate(
-    filepath = get_vendor_filename_from_vendor_name(name)
-  )
 
 # Export CSV files of summary tables =============
 

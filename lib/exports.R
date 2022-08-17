@@ -121,6 +121,9 @@ filter_by_summary_type <- function(input_df, summary_type) {
       pull(owner_org)
     
   } else {
+    # TODO: just return the full input_df here
+    # to avoid filtering out departments that are new since
+    # owner_org_types was generated.
     included_orgs <- owner_org_types %>%
       pull(owner_org)
   }

@@ -47,3 +47,14 @@ vendor_specific_category_matching <- read_csv(
     d_economic_object_code = economic_object_code,
     category_by_vendor_and_economic_object_code = category
   )
+
+
+# Category labels
+
+# A variety of options on how to label categories
+# (with and without leading zeroes, with no numbers, with friendly names, etc.)
+category_labels_file <- "data/categories/category_labels.csv"
+
+category_labels <- read_csv(
+  category_labels_file,
+)
