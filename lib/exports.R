@@ -497,6 +497,29 @@ get_summary_total_by_category_by_vendor <- function(requested_vendor_name) {
   return(output)
 }
 
+get_original_vendor_names <- function(requested_vendor_name, sort_by_value = TRUE) {
+  
+  output <- contracts %>%
+    filter(d_vendor_name == !!requested_vendor_name) %>%
+    select(d_vendor_name, vendor_name, contract_value) %>%
+    arrange(desc(contract_value)) %>%
+    select(d_vendor_name, vendor_name) %>%
+    distinct() %>%
+    rename(
+      normalized_vendor_name = "d_vendor_name",
+      original_vendor_name= "vendor_name"
+    )
+  
+  if(! sort_by_value) {
+    output %>%
+      arrange(original_vendor_name)
+  }
+  else {
+    output
+  }
+  
+}
+
 
 # Category summary functions ====================
 
