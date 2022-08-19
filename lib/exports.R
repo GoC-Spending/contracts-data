@@ -30,7 +30,7 @@ owner_org_types <- read_csv(
 exports_round_totals <- function(input_df) {
   input_df <- input_df %>%
     mutate(
-      across(ends_with("total"), ~ round(.x, digits = !!option_round_totals_digits))
+      across(ends_with("total"), ~ format(round(.x, digits = !!option_round_totals_digits), nsmall = !!option_round_totals_digits))
     )
   
   return(input_df)
