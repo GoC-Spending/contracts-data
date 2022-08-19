@@ -326,7 +326,8 @@ get_summary_overall_total_by_vendor_by_owner <- function(owner_org) {
     summarise(
       overall_total = sum(d_daily_contract_value)
     ) %>%
-    arrange(desc(overall_total))
+    arrange(desc(overall_total)) %>%
+    exports_round_totals()
   
   return(output)
   
@@ -356,7 +357,8 @@ get_summary_total_by_vendor_and_fiscal_year_by_owner <- function(owner_org) {
     mutate(
       d_fiscal_year = convert_start_year_to_fiscal_year(d_fiscal_year_short)
     ) %>%
-    select(d_vendor_name, d_fiscal_year, total)
+    select(d_vendor_name, d_fiscal_year, total) %>%
+    exports_round_totals()
   
   return(output)
   
@@ -376,7 +378,8 @@ get_summary_total_by_category_by_owner_org <- function(owner_org) {
     mutate(
       percentage = total / sum(total)
     ) %>%
-    arrange(desc(total))
+    arrange(desc(total)) %>%
+    exports_round_totals()
   
   return(output)
   
@@ -395,7 +398,8 @@ get_summary_total_by_category_and_fiscal_year <- function(owner_org) {
     mutate(
       d_fiscal_year = convert_start_year_to_fiscal_year(d_fiscal_year_short)
     ) %>%
-    select(d_most_recent_category, d_fiscal_year, total)
+    select(d_most_recent_category, d_fiscal_year, total) %>%
+    exports_round_totals()
   
   return(output)
   
@@ -414,7 +418,8 @@ get_summary_total_by_fiscal_year_by_owner_org <- function(owner_org) {
     mutate(
       d_fiscal_year = convert_start_year_to_fiscal_year(d_fiscal_year_short)
     ) %>%
-    select(d_fiscal_year, total)
+    select(d_fiscal_year, total) %>%
+    exports_round_totals()
   
   return(output)
   
@@ -437,7 +442,8 @@ get_summary_total_by_fiscal_year_by_vendor <- function(requested_vendor_name) {
     mutate(
       d_fiscal_year = convert_start_year_to_fiscal_year(d_fiscal_year_short)
     ) %>%
-    select(d_fiscal_year, total)
+    select(d_fiscal_year, total) %>%
+    exports_round_totals()
   
   return(output)
 }
@@ -455,7 +461,8 @@ get_summary_total_by_fiscal_year_and_owner_org_by_vendor <- function(requested_v
     mutate(
       d_fiscal_year = convert_start_year_to_fiscal_year(d_fiscal_year_short)
     ) %>%
-    select(owner_org, d_fiscal_year, total)
+    select(owner_org, d_fiscal_year, total) %>%
+    exports_round_totals()
   
   return(output)
 }
@@ -473,7 +480,8 @@ get_summary_total_by_fiscal_year_and_category_by_vendor <- function(requested_ve
     mutate(
       d_fiscal_year = convert_start_year_to_fiscal_year(d_fiscal_year_short)
     ) %>%
-    select(d_most_recent_category, d_fiscal_year, total)
+    select(d_most_recent_category, d_fiscal_year, total) %>%
+    exports_round_totals()
   
   return(output)
 }
@@ -492,7 +500,8 @@ get_summary_total_by_category_by_vendor <- function(requested_vendor_name) {
     mutate(
       percentage = total / sum(total)
     ) %>%
-    arrange(desc(total))
+    arrange(desc(total)) %>%
+    exports_round_totals()
   
   return(output)
 }
