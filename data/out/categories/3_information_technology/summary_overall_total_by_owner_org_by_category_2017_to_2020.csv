@@ -1,88 +1,88 @@
 owner_org,overall_total
 ssc-spc,6126831482.45
-cbsa-asfc,762119027.39
-rcmp-grc,699062671.35
-pwgsc-tpsgc,575618264.84
-esdc-edsc,546069993.44
-cic,377415121.72
-dfatd-maecd,324928167.38
-hc-sc,315483452.59
-ic,252621077.59
-dfo-mpo,227790079.56
-aafc-aac,214146083.38
-elections,195351885.99
-csc-scc,176709531.76
-tbs-sct,162951378.52
-tc,142103058.86
-nrcan-rncan,134788375.15
-nrc-cnrc,108209119.59
-vac-acc,89781516.32
-statcan,85642537.68
-cfia-acia,80948638.23
-ec,79769705.5
-jus,73305847.86
-osfi-bsif,72630765.23
-pco-bcp,63342822.35
-cer-rec,52598934.43
-pc,50955745.23
-aandc-aadnc,42599806.32
-phac-aspc,41320505.24
-isc-sac,37036080.16
-infc,36948039.46
-pch,34179285.69
-nserc-crsng,33891548.62
-crtc,29385401.57
-nfb-onf,28226523.62
-cnsc-ccsn,27101315.47
-cas-satj,26529791.13
-lac-bac,26476186.04
-csa-asc,26289706.35
-atssc-scdata,24449638.84
-ps-sp,23982614.9
-irb-cisr,19046896.3
-csps-efpc,18873361.4
-oag-bvg,18586618.9
-psc-cfp,18221994.58
-osgg-bsgg,17279417.3
-fin,15858345.07
-cihr-irsc,15508106.15
-opc-cpvp,12011997.84
-fcac-acfc,9346860.79
-acoa-apeca,8125039.44
-ced-dec,6337085.57
-fja-cmf,5611053.46
-cgc-ccg,5339076.78
-cta-otc,5308234.2
-ocol-clo,5260607.95
-chrc-ccdp,4979529.42
-tsb-bst,4405928.67
-fintrac-canafe,4024646.52
-iaac-aeic,3555469.27
-wage,3247112.66
-cpc-cpp,2716707.95
-ocl-cal,2505964.27
-oic-ci,2323277.04
-pbc-clcc,1527048.83
-ijc-cmi,1450791.59
-pmprb-cepmb,1387781.1
-wd-deo,1268422.68
-mgerc-ceegm,1049646.38
-sirc-csars,1039356.46
-swc-cfc,1029941.29
-feddevontario,887532.94
-nsira-ossnr,856261.25
-psic-ispc,824754
-ccohs-cchst,683063.79
-vrab-tacra,651123.22
-sshrc-crsh,550010.38
-cics-scic,528569.65
-oci-bec,292784.97
-cannor,281335.23
-nbc-ccbn,233220
-mpcc-cppm,231659.75
-casdo-ocena,73814.96
-polar-polaire,66614.17
-fpcc-cpac,36507
-iic-iac,21470.23
-cra-arc,NA
-ppsc-sppc,NA
+cbsa-asfc, 762119027.39
+rcmp-grc, 699062671.35
+pwgsc-tpsgc, 575618264.84
+esdc-edsc, 546069993.44
+cic, 377415121.72
+dfatd-maecd, 324928167.38
+hc-sc, 315483452.59
+ic, 252621077.59
+dfo-mpo, 227790079.56
+aafc-aac, 214146083.38
+elections, 195351885.99
+csc-scc, 176709531.76
+tbs-sct, 162951378.52
+tc, 142103058.86
+nrcan-rncan, 134788375.15
+nrc-cnrc, 108209119.59
+vac-acc,  89781516.32
+statcan,  85642537.68
+cfia-acia,  80948638.23
+ec,  79769705.50
+jus,  73305847.86
+osfi-bsif,  72630765.23
+pco-bcp,  63342822.35
+cer-rec,  52598934.43
+pc,  50955745.23
+aandc-aadnc,  42599806.32
+phac-aspc,  41320505.24
+isc-sac,  37036080.16
+infc,  36948039.46
+pch,  34179285.69
+nserc-crsng,  33891548.62
+crtc,  29385401.57
+nfb-onf,  28226523.62
+cnsc-ccsn,  27101315.47
+cas-satj,  26529791.13
+lac-bac,  26476186.04
+csa-asc,  26289706.35
+atssc-scdata,  24449638.84
+ps-sp,  23982614.90
+irb-cisr,  19046896.30
+csps-efpc,  18873361.40
+oag-bvg,  18586618.90
+psc-cfp,  18221994.58
+osgg-bsgg,  17279417.30
+fin,  15858345.07
+cihr-irsc,  15508106.15
+opc-cpvp,  12011997.84
+fcac-acfc,   9346860.79
+acoa-apeca,   8125039.44
+ced-dec,   6337085.57
+fja-cmf,   5611053.46
+cgc-ccg,   5339076.78
+cta-otc,   5308234.20
+ocol-clo,   5260607.95
+chrc-ccdp,   4979529.42
+tsb-bst,   4405928.67
+fintrac-canafe,   4024646.52
+iaac-aeic,   3555469.27
+wage,   3247112.66
+cpc-cpp,   2716707.95
+ocl-cal,   2505964.27
+oic-ci,   2323277.04
+pbc-clcc,   1527048.83
+ijc-cmi,   1450791.59
+pmprb-cepmb,   1387781.10
+wd-deo,   1268422.68
+mgerc-ceegm,   1049646.38
+sirc-csars,   1039356.46
+swc-cfc,   1029941.29
+feddevontario,    887532.94
+nsira-ossnr,    856261.25
+psic-ispc,    824754.00
+ccohs-cchst,    683063.79
+vrab-tacra,    651123.22
+sshrc-crsh,    550010.38
+cics-scic,    528569.65
+oci-bec,    292784.97
+cannor,    281335.23
+nbc-ccbn,    233220.00
+mpcc-cppm,    231659.75
+casdo-ocena,     73814.96
+polar-polaire,     66614.17
+fpcc-cpac,     36507.00
+iic-iac,     21470.23
+cra-arc,           NA
+ppsc-sppc,           NA
