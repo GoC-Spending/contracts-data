@@ -516,7 +516,7 @@ if(option_update_summary_csv_files) {
   # Make per-owner org output directories, if needed
   create_summary_folders(output_department_path, summary_departments$owner_org)
   
-  # Export vendor summaries using the reusable function
+  # Export department summaries using the reusable function
   export_summary(summary_departments, output_department_path)
   
   
@@ -531,7 +531,7 @@ if(option_update_summary_csv_files) {
   # Make directories if needed
   create_summary_folders(output_category_path, summary_categories$category)
   
-  # Export vendor summaries using the reusable function
+  # Export category summaries using the reusable function
   export_summary(summary_categories, output_category_path)
   
   
