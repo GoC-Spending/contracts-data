@@ -13,7 +13,7 @@ paste("Start time:", run_start_time)
 
 # Summary parameters (used below)
 summary_start_fiscal_year_short <- 2017
-summary_end_fiscal_year_short <- 2020
+summary_end_fiscal_year_short <- 2021
 summary_vendor_annual_total_threshold <- 1000000
 
 # Note: to be deprecated
