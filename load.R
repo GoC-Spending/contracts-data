@@ -478,9 +478,10 @@ summary_categories = tibble(category = industry_categories) %>%
 summary_categories <- summary_categories %>%
   mutate(
     !!str_c("summary_by_vendor_overall", "_", summary_overall_years_file_suffix) := map(category, get_summary_overall_total_by_vendor_by_category),
+    summary_by_fiscal_year = map(category, get_summary_total_by_fiscal_year_by_category),
     summary_by_fiscal_year_by_vendor = map(category, get_summary_total_by_vendor_and_fiscal_year_by_category),
     !!str_c("summary_by_department_overall", "_", summary_overall_years_file_suffix) := map(category, get_summary_overall_total_by_owner_org_by_category),
-    summary_by_fiscal_year_by_department = map(category, get_summary_total_by_owner_org_and_fiscal_year_by_category),
+    summary_by_fiscal_year_by_department = map(category, get_summary_total_by_fiscal_year_by_category),
   )
 
 # Meta tables of vendors, categories, and depts ====

@@ -572,6 +572,25 @@ get_summary_total_by_owner_org_and_fiscal_year_by_category <- function(category)
   
 }
 
+get_summary_total_by_fiscal_year_by_category <- function(category) {
+  
+  output <- contract_spending_by_date %>%
+    filter(d_most_recent_category == !!category) %>%
+    group_by(d_fiscal_year_short) %>%
+    summarise(
+      total = sum(d_daily_contract_value, na.rm = TRUE)
+    ) %>%
+    ungroup() %>%
+    mutate(
+      d_fiscal_year = convert_start_year_to_fiscal_year(d_fiscal_year_short)
+    ) %>%
+    select(d_fiscal_year, total) %>%
+    exports_round_totals()
+  
+  return(output)
+  
+}
+
 get_summary_overall_total_by_vendor_by_category <- function(category) {
   
   output <- contract_spending_by_date %>%
