@@ -407,12 +407,12 @@ summary_overall = tibble(summary_type = c("core", "dnd", "all"))
 # plus filename labels for these that indicate the time range
 summary_overall <- summary_overall %>%
   mutate(
-    summary_overall_by_fiscal_year_by_vendor = map(summary_type, get_summary_overall_by_fiscal_year_by_vendor),
-    summary_overall_by_fiscal_year_by_category = map(summary_type, get_summary_overall_by_fiscal_year_by_category),
-    summary_overall_by_fiscal_year_by_owner_org = map(summary_type, get_summary_overall_by_fiscal_year_by_owner_org),
-    !!str_c("summary_overall_by_vendor", "_", summary_overall_years_file_suffix) := map(summary_type, get_summary_overall_by_vendor),
-    !!str_c("summary_overall_by_category", "_", summary_overall_years_file_suffix) := map(summary_type, get_summary_overall_by_category),
-    !!str_c("summary_overall_by_owner_org", "_", summary_overall_years_file_suffix) := map(summary_type, get_summary_overall_by_owner_org),
+    summary_by_fiscal_year_by_vendor = map(summary_type, get_summary_overall_by_fiscal_year_by_vendor),
+    summary_by_fiscal_year_by_category = map(summary_type, get_summary_overall_by_fiscal_year_by_category),
+    summary_by_fiscal_year_by_department = map(summary_type, get_summary_overall_by_fiscal_year_by_owner_org),
+    !!str_c("summary_by_vendor_overall", "_", summary_overall_years_file_suffix) := map(summary_type, get_summary_overall_by_vendor),
+    !!str_c("summary_by_category_overall", "_", summary_overall_years_file_suffix) := map(summary_type, get_summary_overall_by_category),
+    !!str_c("summary_by_department_overall", "_", summary_overall_years_file_suffix) := map(summary_type, get_summary_overall_by_owner_org),
   )
 
 # Make output directories, if needed
@@ -437,11 +437,11 @@ summary_departments <- tibble(owner_org = owner_orgs)
 # https://jennybc.github.io/purrr-tutorial/index.html
 summary_departments <- summary_departments %>%
     mutate(
-      !!str_c("summary_overall_total_by_vendor", "_", summary_overall_years_file_suffix) := map(owner_org, get_summary_overall_total_by_vendor_by_owner),
-      summary_total_by_vendor_and_fiscal_year = map(owner_org, get_summary_total_by_vendor_and_fiscal_year_by_owner),
-      summary_total_by_category_and_fiscal_year = map(owner_org, get_summary_total_by_category_and_fiscal_year),
-      summary_total_by_fiscal_year = map(owner_org, get_summary_total_by_fiscal_year_by_owner_org),
-      !!str_c("summary_total_by_category", "_", summary_overall_years_file_suffix) := map(owner_org, get_summary_total_by_category_by_owner_org),
+      !!str_c("summary_by_vendor_overall", "_", summary_overall_years_file_suffix) := map(owner_org, get_summary_overall_total_by_vendor_by_owner),
+      summary_by_fiscal_year_by_vendor = map(owner_org, get_summary_total_by_vendor_and_fiscal_year_by_owner),
+      summary_by_fiscal_year_by_category = map(owner_org, get_summary_total_by_category_and_fiscal_year),
+      summary_by_fiscal_year = map(owner_org, get_summary_total_by_fiscal_year_by_owner_org),
+      !!str_c("summary_by_category_overall", "_", summary_overall_years_file_suffix) := map(owner_org, get_summary_total_by_category_by_owner_org),
       )
 
 
@@ -454,9 +454,9 @@ summary_vendors = tibble(vendor = summary_included_vendors)
 summary_vendors <- summary_vendors %>%
   mutate(
     summary_by_fiscal_year = map(vendor, get_summary_total_by_fiscal_year_by_vendor),
-    summary_by_fiscal_year_and_owner_org = map(vendor, get_summary_total_by_fiscal_year_and_owner_org_by_vendor),
-    summary_total_by_fiscal_year_and_category_by_vendor = map(vendor, get_summary_total_by_fiscal_year_and_category_by_vendor),
-    !!str_c("summary_by_category", "_", summary_overall_years_file_suffix) := map(vendor, get_summary_total_by_category_by_vendor),
+    summary_by_fiscal_year_by_department = map(vendor, get_summary_total_by_fiscal_year_and_owner_org_by_vendor),
+    summary_by_fiscal_year_by_category = map(vendor, get_summary_total_by_fiscal_year_and_category_by_vendor),
+    !!str_c("summary_by_category_overall", "_", summary_overall_years_file_suffix) := map(vendor, get_summary_total_by_category_by_vendor),
     original_vendor_names = map(vendor, get_original_vendor_names)
   )
 
@@ -477,10 +477,10 @@ summary_categories = tibble(category = industry_categories) %>%
 
 summary_categories <- summary_categories %>%
   mutate(
-    !!str_c("summary_overall_total_by_vendor_by_category", "_", summary_overall_years_file_suffix) := map(category, get_summary_overall_total_by_vendor_by_category),
-    summary_total_by_vendor_and_fiscal_year_by_category = map(category, get_summary_total_by_vendor_and_fiscal_year_by_category),
-    !!str_c("summary_overall_total_by_owner_org_by_category", "_", summary_overall_years_file_suffix) := map(category, get_summary_overall_total_by_owner_org_by_category),
-    summary_total_by_owner_org_and_fiscal_year_by_category = map(category, get_summary_total_by_owner_org_and_fiscal_year_by_category),
+    !!str_c("summary_by_vendor_overall", "_", summary_overall_years_file_suffix) := map(category, get_summary_overall_total_by_vendor_by_category),
+    summary_by_fiscal_year_by_vendor = map(category, get_summary_total_by_vendor_and_fiscal_year_by_category),
+    !!str_c("summary_by_department_overall", "_", summary_overall_years_file_suffix) := map(category, get_summary_overall_total_by_owner_org_by_category),
+    summary_by_fiscal_year_by_department = map(category, get_summary_total_by_owner_org_and_fiscal_year_by_category),
   )
 
 # Meta tables of vendors, categories, and depts ====
