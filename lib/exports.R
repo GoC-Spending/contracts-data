@@ -412,7 +412,7 @@ get_summary_total_by_fiscal_year_by_owner_org <- function(owner_org) {
     filter(owner_org == !!owner_org) %>%
     group_by(d_fiscal_year_short) %>%
     summarise(
-      total = sum(d_daily_contract_value)
+      total = sum(d_daily_contract_value, na.rm = TRUE)
     ) %>%
     ungroup() %>%
     mutate(
@@ -436,7 +436,7 @@ get_summary_total_by_fiscal_year_by_vendor <- function(requested_vendor_name) {
     filter(d_vendor_name == !!requested_vendor_name) %>%
     group_by(d_fiscal_year_short) %>%
     summarise(
-      total = sum(d_daily_contract_value)
+      total = sum(d_daily_contract_value, na.rm = TRUE)
     ) %>%
     ungroup() %>%
     mutate(
