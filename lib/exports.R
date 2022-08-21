@@ -72,6 +72,9 @@ remove_existing_summary_folders <- function() {
     if(dir_exists(output_overall_path)) {
       dir_delete(output_overall_path)
     }
+    if(dir_exists(output_category_path)) {
+      dir_delete(output_category_path)
+    }
   } else {
     print("Not removing existing summary folders.")
   }
