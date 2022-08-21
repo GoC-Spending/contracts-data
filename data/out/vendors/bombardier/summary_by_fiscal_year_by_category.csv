@@ -1,4 +1,5 @@
 d_most_recent_category,d_fiscal_year,total
+0_other,2020-2021,0.00
 10_office_management,2017-2018,317196.45
 10_office_management,2018-2019,221447.56
 10_office_management,2019-2020,89429.97
@@ -16,4 +17,3 @@ d_most_recent_category,d_fiscal_year,total
 5_transportation_and_logistics,2020-2021,1180279.03
 5_transportation_and_logistics,2021-2022,1945.99
 6_industrial_products_and_services,2019-2020,14150.75
-NA,2020-2021,0.00

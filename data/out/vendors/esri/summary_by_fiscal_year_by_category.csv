@@ -1,4 +1,9 @@
 d_most_recent_category,d_fiscal_year,total
+0_other,2017-2018,150935.51
+0_other,2018-2019,133972.80
+0_other,2019-2020,23526.60
+0_other,2020-2021,104122.59
+0_other,2021-2022,47182.11
 1_facilities_and_construction,2017-2018,340380.82
 1_facilities_and_construction,2021-2022,682611.45
 10_office_management,2018-2019,160613.68
@@ -26,8 +31,3 @@ d_most_recent_category,d_fiscal_year,total
 9_human_capital,2019-2020,141135.12
 9_human_capital,2020-2021,10069.17
 9_human_capital,2021-2022,60121.36
-NA,2017-2018,150935.51
-NA,2018-2019,133972.80
-NA,2019-2020,23526.60
-NA,2020-2021,104122.59
-NA,2021-2022,47182.11

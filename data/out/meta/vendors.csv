@@ -60,8 +60,8 @@ UNITED STATES DEPARTMENT OF THE NAVY,united_states_department_of_the_navy
 IBISKA TELECOM,ibiska_telecom
 PARSONS CANADA,parsons_canada
 FTI PROFESSIONAL GRADE,fti_professional_grade
-CGI,cgi
 TERAMACH TECHNOLOGIES,teramach_technologies
+CGI,cgi
 GARTNER,gartner
 SUN LIFE ASSURANCE COMPANY,sun_life_assurance_company
 LOGISTIK UNICORP,logistik_unicorp
@@ -79,7 +79,7 @@ DONNA CONA,donna_cona
 ADGA GROUP,adga_group
 COLLIERS PROJECT LEADERS,colliers_project_leaders
 SYSTEMATIX SOLUTIONS,systematix_solutions
-MEDAVIE BLUE CROSS,medavie_blue_cross
+MEDAVIE,medavie
 SUPERMAX HEALTHCARE CANADA,supermax_healthcare_canada
 WEATHERHAVEN CANADA,weatherhaven_canada
 VIRTUAL POSSIBILITIES DIVISION,virtual_possibilities_division
@@ -98,12 +98,12 @@ RANDSTAD,randstad
 SHELL CANADA PRODUCTS,shell_canada_products
 STONEWORKS TECHNOLOGIES,stoneworks_technologies
 SPARTAN BIOSCIENCE,spartan_bioscience
-MEDAVIE,medavie
 WORLD FUEL SERVICES,world_fuel_services
 UNITED STATES DEPARTMENT OF THE AIR FORCE,united_states_department_of_the_air_force
 SAAB,saab
 INSA,insa
 PMG TECHNOLOGIES,pmg_technologies
+DYNACARE,dynacare
 MINDWIRE SYSTEMS,mindwire_systems
 HOLMAN FENWICK WILLAN,holman_fenwick_willan
 MONERIS,moneris
@@ -111,7 +111,7 @@ CUBIC DEFENSE APPLICATIONS,cubic_defense_applications
 ITEX,itex
 ATCO,atco
 ATLANTIC TOWING,atlantic_towing
-DYNACARE GAMMA LABORATORY,dynacare_gamma_laboratory
+JOHN HOWARD SOCIETY,john_howard_society
 ADVANCED CHIPPEWA TECHNOLOGIES,advanced_chippewa_technologies
 ALTIS HUMAN RESOURCES,altis_human_resources
 SC2 0 STEPPED CARE SOLUTIONS,sc2_0_stepped_care_solutions
@@ -130,7 +130,6 @@ ZAYO CANADA,zayo_canada
 CACHE COMPUTER CONSULTING,cache_computer_consulting
 COMPUTER ASSOCIATES CANADA,computer_associates_canada
 ISOPLEX,isoplex
-JOHN HOWARD SOCIETY,john_howard_society
 CANADIAN RED CROSS,canadian_red_cross
 THE STEVENS COMPANY,the_stevens_company
 KPMG,kpmg
@@ -155,15 +154,16 @@ LEONARDO,leonardo
 MILESTONE ENVIRONMENTAL,milestone_environmental
 TIREE,tiree
 FEDERAL EXPRESS CANADA,federal_express_canada
+ERNST YOUNG,ernst_young
 AMERESCO CANADA,ameresco_canada
 BLACK MCDONALD,black_mcdonald
 TES CONTRACT SERVICES,tes_contract_services
+GARDA SECURITY GROUP,garda_security_group
 IRON MOUNTAIN,iron_mountain
 TELECOM COMPUTER SERVICES,telecom_computer_services
 ECLIPSYS SOLUTIONS,eclipsys_solutions
 DELL COMPUTER,dell_computer
 SIMEX DEFENCE,simex_defence
-ERNST YOUNG,ernst_young
 SCA SHIPPING CONSULTANTS ASSOCIATED,sca_shipping_consultants_associated
 FFG,ffg
 HIKE METAL PRODUCTS,hike_metal_products
@@ -171,11 +171,13 @@ COWATERSOGEMA,cowatersogema
 QUANTUM MANAGEMENT SERVICES,quantum_management_services
 BROOKFIELD ASSET MANAGEMENT,brookfield_asset_management
 EBC,ebc
+AEG FUELS,aeg_fuels
 XEROX,xerox
 ONX ENTERPRISE SOLUTIONS,onx_enterprise_solutions
 QINETIQ,qinetiq
 ENGLOBE,englobe
 OPENTEXT,opentext
+BELL TEXTRON,bell_textron
 ABB,abb
 TOSHIBA CANADA,toshiba_canada
 BMC SOFTWARE CANADA,bmc_software_canada
@@ -194,7 +196,6 @@ PALADIN GROUP,paladin_group
 BABCOCK INTERNATIONAL GROUP,babcock_international_group
 GC STRATEGIES,gc_strategies
 HEDDLE MARINE SERVICES,heddle_marine_services
-BELL TEXTRON,bell_textron
 GRAYBRIDGE INTERNATIONAL CONSULTING,graybridge_international_consulting
 WOOLLY MAMMOTH OUTERWEAR,woolly_mammoth_outerwear
 FCA CANADA,fca_canada
@@ -224,13 +225,13 @@ CONSTRUCTION DEMATHIEU BARD,construction_demathieu_bard
 SELEX,selex
 BARGREEN ELLINGSON,bargreen_ellingson
 UNITED STATES DEPARTMENT OF THE ARMY,united_states_department_of_the_army
-GARDA CANADA SECURITY,garda_canada_security
 THE BOEING COMPANY,the_boeing_company
 LIONBRIDGE,lionbridge
 ADVANCED BUSINESS INTERIORS,advanced_business_interiors
 TALIGENT CONSULTING,taligent_consulting
 BMT FLEET TECHNOLOGY,bmt_fleet_technology
 HAMEL CONSTRUCTION,hamel_construction
+ELBIT SYSTEMS,elbit_systems
 SANTE MONTFORT,sante_montfort
 SIERRA SYSTEMS GROUP,sierra_systems_group
 INDUSTRIES OCEAN,industries_ocean
@@ -247,11 +248,15 @@ QMR,qmr
 "NASITTUQ",nasittuq
 "NAV CANADA",nav_canada
 RAYMOND CHABOT GRANT THORNTON,raymond_chabot_grant_thornton
+MLS OVERSEAS,mls_overseas
 FRASER RIVER PILE DREDGE GP O,fraser_river_pile_dredge_gp_o
 BIRON GROUPE SANTE,biron_groupe_sante
+MAXIM 2000,maxim_2000
 WINMAR CANADA INTERNATIONAL,winmar_canada_international
 WAJAX,wajax
+QM ENVIRONMENTAL,qm_environmental
 CONSTRUCTION LFG,construction_lfg
+TOYOTA,toyota
 LOUIS W BRAY CONSTRUCTION,louis_w_bray_construction
 DRAGAGE OCEAN DSM,dragage_ocean_dsm
 BDO CANADA,bdo_canada
@@ -268,7 +273,6 @@ GDI SERVICES,gdi_services
 JONELJIM CONCRETE CONSTRUCTION,joneljim_concrete_construction
 EMS TECHNOLOGIES,ems_technologies
 JOSEPH RIBKOFF,joseph_ribkoff
-AEG FUELS,aeg_fuels
 ARCHITECTURE 49,architecture_49
 J STERLING INDUSTRIES,j_sterling_industries
 MCNALLY CONSTRUCTION,mcnally_construction
@@ -286,12 +290,14 @@ AMAZON,amazon
 GRAHAM CONSTRUCTION,graham_construction
 BOMBARDIER,bombardier
 BRIDGES OF CANADA,bridges_of_canada
+ABBOTT,abbott
 GREATER TORONTO AIRPORT AUTHORITY,greater_toronto_airport_authority
 LES ENTREPRISES P E C,les_entreprises_p_e_c
 MICHAEL WAGER CONSULTING,michael_wager_consulting
 NUNA EAST,nuna_east
 INDUSTRA CONSTRUCTION,industra_construction
 GATESTONE,gatestone
+MCKINSEY AND COMPANY,mckinsey_and_company
 MGIS,mgis
 ZODIAC HURRICANE TECHNOLOGIES,zodiac_hurricane_technologies
 TRM TECHNOLOGIES,trm_technologies
@@ -300,14 +306,13 @@ TETRA TECH,tetra_tech
 KYNDRYL CANADA,kyndryl_canada
 STRYKER CANADA,stryker_canada
 CBCI TELECOM,cbci_telecom
+BUREAU VERITAS CANADA,bureau_veritas_canada
 SOUTHWEST RESEARCH INSTITUTE,southwest_research_institute
 GROUPE GEYSER,groupe_geyser
 SMITHS DETECTION,smiths_detection
 DILLON CONSULTING,dillon_consulting
 DATA COMMUNICATIONS MANAGEMENT,data_communications_management
-TOYOTA CANADA,toyota_canada
 FELIX TECHNOLOGY,felix_technology
-MLS OVERSEAS,mls_overseas
 VERREAULT NAVIGATION,verreault_navigation
 MTS ALLSTREAM,mts_allstream
 DECAREL,decarel
@@ -320,24 +325,20 @@ GEORGE COUREY,george_courey
 KNAPPETT INDUSTRIES,knappett_industries
 KONGSBERG,kongsberg
 BAYSHORE HEALTHCARE,bayshore_healthcare
-ELBIT SYSTEMS EW AND SIGINT ELISRA,elbit_systems_ew_and_sigint_elisra
 ARCHITECTURE EVOQ,architecture_evoq
 JOSEPH ELIE,joseph_elie
 VANCOUVER DRYDOCK COMPANY,vancouver_drydock_company
 TRANSWEST AIR,transwest_air
 CON PRO INDUSTRIES CANADA,con_pro_industries_canada
 ADOBE,adobe
-ABBOTT RAPID DIAGNOSTICS,abbott_rapid_diagnostics
 AGRITEAM CANADA,agriteam_canada
 SANEXEN SERVICES ENVIRONMENTAUX,sanexen_services_environmentaux
 SANI SABLE LB,sani_sable_lb
 SCANSA CONSTRUCTION,scansa_construction
 CANADIAN BUREAU FOR INTERNATIONAL EDUCATION,canadian_bureau_for_international_education
 9053 9776 QUEBEC,9053_9776_quebec
-MAXIM 2000,maxim_2000
 SOUCY INTERNATIONAL,soucy_international
 KUDLIK CONSTRUCTION,kudlik_construction
-BUREAU VERITAS CANADA,bureau_veritas_canada
 ULTRA ELECTRONICS,ultra_electronics
 CA,ca
 EMERGENT BIOSOLUTIONS,emergent_biosolutions
@@ -354,16 +355,18 @@ SIEMENS,siemens
 ROSCOE CONSTRUCTION,roscoe_construction
 JANKEL TACTICAL SYSTEMS,jankel_tactical_systems
 CONSTRUCTION CYBCO,construction_cybco
+PRECISIONIT,precisionit
 EMCON SERVICES,emcon_services
 EXXONMOBIL,exxonmobil
 ORANGUTECH,orangutech
 BRONSWERK MARINE,bronswerk_marine
-MCKINSEY AND COMPANY,mckinsey_and_company
 AVONDALE CONSTRUCTION,avondale_construction
 MARINE RECYCLING,marine_recycling
+NOTRA,notra
 WILCO CONTRACTORS SOUTHWEST,wilco_contractors_southwest
 FRANNAN INTERNATIONAL,frannan_international
 EBSCO CANADA,ebsco_canada
+HARNOIS ENERGIES,harnois_energies
 ATWILL MORIN,atwill_morin
 SYSTEMSCOPE,systemscope
 QUINAN CONSTRUCTION,quinan_construction
@@ -371,6 +374,7 @@ ARCADIS CANADA,arcadis_canada
 ILLUMINA CANADA,illumina_canada
 WORLD UNIVERSITY SERVICE OF CANADA,world_university_service_of_canada
 METOCEAN TELEMATICS,metocean_telematics
+FAIRBANKS MORSE ENGINE,fairbanks_morse_engine
 JOHNSON S CONSTRUCTION,johnson_s_construction
 TITAN AEX,titan_aex
 BUTTCON EAST,buttcon_east
@@ -405,7 +409,6 @@ J 1 CONTRACTING,j_1_contracting
 PANASONIC,panasonic
 MACKINNON AND OLDING,mackinnon_and_olding
 TORONTO STAMP,toronto_stamp
-AEG,aeg
 MOORE CANADA,moore_canada
 PEERLESS GARMENTS,peerless_garments
 LAURENTIAN TECHNOLOGIES,laurentian_technologies
@@ -417,6 +420,7 @@ MAXIMUS CANADA,maximus_canada
 COREBUILD CONSTRUCTION,corebuild_construction
 WOOD CANADA,wood_canada
 FVB ENERGY,fvb_energy
+EMMONS MITCHELL CONSTRUCTION,emmons_mitchell_construction
 HAWBOLDT INDUSTRIES,hawboldt_industries
 SOMOS,somos
 DRS TECHNOLOGIES CANADA,drs_technologies_canada
@@ -426,11 +430,11 @@ UBIQUS CANADA,ubiqus_canada
 GENERAL ELECTRIC CANADA,general_electric_canada
 GUNTER LANGKOPF MASCHINENBAU,gunter_langkopf_maschinenbau
 GENESIS INTEGRATION,genesis_integration
-GARLOCK OF CANADA OPERATING AS FAIRBANKS MORSE ENGINE,garlock_of_canada_operating_as_fairbanks_morse_engine
 "NATIONS TRANSLATION GROUP",nations_translation_group
 GROUPE ROBERT,groupe_robert
 NORTHWESTEL,northwestel
 INTEGRA NETWORKS,integra_networks
+EMIL ANDERSON CONSTRUCTION,emil_anderson_construction
 MISHKUMI TECHNOLOGIES,mishkumi_technologies
 THE MASHA KRUPP TRANSLATION GROUP,the_masha_krupp_translation_group
 851791 NWT,851791_nwt
@@ -444,7 +448,6 @@ R E GILMORE INVESTMENTS,r_e_gilmore_investments
 DAWSON CONSTRUCTION,dawson_construction
 HFI PYROTECHNICS,hfi_pyrotechnics
 BANCTEC CANADA,banctec_canada
-QM JJM CONTRACTING J V,qm_jjm_contracting_j_v
 CITRIX,citrix
 ENTRUST,entrust
 REPARATIONS NAVALES ET INDUSTRIELLES OCEAN,reparations_navales_et_industrielles_ocean
@@ -461,6 +464,7 @@ TESTFORCE SYSTEMS,testforce_systems
 IIC TECHNOLOGIES,iic_technologies
 DIAMOND AND SCHMITT ARCHITECTS,diamond_and_schmitt_architects
 CYMI CANADA,cymi_canada
+SILLIKER,silliker
 CAN AM PLATFORMS CONSTRUCTION,can_am_platforms_construction
 COWI NORTH AMERICA,cowi_north_america
 COADY CONSTRUCTION EXCAVATING,coady_construction_excavating
@@ -469,6 +473,7 @@ CANADIAN BORDER OPERATIONS,canadian_border_operations
 CLOSEREACH,closereach
 INTER OUTAOUAIS,inter_outaouais
 M D CHARLTON,m_d_charlton
+OPSIS,opsis
 HOSKIN SCIENTIFIC,hoskin_scientific
 BONDFIELD CONSTRUCTION COMPANY,bondfield_construction_company
 WRIGHT CONSTRUCTION WESTERN,wright_construction_western
@@ -484,7 +489,6 @@ QUEEN S UNIVERSITY,queen_s_university
 E D BRUNET ET ASSOCIES CANADA,e_d_brunet_et_associes_canada
 SECURIGUARD SERVICES,securiguard_services
 SECUREKEY TECHNOLOGIES,securekey_technologies
-GARDA SECURITY GROUP,garda_security_group
 HEMMERA ENVIROCHEM,hemmera_envirochem
 PRIMEX PROJECT MANAGEMENT,primex_project_management
 MDOS CONSULTING,mdos_consulting
@@ -498,7 +502,6 @@ JOWA FAHRZEUGTEILE VERTRIEBS,jowa_fahrzeugteile_vertriebs
 GREY ROCK SERVICES,grey_rock_services
 DNR CONSULTING GROUP,dnr_consulting_group
 ENVIROSAFE JANITORIAL,envirosafe_janitorial
-NOTRA,notra
 MICRONOSTYX,micronostyx
 GROUPE ENERGIE BDL,groupe_energie_bdl
 MID VALLEY CONSTRUCTION,mid_valley_construction
@@ -507,7 +510,6 @@ THOMSON REUTERS,thomson_reuters
 APPAREL TRIMMINGS,apparel_trimmings
 MACONNERIE DYNAMIQUE,maconnerie_dynamique
 TRAINOR MECHANICAL CONTRACTORS,trainor_mechanical_contractors
-PRECISIONIT,precisionit
 SPRINGER VERLAG,springer_verlag
 OPTIV CANADA FEDERAL,optiv_canada_federal
 AMD MEDICOM,amd_medicom
@@ -516,11 +518,10 @@ QUAD PRO CONSTRUCTION,quad_pro_construction
 MILLER PAVING,miller_paving
 SIMPLEX GRINNELL,simplex_grinnell
 RAMPART INTERNATIONAL,rampart_international
-DEPARTMENT OF DEFENCE,department_of_defence
-EMIL ANDERSON CONSTRUCTION EAC IN,emil_anderson_construction_eac_in
 ALMIQ CONTRACTING,almiq_contracting
 AMEC FOSTER WHEELER AMERICAS,amec_foster_wheeler_americas
 SALESFORCE CANADA,salesforce_canada
+UNITED STATES DEPARTMENT OF DEFENCE,united_states_department_of_defence
 UNIVERSITY OF OTTAWA,university_of_ottawa
 ZYCOM,zycom
 AERO FEU,aero_feu
@@ -534,7 +535,6 @@ PRONEX EXCAVATION,pronex_excavation
 MEDTRONIC CANADA,medtronic_canada
 MATCON ENVIRONMENTAL,matcon_environmental
 GLOBAL UPHOLSTERY,global_upholstery
-ELBIT SYSTEMS,elbit_systems
 ASBEX,asbex
 GETINGE CANADA,getinge_canada
 ALLIANT TECHSYSTEMS OPERATIONS,alliant_techsystems_operations
@@ -547,7 +547,6 @@ POINT HOPE MARITIME,point_hope_maritime
 GLASSHOUSE SYSTEMS,glasshouse_systems
 NORTH AMERICA CONSTRUCTION,north_america_construction
 TRUDELL HEALTHCARE SOLUTIONS,trudell_healthcare_solutions
-OPSIS,opsis
 BAE SYSTEMS,bae_systems
 SUTHERLAND EXCAVATING,sutherland_excavating
 PRECISION ADM,precision_adm
@@ -559,9 +558,9 @@ ARTEX SPORTSWEAR,artex_sportswear
 THE CANADA LIFE ASSURANCE COMPANY,the_canada_life_assurance_company
 KRAUSS MAFFEI WEGMANN,krauss_maffei_wegmann
 CUMMINS CANADA,cummins_canada
-HARNOIS ENERGIES,harnois_energies
 MINISTRY OF FINANCE,ministry_of_finance
 ALVA CONSTRUCTION,alva_construction
+GEMTEC,gemtec
 M D STEELE CONSTRUCTION,m_d_steele_construction
 "NADINE INTERNATIONAL",nadine_international
 MERIDIAN MEDICAL TECHNOLOGIES,meridian_medical_technologies
@@ -577,7 +576,6 @@ PACIFIC INDUSTRIAL MARINE,pacific_industrial_marine
 ANCHOR QEA,anchor_qea
 DE ANGELIS CONSTRUCTION,de_angelis_construction
 JOHNSON CONTROLS CANADA,johnson_controls_canada
-MAXIM CONSTRUCTION,maxim_construction
 OEI KRUEGER,oei_krueger
 MEGA TECH,mega_tech
 BERVIN CONSTRUCTION,bervin_construction
@@ -586,6 +584,7 @@ ASOKAN BUSINESS INTERIORS,asokan_business_interiors
 DCL CONSTRUCTION SERVICES,dcl_construction_services
 ARTEMP PERSONNEL SERVICES,artemp_personnel_services
 TRANSCONTINENTAL PRINTING,transcontinental_printing
+CERIDIAN,ceridian
 WPP GROUP CANADA COMMUNICATIONS,wpp_group_canada_communications
 CARLETON UNIVERSITY,carleton_university
 ST LEONARDS PLACE PEEL,st_leonards_place_peel
@@ -608,7 +607,6 @@ R R INTERNATIONAL TRANSLATION,r_r_international_translation
 MERCEDES BENZ CANADA,mercedes_benz_canada
 INDIVIOR UK,indivior_uk
 IFATHOM,ifathom
-SILLIKER JR LABORATORIES,silliker_jr_laboratories
 NORTH ATLANTIC PETROLEUM,north_atlantic_petroleum
 RGT CLOUTHIER CONSTRUCTION,rgt_clouthier_construction
 STRONG BROS GENERAL CONTRACTING,strong_bros_general_contracting
@@ -618,6 +616,7 @@ INTER MEDICO,inter_medico
 TYCO INTEGRATED FIRE SECURITY,tyco_integrated_fire_security
 ISM INFORMATION SYSTEMS MANAGEMENT,ism_information_systems_management
 AIRBORNE SYSTEMS,airborne_systems
+ASSOCIATED ENGINEERING,associated_engineering
 EXCAVATION RENE ST PIERRE ENG,excavation_rene_st_pierre_eng
 FIRST PEOPLES INFRA,first_peoples_infra
 GEOSPECTRUM TECHNOLOGIES,geospectrum_technologies
@@ -625,7 +624,6 @@ SERVICE STAR BUILDING CLEANING,service_star_building_cleaning
 JASCO APPLIED SCIENCES CANADA,jasco_applied_sciences_canada
 GRIFFIN ENGINEERED SYSTEMS,griffin_engineered_systems
 ARI FINANCIAL SERVICES,ari_financial_services
-EMMONS MITCHELL CONSTRUCTION 2000,emmons_mitchell_construction_2000
 CWP CONSTRUCTORS,cwp_constructors
 CANADIAN VETERANS VR SERVICE,canadian_veterans_vr_service
 CONFECTION AVENTURE,confection_aventure
@@ -678,7 +676,6 @@ CANAM PONTS CANADA,canam_ponts_canada
 THE VCAN GROUP,the_vcan_group
 ST LEONARD S SOCIETY HAMILTON,st_leonard_s_society_hamilton
 BANFIELD SEGUIN,banfield_seguin
-QM GP QUANTUM HOLDINGS,qm_gp_quantum_holdings
 MACEWEN PETROLEUM,macewen_petroleum
 JIM PATTISON INDUSTRIES,jim_pattison_industries
 LYNLEY CONTRACTING SERVICES,lynley_contracting_services
@@ -708,6 +705,7 @@ CCR CONSTRUCTION,ccr_construction
 MACONNERIE RAINVILLE ET FRERES,maconnerie_rainville_et_freres
 AINSWORTH,ainsworth
 SOFTSIM TECHNOLOGIES,softsim_technologies
+DRAEGER,draeger
 COMPUWARE OF CANADA,compuware_of_canada
 A HUNDRED ANSWERS,a_hundred_answers
 MITSUBISHI MOTOR SALES,mitsubishi_motor_sales
@@ -726,13 +724,10 @@ MARINE CONTRACTORS,marine_contractors
 BRETON MICHEL MD,breton_michel_md
 CONSTRUCTION COTE FILS,construction_cote_fils
 INFO TECH RESEARCH GROUP,info_tech_research_group
-DRAEGER CANADA,draeger_canada
 GRAND TOY,grand_toy
 CANADIAN PAEDIATRIC SOCIETY,canadian_paediatric_society
 ACCESS 2 NETWORKS,access_2_networks
-DYNACARE,dynacare
 B T L CONSTRUCTION,b_t_l_construction
-MCKINSEY COMPANY CANADA,mckinsey_company_canada
 AON REED STENHOUSE,aon_reed_stenhouse
 BOMIMED,bomimed
 JEMTEC,jemtec
@@ -767,7 +762,6 @@ GILMORE REPRODUCTIONS,gilmore_reproductions
 WILLS TRANSFER,wills_transfer
 EVEREST CONSTRUCTION MANAGEMENT,everest_construction_management
 ALLIANCE ENERGY,alliance_energy
-CERIDIAN CANADA CERIDIAN CANADA,ceridian_canada_ceridian_canada
 "NAUT MAWT TRIBAL COUNCIL",naut_mawt_tribal_council
 PERSISTENT SYSTEMS,persistent_systems
 VAISALA CANADA,vaisala_canada
@@ -787,6 +781,7 @@ ROXBORO EXCAVATION,roxboro_excavation
 ACME FUTURE SECURITY CONTROLS,acme_future_security_controls
 BROADWATER INDUSTRIES,broadwater_industries
 KMS INDUSTRIES,kms_industries
+JONES LANG LASALLE,jones_lang_lasalle
 TROY LIFE FIRE SAFETY,troy_life_fire_safety
 GALENVS SCIENCES,galenvs_sciences
 EUROVIA QUEBEC CONSTRUCTION,eurovia_quebec_construction
@@ -816,7 +811,6 @@ AIR INUIT,air_inuit
 APOTEX,apotex
 6834973 CANADA,6834973_canada
 EXCEL 7,excel_7
-EMMONS MITCHELL CONSTRUCTION,emmons_mitchell_construction
 LES INSTALLATIONS ELECTRIQUES,les_installations_electriques
 LUXTON CONSTRUCTION,luxton_construction
 R W TOMLINSON,r_w_tomlinson
@@ -828,8 +822,6 @@ PRINCE GEORGE ACTIVATOR,prince_george_activator
 FARMER CONSTRUCTION,farmer_construction
 PODOLINSKY EQUIPMENT,podolinsky_equipment
 WILD STONE ENGINEERING,wild_stone_engineering
-TTC GP AND NOTRA JOINT VENTURE,ttc_gp_and_notra_joint_venture
-PRECISIONERP,precisionerp
 NORTHEAST TREE TRIMMING,northeast_tree_trimming
 A J HANNA CONSTRUCTION,a_j_hanna_construction
 AIR TINDI,air_tindi
@@ -872,7 +864,6 @@ COUGAR ENGINEERING CONSTRUCTION,cougar_engineering_construction
 FUNDY CONTRACTORS,fundy_contractors
 MAISON CHARLEMAGNE,maison_charlemagne
 MORPHO CANADA,morpho_canada
-GEMTEC,gemtec
 CARSWELL,carswell
 ABCO MAINTENANCE SYSTEMS,abco_maintenance_systems
 APS AVIATION,aps_aviation
@@ -887,7 +878,6 @@ TULMAR SAFETY SYSTEMS,tulmar_safety_systems
 KETZA PACIFIC CONSTRUCTION,ketza_pacific_construction
 MAGAL S3 CANADA,magal_s3_canada
 ROBERTSON MARTIN ARCHITECTS,robertson_martin_architects
-MLS,mls
 ST JOHN AMBULANCE,st_john_ambulance
 LANNICK CONTRACT SOLUTIONS,lannick_contract_solutions
 9275 0181 QUEBEC,9275_0181_quebec
@@ -901,7 +891,6 @@ P K WELDING FABRICATORS,p_k_welding_fabricators
 CLEARWATER STRUCTURES,clearwater_structures
 ST AIRBORNE SYSTEMS,st_airborne_systems
 KEYDATA ASSOCIATES,keydata_associates
-ASSOCIATED ENGINEERING,associated_engineering
 MUNICIPAL READY MIX,municipal_ready_mix
 MESSA COMPUTING,messa_computing
 RADIATION SOLUTIONS,radiation_solutions
@@ -957,7 +946,6 @@ ARIBA,ariba
 LES CONSTRUCTIONS DES ILES,les_constructions_des_iles
 TRIDENT CONSTRUCTION,trident_construction
 MARITIME FUELS,maritime_fuels
-BELL TEXTRON CANADA,bell_textron_canada
 CARMACKS ENTERPRISES,carmacks_enterprises
 NUMBER TEN ARCHITECTURAL GROUP,number_ten_architectural_group
 MAISON CROSS ROADS DE LA SOCIETE,maison_cross_roads_de_la_societe
@@ -971,7 +959,6 @@ WM M 1993,wm_m_1993
 UNIVERSITY OF SASKATCHEWAN,university_of_saskatchewan
 ACART COMMUNICATIONS,acart_communications
 STIFF SENTENCES,stiff_sentences
-COMPUTACENTER TERAMACH,computacenter_teramach
 UNISOFT INTERNATIONAL,unisoft_international
 ECO TECHNOLOGIES,eco_technologies
 HUBSPOKE,hubspoke
@@ -1001,7 +988,6 @@ ALCAIDE WEBSTER ARCHITECTS,alcaide_webster_architects
 RUSSEL METALS,russel_metals
 UNIVERSAL HELICOPTERS,universal_helicopters
 J L RICHARDS ASSOCIATES,j_l_richards_associates
-QM DBA QM ENVIRONMENTAL,qm_dba_qm_environmental
 GLENCAIRN EDUCATIONAL SERVICES,glencairn_educational_services
 L P ROYER,l_p_royer
 ATS SERVICES,ats_services
@@ -1021,7 +1007,6 @@ MWCO,mwco
 4083261 CANADA,4083261_canada
 ATTACHMATE,attachmate
 ACOSYS CONSULTING SERVICES,acosys_consulting_services
-JOHN HOWARD SOCIETY PACIFIC REGION THE,john_howard_society_pacific_region_the
 OKANAGAN HALFWAY HOUSE SOCIETY CRF,okanagan_halfway_house_society_crf
 ENVIRONICS RESEARCH GROUP,environics_research_group
 LEVAERO AVIATION,levaero_aviation
@@ -1093,7 +1078,6 @@ SERVICES D AIDE EN PREVENTION DE LA CRIMINALITE,services_d_aide_en_prevention_de
 BOLLORE LOGISTICS,bollore_logistics
 CLARIANT CANADA,clariant_canada
 LANSDOWNE TECHNOLOGIES,lansdowne_technologies
-LE CORPS CANADIEN DES,le_corps_canadien_des
 PRA,pra
 ST JOSEPH PRINT GROUP,st_joseph_print_group
 2536 4589 QUEBEC,2536_4589_quebec
@@ -1134,7 +1118,6 @@ ADPEARL,adpearl
 RUSH TRUCK CENTRES OF CANADA,rush_truck_centres_of_canada
 VISIONTEC,visiontec
 F M INSTALLATIONS,f_m_installations
-HARNOIS,harnois
 CPCS TRANSCOM,cpcs_transcom
 J M LEDRESSAY ASSOCIATES,j_m_ledressay_associates
 BAUER HOCKEY,bauer_hockey
@@ -1158,7 +1141,6 @@ G BIRD HOLDINGS,g_bird_holdings
 HELITRADES,helitrades
 SYSTEMS FOR RESEARCH,systems_for_research
 REFORMAR,reformar
-MODIA CANADA,modia_canada
 COMMERCIAL BUILDING CLEANING,commercial_building_cleaning
 GENOME QUEBEC,genome_quebec
 FMC PROFESSIONALS,fmc_professionals
@@ -1305,7 +1287,6 @@ SOCIETE ELIZABETH FRY DU QUEBEC,societe_elizabeth_fry_du_quebec
 PROLOGIC SYSTEMS,prologic_systems
 GAP WIRELESS,gap_wireless
 THG THE HISTORY GROUP,thg_the_history_group
-SILLIKER CANADA,silliker_canada
 J O THOMAS ASSOCIATES,j_o_thomas_associates
 RGB MEDIA,rgb_media
 DEAN CONSTRUCTION COMPANY,dean_construction_company
@@ -1328,7 +1309,6 @@ TAI,tai
 ZOLL MEDICAL CANADA,zoll_medical_canada
 EBERHARD VON HUENE ASSOCIATES,eberhard_von_huene_associates
 AMDOCS,amdocs
-GEMTEC CONSULTING ENGINEERS AND,gemtec_consulting_engineers_and
 WEST COAST TUG BARGE,west_coast_tug_barge
 HERRING CONSERVATION AND RESEARCH SOCIETY,herring_conservation_and_research_society
 FROSTI FISHING,frosti_fishing
@@ -1338,7 +1318,6 @@ MCCARTHY TETRAULT,mccarthy_tetrault
 "NANOMETRICS",nanometrics
 APPLIED SYSTEMS ENGINEERING,applied_systems_engineering
 YAMNUSKA,yamnuska
-ERNST YOUNG GLOBAL,ernst_young_global
 SCALAR DECISIONS,scalar_decisions
 NOVA NETWORKS,nova_networks
 PACWILL ENVIRONMENTAL,pacwill_environmental
@@ -1366,7 +1345,6 @@ LAPORTE EXPERTS CONSEILS,laporte_experts_conseils
 WYSSEN AVALANCHE CONTROL,wyssen_avalanche_control
 HERITAGE RESTORATION,heritage_restoration
 ROOF TILE MANAGEMENT,roof_tile_management
-ABBOTT MEDICAL CANADA,abbott_medical_canada
 NITRO CONSTRUCTION,nitro_construction
 PANALPINA,panalpina
 CBRE,cbre
@@ -1394,7 +1372,6 @@ KONE,kone
 "NAPPAQ DESIGN CONSTRUCTION",nappaq_design_construction
 FAST TRACK STAFFING,fast_track_staffing
 ECOPIA TECH,ecopia_tech
-JONES LANG LASALLE REAL ESTATE,jones_lang_lasalle_real_estate
 GAB INDUSPAC,gab_induspac
 HERCULES SLR,hercules_slr
 HATCH,hatch
@@ -1402,7 +1379,6 @@ CONNEX TELECOMMUNICATIONS,connex_telecommunications
 NOLINOR AVIATION,nolinor_aviation
 PORT OF SPAIN HOLDINGS,port_of_spain_holdings
 SHRMA ARCHITECTS IN JOINT VENTURE,shrma_architects_in_joint_venture
-TOYOTA GIBRALTAR STOCKHOLDINGS,toyota_gibraltar_stockholdings
 MANITEX LIFTKING,manitex_liftking
 WEBSTER ELECTRIC,webster_electric
 L BREAU AND SONS,l_breau_and_sons
@@ -1424,10 +1400,8 @@ ISLAND CATERING,island_catering
 VALARD CONSTRUCTION,valard_construction
 BECKMAN COULTER CANADA,beckman_coulter_canada
 ALPINE AEROTECH,alpine_aerotech
-OPSIS GESTION D INFRASTRUCTURES,opsis_gestion_d_infrastructures
 J D G CONSTRUCTION MANAGEMENT,j_d_g_construction_management
 CONSTRUCTION JESSIKO,construction_jessiko
-QM,qm
 A TECH ROOFING,a_tech_roofing
 FLIGHT FUELS,flight_fuels
 PARKLAND INDUSTRIES,parkland_industries
@@ -1439,11 +1413,9 @@ LES TRAITEURS BYTOWN CATERING,les_traiteurs_bytown_catering
 FERENCE COMPANY CONSULTING,ference_company_consulting
 S P GLOBAL MARKET INTELLIGENCE,s_p_global_market_intelligence
 CHARRON HUMAN RESOURCES,charron_human_resources
-JONES LANG LASALLE K K,jones_lang_lasalle_k_k
 AZIMUTH CONSULTING GROUP,azimuth_consulting_group
 BEST FACILITIES SERVICES,best_facilities_services
 SAMSON AND ASSOCIATES,samson_and_associates
-FAIRBANKS MORSE CANADA,fairbanks_morse_canada
 ATLANTIC ROOFERS,atlantic_roofers
 DXB PROJECT MANAGEMENT,dxb_project_management
 DYNAMIC CONSTRUCTION,dynamic_construction
@@ -1460,10 +1432,8 @@ B BRAUN OF CANADA,b_braun_of_canada
 ROBERTSON GEOCONSULTANTS,robertson_geoconsultants
 NU VIEW HOMES,nu_view_homes
 AFW CONSTRUCTION,afw_construction
-BUREAU VERITAS LABORATORIES,bureau_veritas_laboratories
 MANIFEST COMMUNICATIONS,manifest_communications
 MICHELIN,michelin
-EMIL ANDERSON CONSTRUCTION,emil_anderson_construction
 ONTARIO DENTAL ASSOCIATION,ontario_dental_association
 DEVLIN CONSTRUCTION,devlin_construction
 BC HYDRO,bc_hydro
@@ -1481,7 +1451,6 @@ DR S ISKANDER,dr_s_iskander
 MCCOLMAN SONS DEMOLITION,mccolman_sons_demolition
 AIRBOSS DEFENSE,airboss_defense
 BISSON FORTIN ARCHITECTURE,bisson_fortin_architecture
-ASSOCIATED ENGINEERING SASK,associated_engineering_sask
 BLUEDOT,bluedot
 EAST ELGIN CONCRETE FORMING,east_elgin_concrete_forming
 OXFORD ECONOMICS USA,oxford_economics_usa

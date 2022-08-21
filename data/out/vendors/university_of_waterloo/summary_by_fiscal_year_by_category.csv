@@ -1,4 +1,6 @@
 d_most_recent_category,d_fiscal_year,total
+0_other,2017-2018,21375.00
+0_other,2019-2020,18396.00
 1_facilities_and_construction,2017-2018,535547.96
 1_facilities_and_construction,2018-2019,1980141.71
 1_facilities_and_construction,2019-2020,1811972.73
@@ -16,5 +18,3 @@ d_most_recent_category,d_fiscal_year,total
 6_industrial_products_and_services,2019-2020,24005.57
 6_industrial_products_and_services,2020-2021,30973.90
 9_human_capital,2017-2018,24998.99
-NA,2017-2018,21375.00
-NA,2019-2020,18396.00

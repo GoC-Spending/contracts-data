@@ -1,7 +1,12 @@
 d_most_recent_category,d_fiscal_year,total
-1_facilities_and_construction,2017-2018,2733041694.89
-1_facilities_and_construction,2018-2019,2749012886.22
-1_facilities_and_construction,2019-2020,2841398141.97
+0_other,2017-2018,5469416.73
+0_other,2018-2019,5812153.59
+0_other,2019-2020,4766930.52
+0_other,2020-2021,9138489.01
+0_other,2021-2022,10041648.80
+1_facilities_and_construction,2017-2018,2732804138.01
+1_facilities_and_construction,2018-2019,2748624037.43
+1_facilities_and_construction,2019-2020,2841146051.10
 1_facilities_and_construction,2020-2021,2693129565.76
 1_facilities_and_construction,2021-2022,2633974613.13
 10_office_management,2017-2018,33176217.84
@@ -38,7 +43,7 @@ d_most_recent_category,d_fiscal_year,total
 7_travel,2019-2020,649948.43
 7_travel,2020-2021,1627525.89
 7_travel,2021-2022,1625662.48
-8_security_and_protection,2017-2018,38302133.81
+8_security_and_protection,2017-2018,37017963.79
 8_security_and_protection,2018-2019,36039117.88
 8_security_and_protection,2019-2020,35982815.18
 8_security_and_protection,2020-2021,30430552.46
@@ -48,8 +53,3 @@ d_most_recent_category,d_fiscal_year,total
 9_human_capital,2019-2020,10016605.04
 9_human_capital,2020-2021,10155285.42
 9_human_capital,2021-2022,10767896.42
-NA,2017-2018,5469416.73
-NA,2018-2019,5812153.59
-NA,2019-2020,4766930.52
-NA,2020-2021,9138489.01
-NA,2021-2022,10041648.80

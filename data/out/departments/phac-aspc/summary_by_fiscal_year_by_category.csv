@@ -1,4 +1,9 @@
 d_most_recent_category,d_fiscal_year,total
+0_other,2017-2018,370755.60
+0_other,2018-2019,319158.81
+0_other,2019-2020,262970.36
+0_other,2020-2021,128954.81
+0_other,2021-2022,34030.90
 1_facilities_and_construction,2017-2018,3103767.60
 1_facilities_and_construction,2018-2019,3847708.57
 1_facilities_and_construction,2019-2020,7974539.95
@@ -23,7 +28,7 @@ d_most_recent_category,d_fiscal_year,total
 4_medical,2018-2019,13474743.19
 4_medical,2019-2020,35272538.12
 4_medical,2020-2021,3450184758.86
-4_medical,2021-2022,1467302373.16
+4_medical,2021-2022,1465303784.16
 5_transportation_and_logistics,2017-2018,303523.53
 5_transportation_and_logistics,2018-2019,74172.08
 5_transportation_and_logistics,2019-2020,346364.44
@@ -44,8 +49,3 @@ d_most_recent_category,d_fiscal_year,total
 9_human_capital,2019-2020,1530947.42
 9_human_capital,2020-2021,3288849.80
 9_human_capital,2021-2022,4931995.11
-NA,2017-2018,370755.60
-NA,2018-2019,319158.81
-NA,2019-2020,262970.36
-NA,2020-2021,128954.81
-NA,2021-2022,34030.90

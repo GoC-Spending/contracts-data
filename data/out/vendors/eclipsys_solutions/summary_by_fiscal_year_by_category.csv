@@ -1,4 +1,6 @@
 d_most_recent_category,d_fiscal_year,total
+0_other,2017-2018,239345.25
+0_other,2018-2019,132162.37
 10_office_management,2017-2018,225725.03
 10_office_management,2019-2020,309736.68
 10_office_management,2020-2021,350012.04
@@ -24,5 +26,3 @@ d_most_recent_category,d_fiscal_year,total
 9_human_capital,2017-2018,63295.98
 9_human_capital,2018-2019,1424.94
 9_human_capital,2019-2020,35826.96
-NA,2017-2018,239345.25
-NA,2018-2019,132162.37

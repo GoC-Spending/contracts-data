@@ -1,4 +1,6 @@
 d_most_recent_category,d_fiscal_year,total
+0_other,2017-2018,141036.00
+0_other,2018-2019,374052.00
 10_office_management,2017-2018,32688.78
 11_defence,2021-2022,20536.68
 2_professional_services,2017-2018,1394785.27
@@ -16,5 +18,3 @@ d_most_recent_category,d_fiscal_year,total
 9_human_capital,2019-2020,1061167.95
 9_human_capital,2020-2021,794348.06
 9_human_capital,2021-2022,1235657.86
-NA,2017-2018,141036.00
-NA,2018-2019,374052.00
