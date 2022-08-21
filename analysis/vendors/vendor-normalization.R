@@ -103,7 +103,10 @@ look_up_vendor_name_and_save_tmp_output <- function(vendor_name_to_look_up, norm
 }
 
 # Run the lookup and optionally provide the already-normalized name if it's already in the matching table
-look_up_vendor_name_and_save_tmp_output("emil and", "EMIL ANDERSON CONSTRUCTION")
+# look_up_vendor_name_and_save_tmp_output("qm", "QM Environmental")
+# look_up_vendor_name_and_save_tmp_output("defence", "TOP ACES")
+
+
 
 # Once reviewed, load this back into the vendor normalization table
 new_vendor_matching_rows <- read_csv("data/testing/tmp-vendor-exports.csv")
