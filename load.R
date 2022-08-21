@@ -417,6 +417,7 @@ summary_overall = tibble(summary_type = c("core", "dnd", "all"))
 # plus filename labels for these that indicate the time range
 summary_overall <- summary_overall %>%
   mutate(
+    summary_by_fiscal_year = map(summary_type, get_summary_overall_by_fiscal_year),
     summary_by_fiscal_year_by_vendor = map(summary_type, get_summary_overall_by_fiscal_year_by_vendor),
     summary_by_fiscal_year_by_category = map(summary_type, get_summary_overall_by_fiscal_year_by_category),
     summary_by_fiscal_year_by_department = map(summary_type, get_summary_overall_by_fiscal_year_by_owner_org),

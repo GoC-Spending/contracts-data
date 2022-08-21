@@ -177,6 +177,15 @@ get_summary_overall_by_fiscal_year_by_criteria <- function(summary_type, groupin
   
 }
 
+get_summary_overall_by_fiscal_year <- function(summary_type) {
+  
+  # Note: conveniently, just supplying NULL to the 
+  # across(all_of(grouping_column)) call above works
+  # and it then just groups by d_fiscal_year_short.
+  return(get_summary_overall_by_fiscal_year_by_criteria(summary_type, NULL, TRUE))
+  
+}
+
 get_summary_overall_by_fiscal_year_by_vendor <- function(summary_type) {
   
   return(get_summary_overall_by_fiscal_year_by_criteria(summary_type, "d_vendor_name", TRUE))
