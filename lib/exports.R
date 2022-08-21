@@ -179,10 +179,20 @@ get_summary_overall_by_fiscal_year_by_criteria <- function(summary_type, groupin
 
 get_summary_overall_by_fiscal_year <- function(summary_type) {
   
-  # Note: conveniently, just supplying NULL to the 
-  # across(all_of(grouping_column)) call above works
-  # and it then just groups by d_fiscal_year_short.
-  return(get_summary_overall_by_fiscal_year_by_criteria(summary_type, NULL, TRUE))
+  summary_overall_total_by_fiscal_year <- contract_spending_by_date %>%
+    filter_by_summary_type(summary_type) %>%
+    group_by(d_fiscal_year_short) %>%
+    summarise(
+      total = sum(d_daily_contract_value, na.rm = TRUE)
+    ) %>%
+    ungroup() %>%
+    mutate(
+      d_fiscal_year = convert_start_year_to_fiscal_year(d_fiscal_year_short)
+    ) %>%
+    select(d_fiscal_year, total) %>%
+    exports_round_totals()
+  
+  return(summary_overall_total_by_fiscal_year)
   
 }
 
