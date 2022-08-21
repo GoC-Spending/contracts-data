@@ -74,21 +74,36 @@ vendor_names %>%
 
 
 # Similar to the above, but using contracts data loaded in the environment:
-vendor_name_to_look_up <- str_to_upper("adirondack")
+vendor_name_to_look_up <- str_to_upper("COMPUTACEN")
 
-contracts %>%
-  filter(str_detect(d_vendor_name, vendor_name_to_look_up)) %>%
-  select(d_vendor_name) %>%
-  distinct() %>%
-  rename(
-    company_name = d_vendor_name
-  ) %>%
-  mutate(
-    parent_company = clean_vendor_names(vendor_name_to_look_up)
-  ) %>%
-  relocate(parent_company, company_name) %>%
-  arrange(company_name) %>%
-  write_csv("data/testing/tmp-vendor-exports.csv")
+look_up_vendor_name_and_save_tmp_output <- function(vendor_name_to_look_up, normalized_name = NULL) {
+  
+  vendor_name_to_look_up <- str_to_upper(vendor_name_to_look_up)
+  
+  if(is.null(normalized_name)) {
+    normalized_name <- vendor_name_to_look_up
+  }
+  
+  normalized_name <- str_to_upper(normalized_name)
+  
+  contracts %>%
+    filter(str_detect(d_vendor_name, !!vendor_name_to_look_up)) %>%
+    select(d_vendor_name) %>%
+    distinct() %>%
+    rename(
+      company_name = d_vendor_name
+    ) %>%
+    mutate(
+      parent_company = clean_vendor_names(!!normalized_name)
+    ) %>%
+    relocate(parent_company, company_name) %>%
+    arrange(company_name) %>%
+    write_csv("data/testing/tmp-vendor-exports.csv")
+  
+}
+
+# Run the lookup and optionally provide the already-normalized name if it's already in the matching table
+look_up_vendor_name_and_save_tmp_output("emil and", "EMIL ANDERSON CONSTRUCTION")
 
 # Once reviewed, load this back into the vendor normalization table
 new_vendor_matching_rows <- read_csv("data/testing/tmp-vendor-exports.csv")
