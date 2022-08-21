@@ -256,6 +256,16 @@ contracts <- contracts %>%
   )
 
 
+# Set "NA" categories to "0_other" to improve handling on subsequent exports and the website display.
+contracts <- contracts %>%
+  mutate(
+    category = case_when(
+      is.na(category) ~ "0_other",
+      TRUE ~ category
+    )
+  )
+
+
 # Temp: get descriptions and object codes
 # Note: this only includes descriptions with at least 10 entries.
 # (Shortens the total list from 12k to 3k rows.)
