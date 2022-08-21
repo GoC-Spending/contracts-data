@@ -374,7 +374,7 @@ get_summary_total_by_category_by_owner_org <- function(owner_org) {
     filter(owner_org == !!owner_org) %>%
     group_by(d_most_recent_category) %>%
     summarise(
-      total = sum(d_daily_contract_value)
+      total = sum(d_daily_contract_value, na.rm = TRUE)
     ) %>%
     ungroup() %>%
     select(d_most_recent_category, total) %>%
@@ -395,7 +395,7 @@ get_summary_total_by_category_and_fiscal_year <- function(owner_org) {
     filter(owner_org == !!owner_org) %>%
     group_by(d_most_recent_category, d_fiscal_year_short) %>%
     summarise(
-      total = sum(d_daily_contract_value)
+      total = sum(d_daily_contract_value, na.rm = TRUE)
     ) %>%
     ungroup() %>%
     mutate(
