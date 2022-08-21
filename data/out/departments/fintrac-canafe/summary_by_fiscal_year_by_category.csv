@@ -7,14 +7,17 @@ d_most_recent_category,d_fiscal_year,total
 10_office_management,2018-2019,73689.79
 10_office_management,2019-2020,72632.88
 10_office_management,2020-2021,70879.08
+10_office_management,2021-2022,26757.87
 2_professional_services,2017-2018,71597.17
 2_professional_services,2018-2019,381161.32
 2_professional_services,2019-2020,860159.83
 2_professional_services,2020-2021,770510.38
+2_professional_services,2021-2022,280973.73
 3_information_technology,2017-2018,981938.66
 3_information_technology,2018-2019,1373341.12
 3_information_technology,2019-2020,897120.74
 3_information_technology,2020-2021,772246.00
+3_information_technology,2021-2022,372221.41
 5_transportation_and_logistics,2018-2019,5632.62
 5_transportation_and_logistics,2019-2020,97197.38
 6_industrial_products_and_services,2018-2019,16644.85
@@ -26,3 +29,4 @@ d_most_recent_category,d_fiscal_year,total
 9_human_capital,2018-2019,354338.08
 9_human_capital,2019-2020,271398.95
 9_human_capital,2020-2021,48630.36
+9_human_capital,2021-2022,13117.35

@@ -10,6 +10,7 @@ d_most_recent_category,d_fiscal_year,total
 3_information_technology,2018-2019,314018.79
 3_information_technology,2019-2020,353756.18
 3_information_technology,2020-2021,247650.06
+3_information_technology,2021-2022,207860.88
 4_medical,2018-2019,68796.00
 4_medical,2019-2020,1356.35
 4_medical,2020-2021,20345.26
@@ -17,7 +18,9 @@ d_most_recent_category,d_fiscal_year,total
 5_transportation_and_logistics,2018-2019,2128683.09
 5_transportation_and_logistics,2019-2020,2714025.59
 5_transportation_and_logistics,2020-2021,1874069.45
+5_transportation_and_logistics,2021-2022,3457232.81
 6_industrial_products_and_services,2017-2018,147307.50
 6_industrial_products_and_services,2018-2019,309064.76
 6_industrial_products_and_services,2019-2020,1371703.21
 6_industrial_products_and_services,2020-2021,1348733.89
+6_industrial_products_and_services,2021-2022,555797.46

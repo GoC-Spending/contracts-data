@@ -1,9 +1,11 @@
 d_most_recent_category,d_fiscal_year,total
 1_facilities_and_construction,2018-2019,12947.54
+1_facilities_and_construction,2021-2022,28932.47
 3_information_technology,2017-2018,32952.72
 3_information_technology,2018-2019,40207.80
 3_information_technology,2019-2020,69627.44
 3_information_technology,2020-2021,43211.09
+3_information_technology,2021-2022,39478.62
 4_medical,2017-2018,143917.00
 4_medical,2018-2019,51064.14
 4_medical,2019-2020,45753.75
@@ -12,7 +14,9 @@ d_most_recent_category,d_fiscal_year,total
 6_industrial_products_and_services,2018-2019,246503.95
 6_industrial_products_and_services,2019-2020,225406.72
 6_industrial_products_and_services,2020-2021,521470.30
+6_industrial_products_and_services,2021-2022,236086.77
 9_human_capital,2017-2018,50838.57
 9_human_capital,2018-2019,64025.50
 9_human_capital,2019-2020,111854.55
 9_human_capital,2020-2021,18949.86
+9_human_capital,2021-2022,88593.83

@@ -3,12 +3,15 @@ d_most_recent_category,d_fiscal_year,total
 1_facilities_and_construction,2018-2019,1450513.39
 1_facilities_and_construction,2019-2020,943247.54
 1_facilities_and_construction,2020-2021,2083755.60
+1_facilities_and_construction,2021-2022,518493.08
 2_professional_services,2017-2018,1819141.75
 2_professional_services,2018-2019,1363485.90
 2_professional_services,2019-2020,1100559.65
 2_professional_services,2020-2021,832929.18
+2_professional_services,2021-2022,248262.66
 4_medical,2019-2020,14494.77
 4_medical,2020-2021,62242.25
+4_medical,2021-2022,62242.25
 7_travel,2017-2018,22380.98
 7_travel,2018-2019,47139.98
 7_travel,2019-2020,80433.79
@@ -20,3 +23,4 @@ d_most_recent_category,d_fiscal_year,total
 NA,2017-2018,103669.79
 NA,2019-2020,254493.32
 NA,2020-2021,132287.36
+NA,2021-2022,19163.29

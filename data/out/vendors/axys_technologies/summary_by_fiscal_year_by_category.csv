@@ -3,10 +3,12 @@ d_most_recent_category,d_fiscal_year,total
 1_facilities_and_construction,2018-2019,17191.70
 1_facilities_and_construction,2019-2020,19609.81
 1_facilities_and_construction,2020-2021,65535.88
+1_facilities_and_construction,2021-2022,102001.12
 2_professional_services,2017-2018,88225.59
 2_professional_services,2018-2019,317137.97
 2_professional_services,2019-2020,408715.85
 2_professional_services,2020-2021,356503.08
+2_professional_services,2021-2022,15575.58
 5_transportation_and_logistics,2018-2019,57455.76
 5_transportation_and_logistics,2019-2020,73149.70
 5_transportation_and_logistics,2020-2021,24350.34
@@ -14,3 +16,4 @@ d_most_recent_category,d_fiscal_year,total
 6_industrial_products_and_services,2018-2019,365165.73
 6_industrial_products_and_services,2019-2020,995245.23
 6_industrial_products_and_services,2020-2021,928586.16
+6_industrial_products_and_services,2021-2022,796048.28

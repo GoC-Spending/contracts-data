@@ -4,15 +4,18 @@ d_most_recent_category,d_fiscal_year,total
 10_office_management,2018-2019,41491.80
 10_office_management,2019-2020,27661.20
 10_office_management,2020-2021,90235.31
+10_office_management,2021-2022,64993.30
 11_defence,2017-2018,3385.29
 11_defence,2018-2019,3385.29
 11_defence,2019-2020,3394.56
 11_defence,2020-2021,3385.29
+11_defence,2021-2022,1363.39
 3_information_technology,2020-2021,30063.43
 4_medical,2017-2018,202361.15
 4_medical,2018-2019,321031.20
 4_medical,2019-2020,211037.40
 4_medical,2020-2021,2971049.99
+4_medical,2021-2022,221446.92
 6_industrial_products_and_services,2017-2018,17458.93
 6_industrial_products_and_services,2018-2019,43488.43
 6_industrial_products_and_services,2019-2020,10452.06
@@ -20,3 +23,4 @@ d_most_recent_category,d_fiscal_year,total
 9_human_capital,2018-2019,442244.93
 9_human_capital,2019-2020,365377.98
 9_human_capital,2020-2021,174956.67
+9_human_capital,2021-2022,163067.96

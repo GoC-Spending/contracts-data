@@ -1,8 +1,10 @@
 d_most_recent_category,d_fiscal_year,total
 1_facilities_and_construction,2017-2018,75898.23
 1_facilities_and_construction,2020-2021,52669.00
+1_facilities_and_construction,2021-2022,-344925.00
 10_office_management,2019-2020,28377.15
 10_office_management,2020-2021,38079.63
+10_office_management,2021-2022,38079.63
 11_defence,2017-2018,26973.66
 11_defence,2018-2019,26973.66
 11_defence,2019-2020,27047.56
@@ -10,9 +12,11 @@ d_most_recent_category,d_fiscal_year,total
 2_professional_services,2018-2019,2136011.12
 2_professional_services,2019-2020,1314600.21
 2_professional_services,2020-2021,1670826.88
+2_professional_services,2021-2022,1045756.61
 3_information_technology,2017-2018,121614.30
 7_travel,2017-2018,51126.29
 7_travel,2018-2019,51126.29
 9_human_capital,2017-2018,47429.34
 9_human_capital,2018-2019,3985.66
 9_human_capital,2020-2021,8240.10
+9_human_capital,2021-2022,15113.75

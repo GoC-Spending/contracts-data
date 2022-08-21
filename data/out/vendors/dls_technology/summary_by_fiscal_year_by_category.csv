@@ -1,6 +1,8 @@
 d_most_recent_category,d_fiscal_year,total
 10_office_management,2020-2021,13720.96
+10_office_management,2021-2022,190.57
 11_defence,2020-2021,222241.02
+11_defence,2021-2022,309849.65
 2_professional_services,2017-2018,295459.64
 2_professional_services,2018-2019,303817.12
 2_professional_services,2019-2020,279960.32
@@ -9,3 +11,4 @@ d_most_recent_category,d_fiscal_year,total
 3_information_technology,2018-2019,595930.31
 3_information_technology,2019-2020,1015334.57
 3_information_technology,2020-2021,3308282.39
+3_information_technology,2021-2022,2956951.56
