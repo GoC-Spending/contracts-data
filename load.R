@@ -8,6 +8,7 @@ source("lib/exports.R")
 # Start time
 run_start_time <- now()
 paste("Start time:", run_start_time)
+add_log_entry("start_time", run_start_time)
 
 # Options =======================================
 
@@ -75,6 +76,7 @@ if(option_download_remotely) {
 
 if(! (is.na(option_filter_to_department) | option_filter_to_department == "")) {
   cat("Filtering by department: ", option_filter_to_department)
+  add_log_entry("option_filter_to_department", option_filter_to_department)
   
   contracts <- contracts %>%
     filter(owner_org == option_filter_to_department)
@@ -110,6 +112,7 @@ contracts <- contracts %>%
 
 if(! (is.na(option_filter_to_vendor) | option_filter_to_vendor == "")) {
   cat("Filtering by vendor: ", option_filter_to_vendor)
+  add_log_entry("option_filter_to_vendor", option_filter_to_vendor)
   
   contracts <- contracts %>%
     filter(d_vendor_name == option_filter_to_vendor)
@@ -117,6 +120,10 @@ if(! (is.na(option_filter_to_vendor) | option_filter_to_vendor == "")) {
 } else {
   cat("Including all vendors.")
 }
+
+
+# Total entries (after filtering)
+add_log_entry("total_csv_entries", count(contracts))
 
 
 # Initial data mutations ========================
@@ -338,9 +345,12 @@ contract_descriptions_object_codes <- contract_descriptions_object_codes %>%
 
 # Amendment group identification ================
 
+add_log_entry("start_amendment_grouping")
+
 # Find amendment groups based on procurement_id, or on start date + contract value 
 contracts <- find_amendment_groups_v2(contracts)
 
+add_log_entry("finish_amendment_grouping")
 
 # Calculate contract spending over time =========
 
@@ -433,6 +443,8 @@ contract_spending_by_date <- contract_spending_by_date %>%
 
 
 # Summaries =====================================
+
+add_log_entry("start_summary_exports")
 
 # Helper variables
 # e.g. 4 (years inclusive from the start to end of the coverage range)
@@ -599,6 +611,10 @@ if(option_update_summary_csv_files) {
     write_csv(str_c(output_meta_path, "categories.csv"))
   
   
+  
+  # End summary exports
+  add_log_entry("finish_summary_exports")
+  
   # Note: temporary for manual vendor name normalization work.
   # TODO: remove this later.
   vendor_names %>%
@@ -623,6 +639,10 @@ if(option_update_summary_csv_files) {
 run_end_time <- now()
 paste("Start time was:", run_start_time)
 paste("End time was:", run_end_time)
+
+
+add_log_entry("end_time", run_end_time)
+export_log_entries()
 
 
 # TESTING (2022-04-12)

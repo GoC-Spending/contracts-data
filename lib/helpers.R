@@ -67,16 +67,21 @@ get_contracts_csv_locally_or_from_url <- function(contract_col_types) {
   url <- "https://open.canada.ca/data/dataset/d8f85d91-7dec-4fd1-8055-483b77225d8b/resource/fac950c0-00d5-4ec1-a4d3-9cbebf98a305/download/contracts.csv"
   local_path <- str_c("data/source/", today(), "-contracts.csv")
   
+  add_log_entry("csv_date", today())
+  
   file_is_already_downloaded <- file_exists(local_path)
   
   if (! file_is_already_downloaded) {
     print("Starting to download file.")
+    add_log_entry("start_csv_download")
     
     # Thanks to
     # https://stackoverflow.com/a/35283374/756641
     options(timeout=2400) # 40 minutes
     # TODO: Add tryCatch error handling here.
     download.file(url, local_path)
+    
+    add_log_entry("finish_csv_download")
   }
   
   # Import the CSV file
@@ -229,11 +234,11 @@ get_vendor_filename_from_vendor_name <- function(vendor_name) {
 
 run_log <- tibble_row(
   time = as.character(now()), 
-  name = "start_load", 
-  value = as.character(now())
+  name = "load_helper_scripts", 
+  value = as.character("")
   )
 
-add_log_entry <- function(name, value) {
+add_log_entry <- function(name, value = "") {
   input <- tibble_row(
     time = as.character(now()), 
     name = as.character(name), 
