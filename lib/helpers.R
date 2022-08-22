@@ -224,6 +224,35 @@ get_vendor_filename_from_vendor_name <- function(vendor_name) {
   return(str_to_lower(str_replace_all(vendor_name, " ", "_")))
 }
 
+
+# Low-key log handling (in a dataframe!)
+
+run_log <- tibble_row(
+  time = as.character(now()), 
+  name = "start_load", 
+  value = as.character(now())
+  )
+
+add_log_entry <- function(name, value) {
+  input <- tibble_row(
+    time = as.character(now()), 
+    name = as.character(name), 
+    value = as.character(value)
+  )
+  
+  # Thanks to
+  # https://stackoverflow.com/a/32759849/756641
+  run_log <<- run_log %>%
+    bind_rows(input)
+  
+  input
+}
+
+export_log_entries <- function(location = "data/out/run_log.csv") {
+  run_log %>%
+    write_csv(location)
+}
+
 # TESTING (2022-04-12)
 
 # get_fiscal_year_from_date("2022-03-31")
