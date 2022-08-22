@@ -642,6 +642,7 @@ paste("End time was:", run_end_time)
 
 
 add_log_entry("end_time", run_end_time)
+add_log_entry("run_duration", round(time_length(interval(run_start_time, run_end_time), "hours"), digits = 2))
 export_log_entries()
 
 
