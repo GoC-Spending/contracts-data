@@ -51,6 +51,7 @@ if(option_download_remotely) {
   contracts <- get_contracts_csv_locally_or_from_url(contract_col_types)
 } else {
   print("Using the local copy stored at:")
+  add_log_entry("csv_source", "local/testing")
   print(option_local_contracts_data_source)
   # Previous version (for local operations)
   # Import the CSV file

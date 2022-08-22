@@ -74,6 +74,7 @@ get_contracts_csv_locally_or_from_url <- function(contract_col_types) {
   if (! file_is_already_downloaded) {
     print("Starting to download file.")
     add_log_entry("start_csv_download")
+    add_log_entry("csv_source", "remote")
     
     # Thanks to
     # https://stackoverflow.com/a/35283374/756641
@@ -82,6 +83,8 @@ get_contracts_csv_locally_or_from_url <- function(contract_col_types) {
     download.file(url, local_path)
     
     add_log_entry("finish_csv_download")
+  } else {
+    add_log_entry("csv_source", "pre-downloaded")
   }
   
   # Import the CSV file
