@@ -7,3 +7,10 @@ library(purrr)
 library(fs)
 library(stringi)
 library(fuzzyjoin)
+
+# Include optional environment variables
+# Thanks to
+# https://stackoverflow.com/a/56262739/756641
+if(file_exists(".env")) {
+  readRenviron(".env")
+}

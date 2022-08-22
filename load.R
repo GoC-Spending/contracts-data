@@ -20,14 +20,27 @@ summary_vendor_annual_total_threshold <- 1000000
 summary_total_vendor_rows <- 400
 summary_per_owner_org_vendor_rows <- 100
 
-# "data/source/2022-03-24-contracts.csv"
-# "data/testing/2022-04-13-sample-contracts.csv"
-# "data/testing/2022-06-28-contracts-key-amendment-testing.csv"
-option_contracts_data_source <- "data/testing/2022-07-28-sample-contracts.csv"
-option_download_remotely <- TRUE
-option_update_summary_csv_files <- TRUE
-option_remove_existing_summary_folders <- TRUE
-option_remove_derived_columns <- TRUE
+# Load options from the .env file (loaded in _libraries.R)
+option_download_remotely <- Sys.getenv("option_download_remotely", TRUE)
+
+# Local contracts file (for testing or previous downloads)
+option_local_contracts_data_source <- Sys.getenv("option_local_contracts_data_source", "data/testing/contracts.csv")
+option_local_remove_derived_columns <- Sys.getenv("option_local_remove_derived_columns", TRUE)
+
+# Summary export options
+option_update_summary_csv_files <- Sys.getenv("option_update_summary_csv_files", TRUE)
+option_remove_existing_summary_folders <- Sys.getenv("option_remove_existing_summary_folders", TRUE)
+
+# Optional test filtering to a specific department or vendor
+option_filter_to_department <- Sys.getenv("option_filter_to_department")
+option_filter_to_vendor <- Sys.getenv("option_filter_to_vendor")
+
+if(option_filter_to_department != "" | option_filter_to_vendor != "") {
+  option_filter_enabled <- TRUE
+} else {
+  option_filter_enabled <- FALSE
+}
+
 
 # Data import ===================================
 
@@ -37,16 +50,16 @@ if(option_download_remotely) {
   contracts <- get_contracts_csv_locally_or_from_url(contract_col_types)
 } else {
   print("Using the local copy stored at:")
-  print(option_contracts_data_source)
+  print(option_local_contracts_data_source)
   # Previous version (for local operations)
   # Import the CSV file
   contracts <- read_csv(
-    option_contracts_data_source,
+    option_local_contracts_data_source,
     col_types = contract_col_types
   ) %>%
     clean_names()
   
-  if(option_remove_derived_columns) {
+  if(option_local_remove_derived_columns) {
     # If you're loading previously exported contracts testing data
     # remove the derived columns and the (joined) category column.
     # This avoids column name overlap conflicts later.
@@ -56,6 +69,55 @@ if(option_download_remotely) {
       select(!starts_with("category"))
   }
 }
+
+
+# Optionally filter by department ===============
+
+if(! (is.na(option_filter_to_department) | option_filter_to_department == "")) {
+  cat("Filtering by department: ", option_filter_to_department)
+  
+  contracts <- contracts %>%
+    filter(owner_org == option_filter_to_department)
+  
+} else {
+  cat("Including all departments.")
+}
+
+
+# Vendor name normalization =====================
+
+# Add vendor name normalization here, before amendments are found and combined below.
+# For simplicity, the normalized names are stored in d_vendor_name
+contracts <- contracts %>%
+  mutate(
+    d_clean_vendor_name = clean_vendor_names(vendor_name)
+  ) %>%
+  left_join(vendor_matching, by = c("d_clean_vendor_name" = "company_name")) %>%
+  rename(d_normalized_vendor_name = "parent_company")
+
+# For companies that aren't in the normalization table
+# include their regular names anyway:
+contracts <- contracts %>%
+  mutate(
+    d_vendor_name = case_when(
+      !is.na(d_normalized_vendor_name) ~ d_normalized_vendor_name,
+      TRUE ~ d_clean_vendor_name,
+    )
+  )
+
+
+# Optionally filter by (normalized) vendor name =====
+
+if(! (is.na(option_filter_to_vendor) | option_filter_to_vendor == "")) {
+  cat("Filtering by vendor: ", option_filter_to_vendor)
+  
+  contracts <- contracts %>%
+    filter(d_vendor_name == option_filter_to_vendor)
+  
+} else {
+  cat("Including all vendors.")
+}
+
 
 # Initial data mutations ========================
 
@@ -153,28 +215,6 @@ contracts <- contracts %>%
     d_end_date = max(delivery_date, contract_period_start, contract_date, na.rm = TRUE)
   ) %>%
   ungroup()
-
-
-# Vendor name normalization =====================
-
-# Add vendor name normalization here, before amendments are found and combined below.
-# For simplicity, the normalized names are stored in d_vendor_name
-contracts <- contracts %>%
-  mutate(
-    d_clean_vendor_name = clean_vendor_names(vendor_name)
-  ) %>%
-  left_join(vendor_matching, by = c("d_clean_vendor_name" = "company_name")) %>%
-  rename(d_normalized_vendor_name = "parent_company")
-
-# For companies that aren't in the normalization table
-# include their regular names anyway:
-contracts <- contracts %>%
-  mutate(
-    d_vendor_name = case_when(
-      !is.na(d_normalized_vendor_name) ~ d_normalized_vendor_name,
-      TRUE ~ d_clean_vendor_name,
-    )
-  )
 
 
 # Categorizing into an industry category ========

@@ -3,6 +3,9 @@
 .RData
 .Ruserdata
 
+# Optional environment file
+.env
+
 # Ignore source CSV files since they're too big for GitHub
 data/source/*.csv
 
