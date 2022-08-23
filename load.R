@@ -463,7 +463,13 @@ if(option_filter_enabled == FALSE) {
 
 # Determine which vendors have enough spending (e.g. averaging $1M per year in the time range, as defined in summary_vendor_annual_total_threshold)
 # This replaces top_n_vendors
-summary_included_vendors <- get_summary_included_vendors()
+if(option_filter_enabled == FALSE) {
+  summary_included_vendors <- get_summary_included_vendors()
+} else {
+  # Workaround here to ensure that vendors aren't dropped from departmental totals when testing with a filter option
+  summary_included_vendors <- read_csv(str_c(output_meta_path, "vendors.csv")) %>%
+    pull(name)
+}
 
 # For overall (government-wide) summaries that will appear on the homepage, first create a list-column with the different summary types (core public service departments, DND, and all departments)
 summary_overall = tibble(summary_type = c("core", "dnd", "all"))
@@ -517,6 +523,11 @@ summary_departments <- summary_departments %>%
 
 # Summary by vendor
 summary_vendors = tibble(vendor = summary_included_vendors)
+
+# Performance improvement when using a filter option
+if(option_filter_enabled == TRUE) {
+  summary_vendors = tibble(vendor = get_summary_included_vendors())
+}
 
 # Thanks to
 # https://stackoverflow.com/a/26003971/756641
