@@ -1,0 +1,14 @@
+time,name,value
+2022-08-22 16:55:49,load_helper_scripts,
+2022-08-22 16:55:50,start_time,2022-08-22 16:55:50
+2022-08-22 16:55:50,csv_date,2022-08-22
+2022-08-22 16:55:50,csv_source,pre-downloaded
+2022-08-22 16:57:29,total_csv_entries,896948
+2022-08-22 16:58:28,start_amendment_grouping,
+2022-08-22 17:06:27,finish_amendment_grouping,
+2022-08-22 18:21:44,start_summary_exports,
+2022-08-22 20:26:02,start_summary_exports,
+2022-08-22 21:58:28,finish_summary_exports,
+2022-08-22 21:58:48,end_time,2022-08-22 21:58:48
+2022-08-22 21:58:48,run_duration,5.05
+2022-08-22 21:58:48,run_memory_mb,4976.1
