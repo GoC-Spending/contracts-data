@@ -46,7 +46,7 @@ if(option_filter_to_department != "" | option_filter_to_vendor != "") {
 # Data import ===================================
 
 # Download the contracts csv file, list it for today (if not already downloaded) and then parse it:
-if(option_download_remotely) {
+if(option_download_remotely == TRUE) {
   print("Downloading remotely (if not already downloaded today)")
   contracts <- get_contracts_csv_locally_or_from_url(contract_col_types)
 } else {
@@ -61,7 +61,7 @@ if(option_download_remotely) {
   ) %>%
     clean_names()
   
-  if(option_local_remove_derived_columns) {
+  if(option_local_remove_derived_columns == TRUE) {
     # If you're loading previously exported contracts testing data
     # remove the derived columns and the (joined) category column.
     # This avoids column name overlap conflicts later.
@@ -576,7 +576,7 @@ meta_categories <- category_labels %>%
 # Export CSV files of summary tables =============
 
 # Export CSV files of the summary tables
-if(option_update_summary_csv_files) {
+if(option_update_summary_csv_files == TRUE) {
   
   # Make per-owner org output directories, if needed
   create_summary_folders(output_department_path, summary_departments$owner_org)

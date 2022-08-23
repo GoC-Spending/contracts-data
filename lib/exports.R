@@ -52,7 +52,7 @@ exports_round_percentages <- function(input_df) {
 # Helper function to quickly turn on and off CSV writes when testing
 # Can be drop-in replaced for write_csv in other functions.
 write_csv_if_enabled <- function(...) {
-  if(option_update_summary_csv_files) {
+  if(option_update_summary_csv_files == TRUE) {
     write_csv(...)
   } else {
     cat("Note: option_update_summary_csv_files is disabled; would have exported a CSV to:", list(...)[[2]], "\n")
@@ -61,7 +61,7 @@ write_csv_if_enabled <- function(...) {
 
 # If the option is enabled, then remove the summary folders if they exist (for vendors and departments, which might have old entities sitting around).
 remove_existing_summary_folders <- function() {
-  if(option_update_summary_csv_files & option_remove_existing_summary_folders) {
+  if(option_update_summary_csv_files == TRUE & option_remove_existing_summary_folders == TRUE) {
     print("Removing existing summary folders.")
     if(dir_exists(output_vendor_path)) {
       dir_delete(output_vendor_path)
