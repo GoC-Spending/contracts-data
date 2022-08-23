@@ -456,8 +456,10 @@ summary_overall_years_file_suffix <- str_c(summary_start_fiscal_year_short, "_to
 
 # If requested, first delete the vendors/ and departments/ folders recursively
 # See exports.R for more details
-remove_existing_summary_folders()
-
+# (If a filter option is applied, don't do this. Note: there are additional options that prevent this within the function itself.)
+if(option_filter_enabled == FALSE) {
+  remove_existing_summary_folders()
+}
 
 # Determine which vendors have enough spending (e.g. averaging $1M per year in the time range, as defined in summary_vendor_annual_total_threshold)
 # This replaces top_n_vendors
@@ -483,7 +485,11 @@ summary_overall <- summary_overall %>%
 create_summary_folders(output_overall_path, summary_overall$summary_type)
 
 # Export overall summaries
-export_summary(summary_overall, output_overall_path)
+# (unless a vendor or department filter is applied)
+if(option_filter_enabled == FALSE) {
+  export_summary(summary_overall, output_overall_path)  
+}
+
 
 
 
@@ -597,19 +603,23 @@ if(option_update_summary_csv_files == TRUE) {
   create_summary_folders(output_category_path, summary_categories$category)
   
   # Export category summaries using the reusable function
-  export_summary(summary_categories, output_category_path)
+  if(option_filter_enabled == FALSE) {
+    export_summary(summary_categories, output_category_path)
+  }
   
   
   # If necessary, create the "meta" folder
   dir_create(output_meta_path)
   
   # Export meta files to that location
-  meta_vendors %>%
-    write_csv(str_c(output_meta_path, "vendors.csv"))
-  meta_departments %>%
-    write_csv(str_c(output_meta_path, "departments.csv"))
-  meta_categories %>%
-    write_csv(str_c(output_meta_path, "categories.csv"))
+  if(option_filter_enabled == FALSE) {
+    meta_vendors %>%
+      write_csv(str_c(output_meta_path, "vendors.csv"))
+    meta_departments %>%
+      write_csv(str_c(output_meta_path, "departments.csv"))
+    meta_categories %>%
+      write_csv(str_c(output_meta_path, "categories.csv"))
+  }
   
   
   
