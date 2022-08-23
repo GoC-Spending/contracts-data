@@ -588,7 +588,9 @@ if(option_update_summary_csv_files == TRUE) {
   create_summary_folders(output_department_path, summary_departments$owner_org)
   
   # Export department summaries using the reusable function
-  export_summary(summary_departments, output_department_path)
+  if(option_filter_to_vendor == "") {
+    export_summary(summary_departments, output_department_path)
+  }
   
   
   # Per-vendor summaries
@@ -596,7 +598,9 @@ if(option_update_summary_csv_files == TRUE) {
   create_summary_folders(output_vendor_path, summary_vendors$vendor)
   
   # Export vendor summaries using the reusable function
-  export_summary(summary_vendors, output_vendor_path)
+  if(option_filter_to_department == "") {
+    export_summary(summary_vendors, output_vendor_path)
+  }
   
   # Per-category summaries
   # Make directories if needed
