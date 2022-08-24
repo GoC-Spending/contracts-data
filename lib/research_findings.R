@@ -43,11 +43,11 @@ s421_mean_contract_value <- function(df) {
 }
 
 # Usage is e.g.
-# get_s421_mean_contract_value("core")
-# get_s421_mean_contract_value("core", "owner_org")
-# get_s421_mean_contract_value("core", "d_vendor_name", TRUE)
-# get_s421_mean_contract_value("core", "d_most_recent_category")
-get_s421_mean_contract_value <- function(summary_type, grouping_column = FALSE, filter_vendors = FALSE) {
+# do_research_findings_call("s421_mean_contract_value", "core")
+# do_research_findings_call("s421_mean_contract_value", "core", "owner_org")
+# do_research_findings_call("s421_mean_contract_value", "core", "d_vendor_name", TRUE)
+# do_research_findings_call("s421_mean_contract_value", "core", "d_most_recent_category")
+do_research_findings_call <- function(function_name, summary_type, grouping_column = FALSE, filter_vendors = FALSE) {
   
   output <- contract_spending_overall_initiated %>%
     filter_by_summary_type(summary_type) %>%
@@ -58,16 +58,11 @@ get_s421_mean_contract_value <- function(summary_type, grouping_column = FALSE, 
       group_by(across(all_of(grouping_column)))
   }
   
+  # Thanks to
+  # https://stackoverflow.com/questions/62202574/how-to-safely-use-do-call-within-dplyr-pipe#comment110012904_62202574
   output %>%
-    s421_mean_contract_value
+    {exec(function_name, .)}
+    
   
 }
-
-
-contract_spending_overall_initiated %>%
-  summarise(
-    mean_original = mean(d_original_contract_value), 
-    mean_overall = mean(d_overall_contract_value),
-    n = n())
-
 
