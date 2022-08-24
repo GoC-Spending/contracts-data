@@ -347,6 +347,9 @@ group_by_grouping_column_and_fiscal_year_if_required <- function(df, grouping_co
   
 }
 
+# Note: in hindsight, this could also potentially have been done using
+# group_by(grouping_column, .add = TRUE) etc.
+# https://dplyr.tidyverse.org/reference/group_by.html
 select_by_grouping_column_if_required <- function(df, grouping_column) {
   
   if(grouping_column != FALSE) {
