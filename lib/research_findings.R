@@ -92,6 +92,85 @@ s425_max_duration <- function(df) {
 
 }
 
+s43_has_amendments <- function(df) {
+  
+  df <- df %>%
+    mutate(
+      has_amendments = case_when(
+        d_overall_number_of_amendments > 0 ~ 1,
+        TRUE ~ 0
+      )
+    )
+  
+  df
+  
+}
+
+s431_number_of_contracts <- function(df) {
+
+  df <- df %>%
+    s43_has_amendments
+  
+  df %>%
+    summarise(
+      contracts = n(),
+      contracts_with_amendments = sum(has_amendments),
+      has_amendments_percentage = contracts_with_amendments / contracts
+      ) %>%
+    exports_round_percentages()
+  
+}
+
+# Note: includes contracts with amendments only
+s432_mean_amendment_increase_percentage <- function(df) {
+  
+  df <- df %>%
+    s43_has_amendments
+  
+  df %>%
+    filter(has_amendments == 1) %>%
+    mutate(
+      d_contract_value_increase = d_overall_contract_value - d_original_contract_value,
+      d_amendment_increase_percentage = d_contract_value_increase / d_original_contract_value
+    ) %>%
+    summarise(
+      mean_amendment_increase_percentage = mean(d_amendment_increase_percentage), 
+      n = n()) %>%
+    exports_round_percentages()
+  
+}
+
+# Note: includes contracts with amendments only
+s433_total_amendment_increase_value <- function(df) {
+  
+  df <- df %>%
+    s43_has_amendments
+  
+  df %>%
+    filter(has_amendments == 1) %>%
+    mutate(
+      d_contract_value_increase = d_overall_contract_value - d_original_contract_value,
+    ) %>%
+    summarise(
+      total_amendment_increase_value = sum(d_contract_value_increase), 
+      n = n())
+  
+}
+
+# Note: includes contracts with amendments only
+s434_mean_number_of_amendments <- function(df) {
+  
+  df <- df %>%
+    s43_has_amendments
+  
+  df %>%
+    filter(has_amendments == 1) %>%
+    summarise(
+      mean_number_of_amendments = mean(d_overall_number_of_amendments), 
+      n = n())
+  
+}
+
 # Usage is e.g.
 # do_research_findings_call("s421_mean_contract_value", "core")
 # do_research_findings_call("s421_mean_contract_value", "core", "owner_org")
