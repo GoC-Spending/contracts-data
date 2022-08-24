@@ -42,6 +42,56 @@ s421_mean_contract_value <- function(df) {
       n = n())
 }
 
+s422_max_contract_value <- function(df) {
+  df %>%
+    summarise(
+      max_overall = max(d_overall_contract_value), 
+      n = n())
+}
+
+s423_min_contract_value <- function(df) {
+  df %>%
+    summarise(
+      min_overall = min(d_overall_contract_value), 
+      n = n())
+}
+
+s42_calculate_duration <- function(df) {
+  df <- df %>%
+    mutate(
+      duration_days = as.integer(d_overall_end_date - d_overall_start_date + 1),
+      duration_years = duration_days / 365
+    )
+  
+  df
+}
+
+s424_mean_duration <- function(df) {
+  
+  df <- df %>%
+    s42_calculate_duration()
+  
+  df %>%
+    summarise(
+      mean_years = mean(duration_years), 
+      n = n()) %>%
+    exports_round_years()
+  
+}
+
+s425_max_duration <- function(df) {
+  
+  df <- df %>%
+    s42_calculate_duration()
+  
+  df %>%
+    summarise(
+      max_years = max(duration_years), 
+      n = n()) %>%
+    exports_round_years()
+
+}
+
 # Usage is e.g.
 # do_research_findings_call("s421_mean_contract_value", "core")
 # do_research_findings_call("s421_mean_contract_value", "core", "owner_org")

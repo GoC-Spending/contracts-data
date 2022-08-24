@@ -13,6 +13,7 @@ output_meta_path <- "data/out/meta/"
 
 option_round_totals_digits <- 2
 option_round_percentages_digits <- 4
+option_round_years_digits <- 2
 
 owner_org_type_file <- "data/owner_orgs/owner_orgs.csv"
 
@@ -42,6 +43,16 @@ exports_round_percentages <- function(input_df) {
   input_df <- input_df %>%
     mutate(
       across(ends_with("percentage"), ~ round(.x, digits = !!option_round_percentages_digits))
+    )
+  
+  return(input_df)
+}
+
+# Rounds any column ending in "years" to 2 decimal places
+exports_round_years <- function(input_df) {
+  input_df <- input_df %>%
+    mutate(
+      across(ends_with("years"), ~ round(.x, digits = !!option_round_years_digits))
     )
   
   return(input_df)
