@@ -353,9 +353,32 @@ get_summary_by_fiscal_year_by_specific_entity <- function(filter_column, filter_
   
 }
 
-# x <- get_summary_by_fiscal_year_by_specific_entity("owner_org", "tc", "d_most_recent_category")
-# y <- get_summary_total_by_category_and_fiscal_year_by_owner_org("tc")
-# setdiff(x,y)
+# Example usage
+
+## By org
+x <- get_summary_by_fiscal_year_by_specific_entity("owner_org", "tc", "d_most_recent_category")
+y <- get_summary_total_by_category_and_fiscal_year_by_owner_org("tc")
+setdiff(x,y)
+
+get_summary_by_fiscal_year_by_specific_entity("owner_org", "tc", "d_vendor_name", TRUE)
+get_summary_total_by_vendor_and_fiscal_year_by_owner("tc")
+
+
+## By vendor
+get_summary_by_fiscal_year_by_specific_entity("d_vendor_name", "ACCENTURE", "owner_org")
+get_summary_total_by_fiscal_year_and_owner_org_by_vendor("ACCENTURE")
+
+get_summary_by_fiscal_year_by_specific_entity("d_vendor_name", "ACCENTURE", "d_most_recent_category")
+get_summary_total_by_fiscal_year_and_category_by_vendor("ACCENTURE")
+
+
+## By category
+get_summary_by_fiscal_year_by_specific_entity("d_most_recent_category", "2_professional_services", "owner_org")
+get_summary_total_by_owner_org_and_fiscal_year_by_category("2_professional_services")
+
+get_summary_by_fiscal_year_by_specific_entity("d_most_recent_category", "2_professional_services", "d_vendor_name", TRUE)
+get_summary_total_by_vendor_and_fiscal_year_by_category("2_professional_services")
+
 
 
 # Summary by owner_org (functions) ========================
