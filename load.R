@@ -532,7 +532,14 @@ create_summary_folders(output_overall_path, summary_overall$summary_type)
 # Export overall summaries
 # (unless a vendor or department filter is applied)
 if(option_filter_enabled == FALSE) {
-  export_summary(summary_overall, output_overall_path)  
+  export_summary(summary_overall, output_overall_path)
+  
+  # Once we know that these folders exist (thanks to create_summary_folders above)
+  # Let's also generate the summary_type specific research findings CSV files:
+  add_log_entry("start_research_findings_export")
+  # From research_findings.R
+  save_all_research_findings()
+  add_log_entry("finish_research_findings_export")
 }
 
 
