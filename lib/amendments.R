@@ -152,14 +152,7 @@ find_amendment_groups_v2 <- function(contracts) {
   
   # Second case (matching original values & start dates)
   
-  # Ensure that there's an "original value" to compare to, even in the first contract's case where it might only be listed in contract_value
-  contracts <- contracts %>%
-    mutate(
-      d_original_original_value = case_when(
-        original_value > 0 ~ original_value, # Also takes care of NA entries
-        TRUE ~ contract_value
-      )
-    )
+  # d_original_original_value was previously added here
   
   # Note: Need to be careful here not to accidentally interfere with
   # contracts that were previously grouped in the first case.
