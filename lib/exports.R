@@ -331,6 +331,33 @@ export_individual_listcolumn <- function(filename, listcolumn_data, output_path,
 }
 
 
+# Summary by fiscal year functions (reusable by entity type) ====
+
+get_summary_by_fiscal_year_by_specific_entity <- function(filter_column, filter_search, grouping_column, filter_vendors = FALSE) {
+  
+  output <- contract_spending_by_date %>%
+    filter(across(all_of(filter_column)) == !!filter_search) %>%
+    filter_vendors_if_required(filter_vendors) %>%
+    group_by(across(all_of(grouping_column)), d_fiscal_year_short) %>%
+    summarise(
+      total = sum(d_daily_contract_value, na.rm = TRUE)
+    ) %>%
+    ungroup() %>%
+    mutate(
+      d_fiscal_year = convert_start_year_to_fiscal_year(d_fiscal_year_short)
+    ) %>%
+    select(!!!grouping_column, d_fiscal_year, total) %>%
+    exports_round_totals()
+  
+  return(output)
+  
+}
+
+# x <- get_summary_by_fiscal_year_by_specific_entity("owner_org", "tc", "d_most_recent_category")
+# y <- get_summary_total_by_category_and_fiscal_year("tc")
+# setdiff(x,y)
+
+
 # Summary by owner_org (functions) ========================
 
 # For each owner org, get a list of the top n companies
