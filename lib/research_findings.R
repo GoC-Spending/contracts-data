@@ -34,21 +34,23 @@ s421_mean_contract_value <- function(df) {
       mean_original_value = mean(d_original_contract_value), 
       mean_overall_value = mean(d_overall_contract_value),
       n = n()) %>%
-    exports_round_mean()
+    exports_round_totals()
 }
 
 s422_max_contract_value <- function(df) {
   df %>%
     summarise(
       max_overall_value = max(d_overall_contract_value), 
-      n = n())
+      n = n()) %>%
+    exports_round_totals()
 }
 
 s423_min_contract_value <- function(df) {
   df %>%
     summarise(
       min_overall_value = min(d_overall_contract_value), 
-      n = n())
+      n = n()) %>%
+    exports_round_totals()
 }
 
 s42_calculate_duration <- function(df) {
@@ -148,7 +150,8 @@ s433_total_amendment_increase_value <- function(df) {
     ) %>%
     summarise(
       total_amendment_increase_value = sum(d_contract_value_increase), 
-      n = n())
+      n = n()) %>%
+    exports_round_totals()
   
 }
 
