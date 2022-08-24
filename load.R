@@ -4,6 +4,7 @@ source("lib/amendments.R")
 source("lib/vendors.R")
 source("lib/categories.R")
 source("lib/exports.R")
+source("lib/research_findings.R")
 
 # Start time
 run_start_time <- now()
@@ -467,6 +468,18 @@ contract_spending_by_date <- contract_spending_by_date %>%
     d_fiscal_year_short <= summary_end_fiscal_year_short,
   ) 
   
+
+# Contracts that were new since the start of the summary_start_fiscal_year_short fiscal year:
+contract_spending_overall_initiated <- contract_spending_overall %>%
+  filter(
+    d_overall_start_date >= ymd(str_c(summary_start_fiscal_year_short,"04","01"))
+  )
+
+# Contracts that have been active since the start of the summary_start_fiscal_year_short fiscal year:
+contract_spending_overall_ongoing <- contract_spending_overall %>%
+  filter(
+    d_overall_end_date >= ymd(str_c(summary_start_fiscal_year_short,"04","01"))
+  )
 
 
 # Summaries =====================================

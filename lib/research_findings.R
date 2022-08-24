@@ -15,18 +15,12 @@ source("lib/exports.R")
 # contract_spending_overall includes a row for each "group" representing
 # a contract and its amendments.
 
+# contract_spending_overall_initiated includes entries from contract_spending_overall
+# that were new since the start of the summary_start_fiscal_year_short fiscal year
 
-# Contracts that were new since the start of the summary_start_fiscal_year_short fiscal year:
-contract_spending_overall_initiated <- contract_spending_overall %>%
-  filter(
-    d_overall_start_date >= ymd(str_c(summary_start_fiscal_year_short,"04","01"))
-  )
+# contract_spending_overall_ongoing includes entries from contract_spending_overall
+# that have been active since the start of the summary_start_fiscal_year_short fiscal year
 
-# Contracts that have been active since the start of the summary_start_fiscal_year_short fiscal year:
-contract_spending_overall_ongoing <- contract_spending_overall %>%
-  filter(
-    d_overall_end_date >= ymd(str_c(summary_start_fiscal_year_short,"04","01"))
-  )
 
 
 # Research paper findings by section number ===============
@@ -167,7 +161,11 @@ s434_mean_number_of_amendments <- function(df) {
     filter(has_amendments == 1) %>%
     summarise(
       mean_number_of_amendments = mean(d_overall_number_of_amendments), 
-      n = n())
+      n = n()) %>%
+    mutate(
+      # Round to 2 digits (just using option_round_years_digits for convenience here)
+      mean_number_of_amendments = round(mean_number_of_amendments, digits = !!option_round_years_digits)
+    )
   
 }
 
@@ -195,3 +193,63 @@ do_research_findings_call <- function(function_name, summary_type, grouping_colu
   
 }
 
+
+# Export helper functions =======================
+# Note: these are a bit clunky (and don't save results in memory or use map- functions) but they'll work for now.
+
+save_research_findings_call_to_csv <- function(function_name, summary_type, file_suffix = "", grouping_column = FALSE, filter_vendors = FALSE) {
+  
+  # Pass along the input parameters to do_research_findings_call()
+  output <- do_research_findings_call(function_name, summary_type, grouping_column, filter_vendors)
+  
+  if(file_suffix != "") {
+    # Include a _ before the file_suffix after the function name, if specified.
+    file_suffix <- str_c("_", file_suffix)
+  }
+  
+  output %>%
+    write_csv_if_enabled(str_c(output_overall_path, summary_type, "/", function_name, file_suffix, ".csv"))
+  
+}
+
+save_research_findings_call_variations_to_csv <- function(function_name, summary_type) {
+  
+  # Essentially: calls the same analysis function with all 4 of the possible variations (overall across the summary type, by department, by vendor, by category)
+  save_research_findings_call_to_csv(function_name, summary_type)
+  save_research_findings_call_to_csv(function_name, summary_type, "by_department", "owner_org")
+  save_research_findings_call_to_csv(function_name, summary_type, "by_vendor", "d_vendor_name", TRUE)
+  save_research_findings_call_to_csv(function_name, summary_type, "by category", "d_most_recent_category")
+  
+}
+
+save_all_research_findings_by_summary_type <- function(summary_type) {
+  
+  # Note: if more functions are added above, be sure to add them here.
+  function_names <- c(
+    "s421_mean_contract_value",
+    "s422_max_contract_value",
+    "s423_min_contract_value",
+    "s424_mean_duration",
+    "s425_max_duration",
+    "s431_number_of_contracts",
+    "s432_mean_amendment_increase_percentage",
+    "s433_total_amendment_increase_value",
+    "s434_mean_number_of_amendments"
+  )
+  
+  output <- tibble(function_name = function_names, summary_type = summary_type)
+  
+  walk2(output$function_name, output$summary_type, save_research_findings_call_variations_to_csv)
+  
+}
+
+# Export research findings across all summary types
+# We'll call this from the load.R
+save_all_research_findings <- function() {
+  
+  summary_types <- c("core", "dnd", "all")
+  
+  summary_types %>%
+    walk(save_all_research_findings_by_summary_type)
+  
+}
