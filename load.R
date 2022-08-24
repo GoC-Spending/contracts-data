@@ -225,6 +225,16 @@ contracts <- contracts %>%
   ungroup()
 
 
+# Ensure that there's an "original value" to compare to, even in the first contract's case where it might only be listed in contract_value
+contracts <- contracts %>%
+  mutate(
+    d_original_original_value = case_when(
+      original_value > 0 ~ original_value, # Also takes care of NA entries
+      TRUE ~ contract_value
+    )
+  )
+
+
 # Categorizing into an industry category ========
 
 # Get slightly cleaner versions of descriptions and object codes
@@ -359,7 +369,8 @@ add_log_entry("finish_amendment_grouping")
 # For each amendment group, find the original row's start date, and the last row's end date
 contract_spending_overall <- contracts %>%
   arrange(d_reporting_period, owner_org) %>% # This is done above, but for safety, doing it again here to ensure that the first() and last() calls below work properly.
-  select(d_reference_number, d_vendor_name, d_start_date, d_end_date, contract_value, d_amendment_group_id, owner_org, d_number_of_amendments, d_economic_object_code, d_description_en, category, comments_en, additional_comments_en) %>%
+  # TODO: the first() and last() calls below could have the d_reporting_period sort order set; confirm if that affects totals later.
+  select(d_reference_number, d_vendor_name, d_start_date, d_end_date, contract_value, d_original_original_value, d_amendment_group_id, owner_org, d_number_of_amendments, d_economic_object_code, d_description_en, category, comments_en, additional_comments_en) %>%
   group_by(d_amendment_group_id) %>%
   mutate(
     d_most_recent_category = last(category),
@@ -372,8 +383,8 @@ contract_spending_overall <- contracts %>%
       d_overall_start_date > d_overall_end_date ~ d_overall_end_date,
       TRUE ~ d_overall_start_date,
     ),
-    # Note: update this to use either the contract value or an original value, if supplied (added in the amendment grouping function).
-    d_original_contract_value = first(contract_value),
+    # Note: this uses either the contract value or an original value, if supplied
+    d_original_contract_value = first(d_original_original_value, order_by = d_original_original_value),
     d_overall_contract_value = last(contract_value),
     d_daily_contract_value = d_overall_contract_value / as.integer(d_overall_end_date - d_overall_start_date + 1), # The +1 is added so it's inclusive of the start and end dates themselves.
     # Avoid multiple entries appearing due to previous amendment totals
