@@ -31,22 +31,23 @@ source("lib/exports.R")
 s421_mean_contract_value <- function(df) {
   df %>%
     summarise(
-      mean_original = mean(d_original_contract_value), 
-      mean_overall = mean(d_overall_contract_value),
-      n = n())
+      mean_original_value = mean(d_original_contract_value), 
+      mean_overall_value = mean(d_overall_contract_value),
+      n = n()) %>%
+    exports_round_mean()
 }
 
 s422_max_contract_value <- function(df) {
   df %>%
     summarise(
-      max_overall = max(d_overall_contract_value), 
+      max_overall_value = max(d_overall_contract_value), 
       n = n())
 }
 
 s423_min_contract_value <- function(df) {
   df %>%
     summarise(
-      min_overall = min(d_overall_contract_value), 
+      min_overall_value = min(d_overall_contract_value), 
       n = n())
 }
 
@@ -162,10 +163,7 @@ s434_mean_number_of_amendments <- function(df) {
     summarise(
       mean_number_of_amendments = mean(d_overall_number_of_amendments), 
       n = n()) %>%
-    mutate(
-      # Round to 2 digits (just using option_round_years_digits for convenience here)
-      mean_number_of_amendments = round(mean_number_of_amendments, digits = !!option_round_years_digits)
-    )
+    exports_round_mean()
   
 }
 
