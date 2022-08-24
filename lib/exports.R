@@ -333,12 +333,40 @@ export_individual_listcolumn <- function(filename, listcolumn_data, output_path,
 
 # Summary by fiscal year functions (reusable by entity type) ====
 
-get_summary_by_fiscal_year_by_specific_entity <- function(filter_column, filter_search, grouping_column, filter_vendors = FALSE) {
+group_by_grouping_column_and_fiscal_year_if_required <- function(df, grouping_column) {
+  
+  if(grouping_column != FALSE) {
+    df <- df %>%
+      group_by(across(all_of(grouping_column)), d_fiscal_year_short)
+  } else {
+    df <- df %>%
+      group_by(d_fiscal_year_short)
+  }
+  
+  df
+  
+}
+
+select_by_grouping_column_if_required <- function(df, grouping_column) {
+  
+  if(grouping_column != FALSE) {
+    df <- df %>%
+      select(!!!grouping_column, d_fiscal_year, total)
+  } else {
+    df <- df %>%
+      select(d_fiscal_year, total)
+  }
+  
+  df
+  
+}
+
+get_summary_by_fiscal_year_by_specific_entity <- function(filter_column, filter_search, grouping_column = FALSE, filter_vendors = FALSE) {
   
   output <- contract_spending_by_date %>%
     filter(across(all_of(filter_column)) == !!filter_search) %>%
     filter_vendors_if_required(filter_vendors) %>%
-    group_by(across(all_of(grouping_column)), d_fiscal_year_short) %>%
+    group_by_grouping_column_and_fiscal_year_if_required(grouping_column) %>%
     summarise(
       total = sum(d_daily_contract_value, na.rm = TRUE)
     ) %>%
@@ -346,7 +374,7 @@ get_summary_by_fiscal_year_by_specific_entity <- function(filter_column, filter_
     mutate(
       d_fiscal_year = convert_start_year_to_fiscal_year(d_fiscal_year_short)
     ) %>%
-    select(!!!grouping_column, d_fiscal_year, total) %>%
+    select_by_grouping_column_if_required(grouping_column) %>%
     exports_round_totals()
   
   return(output)
@@ -379,6 +407,9 @@ get_summary_total_by_owner_org_and_fiscal_year_by_category("2_professional_servi
 get_summary_by_fiscal_year_by_specific_entity("d_most_recent_category", "2_professional_services", "d_vendor_name", TRUE)
 get_summary_total_by_vendor_and_fiscal_year_by_category("2_professional_services")
 
+## Optionally skip a grouping column and just get the full fiscal year breakdown for the specific entity.
+get_summary_by_fiscal_year_by_specific_entity("d_most_recent_category", "2_professional_services")
+get_summary_by_fiscal_year_by_specific_entity("d_vendor_name", "ACCENTURE")
 
 
 # Summary by owner_org (functions) ========================
