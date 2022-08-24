@@ -353,10 +353,9 @@ contracts <- find_amendment_groups_v2(contracts)
 
 add_log_entry("finish_amendment_grouping")
 
-# Calculate contract spending over time =========
+# Group contracts and amendments together =========
 
-# Contract spending by day
-# Simplified version (linearized across the total duration as per the last amendment; doesn't account for changes in spending per-amendment in stages)
+# Contract spending grouped by amendment groups
 # For each amendment group, find the original row's start date, and the last row's end date
 contract_spending_overall <- contracts %>%
   arrange(d_reporting_period, owner_org) %>% # This is done above, but for safety, doing it again here to ensure that the first() and last() calls below work properly.
@@ -373,10 +372,22 @@ contract_spending_overall <- contracts %>%
       d_overall_start_date > d_overall_end_date ~ d_overall_end_date,
       TRUE ~ d_overall_start_date,
     ),
+    # Note: update this to use either the contract value or an original value, if supplied (added in the amendment grouping function).
+    d_original_contract_value = first(contract_value),
     d_overall_contract_value = last(contract_value),
-    d_daily_contract_value = d_overall_contract_value / as.integer(d_overall_end_date - d_overall_start_date + 1) # The +1 is added so it's inclusive of the start and end dates themselves.
+    d_daily_contract_value = d_overall_contract_value / as.integer(d_overall_end_date - d_overall_start_date + 1), # The +1 is added so it's inclusive of the start and end dates themselves.
+    # Avoid multiple entries appearing due to previous amendment totals
+    d_overall_number_of_amendments = last(d_number_of_amendments, order_by = d_number_of_amendments)
   ) %>%
   ungroup()
+
+# Ensure that these entries are unique, for future analysis
+# From now on, contract_spending_overall represents groups of 
+# matched contracts with their amendments.
+contract_spending_overall <- contract_spending_overall %>%
+  select(owner_org, d_vendor_name, d_amendment_group_id, d_overall_number_of_amendments, d_most_recent_category, d_overall_start_date, d_overall_end_date, d_original_contract_value, d_overall_contract_value, d_daily_contract_value) %>%
+  distinct()
+
 
 # Maintain a set of contract vendor names for normalization troubleshooting later
 vendor_names <- contracts %>%
@@ -404,6 +415,10 @@ owner_org_names <- contracts %>%
 print("Reminder: removing the 'contracts' data frame to save memory.")
 #rm(contracts)
 
+
+# Calculate contract spending over time (pivot and complete into per-day data) =======
+
+# Simplified version (linearized across the total duration as per the last amendment; doesn't account for changes in spending per-amendment in stages)
 
 # With thanks to
 # https://github.com/lchski/parliamentarians-analysis/blob/master/analysis/members.R#L7-L13
