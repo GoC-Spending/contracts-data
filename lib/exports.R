@@ -354,7 +354,7 @@ get_summary_by_fiscal_year_by_specific_entity <- function(filter_column, filter_
 }
 
 # x <- get_summary_by_fiscal_year_by_specific_entity("owner_org", "tc", "d_most_recent_category")
-# y <- get_summary_total_by_category_and_fiscal_year("tc")
+# y <- get_summary_total_by_category_and_fiscal_year_by_owner_org("tc")
 # setdiff(x,y)
 
 
@@ -435,7 +435,7 @@ get_summary_total_by_category_by_owner_org <- function(owner_org) {
 }
 
 # Get a category and fiscal year summary by department or agency
-get_summary_total_by_category_and_fiscal_year <- function(owner_org) {
+get_summary_total_by_category_and_fiscal_year_by_owner_org <- function(owner_org) {
   
   output <- contract_spending_by_date %>%
     filter(owner_org == !!owner_org) %>%
