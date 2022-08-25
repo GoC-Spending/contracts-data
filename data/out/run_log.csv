@@ -1,16 +1,15 @@
 time,name,value
-2022-08-24 16:36:18,load_helper_scripts,
-2022-08-24 16:36:19,start_time,2022-08-24 16:36:19
-2022-08-24 16:36:19,csv_date,2022-08-24
-2022-08-24 16:36:19,csv_source,pre-downloaded
-2022-08-24 16:37:57,total_csv_entries,896948
-2022-08-24 16:38:58,start_amendment_grouping,
-2022-08-24 16:46:59,finish_amendment_grouping,
-2022-08-24 18:05:35,start_summary_exports,
-2022-08-24 18:08:27,start_research_findings_export,
-2022-08-24 18:08:46,finish_research_findings_export,
-2022-08-24 19:38:03,finish_summary_exports,
-2022-08-24 19:38:23,end_time,2022-08-24 19:38:23
-2022-08-24 19:38:23,run_duration,3.03
-2022-08-24 19:38:23,run_memory_mb,4945.1
-2022-08-24 20:04:06,run_duration_hours,3.03
+2022-08-25 11:46:42,load_helper_scripts,
+2022-08-25 11:46:43,start_time,2022-08-25 11:46:43
+2022-08-25 11:46:43,csv_date,2022-08-25
+2022-08-25 11:46:43,csv_source,pre-downloaded
+2022-08-25 11:48:59,total_csv_entries,896950
+2022-08-25 11:49:59,start_amendment_grouping,
+2022-08-25 11:58:02,finish_amendment_grouping,
+2022-08-25 13:12:05,start_summary_exports,
+2022-08-25 13:15:00,start_research_findings_export,
+2022-08-25 13:15:21,finish_research_findings_export,
+2022-08-25 14:44:52,finish_summary_exports,
+2022-08-25 14:45:12,end_time,2022-08-25 14:45:12
+2022-08-25 14:45:12,run_duration_hours,2.97
+2022-08-25 14:45:12,run_memory_mb,4954.8
