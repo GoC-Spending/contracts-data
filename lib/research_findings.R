@@ -126,6 +126,8 @@ s432_mean_amendment_increase_percentage <- function(df) {
   
   df %>%
     filter(has_amendments == 1) %>%
+    # Avoid division by 0 errors
+    filter(d_original_contract_value > 0) %>%
     mutate(
       d_contract_value_increase = d_overall_contract_value - d_original_contract_value,
       d_amendment_increase_percentage = d_contract_value_increase / d_original_contract_value
@@ -145,6 +147,8 @@ s433_total_amendment_increase_value <- function(df) {
   
   df %>%
     filter(has_amendments == 1) %>%
+    # Same as above for consistency
+    filter(d_original_contract_value > 0) %>%
     mutate(
       d_contract_value_increase = d_overall_contract_value - d_original_contract_value,
     ) %>%
