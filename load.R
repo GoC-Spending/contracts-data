@@ -17,7 +17,9 @@ add_log_entry("start_time", run_start_time)
 summary_start_fiscal_year_short <- 2017
 summary_end_fiscal_year_short <- 2021
 summary_vendor_annual_total_threshold <- 1000000
+
 summary_maximum_duration_cutoff_years <- 52
+summary_original_value_minimum_cutoff <- 5000
 
 # Note: to be deprecated
 summary_total_vendor_rows <- 400
@@ -228,10 +230,13 @@ contracts <- contracts %>%
 
 
 # Ensure that there's an "original value" to compare to, even in the first contract's case where it might only be listed in contract_value
+# A lot of contracts have (erroneously) low original values, e.g. $1.13 on a $600M contract
+# https://search.open.canada.ca/en/ct/id/dfo-mpo,C-2020-2021-Q1-01265
+# So we add a summary_original_value_minimum_cutoff value (e.g. $5000) to ignore these.
 contracts <- contracts %>%
   mutate(
     d_original_original_value = case_when(
-      original_value > 0 ~ original_value, # Also takes care of NA entries
+      original_value > summary_original_value_minimum_cutoff ~ original_value, # Also takes care of NA entries
       TRUE ~ contract_value
     )
   )
