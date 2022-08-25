@@ -60,6 +60,10 @@ s42_calculate_duration <- function(df) {
       duration_years = duration_days / 365
     )
   
+  # To remove outlier durations (e.g. 112 years, 1600 years, etc.)
+  df <- df %>%
+    filter(duration_years < summary_maximum_duration_cutoff_years)
+  
   df
 }
 
