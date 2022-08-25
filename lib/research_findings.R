@@ -31,8 +31,8 @@ source("lib/exports.R")
 s421_mean_contract_value <- function(df) {
   df %>%
     summarise(
-      mean_original_value = mean(d_original_contract_value), 
-      mean_overall_value = mean(d_overall_contract_value),
+      mean_original_value = mean(d_original_contract_value, na.rm = TRUE), 
+      mean_overall_value = mean(d_overall_contract_value, na.rm = TRUE),
       n = n()) %>%
     exports_round_totals()
 }
@@ -40,7 +40,7 @@ s421_mean_contract_value <- function(df) {
 s422_max_contract_value <- function(df) {
   df %>%
     summarise(
-      max_overall_value = max(d_overall_contract_value), 
+      max_overall_value = max(d_overall_contract_value, na.rm = TRUE), 
       n = n()) %>%
     exports_round_totals()
 }
@@ -48,7 +48,7 @@ s422_max_contract_value <- function(df) {
 s423_min_contract_value <- function(df) {
   df %>%
     summarise(
-      min_overall_value = min(d_overall_contract_value), 
+      min_overall_value = min(d_overall_contract_value, na.rm = TRUE), 
       n = n()) %>%
     exports_round_totals()
 }
@@ -74,7 +74,7 @@ s424_mean_duration <- function(df) {
   
   df %>%
     summarise(
-      mean_years = mean(duration_years), 
+      mean_years = mean(duration_years, na.rm = TRUE), 
       n = n()) %>%
     exports_round_years()
   
@@ -87,7 +87,7 @@ s425_max_duration <- function(df) {
   
   df %>%
     summarise(
-      max_years = max(duration_years), 
+      max_years = max(duration_years, na.rm = TRUE), 
       n = n()) %>%
     exports_round_years()
 
@@ -115,7 +115,7 @@ s431_number_of_contracts <- function(df) {
   df %>%
     summarise(
       contracts = n(),
-      contracts_with_amendments = sum(has_amendments),
+      contracts_with_amendments = sum(has_amendments, na.rm = TRUE),
       has_amendments_percentage = contracts_with_amendments / contracts
       ) %>%
     exports_round_percentages()
@@ -137,7 +137,7 @@ s432_mean_amendment_increase_percentage <- function(df) {
       d_amendment_increase_percentage = d_contract_value_increase / d_original_contract_value
     ) %>%
     summarise(
-      mean_amendment_increase_percentage = mean(d_amendment_increase_percentage), 
+      mean_amendment_increase_percentage = mean(d_amendment_increase_percentage, na.rm = TRUE), 
       n = n()) %>%
     exports_round_percentages()
   
@@ -157,7 +157,7 @@ s433_total_amendment_increase_value <- function(df) {
       d_contract_value_increase = d_overall_contract_value - d_original_contract_value,
     ) %>%
     summarise(
-      total_amendment_increase_value = sum(d_contract_value_increase), 
+      total_amendment_increase_value = sum(d_contract_value_increase, na.rm = TRUE), 
       n = n()) %>%
     exports_round_totals()
   
@@ -172,7 +172,7 @@ s434_mean_number_of_amendments <- function(df) {
   df %>%
     filter(has_amendments == 1) %>%
     summarise(
-      mean_number_of_amendments = mean(d_overall_number_of_amendments), 
+      mean_number_of_amendments = mean(d_overall_number_of_amendments, na.rm = TRUE), 
       n = n()) %>%
     exports_round_mean()
   
