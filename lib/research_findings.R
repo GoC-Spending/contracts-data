@@ -185,7 +185,7 @@ s434_mean_number_of_amendments <- function(df) {
 # do_research_findings_call("s421_mean_contract_value", "core", "d_most_recent_category")
 do_research_findings_call <- function(function_name, summary_type, grouping_column = FALSE, filter_vendors = FALSE) {
   
-  output <- contract_spending_overall_initiated %>%
+  output <- contract_spending_overall_ongoing %>%
     filter_by_summary_type(summary_type) %>%
     filter_vendors_if_required(filter_vendors)
   
