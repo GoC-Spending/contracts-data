@@ -507,7 +507,8 @@ get_summary_total_by_category_by_owner_org <- function(owner_org) {
       percentage = total / sum(total)
     ) %>%
     arrange(desc(total)) %>%
-    exports_round_totals()
+    exports_round_totals() %>%
+    exports_round_percentages()
   
   return(output)
   
@@ -629,7 +630,8 @@ get_summary_total_by_category_by_vendor <- function(requested_vendor_name) {
       percentage = total / sum(total)
     ) %>%
     arrange(desc(total)) %>%
-    exports_round_totals()
+    exports_round_totals() %>%
+    exports_round_percentages()
   
   return(output)
 }
