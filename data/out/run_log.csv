@@ -1,14 +1,15 @@
 time,name,value
-2022-08-24 16:31:41,load_helper_scripts,
-2022-08-24 16:31:41,start_time,2022-08-24 16:31:41
-2022-08-24 16:31:41,csv_date,2022-08-24
-2022-08-24 16:31:41,csv_source,pre-downloaded
-2022-08-24 16:31:53,option_filter_to_department,tc
-2022-08-24 16:31:55,total_csv_entries,17820
-2022-08-24 16:31:56,start_amendment_grouping,
-2022-08-24 16:32:05,finish_amendment_grouping,
-2022-08-24 16:33:26,start_summary_exports,
-2022-08-24 16:33:42,finish_summary_exports,
-2022-08-24 16:33:43,end_time,2022-08-24 16:33:43
-2022-08-24 16:33:43,run_duration,0.03
-2022-08-24 16:33:43,run_memory_mb,190.1
+2022-08-24 16:36:18,load_helper_scripts,
+2022-08-24 16:36:19,start_time,2022-08-24 16:36:19
+2022-08-24 16:36:19,csv_date,2022-08-24
+2022-08-24 16:36:19,csv_source,pre-downloaded
+2022-08-24 16:37:57,total_csv_entries,896948
+2022-08-24 16:38:58,start_amendment_grouping,
+2022-08-24 16:46:59,finish_amendment_grouping,
+2022-08-24 18:05:35,start_summary_exports,
+2022-08-24 18:08:27,start_research_findings_export,
+2022-08-24 18:08:46,finish_research_findings_export,
+2022-08-24 19:38:03,finish_summary_exports,
+2022-08-24 19:38:23,end_time,2022-08-24 19:38:23
+2022-08-24 19:38:23,run_duration,3.03
+2022-08-24 19:38:23,run_memory_mb,4945.1
