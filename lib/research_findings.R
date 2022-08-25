@@ -227,7 +227,7 @@ save_research_findings_call_variations_to_csv <- function(function_name, summary
   save_research_findings_call_to_csv(function_name, summary_type)
   save_research_findings_call_to_csv(function_name, summary_type, "by_department", "owner_org")
   save_research_findings_call_to_csv(function_name, summary_type, "by_vendor", "d_vendor_name", TRUE)
-  save_research_findings_call_to_csv(function_name, summary_type, "by category", "d_most_recent_category")
+  save_research_findings_call_to_csv(function_name, summary_type, "by_category", "d_most_recent_category")
   
 }
 
