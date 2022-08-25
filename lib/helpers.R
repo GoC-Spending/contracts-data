@@ -261,6 +261,43 @@ export_log_entries <- function(location = "data/out/run_log.csv") {
     write_csv(location)
 }
 
+
+# Find helpers for contract calculation troubleshooting ====
+
+find_selection_helper <- function(df) {
+  
+  df <- df %>%
+    select(
+      owner_org,
+      d_reference_number,
+      d_vendor_name,
+      d_procurement_id,
+      contract_value,
+      d_original_original_value,
+      d_reporting_period,
+      d_start_date,
+      d_end_date,
+      category,
+      d_amendment_group_id,
+      d_is_amendment,
+      d_number_of_amendments,
+      d_amendment_via
+      )
+  
+  df
+  
+}
+
+find_contract_by_d_amendment_group_id <- function(d_amendment_group_id) {
+  
+  contracts %>%
+    filter(d_amendment_group_id == !!d_amendment_group_id) %>%
+    find_selection_helper %>%
+    arrange(owner_org, d_reporting_period)
+  
+}
+
+
 # TESTING (2022-04-12)
 
 # get_fiscal_year_from_date("2022-03-31")
