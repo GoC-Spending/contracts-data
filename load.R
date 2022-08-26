@@ -3,6 +3,7 @@ source("lib/helpers.R")
 source("lib/amendments.R")
 source("lib/vendors.R")
 source("lib/categories.R")
+source("lib/inflation_adjustments.R")
 source("lib/exports.R")
 source("lib/research_findings.R")
 
@@ -474,6 +475,29 @@ contract_spending_by_date <- contract_spending_by_date %>%
     d_fiscal_year_short <= summary_end_fiscal_year_short,
   ) 
   
+
+# Inflation correction (constant 2019 dollars) in the per-day table =====
+
+# Factor in inflation calculations using the code in inflation_adjustments.R
+# This could optionally be done before the fiscal year range above,
+# but it's probably a tiny bit faster to do it afterwards with fewer rows.
+add_log_entry("start_inflation_calculations")
+
+contract_spending_by_date <- contract_spending_by_date %>%
+  mutate(
+    # Keeps e.g. "2017-04" which matches the ref_date column in the multiplier table
+    ref_date = substr(date, 1, 7)
+  ) %>%
+  left_join(constant_dollars_multiplier_table, by = "ref_date") %>%
+  mutate(
+    d_daily_contract_value_constant_2019_dollars = d_daily_contract_value * constant_dollars_multiplier_2019
+  ) %>%
+  select(! c(ref_date, constant_dollars_multiplier_2019))
+
+add_log_entry("finish_inflation_calculations")
+
+
+# Contract spending overall versions (for analysis) =======
 
 # Contracts that were new since the start of the summary_start_fiscal_year_short fiscal year:
 contract_spending_overall_initiated <- contract_spending_overall %>%
