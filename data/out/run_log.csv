@@ -1,17 +1,17 @@
 time,name,value
-2022-08-26 18:21:44,load_helper_scripts,
-2022-08-26 18:21:46,start_time,2022-08-26 18:21:46
-2022-08-26 18:21:46,csv_date,2022-08-26
-2022-08-26 18:21:46,csv_source,pre-downloaded
-2022-08-26 18:23:26,total_csv_entries,896950
-2022-08-26 18:24:26,start_amendment_grouping,
-2022-08-26 18:32:33,finish_amendment_grouping,
-2022-08-26 19:48:34,start_inflation_calculations,
-2022-08-26 20:00:19,finish_inflation_calculations,
-2022-08-26 20:00:21,start_summary_exports,
-2022-08-26 20:04:11,start_research_findings_export,
-2022-08-26 20:04:33,finish_research_findings_export,
-2022-08-26 22:01:13,finish_summary_exports,
-2022-08-26 22:01:33,end_time,2022-08-26 22:01:33
-2022-08-26 22:01:33,run_duration_hours,3.66
-2022-08-26 22:01:33,run_memory_mb,6523
+2022-08-26 22:51:21,load_helper_scripts,
+2022-08-26 22:51:24,start_time,2022-08-26 22:51:24
+2022-08-26 22:51:24,csv_date,2022-08-26
+2022-08-26 22:51:24,csv_source,pre-downloaded
+2022-08-26 22:53:01,total_csv_entries,896950
+2022-08-26 22:54:01,start_amendment_grouping,
+2022-08-26 23:02:14,finish_amendment_grouping,
+2022-08-27 00:17:35,start_inflation_calculations,
+2022-08-27 00:27:12,finish_inflation_calculations,
+2022-08-27 00:27:14,start_summary_exports,
+2022-08-27 00:30:26,start_research_findings_export,
+2022-08-27 00:30:50,finish_research_findings_export,
+2022-08-27 02:32:09,finish_summary_exports,
+2022-08-27 02:32:31,end_time,2022-08-27 02:32:31
+2022-08-27 02:32:31,run_duration_hours,3.69
+2022-08-27 02:32:31,run_memory_mb,6522.9
