@@ -1,5 +1,5 @@
-owner_org,d_fiscal_year,total
-dnd-mdn,2021-2022,49372.85
-phac-aspc,2019-2020,78618.01
-phac-aspc,2020-2021,7121983.94
-phac-aspc,2021-2022,5370267.05
+owner_org,d_fiscal_year,total,total_constant_2019_dollars
+dnd-mdn,2021-2022,49372.85,35375.58
+phac-aspc,2019-2020,78618.01,78725.81
+phac-aspc,2020-2021,7121983.94,6942407.30
+phac-aspc,2021-2022,5370267.05,4894904.97

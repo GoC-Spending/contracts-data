@@ -1,6 +1,6 @@
-owner_org,d_fiscal_year,total
-pwgsc-tpsgc,2017-2018,4500785.01
-pwgsc-tpsgc,2018-2019,3651335.81
-pwgsc-tpsgc,2019-2020,3661339.47
-pwgsc-tpsgc,2020-2021,910333.04
-rcmp-grc,2017-2018,568459.68
+owner_org,d_fiscal_year,total,total_constant_2019_dollars
+pwgsc-tpsgc,2017-2018,4500785.01,4611191.03
+pwgsc-tpsgc,2018-2019,3651335.81,3697932.38
+pwgsc-tpsgc,2019-2020,3661339.47,3653840.08
+pwgsc-tpsgc,2020-2021,910333.04,918296.36
+rcmp-grc,2017-2018,568459.68,582750.69

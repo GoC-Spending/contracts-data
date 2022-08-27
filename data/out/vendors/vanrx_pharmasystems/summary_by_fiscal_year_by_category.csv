@@ -1,6 +1,6 @@
-d_most_recent_category,d_fiscal_year,total
-1_facilities_and_construction,2021-2022,127009.67
-4_medical,2020-2021,7412039.80
-4_medical,2021-2022,3706019.90
-6_industrial_products_and_services,2020-2021,1590599.22
-6_industrial_products_and_services,2021-2022,1897984.16
+d_most_recent_category,d_fiscal_year,total,total_constant_2019_dollars
+1_facilities_and_construction,2021-2022,127009.67,117317.95
+4_medical,2020-2021,7412039.80,7167992.33
+4_medical,2021-2022,3706019.90,3412101.79
+6_industrial_products_and_services,2020-2021,1590599.22,1546305.37
+6_industrial_products_and_services,2021-2022,1897984.16,1443912.75

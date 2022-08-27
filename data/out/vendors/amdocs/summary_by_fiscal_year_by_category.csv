@@ -1,5 +1,5 @@
-d_most_recent_category,d_fiscal_year,total
-4_medical,2017-2018,2816929.49
-4_medical,2018-2019,353944.50
-7_travel,2020-2021,1475402.60
-7_travel,2021-2022,1475402.60
+d_most_recent_category,d_fiscal_year,total,total_constant_2019_dollars
+4_medical,2017-2018,2816929.49,2892438.75
+4_medical,2018-2019,353944.50,357699.45
+7_travel,2020-2021,1475402.60,1444401.05
+7_travel,2021-2022,1475402.60,1120775.45

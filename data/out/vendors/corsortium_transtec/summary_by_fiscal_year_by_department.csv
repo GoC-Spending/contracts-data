@@ -1,6 +1,6 @@
-owner_org,d_fiscal_year,total
-dfatd-maecd,2017-2018,1508826.61
-dfatd-maecd,2018-2019,1610297.40
-dfatd-maecd,2019-2020,1614709.18
-dfatd-maecd,2020-2021,1610297.40
-dfatd-maecd,2021-2022,1610297.40
+owner_org,d_fiscal_year,total,total_constant_2019_dollars
+dfatd-maecd,2017-2018,1508826.61,1548394.92
+dfatd-maecd,2018-2019,1610297.40,1630847.24
+dfatd-maecd,2019-2020,1614709.18,1611401.83
+dfatd-maecd,2020-2021,1610297.40,1576461.41
+dfatd-maecd,2021-2022,1610297.40,1223247.00

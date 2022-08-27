@@ -1,3 +1,3 @@
-d_most_recent_category,d_fiscal_year,total
-4_medical,2020-2021,102986210.97
-4_medical,2021-2022,135495.10
+d_most_recent_category,d_fiscal_year,total,total_constant_2019_dollars
+4_medical,2020-2021,102986210.97,100768758.73
+4_medical,2021-2022,135495.10,124522.46

@@ -1,5 +1,5 @@
-d_most_recent_category,d_fiscal_year,total
-11_defence,2017-2018,258852.59
-11_defence,2018-2019,3779247.88
-11_defence,2019-2020,3789601.99
-11_defence,2020-2021,3541103.50
+d_most_recent_category,d_fiscal_year,total,total_constant_2019_dollars
+11_defence,2017-2018,258852.59,263298.99
+11_defence,2018-2019,3779247.88,3827476.81
+11_defence,2019-2020,3789601.99,3781839.89
+11_defence,2020-2021,3541103.50,3474740.54

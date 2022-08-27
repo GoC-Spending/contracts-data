@@ -1,4 +1,4 @@
-owner_org,d_fiscal_year,total
-hc-sc,2017-2018,1304658.32
-hc-sc,2018-2019,3544512.27
-hc-sc,2019-2020,1457027.18
+owner_org,d_fiscal_year,total,total_constant_2019_dollars
+hc-sc,2017-2018,1304658.32,1328340.59
+hc-sc,2018-2019,3544512.27,3589534.06
+hc-sc,2019-2020,1457027.18,1456362.47

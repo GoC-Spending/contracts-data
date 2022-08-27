@@ -1,4 +1,4 @@
-owner_org,d_fiscal_year,total
-dfo-mpo,2019-2020,1452088.68
-dfo-mpo,2020-2021,2610396.41
-dfo-mpo,2021-2022,3246600.00
+owner_org,d_fiscal_year,total,total_constant_2019_dollars
+dfo-mpo,2019-2020,1452088.68,1447278.57
+dfo-mpo,2020-2021,2610396.41,2555130.74
+dfo-mpo,2021-2022,3246600.00,2218902.02

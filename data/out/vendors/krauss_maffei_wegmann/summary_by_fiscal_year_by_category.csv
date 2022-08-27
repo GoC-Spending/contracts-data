@@ -1,7 +1,7 @@
-d_most_recent_category,d_fiscal_year,total
-11_defence,2017-2018,1753620.78
-11_defence,2018-2019,4958703.94
-11_defence,2019-2020,5676460.05
-11_defence,2020-2021,4121957.24
-11_defence,2021-2022,1579389.79
-6_industrial_products_and_services,2017-2018,37794.19
+d_most_recent_category,d_fiscal_year,total,total_constant_2019_dollars
+11_defence,2017-2018,1753620.78,1800029.40
+11_defence,2018-2019,4958703.94,5025050.98
+11_defence,2019-2020,5676460.05,5666760.39
+11_defence,2020-2021,4121957.24,4052079.91
+11_defence,2021-2022,1579389.79,1133205.40
+6_industrial_products_and_services,2017-2018,37794.19,38760.20

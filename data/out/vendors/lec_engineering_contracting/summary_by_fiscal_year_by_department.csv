@@ -1,5 +1,5 @@
-owner_org,d_fiscal_year,total
-pwgsc-tpsgc,2017-2018,3856619.96
-pwgsc-tpsgc,2018-2019,7609006.96
-pwgsc-tpsgc,2019-2020,7629853.55
-pwgsc-tpsgc,2020-2021,7609006.96
+owner_org,d_fiscal_year,total,total_constant_2019_dollars
+pwgsc-tpsgc,2017-2018,3856619.96,3929396.96
+pwgsc-tpsgc,2018-2019,7609006.96,7706109.41
+pwgsc-tpsgc,2019-2020,7629853.55,7614225.61
+pwgsc-tpsgc,2020-2021,7609006.96,7449124.49

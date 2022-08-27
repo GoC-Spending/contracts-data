@@ -1,6 +1,6 @@
-d_most_recent_category,d_fiscal_year,total
-11_defence,2017-2018,1942450.00
-11_defence,2018-2019,2405873.56
-5_transportation_and_logistics,2019-2020,110728.70
-7_travel,2017-2018,393864.06
-7_travel,2019-2020,1812614.37
+d_most_recent_category,d_fiscal_year,total,total_constant_2019_dollars
+11_defence,2017-2018,1942450.00,1990448.79
+11_defence,2018-2019,2405873.56,2434033.33
+5_transportation_and_logistics,2019-2020,110728.70,110678.19
+7_travel,2017-2018,393864.06,407439.17
+7_travel,2019-2020,1812614.37,1815099.67

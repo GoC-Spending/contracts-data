@@ -1,4 +1,4 @@
-owner_org,d_fiscal_year,total
-dfatd-maecd,2019-2020,1192670.79
-dfatd-maecd,2020-2021,2059931.82
-dfatd-maecd,2021-2022,7991452.69
+owner_org,d_fiscal_year,total,total_constant_2019_dollars
+dfatd-maecd,2019-2020,1192670.79,1188934.61
+dfatd-maecd,2020-2021,2059931.82,2015528.61
+dfatd-maecd,2021-2022,7991452.69,5471673.02

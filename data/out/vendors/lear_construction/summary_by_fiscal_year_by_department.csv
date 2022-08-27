@@ -1,5 +1,5 @@
-owner_org,d_fiscal_year,total
-rcmp-grc,2017-2018,404840.07
-rcmp-grc,2018-2019,3143970.75
-rcmp-grc,2019-2020,3152584.37
-rcmp-grc,2020-2021,3143970.75
+owner_org,d_fiscal_year,total,total_constant_2019_dollars
+rcmp-grc,2017-2018,404840.07,411794.15
+rcmp-grc,2018-2019,3143970.75,3184092.58
+rcmp-grc,2019-2020,3152584.37,3146127.05
+rcmp-grc,2020-2021,3143970.75,3077908.81

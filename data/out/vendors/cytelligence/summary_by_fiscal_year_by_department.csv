@@ -1,4 +1,4 @@
-owner_org,d_fiscal_year,total
-ssc-spc,2017-2018,2910136.99
-ssc-spc,2018-2019,5650000.00
-ssc-spc,2019-2020,2739863.01
+owner_org,d_fiscal_year,total,total_constant_2019_dollars
+ssc-spc,2017-2018,2910136.99,2965777.46
+ssc-spc,2018-2019,5650000.00,5722102.56
+ssc-spc,2019-2020,2739863.01,2738613.08

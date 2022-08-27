@@ -1,4 +1,4 @@
-d_most_recent_category,d_fiscal_year,total
-11_defence,2020-2021,2053798.80
-11_defence,2021-2022,2914438.30
-2_professional_services,2020-2021,615644.74
+d_most_recent_category,d_fiscal_year,total,total_constant_2019_dollars
+11_defence,2020-2021,2053798.80,1949909.58
+11_defence,2021-2022,2914438.30,2678958.53
+2_professional_services,2020-2021,615644.74,595785.20

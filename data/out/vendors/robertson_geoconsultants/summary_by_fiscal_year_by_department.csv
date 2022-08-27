@@ -1,6 +1,6 @@
-owner_org,d_fiscal_year,total
-aandc-aadnc,2017-2018,813590.78
-aandc-aadnc,2018-2019,811460.12
-aandc-aadnc,2019-2020,884897.86
-aandc-aadnc,2020-2021,1321456.09
-aandc-aadnc,2021-2022,1525969.76
+owner_org,d_fiscal_year,total,total_constant_2019_dollars
+aandc-aadnc,2017-2018,813590.78,835001.64
+aandc-aadnc,2018-2019,811460.12,822634.62
+aandc-aadnc,2019-2020,884897.86,883049.84
+aandc-aadnc,2020-2021,1321456.09,1293689.31
+aandc-aadnc,2021-2022,1525969.76,1159188.31

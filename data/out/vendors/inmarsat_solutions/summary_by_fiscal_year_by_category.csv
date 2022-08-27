@@ -1,6 +1,6 @@
-d_most_recent_category,d_fiscal_year,total
-3_information_technology,2017-2018,23000523.95
-3_information_technology,2018-2019,22975170.75
-3_information_technology,2019-2020,23038116.42
-3_information_technology,2020-2021,22975170.75
-3_information_technology,2021-2022,30527752.07
+d_most_recent_category,d_fiscal_year,total,total_constant_2019_dollars
+3_information_technology,2017-2018,23000523.95,23617284.02
+3_information_technology,2018-2019,22975170.75,23268368.73
+3_information_technology,2019-2020,23038116.42,22990928.31
+3_information_technology,2020-2021,22975170.75,22492410.39
+3_information_technology,2021-2022,30527752.07,21873766.56

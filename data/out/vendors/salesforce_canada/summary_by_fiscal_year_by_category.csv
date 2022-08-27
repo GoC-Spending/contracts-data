@@ -1,4 +1,4 @@
-d_most_recent_category,d_fiscal_year,total
-3_information_technology,2020-2021,4458214.58
-3_information_technology,2021-2022,14821026.24
-9_human_capital,2021-2022,97644.99
+d_most_recent_category,d_fiscal_year,total,total_constant_2019_dollars
+3_information_technology,2020-2021,4458214.58,4224581.77
+3_information_technology,2021-2022,14821026.24,9585220.97
+9_human_capital,2021-2022,97644.99,62445.99

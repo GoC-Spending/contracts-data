@@ -1,8 +1,8 @@
-d_most_recent_category,d_fiscal_year,total
-10_office_management,2017-2018,74331.21
-10_office_management,2018-2019,23156.47
-10_office_management,2019-2020,23945.77
-2_professional_services,2018-2019,652241.97
-2_professional_services,2019-2020,1580930.86
-2_professional_services,2020-2021,1576611.38
-2_professional_services,2021-2022,1576611.38
+d_most_recent_category,d_fiscal_year,total,total_constant_2019_dollars
+10_office_management,2017-2018,74331.21,76785.58
+10_office_management,2018-2019,23156.47,23398.82
+10_office_management,2019-2020,23945.77,23934.85
+2_professional_services,2018-2019,652241.97,661780.20
+2_professional_services,2019-2020,1580930.86,1577692.70
+2_professional_services,2020-2021,1576611.38,1543483.20
+2_professional_services,2021-2022,1576611.38,1197657.73

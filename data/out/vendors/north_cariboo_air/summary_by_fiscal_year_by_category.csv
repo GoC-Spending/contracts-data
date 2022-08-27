@@ -1,7 +1,7 @@
-d_most_recent_category,d_fiscal_year,total
-11_defence,2021-2022,74297.74
-2_professional_services,2018-2019,205592.84
-5_transportation_and_logistics,2018-2019,238771.10
-5_transportation_and_logistics,2019-2020,1531488.09
-5_transportation_and_logistics,2020-2021,1242618.27
-5_transportation_and_logistics,2021-2022,1998300.38
+d_most_recent_category,d_fiscal_year,total,total_constant_2019_dollars
+11_defence,2021-2022,74297.74,66497.69
+2_professional_services,2018-2019,205592.84,207582.45
+5_transportation_and_logistics,2018-2019,238771.10,241081.79
+5_transportation_and_logistics,2019-2020,1531488.09,1530005.90
+5_transportation_and_logistics,2020-2021,1242618.27,1218295.13
+5_transportation_and_logistics,2021-2022,1998300.38,1055860.23

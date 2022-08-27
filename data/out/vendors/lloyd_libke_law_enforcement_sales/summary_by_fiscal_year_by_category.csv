@@ -1,6 +1,6 @@
-d_most_recent_category,d_fiscal_year,total
-10_office_management,2019-2020,19933.20
-8_security_and_protection,2017-2018,1980259.01
-8_security_and_protection,2018-2019,2068305.80
-8_security_and_protection,2019-2020,3039083.82
-8_security_and_protection,2020-2021,2508798.80
+d_most_recent_category,d_fiscal_year,total,total_constant_2019_dollars
+10_office_management,2019-2020,19933.20,19960.53
+8_security_and_protection,2017-2018,1980259.01,2033009.42
+8_security_and_protection,2018-2019,2068305.80,2094712.02
+8_security_and_protection,2019-2020,3039083.82,3032833.16
+8_security_and_protection,2020-2021,2508798.80,2456083.26

@@ -1,3 +1,3 @@
-owner_org,d_fiscal_year,total
-phac-aspc,2020-2021,2784320.00
-phac-aspc,2021-2022,4619440.00
+owner_org,d_fiscal_year,total,total_constant_2019_dollars
+phac-aspc,2020-2021,2784320.00,2686108.03
+phac-aspc,2021-2022,4619440.00,3509113.34

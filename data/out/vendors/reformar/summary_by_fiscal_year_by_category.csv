@@ -1,6 +1,6 @@
-d_most_recent_category,d_fiscal_year,total
-5_transportation_and_logistics,2017-2018,848922.52
-5_transportation_and_logistics,2018-2019,1724502.74
-5_transportation_and_logistics,2019-2020,2532463.06
-5_transportation_and_logistics,2020-2021,1078160.58
-5_transportation_and_logistics,2021-2022,989880.00
+d_most_recent_category,d_fiscal_year,total,total_constant_2019_dollars
+5_transportation_and_logistics,2017-2018,848922.52,866434.31
+5_transportation_and_logistics,2018-2019,1724502.74,1743616.34
+5_transportation_and_logistics,2019-2020,2532463.06,2523034.28
+5_transportation_and_logistics,2020-2021,1078160.58,1058133.21
+5_transportation_and_logistics,2021-2022,989880.00,751952.86

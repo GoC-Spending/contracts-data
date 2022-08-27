@@ -1,7 +1,7 @@
-d_most_recent_category,d_fiscal_year,total
-2_professional_services,2017-2018,28250.00
-2_professional_services,2021-2022,80325000.00
-4_medical,2018-2019,186446.11
-4_medical,2019-2020,25740.61
-4_medical,2020-2021,105001.05
-4_medical,2021-2022,86669579.84
+d_most_recent_category,d_fiscal_year,total,total_constant_2019_dollars
+2_professional_services,2017-2018,28250.00,29251.30
+2_professional_services,2021-2022,80325000.00,32028159.72
+4_medical,2018-2019,186446.11,188831.96
+4_medical,2019-2020,25740.61,25687.89
+4_medical,2020-2021,105001.05,102794.74
+4_medical,2021-2022,86669579.84,77953428.44

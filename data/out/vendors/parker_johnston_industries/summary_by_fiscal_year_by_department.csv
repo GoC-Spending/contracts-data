@@ -1,4 +1,4 @@
-owner_org,d_fiscal_year,total
-dnd-mdn,2017-2018,6031531.16
-dnd-mdn,2018-2019,502746.55
-pwgsc-tpsgc,2020-2021,257668.27
+owner_org,d_fiscal_year,total,total_constant_2019_dollars
+dnd-mdn,2017-2018,6031531.16,6162529.20
+dnd-mdn,2018-2019,502746.55,508080.12
+pwgsc-tpsgc,2020-2021,257668.27,249707.34

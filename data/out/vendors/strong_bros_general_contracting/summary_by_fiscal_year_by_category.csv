@@ -1,8 +1,8 @@
-d_most_recent_category,d_fiscal_year,total
-1_facilities_and_construction,2017-2018,2010371.20
-1_facilities_and_construction,2018-2019,4132811.09
-1_facilities_and_construction,2019-2020,3713786.32
-1_facilities_and_construction,2020-2021,3722891.60
-1_facilities_and_construction,2021-2022,1129467.36
-6_industrial_products_and_services,2017-2018,405235.87
-6_industrial_products_and_services,2018-2019,468444.10
+d_most_recent_category,d_fiscal_year,total,total_constant_2019_dollars
+1_facilities_and_construction,2017-2018,2010371.20,2057045.27
+1_facilities_and_construction,2018-2019,4132811.09,4182158.00
+1_facilities_and_construction,2019-2020,3713786.32,3707206.14
+1_facilities_and_construction,2020-2021,3722891.60,3674235.39
+1_facilities_and_construction,2021-2022,1129467.36,801450.53
+6_industrial_products_and_services,2017-2018,405235.87,412728.80
+6_industrial_products_and_services,2018-2019,468444.10,473054.61

@@ -1,6 +1,6 @@
-d_most_recent_category,d_fiscal_year,total
-9_human_capital,2017-2018,1555479.87
-9_human_capital,2018-2019,1555479.87
-9_human_capital,2019-2020,1559741.45
-9_human_capital,2020-2021,1555479.87
-9_human_capital,2021-2022,1363708.38
+d_most_recent_category,d_fiscal_year,total,total_constant_2019_dollars
+9_human_capital,2017-2018,1555479.87,1597175.32
+9_human_capital,2018-2019,1555479.87,1575330.15
+9_human_capital,2019-2020,1559741.45,1556546.69
+9_human_capital,2020-2021,1555479.87,1522795.71
+9_human_capital,2021-2022,1363708.38,1181605.38

@@ -1,5 +1,5 @@
-owner_org,d_fiscal_year,total
-dfo-mpo,2017-2018,581133.00
-dfo-mpo,2019-2020,1051769.89
-dfo-mpo,2020-2021,368250.11
-pwgsc-tpsgc,2017-2018,7414117.97
+owner_org,d_fiscal_year,total,total_constant_2019_dollars
+dfo-mpo,2017-2018,581133.00,601162.61
+dfo-mpo,2019-2020,1051769.89,1047274.49
+dfo-mpo,2020-2021,368250.11,360935.17
+pwgsc-tpsgc,2017-2018,7414117.97,7676905.70

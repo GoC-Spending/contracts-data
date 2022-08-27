@@ -1,7 +1,7 @@
-d_most_recent_category,d_fiscal_year,total
-2_professional_services,2018-2019,139498.81
-2_professional_services,2019-2020,1063678.46
-2_professional_services,2020-2021,1060772.23
-2_professional_services,2021-2022,1060772.23
-3_information_technology,2017-2018,841280.97
-3_information_technology,2018-2019,841280.97
+d_most_recent_category,d_fiscal_year,total,total_constant_2019_dollars
+2_professional_services,2018-2019,139498.81,140848.80
+2_professional_services,2019-2020,1063678.46,1061499.77
+2_professional_services,2020-2021,1060772.23,1038483.01
+2_professional_services,2021-2022,1060772.23,805805.47
+3_information_technology,2017-2018,841280.97,863831.95
+3_information_technology,2018-2019,841280.97,852016.99

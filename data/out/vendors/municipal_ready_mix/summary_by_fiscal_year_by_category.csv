@@ -1,8 +1,8 @@
-d_most_recent_category,d_fiscal_year,total
-1_facilities_and_construction,2017-2018,283527.33
-1_facilities_and_construction,2018-2019,2995175.70
-1_facilities_and_construction,2019-2020,3654114.35
-1_facilities_and_construction,2020-2021,1876662.53
-1_facilities_and_construction,2021-2022,337004.52
-10_office_management,2018-2019,607572.65
-10_office_management,2021-2022,38258.20
+d_most_recent_category,d_fiscal_year,total,total_constant_2019_dollars
+1_facilities_and_construction,2017-2018,283527.33,291825.51
+1_facilities_and_construction,2018-2019,2995175.70,3034795.65
+1_facilities_and_construction,2019-2020,3654114.35,3646629.76
+1_facilities_and_construction,2020-2021,1876662.53,1870405.41
+1_facilities_and_construction,2021-2022,337004.52,211064.94
+10_office_management,2018-2019,607572.65,616736.05
+10_office_management,2021-2022,38258.20,0.00

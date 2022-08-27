@@ -1,5 +1,5 @@
-d_most_recent_category,d_fiscal_year,total
-4_medical,2019-2020,5345363.17
-4_medical,2020-2021,195105755.77
-6_industrial_products_and_services,2020-2021,243882.36
-6_industrial_products_and_services,2021-2022,255796.15
+d_most_recent_category,d_fiscal_year,total,total_constant_2019_dollars
+4_medical,2019-2020,5345363.17,5352692.28
+4_medical,2020-2021,195105755.77,191006142.06
+6_industrial_products_and_services,2020-2021,243882.36,238403.28
+6_industrial_products_and_services,2021-2022,255796.15,194313.10

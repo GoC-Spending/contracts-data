@@ -1,3 +1,3 @@
-owner_org,d_fiscal_year,total
-dnd-mdn,2020-2021,1286767.94
-dnd-mdn,2021-2022,3980256.75
+owner_org,d_fiscal_year,total,total_constant_2019_dollars
+dnd-mdn,2020-2021,1286767.94,1225254.55
+dnd-mdn,2021-2022,3980256.75,3023563.91

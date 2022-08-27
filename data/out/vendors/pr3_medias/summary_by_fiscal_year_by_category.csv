@@ -1,6 +1,6 @@
-d_most_recent_category,d_fiscal_year,total
-2_professional_services,2017-2018,327035.29
-2_professional_services,2018-2019,2168209.09
-2_professional_services,2019-2020,2813590.76
-2_professional_services,2020-2021,3291175.22
-2_professional_services,2021-2022,5204803.81
+d_most_recent_category,d_fiscal_year,total,total_constant_2019_dollars
+2_professional_services,2017-2018,327035.29,332652.89
+2_professional_services,2018-2019,2168209.09,2192213.23
+2_professional_services,2019-2020,2813590.76,2807827.78
+2_professional_services,2020-2021,3291175.22,3209587.78
+2_professional_services,2021-2022,5204803.81,3963429.59

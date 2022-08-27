@@ -1,5 +1,5 @@
-owner_org,d_fiscal_year,total
-nrc-cnrc,2020-2021,1590599.22
-nrc-cnrc,2021-2022,2024993.83
-phac-aspc,2020-2021,7412039.80
-phac-aspc,2021-2022,3706019.90
+owner_org,d_fiscal_year,total,total_constant_2019_dollars
+nrc-cnrc,2020-2021,1590599.22,1546305.37
+nrc-cnrc,2021-2022,2024993.83,1561230.71
+phac-aspc,2020-2021,7412039.80,7167992.33
+phac-aspc,2021-2022,3706019.90,3412101.79

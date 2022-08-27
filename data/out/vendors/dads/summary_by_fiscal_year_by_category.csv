@@ -1,3 +1,3 @@
-d_most_recent_category,d_fiscal_year,total
-1_facilities_and_construction,2017-2018,139694.63
-11_defence,2017-2018,67609145.69
+d_most_recent_category,d_fiscal_year,total,total_constant_2019_dollars
+1_facilities_and_construction,2017-2018,139694.63,142491.12
+11_defence,2017-2018,67609145.69,69167971.29

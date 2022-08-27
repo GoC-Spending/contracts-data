@@ -1,6 +1,6 @@
-d_most_recent_category,d_fiscal_year,total
-6_industrial_products_and_services,2017-2018,1122607.28
-6_industrial_products_and_services,2018-2019,1194763.79
-6_industrial_products_and_services,2019-2020,1122207.20
-6_industrial_products_and_services,2020-2021,402299.31
-6_industrial_products_and_services,2021-2022,1259575.07
+d_most_recent_category,d_fiscal_year,total,total_constant_2019_dollars
+6_industrial_products_and_services,2017-2018,1122607.28,1155180.38
+6_industrial_products_and_services,2018-2019,1194763.79,1210341.97
+6_industrial_products_and_services,2019-2020,1122207.20,1118462.28
+6_industrial_products_and_services,2020-2021,402299.31,385708.05
+6_industrial_products_and_services,2021-2022,1259575.07,850600.85

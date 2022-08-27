@@ -1,4 +1,4 @@
-d_most_recent_category,d_fiscal_year,total
-4_medical,2017-2018,1701485.13
-4_medical,2018-2019,1701485.13
-4_medical,2019-2020,1653614.05
+d_most_recent_category,d_fiscal_year,total,total_constant_2019_dollars
+4_medical,2017-2018,1701485.13,1747094.33
+4_medical,2018-2019,1701485.13,1723198.66
+4_medical,2019-2020,1653614.05,1650227.01

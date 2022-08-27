@@ -1,4 +1,4 @@
-owner_org,d_fiscal_year,total
-csps-efpc,2019-2020,107880.86
-csps-efpc,2020-2021,3281376.18
-csps-efpc,2021-2022,3281376.18
+owner_org,d_fiscal_year,total,total_constant_2019_dollars
+csps-efpc,2019-2020,107880.86,108028.78
+csps-efpc,2020-2021,3281376.18,3212427.03
+csps-efpc,2021-2022,3281376.18,2492665.98
