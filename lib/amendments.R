@@ -138,8 +138,20 @@ find_amendment_groups_v2 <- function(contracts) {
       d_amendment_via = NA_character_,
     )
   
+  # Avoid grouping on NA d_procurement_id values
+  # We'll create a temporary column to group on, that's either the procurement_id (if it exists)
+  # or the d_reference_number to just serve as a unique ID for each row and prevent grouping.
+  # Note: we could optionally remove d_procurement_id_exclude_na after the group_by section below.
   contracts <- contracts %>%
-    group_by(owner_org, d_vendor_name, d_procurement_id) %>%
+    mutate(
+      d_procurement_id_exclude_na = case_when(
+        is.na(d_procurement_id) ~ d_reference_number,
+        TRUE ~ d_procurement_id
+      )
+    )
+  
+  contracts <- contracts %>%
+    group_by(owner_org, d_vendor_name, d_procurement_id_exclude_na) %>%
     mutate(
       d_amendment_group_id = first(d_reference_number),
       d_number_of_amendments = n() - 1,

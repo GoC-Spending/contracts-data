@@ -272,7 +272,7 @@ find_selection_helper <- function(df) {
       d_reference_number,
       d_vendor_name,
       d_procurement_id,
-      contract_value,
+      d_contract_value,
       d_original_original_value,
       d_reporting_period,
       d_start_date,
@@ -294,6 +294,25 @@ find_contract_by_d_amendment_group_id <- function(d_amendment_group_id) {
     filter(d_amendment_group_id == !!d_amendment_group_id) %>%
     find_selection_helper %>%
     arrange(owner_org, d_reporting_period)
+  
+}
+
+find_contracts_by_d_vendor_name <- function(d_vendor_name) {
+  
+  contracts %>%
+    filter(d_vendor_name == !!d_vendor_name) %>%
+    find_selection_helper %>%
+    arrange(owner_org, d_reporting_period)
+  
+}
+
+# Note: currently uses contract_spending_overall_ongoing to
+# help troubleshoot the research_findings.R functions
+find_overall_contracts_by_d_vendor_name <- function(d_vendor_name) {
+  
+  contract_spending_overall_ongoing %>%
+    filter(d_vendor_name == !!d_vendor_name) %>%
+    arrange(owner_org, d_overall_start_date)
   
 }
 

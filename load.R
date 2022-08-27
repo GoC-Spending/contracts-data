@@ -238,7 +238,17 @@ contracts <- contracts %>%
   mutate(
     d_original_original_value = case_when(
       original_value > summary_original_value_minimum_cutoff ~ original_value, # Also takes care of NA entries
-      TRUE ~ contract_value
+      # In some cases, due to date entry errors, the contract_value might also be tiny, e.g. 0.01
+      # This filters out those situations, and leaves those with an NA for d_original_original_value
+      contract_value > summary_original_value_minimum_cutoff ~ contract_value,
+      TRUE ~ NA_real_
+    ),
+    # To avoid data entry errors being used in future analysis calculations
+    # we'll use the same cutoff for contract values.
+    # Note: this involves an extensive change to where contract_value is used, be careful!
+    d_contract_value = case_when(
+      contract_value > summary_original_value_minimum_cutoff ~ contract_value,
+      TRUE ~ NA_real_
     )
   )
 
@@ -378,7 +388,7 @@ add_log_entry("finish_amendment_grouping")
 contract_spending_overall <- contracts %>%
   arrange(d_reporting_period, owner_org) %>% # This is done above, but for safety, doing it again here to ensure that the first() and last() calls below work properly.
   # TODO: the first() and last() calls below could have the d_reporting_period sort order set; confirm if that affects totals later.
-  select(d_reference_number, d_vendor_name, d_start_date, d_end_date, contract_value, d_original_original_value, d_amendment_group_id, owner_org, d_number_of_amendments, d_economic_object_code, d_description_en, category, comments_en, additional_comments_en) %>%
+  select(d_reference_number, d_vendor_name, d_reporting_period, d_start_date, d_end_date, d_contract_value, d_original_original_value, d_amendment_group_id, owner_org, d_number_of_amendments, d_economic_object_code, d_description_en, category, comments_en, additional_comments_en) %>%
   group_by(d_amendment_group_id) %>%
   mutate(
     d_most_recent_category = last(category),
@@ -392,8 +402,11 @@ contract_spending_overall <- contracts %>%
       TRUE ~ d_overall_start_date,
     ),
     # Note: this uses either the contract value or an original value, if supplied
-    d_original_contract_value = first(d_original_original_value, order_by = d_original_original_value),
-    d_overall_contract_value = last(contract_value),
+    # Note: this previously ordered by d_original_original_value, but in some cases that
+    # led to amendment percentage increase errors (due to inconsistent data entry by departments).
+    # TODO: review how this handles NA entries, hopefully na.omit() works well here.
+    d_original_contract_value = first(na.omit(d_original_original_value), order_by = d_reporting_period),
+    d_overall_contract_value = last(na.omit(d_contract_value)),
     d_daily_contract_value = d_overall_contract_value / as.integer(d_overall_end_date - d_overall_start_date + 1), # The +1 is added so it's inclusive of the start and end dates themselves.
     # Avoid multiple entries appearing due to previous amendment totals
     d_overall_number_of_amendments = last(d_number_of_amendments, order_by = d_number_of_amendments)
@@ -1197,3 +1210,60 @@ export_log_entries()
 #   arrange(desc(contract_value)) %>%
 #   select(owner_org, vendor_name, contract_value, d_description_en, comments_en, additional_comments_en, procurement_id, original_value, d_economic_object_code) %>%
 #   View()
+
+
+# # Testing (2022-08-27)
+# 
+# x <- do_research_findings_call("s432_mean_amendment_increase_percentage", "all", "d_vendor_name", TRUE)
+# 
+# x <- x %>% arrange(desc(mean_amendment_increase_percentage))
+# 
+# x %>% View()
+# 
+# 
+# vendor_to_look_up <- "INMARSAT SOLUTIONS"
+# 
+# y <- find_overall_contracts_by_d_vendor_name(vendor_to_look_up)
+# 
+# y <- y %>%
+#   filter(d_overall_number_of_amendments > 0) %>%
+#   # Avoid division by 0 errors
+#   filter(d_original_contract_value > 0) %>%
+#   mutate(
+#     d_contract_value_increase = d_overall_contract_value - d_original_contract_value,
+#     d_amendment_increase_percentage = d_contract_value_increase / d_original_contract_value
+#   )
+# 
+# y %>% arrange(desc(d_amendment_increase_percentage)) %>% View()
+# 
+# # Review this with the updated original value handling above
+# # TAG HR
+# find_contract_by_d_amendment_group_id("ps-sp-C-2020-2021-Q1-00032")
+# 
+# # ALTIS HUMAN RESOURCES
+# find_contract_by_d_amendment_group_id("ps-sp-C-2020-2021-Q1-00030")
+# find_contract_by_d_amendment_group_id("ps-sp-C-2020-2021-Q1-00031")
+# 
+# # (check amendment handling for)
+# find_contract_by_d_amendment_group_id("osfi-bsif-C-2018-2019-Q2-00027") %>% View()
+# 
+# # MACK TRUCKS 
+# find_contract_by_d_amendment_group_id("dnd-mdn-C-2015-2016-Q1-02989")
+# 
+# 
+# # DESIRE2LEARN
+# find_contract_by_d_amendment_group_id("csps-efpc-C-2019-2020-Q4-00030")
+# 
+# 
+# # LOGISTIK UNICORP
+# find_contract_by_d_amendment_group_id("dnd-mdn-C-2014-2015-Q3-00361") %>% View()
+# 
+# # PCL CONSTRUCTORS
+# find_contract_by_d_amendment_group_id("pwgsc-tpsgc-C-2018-2019-Q4-02019") %>% View()
+# 
+# # INMARSAT SOLUTIONS
+# find_contract_by_d_amendment_group_id("ssc-spc-C-2016-2017-Q2-00004") %>% View()
+# 
+# 
+# contract_spending_overall %>% filter(is.na(d_original_contract_value)) %>% select(d_amendment_group_id, d_vendor_name, d_overall_contract_value, d_original_contract_value)
+
