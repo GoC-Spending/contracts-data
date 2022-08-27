@@ -75,4 +75,4 @@ generate_constant_dollars_multiplier_table <- function(vector = "v62307282") {
   
 }
 
-constant_dollars_multiplier_table <- generate_constant_dollars_multiplier_table("v62307282")
+constant_dollars_multiplier_table <- generate_constant_dollars_multiplier_table("v62307266")
