@@ -482,6 +482,7 @@ contract_spending_by_date <- contract_spending_by_date %>%
 # This could optionally be done before the fiscal year range above,
 # but it's probably a tiny bit faster to do it afterwards with fewer rows.
 add_log_entry("start_inflation_calculations")
+add_log_entry("inflation_price_index_vector", option_inflation_price_index_vector)
 
 contract_spending_by_date <- contract_spending_by_date %>%
   mutate(

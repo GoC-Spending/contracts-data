@@ -6,6 +6,7 @@
 source("lib/_libraries.R")
 library("cansim")
 
+option_inflation_price_index_vector <- Sys.getenv("option_inflation_price_index_vector", "v62307266")
 output_inflation_monthly_table_filepath <- "data/out/inflation_adjustments/constant_dollars_multiplier_monthly.csv"
 
 # 2012=100 in the default index
@@ -77,7 +78,7 @@ generate_constant_dollars_multiplier_table <- function(vector = "v62307282") {
   
 }
 
-constant_dollars_multiplier_table <- generate_constant_dollars_multiplier_table("v62307266")
+constant_dollars_multiplier_table <- generate_constant_dollars_multiplier_table(option_inflation_price_index_vector)
 
 # Write it to a CSV file for posterity (when changed)
 constant_dollars_multiplier_table %>%
