@@ -182,6 +182,17 @@ summarize_fiscal_year_totals <- function(df) {
   df
 }
 
+# Reusable function mostly for use with categories (where the number of entries is fairly short)
+summarize_add_total_percentage <- function(df) {
+  
+  df <- df %>%
+    mutate(
+      percentage = total / sum(total)
+    )
+  
+  df
+}
+
 # Reusable function for all "summary overall by fiscal year by X" functions
 get_summary_overall_by_fiscal_year_by_criteria <- function(summary_type, grouping_column, filter_vendors = FALSE) {
   
@@ -467,34 +478,32 @@ get_summary_overall_total_by_vendor_by_owner <- function(owner_org) {
   
 }
 
-# Reusable function to get a per-fiscal year breakdown
-# TODO: if this was called first, it'd be more efficient since it
-# re-does the summary in the previous function above.
-# In that case, you could do this first, and then sum it all up, 
-# to get the results of the previous function.
+# Get a summary by vendor and fiscal year
 get_summary_total_by_vendor_and_fiscal_year_by_owner <- function(owner_org) {
   
-  # Note: update this to re-use the already generated shortlist (based on the annual threshold.)
-  # This shortlist now lives in summary_included_vendors
-  # top_n_vendors <- get_summary_overall_total_by_vendor_by_owner(owner_org) %>%
-  #   pull(d_vendor_name)
+  # # Note: update this to re-use the already generated shortlist (based on the annual threshold.)
+  # # This shortlist now lives in summary_included_vendors
+  # # top_n_vendors <- get_summary_overall_total_by_vendor_by_owner(owner_org) %>%
+  # #   pull(d_vendor_name)
+  # 
+  # # Then, for those top n vendors, group by fiscal year
+  # output <- contract_spending_by_date %>%
+  #   filter(owner_org == !!owner_org) %>%
+  #   filter(d_vendor_name %in% summary_included_vendors) %>%
+  #   group_by(d_vendor_name, d_fiscal_year_short) %>%
+  #   summarise(
+  #     total = sum(d_daily_contract_value)
+  #   ) %>%
+  #   ungroup() %>%
+  #   mutate(
+  #     d_fiscal_year = convert_start_year_to_fiscal_year(d_fiscal_year_short)
+  #   ) %>%
+  #   select(d_vendor_name, d_fiscal_year, total) %>%
+  #   exports_round_totals()
+  # 
+  # return(output)
   
-  # Then, for those top n vendors, group by fiscal year
-  output <- contract_spending_by_date %>%
-    filter(owner_org == !!owner_org) %>%
-    filter(d_vendor_name %in% summary_included_vendors) %>%
-    group_by(d_vendor_name, d_fiscal_year_short) %>%
-    summarise(
-      total = sum(d_daily_contract_value)
-    ) %>%
-    ungroup() %>%
-    mutate(
-      d_fiscal_year = convert_start_year_to_fiscal_year(d_fiscal_year_short)
-    ) %>%
-    select(d_vendor_name, d_fiscal_year, total) %>%
-    exports_round_totals()
-  
-  return(output)
+  get_summary_by_fiscal_year_by_specific_entity("owner_org", owner_org, "d_vendor_name", TRUE)
   
 }
 
@@ -509,9 +518,7 @@ get_summary_total_by_category_by_owner_org <- function(owner_org) {
     ) %>%
     ungroup() %>%
     select(d_most_recent_category, total) %>%
-    mutate(
-      percentage = total / sum(total)
-    ) %>%
+    summarize_add_total_percentage() %>%
     arrange(desc(total)) %>%
     exports_round_totals() %>%
     exports_round_percentages()
@@ -523,40 +530,44 @@ get_summary_total_by_category_by_owner_org <- function(owner_org) {
 # Get a category and fiscal year summary by department or agency
 get_summary_total_by_category_and_fiscal_year_by_owner_org <- function(owner_org) {
   
-  output <- contract_spending_by_date %>%
-    filter(owner_org == !!owner_org) %>%
-    group_by(d_most_recent_category, d_fiscal_year_short) %>%
-    summarise(
-      total = sum(d_daily_contract_value, na.rm = TRUE)
-    ) %>%
-    ungroup() %>%
-    mutate(
-      d_fiscal_year = convert_start_year_to_fiscal_year(d_fiscal_year_short)
-    ) %>%
-    select(d_most_recent_category, d_fiscal_year, total) %>%
-    exports_round_totals()
+  # output <- contract_spending_by_date %>%
+  #   filter(owner_org == !!owner_org) %>%
+  #   group_by(d_most_recent_category, d_fiscal_year_short) %>%
+  #   summarise(
+  #     total = sum(d_daily_contract_value, na.rm = TRUE)
+  #   ) %>%
+  #   ungroup() %>%
+  #   mutate(
+  #     d_fiscal_year = convert_start_year_to_fiscal_year(d_fiscal_year_short)
+  #   ) %>%
+  #   select(d_most_recent_category, d_fiscal_year, total) %>%
+  #   exports_round_totals()
+  # 
+  # return(output)
   
-  return(output)
+  get_summary_by_fiscal_year_by_specific_entity("owner_org", owner_org, "d_most_recent_category")
   
 }
 
 # Get a fiscal year overall summary by department or agency
 get_summary_total_by_fiscal_year_by_owner_org <- function(owner_org) {
   
-  output <- contract_spending_by_date %>%
-    filter(owner_org == !!owner_org) %>%
-    group_by(d_fiscal_year_short) %>%
-    summarise(
-      total = sum(d_daily_contract_value, na.rm = TRUE)
-    ) %>%
-    ungroup() %>%
-    mutate(
-      d_fiscal_year = convert_start_year_to_fiscal_year(d_fiscal_year_short)
-    ) %>%
-    select(d_fiscal_year, total) %>%
-    exports_round_totals()
+  # output <- contract_spending_by_date %>%
+  #   filter(owner_org == !!owner_org) %>%
+  #   group_by(d_fiscal_year_short) %>%
+  #   summarise(
+  #     total = sum(d_daily_contract_value, na.rm = TRUE)
+  #   ) %>%
+  #   ungroup() %>%
+  #   mutate(
+  #     d_fiscal_year = convert_start_year_to_fiscal_year(d_fiscal_year_short)
+  #   ) %>%
+  #   select(d_fiscal_year, total) %>%
+  #   exports_round_totals()
+  # 
+  # return(output)
   
-  return(output)
+  get_summary_by_fiscal_year_by_specific_entity("owner_org", owner_org)
   
 }
 
@@ -567,58 +578,66 @@ get_summary_total_by_fiscal_year_by_owner_org <- function(owner_org) {
 # For each of the top n vendors, get a per-fiscal year breakdown
 get_summary_total_by_fiscal_year_by_vendor <- function(requested_vendor_name) {
   
-  output <- contract_spending_by_date %>%
-    filter(d_vendor_name == !!requested_vendor_name) %>%
-    group_by(d_fiscal_year_short) %>%
-    summarise(
-      total = sum(d_daily_contract_value, na.rm = TRUE)
-    ) %>%
-    ungroup() %>%
-    mutate(
-      d_fiscal_year = convert_start_year_to_fiscal_year(d_fiscal_year_short)
-    ) %>%
-    select(d_fiscal_year, total) %>%
-    exports_round_totals()
+  # output <- contract_spending_by_date %>%
+  #   filter(d_vendor_name == !!requested_vendor_name) %>%
+  #   group_by(d_fiscal_year_short) %>%
+  #   summarise(
+  #     total = sum(d_daily_contract_value, na.rm = TRUE)
+  #   ) %>%
+  #   ungroup() %>%
+  #   mutate(
+  #     d_fiscal_year = convert_start_year_to_fiscal_year(d_fiscal_year_short)
+  #   ) %>%
+  #   select(d_fiscal_year, total) %>%
+  #   exports_round_totals()
+  # 
+  # return(output)
   
-  return(output)
+  get_summary_by_fiscal_year_by_specific_entity("d_vendor_name", requested_vendor_name)
 }
 
 # For each of the top n vendors, get a per-fiscal year and per-owner_org breakdown
 get_summary_total_by_fiscal_year_and_owner_org_by_vendor <- function(requested_vendor_name) {
   
-  output <- contract_spending_by_date %>%
-    filter(d_vendor_name == !!requested_vendor_name) %>%
-    group_by(owner_org, d_fiscal_year_short) %>%
-    summarise(
-      total = sum(d_daily_contract_value)
-    ) %>%
-    ungroup() %>%
-    mutate(
-      d_fiscal_year = convert_start_year_to_fiscal_year(d_fiscal_year_short)
-    ) %>%
-    select(owner_org, d_fiscal_year, total) %>%
-    exports_round_totals()
+  # output <- contract_spending_by_date %>%
+  #   filter(d_vendor_name == !!requested_vendor_name) %>%
+  #   group_by(owner_org, d_fiscal_year_short) %>%
+  #   summarise(
+  #     total = sum(d_daily_contract_value)
+  #   ) %>%
+  #   ungroup() %>%
+  #   mutate(
+  #     d_fiscal_year = convert_start_year_to_fiscal_year(d_fiscal_year_short)
+  #   ) %>%
+  #   select(owner_org, d_fiscal_year, total) %>%
+  #   exports_round_totals()
+  # 
+  # return(output)
   
-  return(output)
+  get_summary_by_fiscal_year_by_specific_entity("d_vendor_name", requested_vendor_name, "owner_org")
+  
 }
 
 # For each of the top n vendors, get a per-fiscal year and per-category breakdown
 get_summary_total_by_fiscal_year_and_category_by_vendor <- function(requested_vendor_name) {
   
-  output <- contract_spending_by_date %>%
-    filter(d_vendor_name == !!requested_vendor_name) %>%
-    group_by(d_most_recent_category, d_fiscal_year_short) %>%
-    summarise(
-      total = sum(d_daily_contract_value)
-    ) %>%
-    ungroup() %>%
-    mutate(
-      d_fiscal_year = convert_start_year_to_fiscal_year(d_fiscal_year_short)
-    ) %>%
-    select(d_most_recent_category, d_fiscal_year, total) %>%
-    exports_round_totals()
+  # output <- contract_spending_by_date %>%
+  #   filter(d_vendor_name == !!requested_vendor_name) %>%
+  #   group_by(d_most_recent_category, d_fiscal_year_short) %>%
+  #   summarise(
+  #     total = sum(d_daily_contract_value)
+  #   ) %>%
+  #   ungroup() %>%
+  #   mutate(
+  #     d_fiscal_year = convert_start_year_to_fiscal_year(d_fiscal_year_short)
+  #   ) %>%
+  #   select(d_most_recent_category, d_fiscal_year, total) %>%
+  #   exports_round_totals()
+  # 
+  # return(output)
   
-  return(output)
+  get_summary_by_fiscal_year_by_specific_entity("d_vendor_name", requested_vendor_name, "d_most_recent_category")
+  
 }
 
 # For each of the top n vendors, get a per-category breakdown
@@ -632,9 +651,7 @@ get_summary_total_by_category_by_vendor <- function(requested_vendor_name) {
     ) %>%
     ungroup() %>%
     select(d_most_recent_category, total) %>%
-    mutate(
-      percentage = total / sum(total)
-    ) %>%
+    summarize_add_total_percentage() %>%
     arrange(desc(total)) %>%
     exports_round_totals() %>%
     exports_round_percentages()
@@ -671,40 +688,44 @@ get_original_vendor_names <- function(requested_vendor_name, sort_by_value = TRU
 # TODO: Merge these into a common shared function (only distinction is grouping and selecting on d_vendor_name vs. owner_org)
 get_summary_total_by_vendor_and_fiscal_year_by_category <- function(category) {
   
-  output <- contract_spending_by_date %>%
-    filter(d_most_recent_category == !!category) %>%
-    filter(d_vendor_name %in% summary_included_vendors) %>%
-    group_by(d_vendor_name, d_fiscal_year_short) %>%
-    summarise(
-      total = sum(d_daily_contract_value)
-    ) %>%
-    ungroup() %>%
-    mutate(
-      d_fiscal_year = convert_start_year_to_fiscal_year(d_fiscal_year_short)
-    ) %>%
-    select(d_vendor_name, d_fiscal_year, total) %>%
-    exports_round_totals()
+  # output <- contract_spending_by_date %>%
+  #   filter(d_most_recent_category == !!category) %>%
+  #   filter(d_vendor_name %in% summary_included_vendors) %>%
+  #   group_by(d_vendor_name, d_fiscal_year_short) %>%
+  #   summarise(
+  #     total = sum(d_daily_contract_value)
+  #   ) %>%
+  #   ungroup() %>%
+  #   mutate(
+  #     d_fiscal_year = convert_start_year_to_fiscal_year(d_fiscal_year_short)
+  #   ) %>%
+  #   select(d_vendor_name, d_fiscal_year, total) %>%
+  #   exports_round_totals()
+  # 
+  # return(output)
   
-  return(output)
+  get_summary_by_fiscal_year_by_specific_entity("d_most_recent_category", category, "d_vendor_name", TRUE)
   
 }
 
 get_summary_total_by_owner_org_and_fiscal_year_by_category <- function(category) {
   
-  output <- contract_spending_by_date %>%
-    filter(d_most_recent_category == !!category) %>%
-    group_by(owner_org, d_fiscal_year_short) %>%
-    summarise(
-      total = sum(d_daily_contract_value)
-    ) %>%
-    ungroup() %>%
-    mutate(
-      d_fiscal_year = convert_start_year_to_fiscal_year(d_fiscal_year_short)
-    ) %>%
-    select(owner_org, d_fiscal_year, total) %>%
-    exports_round_totals()
+  # output <- contract_spending_by_date %>%
+  #   filter(d_most_recent_category == !!category) %>%
+  #   group_by(owner_org, d_fiscal_year_short) %>%
+  #   summarise(
+  #     total = sum(d_daily_contract_value)
+  #   ) %>%
+  #   ungroup() %>%
+  #   mutate(
+  #     d_fiscal_year = convert_start_year_to_fiscal_year(d_fiscal_year_short)
+  #   ) %>%
+  #   select(owner_org, d_fiscal_year, total) %>%
+  #   exports_round_totals()
+  # 
+  # return(output)
   
-  return(output)
+  get_summary_by_fiscal_year_by_specific_entity("d_most_recent_category", category, "owner_org")
   
 }
 
