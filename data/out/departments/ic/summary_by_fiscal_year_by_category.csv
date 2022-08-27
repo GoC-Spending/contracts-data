@@ -1,5 +1,5 @@
 d_most_recent_category,d_fiscal_year,total,total_constant_2019_dollars
-1_facilities_and_construction,2017-2018,12486685.94,12814089.14
+1_facilities_and_construction,2017-2018,12500810.93,12828584.20
 1_facilities_and_construction,2018-2019,4669942.32,4728769.81
 1_facilities_and_construction,2019-2020,3754005.00,3699918.41
 1_facilities_and_construction,2020-2021,4924210.94,4669480.90
@@ -8,12 +8,12 @@ d_most_recent_category,d_fiscal_year,total,total_constant_2019_dollars
 10_office_management,2018-2019,6689617.03,6773055.20
 10_office_management,2019-2020,3517156.28,3478687.89
 10_office_management,2020-2021,2266977.82,2150034.00
-10_office_management,2021-2022,3592701.90,2139294.29
-2_professional_services,2017-2018,24494771.21,25121012.37
-2_professional_services,2018-2019,29910335.17,30354597.90
+10_office_management,2021-2022,3617269.23,2139294.29
+2_professional_services,2017-2018,24522795.21,25149793.83
+2_professional_services,2018-2019,29910146.29,30354405.62
 2_professional_services,2019-2020,42154995.85,41734657.26
-2_professional_services,2020-2021,64742826.25,61519946.76
-2_professional_services,2021-2022,91567915.66,63078417.13
+2_professional_services,2020-2021,64772206.25,61547890.06
+2_professional_services,2021-2022,91663212.54,63151804.12
 3_information_technology,2017-2018,58729526.66,60216051.89
 3_information_technology,2018-2019,66494268.57,67491353.97
 3_information_technology,2019-2020,57701369.11,57205452.59
@@ -43,8 +43,8 @@ d_most_recent_category,d_fiscal_year,total,total_constant_2019_dollars
 8_security_and_protection,2019-2020,2832285.00,2808377.43
 8_security_and_protection,2020-2021,2598624.61,2470437.37
 8_security_and_protection,2021-2022,2863730.30,2243346.12
-9_human_capital,2017-2018,7527075.16,7719569.15
-9_human_capital,2018-2019,7667915.12,7784016.49
+9_human_capital,2017-2018,7522169.16,7714547.51
+9_human_capital,2018-2019,7682865.02,7799165.57
 9_human_capital,2019-2020,8739040.31,8660262.87
 9_human_capital,2020-2021,8901120.87,8454479.94
 9_human_capital,2021-2022,12826556.67,9226766.86

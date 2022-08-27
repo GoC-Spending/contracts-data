@@ -9,14 +9,14 @@ d_most_recent_category,d_fiscal_year,total,total_constant_2019_dollars
 10_office_management,2021-2022,276240.93,181352.13
 2_professional_services,2017-2018,352820.29,361885.85
 2_professional_services,2018-2019,570154.86,578209.01
-2_professional_services,2019-2020,333865.54,329724.10
-2_professional_services,2020-2021,357833.70,340660.38
+2_professional_services,2019-2020,353315.54,349009.96
+2_professional_services,2020-2021,368116.70,350444.83
 2_professional_services,2021-2022,497480.34,363491.20
 3_information_technology,2017-2018,94938.14,97320.60
 3_information_technology,2018-2019,166918.55,169167.16
-3_information_technology,2019-2020,415174.82,409845.08
-3_information_technology,2020-2021,850017.32,807284.48
-3_information_technology,2021-2022,1105405.67,796645.58
+3_information_technology,2019-2020,416911.45,411556.84
+3_information_technology,2020-2021,852737.80,809870.76
+3_information_technology,2021-2022,1108126.14,798773.72
 5_transportation_and_logistics,2017-2018,73645.53,75457.24
 5_transportation_and_logistics,2018-2019,27507.03,27793.92
 5_transportation_and_logistics,2019-2020,210020.36,206673.01
@@ -36,6 +36,6 @@ d_most_recent_category,d_fiscal_year,total,total_constant_2019_dollars
 8_security_and_protection,2021-2022,3312.01,2590.87
 9_human_capital,2017-2018,115198.00,118115.85
 9_human_capital,2018-2019,46309.42,46838.68
-9_human_capital,2019-2020,170747.92,168799.88
+9_human_capital,2019-2020,184844.42,182774.12
 9_human_capital,2020-2021,48643.69,46161.03
 9_human_capital,2021-2022,151207.02,97834.60

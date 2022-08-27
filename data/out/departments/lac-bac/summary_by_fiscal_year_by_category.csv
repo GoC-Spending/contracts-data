@@ -14,15 +14,15 @@ d_most_recent_category,d_fiscal_year,total,total_constant_2019_dollars
 2_professional_services,2019-2020,2411426.53,2380328.72
 2_professional_services,2020-2021,2805997.29,2668190.78
 2_professional_services,2021-2022,1573539.04,1208929.37
-3_information_technology,2017-2018,5223047.25,5355747.92
+3_information_technology,2017-2018,5240624.25,5373739.25
 3_information_technology,2018-2019,7299458.05,7404071.53
 3_information_technology,2019-2020,8312913.43,8236563.83
 3_information_technology,2020-2021,5640767.30,5360385.25
 3_information_technology,2021-2022,7505429.72,5690637.20
 6_industrial_products_and_services,2017-2018,288295.10,295608.17
 6_industrial_products_and_services,2018-2019,281079.05,284854.79
-6_industrial_products_and_services,2019-2020,738904.48,732899.73
-6_industrial_products_and_services,2020-2021,762115.58,724040.14
+6_industrial_products_and_services,2019-2020,737527.17,731549.34
+6_industrial_products_and_services,2020-2021,759967.75,721993.48
 6_industrial_products_and_services,2021-2022,571941.09,322608.36
 7_travel,2018-2019,583986.13,591534.10
 7_travel,2019-2020,879584.04,872161.25
@@ -32,7 +32,7 @@ d_most_recent_category,d_fiscal_year,total,total_constant_2019_dollars
 8_security_and_protection,2018-2019,41270.71,42015.92
 8_security_and_protection,2019-2020,281506.17,279130.55
 8_security_and_protection,2020-2021,2036258.10,1935810.06
-8_security_and_protection,2021-2022,2067351.94,1617216.29
+8_security_and_protection,2021-2022,2065656.94,1615890.35
 9_human_capital,2017-2018,193963.09,198890.93
 9_human_capital,2018-2019,329904.51,334173.29
 9_human_capital,2019-2020,589783.90,584863.90

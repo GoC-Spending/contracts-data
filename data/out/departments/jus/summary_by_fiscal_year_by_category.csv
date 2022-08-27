@@ -6,13 +6,13 @@ d_most_recent_category,d_fiscal_year,total,total_constant_2019_dollars
 1_facilities_and_construction,2019-2020,43530.34,42857.63
 1_facilities_and_construction,2020-2021,70360.39,67085.95
 1_facilities_and_construction,2021-2022,29247.06,27654.88
-10_office_management,2017-2018,5803387.08,5952939.35
+10_office_management,2017-2018,5799187.08,5948628.63
 10_office_management,2018-2019,7255994.00,7361371.32
 10_office_management,2019-2020,8274466.04,8202068.95
 10_office_management,2020-2021,6468083.58,6148046.03
 10_office_management,2021-2022,4572679.01,3498051.02
-2_professional_services,2017-2018,5156751.74,5288225.18
-2_professional_services,2018-2019,5644325.73,5725323.77
+2_professional_services,2017-2018,5150542.12,5281854.65
+2_professional_services,2018-2019,5643815.35,5724802.30
 2_professional_services,2019-2020,6293427.43,6235329.83
 2_professional_services,2020-2021,6092023.30,5789886.16
 2_professional_services,2021-2022,6921504.79,5230196.08
@@ -50,4 +50,4 @@ d_most_recent_category,d_fiscal_year,total,total_constant_2019_dollars
 9_human_capital,2018-2019,856904.01,868472.04
 9_human_capital,2019-2020,975294.12,962264.63
 9_human_capital,2020-2021,1034932.81,982570.57
-9_human_capital,2021-2022,803576.33,514734.09
+9_human_capital,2021-2022,800463.83,512360.10

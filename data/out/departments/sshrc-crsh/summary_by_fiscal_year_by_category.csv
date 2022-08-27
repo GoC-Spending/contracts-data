@@ -5,9 +5,9 @@ d_most_recent_category,d_fiscal_year,total,total_constant_2019_dollars
 10_office_management,2020-2021,138515.13,131682.21
 2_professional_services,2017-2018,688789.48,706344.36
 2_professional_services,2018-2019,1218615.34,1235227.33
-2_professional_services,2019-2020,1436167.87,1421500.84
-2_professional_services,2020-2021,1098545.68,1043687.48
-2_professional_services,2021-2022,782433.96,588410.96
+2_professional_services,2019-2020,1448620.55,1433848.44
+2_professional_services,2020-2021,1110964.34,1055493.53
+2_professional_services,2021-2022,794852.62,598125.63
 3_information_technology,2017-2018,180955.20,185587.76
 3_information_technology,2018-2019,108422.88,110163.38
 3_information_technology,2019-2020,122897.26,120534.43
@@ -20,6 +20,6 @@ d_most_recent_category,d_fiscal_year,total,total_constant_2019_dollars
 7_travel,2021-2022,9745.35,9194.52
 9_human_capital,2017-2018,78630.61,80650.70
 9_human_capital,2018-2019,34600.00,35183.22
-9_human_capital,2019-2020,13601.41,13306.32
-9_human_capital,2020-2021,15411.14,14563.28
-9_human_capital,2021-2022,29224.63,22591.55
+9_human_capital,2019-2020,21927.16,21557.84
+9_human_capital,2020-2021,24044.39,22770.64
+9_human_capital,2021-2022,26894.00,21038.22

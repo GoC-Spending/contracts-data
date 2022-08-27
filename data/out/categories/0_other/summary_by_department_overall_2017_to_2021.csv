@@ -1,17 +1,16 @@
 owner_org,overall_total
-dfatd-maecd,124811836.01
 pwgsc-tpsgc,35228638.66
-nrcan-rncan,28845726.56
-dfo-mpo,11475381.06
+nrcan-rncan,28863579.71
+dfo-mpo,11596480.86
 dnd-mdn,8198605.82
 cbsa-asfc,6620483.52
+pc,5451664.15
 csa-asc,5315981.26
 cer-rec,1862529.64
 rcmp-grc,1314340.13
 ssc-spc,1297489.40
 phac-aspc,1115870.48
 hc-sc,918451.27
-pc,699309.18
 cfia-acia,635344.50
 cnsc-ccsn,546140.39
 aafc-aac,485239.43
@@ -25,3 +24,4 @@ jus,144926.43
 cannor,39874.88
 tbs-sct,24998.99
 oag-bvg,18645.00
+dfatd-maecd,"NA"
