@@ -32,7 +32,7 @@ owner_org_types <- read_csv(
 exports_round_totals <- function(input_df) {
   input_df <- input_df %>%
     mutate(
-      across(ends_with(c("total", "value")), ~ format(round(.x, digits = !!option_round_totals_digits), nsmall = !!option_round_totals_digits, trim = TRUE))
+      across(ends_with(c("total", "value", "dollars")), ~ format(round(.x, digits = !!option_round_totals_digits), nsmall = !!option_round_totals_digits, trim = TRUE))
     )
   
   return(input_df)
@@ -170,6 +170,18 @@ filter_vendors_if_required <- function(input_df, filter_vendors = FALSE) {
   
 }
 
+# Reusable function to sum up totals (both nominal and constant dollar amounts)
+# Designed for use with contract_spending_by_date as input.
+summarize_fiscal_year_totals <- function(df) {
+  df <- df %>%
+    summarise(
+      total = sum(d_daily_contract_value, na.rm = TRUE),
+      total_constant_2019_dollars = sum(d_daily_contract_value_constant_2019_dollars, na.rm = TRUE)
+    )
+  
+  df
+}
+
 # Reusable function for all "summary overall by fiscal year by X" functions
 get_summary_overall_by_fiscal_year_by_criteria <- function(summary_type, grouping_column, filter_vendors = FALSE) {
   
@@ -185,14 +197,12 @@ get_summary_overall_by_fiscal_year_by_criteria <- function(summary_type, groupin
     filter_by_summary_type(summary_type) %>%
     filter_vendors_if_required(filter_vendors) %>%
     group_by(across(all_of(grouping_column)), d_fiscal_year_short) %>%
-    summarise(
-      total = sum(d_daily_contract_value, na.rm = TRUE)
-    ) %>%
+    summarize_fiscal_year_totals() %>%
     ungroup() %>%
     mutate(
       d_fiscal_year = convert_start_year_to_fiscal_year(d_fiscal_year_short)
     ) %>%
-    select(!!!grouping_column, d_fiscal_year, total) %>%
+    select(!!!grouping_column, d_fiscal_year, total, total_constant_2019_dollars) %>%
     exports_round_totals()
   
   return(summary_overall_total_by_fiscal_year_by_criteria)
@@ -204,14 +214,12 @@ get_summary_overall_by_fiscal_year <- function(summary_type) {
   summary_overall_total_by_fiscal_year <- contract_spending_by_date %>%
     filter_by_summary_type(summary_type) %>%
     group_by(d_fiscal_year_short) %>%
-    summarise(
-      total = sum(d_daily_contract_value, na.rm = TRUE)
-    ) %>%
+    summarize_fiscal_year_totals() %>%
     ungroup() %>%
     mutate(
       d_fiscal_year = convert_start_year_to_fiscal_year(d_fiscal_year_short)
     ) %>%
-    select(d_fiscal_year, total) %>%
+    select(d_fiscal_year, total, total_constant_2019_dollars) %>%
     exports_round_totals()
   
   return(summary_overall_total_by_fiscal_year)
@@ -376,10 +384,10 @@ select_by_grouping_column_if_required <- function(df, grouping_column) {
   
   if(grouping_column != FALSE) {
     df <- df %>%
-      select(!!!grouping_column, d_fiscal_year, total)
+      select(!!!grouping_column, d_fiscal_year, total, total_constant_2019_dollars)
   } else {
     df <- df %>%
-      select(d_fiscal_year, total)
+      select(d_fiscal_year, total, total_constant_2019_dollars)
   }
   
   df
@@ -392,9 +400,7 @@ get_summary_by_fiscal_year_by_specific_entity <- function(filter_column, filter_
     filter(across(all_of(filter_column)) == !!filter_search) %>%
     filter_vendors_if_required(filter_vendors) %>%
     group_by_grouping_column_and_fiscal_year_if_required(grouping_column) %>%
-    summarise(
-      total = sum(d_daily_contract_value, na.rm = TRUE)
-    ) %>%
+    summarize_fiscal_year_totals() %>%
     ungroup() %>%
     mutate(
       d_fiscal_year = convert_start_year_to_fiscal_year(d_fiscal_year_short)
