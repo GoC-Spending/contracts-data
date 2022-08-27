@@ -6,6 +6,8 @@
 source("lib/_libraries.R")
 library("cansim")
 
+output_inflation_monthly_table_filepath <- "data/out/inflation_adjustments/constant_dollars_multiplier_monthly.csv"
+
 # 2012=100 in the default index
 gdp_price_index_quarterly <- get_cansim("36-10-0106-01") %>%
   clean_names()
@@ -75,4 +77,9 @@ generate_constant_dollars_multiplier_table <- function(vector = "v62307282") {
   
 }
 
-constant_dollars_multiplier_table <- generate_constant_dollars_multiplier_table("v62307266")
+constant_dollars_multiplier_table <- generate_constant_dollars_multiplier_table("v62307282")
+
+# Write it to a CSV file for posterity (when changed)
+constant_dollars_multiplier_table %>%
+  write_csv(output_inflation_monthly_table_filepath)
+
