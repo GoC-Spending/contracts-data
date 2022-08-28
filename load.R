@@ -131,6 +131,11 @@ if(! (is.na(option_filter_to_vendor) | option_filter_to_vendor == "")) {
 # Total entries (after filtering)
 add_log_entry("total_csv_entries", count(contracts))
 
+# Start and end year for calculations
+add_log_entry("summary_start_fiscal_year", convert_start_year_to_fiscal_year(summary_start_fiscal_year_short))
+add_log_entry("summary_end_fiscal_year", convert_start_year_to_fiscal_year(summary_end_fiscal_year_short))
+
+
 
 # Initial data mutations ========================
 
