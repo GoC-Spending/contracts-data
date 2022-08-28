@@ -1,5 +1,5 @@
 owner_org,max_years,n
-aafc-aac,10.71,9158
+aafc-aac,10.71,9157
 aandc-aadnc,15.01,2946
 acoa-apeca,5.17,414
 atssc-scdata,7.04,530
@@ -9,8 +9,8 @@ casdo-ocena,6.99,56
 cbsa-asfc,10.51,5118
 ced-dec,6.36,310
 cer-rec,7.06,922
-cfia-acia,10,2590
-cic,12.1,3898
+cfia-acia,10,2589
+cic,12.1,3884
 cics-scic,6.14,125
 cihr-irsc,6.77,769
 cnsc-ccsn,8.13,977
@@ -20,9 +20,9 @@ csa-asc,23.24,1529
 csc-scc,11.01,20524
 csps-efpc,7.58,523
 cta-otc,6.25,297
-dfatd-maecd,10.7,19398
-dfo-mpo,31.02,31120
-ec,15.05,12073
+dfatd-maecd,10.7,19397
+dfo-mpo,31.02,31119
+ec,15.05,12072
 erc-cee,1.73,12
 esdc-edsc,10.01,7137
 fcac-acfc,6.95,406
@@ -47,14 +47,14 @@ pbc-clcc,5.06,354
 pc,10.93,14779
 pch,13.34,2107
 pco-bcp,10.34,1580
-phac-aspc,17,4371
+phac-aspc,17,4369
 pmprb-cepmb,5.1,145
 polar-polaire,4.05,50
 ppsc-sppc,12.18,813
 pptc,7.25,4
 ps-sp,7.01,1162
 psc-cfp,5,294
-pwgsc-tpsgc,26.02,30163
+pwgsc-tpsgc,26.02,30162
 rcmp-grc,29.02,16838
 ssc-spc,20.01,10896
 sshrc-crsh,8.27,161

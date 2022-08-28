@@ -1,5 +1,5 @@
 owner_org,min_overall_value,n
-aafc-aac,5001.19,9160
+aafc-aac,5001.19,9159
 aandc-aadnc,5450.00,2947
 acoa-apeca,7180.31,414
 atssc-scdata,5650.00,530
@@ -10,10 +10,10 @@ cbsa-asfc,5803.57,5118
 ccohs-cchst,6430.56,111
 ced-dec,10002.83,310
 cer-rec,5678.40,922
-cfia-acia,8141.34,2590
+cfia-acia,8141.34,2589
 cgc-ccg,10011.41,607
 chrc-ccdp,10170.00,406
-cic,5329.08,3900
+cic,5329.08,3886
 cics-scic,10042.88,125
 cihr-irsc,10034.40,769
 cnsc-ccsn,5330.40,977
@@ -24,10 +24,10 @@ csa-asc,10002.84,1530
 csc-scc,10000.00,20524
 csps-efpc,5647.74,523
 cta-otc,7678.13,297
-dfatd-maecd,5047.50,19426
-dfo-mpo,5061.33,31122
-dnd-mdn,5009.00,83812
-ec,5268.56,12085
+dfatd-maecd,5047.50,19425
+dfo-mpo,5061.33,31121
+dnd-mdn,5009.00,83811
+ec,5268.56,12084
 elections,10048.82,1459
 erc-cee,18244.98,12
 esdc-edsc,5066.41,7137
@@ -70,7 +70,7 @@ pbc-clcc,5475.00,354
 pc,5092.50,14781
 pch,7345.00,2107
 pco-bcp,5751.04,1581
-phac-aspc,5250.00,4371
+phac-aspc,5250.00,4369
 pmprb-cepmb,9040.00,145
 polar-polaire,10560.00,50
 ppsc-sppc,6742.80,813
@@ -78,7 +78,7 @@ pptc,18212.04,5
 ps-sp,6102.00,1162
 psc-cfp,10000.00,294
 psic-ispc,10453.00,88
-pwgsc-tpsgc,5085.00,30163
+pwgsc-tpsgc,5085.00,30162
 rcmp-grc,5067.77,16838
 sirc-csars,10200.00,54
 ssc-spc,5070.00,10898

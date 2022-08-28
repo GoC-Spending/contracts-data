@@ -2,9 +2,9 @@ d_most_recent_category,mean_years,n
 0_other,0.74,1332
 1_facilities_and_construction,0.95,40203
 10_office_management,1.09,19688
-2_professional_services,0.91,68063
-3_information_technology,1.19,49413
-4_medical,0.87,9325
+2_professional_services,0.91,68056
+3_information_technology,1.19,49400
+4_medical,0.87,9323
 5_transportation_and_logistics,0.37,29602
 6_industrial_products_and_services,0.42,31463
 7_travel,0.32,2091

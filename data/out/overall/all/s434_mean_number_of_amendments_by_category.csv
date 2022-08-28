@@ -1,11 +1,11 @@
 d_most_recent_category,mean_number_of_amendments,n
 0_other,1.52,101
-1_facilities_and_construction,1.81,10662
+1_facilities_and_construction,1.81,10663
 10_office_management,1.55,2355
 11_defence,1.35,1747
-2_professional_services,1.59,14770
-3_information_technology,2.23,10457
-4_medical,2.03,1549
+2_professional_services,1.59,14774
+3_information_technology,2.23,10463
+4_medical,2.04,1548
 5_transportation_and_logistics,1.5,3350
 6_industrial_products_and_services,1.51,2496
 7_travel,1.32,253
