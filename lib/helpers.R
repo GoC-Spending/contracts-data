@@ -381,3 +381,17 @@ find_overall_contracts_by_d_vendor_name <- function(d_vendor_name) {
 # is_valid_reporting_period("2021-2022-Q2")
 # is_valid_reporting_period("1870-2020-Q6")
 # is_valid_reporting_period("Q4")
+
+
+# # Testing (2022-08-28)
+# 
+# filename <- "data/categories/combined_descriptions_to_category.csv"
+# data <- read_csv(filename)
+# 
+# data <- data %>%
+#   arrange(category, d_description_en) %>%
+#   select(category, d_description_en) %>%
+#   distinct()
+# 
+# data %>%
+#   write_csv("data/categories/descriptions_to_category.csv")
