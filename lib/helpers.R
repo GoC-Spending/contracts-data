@@ -291,7 +291,9 @@ find_selection_helper <- function(df) {
       d_reporting_period,
       d_start_date,
       d_end_date,
+      d_economic_object_code,
       category,
+      d_description_en,
       d_amendment_group_id,
       d_is_amendment,
       d_number_of_amendments,
@@ -317,6 +319,15 @@ find_contracts_by_d_vendor_name <- function(d_vendor_name) {
     filter(d_vendor_name == !!d_vendor_name) %>%
     find_selection_helper %>%
     arrange(owner_org, d_reporting_period)
+  
+}
+
+find_contracts_by_economic_object_code <- function(d_economic_object_code) {
+  
+  contracts %>%
+    filter(d_economic_object_code == !!d_economic_object_code) %>%
+    find_selection_helper %>%
+    arrange(desc(d_contract_value))
   
 }
 
