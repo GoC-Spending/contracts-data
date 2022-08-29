@@ -120,7 +120,7 @@ get_summary_included_vendors <- function() {
   summary_overall_total_by_vendor <- contract_spending_by_date %>%
     group_by(d_vendor_name) %>%
     summarise(
-      overall_total = sum(d_daily_contract_value)
+      overall_total = sum(d_daily_contract_value, na.rm = TRUE)
     ) %>%
     arrange(desc(overall_total)) %>%
     filter(
@@ -469,7 +469,7 @@ get_summary_overall_total_by_vendor_by_owner <- function(owner_org) {
     filter(d_vendor_name %in% summary_included_vendors) %>%
     group_by(d_vendor_name) %>%
     summarise(
-      overall_total = sum(d_daily_contract_value)
+      overall_total = sum(d_daily_contract_value, na.rm = TRUE)
     ) %>%
     arrange(desc(overall_total)) %>%
     exports_round_totals()
@@ -647,7 +647,7 @@ get_summary_total_by_category_by_vendor <- function(requested_vendor_name) {
     filter(d_vendor_name == !!requested_vendor_name) %>%
     group_by(d_most_recent_category) %>%
     summarise(
-      total = sum(d_daily_contract_value)
+      total = sum(d_daily_contract_value, na.rm = TRUE)
     ) %>%
     ungroup() %>%
     select(d_most_recent_category, total) %>%
@@ -757,7 +757,7 @@ get_summary_overall_total_by_vendor_by_category <- function(category) {
     filter(d_vendor_name %in% summary_included_vendors) %>%
     group_by(d_vendor_name) %>%
     summarise(
-      overall_total = sum(d_daily_contract_value)
+      overall_total = sum(d_daily_contract_value, na.rm = TRUE)
     ) %>%
     ungroup() %>%
     arrange(desc(overall_total)) %>%
@@ -774,7 +774,7 @@ get_summary_overall_total_by_owner_org_by_category <- function(category) {
     filter(d_most_recent_category == !!category) %>%
     group_by(owner_org) %>%
     summarise(
-      overall_total = sum(d_daily_contract_value)
+      overall_total = sum(d_daily_contract_value, na.rm = TRUE)
     ) %>%
     ungroup() %>%
     arrange(desc(overall_total)) %>%
