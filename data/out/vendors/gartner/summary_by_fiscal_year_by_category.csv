@@ -1,6 +1,5 @@
 d_most_recent_category,d_fiscal_year,total,total_constant_2019_dollars
 0_other,2017-2018,64468.03,66240.97
-1_facilities_and_construction,2017-2018,185703.79,190739.03
 1_facilities_and_construction,2018-2019,407553.38,413024.76
 1_facilities_and_construction,2019-2020,321289.30,319343.21
 1_facilities_and_construction,2020-2021,105955.59,100709.25
@@ -31,7 +30,7 @@ d_most_recent_category,d_fiscal_year,total,total_constant_2019_dollars
 7_travel,2017-2018,214379.08,219432.44
 7_travel,2018-2019,34021.10,34634.65
 7_travel,2021-2022,124390.40,7116.22
-9_human_capital,2017-2018,5167785.00,5296954.07
+9_human_capital,2017-2018,5353488.79,5487693.09
 9_human_capital,2018-2019,8245446.07,8361379.01
 9_human_capital,2019-2020,9159415.86,9061083.70
 9_human_capital,2020-2021,20753715.73,19683842.95

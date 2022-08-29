@@ -1,8 +1,5 @@
 d_most_recent_category,d_fiscal_year,total,total_constant_2019_dollars
-1_facilities_and_construction,2017-2018,93112.24,95525.09
-1_facilities_and_construction,2018-2019,93112.24,94560.28
-1_facilities_and_construction,2019-2020,104175.97,103385.86
-1_facilities_and_construction,2020-2021,70153.06,66900.26
+1_facilities_and_construction,2019-2020,10808.62,10806.43
 11_defence,2017-2018,190617.62,195371.28
 11_defence,2018-2019,313890.22,318771.68
 11_defence,2019-2020,314750.20,312094.03
@@ -10,6 +7,9 @@ d_most_recent_category,d_fiscal_year,total,total_constant_2019_dollars
 3_information_technology,2018-2019,2055061.81,2087021.06
 3_information_technology,2020-2021,955194.46,908922.77
 3_information_technology,2021-2022,1022715.86,800034.44
-6_industrial_products_and_services,2020-2021,114841.99,108137.28
+6_industrial_products_and_services,2017-2018,93112.24,95525.09
+6_industrial_products_and_services,2018-2019,93112.24,94560.28
+6_industrial_products_and_services,2019-2020,93367.35,92579.42
+6_industrial_products_and_services,2020-2021,184995.05,175037.55
 6_industrial_products_and_services,2021-2022,815640.23,665025.28
 9_human_capital,2018-2019,466660.53,471252.00

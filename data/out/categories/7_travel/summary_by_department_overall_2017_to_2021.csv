@@ -21,12 +21,11 @@ fin,377703.83
 sshrc-crsh,334653.33
 cnsc-ccsn,330536.38
 jus,316442.96
+cannor,288959.04
 cer-rec,247022.26
 statcan,230270.62
 pbc-clcc,223902.07
-cannor,221040.88
 elections,165722.34
-dnd-mdn,157524.37
 pco-bcp,155704.67
 osfi-bsif,145473.33
 cfia-acia,143406.79
@@ -45,5 +44,6 @@ swc-cfc,16319.91
 fcac-acfc,11893.94
 cihr-irsc,"NA"
 dfo-mpo,"NA"
+dnd-mdn,"NA"
 isc-sac,"NA"
 wd-deo,"NA"

@@ -1,4 +1,6 @@
 d_most_recent_category,d_fiscal_year,total,total_constant_2019_dollars
+0_other,2020-2021,872579.96,823417.94
+0_other,2021-2022,3062420.04,2395622.87
 2_professional_services,2017-2018,403492.91,413285.08
 2_professional_services,2018-2019,1402335.90,1420503.09
 2_professional_services,2019-2020,3143625.65,3122499.50
@@ -7,6 +9,6 @@ d_most_recent_category,d_fiscal_year,total,total_constant_2019_dollars
 3_information_technology,2017-2018,3540507.20,3631715.36
 3_information_technology,2018-2019,5061432.03,5134671.64
 3_information_technology,2019-2020,7162585.52,7099916.44
-3_information_technology,2020-2021,17380108.85,16522380.82
-3_information_technology,2021-2022,29164698.94,22355247.75
+3_information_technology,2020-2021,16507528.90,15698962.88
+3_information_technology,2021-2022,26102278.90,19959624.88
 9_human_capital,2018-2019,24860.00,25133.67

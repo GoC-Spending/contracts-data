@@ -1,10 +1,10 @@
 d_most_recent_category,d_fiscal_year,total,total_constant_2019_dollars
-0_other,2017-2018,6071.08,6228.40
-0_other,2018-2019,24433.58,24748.48
-0_other,2019-2020,161474.62,160771.22
+0_other,2017-2018,68482.72,70257.33
+0_other,2018-2019,13469.57,13679.04
+0_other,2019-2020,1014.62,1018.23
 1_facilities_and_construction,2017-2018,47162742.70,48375928.65
 1_facilities_and_construction,2018-2019,44306554.93,44988766.13
-1_facilities_and_construction,2019-2020,42817186.17,42406586.73
+1_facilities_and_construction,2019-2020,42977646.17,42566339.72
 1_facilities_and_construction,2020-2021,46221162.82,43925652.65
 1_facilities_and_construction,2021-2022,49013484.62,36208675.29
 10_office_management,2017-2018,5296591.45,5432667.05
@@ -17,8 +17,8 @@ d_most_recent_category,d_fiscal_year,total,total_constant_2019_dollars
 2_professional_services,2019-2020,44856885.08,44358938.70
 2_professional_services,2020-2021,53258841.99,50571983.54
 2_professional_services,2021-2022,59873217.16,42562672.19
-3_information_technology,2017-2018,17399056.54,17844431.68
-3_information_technology,2018-2019,18467395.67,18731576.27
+3_information_technology,2017-2018,17336644.90,17780402.75
+3_information_technology,2018-2019,18459997.18,18724062.72
 3_information_technology,2019-2020,19747425.46,19520687.98
 3_information_technology,2020-2021,24161082.11,22926750.41
 3_information_technology,2021-2022,29693867.12,20931966.82
@@ -33,7 +33,7 @@ d_most_recent_category,d_fiscal_year,total,total_constant_2019_dollars
 5_transportation_and_logistics,2020-2021,14576879.21,13853407.03
 5_transportation_and_logistics,2021-2022,19596110.91,12425404.26
 6_industrial_products_and_services,2017-2018,22061573.61,22613419.75
-6_industrial_products_and_services,2018-2019,21293398.92,21582972.71
+6_industrial_products_and_services,2018-2019,21311761.42,21601555.69
 6_industrial_products_and_services,2019-2020,27766433.63,27439010.66
 6_industrial_products_and_services,2020-2021,26725856.23,25385672.14
 6_industrial_products_and_services,2021-2022,24791250.82,15937957.93
