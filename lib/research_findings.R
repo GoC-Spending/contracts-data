@@ -203,6 +203,39 @@ do_research_findings_call <- function(function_name, summary_type, grouping_colu
 }
 
 
+# Research findings against the full set of contracts =========
+# Typical usage is e.g.: contracts %>% s513_unique_vendors()
+
+# How many contracts have vs. don't have economic object codes
+s511_contracts_with_and_without_economic_object_codes <- function(df) {
+  
+  df %>%
+    summarise(
+      n_with_economic_object_code = sum(!is.na(d_economic_object_code)), 
+      n_without_economic_object_code = sum(is.na(d_economic_object_code)), 
+      n = n())
+  
+}
+
+# How many contracts have amendments via each type of amendment matching approach
+s512_contracts_with_amendments_via <- function(df) {
+  
+  df %>%
+    count(d_amendment_via, sort = TRUE)
+  
+}
+
+# How many unique vendors there are in the dataset, after vendor name normalization
+s513_unique_vendors <- function(df) {
+  
+  df %>%
+    select(d_vendor_name) %>% 
+    distinct() %>% 
+    count()
+  
+}
+
+
 # Export helper functions =======================
 # Note: these are a bit clunky (and don't save results in memory or use map- functions) but they'll work for now.
 
