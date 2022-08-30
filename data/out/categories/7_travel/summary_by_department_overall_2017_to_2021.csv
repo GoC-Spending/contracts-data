@@ -1,12 +1,16 @@
 owner_org,overall_total
 dfatd-maecd,89935209.53
+dfo-mpo,37052033.31
+isc-sac,34767208.19
 hc-sc,20265866.60
 csc-scc,18980358.62
+cihr-irsc,10726538.07
 rcmp-grc,7164458.83
 pwgsc-tpsgc,5983074.84
 cbsa-asfc,4657098.40
 lac-bac,3217931.78
 aandc-aadnc,2495859.12
+dnd-mdn,1766204.75
 nserc-crsng,1505734.49
 ic,1385889.37
 pch,1112274.49
@@ -42,8 +46,4 @@ wage,22981.37
 ps-sp,17516.67
 swc-cfc,16319.91
 fcac-acfc,11893.94
-cihr-irsc,"NA"
-dfo-mpo,"NA"
-dnd-mdn,"NA"
-isc-sac,"NA"
-wd-deo,"NA"
+wd-deo,0.00

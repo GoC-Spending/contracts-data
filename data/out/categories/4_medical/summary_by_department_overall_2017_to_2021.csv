@@ -1,10 +1,15 @@
 owner_org,overall_total
+phac-aspc,5007358836.18
 csc-scc,1204895820.37
+dnd-mdn,1077752822.33
 vac-acc,369178093.76
+isc-sac,230507200.50
+hc-sc,133563641.49
 cbsa-asfc,123633994.66
 cic,30451128.60
 rcmp-grc,26756700.19
 cfia-acia,9203242.54
+cra-arc,5013599.81
 esdc-edsc,4892651.36
 tc,4050484.33
 dfo-mpo,4030246.14
@@ -39,8 +44,3 @@ osgg-bsgg,10897.36
 crtc,6871.26
 nsira-ossnr,1694.89
 osfi-bsif,465.16
-cra-arc,"NA"
-dnd-mdn,"NA"
-hc-sc,"NA"
-isc-sac,"NA"
-phac-aspc,"NA"
