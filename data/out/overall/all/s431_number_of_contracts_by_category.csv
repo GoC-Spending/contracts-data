@@ -1,10 +1,10 @@
 d_most_recent_category,contracts,contracts_with_amendments,has_amendments_percentage
-0_other,1898,168,0.0885
+0_other,1898,169,0.089
 1_facilities_and_construction,59136,10616,0.1795
 10_office_management,26591,2318,0.0872
 11_defence,32797,1780,0.0543
-2_professional_services,79060,14749,0.1866
-3_information_technology,52443,10411,0.1985
+2_professional_services,79061,14749,0.1866
+3_information_technology,52441,10411,0.1985
 4_medical,9926,1549,0.1561
 5_transportation_and_logistics,29695,3350,0.1128
 6_industrial_products_and_services,46031,2514,0.0546
