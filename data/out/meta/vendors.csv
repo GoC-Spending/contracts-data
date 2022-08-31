@@ -26,9 +26,9 @@ SEASPAN VICTORIA SHIPYARDS,seaspan_victoria_shipyards,Seaspan Victoria Shipyards
 SNC LAVALIN,snc_lavalin,SNC Lavalin
 SIKORSKY AIRCRAFT,sikorsky_aircraft,Sikorsky Aircraft
 "NAVTECH",navtech,Navtech
-SWITCH HEALTH HOLDINGS,switch_health_holdings,Switch Health Holdings
+SWITCH HEALTH,switch_health,Switch Health
 ELLISDON,ellisdon,Ellisdon
-DELOITTE AND TOUCHE,deloitte_and_touche,Deloitte and Touche
+DELOITTE,deloitte,Deloitte
 WSP,wsp,WSP
 TELUS CANADA,telus_canada,Telus Canada
 CASCADE AEROSPACE,cascade_aerospace,Cascade Aerospace
@@ -88,12 +88,12 @@ WEATHERHAVEN CANADA,weatherhaven_canada,Weatherhaven Canada
 VIRTUAL POSSIBILITIES DIVISION,virtual_possibilities_division,Virtual Possibilities Division
 DECISIVE GROUP,decisive_group,Decisive Group
 CANADIAN EMERGENCY VENTILATORS,canadian_emergency_ventilators,Canadian Emergency Ventilators
+CDW CANADA,cdw_canada,CDW Canada
 LIFELABS,lifelabs,LifeLabs
 PAL AEROSPACE,pal_aerospace,PAL Aerospace
 LEONARDO,leonardo,Leonardo
 CAMPBELL DRUG STORES,campbell_drug_stores,Campbell Drug Stores
 CORADIX TECHNOLOGY CONSULTING,coradix_technology_consulting,Coradix Technology Consulting
-CDW CANADA,cdw_canada,CDW Canada
 IMPERIAL OIL,imperial_oil,Imperial Oil
 UNITED STATES DEPARTMENT OF THE AIR FORCE,united_states_department_of_the_air_force,United States Department of the Air Force
 2KEYS,2keys,2Keys
@@ -332,6 +332,7 @@ KNAPPETT INDUSTRIES,knappett_industries,Knappett Industries
 BAYSHORE HEALTHCARE,bayshore_healthcare,Bayshore Healthcare
 ARCHITECTURE EVOQ,architecture_evoq,Architecture EVOQ
 VANCOUVER DRYDOCK COMPANY,vancouver_drydock_company,Vancouver Drydock Company
+MNP,mnp,MNP
 AMD MEDICOM,amd_medicom,AMD Medicom
 TRANSWEST AIR,transwest_air,Transwest Air
 CON PRO INDUSTRIES CANADA,con_pro_industries_canada,Con Pro Industries Canada
@@ -497,7 +498,6 @@ SECURIGUARD SERVICES,securiguard_services,Securiguard Services
 SECUREKEY TECHNOLOGIES,securekey_technologies,SecureKey Technologies
 HEMMERA ENVIROCHEM,hemmera_envirochem,Hemmera Envirochem
 MDOS CONSULTING,mdos_consulting,MDOS Consulting
-MNP,mnp,MNP
 NORTAC DEFENCE,nortac_defence,NORTAC Defence
 UNIVERSITY OF WATERLOO,university_of_waterloo,University of Waterloo
 CALKO GROUP,calko_group,Calko Group
@@ -535,8 +535,8 @@ BARRIE MACKAY CONTRACTING,barrie_mackay_contracting,Barrie MacKay Contracting
 LEVITT SAFETY,levitt_safety,Levitt Safety
 SOLUDOC,soludoc,Soludoc
 CANADIAN HELICOPTERS,canadian_helicopters,Canadian Helicopters
-ADP CANADA,adp_canada,Adp Canada
-AV TECH,av_tech,Av Tech
+ADP CANADA,adp_canada,ADP Canada
+AV TECH,av_tech,AV Tech
 VVI CONSTRUCTION,vvi_construction,VVI Construction
 PRONEX EXCAVATION,pronex_excavation,Pronex Excavation
 MEDTRONIC CANADA,medtronic_canada,Medtronic Canada
@@ -715,7 +715,6 @@ DRAEGER,draeger,Draeger
 MACONNERIE RAINVILLE ET FRERES,maconnerie_rainville_et_freres,Maconnerie Rainville et Freres
 AINSWORTH,ainsworth,Ainsworth
 BMC SOFTWARE,bmc_software,Bmc Software
-A HUNDRED ANSWERS,a_hundred_answers,A Hundred Answers
 E CONSTRUCTION,e_construction,E Construction
 POLARIS INDUSTRIES,polaris_industries,Polaris Industries
 HEAVY METAL MARINE,heavy_metal_marine,Heavy Metal Marine
@@ -1315,12 +1314,11 @@ HERRING CONSERVATION AND RESEARCH SOCIETY,herring_conservation_and_research_soci
 FINNING INTERNATIONAL,finning_international,Finning International
 FROSTI FISHING,frosti_fishing,Frosti Fishing
 CSDC SYSTEMS,csdc_systems,CSDC Systems
-4PLAN CONSULTING,4plan_consulting,4Plan Consulting
 MCCARTHY TETRAULT,mccarthy_tetrault,McCarthy Tetrault
+JSK NAVAL SUPPORT,jsk_naval_support,Jsk Naval Support
 "NANOMETRICS",nanometrics,Nanometrics
 APPLIED SYSTEMS ENGINEERING,applied_systems_engineering,Applied Systems Engineering
 YAMNUSKA,yamnuska,Yamnuska
-SCALAR DECISIONS,scalar_decisions,Scalar Decisions
 NOVA NETWORKS,nova_networks,Nova Networks
 PACWILL ENVIRONMENTAL,pacwill_environmental,Pacwill Environmental
 K RITE CONSTRUCTION,k_rite_construction,K Rite Construction
@@ -1348,7 +1346,7 @@ LAPORTE EXPERTS CONSEILS,laporte_experts_conseils,Laporte Experts Conseils
 HERITAGE RESTORATION,heritage_restoration,Heritage Restoration
 ROOF TILE MANAGEMENT,roof_tile_management,Roof Tile Management
 TELEDYNE,teledyne,Teledyne
-PANALPINA,panalpina,Panalpina
+DSV,dsv,Dsv
 CBRE,cbre,CBRE
 WYSSEN AVALANCHE CONTROL,wyssen_avalanche_control,Wyssen Avalanche Control
 FLEX KNIT,flex_knit,Flex Knit
@@ -1382,20 +1380,19 @@ NOLINOR AVIATION,nolinor_aviation,Nolinor Aviation
 PORT OF SPAIN HOLDINGS,port_of_spain_holdings,Port of Spain Holdings
 MEDIA Q,media_q,Media Q
 SHRMA ARCHITECTS IN JOINT VENTURE,shrma_architects_in_joint_venture,SHRMA Architects In Joint Venture
-KAYCOM,kaycom,Kaycom
 MANITEX LIFTKING,manitex_liftking,Manitex LiftKing
 WEBSTER ELECTRIC,webster_electric,Webster Electric
 L BREAU AND SONS,l_breau_and_sons,L Breau and Sons
 CONSTRUCTION BLANCHARD ET,construction_blanchard_et,Construction Blanchard Et
 MANITOBA HYDRO,manitoba_hydro,Manitoba Hydro
 J N A LEBLANC ELECTRIQUE,j_n_a_leblanc_electrique,J N A Leblanc Electrique
+HEXAGON,hexagon,Hexagon
 "NATIONAL STRUCTURES",national_structures,National Structures
 WAINWRIGHT MARINE SERVICES,wainwright_marine_services,Wainwright Marine Services
 ACTION PERSONNEL OF OTTAWA HULL,action_personnel_of_ottawa_hull,Action Personnel of Ottawa Hull
 WEST WIND AVIATION,west_wind_aviation,West Wind Aviation
 BECKMAN COULTER CANADA,beckman_coulter_canada,Beckman Coulter Canada
 CRYPTOMILL TECHNOLOGIES,cryptomill_technologies,CryptoMill Technologies
-INTERGRAPH CANADA,intergraph_canada,Intergraph Canada
 SKY CANOE,sky_canoe,Sky Canoe
 ISLAND CATERING,island_catering,Island Catering
 VALARD CONSTRUCTION,valard_construction,Valard Construction
