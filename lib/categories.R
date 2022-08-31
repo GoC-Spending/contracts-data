@@ -58,3 +58,98 @@ category_labels_file <- "data/categories/category_labels.csv"
 category_labels <- read_csv(
   category_labels_file,
 )
+
+
+# IT-specific categorizations =============================
+
+gsin_it_subcategories_file <- "data/categories/gsin_it_subcategories.csv"
+extended_description_it_subcategories_file <- "data/categories/extended_description_it_subcategories.csv"
+
+gsin_it_subcategories <- read_csv(gsin_it_subcategories_file)
+extended_description_it_subcategories <- read_csv(extended_description_it_subcategories_file)
+
+# Usage is contracts %>% identify_it_subcategories()
+identify_it_subcategories <- function(df) {
+  
+  # By GSIN code
+  df <- df %>%
+    left_join(gsin_it_subcategories, by = c("commodity_code" = "nibs_gsin")) %>%
+    rename(
+      d_it_subcategory_via_gsin = "d_it_subcategory"
+    )
+  
+  # By description (to override some generic GSIN codes like R019 and R199)
+  # Prep for the function by adding an empty d_it_subcategory_via_individual_keyword so it can be re-run multiple times.
+  df <- df %>%
+    mutate(
+      d_it_subcategory_via_individual_keyword = NA_character_
+    )
+  
+  # ...this works! So fun.
+  df <- reduce2(extended_description_it_subcategories$keyword, extended_description_it_subcategories$d_it_subcategory, identify_it_subcategory_via_individual_keyword, .init = df)
+  
+  # Consolidate into one column
+  df <- df %>%
+    mutate(
+      d_it_subcategory = case_when(
+        !is.na(d_it_subcategory_via_individual_keyword) ~ d_it_subcategory_via_individual_keyword,
+        !is.na(d_it_subcategory_via_gsin) ~ d_it_subcategory_via_gsin,
+        TRUE ~ NA_character_
+      )
+    )
+  
+  
+  # Label as category = IT by subcategory
+  df <- df %>%
+    mutate(
+      category_by_it_subcategory = case_when(
+        !is.na(d_it_subcategory) ~ "3_information_technology",
+        TRUE ~ NA_character_
+      )
+    )
+  
+  df
+  
+}
+
+
+identify_it_subcategory_via_individual_keyword <- function(df, keyword, resulting_it_subcategory) {
+  
+  
+  
+  df <- df %>%
+    mutate(
+      d_it_subcategory_via_individual_keyword = case_when(
+        str_detect(d_description_comments_extended_lower, pattern = !!keyword) ~ !!resulting_it_subcategory,
+        TRUE ~ d_it_subcategory_via_individual_keyword
+      )
+    )
+  
+  df
+  
+}
+
+
+# Testing (2022-08-31)
+
+# gsin_it_subcategories <- read_csv(gsin_it_subcategories_file) %>%
+#   clean_names() %>%
+#   select(nibs_gsin, gsin_description_en, d_it_category) %>%
+#   filter(!is.na(d_it_category)) %>% 
+#   rename(
+#     d_it_subcategory = "d_it_category"
+#   )
+# 
+# gsin_it_subcategories %>%
+#   write_csv(gsin_it_subcategories_file)
+
+# extended_description_it_subcategories <- read_csv(extended_description_it_subcategories_file) %>%
+#   clean_names() %>%
+#   mutate(
+#     keyword = str_to_lower(keyword)
+#   )
+# 
+# extended_description_it_subcategories %>%
+#   write_csv(extended_description_it_subcategories_file)
+
+# x <- contracts %>% filter(!is.na(category_by_it_subcategory)) %>% find_selection_helper() %>% arrange(desc(d_contract_value))

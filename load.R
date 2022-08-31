@@ -281,8 +281,19 @@ contracts <- contracts %>%
   mutate(
     d_economic_object_code = str_pad(d_economic_object_code, 4, side = "left", pad = "0"),
     d_description_en = str_to_sentence(str_squish(d_description_en))
+  ) %>%
+  mutate(
+    d_description_comments_extended_lower = str_to_lower(str_squish(stri_flatten(
+      c(
+        description_en, comments_en, additional_comments_en
+      )
+    , collapse = " ", na_empty = TRUE
+    )))
   )
 
+# IT-specific category matching
+contracts <- contracts %>%
+  identify_it_subcategories()
 
 # Add in industry categories (where these exist) using the category matching table.
 contracts <- contracts %>%
@@ -311,9 +322,19 @@ contracts <- contracts %>%
     category = NA_character_,
     category = case_when(
       !is.na(category_by_vendor_and_economic_object_code) ~ category_by_vendor_and_economic_object_code,
+      !is.na(category_by_it_subcategory) ~ category_by_it_subcategory,
       !is.na(category_by_economic_object_code) ~ category_by_economic_object_code,
       !is.na(category_by_description) ~ category_by_description,
       TRUE ~ NA_character_
+    )
+  )
+
+# Add "it_other" to any IT contracts that don't already have a subcategory:
+contracts <- contracts %>%
+  mutate(
+    d_it_subcategory = case_when(
+      is.na(d_it_subcategory) & category == "3_information_technology" ~ "it_other",
+      TRUE ~ d_it_subcategory
     )
   )
 
@@ -335,6 +356,16 @@ contracts <- contracts %>%
       TRUE ~ category
     )
   )
+
+# Revert d_it_subcategory for defence contracts to make sure totals aren't thrown off:
+contracts <- contracts %>%
+  mutate(
+    d_it_subcategory = case_when(
+      category == "11_defence" ~ NA_character_,
+      TRUE ~ d_it_subcategory
+    )
+  )
+
 
 
 # Set "NA" categories to "0_other" to improve handling on subsequent exports and the website display.

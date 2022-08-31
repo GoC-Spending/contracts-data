@@ -1,0 +1,203 @@
+nibs_gsin,gsin_description_en,d_it_subcategory
+N7010120,"COMPUTERS, DIGITAL SYSTEMS, MICRO",it_devices_equipment
+N7010,"COMPUTERS, DIGITAL SYSTEMS, MICRO",it_devices_equipment
+N7010124,"COMPUTERS, DIGITAL SYSTEMS, PERSONAL/PORTABLE (MAY INCLUDE      OPERATING SYSTEM SOFTWARE) OTHER THAN IBM COMPATIBLE",it_devices_equipment
+N7010126,"COMPUTERS, MICRO, LAPTOP",it_devices_equipment
+N7010127,Palmtop Organizer,it_devices_equipment
+N7010130,"COMPUTERS, DIGITAL SYSTEMS, SPECIAL PURPOSE, INCLUDES ARTIFICIAL INTELLIGENCE, ARRAY, PARALLEL, VECTOR ETC.",it_devices_equipment
+N7010132,"Computers, Digital Systems, Special, for Persons with Disabilities",it_devices_equipment
+N7025108,"READERS, IMAGE SCANNER FOR DESK TOP PUBLISHING, ETC.",it_devices_equipment
+N7025112,"READERS, MAGNETIC INK CHARACTER (MICR)",it_devices_equipment
+N7025,ADP Input-Output and Storage Devices,it_devices_equipment
+N7025050,DIGITIZERS,it_devices_equipment
+N7025060,KEYBOARDS-MICROCOMPUTER,it_devices_equipment
+N7025197,"INPUT/OUTPUT DEVICES, MISCELLANEOUS, MILITARIZED, RUGGEDIZED",it_devices_equipment
+N7025115,"READERS, BAR CODE (INCLUDES WANDS ETC)",it_devices_equipment
+N7025150,"Monitor, CRT or LCD, Microcomputer Etc.",it_devices_equipment
+N7025162,VOICE OUTPUT DEVICES,it_devices_equipment
+N7025194,"Input/output Devices, Miscellaneous, Special, for Persons with Disabilities",it_devices_equipment
+N7025405,"LOCAL AREA NETWORKS, SYSTEMS AND COMPONENTS",it_devices_equipment
+N7025501,Readers - RFID,it_devices_equipment
+N7035,ADP Support Equipment,it_devices_equipment
+7035,ADP Support Equipment,it_devices_equipment
+WL7025,ADP INPUT-OUTPUT AND STORAGE DEVICES - LEASING OF EQUIPMENT,it_devices_equipment
+WL7025AC,DIGITIZERS - LEASE,it_devices_equipment
+WR7010AD,"COMPUTERS, DIGITAL SYSTEMS, MICRO - RENTAL",it_devices_equipment
+WR7025,ADP INPUT-OUTPUT AND STORAGE DEVICES - RENTAL,it_devices_equipment
+D301B,Data Centre Services,it_consulting_services
+D301CD,Disaster Recovery Services,it_consulting_services
+D301BBM,"Facilities Management Services, Large Scale",it_consulting_services
+D301BBN,"Facilities Management Services, Local Area Network",it_consulting_services
+D301D,Facilities Operation and Outsourcing Services,it_consulting_services
+JI7010,ADPE System Configuration - Installation,it_devices_equipment
+JI7021,"ADP Central Processing Unit (CPU, Computer) Digital - Installation",it_devices_equipment
+JI7025,ADP Input - Output and Storage Devices - Installation,it_devices_equipment
+JX5815,Teletype and Facsimile Equipment - Maintenance,it_devices_equipment
+JX7010,"Automatic Data Processing Equipment, System Configuration - Repair",it_devices_equipment
+JX70,"Automatic Data Processing Equipment, System Configuration - Repair",it_devices_equipment
+JX7010A,"Computers, Digital Systems, Large Scale (May Include Operating System Software) - Maintenance",it_devices_equipment
+JX7020,"ADP Central Processing Unit (CPU, Computer) Analog - Maintenance",it_devices_equipment
+JX7021,"ADP Central Processing Unit (CPU,Computer) Digital - Maintenance",it_devices_equipment
+JX7021A,"Computer, CPU, Digital - Large Scale - IBM Plug Compatible - Maintenance",it_devices_equipment
+JX7021AD,"Computers CPU, Digital, Micro - Maintenance",it_devices_equipment
+JX7022,"ADP Central Processing Unit (CPU, Computer) Hybrid - Maintenance",it_devices_equipment
+JX7025,ADP Input-Output and Storage Devices - Maintenance,it_devices_equipment
+JX7025A,Computer Graphics Equipment N.E.S. - Maintenance,it_devices_equipment
+JX7010AA,"Computers, Digital Systems, Large Scale (May Include Operating Systems Software) other than IBM Plug Compatible - Maintenance",it_devices_equipment
+JX7010AB,"Computers, Digital Systems, Mini/Super Micro (May Include Operating System Software) - Maintenance",it_devices_equipment
+JX7010AC,"Computers, Digital Systems, Mini/Super Micro (May Include Operating System Software) Other Than IBM Plug Compatible - Maintenance",it_devices_equipment
+JX7010AD,"Computers, Digital Systems, Micro - Repair and Overhaul",it_devices_equipment
+JX7010AE,"Computers, Digital Systems, Personal/Portable (May Include Operating System Software - Maintenance",it_devices_equipment
+JX7010AG,"Computers, Digital Systems, Personal/Portable (May Include Operating System Software) other than IBM Compatible - Maintenance",it_devices_equipment
+JX7010AH,"Computers, Digital Systems, Special Purpose, Includes Artificial Intelligence, Array, Parallel, Vector etc. - Maintenance",it_devices_equipment
+JX7010B,"Computers, Digital Turnkey Systems, Large Scale (Includes Application Software) - Maintenance",it_devices_equipment
+JX7010BA,"Computers, Digital Turnkey Systems, Mini/Super Micro (Includes Application Software) - Maintenance",it_devices_equipment
+JX7010BB,"Computers, Digital Turnkey Systems, Personal/Portable (Includes Application Software - Maintenance",it_devices_equipment
+JX7010C,"Computers, Miscellaneous Systems, Analog Computer (Including Turnkey) - Maintenance",it_devices_equipment
+JX7010CA,"Computers, Miscellaneous Systems, Hybrid Computer (Including Turnkey) - Maintenance",it_devices_equipment
+JX7025BO,"Monitor, CRT, Microcomputer etc. - Maintenance",it_devices_equipment
+JX7025BU,"Input/Output Devices, Miscellaneous, Used, EDP - Maintenance",it_devices_equipment
+JX7025AB,"Data Acquisition and Collection Equipment, On Line - Maintenance",it_devices_equipment
+JX7025AD,"Security Devices, Encryption, etc. - Maintenance",it_devices_equipment
+JX7025CA,Controller/Processors - Maintenance,it_devices_equipment
+JX7025CC,Modems - Maintenance,it_devices_equipment
+JX7035AB,"Interfaces, Special Purpose (for Process Control, Analog etc.) - Maintenance",it_devices_equipment
+JX7035AC,"Switching Devices (Data, Modems, Peripherals, Video etc.) - Maintenance",it_devices_equipment
+JX7042,Mini and Micro Computer Control Devices - Repair,it_devices_equipment
+N7010,"Automatic Data Processing Equipment, System Configuration",it_devices_equipment
+N7010102,"COMPUTERS, DIGITAL SYSTEMS - LARGE SCALE (MAY INCLUDE OPERATING SYSTEM SOFTWARE) IBM PLUG COMPATIBLE",it_devices_equipment
+N7021,"ADP Central Processing Unit (CPU, Computer) Digital",it_devices_equipment
+N7021112,"COMPUTER, CPU, DIGITAL MINI/SUPER MICRO - IBM PLUG COMPATIBLE",it_devices_equipment
+N7021114,"COMPUTER, CPU, DIGITAL MINI/SUPER MICRO - OTHER THAN IBM PLUG   COMPATIBLE",it_devices_equipment
+N7021120,"COMPUTERS CPU, DIGITAL, MICRO",it_devices_equipment
+N7021130,"COMPUTER, CPU, DIGITAL, SPECIAL PURPOSE, INCLUDES VECTOR, PARALLEL, ARRAY, ETC.",it_devices_equipment
+N7021197,"COMPUTERS CPU, DIGITAL, INDUSTRIAL, MILITARIZED, RUGGEDIZED",it_devices_equipment
+N7022,"ADP Central Processing Unit (CPU, Computer) Hybrid",it_devices_equipment
+N7022100,"COMPUTERS CPU, HYBRID",it_devices_equipment
+N7010200,"COMPUTERS, DIGITAL TURNKEY SYSTEMS, LARGE SCALE (INCLUDES  APPLICATION SOFTWARE)",it_devices_equipment
+N7010210,"COMPUTERS, DIGITAL TURNKEY SYSTEMS, MINI/SUPER MICRO (INCLUDES  APPLICATION SOFTWARE)",it_devices_equipment
+N7010220,"COMPUTERS, DIGITAL TURNKEY SYSTEMS, PERSONAL/PORTABLE (INCLUDES APPLICATION SOFTWARE",it_devices_equipment
+N7010230,"COMPUTERS, DIGITAL TURNKEY SYSTEMS, SPECIAL APPLICATION",it_devices_equipment
+N7010300,"COMPUTERS, MISCELLANEOUS SYSTEMS, ANALOG COMPUTER (INCLUDING    TURNKEY)",it_devices_equipment
+N7010310,"COMPUTERS, MISCELLANEOUS SYSTEMS, HYBRID COMPUTER (INCLUDING    TURNKEY)",it_devices_equipment
+N7010997,"COMPUTERS AND TURNKEY SYSTEMS, INDUSTRIAL, MILITARIZED, RUGGEDIZED",it_devices_equipment
+N7020,"ADP Central Processing Unit (CPU, Computer) Analog",it_devices_equipment
+N7020100,"Computer CPU, Analog",it_devices_equipment
+N7025200,MULTIPLEXERS,it_devices_equipment
+N7025210,CONTROLLER/PROCESSORS,it_devices_equipment
+N7025225,"MODEMS, WIRELESS",it_devices_equipment
+N7025310,"TERMINALS, DISPLAY, NON-INTELLIGENT",it_devices_equipment
+N7025311,"TERMINALS, DISPLAY, INTELLIGENT",it_devices_equipment
+N7025400,ADD ON MEMORIES (INTERNAL/EXTERNAL),it_devices_equipment
+N7025401,"STORAGE DEVICES, ADD IN MEMORY, EDP",it_devices_equipment
+N7025410,"MAGNETIC DISK SUBSYSTEMS AND DRIVES, RIGID (INCLUDES REMOVABLE  AND NON-REMOVABLE, CARTRIDGE, ETC.)",it_devices_equipment
+N7025411,"MAGNETIC DISK DRIVES, FLEXIBLE (FLOPPY)",it_devices_equipment
+N7025415,OPTICAL DISK DRIVES,it_devices_equipment
+N7025421,MAGNETIC TAPE DRIVES CASSETTE AND CARTRIDGE,it_devices_equipment
+N7025430,MASS STORAGE SUBSYSTEMS - VERY LARGE,it_devices_equipment
+N7025497,"STORAGE AND MEMORY DEVICES, MILITARIZED, RUGGEDIZED",it_devices_equipment
+D301A,Computer and Data Processing Services,it_consulting_services
+D301,Computer and Data Processing Services,it_consulting_services
+WL7010,ADPE SYSTEM CONFIGURATION - LEASE,it_devices_equipment
+WL7010AB,"COMPUTERS, DIGITAL SYSTEMS, MINI/SUPER MICRO (MAY INCLUDE OPERATING SYSTEM SOFTWARE) IBM PLUG COMPATIBLE - LEASE",it_devices_equipment
+WL7010BA,"COMPUTERS, DIGITAL TURNKEY SYSTEMS, MINI/SUPER MICRO (INCLUDES  APPLICATION SOFTWARE) - LEASE",it_devices_equipment
+WL7010BB,"COMPUTERS, DIGITAL TURNKEY SYSTEMS, PERSONAL/PORTABLE (INCLUDES APPLICATION SOFTWARE) - LEASE",it_devices_equipment
+WL7020,"ADP CENTRAL PROCESSING UNIT (CPU, COMPUTER) ANALOG - LEASE",it_devices_equipment
+WL7021,"ADP CENTRAL PROCESSING UNIT (CPU,COMPUTER) DIGITAL - LEASE",it_devices_equipment
+WL7021AC,"COMPUTER, CPU, DIGITAL MINI/SUPER MICRO - OTHER THAN IBM PLUG   COMPATIBLE - LEASE",it_devices_equipment
+WL7025CA,CONTROLLER/PROCESSORS - LEASE,it_devices_equipment
+WL7025DE,"TERMINALS, DISPLAY, CLUSTER - OTHER THAN IBM PLUG COMPATIBLE -  LEASE",it_devices_equipment
+WR7010,"AUTOMATIC DATA PROCESSING EQUIPMENT, SYSTEM CONFIGURATION-RENTAL",it_devices_equipment
+WR7010DA,"COMPUTER AND TURNKEY SYSTEM, USED - RENT",it_devices_equipment
+WR7020,"ADP CENTRAL PROCESSING UNIT (CPU,COMPUTER) ANALOG - RENT",it_devices_equipment
+WR7021,"ADP CENTRAL PROCESSING UNIT (CPU,COMPUTER) DIGITAL - RENT",it_devices_equipment
+WR7022,"ADP CENTRAL PROCESSING UNIT (CPU,COMPUTER) HYBRID - RENT",it_devices_equipment
+D302AAS,"Professional Special Services, EDP, Not Elsewhere Specified",it_consulting_services
+D308A,Programming Services,it_consulting_services
+D309BB,Consulting Services Office Communications Systems-Systems,it_consulting_services
+D301BB0,Cloud Technology,it_consulting_services
+D307AB,Informatics Systems Integration,it_consulting_services
+D399A,Miscellaneous Communications Services,it_other
+D399,Miscellaneous Communications Services,it_other
+D304A,Data Transmission Service,it_other
+D399AA,Other Telecommunications Services,it_other
+D399B,Telecommunications - Voice Service,it_other
+N5805042,"Telephones, Cellular",it_other
+D399BE,Telecommunications - Voice Messaging,it_other
+D399BC,Telecommuncations - Teleconferencing,it_other
+D399BD,Telecommunications - Video Conferencing,it_other
+D301C,"Computer Services, Not Elsewhere Specified",it_consulting_services
+D302AAP,"Informatics Professional and Consulting Services, Software Development and Implementation",it_consulting_services
+D302AAR,"Informatics Professional and Consulting Services, Systems Management, Project Management, EDP Management Consulting",it_consulting_services
+D302A,Informatics Professional Services,it_consulting_services
+D302,Informatics Professional Services,it_consulting_services
+D302AAH,"Informatics Professional and Consulting Services - Maintenance Operations, Support",it_consulting_services
+D302AAI,"Informatics, Professional and Consulting Services - Network Planning, Design, Implementation, Management, Etc.",it_consulting_services
+D302AAJ,"Informatics Professional and Consulting Services, Requirements, Analysis, Feasibility Studies",it_consulting_services
+D302D,Multimedia Services,it_consulting_services
+D303AA,Data Entry Services,it_consulting_services
+D316B,Telecommunications Network Services,it_consulting_services
+D317B,"Information Retrieval Services, Database",it_consulting_services
+D317,"Information Retrieval Services, Database",it_consulting_services
+D317C,Electronic Mail Services,it_consulting_services
+D317D,Automated News Services,it_consulting_services
+D311A,Data Conversion Services,it_consulting_services
+D312A,Optical Scanning Services,it_consulting_services
+D399AB,"Professional Services, Telecommunications",it_consulting_services
+D399D,Micrographic Services,it_consulting_services
+D399C,CD-Rom Services,it_consulting_services
+N7050,ADP Components,it_devices_equipment
+JX7030,ADP Software Maintenance - Other than Microcomputer,it_software_licensing
+N7030205,"COMPUTER SOFTWARE, DATA COMMUNICATIONS, INCLUDING MODEM/LINE    CONTROL, PROTOCOL, CONVERSION, TERMINAL EMULATION, VOICE AND OR DATA NETWORK MANAGEMENT, ETC.- OTHER THAN MICROCOMPUTERS",it_software_licensing
+N7030250,COMPUTER SOFTWARE FOR TECHNOLOGY  ASSISTED TRAINING,it_software_licensing
+N7030310,"COMPUTER SOFTWARE, ENGINEERING, SCIENTIFIC, MATHEMATICAL,       STATISTICAL, MODELING, SIMULATION, EMULATION, ENERGY - OTHER    THAN MICROCOMPUTERS",it_software_licensing
+N7030315,"COMPUTER SOFTWARE, ACQUISITION/PROCESSING OF ANALOG/DIGITAL,    SIGNALS (AUDIO,VIDEO,SEISMIC,ETC)INCL.MACH.VISION,VOICE RECOGN. INST.SIGNALS,ROBOTICS,NUM.MACH.CONT.ETC-OTHER THAN MICROCOMPUTER",it_software_licensing
+N7030100,"Software Suppliers, Application, Business, Personnel Management, EDP",it_software_licensing
+N7030150,"COMPUTER SOFTWARE, ACCOUNTING, FINANCIAL, INSURANCE, PAYROLL    - OTHER THAN MICROCOMPUTERS",it_software_licensing
+N7030161,"COMPUTER SOFTWARE, ARTIFICIAL INTELLIGENCE, EXPERT SYSTEMS      - OTHER THAN MICROCOMPUTERS",it_software_licensing
+N7030165,"COMPUTER SOFTWARE, BUILDING CONSTRUCTION, FACILITY/PROPERTY     MANAGEMENT - OTHER THAN MICROCOMPUTERS",it_software_licensing
+N7030175,"COMPUTER SOFTWARE, BUSINESS ADMINISTRATION/MANAGEMENT, PLANNING, MARKET TRADE AND SALES ANALYSIS, ECONOMICS - OTHER THAN        MICROCOMPUTERS",it_software_licensing
+N7030500,"COMPUTER SOFTWARE, MILITARY APPLICATIONS, EMERGENCY PLANNING    CIVIL - OTHER THAN MICROCOMPUTERS",it_software_licensing
+N7030515,"COMPUTER SOFTWARE, MEDICAL AND HEALTH CARE - OTHER THAN         MICROCOMPUTERS",it_software_licensing
+N7030525,"COMPUTER SOFTWARE,OFFICE AUTOMATION,DOCUMENT MANAGEMENT,MAIL,   NETWORKS,PUBLISHING,SPREADSHEETS,TYPESETTING,WORD PROCESSING -  OTHER THAN MICROCOMPUTERS",it_software_licensing
+N7030535,"COMPUTER SOFTWARE, HUMAN RESOURCES MANAGEMENT, PERSONNEL, ETC.  - OTHER THAN MICROCOMPUTERS",it_software_licensing
+N7030610,"COMPUTER SOFTWARE, PROG.AIDS, COMPUTER LANGUAGES AND SOFTWARE/  SYSTEM DEV.TOOLS,COMPUTER AIDED SOFTWARE ENG.(CASE) EXCL. 4GL   - OTHER THAN MICROCOMPUTERS",it_software_licensing
+N7030355,"COMPUTER SOFTWARE, RESERVATION SYSTEMS - OTHER THAN             MICROCOMPUTERS",it_software_licensing
+N7030398,"COMPUTER SOFTWARE, COMPUTER AIDED DESIGN/COMPUTER AIDED MFG/    COMPUTER INTEGRATED MANUFACTURING (CAD/CAM/CIM) - OTHER THAN  MICROCOMPUTERS",it_software_licensing
+N7030405,"COMPUTER SOFTWARE, LEGAL - OTHER THAN MICROCOMPUTERS",it_software_licensing
+N7030425,"COMPUTER SOFTWARE, MATERIEL MANAGEMENT, INVENTORY CONTROL -     OTHER THAN MICROCOMPUTERS",it_software_licensing
+N7030ACA,"COMPUTER SOFTWARE, BUSINESS ADMINISTRATION/MANAGEMENT, PLANNING,MARKET TRADE AND SALES ANALYSIS, ECONOMICS - MICROCOMPUTERS ONLY",it_software_licensing
+N7030ACB,"COMPUTER SOFTWARE, DATA BASE MANAGEMENT, INFORMATION RETRIEVAL - MICROCOMPUTERS ONLY",it_software_licensing
+N7030ACC,"COMPUTER SOFTWARE, DATA COMMUNICATIONS, INCLUDING MODEM/LINE    CONTROL, PROTOCOL, CONVERSION, TERMINAL EMULATION, VOICE AND OR DATA NETWORK MANAGEMENT, ETC.- MICROCOMPUTERS ONLY",it_software_licensing
+N7030ACE,"COMPUTER SOFTWARE, ENGINEERING, SCIENTIFIC, MATHEMATICAL,       STATISTICAL, MODELING, SIMULATION, EMULATION, ENERGY - MICROCOMPUTERS ONLY",it_software_licensing
+N7030ACF,"COMPUTER SOFTWARE, ACQUISITION/PROCESSING OF ANALOG/DIGITAL,    SIGNALS (AUDIO,VIDEO,SEISMIC,ETC) INCL.MACH.VISION,VOICE RECOGNITION,INST.SIGNALS,ROBOTICS,NUM.MACH.CONT,ETC-MICROCOMPUTERS ONLY",it_software_licensing
+N7030ACG,"COMPUTER SOFTWARE, FOURTH GENERATION LANGUAGES, APPLICATION     GENERATORS - MICROCOMPUTERS ONLY",it_software_licensing
+N7030ACJ,"COMPUTER SOFTWARE, HOTEL MANAGEMENT (INCLUDES INN, MOTEL,       RESTAURANT) - MICROCOMPUTERS ONLY",it_software_licensing
+N7030AE,"COMPUTER SOFTWARE, STORAGE, RETRIEVAL, PROCESSING AND/OR        PRESENTATION OF GRAPHICS, IMAGE, OR VOICE/DATA - MICROCOMPUTERS ONLY",it_software_licensing
+N7030AEA,"COMPUTER SOFTWARE, COMPUTER AIDED DESIGN/COMPUTER AIDED MFG/    COMPUTER INTEGRATED MANUFACTURING (CAD/CAM/CIM) - MICROCOMPUTERS ONLY",it_software_licensing
+N7030AEB,"COMPUTER SOFTWARE, LEGAL - MICROCOMPUTERS ONLY",it_software_licensing
+N7030AEC,"COMPUTER SOFTWARE, MATERIEL MANAGEMENT, INVENTORY CONTROL -     MICROCOMPUTERS ONLY",it_software_licensing
+N7030AED,"COMPUTER SOFTWARE, MILITARY APPLICATIONS, EMERGENCY PLANNING    CIVIL - MICROCOMPUTERS ONLY",it_software_licensing
+N7030AEE,"COMPUTER SOFTWARE, MEDICAL AND HEALTH CARE - MICROCOMPUTERS ONLY",it_software_licensing
+N7030AG,"COMPUTER SOFTWARE,OFFICE AUTOMATION,DOCUMENT MANAGEMENT,MAIL,   NETWORKS,PUBLISHING,SPREADSHEETS,TYPESETTING,WORD PROCESSING -  MICROCOMPUTERS ONLY",it_software_licensing
+N7030615,"COMPUTER, SOFTWARE, NATURAL-LANGUAGE TRANSLATION. EG.ENGLISH-   FRENCH ETC. - OTHER THAN MICROCOMPUTERS",it_software_licensing
+N7030635,"COMPUTER SOFTWARE, LIBRARY SYSTEMS, RECORDS MANAGEMENT,         CATALOGUING, CORRESPONDENCE CONTROL - OTHER THAN MICROCOMPUTERS",it_software_licensing
+N7030640,"COMPUTER SOFTWARE, SYSTEM SOFTWARE (INCL.I/O / TP ACCESS METHODS) UTILITIES, DIAGNOSTICS, PERFORMANCE MONITORING, SOFTWARE      CONVERSION AIDS - OTHER THAN MICROCOMPUTERS",it_software_licensing
+N7030645,"COMPUTER SOFTWARE, SECURITY, PRIVACY, ENCRYPTION, AUDIT CONTROLS/AIDS - OTHER THAN MICROCOMPUTERS",it_software_licensing
+N7030AA,"COMPUTER SOFTWARE, ARTIFICIAL INTELLIGENCE, EXPERT SYSTEMS -    MICROCOMPUTERS ONLY",it_software_licensing
+N7030AC,"COMPUTER SOFTWARE, BUILDING CONSTRUCTION, FACILITY/PROPERTY     MANAGEMENT - MICROCOMPUTERS ONLY",it_software_licensing
+N7030AGA,"COMPUTER SOFTWARE, HUMAN RESOURCES MANAGEMENT, PERSONNEL, ETC.- MICROCOMPUTERS ONLY",it_software_licensing
+N7030AGB,"COMPUTER SOFTWARE, PROG.AIDS,COMPUTER LANGUAGES AND SOFTWARE/   SYSTEM DEV.TOOLS,COMPUTER AIDED SOFTWARE ENG.(CASE) EXCLUDING   4GL  - MICROCOMPUTERS ONLY",it_software_licensing
+N7030AGC,"COMPUTER, SOFTWARE, NATURAL-LANGUAGE TRANSLATION, EG.ENGLISH-   FRENCH ETC. - MICROCOMPUTERS ONLY",it_software_licensing
+N7030AGD,"COMPUTER SOFTWARE, PROJECT MANAGEMENT, PLANNING AND SCHEDULING, REPAIR, MAINTENANCE AND OVERHAUL MANAGEMENT - MICROCOMPUTERS    ONLY",it_software_licensing
+N7030AGE,"COMPUTER SOFTWARE, LIBRARY SYSTEMS, RECORDS MANAGEMENT,         CATALOGUING, CORRESPONDENCE CONTROL - MICROCOMPUTERS ONLY",it_software_licensing
+N7030AJ,"COMPUTER SOFTWARE, SYSTEM SOFTWARE (INCL.I/O / TP ACCESS METHODS) UTILITIES, DIAGNOSTICS, PERFORMANCE MONITORING, SOFTWARE      CONVERSION AIDS - MICROCOMPUTERS ONLY",it_software_licensing
+N7030AJA,"COMPUTER SOFTWARE, SECURITY, PRIVACY, ENCRYPTION, AUDIT CONTROLS/AIDS - MICROCOMPUTERS ONLY",it_software_licensing
+N7030AJB,"COMPUTER SOFTWARE, OTHER (NOT ELSEWHERE LISTED) - MICROCOMPUTERS ONLY",it_software_licensing
+N7030AJC,"COMPUTER SOFTWARE, CD-ROM  MICROCOMPUTER ONLY",it_software_licensing
+N7030AJD,"Computer Software, Laboratory and Scientific",it_software_licensing
+N7030,ADP Software,it_software_licensing
+7030,ADP Software,it_software_licensing
+D307A,Systems Integration of Informatics Commodities and Services,it_consulting_services
+JX7025EA,"Local Area Networks, Systems and Components - Maintenance",it_devices_equipment
+R010AF,IT Systems Audit (Supply Arrangement PASS),it_consulting_services
