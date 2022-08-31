@@ -12,8 +12,15 @@ vendor_labels_filepath <- "data/vendors/vendor_labels.csv"
 
 latest_vendors_list <- latest_vendors_list %>%
   mutate(
-    display_label = str_to_title(name),
-    updated_display_label = ""
+    auto_display_label = str_to_title(name),
+    updated_display_label = case_when(
+      auto_display_label != display_label ~ display_label,
+      TRUE ~ NA_character_
+    )
+  ) %>%
+  select(! display_label) %>%
+  rename(
+    display_label = "auto_display_label"
   ) %>%
   select(
     name,
@@ -22,7 +29,7 @@ latest_vendors_list <- latest_vendors_list %>%
   )
 
 latest_vendors_list %>%
-  write_csv(vendor_labels_extended_filepath)
+  write_csv(vendor_labels_extended_filepath, na = "")
 
 # After manual updates, for clean Git updates
 regenerate_csv_file(vendor_labels_extended_filepath, na = "")
