@@ -281,14 +281,18 @@ contracts <- contracts %>%
   mutate(
     d_economic_object_code = str_pad(d_economic_object_code, 4, side = "left", pad = "0"),
     d_description_en = str_to_sentence(str_squish(d_description_en))
+  )
+
+contracts <- contracts %>%
+  unite(
+    col = "d_description_comments_extended_lower",
+    c("description_en", "comments_en", "additional_comments_en"),
+    sep = " ",
+    remove = FALSE,
+    na.rm = TRUE
   ) %>%
   mutate(
-    d_description_comments_extended_lower = str_to_lower(str_squish(stri_flatten(
-      c(
-        description_en, comments_en, additional_comments_en
-      )
-    , collapse = " ", na_empty = TRUE
-    )))
+    d_description_comments_extended_lower = str_to_lower(str_squish(d_description_comments_extended_lower))
   )
 
 # IT-specific category matching
