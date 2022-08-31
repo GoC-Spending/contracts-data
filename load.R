@@ -365,7 +365,7 @@ contracts <- contracts %>%
 contracts <- contracts %>%
   mutate(
     d_it_subcategory = case_when(
-      category == "11_defence" ~ NA_character_,
+      category != "3_information_technology" ~ NA_character_,
       TRUE ~ d_it_subcategory
     )
   )
