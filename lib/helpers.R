@@ -265,13 +265,13 @@ export_log_entries <- function(location = "data/out/run_log.csv") {
 # Reload and save CSV file ======================
 
 # To avoid formatting issues introduced by Google Sheets, LibreOffice, or Excel when Git-committing CSV files
-regenerate_csv_file <- function(filename) {
+regenerate_csv_file <- function(filename, na = "NA") {
   data <- read_csv(filename)
   
   # Rudimentary error check to avoid writing out again if it didn't load properly:
   if(count(data) > 0) {
     data %>%
-      write_csv(filename)
+      write_csv(filename, na = na)
   }
 }
 
