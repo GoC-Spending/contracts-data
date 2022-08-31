@@ -6,6 +6,8 @@ source("lib/_libraries.R")
 #vendor_matching_file <- "../goc-spending-vendors/vendor_data.csv"
 vendor_matching_file <- "data/vendors/vendor_normalization_data.csv"
 
+vendor_labels_file <- "data/vendors/vendor_labels.csv"
+
 
 # Convert to consistent capitalization and spacing
 # Remove unexpected characters, accents, and suffixes
@@ -104,6 +106,13 @@ vendor_matching <- read_csv(
 ) %>%
   clean_names()
 
+# Bring in the labels file
+vendor_labels <- read_csv(
+  vendor_labels_file,
+) %>%
+  clean_names()
+
+
 # Re-clean vendor normalization CSV file
 
 regenerate_vendor_normalization_csv <- function(reload_csv_first = TRUE) {
@@ -127,3 +136,46 @@ regenerate_vendor_normalization_csv <- function(reload_csv_first = TRUE) {
     write_csv(vendor_matching_file)
   
 }
+
+
+# Merge in friendly capitalization
+add_friendly_vendor_name_capitalization <- function(meta_vendors) {
+  
+  meta_vendors <- meta_vendors %>%
+    left_join(vendor_labels, by = "name") %>%
+    mutate(
+      display_label = case_when(
+        !is.na(display_label) ~ display_label,
+        TRUE ~ str_to_title(name)
+      )
+    )
+  
+  # Todo: make this less clunky!
+  # and, or, et, for
+  # when split by spaces
+  # Note: it's even more clunky that I expected...!
+  meta_vendors <- meta_vendors %>%
+    mutate(
+      display_label = str_replace_all(display_label, " And ", " and "),
+    ) %>%
+    mutate(
+      display_label = str_replace_all(display_label, " Or ", " or "),
+    ) %>%
+    mutate(
+      display_label = str_replace_all(display_label, " Et ", " et "),
+    ) %>%
+    mutate(
+      display_label = str_replace_all(display_label, " For ", " for "),
+    ) %>%
+    mutate(
+      display_label = str_replace_all(display_label, " The ", " the "),
+    ) %>%
+    mutate(
+      display_label = str_replace_all(display_label, " Of ", " of "),
+    )
+    
+  
+  meta_vendors
+  
+}
+

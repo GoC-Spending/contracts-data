@@ -669,6 +669,10 @@ meta_vendors <- meta_vendors %>%
     filepath = get_vendor_filename_from_vendor_name(name)
   )
 
+# Bring in vendor labels with friendly capitalization where these exist.
+meta_vendors <- meta_vendors %>%
+  add_friendly_vendor_name_capitalization()
+
 meta_departments <- owner_org_names %>%
   rename(
     name = owner_org_name_en,
