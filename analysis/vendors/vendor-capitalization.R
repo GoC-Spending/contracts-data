@@ -10,23 +10,41 @@ latest_vendors_list <- read_csv(str_c(output_meta_path, "vendors.csv"))
 vendor_labels_extended_filepath <- "data/vendors/vendor_labels_extended.csv"
 vendor_labels_filepath <- "data/vendors/vendor_labels.csv"
 
+current_vendor_labels <- read_csv(vendor_labels_filepath)
+
 latest_vendors_list <- latest_vendors_list %>%
-  mutate(
-    auto_display_label = str_to_title(name),
-    updated_display_label = case_when(
-      auto_display_label != display_label ~ display_label,
-      TRUE ~ NA_character_
-    )
-  ) %>%
-  select(! display_label) %>%
+  left_join(current_vendor_labels, by = "name") %>%
+  select(name, filepath, display_label.y) %>%
   rename(
-    display_label = "auto_display_label"
+    updated_display_label = "display_label.y"
+  ) %>%
+  mutate(
+    display_label = str_to_title(name),
   ) %>%
   select(
-    name,
+    name, 
     display_label,
     updated_display_label
   )
+  
+
+# latest_vendors_list <- latest_vendors_list %>%
+#   mutate(
+#     auto_display_label = str_to_title(name),
+#     updated_display_label = case_when(
+#       str_to_upper(auto_display_label) == str_to_upper(display_label) ~ NA_character_,
+#       TRUE ~ display_label
+#     )
+#   ) %>%
+#   select(! display_label) %>%
+#   rename(
+#     display_label = "auto_display_label"
+#   ) %>%
+#   select(
+#     name,
+#     display_label,
+#     updated_display_label
+#   )
 
 latest_vendors_list %>%
   write_csv(vendor_labels_extended_filepath, na = "")
