@@ -7,11 +7,11 @@ d_most_recent_category,d_fiscal_year,total,total_constant_2019_dollars
 2_professional_services,2018-2019,26967.50,27232.83
 2_professional_services,2019-2020,42007.70,41919.38
 2_professional_services,2020-2021,23066.02,21719.38
-2_professional_services,2021-2022,29095.00,15670.43
+2_professional_services,2021-2022,29095.00,26526.29
 3_information_technology,2017-2018,303899.88,312042.02
 3_information_technology,2019-2020,138864.59,137484.61
 3_information_technology,2020-2021,208358.75,197778.56
-3_information_technology,2021-2022,153759.30,32979.24
+3_information_technology,2021-2022,153759.30,139213.40
 8_security_and_protection,2017-2018,11571.82,11871.68
 8_security_and_protection,2018-2019,10206.02,10364.74
 8_security_and_protection,2019-2020,13541.94,13427.66
@@ -19,4 +19,4 @@ d_most_recent_category,d_fiscal_year,total,total_constant_2019_dollars
 9_human_capital,2018-2019,58672.88,59572.15
 9_human_capital,2019-2020,10490.00,10356.92
 9_human_capital,2020-2021,28653.07,27284.61
-9_human_capital,2021-2022,8884.43,6949.98
+9_human_capital,2021-2022,8884.43,8248.71

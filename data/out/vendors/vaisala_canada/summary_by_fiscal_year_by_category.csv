@@ -1,14 +1,14 @@
 d_most_recent_category,d_fiscal_year,total,total_constant_2019_dollars
 0_other,2019-2020,39382.93,38823.01
 0_other,2020-2021,102400.14,97348.77
-0_other,2021-2022,102400.14,80104.01
+0_other,2021-2022,102400.14,95072.90
 1_facilities_and_construction,2017-2018,137582.02,140825.11
 1_facilities_and_construction,2018-2019,23838.64,24121.89
 1_facilities_and_construction,2019-2020,21725.68,21478.36
 1_facilities_and_construction,2021-2022,11294.35,10679.50
 2_professional_services,2019-2020,411633.10,406375.46
 2_professional_services,2020-2021,529458.52,503340.48
-2_professional_services,2021-2022,529458.52,414176.67
+2_professional_services,2021-2022,529458.52,491573.12
 3_information_technology,2017-2018,460419.38,472350.35
 3_information_technology,2018-2019,460419.38,467579.58
 3_information_technology,2019-2020,13192.75,13239.66
@@ -16,6 +16,6 @@ d_most_recent_category,d_fiscal_year,total,total_constant_2019_dollars
 6_industrial_products_and_services,2018-2019,1505431.09,1528105.87
 6_industrial_products_and_services,2019-2020,860202.57,851253.90
 6_industrial_products_and_services,2020-2021,1345912.40,1279550.14
-6_industrial_products_and_services,2021-2022,1208498.96,946744.93
+6_industrial_products_and_services,2021-2022,1208498.96,1121400.58
 9_human_capital,2018-2019,34896.51,35249.10
 9_human_capital,2019-2020,11256.00,10983.60

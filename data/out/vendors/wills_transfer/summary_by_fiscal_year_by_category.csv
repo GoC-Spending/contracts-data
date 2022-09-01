@@ -5,9 +5,10 @@ d_most_recent_category,d_fiscal_year,total,total_constant_2019_dollars
 1_facilities_and_construction,2020-2021,65620.43,62383.39
 11_defence,2020-2021,114469.58,109385.73
 2_professional_services,2017-2018,493445.16,505915.26
-2_professional_services,2018-2019,452459.73,458935.81
+2_professional_services,2018-2019,270306.61,274358.06
 2_professional_services,2019-2020,228791.36,226757.67
 2_professional_services,2020-2021,957610.60,909515.09
-2_professional_services,2021-2022,8975959.96,8278115.88
-3_information_technology,2021-2022,32395.52,0.00
-5_transportation_and_logistics,2021-2022,167165.64,130767.77
+2_professional_services,2021-2022,8975959.96,8414896.78
+3_information_technology,2018-2019,182153.12,184577.75
+3_information_technology,2021-2022,32395.52,29259.63
+5_transportation_and_logistics,2021-2022,167165.64,155204.10

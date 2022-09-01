@@ -4,7 +4,7 @@ d_most_recent_category,d_fiscal_year,total,total_constant_2019_dollars
 10_office_management,2018-2019,41491.80,41937.62
 10_office_management,2019-2020,27661.20,27523.63
 10_office_management,2020-2021,90235.31,85553.41
-10_office_management,2021-2022,64993.30,60921.13
+10_office_management,2021-2022,64993.30,60933.79
 11_defence,2017-2018,3385.29,3473.01
 11_defence,2018-2019,3385.29,3437.94
 11_defence,2019-2020,3394.56,3365.92
@@ -15,7 +15,7 @@ d_most_recent_category,d_fiscal_year,total,total_constant_2019_dollars
 4_medical,2018-2019,321031.20,327055.11
 4_medical,2019-2020,211037.40,209006.87
 4_medical,2020-2021,2971049.99,2824668.70
-4_medical,2021-2022,221446.92,148743.10
+4_medical,2021-2022,221446.92,203076.46
 6_industrial_products_and_services,2017-2018,17458.93,17927.21
 6_industrial_products_and_services,2018-2019,43488.43,44020.84
 6_industrial_products_and_services,2019-2020,10452.06,10489.23
@@ -23,4 +23,4 @@ d_most_recent_category,d_fiscal_year,total,total_constant_2019_dollars
 9_human_capital,2018-2019,442244.93,450017.65
 9_human_capital,2019-2020,365377.98,366019.59
 9_human_capital,2020-2021,174956.67,167394.98
-9_human_capital,2021-2022,163067.96,112283.32
+9_human_capital,2021-2022,163067.96,150484.32

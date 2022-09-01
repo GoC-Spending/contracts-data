@@ -1,11 +1,11 @@
 d_most_recent_category,mean_amendment_increase_percentage,n
 0_other,0.0157,5
-1_facilities_and_construction,0.8862,2423
-10_office_management,0.2366,299
-11_defence,0.4548,1780
-2_professional_services,0.8508,1798
+1_facilities_and_construction,0.8427,2400
+10_office_management,0.2443,289
+11_defence,0.4492,2659
+2_professional_services,0.7835,1638
 4_medical,0.4988,55
-6_industrial_products_and_services,0.3598,631
+6_industrial_products_and_services,0.3458,624
 7_travel,-0.2778,3
 8_security_and_protection,0.5709,174
-9_human_capital,0.6273,275
+9_human_capital,0.6307,269

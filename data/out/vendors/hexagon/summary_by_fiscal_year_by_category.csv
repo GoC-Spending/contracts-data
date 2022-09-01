@@ -5,7 +5,7 @@ d_most_recent_category,d_fiscal_year,total,total_constant_2019_dollars
 11_defence,2018-2019,265987.65,270002.68
 11_defence,2019-2020,895038.79,887122.81
 11_defence,2020-2021,229761.97,218176.02
-11_defence,2021-2022,304960.21,260606.85
+11_defence,2021-2022,304960.21,283860.33
 2_professional_services,2018-2019,321817.81,326368.08
 2_professional_services,2019-2020,203986.91,201095.44
 2_professional_services,2020-2021,754868.69,718221.00
@@ -13,4 +13,4 @@ d_most_recent_category,d_fiscal_year,total,total_constant_2019_dollars
 3_information_technology,2018-2019,433435.33,439272.73
 3_information_technology,2019-2020,116540.70,114674.62
 3_information_technology,2020-2021,300598.72,284708.65
-3_information_technology,2021-2022,70440.17,56185.78
+3_information_technology,2021-2022,70440.17,65550.54
