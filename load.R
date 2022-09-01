@@ -428,10 +428,11 @@ add_log_entry("finish_amendment_grouping")
 contract_spending_overall <- contracts %>%
   arrange(d_reporting_period, owner_org) %>% # This is done above, but for safety, doing it again here to ensure that the first() and last() calls below work properly.
   # TODO: the first() and last() calls below could have the d_reporting_period sort order set; confirm if that affects totals later.
-  select(d_reference_number, d_vendor_name, d_reporting_period, d_start_date, d_end_date, d_contract_value, d_original_original_value, d_amendment_group_id, owner_org, d_number_of_amendments, d_economic_object_code, d_description_en, category, comments_en, additional_comments_en) %>%
+  select(d_reference_number, d_vendor_name, d_reporting_period, d_start_date, d_end_date, d_contract_value, d_original_original_value, d_amendment_group_id, owner_org, d_number_of_amendments, d_economic_object_code, d_description_en, category, d_it_subcategory, comments_en, additional_comments_en) %>%
   group_by(d_amendment_group_id) %>%
   mutate(
     d_most_recent_category = last(category),
+    d_most_recent_it_subcategory = last(d_it_subcategory),
     d_most_recent_description_en = last(d_description_en),
     d_overall_start_date = first(d_start_date),
     d_overall_end_date = last(d_end_date),
@@ -457,7 +458,7 @@ contract_spending_overall <- contracts %>%
 # From now on, contract_spending_overall represents groups of 
 # matched contracts with their amendments.
 contract_spending_overall <- contract_spending_overall %>%
-  select(owner_org, d_vendor_name, d_amendment_group_id, d_overall_number_of_amendments, d_most_recent_category, d_overall_start_date, d_overall_end_date, d_original_contract_value, d_overall_contract_value, d_daily_contract_value) %>%
+  select(owner_org, d_vendor_name, d_amendment_group_id, d_overall_number_of_amendments, d_most_recent_category, d_most_recent_it_subcategory, d_overall_start_date, d_overall_end_date, d_original_contract_value, d_overall_contract_value, d_daily_contract_value) %>%
   distinct()
 
 
@@ -497,7 +498,7 @@ print("Reminder: removing the 'contracts' data frame to save memory.")
 # Note: if new columns are added to input dataframes, 
 # they must be added to the complete() function call below.
 contract_spending_by_date <- contract_spending_overall %>%
-  select(owner_org, d_vendor_name, d_amendment_group_id, d_most_recent_category, d_overall_start_date, d_overall_end_date, d_daily_contract_value) %>%
+  select(owner_org, d_vendor_name, d_amendment_group_id, d_most_recent_category, d_most_recent_it_subcategory, d_overall_start_date, d_overall_end_date, d_daily_contract_value) %>%
   distinct() %>% # Since the same data is now in each row, don't multiple-count contracts with amendments
   pivot_longer(
     c(d_overall_start_date, d_overall_end_date),
@@ -505,7 +506,7 @@ contract_spending_by_date <- contract_spending_overall %>%
     names_to = NULL
     ) %>%
   group_by(d_amendment_group_id) %>%
-  complete(date = full_seq(date, 1), nesting(owner_org, d_vendor_name, d_daily_contract_value, d_most_recent_category)) %>%
+  complete(date = full_seq(date, 1), nesting(owner_org, d_vendor_name, d_daily_contract_value, d_most_recent_category, d_most_recent_it_subcategory)) %>%
   ungroup()
 
 # Add (short) fiscal year, for grouping calculations
