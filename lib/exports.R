@@ -8,6 +8,7 @@ source("lib/_libraries.R")
 output_vendor_path <- "data/out/vendors/"
 output_department_path <- "data/out/departments/"
 output_category_path <- "data/out/categories/"
+output_it_subcategory_path <- "data/out/it_subcategories/"
 output_overall_path <- "data/out/overall/"
 output_meta_path <- "data/out/meta/"
 
@@ -549,6 +550,15 @@ get_summary_total_by_category_and_fiscal_year_by_owner_org <- function(owner_org
   
 }
 
+# Get an IT subcategory and fiscal year summary by department or agency
+get_summary_total_by_it_subcategory_and_fiscal_year_by_owner_org <- function(owner_org) {
+  
+  # Since non-IT entries are listed as NA, exclude these before returning the data
+  get_summary_by_fiscal_year_by_specific_entity("owner_org", owner_org, "d_most_recent_it_subcategory") %>%
+    filter(!is.na(d_most_recent_it_subcategory))
+  
+}
+
 # Get a fiscal year overall summary by department or agency
 get_summary_total_by_fiscal_year_by_owner_org <- function(owner_org) {
   
@@ -640,6 +650,15 @@ get_summary_total_by_fiscal_year_and_category_by_vendor <- function(requested_ve
   
 }
 
+# For each of the top n vendors, get a per-fiscal year and per-category breakdown
+get_summary_total_by_fiscal_year_and_it_subcategory_by_vendor <- function(requested_vendor_name) {
+  
+  # Since non-IT entries are listed as NA, exclude these before returning the data
+  get_summary_by_fiscal_year_by_specific_entity("d_vendor_name", requested_vendor_name, "d_most_recent_it_subcategory") %>%
+    filter(!is.na(d_most_recent_it_subcategory))
+  
+}
+  
 # For each of the top n vendors, get a per-category breakdown
 get_summary_total_by_category_by_vendor <- function(requested_vendor_name) {
   
@@ -784,3 +803,62 @@ get_summary_overall_total_by_owner_org_by_category <- function(category) {
   return(output)
   
 }
+
+
+# IT subcategory functions (very similar to the category functions) =======
+
+get_summary_total_by_vendor_and_fiscal_year_by_it_subcategory <- function(it_subcategory) {
+  
+  get_summary_by_fiscal_year_by_specific_entity("d_most_recent_it_subcategory", it_subcategory, "d_vendor_name", TRUE)
+  
+}
+
+get_summary_total_by_owner_org_and_fiscal_year_by_it_subcategory <- function(it_subcategory) {
+  
+  get_summary_by_fiscal_year_by_specific_entity("d_most_recent_it_subcategory", it_subcategory, "owner_org")
+  
+}
+
+get_summary_total_by_fiscal_year_by_it_subcategory <- function(it_subcategory) {
+  
+  get_summary_by_fiscal_year_by_specific_entity("d_most_recent_it_subcategory", it_subcategory)
+  
+}
+
+get_summary_overall_total_by_vendor_by_it_subcategory <- function(it_subcategory) {
+  
+  output <- contract_spending_by_date %>%
+    filter(d_most_recent_it_subcategory == !!it_subcategory) %>%
+    filter(d_vendor_name %in% summary_included_vendors) %>%
+    group_by(d_vendor_name) %>%
+    summarise(
+      overall_total = sum(d_daily_contract_value, na.rm = TRUE)
+    ) %>%
+    ungroup() %>%
+    arrange(desc(overall_total)) %>%
+    select(d_vendor_name, overall_total) %>%
+    exports_round_totals()
+  
+  return(output)
+  
+}
+
+get_summary_overall_total_by_owner_org_by_it_subcategory <- function(it_subcategory) {
+  
+  output <- contract_spending_by_date %>%
+    filter(d_most_recent_it_subcategory == !!it_subcategory) %>%
+    group_by(owner_org) %>%
+    summarise(
+      overall_total = sum(d_daily_contract_value, na.rm = TRUE)
+    ) %>%
+    ungroup() %>%
+    arrange(desc(overall_total)) %>%
+    select(owner_org, overall_total) %>%
+    exports_round_totals()
+  
+  return(output)
+  
+}
+
+
+

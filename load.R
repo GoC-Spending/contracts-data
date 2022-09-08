@@ -647,6 +647,7 @@ summary_departments <- summary_departments %>%
       !!str_c("summary_by_vendor_overall", "_", summary_overall_years_file_suffix) := map(owner_org, get_summary_overall_total_by_vendor_by_owner),
       summary_by_fiscal_year_by_vendor = map(owner_org, get_summary_total_by_vendor_and_fiscal_year_by_owner),
       summary_by_fiscal_year_by_category = map(owner_org, get_summary_total_by_category_and_fiscal_year_by_owner_org),
+      summary_by_fiscal_year_by_it_subcategory = map(owner_org, get_summary_total_by_it_subcategory_and_fiscal_year_by_owner_org),
       summary_by_fiscal_year = map(owner_org, get_summary_total_by_fiscal_year_by_owner_org),
       !!str_c("summary_by_category_overall", "_", summary_overall_years_file_suffix) := map(owner_org, get_summary_total_by_category_by_owner_org),
       )
@@ -668,6 +669,7 @@ summary_vendors <- summary_vendors %>%
     summary_by_fiscal_year = map(vendor, get_summary_total_by_fiscal_year_by_vendor),
     summary_by_fiscal_year_by_department = map(vendor, get_summary_total_by_fiscal_year_and_owner_org_by_vendor),
     summary_by_fiscal_year_by_category = map(vendor, get_summary_total_by_fiscal_year_and_category_by_vendor),
+    summary_by_fiscal_year_by_it_subcategory = map(vendor, get_summary_total_by_fiscal_year_and_it_subcategory_by_vendor),
     !!str_c("summary_by_category_overall", "_", summary_overall_years_file_suffix) := map(vendor, get_summary_total_by_category_by_vendor),
     original_vendor_names = map(vendor, get_original_vendor_names)
   )
@@ -695,6 +697,27 @@ summary_categories <- summary_categories %>%
     !!str_c("summary_by_department_overall", "_", summary_overall_years_file_suffix) := map(category, get_summary_overall_total_by_owner_org_by_category),
     summary_by_fiscal_year_by_department = map(category, get_summary_total_by_owner_org_and_fiscal_year_by_category),
   )
+
+
+# Get a summary for each IT subcategory
+it_subcategories <- contracts %>%
+  filter(!is.na(d_it_subcategory)) %>%
+  select(d_it_subcategory) %>%
+  distinct() %>%
+  arrange(d_it_subcategory) %>%
+  pull(d_it_subcategory)
+
+summary_it_subcategories = tibble(it_subcategory = it_subcategories)
+
+summary_it_subcategories <- summary_it_subcategories %>%
+  mutate(
+    !!str_c("summary_by_vendor_overall", "_", summary_overall_years_file_suffix) := map(it_subcategory, get_summary_overall_total_by_vendor_by_it_subcategory),
+    summary_by_fiscal_year = map(it_subcategory, get_summary_total_by_fiscal_year_by_it_subcategory),
+    summary_by_fiscal_year_by_vendor = map(it_subcategory, get_summary_total_by_vendor_and_fiscal_year_by_it_subcategory),
+    !!str_c("summary_by_department_overall", "_", summary_overall_years_file_suffix) := map(it_subcategory, get_summary_overall_total_by_owner_org_by_it_subcategory),
+    summary_by_fiscal_year_by_department = map(it_subcategory, get_summary_total_by_owner_org_and_fiscal_year_by_it_subcategory),
+  )
+
 
 # Meta tables of vendors, categories, and depts ====
 
@@ -724,6 +747,7 @@ meta_categories <- category_labels %>%
   ) %>%
   select(name, filepath)
 
+# TODO: add friendly names to IT subcategory labels
 
 # Export CSV files of summary tables =============
 
@@ -755,6 +779,15 @@ if(option_update_summary_csv_files == TRUE) {
   # Export category summaries using the reusable function
   if(option_filter_enabled == FALSE) {
     export_summary(summary_categories, output_category_path)
+  }
+  
+  # Per-IT subcategory summaries
+  # Make directories if needed
+  create_summary_folders(output_it_subcategory_path, summary_it_subcategories$it_subcategory)
+  
+  # Export IT subcategory summaries using the reusable function
+  if(option_filter_enabled == FALSE) {
+    export_summary(summary_it_subcategories, output_it_subcategory_path)
   }
   
   
