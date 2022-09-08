@@ -605,9 +605,11 @@ summary_overall <- summary_overall %>%
     summary_by_fiscal_year = map(summary_type, get_summary_overall_by_fiscal_year),
     summary_by_fiscal_year_by_vendor = map(summary_type, get_summary_overall_by_fiscal_year_by_vendor),
     summary_by_fiscal_year_by_category = map(summary_type, get_summary_overall_by_fiscal_year_by_category),
+    summary_by_fiscal_year_by_it_subcategory = map(summary_type, get_summary_overall_by_fiscal_year_by_it_subcategory),
     summary_by_fiscal_year_by_department = map(summary_type, get_summary_overall_by_fiscal_year_by_owner_org),
     !!str_c("summary_by_vendor_overall", "_", summary_overall_years_file_suffix) := map(summary_type, get_summary_overall_by_vendor),
     !!str_c("summary_by_category_overall", "_", summary_overall_years_file_suffix) := map(summary_type, get_summary_overall_by_category),
+    !!str_c("summary_by_it_subcategory_overall", "_", summary_overall_years_file_suffix) := map(summary_type, get_summary_overall_by_it_subcategory),
     !!str_c("summary_by_department_overall", "_", summary_overall_years_file_suffix) := map(summary_type, get_summary_overall_by_owner_org),
   )
 

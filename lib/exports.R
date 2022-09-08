@@ -279,6 +279,13 @@ get_summary_overall_by_fiscal_year_by_category <- function(summary_type) {
   # return(summary_overall_total_by_category_and_fiscal_year)
 }
 
+get_summary_overall_by_fiscal_year_by_it_subcategory <- function(summary_type) {
+  
+  get_summary_overall_by_fiscal_year_by_criteria(summary_type, "d_most_recent_it_subcategory") %>%
+    filter(!is.na(d_most_recent_it_subcategory))
+  
+}
+
 get_summary_overall_by_fiscal_year_by_owner_org <- function(summary_type) {
   
   return(get_summary_overall_by_fiscal_year_by_criteria(summary_type, "owner_org"))
@@ -329,6 +336,13 @@ get_summary_overall_by_vendor <- function(summary_type) {
 get_summary_overall_by_category <- function(summary_type) {
   
   return(get_summary_overall_by_criteria(summary_type, "d_most_recent_category"))
+  
+}
+
+get_summary_overall_by_it_subcategory <- function(summary_type) {
+  
+  get_summary_overall_by_criteria(summary_type, "d_most_recent_it_subcategory") %>%
+    filter(!is.na(d_most_recent_it_subcategory))
   
 }
 
