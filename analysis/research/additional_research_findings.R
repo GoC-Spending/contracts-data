@@ -56,6 +56,13 @@ filter_to_information_technology <- function(df) {
   
 }
 
+filter_to_it_consulting_services <- function(df) {
+  
+  df %>%
+    filter(d_most_recent_it_subcategory == "it_consulting_services")
+  
+}
+
 filter_to_active_during_fiscal_year <- function(df, target_fiscal_year) {
   
   # If it's active during the target fiscal year, that means that
@@ -71,29 +78,64 @@ filter_to_active_during_fiscal_year <- function(df, target_fiscal_year) {
   
 }
 
+filter_to_initiated_during_fiscal_year <- function(df, target_fiscal_year) {
+  
+  # If it's initiated during the target fiscal year, that means that
+  #  1) it started on or after the start of the target fiscal year
+  #  2) it didn't start after the end of the target fiscal year
+  df %>%
+    filter(
+      d_overall_start_date >= ymd(str_c(target_fiscal_year,"04","01"))
+    ) %>%
+    filter(
+      !d_overall_start_date > ymd(str_c(target_fiscal_year + 1,"03","31"))
+    )
+  
+}
+
 
 # Value threshold indicators ====================
 
-a611_standish_rule_value <- function(df) {
+a61_namesake_rule_value <- function(df, threshold_value, label = "namesake") {
+  
+  col_name_meets_rule = str_c("meets_", label, "_rule")
   
   # Note: reduces the total number of contracts by filtering out contracts without a value specified.
   df <- df %>%
     filter(!is.na(d_overall_contract_value)) %>%
     mutate(
-      meets_standish_rule = case_when(
-        d_overall_contract_value < threshold_standish_rule_value ~ 1,
+      meets_rule = case_when(
+        d_overall_contract_value < !!threshold_value ~ 1,
         TRUE ~ 0
       )
     )
   
   df %>%
-    group_by(meets_standish_rule) %>%
+    group_by(meets_rule) %>%
     summarise(
       count = n(),
       total = sum(d_overall_contract_value, na.rm = TRUE)
       ) %>%
+    summarize_add_count_percentage() %>%
     summarize_add_total_percentage() %>%
-    exports_round_percentages()
+    exports_round_percentages() %>%
+    rename(
+      !!col_name_meets_rule := "meets_rule"
+    )
+  
+}
+
+a611_standish_rule_value <- function(df) {
+ 
+  df %>%
+    a61_namesake_rule_value(threshold_standish_rule_value, "standish")
+   
+}
+
+a612_jaquith_rule_value <- function(df) {
+  
+  df %>%
+    a61_namesake_rule_value(threshold_jaquith_rule_value, "jaquith")
   
 }
 
@@ -103,6 +145,8 @@ a611_standish_rule_value <- function(df) {
 # contract_spending_overall %>% 
 #   filter_to_information_technology() %>% 
 #   a611_standish_rule_value()
+
+# Standish threshold
 
 # 2017-2018 fiscal year
 contract_spending_overall %>% 
@@ -115,3 +159,186 @@ contract_spending_overall %>%
   filter_to_active_during_fiscal_year(2021) %>%
   filter_to_information_technology() %>% 
   a611_standish_rule_value()
+
+# Same but with the Jaquith threshold
+
+# 2017-2018 fiscal year
+contract_spending_overall %>% 
+  filter_to_active_during_fiscal_year(2017) %>%
+  filter_to_information_technology() %>% 
+  a612_jaquith_rule_value()
+
+# 2021-2022 fiscal year
+contract_spending_overall %>% 
+  filter_to_active_during_fiscal_year(2021) %>%
+  filter_to_information_technology() %>% 
+  a612_jaquith_rule_value()
+
+# Same but for IT consulting services
+
+# 2017-2018 fiscal year
+contract_spending_overall %>% 
+  filter_to_active_during_fiscal_year(2017) %>%
+  filter_to_it_consulting_services() %>% 
+  a612_jaquith_rule_value()
+
+# 2021-2022 fiscal year
+contract_spending_overall %>% 
+  filter_to_active_during_fiscal_year(2021) %>%
+  filter_to_it_consulting_services() %>% 
+  a612_jaquith_rule_value()
+
+
+# Using the Jaquith threshold with contracts initiated in that year
+
+# 2017-2018 fiscal year
+contract_spending_overall %>% 
+  filter_to_initiated_during_fiscal_year(2017) %>%
+  filter_to_information_technology() %>% 
+  a612_jaquith_rule_value()
+
+# 2021-2022 fiscal year
+contract_spending_overall %>% 
+  filter_to_initiated_during_fiscal_year(2021) %>%
+  filter_to_information_technology() %>% 
+  a612_jaquith_rule_value()
+
+
+# Duration threshold indicators ====================
+
+a62_namesake_rule_duration <- function(df, threshold_value, label = "namesake") {
+  
+  col_name_meets_rule = str_c("meets_", label, "_rule")
+  
+  df <- df %>%
+    add_total_number_of_days()
+  
+  # Note: reduces the total number of contracts by filtering out contracts without a value specified.
+  df <- df %>%
+    filter(!is.na(duration_days)) %>%
+    mutate(
+      meets_rule = case_when(
+        duration_days < !!threshold_value ~ 1,
+        TRUE ~ 0
+      )
+    )
+  
+  df %>%
+    group_by(meets_rule) %>%
+    summarise(
+      count = n(),
+      total = sum(d_overall_contract_value, na.rm = TRUE)
+    ) %>% 
+    summarize_add_count_percentage() %>%
+    summarize_add_total_percentage() %>%
+    exports_round_percentages() %>%
+    rename(
+      !!col_name_meets_rule := "meets_rule"
+    )
+  
+}
+
+a621_standish_rule_duration <- function(df) {
+  
+  df %>%
+    a62_namesake_rule_duration(threshold_standish_rule_duration_days, "standish")
+  
+}
+
+a622_jaquith_rule_duration <- function(df) {
+  
+  df %>%
+    a62_namesake_rule_duration(threshold_jaquith_rule_duration_days, "jaquith")
+  
+}
+
+# Standish threshold
+
+# 2017-2018 fiscal year
+contract_spending_overall %>% 
+  filter_to_active_during_fiscal_year(2017) %>%
+  filter_to_information_technology() %>% 
+  a621_standish_rule_duration()
+
+# 2021-2022 fiscal year
+contract_spending_overall %>% 
+  filter_to_active_during_fiscal_year(2021) %>%
+  filter_to_information_technology() %>% 
+  a621_standish_rule_duration()
+
+# Jaquith threshold
+
+# 2017-2018 fiscal year
+contract_spending_overall %>% 
+  filter_to_active_during_fiscal_year(2017) %>%
+  filter_to_information_technology() %>% 
+  a622_jaquith_rule_duration()
+
+# 2021-2022 fiscal year
+contract_spending_overall %>% 
+  filter_to_active_during_fiscal_year(2021) %>%
+  filter_to_information_technology() %>% 
+  a622_jaquith_rule_duration()
+
+# Using the Jaquith threshold with contracts initiated in that year
+# Note: this tends to undercount long-term (e.g. 10+ year) contracts
+# Would recommend using filter_to_active_during_fiscal_year() instead
+
+# 2017-2018 fiscal year
+contract_spending_overall %>% 
+  filter_to_initiated_during_fiscal_year(2017) %>%
+  filter_to_information_technology() %>% 
+  a622_jaquith_rule_duration()
+
+# 2021-2022 fiscal year
+contract_spending_overall %>% 
+  filter_to_initiated_during_fiscal_year(2021) %>%
+  filter_to_information_technology() %>% 
+  a622_jaquith_rule_duration()
+
+
+# Jaquith threshold with IT consulting services contracts
+
+# 2017-2018 fiscal year
+contract_spending_overall %>% 
+  filter_to_active_during_fiscal_year(2017) %>%
+  filter_to_it_consulting_services() %>% 
+  a622_jaquith_rule_duration()
+
+# 2021-2022 fiscal year
+contract_spending_overall %>% 
+  filter_to_active_during_fiscal_year(2021) %>%
+  filter_to_it_consulting_services() %>% 
+  a622_jaquith_rule_duration()
+
+# Standish threshold with IT consulting services contracts
+
+# 2017-2018 fiscal year
+contract_spending_overall %>% 
+  filter_to_active_during_fiscal_year(2017) %>%
+  filter_to_it_consulting_services() %>% 
+  a621_standish_rule_duration()
+
+# 2021-2022 fiscal year
+contract_spending_overall %>% 
+  filter_to_active_during_fiscal_year(2021) %>%
+  filter_to_it_consulting_services() %>% 
+  a621_standish_rule_duration()
+
+
+# Ongoing during the time period
+contract_spending_overall_ongoing %>% 
+  filter_to_information_technology() %>% 
+  a621_standish_rule_duration()
+
+contract_spending_overall_ongoing %>% 
+  filter_to_it_consulting_services() %>% 
+  a621_standish_rule_duration()
+
+contract_spending_overall_ongoing %>% 
+  filter_to_information_technology() %>% 
+  a622_jaquith_rule_duration()
+
+contract_spending_overall_ongoing %>% 
+  filter_to_it_consulting_services() %>% 
+  a622_jaquith_rule_duration()

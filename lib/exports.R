@@ -194,6 +194,17 @@ summarize_add_total_percentage <- function(df) {
   df
 }
 
+summarize_add_count_percentage <- function(df) {
+  
+  df <- df %>%
+    mutate(
+      count_percentage = count / sum(count)
+    )
+  
+  df
+}
+
+
 # Reusable function for all "summary overall by fiscal year by X" functions
 get_summary_overall_by_fiscal_year_by_criteria <- function(summary_type, grouping_column, filter_vendors = FALSE) {
   
