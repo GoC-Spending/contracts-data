@@ -342,6 +342,9 @@ contracts <- contracts %>%
     )
   )
 
+# Review descriptions of "it_other" contracts for specific keywords
+contracts <- contracts %>%
+  update_it_other_subcategories()
 
 # Specific handling for Department of National Defence
 # Because Transportation & Logistics and Information Technology have a

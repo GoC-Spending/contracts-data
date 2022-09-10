@@ -68,6 +68,10 @@ extended_description_it_subcategories_file <- "data/categories/extended_descript
 gsin_it_subcategories <- read_csv(gsin_it_subcategories_file)
 extended_description_it_subcategories <- read_csv(extended_description_it_subcategories_file)
 
+# Avoid any accidental spacing issues in the source CSV input
+extended_description_it_subcategories <- extended_description_it_subcategories %>%
+  mutate(keyword = str_trim(keyword))
+
 # Usage is contracts %>% identify_it_subcategories()
 identify_it_subcategories <- function(df) {
   
@@ -129,6 +133,23 @@ identify_it_subcategory_via_individual_keyword <- function(df, keyword, resultin
   
 }
 
+
+# For a small set of keywords, revert it_other to it_consulting_services where the descriptions match
+# Note: this updates the column directly, instead of creating an origin column like the earlier IT subcategory approaches
+# This is limited to contracts that are already categorized as "it_other" to avoid overriding other areas.
+update_it_other_subcategories <- function(df) {
+  
+  df <- df %>%
+    mutate(
+      d_it_subcategory = case_when(
+        d_it_subcategory == "it_other" & str_detect(d_description_comments_extended_lower, pattern = "management consulting|research contracts|consulting services") ~ "it_consulting_services",
+        TRUE ~ d_it_subcategory
+      )
+    )
+  
+  df
+  
+}
 
 # Testing (2022-08-31)
 
