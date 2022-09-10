@@ -652,6 +652,7 @@ summary_departments <- summary_departments %>%
       summary_by_fiscal_year_by_it_subcategory = map(owner_org, get_summary_total_by_it_subcategory_and_fiscal_year_by_owner_org),
       summary_by_fiscal_year = map(owner_org, get_summary_total_by_fiscal_year_by_owner_org),
       !!str_c("summary_by_category_overall", "_", summary_overall_years_file_suffix) := map(owner_org, get_summary_total_by_category_by_owner_org),
+      !!str_c("summary_by_it_subcategory_overall", "_", summary_overall_years_file_suffix) := map(owner_org, get_summary_total_by_it_subcategory_by_owner_org),
       )
 
 
@@ -673,6 +674,7 @@ summary_vendors <- summary_vendors %>%
     summary_by_fiscal_year_by_category = map(vendor, get_summary_total_by_fiscal_year_and_category_by_vendor),
     summary_by_fiscal_year_by_it_subcategory = map(vendor, get_summary_total_by_fiscal_year_and_it_subcategory_by_vendor),
     !!str_c("summary_by_category_overall", "_", summary_overall_years_file_suffix) := map(vendor, get_summary_total_by_category_by_vendor),
+    !!str_c("summary_by_it_subcategory_overall", "_", summary_overall_years_file_suffix) := map(vendor, get_summary_total_by_it_subcategory_by_vendor),
     original_vendor_names = map(vendor, get_original_vendor_names)
   )
 

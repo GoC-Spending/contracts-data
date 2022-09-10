@@ -553,6 +553,27 @@ get_summary_total_by_category_by_owner_org <- function(owner_org) {
   
 }
 
+# Same as the above but for IT subcategory summaries by department or agency
+get_summary_total_by_it_subcategory_by_owner_org <- function(owner_org) {
+  
+  output <- contract_spending_by_date %>%
+    filter(owner_org == !!owner_org) %>%
+    filter(!is.na(d_most_recent_it_subcategory)) %>%
+    group_by(d_most_recent_it_subcategory) %>%
+    summarise(
+      total = sum(d_daily_contract_value, na.rm = TRUE)
+    ) %>%
+    ungroup() %>%
+    select(d_most_recent_it_subcategory, total) %>%
+    summarize_add_total_percentage() %>%
+    arrange(desc(total)) %>%
+    exports_round_totals() %>%
+    exports_round_percentages()
+  
+  return(output)
+  
+}
+
 # Get a category and fiscal year summary by department or agency
 get_summary_total_by_category_and_fiscal_year_by_owner_org <- function(owner_org) {
   
@@ -695,6 +716,26 @@ get_summary_total_by_category_by_vendor <- function(requested_vendor_name) {
     ) %>%
     ungroup() %>%
     select(d_most_recent_category, total) %>%
+    summarize_add_total_percentage() %>%
+    arrange(desc(total)) %>%
+    exports_round_totals() %>%
+    exports_round_percentages()
+  
+  return(output)
+}
+
+# Same as the above but for IT subcategories if they exist
+get_summary_total_by_it_subcategory_by_vendor <- function(requested_vendor_name) {
+  
+  output <- contract_spending_by_date %>%
+    filter(d_vendor_name == !!requested_vendor_name) %>%
+    filter(!is.na(d_most_recent_it_subcategory)) %>%
+    group_by(d_most_recent_it_subcategory) %>%
+    summarise(
+      total = sum(d_daily_contract_value, na.rm = TRUE)
+    ) %>%
+    ungroup() %>%
+    select(d_most_recent_it_subcategory, total) %>%
     summarize_add_total_percentage() %>%
     arrange(desc(total)) %>%
     exports_round_totals() %>%
