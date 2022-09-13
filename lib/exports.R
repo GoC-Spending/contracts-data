@@ -131,6 +131,26 @@ get_summary_included_vendors <- function() {
   top_n_vendors <- summary_overall_total_by_vendor %>%
     pull(d_vendor_name)
   
+  # Second pass to find vendors from the most recent 2 years that also pass the threshold during those years
+  recent_top_vendors <- contract_spending_by_date %>%
+    filter(
+      d_fiscal_year_short >= summary_end_fiscal_year_short - summary_vendor_recent_threshold_years,
+      d_fiscal_year_short <= summary_end_fiscal_year_short,
+    ) %>%
+    group_by(d_vendor_name) %>%
+    summarise(
+      overall_total = sum(d_daily_contract_value, na.rm = TRUE)
+    ) %>%
+    arrange(desc(overall_total)) %>%
+    filter(
+      overall_total >= summary_vendor_annual_total_threshold * summary_vendor_recent_threshold_years
+    ) %>%
+    pull(d_vendor_name)
+  
+  # Include the more recent vendors that exceed the annual threshold in the past 2 years (or the # of years defined in summary_vendor_recent_threshold_years)
+  # Note: revisit this to enable it in the future:
+  # top_n_vendors <- union(top_n_vendors, recent_top_vendors)
+  
   return(top_n_vendors)
 }
 

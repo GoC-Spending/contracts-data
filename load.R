@@ -18,6 +18,7 @@ add_log_entry("start_time", run_start_time)
 summary_start_fiscal_year_short <- 2017
 summary_end_fiscal_year_short <- 2021
 summary_vendor_annual_total_threshold <- 1000000
+summary_vendor_recent_threshold_years <- 2
 
 summary_maximum_duration_cutoff_years <- 52
 summary_original_value_minimum_cutoff <- 5000
