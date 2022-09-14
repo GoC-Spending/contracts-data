@@ -490,10 +490,37 @@ owner_org_names <- contracts %>%
            into = c("owner_org_name_en", "owner_org_name_fr"),
            sep = " \\| ")
 
+
+# Clean up original contracts table =============
+
+# Note: for IT subcategory or category troubleshooting, it might be necessary to re-add the origin columns for these categories.
+contracts_individual_entries <- contracts %>%
+  select(
+    d_reference_number,
+    d_amendment_group_id,
+    owner_org,
+    vendor_name,
+    d_vendor_name,
+    d_procurement_id,
+    d_economic_object_code,
+    d_description_comments_extended_lower,
+    d_reporting_period,
+    d_reporting_year,
+    d_start_date,
+    d_end_date,
+    d_contract_value,
+    d_original_original_value,
+    category,
+    d_it_subcategory,
+    d_is_amendment,
+    d_amendment_via
+  )
+
 # TODO: Confirm if this is unhelpful later.
 # Removes the original "contracts" object to save on system memory:
 print("Reminder: removing the 'contracts' data frame to save memory.")
-#rm(contracts)
+rm(contracts)
+
 
 
 # Calculate contract spending over time (pivot and complete into per-day data) =======

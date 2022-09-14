@@ -766,10 +766,10 @@ get_summary_total_by_it_subcategory_by_vendor <- function(requested_vendor_name)
 
 get_original_vendor_names <- function(requested_vendor_name, sort_by_value = TRUE) {
   
-  output <- contracts %>%
+  output <- contracts_individual_entries %>%
     filter(d_vendor_name == !!requested_vendor_name) %>%
-    select(d_vendor_name, vendor_name, contract_value) %>%
-    arrange(desc(contract_value)) %>%
+    select(d_vendor_name, vendor_name, d_contract_value) %>%
+    arrange(desc(d_contract_value)) %>%
     select(d_vendor_name, vendor_name) %>%
     distinct() %>%
     rename(
