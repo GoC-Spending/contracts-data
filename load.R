@@ -432,7 +432,7 @@ add_log_entry("finish_amendment_grouping")
 contract_spending_overall <- contracts %>%
   arrange(d_reporting_period, owner_org) %>% # This is done above, but for safety, doing it again here to ensure that the first() and last() calls below work properly.
   # TODO: the first() and last() calls below could have the d_reporting_period sort order set; confirm if that affects totals later.
-  select(d_reference_number, d_vendor_name, d_reporting_period, d_start_date, d_end_date, d_contract_value, d_original_original_value, d_amendment_group_id, owner_org, d_number_of_amendments, d_economic_object_code, d_description_en, category, d_it_subcategory, comments_en, additional_comments_en) %>%
+  select(d_reference_number, d_vendor_name, d_reporting_period, d_start_date, d_end_date, d_contract_value, d_original_original_value, d_amendment_group_id, owner_org, d_number_of_amendments, d_economic_object_code, d_description_en, category, d_it_subcategory, d_description_comments_extended_lower, intellectual_property, commodity_type) %>%
   group_by(d_amendment_group_id) %>%
   mutate(
     d_most_recent_category = last(category),
@@ -454,7 +454,10 @@ contract_spending_overall <- contracts %>%
     d_overall_contract_value = last(na.omit(d_contract_value)),
     d_daily_contract_value = d_overall_contract_value / as.integer(d_overall_end_date - d_overall_start_date + 1), # The +1 is added so it's inclusive of the start and end dates themselves.
     # Avoid multiple entries appearing due to previous amendment totals
-    d_overall_number_of_amendments = last(d_number_of_amendments, order_by = d_number_of_amendments)
+    d_overall_number_of_amendments = last(d_number_of_amendments, order_by = d_number_of_amendments),
+    d_overall_description_comments_extended = last(na.omit(d_description_comments_extended_lower)),
+    d_intellectual_property = last(na.omit(intellectual_property)),
+    d_commodity_type = last(na.omit(commodity_type))
   ) %>%
   ungroup()
 
@@ -462,7 +465,7 @@ contract_spending_overall <- contracts %>%
 # From now on, contract_spending_overall represents groups of 
 # matched contracts with their amendments.
 contract_spending_overall <- contract_spending_overall %>%
-  select(owner_org, d_vendor_name, d_amendment_group_id, d_overall_number_of_amendments, d_most_recent_category, d_most_recent_it_subcategory, d_overall_start_date, d_overall_end_date, d_original_contract_value, d_overall_contract_value, d_daily_contract_value) %>%
+  select(owner_org, d_vendor_name, d_amendment_group_id, d_overall_number_of_amendments, d_most_recent_category, d_most_recent_it_subcategory, d_overall_start_date, d_overall_end_date, d_original_contract_value, d_overall_contract_value, d_daily_contract_value, d_overall_description_comments_extended, d_intellectual_property, d_commodity_type) %>%
   distinct()
 
 
