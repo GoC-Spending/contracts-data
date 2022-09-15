@@ -293,14 +293,14 @@ find_selection_helper <- function(df) {
       d_end_date,
       d_economic_object_code,
       category,
-      d_it_subcategory_via_gsin,
-      d_it_subcategory_via_individual_keyword,
+      # d_it_subcategory_via_gsin,
+      # d_it_subcategory_via_individual_keyword,
       d_it_subcategory,
-      d_description_en,
+      # d_description_en,
       d_description_comments_extended_lower,
       d_amendment_group_id,
       d_is_amendment,
-      d_number_of_amendments,
+      # d_number_of_amendments,
       d_amendment_via
       )
   
@@ -308,9 +308,9 @@ find_selection_helper <- function(df) {
   
 }
 
-find_contract_by_d_amendment_group_id <- function(d_amendment_group_id) {
+find_contracts_by_d_amendment_group_id <- function(d_amendment_group_id) {
   
-  contracts %>%
+  contracts_individual_entries %>%
     filter(d_amendment_group_id == !!d_amendment_group_id) %>%
     find_selection_helper %>%
     arrange(owner_org, d_reporting_period)
@@ -319,7 +319,7 @@ find_contract_by_d_amendment_group_id <- function(d_amendment_group_id) {
 
 find_contracts_by_d_vendor_name <- function(d_vendor_name) {
   
-  contracts %>%
+  contracts_individual_entries %>%
     filter(d_vendor_name == !!d_vendor_name) %>%
     find_selection_helper %>%
     arrange(owner_org, d_reporting_period)
@@ -328,7 +328,7 @@ find_contracts_by_d_vendor_name <- function(d_vendor_name) {
 
 find_contracts_by_economic_object_code <- function(d_economic_object_code) {
   
-  contracts %>%
+  contracts_individual_entries %>%
     filter(d_economic_object_code == !!d_economic_object_code) %>%
     find_selection_helper %>%
     arrange(desc(d_contract_value))
