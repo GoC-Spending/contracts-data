@@ -1,11 +1,11 @@
 owner_org,overall_total
-ssc-spc,2897032105.06
+ssc-spc,2897890909.56
 rcmp-grc,366493473.83
 pwgsc-tpsgc,169571242.21
 dfo-mpo,81431971.88
 cbsa-asfc,72240615.83
 dfatd-maecd,43416783.51
-csc-scc,39557042.98
+csc-scc,39469058.27
 esdc-edsc,28973540.05
 tc,27733533.64
 aafc-aac,19840428.97
@@ -18,7 +18,7 @@ ic,12881338.39
 nfb-onf,9869295.98
 cas-satj,9112203.21
 pco-bcp,8513072.06
-ec,7829322.57
+ec,8012359.36
 cra-arc,7580189.81
 nrcan-rncan,7578890.84
 cer-rec,6982582.62
@@ -27,7 +27,7 @@ jus,5791585.46
 cic,5491359.28
 osfi-bsif,4308784.84
 nrc-cnrc,3584385.83
-csps-efpc,2922845.53
+csps-efpc,2949284.36
 vac-acc,2868790.25
 crtc,2532643.67
 isc-sac,2313620.45
@@ -66,7 +66,6 @@ psic-ispc,353454.61
 vrab-tacra,332649.37
 swc-cfc,331671.20
 cics-scic,300143.41
-oci-bec,287909.22
 opc-cpvp,252024.37
 pmprb-cepmb,249829.46
 cihr-irsc,239608.82
@@ -76,6 +75,7 @@ ccohs-cchst,217671.24
 nsira-ossnr,200913.76
 feddevontario,199325.22
 nbc-ccbn,182272.00
+oci-bec,131291.22
 sshrc-crsh,100266.06
 casdo-ocena,92097.55
 oic-ci,73170.67

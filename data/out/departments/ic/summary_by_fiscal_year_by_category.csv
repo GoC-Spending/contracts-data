@@ -10,13 +10,13 @@ d_most_recent_category,d_fiscal_year,total,total_constant_2019_dollars
 10_office_management,2020-2021,2266977.82,2150034.00
 10_office_management,2021-2022,3617269.23,3332199.72
 2_professional_services,2017-2018,21287023.21,21829280.39
-2_professional_services,2018-2019,25493858.46,25874807.65
-2_professional_services,2019-2020,37454022.09,37065507.81
+2_professional_services,2018-2019,25392260.80,25771817.63
+2_professional_services,2019-2020,37359059.82,36971346.93
 2_professional_services,2020-2021,61539140.65,58479582.24
 2_professional_services,2021-2022,87618026.70,80900101.93
 3_information_technology,2017-2018,68046883.92,69774623.11
-3_information_technology,2018-2019,76624519.50,77772717.23
-3_information_technology,2019-2020,69114071.92,68531844.18
+3_information_technology,2018-2019,76726117.17,77875707.26
+3_information_technology,2019-2020,69209034.18,68626005.06
 3_information_technology,2020-2021,79452389.84,75490835.29
 3_information_technology,2021-2022,110265817.74,102016477.22
 4_medical,2018-2019,5491.44,5570.04
@@ -24,7 +24,7 @@ d_most_recent_category,d_fiscal_year,total,total_constant_2019_dollars
 4_medical,2020-2021,6593.34,6268.09
 4_medical,2021-2022,81096.68,73766.92
 5_transportation_and_logistics,2017-2018,565478.87,579778.26
-5_transportation_and_logistics,2018-2019,1140377.53,1155091.30
+5_transportation_and_logistics,2018-2019,1128309.13,1142871.26
 5_transportation_and_logistics,2019-2020,571201.66,561459.87
 5_transportation_and_logistics,2020-2021,717508.32,682234.61
 5_transportation_and_logistics,2021-2022,619364.08,568989.91
@@ -39,7 +39,7 @@ d_most_recent_category,d_fiscal_year,total,total_constant_2019_dollars
 7_travel,2020-2021,202481.69,192609.35
 7_travel,2021-2022,183490.45,170360.80
 8_security_and_protection,2017-2018,2759000.49,2830476.60
-8_security_and_protection,2018-2019,2834391.18,2878470.15
+8_security_and_protection,2018-2019,2846459.58,2890690.48
 8_security_and_protection,2019-2020,2832285.00,2808377.43
 8_security_and_protection,2020-2021,2598624.61,2470437.37
 8_security_and_protection,2021-2022,2863730.30,2658628.57
