@@ -714,7 +714,7 @@ summary_vendors <- summary_vendors %>%
 
 
 # Get a summary for each of the industry categories
-industry_categories <- contracts %>%
+industry_categories <- contracts_individual_entries %>%
   select(category) %>%
   distinct() %>%
   arrange(category) %>%
@@ -738,7 +738,7 @@ summary_categories <- summary_categories %>%
 
 
 # Get a summary for each IT subcategory
-it_subcategories <- contracts %>%
+it_subcategories <- contracts_individual_entries %>%
   filter(!is.na(d_it_subcategory)) %>%
   select(d_it_subcategory) %>%
   distinct() %>%
@@ -857,14 +857,14 @@ if(option_update_summary_csv_files == TRUE) {
     write_csv("data/testing/tmp_descriptions_object_codes.csv")
   
   # TODO: remove this later
-  contracts %>%
-    relocate(
-      d_reference_number,
-      vendor_name,
-      d_clean_vendor_name,
-      d_normalized_vendor_name
-    ) %>%
-    write_csv("data/testing/tmp_contracts_clean_names.csv")
+  # contracts %>%
+  #   relocate(
+  #     d_reference_number,
+  #     vendor_name,
+  #     d_clean_vendor_name,
+  #     d_normalized_vendor_name
+  #   ) %>%
+  #   write_csv("data/testing/tmp_contracts_clean_names.csv")
   
 }
 
