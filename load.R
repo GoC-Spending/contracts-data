@@ -192,7 +192,7 @@ contracts <- contracts %>%
 
 # Sort the contracts dataset by ascending reporting period, then owner_org
 contracts <- contracts %>%
-  arrange(d_reporting_period, owner_org)
+  arrange(d_reporting_period, owner_org, d_reference_number)
   
 
 # For grouping/comparison purposes, get the fiscal year from the reporting period
@@ -430,7 +430,7 @@ add_log_entry("finish_amendment_grouping")
 # Contract spending grouped by amendment groups
 # For each amendment group, find the original row's start date, and the last row's end date
 contract_spending_overall <- contracts %>%
-  arrange(d_reporting_period, owner_org) %>% # This is done above, but for safety, doing it again here to ensure that the first() and last() calls below work properly.
+  arrange(d_reporting_period, owner_org, d_reference_number) %>% # This is done above, but for safety, doing it again here to ensure that the first() and last() calls below work properly.
   # TODO: the first() and last() calls below could have the d_reporting_period sort order set; confirm if that affects totals later.
   select(d_reference_number, d_vendor_name, d_reporting_period, d_start_date, d_end_date, d_contract_value, d_original_original_value, d_amendment_group_id, owner_org, d_number_of_amendments, d_economic_object_code, d_description_en, category, d_it_subcategory, d_description_comments_extended_lower, intellectual_property, commodity_type) %>%
   group_by(d_amendment_group_id) %>%
