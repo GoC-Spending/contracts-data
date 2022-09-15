@@ -63,6 +63,15 @@ filter_to_it_consulting_services <- function(df) {
   
 }
 
+filter_to_it_consulting_services_and_software_licensing <- function(df) {
+  
+  included_subcategories <- c("it_consulting_services", "it_software_licensing")
+  
+  df %>%
+    filter(d_most_recent_it_subcategory %in% included_subcategories)
+  
+}
+
 filter_to_active_during_fiscal_year <- function(df, target_fiscal_year) {
   
   # If it's active during the target fiscal year, that means that
@@ -160,6 +169,13 @@ contract_spending_overall %>%
   filter_to_information_technology() %>% 
   a611_standish_rule_value()
 
+# Specifically for IT consulting services and software licensing
+# Key finding:
+contract_spending_overall %>% 
+  filter_to_active_during_fiscal_year(2021) %>%
+  filter_to_it_consulting_services_and_software_licensing() %>% 
+  a611_standish_rule_value()
+
 # Same but with the Jaquith threshold
 
 # 2017-2018 fiscal year
@@ -189,18 +205,35 @@ contract_spending_overall %>%
   a612_jaquith_rule_value()
 
 
+# Same for IT consulting services & software licensing
+
+
+# 2017-2018 fiscal year
+contract_spending_overall %>% 
+  filter_to_active_during_fiscal_year(2017) %>%
+  filter_to_it_consulting_services_and_software_licensing() %>% 
+  a612_jaquith_rule_value()
+
+# 2021-2022 fiscal year
+# Key finding:
+contract_spending_overall %>% 
+  filter_to_active_during_fiscal_year(2021) %>%
+  filter_to_it_consulting_services_and_software_licensing() %>% 
+  a612_jaquith_rule_value()
+
+
 # Using the Jaquith threshold with contracts initiated in that year
 
 # 2017-2018 fiscal year
 contract_spending_overall %>% 
   filter_to_initiated_during_fiscal_year(2017) %>%
-  filter_to_information_technology() %>% 
+  filter_to_it_consulting_services_and_software_licensing() %>% 
   a612_jaquith_rule_value()
 
 # 2021-2022 fiscal year
 contract_spending_overall %>% 
   filter_to_initiated_during_fiscal_year(2021) %>%
-  filter_to_information_technology() %>% 
+  filter_to_it_consulting_services_and_software_licensing() %>% 
   a612_jaquith_rule_value()
 
 
@@ -302,13 +335,14 @@ contract_spending_overall %>%
 # 2017-2018 fiscal year
 contract_spending_overall %>% 
   filter_to_active_during_fiscal_year(2017) %>%
-  filter_to_it_consulting_services() %>% 
+  filter_to_it_consulting_services_and_software_licensing() %>% 
   a622_jaquith_rule_duration()
 
 # 2021-2022 fiscal year
+# Key finding:
 contract_spending_overall %>% 
   filter_to_active_during_fiscal_year(2021) %>%
-  filter_to_it_consulting_services() %>% 
+  filter_to_it_consulting_services_and_software_licensing() %>% 
   a622_jaquith_rule_duration()
 
 # Standish threshold with IT consulting services contracts
@@ -316,13 +350,14 @@ contract_spending_overall %>%
 # 2017-2018 fiscal year
 contract_spending_overall %>% 
   filter_to_active_during_fiscal_year(2017) %>%
-  filter_to_it_consulting_services() %>% 
+  filter_to_it_consulting_services_and_software_licensing() %>% 
   a621_standish_rule_duration()
 
 # 2021-2022 fiscal year
+# Key finding
 contract_spending_overall %>% 
   filter_to_active_during_fiscal_year(2021) %>%
-  filter_to_it_consulting_services() %>% 
+  filter_to_it_consulting_services_and_software_licensing() %>% 
   a621_standish_rule_duration()
 
 
@@ -342,3 +377,79 @@ contract_spending_overall_ongoing %>%
 contract_spending_overall_ongoing %>% 
   filter_to_it_consulting_services() %>% 
   a622_jaquith_rule_duration()
+
+
+
+# Contracts that mention open source ============
+
+a711_references_open_source <- function(df) {
+  
+  open_source_options <- "open source|open-source|opensource| oss "
+  
+  df <- df %>%
+    mutate(
+      is_open_source = case_when(
+        str_detect(d_overall_description_comments_extended, open_source_options) ~ 1,
+        TRUE ~ 0
+      )
+    )
+  
+  df %>%
+    summarise(
+      contracts = n(),
+      contracts_that_reference_open_source = sum(is_open_source, na.rm = TRUE),
+      percentage = contracts_that_reference_open_source / contracts
+    ) %>%
+    exports_round_percentages()
+}
+
+# Key finding:
+contract_spending_overall_ongoing %>%
+  filter_to_it_consulting_services_and_software_licensing() %>% 
+  a711_references_open_source()
+
+
+# IP terms ======================================
+# For reference:
+# https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=14676
+
+# A2 : Crown owned – exception 2, contractor ownership is precluded by prior obligations
+# A3 : Crown owned – exception 3, contractor has no interest in owning Foreground IP
+# A41 : Crown owned – exception 4.1, generate knowledge for public dissemination
+# A42 : Crown owned – exception 4.2, augment existing body of Crown background
+# A43 : Crown owned – exception 4.3, deliver a not-yet fully developed component or sub-system
+# A5 : Crown owned – exception 5, Foreground IP consists of material subject to copyright
+# A8 : Crown owned – exemption 8 (note: must have received approval of the Treasury Board via a Treasury Board submission)
+# B : Contractor Owned
+# C : No IP Terms in Contract
+
+a712_crown_versus_contractor_owned_intellectual_property <- function(df) {
+  
+  # Exclude NA entries as well as "No IP terms in contract" (option C) entries:
+  df <- df %>%
+    filter(!is.na(d_intellectual_property)) %>%
+    filter(d_intellectual_property != "C") %>%
+    mutate(
+      is_crown_owned_ip = case_when(
+        str_detect(d_intellectual_property, "A") ~ 1,
+        str_detect(d_intellectual_property, "B") ~ 0,
+        TRUE ~ NA_real_
+      )
+    ) %>%
+    filter(!is.na(is_crown_owned_ip))
+  
+  # Note: test this with measuring by value
+  df %>%
+    summarise(
+      contracts = n(),
+      contracts_crown_owned_ip = sum(is_crown_owned_ip, na.rm = TRUE),
+      percentage = contracts_crown_owned_ip / contracts
+    ) %>%
+    exports_round_percentages()
+  
+}
+
+# Key finding:
+contract_spending_overall_ongoing %>%
+  filter_to_it_consulting_services_and_software_licensing() %>% 
+  a712_crown_versus_contractor_owned_intellectual_property()
