@@ -584,15 +584,20 @@ plot_fiscal_year_2019_dollars <- function(df) {
   ggplot(df, aes(x = year, y = total_constant_2019_dollars, color = category, shape = category)) +
     geom_point() +
     geom_line() + 
-    ylim(c(0, NA)) + 
-    theme(aspect.ratio=4/3)
+    theme(aspect.ratio=4/3) + 
+    # Thanks to
+    # https://www.tidyverse.org/blog/2022/04/scales-1-2-0/#numbers
+    scale_y_continuous(
+      limits = c(0, NA),
+      labels = label_dollar(scale_cut = cut_short_scale())
+    )
   
   # df
   
 }
 
 ggsave_default_options <- function(filename) {
-  ggsave(filename, dpi = "print", width = 6, units = "in")
+  ggsave(filename, dpi = "print", width = 6, height = 4, units = "in")
   
 }
 

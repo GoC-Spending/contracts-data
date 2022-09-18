@@ -7,6 +7,7 @@ library(purrr)
 library(fs)
 library(stringi)
 library(fuzzyjoin)
+library(scales)
 
 # Include optional environment variables
 # Thanks to
