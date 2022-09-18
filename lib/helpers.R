@@ -151,6 +151,16 @@ convert_start_year_to_fiscal_year <- function(start_year) {
   
 }
 
+# Take a fiscal year ("2021-2022")and output an integer start year (2021)
+convert_fiscal_year_to_start_year <- function(fiscal_year) {
+  
+  # Extracts a 4-digit number; this works given the consistent reporting period format.
+  year <- as.integer(str_extract(fiscal_year, "(\\d{4})"))
+  
+  year
+  
+}
+
 # Generate the matching fiscal year ("2021-2022") from a given date
 get_fiscal_year_from_date <- function(date) {
   
