@@ -453,3 +453,193 @@ a712_crown_versus_contractor_owned_intellectual_property <- function(df) {
 contract_spending_overall_ongoing %>%
   filter_to_it_consulting_services_and_software_licensing() %>% 
   a712_crown_versus_contractor_owned_intellectual_property()
+
+
+# Overall summary-based calculations ============
+
+# Get percentage changes by fiscal year
+
+# Note that the functions in exports.R are named
+# get_summary_overall_by_category
+# Be careful not to overwrite them!
+retrieve_summary_overall_by_category <- function(summary_type = "all") {
+  
+  df <- summary_overall %>% 
+    filter(summary_type == !!summary_type) %>% 
+    select(summary_by_fiscal_year_by_category) %>% 
+    unnest(cols = c(summary_by_fiscal_year_by_category)) %>%
+    mutate(
+      # Converts to double to avoid string type issues in future numeric operations
+      total = as.double(total),
+      total_constant_2019_dollars = as.double(total_constant_2019_dollars)
+    )
+  
+  df
+  
+}
+
+retrieve_summary_overall_by_it_subcategory <- function(summary_type = "all") {
+  
+  df <- summary_overall %>% 
+    filter(summary_type == !!summary_type) %>% 
+    select(summary_by_fiscal_year_by_it_subcategory) %>% 
+    unnest(cols = c(summary_by_fiscal_year_by_it_subcategory)) %>%
+    mutate(
+      # Converts to double to avoid string type issues in future numeric operations
+      total = as.double(total),
+      total_constant_2019_dollars = as.double(total_constant_2019_dollars)
+    )
+  
+  df
+  
+}
+
+# This compares the first and last entries in "total_constant_2019_dollars" to each other
+percent_changes_in_2019_dollars_by_fiscal_year_and_group_category <- function(df, grouping_column) {
+  
+  df <- df %>%
+    group_by(across(all_of(grouping_column))) %>%
+    arrange(!!!grouping_column, d_fiscal_year) %>%
+    mutate(
+      total_constant_2019_dollars = as.double(total_constant_2019_dollars),
+      change_percentage = (last(total_constant_2019_dollars) - first(total_constant_2019_dollars)) / first(total_constant_2019_dollars)
+    )
+  
+  df %>%
+    select(!!!grouping_column, change_percentage) %>%
+    distinct() %>%
+    ungroup() %>%
+    arrange(desc(change_percentage)) %>%
+    exports_round_percentages()
+  
+}
+
+# Retrieve an individual value from a combination of first-column search, and requested column pull
+# Usage is e.g. df %>% pull_specific_first_column_value("it_consulting_services", "change_percentage")
+# Thanks to
+# https://stackoverflow.com/a/66822684/756641
+pull_specific_first_column_value <- function(df, first_col_row_match, pull_column) {
+  
+  df %>%
+    filter(if_any(1, ~ . == !!first_col_row_match)) %>%
+    pull(!!pull_column)
+  
+}
+
+
+# Key finding:
+retrieve_summary_overall_by_category() %>%
+  percent_changes_in_2019_dollars_by_fiscal_year_and_group_category("d_most_recent_category")
+
+# Key finding:
+retrieve_summary_overall_by_it_subcategory() %>%
+  percent_changes_in_2019_dollars_by_fiscal_year_and_group_category("d_most_recent_it_subcategory")
+
+
+# Charts based on the overall summary trends ==============
+
+filter_by_highest_2019_dollars_most_recent_fiscal_year <- function(df, limit_n = 5) {
+  
+  # Automatically uses the first column as the grouping category:
+  grouping_category <- names(df)[[1]]
+  
+  largest_categories <- df %>%
+    group_by(across(all_of(grouping_category))) %>%
+    mutate(
+      most_recent_2019_dollars = last(total_constant_2019_dollars, order_by = d_fiscal_year)
+    ) %>% 
+    select(!!!grouping_category, most_recent_2019_dollars) %>%
+    distinct() %>%
+    ungroup() %>%
+    arrange(desc(most_recent_2019_dollars)) %>%
+    slice_head(n = limit_n) %>%
+    pull(grouping_category)
+  
+  # Thanks to
+  # https://cran.r-project.org/web/packages/dplyr/vignettes/programming.html#indirection
+  df %>%
+    filter(.data[[grouping_category]] %in% largest_categories)
+  
+}
+
+plot_fiscal_year_2019_dollars <- function(df) {
+  
+  # Automatically uses the first column as the grouping category:
+  grouping_category <- names(df)[[1]]
+  
+  # Thanks to
+  # https://cran.r-project.org/web/packages/dplyr/vignettes/programming.html
+  df <- df %>%
+    mutate(
+      year = convert_fiscal_year_to_start_year(d_fiscal_year),
+      category = first(across({{ grouping_category}}, ~ as.factor(.)))
+    ) %>%
+    mutate(
+      # Converts to double to avoid string type issues in future numeric operations
+      # (In case this wasn't done previously.)
+      total = as.double(total),
+      total_constant_2019_dollars = as.double(total_constant_2019_dollars)
+    )
+  
+  ggplot(df, aes(x = year, y = total_constant_2019_dollars, color = category, shape = category)) +
+    geom_point() +
+    geom_line() + 
+    ylim(c(0, NA)) + 
+    theme(aspect.ratio=4/3)
+  
+  # df
+  
+}
+
+ggsave_default_options <- function(filename) {
+  ggsave(filename, dpi = "print", width = 6, units = "in")
+  
+}
+
+retrieve_summary_overall_by_category() %>%
+  plot_fiscal_year_2019_dollars()
+
+retrieve_summary_overall_by_category() %>%
+  filter_by_highest_2019_dollars_most_recent_fiscal_year(6) %>%
+  plot_fiscal_year_2019_dollars()
+
+ggsave_default_options("plots/p001_categories_by_fiscal_year.png")
+
+retrieve_summary_overall_by_it_subcategory() %>%
+  plot_fiscal_year_2019_dollars()
+
+ggsave_default_options("plots/p002_it_subcategories_by_fiscal_year.png")
+
+
+# Charts focusing on specific vendors ===========
+
+retrieve_summary_vendors_by_it_subcategories <- function(requested_vendors_list) {
+  
+  df <- summary_vendors %>%
+    filter(vendor %in% requested_vendors_list) %>%
+    select(vendor, summary_by_fiscal_year_by_it_subcategory) %>%
+    unnest(cols = c(summary_by_fiscal_year_by_it_subcategory)) 
+  
+  df
+  
+}
+
+requested_vendors_list <- c(
+  "VERITAAQ TECHNOLOGY HOUSE",
+  "IBM CANADA",
+  "SI SYSTEMS",
+  "RANDSTAD",
+  "MODIS CANADA",
+  "DELOITTE",
+  "ACCENTURE",
+  "PRICEWATERHOUSE COOPERS",
+  "KPMG",
+  "ERNST YOUNG"
+)
+
+retrieve_summary_vendors_by_it_subcategories(requested_vendors_list) %>% 
+  filter_to_it_consulting_services %>%
+  select(! d_most_recent_it_subcategory) %>%
+  plot_fiscal_year_2019_dollars()
+
+ggsave_default_options("plots/p003_it_consulting_services_key_vendors_by_fiscal_year.png")
