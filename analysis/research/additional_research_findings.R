@@ -664,6 +664,12 @@ ggsave_default_options("plots/p003_it_consulting_services_key_vendors_by_fiscal_
 
 # Top 10 IT vendors in 2021-2022 by IT subcategory
 
+ggsave_stacked_bar_chart_options <- function(filename) {
+  
+  ggsave(filename, dpi = "print", width = 6, height = 4.5, units = "in")
+  
+}
+
 retrieve_overall_top_10_it_vendors_most_recent_fiscal_year_by_it_subcategory <- function() {
   
   all_it_vendors <- summary_categories %>%
@@ -705,6 +711,7 @@ retrieve_overall_top_10_it_vendors_most_recent_fiscal_year_by_it_subcategory <- 
   
 }
 
+
 plot_it_subcategory_breakdown <- function(df) {
   
   # ggplot(df, aes(x = year, y = total_constant_2019_dollars, color = category, shape = category)) +
@@ -730,20 +737,29 @@ plot_it_subcategory_breakdown <- function(df) {
       y = total,
       fill = d_most_recent_it_subcategory,
     )) +
-    theme(aspect.ratio=3/1) + 
+    # theme(aspect.ratio=3/1) + 
+    theme(
+      # Thanks to
+      # https://stackoverflow.com/a/42556457/756641
+      # plot.title = element_text(hjust = 0.0),
+      # Thanks to
+      # https://stackoverflow.com/a/14942760/756641
+      axis.text = element_text(size = rel(0.5))
+    ) + 
       scale_y_continuous(
         limits = c(0, NA),
         labels = label_dollar(scale_cut = cut_short_scale())
       ) +
-    coord_flip()
-    
-  
+    coord_flip() +
+    labs(
+      title = "Top 10 IT vendors by estimated contract value \nand IT subcategory",
+      x = NULL,
+      y = "Total estimated contract value (2021-2022)",
+      fill = "IT subcategory"
+    )
+
 }
 
-ggsave_stacked_bar_chart_options <- function(filename) {
-  ggsave(filename, dpi = "print", width = 6, height = 4.5, units = "in")
-  
-}
 
 # Key finding:
 retrieve_overall_top_10_it_vendors_most_recent_fiscal_year_by_it_subcategory() %>%
