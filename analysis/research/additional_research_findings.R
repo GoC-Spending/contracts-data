@@ -382,7 +382,7 @@ contract_spending_overall_ongoing %>%
 
 # Contracts that mention open source ============
 
-a711_references_open_source <- function(df) {
+a711_references_open_source <- function(df, summarize_results = TRUE) {
   
   open_source_options <- "open source|open-source|opensource| oss "
   
@@ -394,13 +394,25 @@ a711_references_open_source <- function(df) {
       )
     )
   
-  df %>%
-    summarise(
-      contracts = n(),
-      contracts_that_reference_open_source = sum(is_open_source, na.rm = TRUE),
-      percentage = contracts_that_reference_open_source / contracts
-    ) %>%
-    exports_round_percentages()
+  if(summarize_results == TRUE) {
+    
+    df %>%
+      summarise(
+        contracts = n(),
+        contracts_that_reference_open_source = sum(is_open_source, na.rm = TRUE),
+        percentage = contracts_that_reference_open_source / contracts
+      ) %>%
+      exports_round_percentages()
+    
+  }
+  else {
+    
+    df %>%
+      filter(is_open_source == 1)
+    
+  }
+  
+  
 }
 
 # Key finding:
