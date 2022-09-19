@@ -648,3 +648,92 @@ retrieve_summary_vendors_by_it_subcategories(requested_vendors_list) %>%
   plot_fiscal_year_2019_dollars()
 
 ggsave_default_options("plots/p003_it_consulting_services_key_vendors_by_fiscal_year.png")
+
+
+# Top 10 IT vendors in 2021-2022 by IT subcategory
+
+retrieve_overall_top_10_it_vendors_most_recent_fiscal_year_by_it_subcategory <- function() {
+  
+  all_it_vendors <- summary_categories %>%
+    filter(category == "3_information_technology") %>%
+    select(summary_by_fiscal_year_by_vendor) %>%
+    unnest(cols = c(summary_by_fiscal_year_by_vendor)) %>%
+    mutate(
+      total = as.double(total),
+      total_constant_2019_dollars = as.double(total_constant_2019_dollars)
+    )
+  
+  most_recent_fiscal_year <- all_it_vendors %>%
+    select(d_fiscal_year) %>%
+    distinct() %>%
+    arrange(desc(d_fiscal_year)) %>%
+    pull(d_fiscal_year) %>%
+    first()
+  
+  top_10_it_vendors <- all_it_vendors %>%
+    filter(d_fiscal_year == !!most_recent_fiscal_year) %>%
+    arrange(desc(total)) %>%
+    slice_head(n = 10) %>%
+    pull(d_vendor_name)
+  
+  # Retrieve the IT subcategory breakdown from summary_vendors
+  df <- summary_vendors %>%
+    filter(vendor %in% top_10_it_vendors) %>%
+    select(vendor, summary_by_fiscal_year_by_it_subcategory) %>%
+    unnest(cols = c(summary_by_fiscal_year_by_it_subcategory)) %>%
+    mutate(
+      total = as.double(total),
+      total_constant_2019_dollars = as.double(total_constant_2019_dollars)
+    )
+  
+  df <- df %>%
+    filter(d_fiscal_year == !!most_recent_fiscal_year)
+  
+  df
+  
+}
+
+plot_it_subcategory_breakdown <- function(df) {
+  
+  # ggplot(df, aes(x = year, y = total_constant_2019_dollars, color = category, shape = category)) +
+  #   geom_point() +
+  #   geom_line() + 
+  #   theme(aspect.ratio=1/1) + 
+  #   # Thanks to
+  #   # https://www.tidyverse.org/blog/2022/04/scales-1-2-0/#numbers
+  #   scale_y_continuous(
+  #     limits = c(0, NA),
+  #     labels = label_dollar(scale_cut = cut_short_scale())
+  #   )
+  
+  df <- df %>%
+    group_by(vendor) %>%
+    mutate(
+      overall_total = sum(total)
+    )
+  
+  ggplot(df) +
+    geom_col(aes(
+      x = reorder(vendor, overall_total),
+      y = total,
+      fill = d_most_recent_it_subcategory,
+    )) +
+    theme(aspect.ratio=3/1) + 
+      scale_y_continuous(
+        limits = c(0, NA),
+        labels = label_dollar(scale_cut = cut_short_scale())
+      ) +
+    coord_flip()
+    
+  
+}
+
+ggsave_stacked_bar_chart_options <- function(filename) {
+  ggsave(filename, dpi = "print", width = 6, height = 4.5, units = "in")
+  
+}
+
+# Key finding:
+retrieve_overall_top_10_it_vendors_most_recent_fiscal_year_by_it_subcategory() %>%
+  plot_it_subcategory_breakdown()
+
