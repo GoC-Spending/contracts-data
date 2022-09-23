@@ -574,8 +574,9 @@ filter_by_highest_2019_dollars_most_recent_fiscal_year <- function(df, limit_n =
   
 }
 
-plot_fiscal_year_2019_dollars <- function(df) {
+plot_fiscal_year_2019_dollars <- function(df, custom_labels) {
   
+
   # Automatically uses the first column as the grouping category:
   grouping_category <- names(df)[[1]]
   
@@ -593,7 +594,12 @@ plot_fiscal_year_2019_dollars <- function(df) {
       total_constant_2019_dollars = as.double(total_constant_2019_dollars)
     )
   
-  ggplot(df, aes(x = year, y = total_constant_2019_dollars, color = category, shape = category)) +
+  ggplot(df, aes(
+    x = year, 
+    y = total_constant_2019_dollars, 
+    color = reorder(category, desc(total_constant_2019_dollars)), 
+    shape = reorder(category, desc(total_constant_2019_dollars))
+    )) +
     geom_point() +
     geom_line() + 
     theme(aspect.ratio=1/1) + 
@@ -602,9 +608,24 @@ plot_fiscal_year_2019_dollars <- function(df) {
     scale_y_continuous(
       limits = c(0, NA),
       labels = label_dollar(scale_cut = cut_short_scale())
-    )
+    ) +
+    custom_labels
   
   # df
+  
+}
+
+update_category_names <- function(df) {
+  
+  df <- df %>%
+    left_join(category_labels, by = c(d_most_recent_category = "original_category")) %>%
+    select(! c(d_most_recent_category, leading_zero_category, category_path)) %>%
+    rename(
+      d_most_recent_category = "category_name"
+    ) %>%
+    relocate(d_most_recent_category)
+  
+  df
   
 }
 
@@ -617,8 +638,15 @@ retrieve_summary_overall_by_category() %>%
   plot_fiscal_year_2019_dollars()
 
 retrieve_summary_overall_by_category() %>%
+  update_category_names() %>%
   filter_by_highest_2019_dollars_most_recent_fiscal_year(6) %>%
-  plot_fiscal_year_2019_dollars()
+  plot_fiscal_year_2019_dollars(labs(
+    title = "Estimated government-wide contract spending \nby category",
+    x = "Year",
+    y = "Total estimated contract value \n(constant 2019 dollars)",
+    color = "Category",
+    shape = "Category"
+  ))
 
 ggsave_default_options("plots/p001_categories_by_fiscal_year.png")
 
