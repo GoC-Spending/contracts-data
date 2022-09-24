@@ -783,7 +783,7 @@ retrieve_overall_top_10_it_vendors_most_recent_fiscal_year_by_it_subcategory <- 
 }
 
 
-plot_it_subcategory_breakdown <- function(df) {
+plot_it_subcategory_breakdown <- function(df, custom_labels = labs(), num_legend_rows = 2) {
   
   # ggplot(df, aes(x = year, y = total_constant_2019_dollars, color = category, shape = category)) +
   #   geom_point() +
@@ -815,25 +815,32 @@ plot_it_subcategory_breakdown <- function(df) {
       # plot.title = element_text(hjust = 0.0),
       # Thanks to
       # https://stackoverflow.com/a/14942760/756641
-      axis.text = element_text(size = rel(0.5))
+      axis.text = element_text(size = rel(0.55)),
+      legend.position = "bottom",
+      legend.direction = "horizontal",
+      legend.margin=margin()
     ) + 
-      scale_y_continuous(
-        limits = c(0, NA),
-        labels = label_dollar(scale_cut = cut_short_scale())
-      ) +
+    guides(
+      fill = guide_legend(nrow = num_legend_rows)
+    ) + 
+    scale_y_continuous(
+      limits = c(0, NA),
+      labels = label_dollar(scale_cut = cut_short_scale())
+    ) +
     coord_flip() +
-    labs(
-      title = "Top 10 IT vendors by estimated contract value \nand IT subcategory",
-      x = NULL,
-      y = "Total estimated contract value (2021-2022)",
-      fill = "IT subcategory"
-    )
+    custom_labels
 
 }
 
 
 # Key finding:
 retrieve_overall_top_10_it_vendors_most_recent_fiscal_year_by_it_subcategory() %>%
-  plot_it_subcategory_breakdown()
+  update_it_subcategory_names() %>%
+  plot_it_subcategory_breakdown(labs(
+    title = "Top 10 IT vendors by estimated contract value \nand IT subcategory",
+    x = NULL,
+    y = "Total estimated contract value (2021-2022)",
+    fill = "IT subcategory"
+  ), 2)
 
 ggsave_stacked_bar_chart_options("plots/p004_top_vendors_by_it_subcategories_most_recent_fiscal_year.png")
