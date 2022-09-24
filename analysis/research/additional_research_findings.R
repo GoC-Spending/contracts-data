@@ -594,11 +594,17 @@ plot_fiscal_year_2019_dollars <- function(df, custom_labels = labs(), num_legend
       total_constant_2019_dollars = as.double(total_constant_2019_dollars)
     )
   
+  df <- df %>%
+    group_by(category) %>%
+    mutate(
+      most_recent_total_constant_2019_dollars = last(total_constant_2019_dollars, order_by = d_fiscal_year)
+    )
+  
   ggplot(df, aes(
     x = year, 
     y = total_constant_2019_dollars, 
-    color = reorder(category, desc(total_constant_2019_dollars)), 
-    shape = reorder(category, desc(total_constant_2019_dollars))
+    color = reorder(category, desc(most_recent_total_constant_2019_dollars)), 
+    shape = reorder(category, desc(most_recent_total_constant_2019_dollars))
     )) +
     geom_point() +
     geom_line() + 
@@ -719,7 +725,7 @@ retrieve_summary_vendors_by_it_subcategories(requested_vendors_list) %>%
   plot_fiscal_year_2019_dollars(labs(
     title = "Estimated IT consulting services contract spending \nby vendor (specific vendor subset)",
     x = "Year",
-    y = "Total estimated IT consulting services spending \n(constant 2019 dollars)",
+    y = "Total estimated IT consulting services \ncontract spending (constant 2019 dollars)",
     color = "Vendor",
     shape = "Vendor"
   ), 5)
