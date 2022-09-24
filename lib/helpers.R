@@ -40,8 +40,8 @@ contract_col_types <- cols(
   solicitation_procedure = col_factor(),
   limited_tendering_reason = col_character(),
   trade_agreement_exceptions = col_character(),
-  aboriginal_business = col_character(),
-  aboriginal_business_incidental = col_character(), # Y/N
+  indigenous_business = col_character(),
+  indigenous_business_excluding_psib = col_character(), # Y/N
   intellectual_property = col_character(),
   potential_commercial_exploitation = col_character(), # Y/N
   former_public_servant = col_character(), # Y/N

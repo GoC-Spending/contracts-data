@@ -143,7 +143,7 @@ add_log_entry("summary_end_fiscal_year", convert_start_year_to_fiscal_year(summa
 # Convert Y/N values to logical TRUE/FALSE values, for specific columns
 contracts <- contracts %>%
   mutate(
-    across(c(aboriginal_business_incidental, potential_commercial_exploitation, former_public_servant, ministers_office),
+    across(c(indigenous_business_excluding_psib, potential_commercial_exploitation, former_public_servant, ministers_office),
            ~ recode(., 
                     "N" = FALSE, 
                     "Y" = TRUE,
