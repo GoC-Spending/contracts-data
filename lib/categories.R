@@ -151,6 +151,14 @@ update_it_other_subcategories <- function(df) {
   
 }
 
+# IT subcategory labels =========================
+
+it_subcategory_labels_file <- "data/categories/it_subcategory_labels.csv"
+
+it_subcategory_labels <- read_csv(
+  it_subcategory_labels_file,
+)
+
 # Testing (2022-08-31)
 
 # gsin_it_subcategories <- read_csv(gsin_it_subcategories_file) %>%
