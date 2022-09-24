@@ -3,7 +3,7 @@
 
 # These are designed to be run after the main set of contracts is parsed, in load.R
 # Note: if run directly here, this will take 3-4 hours to process first (!)
-source("load.R")
+# source("load.R")
 
 # Dataframes:
 
@@ -574,7 +574,7 @@ filter_by_highest_2019_dollars_most_recent_fiscal_year <- function(df, limit_n =
   
 }
 
-plot_fiscal_year_2019_dollars <- function(df, custom_labels) {
+plot_fiscal_year_2019_dollars <- function(df, custom_labels = labs(), num_legend_rows = 2) {
   
 
   # Automatically uses the first column as the grouping category:
@@ -602,7 +602,17 @@ plot_fiscal_year_2019_dollars <- function(df, custom_labels) {
     )) +
     geom_point() +
     geom_line() + 
-    theme(aspect.ratio=1/1) + 
+    theme(
+      aspect.ratio=3/4,
+      legend.position = "bottom",
+      legend.direction = "horizontal",
+      legend.margin=margin()
+      ) + 
+    # Thanks to
+    # https://stackoverflow.com/a/48252093/756641
+    guides(
+      color = guide_legend(nrow = num_legend_rows)
+    ) +
     # Thanks to
     # https://www.tidyverse.org/blog/2022/04/scales-1-2-0/#numbers
     scale_y_continuous(
@@ -629,8 +639,22 @@ update_category_names <- function(df) {
   
 }
 
-ggsave_default_options <- function(filename) {
-  ggsave(filename, dpi = "print", width = 6, height = 3.5, units = "in")
+update_it_subcategory_names <- function(df) {
+  
+  df <- df %>%
+    left_join(it_subcategory_labels, by = c(d_most_recent_it_subcategory = "original_it_subcategory")) %>%
+    select(! c(d_most_recent_it_subcategory)) %>%
+    rename(
+      d_most_recent_it_subcategory = "it_subcategory_name"
+    ) %>%
+    relocate(d_most_recent_it_subcategory)
+  
+  df
+  
+}
+
+ggsave_default_options <- function(filename, custom_height = 6.5) {
+  ggsave(filename, dpi = "print", width = 6.5, height = custom_height, units = "in")
   
 }
 
@@ -643,17 +667,24 @@ retrieve_summary_overall_by_category() %>%
   plot_fiscal_year_2019_dollars(labs(
     title = "Estimated government-wide contract spending \nby category",
     x = "Year",
-    y = "Total estimated contract value \n(constant 2019 dollars)",
+    y = "Total estimated contract spending \n(constant 2019 dollars)",
     color = "Category",
     shape = "Category"
-  ))
+  ), 3)
 
-ggsave_default_options("plots/p001_categories_by_fiscal_year.png")
+ggsave_default_options("plots/p001_categories_by_fiscal_year.png", 6.2)
 
 retrieve_summary_overall_by_it_subcategory() %>%
-  plot_fiscal_year_2019_dollars()
+  update_it_subcategory_names() %>%
+  plot_fiscal_year_2019_dollars(labs(
+    title = "Estimated government-wide contract spending \nby IT subcategory",
+    x = "Year",
+    y = "Total estimated contract spending \n(constant 2019 dollars)",
+    color = "IT subcategory",
+    shape = "IT subcategory"
+  ))
 
-ggsave_default_options("plots/p002_it_subcategories_by_fiscal_year.png")
+ggsave_default_options("plots/p002_it_subcategories_by_fiscal_year.png", 5.8)
 
 
 # Charts focusing on specific vendors ===========
@@ -692,9 +723,9 @@ ggsave_default_options("plots/p003_it_consulting_services_key_vendors_by_fiscal_
 
 # Top 10 IT vendors in 2021-2022 by IT subcategory
 
-ggsave_stacked_bar_chart_options <- function(filename) {
+ggsave_stacked_bar_chart_options <- function(filename, custom_height = 6.5) {
   
-  ggsave(filename, dpi = "print", width = 6, height = 4.5, units = "in")
+  ggsave(filename, dpi = "print", width = 6.5, height = custom_height, units = "in")
   
 }
 
