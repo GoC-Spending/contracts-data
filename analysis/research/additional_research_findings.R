@@ -716,7 +716,13 @@ requested_vendors_list <- c(
 retrieve_summary_vendors_by_it_subcategories(requested_vendors_list) %>% 
   filter_to_it_consulting_services %>%
   select(! d_most_recent_it_subcategory) %>%
-  plot_fiscal_year_2019_dollars()
+  plot_fiscal_year_2019_dollars(labs(
+    title = "Estimated IT consulting services contract spending \nby vendor (specific vendor subset)",
+    x = "Year",
+    y = "Total estimated IT consulting services spending \n(constant 2019 dollars)",
+    color = "Vendor",
+    shape = "Vendor"
+  ), 5)
 
 ggsave_default_options("plots/p003_it_consulting_services_key_vendors_by_fiscal_year.png")
 
