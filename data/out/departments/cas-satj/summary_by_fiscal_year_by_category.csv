@@ -12,13 +12,13 @@ d_most_recent_category,d_fiscal_year,total,total_constant_2019_dollars
 2_professional_services,2017-2018,4340269.05,4446773.86
 2_professional_services,2018-2019,2483748.68,2518197.76
 2_professional_services,2019-2020,3364581.05,3323156.68
-2_professional_services,2020-2021,3968374.87,3774876.99
-2_professional_services,2021-2022,3727706.19,3450723.74
+2_professional_services,2020-2021,3974588.33,3780768.91
+2_professional_services,2021-2022,3746868.92,3468427.37
 3_information_technology,2017-2018,7605246.02,7791535.30
 3_information_technology,2018-2019,4785669.53,4847681.13
-3_information_technology,2019-2020,8686593.22,8578202.96
-3_information_technology,2020-2021,7202985.34,6835735.46
-3_information_technology,2021-2022,10536450.58,9663035.61
+3_information_technology,2019-2020,8686000.88,8577615.62
+3_information_technology,2020-2021,7202394.62,6835173.88
+3_information_technology,2021-2022,10545712.53,9671619.72
 4_medical,2017-2018,144373.88,148180.10
 4_medical,2018-2019,103825.49,105035.17
 4_medical,2019-2020,33787.00,33700.02
@@ -27,7 +27,7 @@ d_most_recent_category,d_fiscal_year,total,total_constant_2019_dollars
 5_transportation_and_logistics,2018-2019,346978.22,351808.52
 5_transportation_and_logistics,2019-2020,164438.52,162589.69
 5_transportation_and_logistics,2020-2021,478897.01,455302.69
-5_transportation_and_logistics,2021-2022,522347.09,484271.74
+5_transportation_and_logistics,2021-2022,531885.79,492887.10
 6_industrial_products_and_services,2017-2018,542605.24,555431.92
 6_industrial_products_and_services,2018-2019,184654.26,187516.32
 6_industrial_products_and_services,2019-2020,251071.13,249266.88
@@ -37,7 +37,7 @@ d_most_recent_category,d_fiscal_year,total,total_constant_2019_dollars
 8_security_and_protection,2018-2019,4400260.69,4468237.45
 8_security_and_protection,2019-2020,4216541.22,4178070.99
 8_security_and_protection,2020-2021,5678743.48,5415080.17
-8_security_and_protection,2021-2022,4487082.02,4161522.62
+8_security_and_protection,2021-2022,4554495.72,4223729.30
 9_human_capital,2017-2018,398281.49,408477.31
 9_human_capital,2018-2019,265103.07,268997.42
 9_human_capital,2019-2020,357797.13,353466.14
