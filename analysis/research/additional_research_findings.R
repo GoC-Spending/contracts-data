@@ -609,6 +609,7 @@ plot_fiscal_year_2019_dollars <- function(df, custom_labels = labs(), num_legend
     geom_point() +
     geom_line() + 
     theme(
+      axis.text = element_text(colour = "black"),
       aspect.ratio=3/4,
       legend.position = "bottom",
       legend.direction = "horizontal",
@@ -664,15 +665,15 @@ ggsave_default_options <- function(filename, custom_height = 6.5) {
   
 }
 
-retrieve_summary_overall_by_category() %>%
-  plot_fiscal_year_2019_dollars()
+# retrieve_summary_overall_by_category() %>%
+#   plot_fiscal_year_2019_dollars()
 
 retrieve_summary_overall_by_category() %>%
   update_category_names() %>%
   filter_by_highest_2019_dollars_most_recent_fiscal_year(6) %>%
   plot_fiscal_year_2019_dollars(labs(
     title = "Estimated government-wide contract spending \nby category",
-    x = "Year",
+    x = "Fiscal year",
     y = "Total estimated contract spending \n(constant 2019 dollars)",
     color = "Category",
     shape = "Category"
@@ -684,7 +685,7 @@ retrieve_summary_overall_by_it_subcategory() %>%
   update_it_subcategory_names() %>%
   plot_fiscal_year_2019_dollars(labs(
     title = "Estimated government-wide contract spending \nby IT subcategory",
-    x = "Year",
+    x = "Fiscal year",
     y = "Total estimated contract spending \n(constant 2019 dollars)",
     color = "IT subcategory",
     shape = "IT subcategory"
@@ -724,7 +725,7 @@ retrieve_summary_vendors_by_it_subcategories(requested_vendors_list) %>%
   select(! d_most_recent_it_subcategory) %>%
   plot_fiscal_year_2019_dollars(labs(
     title = "Estimated IT consulting services contract spending \nby vendor (specific vendor subset)",
-    x = "Year",
+    x = "Fiscal year",
     y = "Total estimated IT consulting services \ncontract spending (constant 2019 dollars)",
     color = "Vendor",
     shape = "Vendor"
@@ -815,7 +816,7 @@ plot_it_subcategory_breakdown <- function(df, custom_labels = labs(), num_legend
       # plot.title = element_text(hjust = 0.0),
       # Thanks to
       # https://stackoverflow.com/a/14942760/756641
-      axis.text = element_text(size = rel(0.55)),
+      axis.text = element_text(size = rel(0.55), colour = "black"),
       legend.position = "bottom",
       legend.direction = "horizontal",
       legend.margin=margin()
