@@ -845,3 +845,78 @@ retrieve_overall_top_10_it_vendors_most_recent_fiscal_year_by_it_subcategory() %
   ), 2)
 
 ggsave_stacked_bar_chart_options("plots/p004_top_vendors_by_it_subcategories_most_recent_fiscal_year.png")
+
+
+# Tables for the Findings section =========================
+
+retrieve_vendors_by_scale_segment <- function() {
+  
+  # Adapted from get_summary_overall_by_fiscal_year_by_criteria
+  # to include all vendors in the breakdown below.
+  # Note: this is a bit more performance intensive than re-using the summary_categories function! 
+  
+  # all_it_vendors <- summary_categories %>%
+  #   filter(category == "3_information_technology") %>%
+  #   select(summary_by_fiscal_year_by_vendor) %>%
+  #   unnest(cols = c(summary_by_fiscal_year_by_vendor)) %>%
+  #   mutate(
+  #     total = as.double(total),
+  #     total_constant_2019_dollars = as.double(total_constant_2019_dollars)
+  #   )
+  
+  all_it_vendors <- contract_spending_by_date %>%
+    filter(d_most_recent_category == "3_information_technology") %>%
+    group_by(d_vendor_name, d_fiscal_year_short) %>%
+    summarize_fiscal_year_totals() %>%
+    ungroup() %>%
+    mutate(
+      d_fiscal_year = convert_start_year_to_fiscal_year(d_fiscal_year_short)
+    ) %>%
+    select(d_vendor_name, d_fiscal_year, total, total_constant_2019_dollars) #%>%
+    # exports_round_totals() %>%
+    # mutate(
+    #   total = as.double(total),
+    #   total_constant_2019_dollars = as.double(total_constant_2019_dollars)
+    # )
+  
+  most_recent_fiscal_year <- all_it_vendors %>%
+    select(d_fiscal_year) %>%
+    distinct() %>%
+    arrange(desc(d_fiscal_year)) %>%
+    pull(d_fiscal_year) %>%
+    first() 
+  
+  all_it_vendors <- all_it_vendors %>%
+    filter(d_fiscal_year == !!most_recent_fiscal_year) %>%
+    arrange(desc(total))
+  
+  all_it_vendors <- all_it_vendors %>%
+    mutate(
+      scale_segment = case_when(
+        total > 100000000 ~ "1_over_100m",
+        total > 50000000 ~ "2_over_50m",
+        total > 10000000 ~ "3_over_10m",
+        TRUE ~ "4_below_10m"
+      )
+    )
+  
+  all_it_vendors %>%
+    group_by(scale_segment) %>%
+    summarize(
+      vendors_count = n(),
+      total_value = sum(total, na.rm = TRUE)
+    ) %>%
+    mutate(
+      overall_it_spending_value = sum(total_value),
+      overall_it_spending_percentage = total_value / overall_it_spending_value
+    ) %>%
+    exports_round_totals() %>%
+    exports_round_percentages()
+  
+}
+
+# Key finding: market dynamics and scale segmentation
+retrieve_vendors_by_scale_segment() %>%
+  write_csv(str_c("data/testing/tmp-", today(), "-table-market-dynamics-scale-segmentation.csv"))
+
+
