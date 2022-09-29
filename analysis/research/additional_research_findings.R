@@ -28,11 +28,18 @@ threshold_standish_rule_value <- 10000000
 # $2M max
 threshold_jaquith_rule_value <- 2000000
 
+# $2M max *per year*
+# https://github.com/18F/technology-budgeting/blob/master/handbook.pdf
+threshold_handbook_rule_value <- 2000000
+
 # 2 years max, in days
 threshold_standish_rule_duration_days <- 2 * 365
 
 # 6 months max, in days
 threshold_jaquith_rule_duration_days <- ceiling(365/2)
+
+# 3 years max, in days
+threshold_handbook_rule_duration_days <- 3 * 365
 
 
 # Helper functions ==============================
@@ -105,19 +112,43 @@ filter_to_initiated_during_fiscal_year <- function(df, target_fiscal_year) {
 
 # Value threshold indicators ====================
 
-a61_namesake_rule_value <- function(df, threshold_value, label = "namesake") {
+a61_namesake_rule_value <- function(df, threshold_value, label = "namesake", value_threshold_is_annual = FALSE) {
   
   col_name_meets_rule = str_c("meets_", label, "_rule")
   
-  # Note: reduces the total number of contracts by filtering out contracts without a value specified.
-  df <- df %>%
-    filter(!is.na(d_overall_contract_value)) %>%
-    mutate(
-      meets_rule = case_when(
-        d_overall_contract_value < !!threshold_value ~ 1,
-        TRUE ~ 0
+  if(value_threshold_is_annual == TRUE) {
+    # Use the ceiling year to handle contracts taking place "over the course of" a given year or set of years
+    # e.g. a duration of 0.6 years becomes 1 year
+    # a duration of 2.9 years becomes 3 years
+    # As a result this is slightly gentler on contracts that might be slightly above $2M per year if calculated to decimal portions of years.
+    df <- df %>%
+      filter(!is.na(d_overall_contract_value)) %>%
+      s42_calculate_duration() %>%
+      mutate(
+        duration_years_ceiling = ceiling(duration_years),
+        d_contract_value_per_year = d_overall_contract_value / duration_years_ceiling
+      ) %>%
+      mutate(
+        # Note, the handbook uses "no more than", so switching to <= here.
+        meets_rule = case_when(
+          d_contract_value_per_year <= !!threshold_value ~ 1,
+          TRUE ~ 0
+        )
       )
-    )
+    
+  }
+  else {
+    # Note: reduces the total number of contracts by filtering out contracts without a value specified.
+    df <- df %>%
+      filter(!is.na(d_overall_contract_value)) %>%
+      mutate(
+        meets_rule = case_when(
+          d_overall_contract_value < !!threshold_value ~ 1,
+          TRUE ~ 0
+        )
+      )
+  }
+
   
   df %>%
     group_by(meets_rule) %>%
@@ -145,6 +176,13 @@ a612_jaquith_rule_value <- function(df) {
   
   df %>%
     a61_namesake_rule_value(threshold_jaquith_rule_value, "jaquith")
+  
+}
+
+a613_handbook_rule_value <- function(df) {
+  
+  df %>%
+    a61_namesake_rule_value(threshold_handbook_rule_value, "handbook", TRUE)
   
 }
 
@@ -215,11 +253,18 @@ contract_spending_overall %>%
   a612_jaquith_rule_value()
 
 # 2021-2022 fiscal year
-# Key finding:
 contract_spending_overall %>% 
   filter_to_active_during_fiscal_year(2021) %>%
   filter_to_it_consulting_services_and_software_licensing() %>% 
   a612_jaquith_rule_value()
+
+# 2021-2022 fiscal year
+# using the handbook threshold for value ($2M per year)
+# Key finding:
+contract_spending_overall %>% 
+  filter_to_active_during_fiscal_year(2021) %>%
+  filter_to_it_consulting_services_and_software_licensing() %>% 
+  a613_handbook_rule_value()
 
 
 # Using the Jaquith threshold with contracts initiated in that year
@@ -246,12 +291,15 @@ a62_namesake_rule_duration <- function(df, threshold_value, label = "namesake") 
   df <- df %>%
     add_total_number_of_days()
   
-  # Note: reduces the total number of contracts by filtering out contracts without a value specified.
+  # Note: reduces the total number of contracts by filtering out contracts without a duration specified.
   df <- df %>%
     filter(!is.na(duration_days)) %>%
+    # Also skip contracts without a value for consistency in number size with the value calculations.
+    filter(!is.na(d_overall_contract_value)) %>%
+    # Note, switching this to <= ("no more than")
     mutate(
       meets_rule = case_when(
-        duration_days < !!threshold_value ~ 1,
+        duration_days <= !!threshold_value ~ 1,
         TRUE ~ 0
       )
     )
@@ -282,6 +330,13 @@ a622_jaquith_rule_duration <- function(df) {
   
   df %>%
     a62_namesake_rule_duration(threshold_jaquith_rule_duration_days, "jaquith")
+  
+}
+
+a623_handbook_rule_duration <- function(df) {
+  
+  df %>%
+    a62_namesake_rule_duration(threshold_handbook_rule_duration_days, "handbook")
   
 }
 
@@ -339,11 +394,17 @@ contract_spending_overall %>%
   a622_jaquith_rule_duration()
 
 # 2021-2022 fiscal year
-# Key finding:
 contract_spending_overall %>% 
   filter_to_active_during_fiscal_year(2021) %>%
   filter_to_it_consulting_services_and_software_licensing() %>% 
   a622_jaquith_rule_duration()
+
+# Same but with the Handbook threshold (3 years)
+# Key finding:
+contract_spending_overall %>% 
+  filter_to_active_during_fiscal_year(2021) %>%
+  filter_to_it_consulting_services_and_software_licensing() %>% 
+  a623_handbook_rule_duration()
 
 # Standish threshold with IT consulting services contracts
 
@@ -354,7 +415,6 @@ contract_spending_overall %>%
   a621_standish_rule_duration()
 
 # 2021-2022 fiscal year
-# Key finding
 contract_spending_overall %>% 
   filter_to_active_during_fiscal_year(2021) %>%
   filter_to_it_consulting_services_and_software_licensing() %>% 
