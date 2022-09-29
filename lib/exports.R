@@ -70,6 +70,22 @@ exports_round_mean <- function(input_df) {
   return(input_df)
 }
 
+numeric_fancy_round <- function(number, accuracy_input = 0.1) {
+  # Handling for
+  # Error: no applicable method for 'round_any' applied to an object of class "logical"
+  number <- as.double(number)
+  scales::label_number(accuracy = accuracy_input, scale_cut = scales::cut_short_scale())(number)
+}
+
+exports_fancy_totals <- function(input_df, accuracy_input = 0.1) {
+  input_df <- input_df %>%
+    mutate(
+      across(ends_with(c("total", "value", "dollars")), ~ numeric_fancy_round(.x, accuracy_input))
+    )
+  
+  return(input_df)
+}
+
 # File and folder helpers =======================
 
 # Helper function to quickly turn on and off CSV writes when testing
