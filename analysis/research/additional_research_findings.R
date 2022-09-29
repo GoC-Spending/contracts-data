@@ -89,7 +89,7 @@ filter_to_active_during_fiscal_year <- function(df, target_fiscal_year) {
       d_overall_end_date >= ymd(str_c(target_fiscal_year,"04","01"))
     ) %>%
     filter(
-      !d_overall_start_date > ymd(str_c(target_fiscal_year,"03","31"))
+      !d_overall_start_date > ymd(str_c(target_fiscal_year + 1,"03","31"))
     )
   
 }
@@ -208,7 +208,6 @@ contract_spending_overall %>%
   a611_standish_rule_value()
 
 # Specifically for IT consulting services and software licensing
-# Key finding:
 contract_spending_overall %>% 
   filter_to_active_during_fiscal_year(2021) %>%
   filter_to_it_consulting_services_and_software_licensing() %>% 
@@ -967,7 +966,7 @@ retrieve_vendors_by_scale_segment <- function() {
       total_value = sum(total, na.rm = TRUE)
     ) %>%
     mutate(
-      overall_it_spending_value = sum(total_value),
+      overall_it_spending_value = sum(total_value, na.rm = TRUE),
       overall_it_spending_percentage = total_value / overall_it_spending_value
     ) %>%
     exports_round_totals() %>%
@@ -980,3 +979,115 @@ retrieve_vendors_by_scale_segment() %>%
   write_csv(str_c("data/testing/tmp-", today(), "-table-market-dynamics-scale-segmentation.csv"))
 
 
+retrieve_duration_segments_by_it_subcategory <- function() {
+  
+  contract_spending_by_duration <- contract_spending_overall_ongoing %>%
+    filter_to_information_technology() %>%
+    add_total_number_of_days() %>%
+    mutate(
+      duration_segment = case_when(
+        duration_years > 10 ~ "1_over_10_years", # Over 10 years
+        duration_years > 5 ~ "2_over_5_years", # Less than 10 years
+        duration_years > 2 ~ "3_over_2_years", # Less than 5 years
+        duration_years > 0.5 ~ "4_over_6_months", # Less than 2 years
+        TRUE ~ "5_no_more_than_6_months" # Less than 6 months
+      )
+    )
+  
+  duration_segments_by_it_subcategory <- contract_spending_by_duration %>%
+    group_by(d_most_recent_it_subcategory, duration_segment) %>%
+    summarize(
+      contracts_count = n(),
+      total_value = sum(d_overall_contract_value, na.rm = TRUE)
+    ) %>%
+    exports_fancy_totals()
+  
+  duration_segments_by_it_subcategory %>%
+    pivot_wider(
+      names_from = duration_segment,
+      names_glue = "{duration_segment}_{.value}",
+      values_from = c(contracts_count, total_value)
+    ) %>%
+    relocate(
+      d_most_recent_it_subcategory,
+      starts_with("5_"),
+      starts_with("4_"),
+      starts_with("3_"),
+      starts_with("2_"),
+      starts_with("1_"),
+    )
+  
+}
+
+retrieve_duration_segments_by_it_subcategory() %>%
+  write_csv(str_c("data/testing/tmp-", today(), "-table-contract-duration-segmentation.csv"))
+
+
+retrieve_it_consulting_staff_count_estimate <- function(fiscal_year = 2021, per_diem_low_end = 1000, per_diem_high_end = 2400) {
+  
+  in_house_it_staff_by_department <- read_csv("data/owner_orgs/it_staff_by_department.csv") %>%
+    clean_names() %>%
+    # Note: currently 2021 is the only fiscal year in this CSV! Other years might be added in the future.
+    filter(fiscal_year == !!fiscal_year)
+  
+  
+  contract_spending_target_fiscal_year <- contract_spending_overall_ongoing %>% 
+    filter_to_active_during_fiscal_year(fiscal_year) %>% 
+    filter_to_it_consulting_services() %>%
+    add_total_number_of_days() %>%
+    mutate(
+      d_fiscal_year_start_date =  ymd(str_c(fiscal_year,"04","01")),
+      d_fiscal_year_end_date = ymd(str_c(fiscal_year + 1,"03","31"))
+    ) %>%
+    mutate(
+      d_within_fiscal_year_start_date = case_when(
+        d_overall_start_date < d_fiscal_year_start_date ~ d_fiscal_year_start_date,
+        TRUE ~ d_overall_start_date,
+      ),
+      d_within_fiscal_year_end_date = case_when(
+        d_overall_end_date > d_fiscal_year_end_date ~ d_fiscal_year_end_date,
+        TRUE ~ d_overall_end_date,
+      ),
+    ) %>%
+    mutate(
+      d_within_fiscal_year_duration_days = as.integer(d_within_fiscal_year_end_date - d_within_fiscal_year_start_date + 1),
+      d_within_fiscal_year_contract_value = d_daily_contract_value * d_within_fiscal_year_duration_days
+    ) %>%
+    mutate(
+      # Note that these names are flipped (alow per diem estimate = a high contractor count estimate, and vice versa)
+      contractor_staff_high_end_count = ceiling(d_within_fiscal_year_contract_value / d_within_fiscal_year_duration_days / !!per_diem_low_end),
+      contractor_staff_low_end_count = ceiling(d_within_fiscal_year_contract_value / d_within_fiscal_year_duration_days / !!per_diem_high_end),
+      
+    )
+  
+  # in_house_it_staff_by_department
+  contractor_staff_estimates <- contract_spending_target_fiscal_year %>%
+    group_by(owner_org) %>%
+    summarize(
+      sum_consulting_services_value = sum(d_within_fiscal_year_contract_value, na.rm = TRUE),
+      sum_contractor_staff_low_end_count = sum(contractor_staff_low_end_count, na.rm = TRUE),
+      sum_contractor_staff_high_end_count = sum(contractor_staff_high_end_count, na.rm = TRUE),
+    )
+  
+  in_house_it_staff_by_department %>%
+    left_join(contractor_staff_estimates, by = c(department = "owner_org")) %>%
+    mutate(
+      sum_contractor_staff_low_end_percentage = sum_contractor_staff_low_end_count / it_staff_count,
+      sum_contractor_staff_high_end_percentage = sum_contractor_staff_high_end_count / it_staff_count
+    ) %>%
+    rename(
+      owner_org = "department"
+    ) %>%
+    left_join(owner_org_names, by = "owner_org") %>%
+    select(! c(fiscal_year, owner_org_name_fr)) %>%
+    relocate(owner_org, owner_org_name_en) %>%
+    exports_round_percentages() %>%
+    exports_round_totals() %>%
+    slice_head(n = 10)
+    
+    
+  
+}
+
+retrieve_it_consulting_staff_count_estimate() %>% 
+  write_csv(str_c("data/testing/tmp-", today(), "-consulting-staff-count-estimate.csv"))
