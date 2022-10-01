@@ -566,14 +566,16 @@ a712_crown_versus_contractor_owned_intellectual_property <- function(df) {
     summarise(
       contracts = n(),
       contracts_crown_owned_ip = sum(is_crown_owned_ip, na.rm = TRUE),
-      percentage = contracts_crown_owned_ip / contracts
+      contracts_vendor_owned_ip = n() - contracts_crown_owned_ip,
+      crown_owned_percentage = contracts_crown_owned_ip / contracts,
+      vendor_owned_percentage = 1 - crown_owned_percentage
     ) %>%
     exports_round_percentages()
   
 }
 
 # Key finding:
-contract_spending_overall_ongoing %>%
+contract_spending_overall_active %>%
   filter_to_it_consulting_services_and_software_licensing() %>% 
   a712_crown_versus_contractor_owned_intellectual_property()
 
