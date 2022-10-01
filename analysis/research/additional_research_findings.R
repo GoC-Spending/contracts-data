@@ -1194,7 +1194,7 @@ retrieve_duration_segments_by_it_subcategory() %>%
   write_csv(str_c("data/testing/tmp-", today(), "-table-contract-duration-segmentation.csv"))
 
 
-retrieve_it_consulting_staff_count_estimate <- function(fiscal_year = 2021, per_diem_low_end = 1000, per_diem_high_end = 2400) {
+retrieve_it_consulting_staff_count_estimate_v1 <- function(fiscal_year = 2021, per_diem_low_end = 1000, per_diem_high_end = 2400) {
   
   # Thanks to
   # https://www.workingdays.ca/Federal%20Holidays.htm
@@ -1274,8 +1274,94 @@ retrieve_it_consulting_staff_count_estimate <- function(fiscal_year = 2021, per_
   
 }
 
-retrieve_it_consulting_staff_count_estimate() %>% 
-  write_csv(str_c("data/testing/tmp-", today(), "-consulting-staff-count-estimate.csv"))
+retrieve_it_consulting_staff_count_estimate_v2 <- function(fiscal_year = 2021, per_diem_low_end = 1000, per_diem_high_end = 2400) {
+  
+  # Thanks to
+  # https://www.workingdays.ca/Federal%20Holidays.htm
+  working_days = 249
+  working_days_per_calendar_days = working_days / 365
+  
+  in_house_it_staff_by_department <- read_csv("data/owner_orgs/it_staff_by_department.csv") %>%
+    clean_names() %>%
+    # Note: currently 2021 is the only fiscal year in this CSV! Other years might be added in the future.
+    filter(fiscal_year == !!fiscal_year)
+  
+  contract_spending_target_fiscal_year <- contract_spending_by_date %>%
+    filter(
+      date >=  ymd(str_c(fiscal_year,"04","01")),
+      date <= ymd(str_c(fiscal_year + 1,"03","31"))
+    ) %>%
+    filter_to_it_consulting_services()
+  
+  contract_spending_target_fiscal_year <- contract_spending_target_fiscal_year %>% 
+    group_by(owner_org) %>%
+    mutate(
+      overall_value = sum(d_daily_contract_value, na.rm = TRUE)
+    ) %>%
+    ungroup() %>%
+    select(owner_org, overall_value) %>%
+    distinct()
+  
+  contract_spending_target_fiscal_year <- contract_spending_target_fiscal_year %>%
+    mutate(
+      d_value_per_working_day = overall_value / !!working_days
+    ) %>%
+    mutate(
+      # Note that these names are flipped (a low per diem estimate = a high contractor count estimate, and vice versa)
+      contractor_staff_high_end_count = round(d_value_per_working_day / !!per_diem_low_end),
+      contractor_staff_low_end_count = round(d_value_per_working_day / !!per_diem_high_end),
+    ) %>%
+    arrange(desc(overall_value))
+  
+  in_house_it_staff_by_department %>%
+    left_join(contract_spending_target_fiscal_year, by = c(department = "owner_org")) %>%
+    mutate(
+      sum_contractor_staff_low_end_percentage = contractor_staff_low_end_count / it_staff_count,
+      sum_contractor_staff_high_end_percentage = contractor_staff_high_end_count / it_staff_count
+    ) %>%
+    rename(
+      owner_org = "department",
+      # For consistency with v1
+      sum_contractor_staff_low_end_count = "contractor_staff_low_end_count",
+      sum_contractor_staff_high_end_count = "contractor_staff_high_end_count"
+    ) %>%
+    left_join(owner_org_names, by = "owner_org") %>%
+    select(! c(fiscal_year, owner_org_name_fr)) %>%
+    relocate(owner_org, owner_org_name_en) %>%
+    exports_round_percentages() %>%
+    exports_round_totals() %>%
+    slice_head(n = 10)
+  
+}
+
+helper_columns_it_consulting_staff <- function(df) {
+  
+  df <- df %>%
+    mutate(
+      sum_contractor_staff_low_end_percentage_formatted = str_c(round(sum_contractor_staff_low_end_percentage * 100), "%"),
+      sum_contractor_staff_high_end_percentage_formatted = str_c(round(sum_contractor_staff_high_end_percentage * 100), "%"),
+    ) %>%
+    unite(
+      col = "contractor_staff_range",
+      c(sum_contractor_staff_low_end_count, sum_contractor_staff_high_end_count),
+      sep = " to ",
+      remove = FALSE
+    ) %>%
+    unite(
+      col = "percentage_range",
+      c(sum_contractor_staff_low_end_percentage_formatted, sum_contractor_staff_high_end_percentage_formatted),
+      sep = " to "
+    )
+  
+}
+
+retrieve_it_consulting_staff_count_estimate_v1() %>% 
+  helper_columns_it_consulting_staff %>%
+  write_csv(str_c("data/testing/tmp-", today(), "-consulting-staff-count-estimate-v1.csv"))
+
+retrieve_it_consulting_staff_count_estimate_v2() %>% 
+  helper_columns_it_consulting_staff %>%
+  write_csv(str_c("data/testing/tmp-", today(), "-consulting-staff-count-estimate-v2.csv"))
 
 
 
