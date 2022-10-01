@@ -1196,6 +1196,10 @@ retrieve_duration_segments_by_it_subcategory() %>%
 
 retrieve_it_consulting_staff_count_estimate <- function(fiscal_year = 2021, per_diem_low_end = 1000, per_diem_high_end = 2400) {
   
+  # Thanks to
+  # https://www.workingdays.ca/Federal%20Holidays.htm
+  working_days_per_calendar_days = 249 / 365
+  
   in_house_it_staff_by_department <- read_csv("data/owner_orgs/it_staff_by_department.csv") %>%
     clean_names() %>%
     # Note: currently 2021 is the only fiscal year in this CSV! Other years might be added in the future.
@@ -1222,12 +1226,22 @@ retrieve_it_consulting_staff_count_estimate <- function(fiscal_year = 2021, per_
     ) %>%
     mutate(
       d_within_fiscal_year_duration_days = as.integer(d_within_fiscal_year_end_date - d_within_fiscal_year_start_date + 1),
-      d_within_fiscal_year_contract_value = d_daily_contract_value * d_within_fiscal_year_duration_days
+      d_within_fiscal_year_contract_value = d_daily_contract_value * d_within_fiscal_year_duration_days,
+      d_within_fiscal_year_duration_working_days = d_within_fiscal_year_duration_days * !!working_days_per_calendar_days,
+      d_value_per_working_day = d_within_fiscal_year_contract_value / d_within_fiscal_year_duration_working_days
+    )
+  
+  contract_spending_target_fiscal_year <- contract_spending_target_fiscal_year %>%
+    filter(
+      # Avoid division by 0 errors
+      d_within_fiscal_year_duration_working_days >= 1,
+      # Skip contracts that are very, very low (likely miscategorizations or contracts that barely extend into the current fiscal year)
+      d_value_per_working_day > !!per_diem_low_end / 2
     ) %>%
     mutate(
-      # Note that these names are flipped (alow per diem estimate = a high contractor count estimate, and vice versa)
-      contractor_staff_high_end_count = ceiling(d_within_fiscal_year_contract_value / d_within_fiscal_year_duration_days / !!per_diem_low_end),
-      contractor_staff_low_end_count = ceiling(d_within_fiscal_year_contract_value / d_within_fiscal_year_duration_days / !!per_diem_high_end),
+      # Note that these names are flipped (a low per diem estimate = a high contractor count estimate, and vice versa)
+      contractor_staff_high_end_count = round(d_value_per_working_day / !!per_diem_low_end),
+      contractor_staff_low_end_count = round(d_value_per_working_day / !!per_diem_high_end),
       
     )
   
