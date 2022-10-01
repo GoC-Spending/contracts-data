@@ -1334,6 +1334,65 @@ retrieve_it_consulting_staff_count_estimate_v2 <- function(fiscal_year = 2021, p
   
 }
 
+retrieve_it_consulting_staff_count_estimate_v3 <- function(fiscal_year = 2021, per_diem_low_end = 1000, per_diem_high_end = 2400) {
+  
+  # Estimated total # of IT contractors, approx. 60,000
+  # based on https://itac.ca/wp-content/uploads/2019/05/ITAC-Commercial-first-doc-mar2019.pdf
+  estimated_contractor_staff_low_end_total = 40000
+  estimated_contractor_staff_high_end_total = 65000
+  
+  in_house_it_staff_by_department <- read_csv("data/owner_orgs/it_staff_by_department.csv") %>%
+    clean_names() %>%
+    # Note: currently 2021 is the only fiscal year in this CSV! Other years might be added in the future.
+    filter(fiscal_year == !!fiscal_year)
+  
+  contract_spending_target_fiscal_year <- contract_spending_by_date %>%
+    filter(
+      date >=  ymd(str_c(fiscal_year,"04","01")),
+      date <= ymd(str_c(fiscal_year + 1,"03","31"))
+    ) %>%
+    filter_to_it_consulting_services()
+  
+  contract_spending_target_fiscal_year <- contract_spending_target_fiscal_year %>% 
+    group_by(owner_org) %>%
+    mutate(
+      overall_value = sum(d_daily_contract_value, na.rm = TRUE)
+    ) %>%
+    ungroup() %>%
+    select(owner_org, overall_value) %>%
+    distinct()
+  
+  contract_spending_target_fiscal_year <- contract_spending_target_fiscal_year %>% 
+    mutate(
+      total_overall_value = sum(overall_value, na.rm = TRUE),
+      total_overall_estimated_contractor_staff_low_end = !!estimated_contractor_staff_low_end_total,
+      total_overall_estimated_contractor_staff_high_end = !!estimated_contractor_staff_high_end_total,
+    ) %>%
+    mutate(
+      overall_value_percentage = overall_value / total_overall_value,
+      sum_contractor_staff_low_end_count = round(total_overall_estimated_contractor_staff_low_end * overall_value_percentage),
+      sum_contractor_staff_high_end_count = round(total_overall_estimated_contractor_staff_high_end * overall_value_percentage)
+    )
+  
+  
+  in_house_it_staff_by_department %>%
+    left_join(contract_spending_target_fiscal_year, by = c(department = "owner_org")) %>%
+    mutate(
+      sum_contractor_staff_low_end_percentage = sum_contractor_staff_low_end_count / it_staff_count,
+      sum_contractor_staff_high_end_percentage = sum_contractor_staff_high_end_count / it_staff_count
+    ) %>%
+    rename(
+      owner_org = "department"
+    ) %>%
+    left_join(owner_org_names, by = "owner_org") %>%
+    select(! c(fiscal_year, owner_org_name_fr, starts_with("total_"))) %>%
+    relocate(owner_org, owner_org_name_en) %>%
+    exports_round_percentages() %>%
+    exports_round_totals() %>%
+    slice_head(n = 10)
+  
+}
+
 helper_columns_it_consulting_staff <- function(df) {
   
   df <- df %>%
@@ -1355,14 +1414,22 @@ helper_columns_it_consulting_staff <- function(df) {
   
 }
 
+# Original estimate approach, identifying an estimated (high and low) count of contractors per IT consulting services contract (by converting each contract's value to a count using per diem estimates), then tallying them up by department:
 retrieve_it_consulting_staff_count_estimate_v1() %>% 
   helper_columns_it_consulting_staff %>%
   write_csv(str_c("data/testing/tmp-", today(), "-consulting-staff-count-estimate-v1.csv"))
 
+# Revised estimate approach, using the sum of a department's IT consulting services contract value (for 2021-2022), dividing it by the number of business days, and dividing it by (high and low) per diem estimates
+# Results in slightly smaller (~20% lower) counts than v1
 retrieve_it_consulting_staff_count_estimate_v2() %>% 
   helper_columns_it_consulting_staff %>%
   write_csv(str_c("data/testing/tmp-", today(), "-consulting-staff-count-estimate-v2.csv"))
 
+# Third alternate approach, takes a published estimate of the number of contractors and weights it to departments based on their overall IT consulting services spending.
+# Results in substantially higher counts, to the point that it's unrealistic that the total dollars spent on IT consulting services could match these counts (e.g. per diems would be much lower than expected).
+retrieve_it_consulting_staff_count_estimate_v3() %>% 
+  helper_columns_it_consulting_staff %>%
+  write_csv(str_c("data/testing/tmp-", today(), "-consulting-staff-count-estimate-v3.csv"))
 
 
 # Miscellaeous extra findings =============================
