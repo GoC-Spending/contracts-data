@@ -853,6 +853,7 @@ ggsave_stacked_bar_chart_options <- function(filename, custom_height = 6.5) {
   
 }
 
+# Returns the set of top 10 vendors in the most recent fiscal year, broken down by d_most_recent_it_subcategory
 retrieve_overall_top_10_it_vendors_most_recent_fiscal_year_by_it_subcategory <- function() {
   
   all_it_vendors <- summary_categories %>%
@@ -891,6 +892,108 @@ retrieve_overall_top_10_it_vendors_most_recent_fiscal_year_by_it_subcategory <- 
     filter(d_fiscal_year == !!most_recent_fiscal_year)
   
   df
+  
+}
+
+# Returns the set of top 10 vendors across all 5 years of summary_categories$summary_by_fiscal_year_by_vendor, broken down by d_most_recent_it_subcategory
+retrieve_overall_top_10_it_vendors_by_it_subcategory <- function() {
+  
+  all_it_vendors <- summary_categories %>%
+    filter(category == "3_information_technology") %>%
+    select(summary_by_fiscal_year_by_vendor) %>%
+    unnest(cols = c(summary_by_fiscal_year_by_vendor)) %>%
+    mutate(
+      total = as.double(total),
+      total_constant_2019_dollars = as.double(total_constant_2019_dollars)
+    )
+  
+  all_it_vendors <- all_it_vendors %>%
+    group_by(d_vendor_name) %>%
+    mutate(
+      overall_total_constant_2019_dollars = sum(total_constant_2019_dollars, na.rm = TRUE)
+    ) %>%
+    ungroup()
+  
+  top_10_it_vendors <- all_it_vendors %>%
+    select(d_vendor_name, overall_total_constant_2019_dollars) %>%
+    distinct() %>%
+    arrange(desc(overall_total_constant_2019_dollars)) %>%
+    slice_head(n = 10) %>%
+    pull(d_vendor_name)
+  
+  # Retrieve the IT subcategory breakdown from summary_vendors
+  df <- summary_vendors %>%
+    filter(vendor %in% top_10_it_vendors) %>%
+    select(vendor, summary_by_fiscal_year_by_it_subcategory) %>%
+    unnest(cols = c(summary_by_fiscal_year_by_it_subcategory)) %>%
+    mutate(
+      total = as.double(total),
+      total_constant_2019_dollars = as.double(total_constant_2019_dollars)
+    )
+  
+  df <- df %>%
+    group_by(vendor, d_most_recent_it_subcategory) %>%
+    mutate(
+      overall_total_constant_2019_dollars = sum(total_constant_2019_dollars, na.rm = TRUE)
+    ) %>%
+    ungroup() %>%
+    select(vendor, d_most_recent_it_subcategory, overall_total_constant_2019_dollars) %>%
+    distinct()
+
+  # To more easily reuse the plot function
+  df <- df %>%
+    rename(
+      total = "overall_total_constant_2019_dollars"
+    )
+  
+  df
+  
+}
+
+retrieve_overall_top_10_it_vendors_by_it_subcategory_versus_total_it_spending <- function() {
+  
+  # Reuse the function above
+  # This returns a table of vendors plus overall_total (in constant 2019 dollars, due to the function above)
+  top_it_vendors <- retrieve_overall_top_10_it_vendors_by_it_subcategory() %>%
+    group_by(vendor) %>%
+    mutate(
+      overall_total_constant_2019_dollars = sum(total, na.rm = TRUE)
+    ) %>%
+    ungroup() %>%
+    select(vendor, overall_total_constant_2019_dollars) %>%
+    distinct()
+  
+  all_it_spending_overall_constant_2019_dollars <- summary_categories %>%
+    filter(category == "3_information_technology") %>%
+    select(summary_by_fiscal_year) %>%
+    unnest(cols = c(summary_by_fiscal_year)) %>%
+    mutate(
+      total = as.double(total),
+      total_constant_2019_dollars = as.double(total_constant_2019_dollars)
+    ) %>%
+    mutate(
+      overall_total_constant_2019_dollars = sum(total_constant_2019_dollars)
+    ) %>% 
+    select(overall_total_constant_2019_dollars) %>%
+    distinct() %>%
+    pull(overall_total_constant_2019_dollars)
+  
+  top_it_vendors <- top_it_vendors %>%
+    mutate(
+      all_it_spending_overall_constant_2019_dollars = !!all_it_spending_overall_constant_2019_dollars
+    ) %>%
+    mutate(
+      percentage = overall_total_constant_2019_dollars / all_it_spending_overall_constant_2019_dollars
+    )
+  
+  # Return the cumulative percentage
+  top_it_vendors %>%
+    mutate(
+      overall_percentage = sum(percentage)
+    ) %>%
+    select(overall_percentage) %>%
+    distinct() %>%
+    pull(overall_percentage)
   
 }
 
@@ -945,7 +1048,7 @@ plot_it_subcategory_breakdown <- function(df, custom_labels = labs(), num_legend
 }
 
 
-# Key finding:
+# Currently using p005 below instead of p004 here
 retrieve_overall_top_10_it_vendors_most_recent_fiscal_year_by_it_subcategory() %>%
   update_it_subcategory_names() %>%
   plot_it_subcategory_breakdown(labs(
@@ -957,6 +1060,22 @@ retrieve_overall_top_10_it_vendors_most_recent_fiscal_year_by_it_subcategory() %
 
 ggsave_stacked_bar_chart_options("plots/p004_top_vendors_by_it_subcategories_most_recent_fiscal_year.png")
 
+# Key finding:
+retrieve_overall_top_10_it_vendors_by_it_subcategory() %>%
+  update_it_subcategory_names() %>%
+  plot_it_subcategory_breakdown(labs(
+    title = "Top 10 IT vendors by estimated contract value \nand IT subcategory (2017-2018 to 2021-2022)",
+    x = NULL,
+    y = "Total estimated contract value (constant 2019 dollars)",
+    fill = "IT subcategory"
+  ), 2)
+
+ggsave_stacked_bar_chart_options("plots/p005_top_vendors_by_it_subcategories_overall.png")
+
+
+# Key finding:
+# "the ten largest IT vendors measured by contract dollar value represent [36%] of the total estimated spending on IT contracts over 2017 to 2022"
+retrieve_overall_top_10_it_vendors_by_it_subcategory_versus_total_it_spending()
 
 # Tables for the Findings section =========================
 
