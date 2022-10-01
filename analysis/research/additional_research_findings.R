@@ -809,12 +809,37 @@ ggsave_default_options("plots/p002_it_subcategories_by_fiscal_year.png", 5.8)
 
 # Charts focusing on specific vendors ===========
 
-retrieve_summary_vendors_by_it_subcategories <- function(requested_vendors_list) {
+retrieve_summary_vendors_by_it_subcategories <- function(requested_vendors_list = c()) {
+  
+  if(is_empty(requested_vendors_list)) {
+    
+    requested_vendors_list <- summary_vendors %>%
+      select(vendor, summary_by_fiscal_year_by_it_subcategory) %>%
+      unnest(cols = c(summary_by_fiscal_year_by_it_subcategory)) %>%
+      filter_to_it_consulting_services %>%
+      mutate(
+        total = as.double(total),
+        total_constant_2019_dollars = as.double(total_constant_2019_dollars)
+      ) %>%
+      group_by(vendor) %>%
+      mutate(
+        overall_total_constant_2019_dollars = sum(total_constant_2019_dollars)
+      ) %>%
+      ungroup() %>%
+      select(vendor, overall_total_constant_2019_dollars) %>%
+      distinct() %>%
+      arrange(desc(overall_total_constant_2019_dollars)) %>%
+      slice_head(n = 10) %>%
+      pull(vendor)
+    
+  }
+
   
   df <- summary_vendors %>%
     filter(vendor %in% requested_vendors_list) %>%
     select(vendor, summary_by_fiscal_year_by_it_subcategory) %>%
     unnest(cols = c(summary_by_fiscal_year_by_it_subcategory)) 
+  
   
   df
   
@@ -834,7 +859,7 @@ requested_vendors_list <- c(
 )
 
 retrieve_summary_vendors_by_it_subcategories(requested_vendors_list) %>% 
-  filter_to_it_consulting_services %>%
+  filter_to_it_consulting_services() %>%
   select(! d_most_recent_it_subcategory) %>%
   plot_fiscal_year_2019_dollars(labs(
     title = "Estimated IT consulting services contract spending \nby vendor (specific vendor subset)",
@@ -845,6 +870,35 @@ retrieve_summary_vendors_by_it_subcategories(requested_vendors_list) %>%
   ), 5)
 
 ggsave_default_options("plots/p003_it_consulting_services_key_vendors_by_fiscal_year.png")
+
+# Same as above but with the top 10 overall IT consulting firms, rather than a preset list:
+retrieve_summary_vendors_by_it_subcategories() %>% 
+  filter_to_it_consulting_services() %>%
+  select(! d_most_recent_it_subcategory) %>%
+  plot_fiscal_year_2019_dollars(labs(
+    title = "Estimated IT consulting services contract spending \nby vendor (top 10 vendors by dollar value)",
+    x = "Fiscal year",
+    y = "Total estimated IT consulting services \ncontract spending (constant 2019 dollars)",
+    color = "Vendor",
+    shape = "Vendor"
+  ), 5)
+
+ggsave_default_options("plots/p006_it_consulting_services_top_10_overall_vendors_by_fiscal_year.png")
+
+# Total across that time span
+retrieve_summary_vendors_by_it_subcategories() %>% 
+  filter_to_it_consulting_services() %>%
+  mutate(
+    total = as.double(total),
+    total_constant_2019_dollars = as.double(total_constant_2019_dollars)
+  ) %>%
+  mutate(
+    overall_total_constant_2019_dollars = sum(total_constant_2019_dollars, na.rm = TRUE)
+  ) %>%
+  select(overall_total_constant_2019_dollars) %>%
+  distinct() %>%
+  pull(overall_total_constant_2019_dollars)
+
 
 
 # Top 10 IT vendors in 2021-2022 by IT subcategory
