@@ -1081,7 +1081,7 @@ retrieve_overall_top_10_it_vendors_by_it_subcategory_versus_total_it_spending()
 
 # Tables for the Findings section =========================
 
-retrieve_vendors_by_scale_segment <- function() {
+retrieve_vendors_by_scale_segment <- function(use_most_recent_fiscal_year = FALSE) {
   
   # Adapted from get_summary_overall_by_fiscal_year_by_criteria
   # to include all vendors in the breakdown below.
@@ -1101,26 +1101,50 @@ retrieve_vendors_by_scale_segment <- function() {
     group_by(d_vendor_name, d_fiscal_year_short) %>%
     summarize_fiscal_year_totals() %>%
     ungroup() %>%
-    mutate(
-      d_fiscal_year = convert_start_year_to_fiscal_year(d_fiscal_year_short)
-    ) %>%
-    select(d_vendor_name, d_fiscal_year, total, total_constant_2019_dollars) #%>%
+    # mutate(
+    #   d_fiscal_year = convert_start_year_to_fiscal_year(d_fiscal_year_short)
+    # ) %>%
+    select(d_vendor_name, d_fiscal_year_short, total, total_constant_2019_dollars) #%>%
     # exports_round_totals() %>%
     # mutate(
     #   total = as.double(total),
     #   total_constant_2019_dollars = as.double(total_constant_2019_dollars)
     # )
   
-  most_recent_fiscal_year <- all_it_vendors %>%
-    select(d_fiscal_year) %>%
-    distinct() %>%
-    arrange(desc(d_fiscal_year)) %>%
-    pull(d_fiscal_year) %>%
-    first() 
-  
-  all_it_vendors <- all_it_vendors %>%
-    filter(d_fiscal_year == !!most_recent_fiscal_year) %>%
-    arrange(desc(total))
+  if(use_most_recent_fiscal_year == TRUE) {
+    
+    most_recent_fiscal_year <- all_it_vendors %>%
+      select(d_fiscal_year_short) %>%
+      distinct() %>%
+      arrange(desc(d_fiscal_year_short)) %>%
+      pull(d_fiscal_year_short) %>%
+      first() 
+    
+    all_it_vendors <- all_it_vendors %>%
+      filter(d_fiscal_year_short == !!most_recent_fiscal_year) %>%
+      arrange(desc(total))
+    
+  }
+  else {
+    
+    all_it_vendors <- all_it_vendors %>%
+      group_by(d_vendor_name) %>%
+      mutate(
+        # Note: confirm  if this should use constant 2019 dollars (we're summing together totals from multiple years)
+        overall_total_constant_2019_dollars = sum(total_constant_2019_dollars, na.rm = TRUE),
+        active_years = last(d_fiscal_year_short) - first(d_fiscal_year_short) + 1
+      ) %>%
+      ungroup() %>%
+      select(d_vendor_name, overall_total_constant_2019_dollars, active_years) %>%
+      distinct() %>%
+      mutate(
+        # This should be "overall_total_constant_2019_dollars per active year" but we're using "total" to reuse the code below / compatibility with the one-fiscal-year approach above.
+        total = overall_total_constant_2019_dollars / active_years
+      )
+    
+    
+  }
+
   
   all_it_vendors <- all_it_vendors %>%
     mutate(
@@ -1132,12 +1156,27 @@ retrieve_vendors_by_scale_segment <- function() {
       )
     )
   
+  if(use_most_recent_fiscal_year == TRUE) {
+    
+    all_it_vendors <- all_it_vendors %>%
+      group_by(scale_segment) %>%
+      summarize(
+        vendors_count = n(),
+        total_value = sum(total, na.rm = TRUE)
+      )
+  }
+  else {
+    
+    all_it_vendors <- all_it_vendors %>%
+      group_by(scale_segment) %>%
+      summarize(
+        vendors_count = n(),
+        total_value = sum(overall_total_constant_2019_dollars, na.rm = TRUE)
+      )
+    
+  }
+  
   all_it_vendors %>%
-    group_by(scale_segment) %>%
-    summarize(
-      vendors_count = n(),
-      total_value = sum(total, na.rm = TRUE)
-    ) %>%
     mutate(
       overall_it_spending_value = sum(total_value, na.rm = TRUE),
       overall_it_spending_percentage = total_value / overall_it_spending_value
