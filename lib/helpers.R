@@ -243,6 +243,28 @@ get_vendor_filename_from_vendor_name <- function(vendor_name) {
 }
 
 
+# Calculate overall duration
+calculate_overall_duration <- function(df, remove_outliers = FALSE) {
+  
+  df <- df %>%
+    mutate(
+      duration_days = as.integer(d_overall_end_date - d_overall_start_date + 1),
+      duration_years = duration_days / 365
+    )
+  
+  if(remove_outliers == TRUE) {
+    # To remove outlier durations (e.g. 112 years, 1600 years, etc.)
+    df <- df %>%
+      filter(duration_years < summary_maximum_duration_cutoff_years)
+  }
+
+  
+  df
+  
+  
+}
+
+
 # Low-key log handling (in a dataframe!)
 
 run_log <- tibble_row(

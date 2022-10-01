@@ -19,6 +19,10 @@
 # contract_spending_overall_ongoing includes entries from contract_spending_overall
 # that have been active since the start of the summary_start_fiscal_year_short fiscal year
 
+# contract_spending_overall_active includes entries from contract_spending_overall
+# that have been active since the start of the summary_start_fiscal_year_short fiscal year, and excludes contracts that were initiated after the end of summary_end_fiscal_year_short
+# From 2022-09-30 on we'll use contract_spending_overall_active in most overall analysis calculations.
+
 
 # Analysis thresholds ===========================
 

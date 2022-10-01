@@ -53,6 +53,7 @@ s423_min_contract_value <- function(df) {
     exports_round_totals()
 }
 
+# Deprecated by calculate_overall_duration in helpers.R which does the same thing:
 s42_calculate_duration <- function(df) {
   df <- df %>%
     mutate(

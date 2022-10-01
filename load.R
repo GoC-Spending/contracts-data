@@ -469,6 +469,14 @@ contract_spending_overall <- contract_spending_overall %>%
   distinct()
 
 
+# Remove spurious contracts with date entry errors that lead to 100+ year long contracts, etc.
+# Note: this removes some contracts from all subsequent calculations
+# Future work could involve intelligently fixing dates, e.g. a "2122" end date typically should be "2022" if the start date was 2021, etc.
+# This removes about 106 contracts (as of source data from 2022-09-30).
+contract_spending_overall <- contract_spending_overall %>%
+  calculate_overall_duration(TRUE)
+
+
 # Maintain a set of contract vendor names for normalization troubleshooting later
 vendor_names <- contracts %>%
   select(vendor_name, d_clean_vendor_name, d_normalized_vendor_name, d_vendor_name) %>%
@@ -598,6 +606,13 @@ contract_spending_overall_initiated <- contract_spending_overall %>%
 contract_spending_overall_ongoing <- contract_spending_overall %>%
   filter(
     d_overall_end_date >= ymd(str_c(summary_start_fiscal_year_short,"04","01"))
+  )
+
+# Contracts that have been active since the start of the summary_start_fiscal_year_short fiscal year, and that didn't start after the end of summary_end_fiscal_year_short
+contract_spending_overall_active <- contract_spending_overall %>%
+  filter(
+    d_overall_end_date >= ymd(str_c(summary_start_fiscal_year_short,"04","01")),
+    d_overall_start_date < ymd(str_c(summary_end_fiscal_year_short + 1,"04","01"))
   )
 
 
