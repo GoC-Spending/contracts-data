@@ -116,7 +116,7 @@ filter_to_initiated_during_fiscal_year <- function(df, target_fiscal_year) {
 
 # Value threshold indicators ====================
 
-a61_namesake_rule_value <- function(df, threshold_value, label = "namesake", value_threshold_is_annual = FALSE) {
+a61_namesake_rule_value <- function(df, threshold_value, label = "namesake", value_threshold_is_annual = FALSE, provide_rule_breaking_summary = FALSE) {
   
   col_name_meets_rule = str_c("meets_", label, "_rule")
   
@@ -154,18 +154,34 @@ a61_namesake_rule_value <- function(df, threshold_value, label = "namesake", val
   }
 
   
-  df %>%
-    group_by(meets_rule) %>%
-    summarise(
-      count = n(),
-      total = sum(d_overall_contract_value, na.rm = TRUE)
+  if(provide_rule_breaking_summary == TRUE) {
+    
+    df %>%
+      filter(meets_rule == 0) %>%
+      summarize(
+        average_value = mean(d_overall_contract_value, na.rm = TRUE),
+        min_value = min(d_overall_contract_value, na.rm = TRUE),
+        max_value = max(d_overall_contract_value, na.rm = TRUE)
+      )
+    
+  }
+  else {
+    
+    df %>%
+      group_by(meets_rule) %>%
+      summarise(
+        count = n(),
+        total = sum(d_overall_contract_value, na.rm = TRUE)
       ) %>%
-    summarize_add_count_percentage() %>%
-    summarize_add_total_percentage() %>%
-    exports_round_percentages() %>%
-    rename(
-      !!col_name_meets_rule := "meets_rule"
-    )
+      summarize_add_count_percentage() %>%
+      summarize_add_total_percentage() %>%
+      exports_round_percentages() %>%
+      rename(
+        !!col_name_meets_rule := "meets_rule"
+      )
+    
+  }
+
   
 }
 
@@ -183,10 +199,10 @@ a612_jaquith_rule_value <- function(df) {
   
 }
 
-a613_handbook_rule_value <- function(df) {
+a613_handbook_rule_value <- function(df, provide_rule_breaking_summary = FALSE) {
   
   df %>%
-    a61_namesake_rule_value(threshold_handbook_rule_value, "handbook", TRUE)
+    a61_namesake_rule_value(threshold_handbook_rule_value, "handbook", TRUE, provide_rule_breaking_summary)
   
 }
 
@@ -263,12 +279,23 @@ contract_spending_overall %>%
 
 # 2021-2022 fiscal year
 # using the handbook threshold for value ($2M per year)
-# Key finding:
 contract_spending_overall %>% 
   filter_to_active_during_fiscal_year(2021) %>%
   filter_to_it_consulting_services_and_software_licensing() %>% 
   a613_handbook_rule_value()
 
+# Updated to use the full 5-year time range
+# Key finding:
+# "nearly all of them were no more than $2 million per year ([34,147] of [34,558] contracts)"
+contract_spending_overall_active %>%
+  filter_to_it_consulting_services_and_software_licensing() %>% 
+  a613_handbook_rule_value()
+
+# Key finding:
+# "Amongst these ‘rule breaking’ contracts, the average contract value was [$25M], with a range of just over [$2M] to [$1.1B]."
+contract_spending_overall_active %>%
+  filter_to_it_consulting_services_and_software_licensing() %>% 
+  a613_handbook_rule_value(TRUE)
 
 # Using the Jaquith threshold with contracts initiated in that year
 
@@ -287,7 +314,7 @@ contract_spending_overall %>%
 
 # Duration threshold indicators ====================
 
-a62_namesake_rule_duration <- function(df, threshold_value, label = "namesake") {
+a62_namesake_rule_duration <- function(df, threshold_value, label = "namesake", provide_rule_breaking_summary = FALSE) {
   
   col_name_meets_rule = str_c("meets_", label, "_rule")
   
@@ -307,19 +334,34 @@ a62_namesake_rule_duration <- function(df, threshold_value, label = "namesake") 
       )
     )
   
-  df %>%
-    group_by(meets_rule) %>%
-    summarise(
-      count = n(),
-      total = sum(d_overall_contract_value, na.rm = TRUE)
-    ) %>% 
-    summarize_add_count_percentage() %>%
-    summarize_add_total_percentage() %>%
-    exports_round_percentages() %>%
-    rename(
-      !!col_name_meets_rule := "meets_rule"
-    )
-  
+  if(provide_rule_breaking_summary == TRUE) {
+    
+    df %>%
+      filter(meets_rule == 0) %>%
+      summarize(
+        average_years = mean(duration_years, na.rm = TRUE),
+        min_years = min(duration_years, na.rm = TRUE),
+        max_years = max(duration_years, na.rm = TRUE)
+      )
+    
+  }
+  else {
+    
+    df %>%
+      group_by(meets_rule) %>%
+      summarise(
+        count = n(),
+        total = sum(d_overall_contract_value, na.rm = TRUE)
+      ) %>% 
+      summarize_add_count_percentage() %>%
+      summarize_add_total_percentage() %>%
+      exports_round_percentages() %>%
+      rename(
+        !!col_name_meets_rule := "meets_rule"
+      )
+      
+  }
+    
 }
 
 a621_standish_rule_duration <- function(df) {
@@ -336,10 +378,10 @@ a622_jaquith_rule_duration <- function(df) {
   
 }
 
-a623_handbook_rule_duration <- function(df) {
+a623_handbook_rule_duration <- function(df, provide_rule_breaking_summary = FALSE) {
   
   df %>%
-    a62_namesake_rule_duration(threshold_handbook_rule_duration_days, "handbook")
+    a62_namesake_rule_duration(threshold_handbook_rule_duration_days, "handbook", provide_rule_breaking_summary)
   
 }
 
@@ -404,10 +446,16 @@ contract_spending_overall %>%
 
 # Same but with the Handbook threshold (3 years)
 # Key finding:
-contract_spending_overall %>% 
-  filter_to_active_during_fiscal_year(2021) %>%
+# "91% of IT consulting services and software licensing contracts in the dataset are no more than 3 years in duration ([31,364] of [34,558] contracts)."
+contract_spending_overall_active %>% 
   filter_to_it_consulting_services_and_software_licensing() %>% 
   a623_handbook_rule_duration()
+
+# Key finding:
+# "Amongst these ‘rule breaking’ contracts, the average contract value was [$25M], with a range of [just over $2M] to [$1.08B]."
+contract_spending_overall_active %>% 
+  filter_to_it_consulting_services_and_software_licensing() %>% 
+  a623_handbook_rule_duration(TRUE)
 
 # Standish threshold with IT consulting services contracts
 
@@ -1095,3 +1143,33 @@ retrieve_it_consulting_staff_count_estimate <- function(fiscal_year = 2021, per_
 
 retrieve_it_consulting_staff_count_estimate() %>% 
   write_csv(str_c("data/testing/tmp-", today(), "-consulting-staff-count-estimate.csv"))
+
+
+
+# Miscellaeous extra findings =============================
+
+# normalization table includes [6283] entries
+vendor_matching %>%
+  count()
+
+# largest variation in names, by vendor
+vendor_matching %>%
+  count(parent_company, sort = TRUE)
+
+# normalization table includes approximately 6,000 entries (across [823] vendors)
+vendor_matching %>%
+  select(parent_company) %>%
+  distinct() %>%
+  count()
+
+# the vendor normalization process consolidated [167937] unique vendor names (in the source data)
+contracts_individual_entries %>%
+  select(vendor_name) %>%
+  distinct() %>%
+  count()
+
+# ...into [115654] normalized vendor names
+contracts_individual_entries %>%
+  select(d_vendor_name) %>%
+  distinct() %>%
+  count()
