@@ -29,11 +29,11 @@ d_most_recent_category,d_fiscal_year,total,total_constant_2019_dollars
 4_medical,2019-2020,1053014.74,1046001.68
 4_medical,2020-2021,736450.40,697624.28
 4_medical,2021-2022,965750.51,880160.56
-5_transportation_and_logistics,2017-2018,406917583.92,417325519.19
-5_transportation_and_logistics,2018-2019,661346669.38,670239807.40
-5_transportation_and_logistics,2019-2020,1474046190.55,1460817995.38
-5_transportation_and_logistics,2020-2021,400007814.96,380343608.56
-5_transportation_and_logistics,2021-2022,371789136.39,342620403.06
+5_transportation_and_logistics,2017-2018,406917279.59,417325206.98
+5_transportation_and_logistics,2018-2019,661346365.06,670239498.34
+5_transportation_and_logistics,2019-2020,1474045885.39,1460817692.80
+5_transportation_and_logistics,2020-2021,400007510.63,380343319.25
+5_transportation_and_logistics,2021-2022,371788832.06,342620120.51
 6_industrial_products_and_services,2017-2018,42695877.31,43738619.99
 6_industrial_products_and_services,2018-2019,47647503.80,48258441.98
 6_industrial_products_and_services,2019-2020,64578081.35,63617774.33
@@ -48,7 +48,7 @@ d_most_recent_category,d_fiscal_year,total,total_constant_2019_dollars
 8_security_and_protection,2018-2019,11736793.48,11931307.56
 8_security_and_protection,2019-2020,9553260.18,9482922.36
 8_security_and_protection,2020-2021,8415007.37,7990000.39
-8_security_and_protection,2021-2022,11448345.27,10626301.30
+8_security_and_protection,2021-2022,11448326.36,10626283.74
 9_human_capital,2017-2018,3995915.19,4099333.30
 9_human_capital,2018-2019,4705112.20,4772696.75
 9_human_capital,2019-2020,4837855.39,4778016.22

@@ -20,8 +20,8 @@ csa-asc,1.4268,321
 csc-scc,1.7571,2632
 csps-efpc,4.4847,87
 cta-otc,1.1354,86
-dfatd-maecd,1.2292,2226
-dfo-mpo,0.6208,4265
+dfatd-maecd,1.2297,2225
+dfo-mpo,0.6173,4263
 ec,1.3983,1103
 erc-cee,0.3887,2
 esdc-edsc,1.68,2325
@@ -31,7 +31,7 @@ fin,4.047,132
 fintrac-canafe,0.5771,20
 fpcc-cpac,0.6201,2
 hc-sc,1.3599,1136
-iaac-aeic,1.3661,53
+iaac-aeic,1.3081,56
 ic,1.7583,926
 iic-iac,0.4532,14
 infc,2.5831,112
@@ -40,11 +40,11 @@ isc-sac,0.773,452
 jus,1.9871,212
 lac-bac,0.7989,133
 nrc-cnrc,0.863,1686
-nrcan-rncan,1.0475,1073
+nrcan-rncan,1.0482,1072
 nserc-crsng,0.9768,145
 pbc-clcc,0.3449,36
-pc,1.039,2560
-pch,1.4426,340
+pc,1.0392,2559
+pch,1.4392,351
 pco-bcp,1.879,182
 phac-aspc,2.251,755
 pmprb-cepmb,0.8299,7
@@ -55,7 +55,7 @@ ps-sp,3.7245,182
 psc-cfp,1.1716,55
 pwgsc-tpsgc,2.7687,6132
 rcmp-grc,1.7196,2070
-ssc-spc,3.2939,2072
+ssc-spc,3.2953,2071
 sshrc-crsh,2.6729,33
 statcan,0.9456,56
 swc-cfc,1.0448,6

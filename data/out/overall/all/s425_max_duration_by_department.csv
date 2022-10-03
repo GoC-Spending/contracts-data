@@ -8,7 +8,7 @@ cas-satj,9.72,1233
 casdo-ocena,6.99,56
 cbsa-asfc,10.51,5118
 ccohs-cchst,8.34,111
-ced-dec,6.36,298
+ced-dec,6.36,310
 cer-rec,7.06,922
 cfia-acia,10,2588
 cgc-ccg,6.08,607
@@ -19,7 +19,7 @@ cihr-irsc,6.77,769
 cnsc-ccsn,8.13,977
 cpc-cpp,5,164
 cra-arc,17.59,4387
-crtc,6.67,473
+crtc,6.67,488
 csa-asc,23.24,1529
 csc-scc,11.01,20523
 csps-efpc,7.58,523
@@ -39,7 +39,7 @@ fintrac-canafe,5.01,155
 fja-cmf,5.1,415
 fpcc-cpac,2,27
 hc-sc,13.36,7551
-iaac-aeic,8.01,286
+iaac-aeic,8.01,297
 ic,12.72,6425
 iic-iac,5.01,156
 ijc-cmi,4,174
@@ -68,7 +68,7 @@ osgg-bsgg,7.04,276
 oto-boc,1,1
 pbc-clcc,5.06,354
 pc,10.93,14781
-pch,13.34,2107
+pch,13.34,2235
 pco-bcp,10.34,1580
 phac-aspc,17,4370
 pmprb-cepmb,5.1,145

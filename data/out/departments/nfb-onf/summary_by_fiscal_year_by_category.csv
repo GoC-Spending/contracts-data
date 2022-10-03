@@ -5,9 +5,9 @@ d_most_recent_category,d_fiscal_year,total,total_constant_2019_dollars
 1_facilities_and_construction,2021-2022,105647.53,96496.61
 10_office_management,2017-2018,616744.64,633671.80
 10_office_management,2018-2019,197090.10,199984.21
-10_office_management,2019-2020,1340735.16,1336942.76
-10_office_management,2020-2021,569623.40,541398.87
-10_office_management,2021-2022,157058.05,144175.41
+10_office_management,2019-2020,1340669.21,1336877.49
+10_office_management,2020-2021,569546.73,541325.98
+10_office_management,2021-2022,156981.38,144104.22
 2_professional_services,2017-2018,779647.86,799348.73
 2_professional_services,2018-2019,1164663.66,1180234.32
 2_professional_services,2019-2020,2096227.74,2068082.64
@@ -15,9 +15,9 @@ d_most_recent_category,d_fiscal_year,total,total_constant_2019_dollars
 2_professional_services,2021-2022,3478007.65,3216712.08
 3_information_technology,2017-2018,8074191.15,8277794.60
 3_information_technology,2018-2019,5800985.58,5886328.78
-3_information_technology,2019-2020,6827580.42,6762455.91
-3_information_technology,2020-2021,8429633.94,7979174.24
-3_information_technology,2021-2022,5016628.71,4628279.57
+3_information_technology,2019-2020,6826012.41,6760905.12
+3_information_technology,2020-2021,8427738.83,7977372.62
+3_information_technology,2021-2022,5014733.59,4626520.06
 5_transportation_and_logistics,2019-2020,28559.79,28509.29
 5_transportation_and_logistics,2021-2022,17879.44,16148.71
 6_industrial_products_and_services,2019-2020,27461.78,27149.17
