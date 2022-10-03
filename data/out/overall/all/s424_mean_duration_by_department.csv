@@ -13,14 +13,14 @@ cer-rec,1.06,922
 cfia-acia,0.82,2588
 cgc-ccg,0.93,607
 chrc-ccdp,0.85,406
-cic,0.97,3884
+cic,0.97,3877
 cics-scic,0.29,125
 cihr-irsc,0.66,769
 cnsc-ccsn,1.17,977
 cpc-cpp,0.66,164
 cra-arc,1.23,4387
 crtc,0.91,488
-csa-asc,1.32,1529
+csa-asc,1.32,1528
 csc-scc,0.76,20523
 csps-efpc,0.95,523
 cta-otc,1.49,297
@@ -38,7 +38,7 @@ fin,0.96,605
 fintrac-canafe,0.97,155
 fja-cmf,1.04,415
 fpcc-cpac,0.66,27
-hc-sc,0.99,7551
+hc-sc,0.99,7549
 iaac-aeic,0.98,297
 ic,0.8,6425
 iic-iac,0.74,156
@@ -70,7 +70,7 @@ pbc-clcc,1.17,354
 pc,0.72,14781
 pch,0.75,2235
 pco-bcp,0.71,1580
-phac-aspc,0.98,4370
+phac-aspc,0.98,4369
 pmprb-cepmb,1.45,145
 polar-polaire,0.7,50
 ppsc-sppc,2.41,816

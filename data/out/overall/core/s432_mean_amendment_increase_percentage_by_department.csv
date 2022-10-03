@@ -10,13 +10,13 @@ cbsa-asfc,1.2981,1122
 ced-dec,0.7121,31
 cer-rec,1.1449,146
 cfia-acia,1.6028,441
-cic,1.0763,1563
+cic,1.0776,1567
 cics-scic,0.1201,4
 cihr-irsc,0.6647,170
 cnsc-ccsn,0.8864,182
 cpc-cpp,0.4135,30
 cra-arc,2.6744,1874
-csa-asc,1.4268,321
+csa-asc,1.423,322
 csc-scc,1.7571,2632
 csps-efpc,4.4847,87
 cta-otc,1.1354,86
@@ -30,7 +30,7 @@ feddevontario,0.7375,31
 fin,4.047,132
 fintrac-canafe,0.5771,20
 fpcc-cpac,0.6201,2
-hc-sc,1.3599,1136
+hc-sc,1.3589,1137
 iaac-aeic,1.3081,56
 ic,1.7583,926
 iic-iac,0.4532,14
@@ -46,7 +46,7 @@ pbc-clcc,0.3449,36
 pc,1.0392,2559
 pch,1.4392,351
 pco-bcp,1.879,182
-phac-aspc,2.251,755
+phac-aspc,2.2497,756
 pmprb-cepmb,0.8299,7
 polar-polaire,0.73,3
 ppsc-sppc,4.6519,277
