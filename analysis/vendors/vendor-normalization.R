@@ -86,7 +86,7 @@ look_up_vendor_name_and_save_tmp_output <- function(vendor_name_to_look_up, norm
   
   normalized_name <- str_to_upper(normalized_name)
   
-  contracts %>%
+  contracts_individual_entries %>%
     filter(str_detect(d_vendor_name, !!vendor_name_to_look_up)) %>%
     select(d_vendor_name) %>%
     distinct() %>%
@@ -104,7 +104,7 @@ look_up_vendor_name_and_save_tmp_output <- function(vendor_name_to_look_up, norm
 
 # Run the lookup and optionally provide the already-normalized name if it's already in the matching table
 # look_up_vendor_name_and_save_tmp_output("qm", "QM Environmental")
-look_up_vendor_name_and_save_tmp_output("google", "google canada")
+look_up_vendor_name_and_save_tmp_output("McGill", "McGill University")
 
 
 
