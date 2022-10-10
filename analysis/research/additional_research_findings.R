@@ -719,8 +719,8 @@ plot_fiscal_year_2019_dollars <- function(df, custom_labels = labs(), num_legend
     color = reorder(category, desc(most_recent_total_constant_2019_dollars)), 
     shape = reorder(category, desc(most_recent_total_constant_2019_dollars))
     )) +
-    geom_point() +
-    geom_line() + 
+    geom_point(size = 2) +
+    geom_line(size = 0.7) + 
     theme(
       axis.text = element_text(colour = "black"),
       aspect.ratio=3/4,
@@ -731,7 +731,8 @@ plot_fiscal_year_2019_dollars <- function(df, custom_labels = labs(), num_legend
     # Thanks to
     # https://stackoverflow.com/a/48252093/756641
     guides(
-      color = guide_legend(nrow = num_legend_rows)
+      color = guide_legend(nrow = num_legend_rows),
+      shape = guide_legend(nrow = num_legend_rows)
     ) +
     # Thanks to
     # https://www.tidyverse.org/blog/2022/04/scales-1-2-0/#numbers
@@ -739,6 +740,11 @@ plot_fiscal_year_2019_dollars <- function(df, custom_labels = labs(), num_legend
       limits = c(0, NA),
       labels = label_dollar(scale_cut = cut_short_scale())
     ) +
+    # 17 options for scale icons, hopefully distinct enough to avoid confusion
+    # Thanks to
+    # https://stackoverflow.com/a/41148368/756641
+    # https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003833#s9
+    scale_shape_manual(values = c(16, 17, 15, 18, 3, 4, 8, 1, 2, 0, seq(5, 7), 9, 10, 12, 14)) +
     custom_labels
   
   # df
@@ -783,16 +789,16 @@ ggsave_default_options <- function(filename, custom_height = 6.5) {
 
 retrieve_summary_overall_by_category() %>%
   update_category_names() %>%
-  filter_by_highest_2019_dollars_most_recent_fiscal_year(6) %>%
+  # filter_by_highest_2019_dollars_most_recent_fiscal_year(6) %>%
   plot_fiscal_year_2019_dollars(labs(
     title = "Estimated government-wide contract spending \nby category",
     x = "Fiscal year",
     y = "Total estimated contract spending \n(constant 2019 dollars)",
     color = "Category",
     shape = "Category"
-  ), 3)
+  ), 5)
 
-ggsave_default_options("plots/p001_categories_by_fiscal_year.png", 6.2)
+ggsave_default_options("plots/p001_categories_by_fiscal_year.png", 6.5)
 
 retrieve_summary_overall_by_it_subcategory() %>%
   update_it_subcategory_names() %>%
