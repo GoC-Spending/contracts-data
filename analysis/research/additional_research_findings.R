@@ -113,6 +113,19 @@ filter_to_initiated_during_fiscal_year <- function(df, target_fiscal_year) {
   
 }
 
+format_revert_output_totals <- function(df) {
+  
+  df <- df %>%
+    mutate(
+      # Converts to double to avoid string type issues in future numeric operations
+      total = as.double(total),
+      total_constant_2019_dollars = as.double(total_constant_2019_dollars)
+    )
+  
+  df
+  
+}
+
 
 # Value threshold indicators ====================
 
@@ -657,9 +670,19 @@ retrieve_summary_overall_by_category() %>%
   percent_changes_in_2019_dollars_by_fiscal_year_and_group_category("d_most_recent_category")
 
 # Key finding:
+# "spending on IT consulting services has grown by [54] percent, after correcting for inflation"
 retrieve_summary_overall_by_it_subcategory() %>%
   percent_changes_in_2019_dollars_by_fiscal_year_and_group_category("d_most_recent_it_subcategory")
 
+# "after correcting for inflation, from a total of [$1.17B] to [$1.79B] per year"
+retrieve_summary_overall_by_it_subcategory()
+
+# "The total spent on IT consulting services over the five year period under examination was [$7.7B]"
+retrieve_summary_overall_by_it_subcategory() %>%
+  filter(d_most_recent_it_subcategory == "it_consulting_services") %>%
+  summarize(
+    overall_total_constant_2019_dollars = sum(total_constant_2019_dollars)
+  )
 
 # Charts based on the overall summary trends ==============
 
@@ -892,6 +915,7 @@ retrieve_summary_vendors_by_it_subcategories() %>%
 ggsave_default_options("plots/p006_it_consulting_services_top_10_overall_vendors_by_fiscal_year.png")
 
 # Total across that time span
+# "In total, the federal government spent [$2.79B] on IT consulting services contracts with these firms over the period of analysis"
 retrieve_summary_vendors_by_it_subcategories() %>% 
   filter_to_it_consulting_services() %>%
   mutate(
@@ -1260,9 +1284,9 @@ retrieve_duration_segments_by_it_subcategory <- function() {
       duration_segment = case_when(
         duration_years > 10 ~ "1_over_10_years", # Over 10 years
         duration_years > 5 ~ "2_over_5_years", # Less than 10 years
-        duration_years > 2 ~ "3_over_2_years", # Less than 5 years
-        duration_years > 0.5 ~ "4_over_6_months", # Less than 2 years
-        TRUE ~ "5_no_more_than_6_months" # Less than 6 months
+        duration_years > 3 ~ "3_over_3_years", # Less than 5 years
+        duration_years > 1 ~ "4_over_1_year", # Less than 3 years
+        TRUE ~ "5_no_more_than_1_year" # Less than 1 year
       )
     )
   
