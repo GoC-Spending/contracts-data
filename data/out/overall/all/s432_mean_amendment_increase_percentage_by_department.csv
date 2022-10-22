@@ -8,9 +8,9 @@ cas-satj,0.8992,164
 casdo-ocena,0.5472,11
 cbsa-asfc,1.2981,1122
 ccohs-cchst,0.2655,10
-ced-dec,0.7121,31
+ced-dec,0.7055,32
 cer-rec,1.1449,146
-cfia-acia,1.6028,441
+cfia-acia,1.6079,458
 cgc-ccg,1.1343,50
 chrc-ccdp,1.0274,51
 cic,1.0776,1567
@@ -23,7 +23,7 @@ crtc,0.8227,37
 csa-asc,1.423,322
 csc-scc,1.7571,2632
 csps-efpc,4.4847,87
-cta-otc,1.1354,86
+cta-otc,1.1609,88
 dfatd-maecd,1.2297,2225
 dfo-mpo,0.6173,4263
 dnd-mdn,0.6785,8129
@@ -54,11 +54,11 @@ nfb-onf,0.4961,59
 nrc-cnrc,0.863,1686
 nrcan-rncan,1.0482,1072
 nserc-crsng,0.9768,145
-nsira-ossnr,1.3382,3
+nsira-ossnr,1.7204,4
 oag-bvg,0.9289,117
-oci-bec,1.7509,7
+oci-bec,1.5897,7
 ocl-cal,1.2148,12
-ocol-clo,1.2679,24
+ocol-clo,1.1609,27
 oic-ci,1.8791,23
 opc-cpvp,0.2618,57
 osfi-bsif,5.4952,286
@@ -78,7 +78,7 @@ psic-ispc,1.5762,10
 pwgsc-tpsgc,2.7687,6132
 rcmp-grc,1.7196,2070
 sirc-csars,0,1
-ssc-spc,3.2953,2071
+ssc-spc,3.2945,2072
 sshrc-crsh,2.6729,33
 statcan,0.9456,56
 swc-cfc,1.0448,6

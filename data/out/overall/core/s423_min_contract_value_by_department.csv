@@ -7,9 +7,9 @@ cannor,10731.42,75
 cas-satj,7466.68,1233
 casdo-ocena,10098.60,56
 cbsa-asfc,5803.57,5118
-ced-dec,10002.83,310
+ced-dec,10002.83,316
 cer-rec,5678.40,922
-cfia-acia,8141.34,2588
+cfia-acia,8141.34,2748
 cic,5329.08,3877
 cics-scic,10042.88,125
 cihr-irsc,10034.40,769
@@ -19,11 +19,11 @@ cra-arc,5206.48,4387
 csa-asc,10002.84,1528
 csc-scc,10000.00,20523
 csps-efpc,5647.74,523
-cta-otc,7678.13,297
+cta-otc,7678.13,305
 dfatd-maecd,5047.50,19397
 dfo-mpo,5061.33,31121
 ec,5268.56,12071
-erc-cee,18244.98,12
+erc-cee,18244.98,13
 esdc-edsc,5066.41,7136
 fcac-acfc,5576.00,406
 feddevontario,9356.40,204
@@ -56,7 +56,7 @@ ps-sp,6102.00,1162
 psc-cfp,10000.00,294
 pwgsc-tpsgc,5085.00,30164
 rcmp-grc,5067.77,16839
-ssc-spc,5354.51,10895
+ssc-spc,5354.51,10894
 sshrc-crsh,10170.00,161
 statcan,10003.81,1358
 swc-cfc,10000.00,102

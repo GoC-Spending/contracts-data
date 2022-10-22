@@ -7,9 +7,9 @@ cannor,1.11,9
 cas-satj,1.3,164
 casdo-ocena,1.45,11
 cbsa-asfc,1.65,1125
-ced-dec,1.84,31
+ced-dec,1.81,32
 cer-rec,1.34,146
-cfia-acia,1.77,441
+cfia-acia,1.79,458
 cic,1.73,1567
 cics-scic,1,4
 cihr-irsc,1.23,173
@@ -19,7 +19,7 @@ cra-arc,3.01,1949
 csa-asc,1.91,322
 csc-scc,1.82,2632
 csps-efpc,1.57,87
-cta-otc,1.92,86
+cta-otc,1.95,88
 dfatd-maecd,1.84,2225
 dfo-mpo,1.82,4356
 ec,1.53,1103
@@ -55,7 +55,7 @@ ps-sp,1.51,182
 psc-cfp,2.56,55
 pwgsc-tpsgc,1.82,6132
 rcmp-grc,1.6,2070
-ssc-spc,1.92,2071
+ssc-spc,1.91,2072
 sshrc-crsh,1.42,33
 statcan,1.04,56
 swc-cfc,1,6
