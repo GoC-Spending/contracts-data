@@ -684,6 +684,13 @@ retrieve_summary_overall_by_it_subcategory() %>%
     overall_total_constant_2019_dollars = sum(total_constant_2019_dollars)
   )
 
+# "Over the five years of the analysis, Government of Canada departments spent [$7.7B] on IT consulting services, [$4.1B] on software licensing, [$3.6B] on devices and equipment, and [$3.9B] on Other, including telecommunications."
+retrieve_summary_overall_by_it_subcategory() %>%
+  group_by(d_most_recent_it_subcategory) %>%
+  summarize(
+    overall_total_constant_2019_dollars = sum(total_constant_2019_dollars)
+  )
+
 # Charts based on the overall summary trends ==============
 
 filter_by_highest_2019_dollars_most_recent_fiscal_year <- function(df, limit_n = 5) {
@@ -1319,7 +1326,7 @@ retrieve_duration_segments_by_it_subcategory() %>%
   write_csv(str_c("data/testing/tmp-", today(), "-table-contract-duration-segmentation.csv"))
 
 
-retrieve_it_consulting_staff_count_estimate_v1 <- function(fiscal_year = 2021, per_diem_low_end = 1000, per_diem_high_end = 2400) {
+retrieve_it_consulting_staff_count_estimate_v1 <- function(fiscal_year = 2021, per_diem_low_end = 1000, per_diem_high_end = 2400, output_overall_contractor_staff_counts = FALSE) {
   
   # Thanks to
   # https://www.workingdays.ca/Federal%20Holidays.htm
@@ -1327,7 +1334,7 @@ retrieve_it_consulting_staff_count_estimate_v1 <- function(fiscal_year = 2021, p
   
   in_house_it_staff_by_department <- read_csv("data/owner_orgs/it_staff_by_department.csv") %>%
     clean_names() %>%
-    # Note: currently 2021 is the only fiscal year in this CSV! Other years might be added in the future.
+    # Note: currently this CSV includes 2020-2021 and 2021-2022 fiscal years (in "short" fiscal year form using the start year).
     filter(fiscal_year == !!fiscal_year)
   
   
@@ -1370,6 +1377,20 @@ retrieve_it_consulting_staff_count_estimate_v1 <- function(fiscal_year = 2021, p
       
     )
   
+  # Get a government-wide total for methodology details
+  if(output_overall_contractor_staff_counts == TRUE) {
+    
+    contractor_staff_estimates <- contract_spending_target_fiscal_year %>%
+      summarize(
+        sum_consulting_services_value = sum(d_within_fiscal_year_contract_value, na.rm = TRUE),
+        sum_contractor_staff_low_end_count = sum(contractor_staff_low_end_count, na.rm = TRUE),
+        sum_contractor_staff_high_end_count = sum(contractor_staff_high_end_count, na.rm = TRUE),
+      )
+    
+    return(contractor_staff_estimates)
+    
+  }
+  
   # in_house_it_staff_by_department
   contractor_staff_estimates <- contract_spending_target_fiscal_year %>%
     group_by(owner_org) %>%
@@ -1399,7 +1420,7 @@ retrieve_it_consulting_staff_count_estimate_v1 <- function(fiscal_year = 2021, p
   
 }
 
-retrieve_it_consulting_staff_count_estimate_v2 <- function(fiscal_year = 2021, per_diem_low_end = 1000, per_diem_high_end = 2400) {
+retrieve_it_consulting_staff_count_estimate_v2 <- function(fiscal_year = 2021, per_diem_low_end = 1000, per_diem_high_end = 2400, output_overall_contractor_staff_counts = FALSE) {
   
   # Thanks to
   # https://www.workingdays.ca/Federal%20Holidays.htm
@@ -1408,7 +1429,7 @@ retrieve_it_consulting_staff_count_estimate_v2 <- function(fiscal_year = 2021, p
   
   in_house_it_staff_by_department <- read_csv("data/owner_orgs/it_staff_by_department.csv") %>%
     clean_names() %>%
-    # Note: currently 2021 is the only fiscal year in this CSV! Other years might be added in the future.
+    # Note: currently this CSV includes 2020-2021 and 2021-2022 fiscal years (in "short" fiscal year form using the start year).
     filter(fiscal_year == !!fiscal_year)
   
   contract_spending_target_fiscal_year <- contract_spending_by_date %>%
@@ -1438,6 +1459,21 @@ retrieve_it_consulting_staff_count_estimate_v2 <- function(fiscal_year = 2021, p
     ) %>%
     arrange(desc(overall_value))
   
+  
+  # Get a government-wide total for methodology details
+  if(output_overall_contractor_staff_counts == TRUE) {
+    
+    contractor_staff_estimates <- contract_spending_target_fiscal_year %>%
+      summarize(
+        sum_contractor_staff_low_end_count = sum(contractor_staff_low_end_count, na.rm = TRUE),
+        sum_contractor_staff_high_end_count = sum(contractor_staff_high_end_count, na.rm = TRUE),
+      )
+    
+    return(contractor_staff_estimates)
+    
+  }
+  
+  
   in_house_it_staff_by_department %>%
     left_join(contract_spending_target_fiscal_year, by = c(department = "owner_org")) %>%
     mutate(
@@ -1463,12 +1499,14 @@ retrieve_it_consulting_staff_count_estimate_v3 <- function(fiscal_year = 2021, p
   
   # Estimated total # of IT contractors, approx. 60,000
   # based on https://itac.ca/wp-content/uploads/2019/05/ITAC-Commercial-first-doc-mar2019.pdf
-  estimated_contractor_staff_low_end_total = 40000
-  estimated_contractor_staff_high_end_total = 65000
+  # 80k minus full-time public service IT staff of 15000 to 20000
+  # Excluding DND (approx. 6% according to PIPSC research)
+  estimated_contractor_staff_low_end_total = round( (80000 - 25000) * 0.94)
+  estimated_contractor_staff_high_end_total = round( (80000 - 15000) * 0.94)
   
   in_house_it_staff_by_department <- read_csv("data/owner_orgs/it_staff_by_department.csv") %>%
     clean_names() %>%
-    # Note: currently 2021 is the only fiscal year in this CSV! Other years might be added in the future.
+    # Note: currently this CSV includes 2020-2021 and 2021-2022 fiscal years (in "short" fiscal year form using the start year).
     filter(fiscal_year == !!fiscal_year)
   
   contract_spending_target_fiscal_year <- contract_spending_by_date %>%
@@ -1546,6 +1584,7 @@ retrieve_it_consulting_staff_count_estimate_v1() %>%
 
 # Revised estimate approach, using the sum of a department's IT consulting services contract value (for 2021-2022), dividing it by the number of business days, and dividing it by (high and low) per diem estimates
 # Results in slightly smaller (~20% lower) counts than v1
+# Key finding (currently used in the analysis paper)
 retrieve_it_consulting_staff_count_estimate_v2() %>% 
   helper_columns_it_consulting_staff %>%
   write_csv(str_c("data/testing/tmp-", today(), "-consulting-staff-count-estimate-v2.csv"))
@@ -1555,6 +1594,11 @@ retrieve_it_consulting_staff_count_estimate_v2() %>%
 retrieve_it_consulting_staff_count_estimate_v3() %>% 
   helper_columns_it_consulting_staff %>%
   write_csv(str_c("data/testing/tmp-", today(), "-consulting-staff-count-estimate-v3.csv"))
+
+# Get the government-wide estimated IT contractor staff counts for methodology details
+retrieve_it_consulting_staff_count_estimate_v1(output_overall_contractor_staff_counts = TRUE)
+
+retrieve_it_consulting_staff_count_estimate_v2(output_overall_contractor_staff_counts = TRUE)
 
 
 # Miscellaeous extra findings =============================
