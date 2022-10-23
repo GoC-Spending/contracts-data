@@ -314,3 +314,98 @@ x %>%
   ))
 
 ggsave_16_9_default_options("plots/f003_top_departments_by_it_contracting_spend_most_recent_fiscal_year.png", 6)
+
+
+# IT spending by year (constant 2019 dollars) =======
+
+# Very similar to above but using bar charts
+plot_16_9_fiscal_year_2019_dollars_bar <- function(df, custom_labels = labs(), num_legend_rows = 2) {
+  
+  
+  # Automatically uses the first column as the grouping category:
+  grouping_category <- names(df)[[1]]
+  
+  # Thanks to
+  # https://cran.r-project.org/web/packages/dplyr/vignettes/programming.html
+  df <- df %>%
+    mutate(
+      year = convert_fiscal_year_to_start_year(d_fiscal_year),
+      category = first(across({{ grouping_category}}, ~ as.factor(.)))
+    ) %>%
+    mutate(
+      # Converts to double to avoid string type issues in future numeric operations
+      # (In case this wasn't done previously.)
+      total = as.double(total),
+      total_constant_2019_dollars = as.double(total_constant_2019_dollars)
+    )
+  
+  df <- df %>%
+    group_by(category) %>%
+    mutate(
+      most_recent_total_constant_2019_dollars = last(total_constant_2019_dollars, order_by = d_fiscal_year)
+    )
+  
+  ggplot(df, aes(
+    x = year, 
+    y = total_constant_2019_dollars, 
+    color = total_constant_2019_dollars,
+    fill = total_constant_2019_dollars,
+  )) +
+    # geom_point(size = 4) +
+    # geom_line(size = 0.7) + 
+    geom_col(width = 0.7) +
+    theme(
+      axis.text = element_text(size = rel(0.8), colour = "black"),
+      axis.title = element_text(size = rel(0.8), colour = "black"),
+      aspect.ratio=3/4,
+      legend.position = "none",
+      legend.direction = "horizontal",
+      legend.margin=margin(),
+      legend.text = element_text(size = rel(0.80)),
+      
+      panel.background = element_rect(fill="#FFFFFF", colour = "#f5f5f5"),
+      plot.background = element_rect(fill="#FAFAFA", colour = "#FAFAFA"),
+      
+      panel.grid.major = element_line(size=0.7, colour = "#f5f5f5"),
+      axis.ticks = element_line(size=0.7, colour = "#f5f5f5"),
+      
+      legend.background = element_rect(fill="#FAFAFA"),
+      legend.key = element_rect(fill = "#FFFFFF", colour = "#f5f5f5"),
+      
+    ) + 
+    # Thanks to
+    # https://stackoverflow.com/a/48252093/756641
+    guides(
+      color = guide_legend(nrow = num_legend_rows),
+      shape = guide_legend(nrow = num_legend_rows)
+    ) +
+    # Thanks to
+    # https://www.tidyverse.org/blog/2022/04/scales-1-2-0/#numbers
+    scale_y_continuous(
+      limits = c(0, 5000000000),
+      labels = label_dollar(scale_cut = cut_short_scale())
+    ) +
+    # 17 options for scale icons, hopefully distinct enough to avoid confusion
+    # Thanks to
+    # https://stackoverflow.com/a/41148368/756641
+    # https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003833#s9
+    scale_shape_manual(values = c(16, 17, 15, 18, 3, 4, 8, 1, 2, 0, seq(5, 7), 9, 10, 12, 14)) +
+    custom_labels
+  
+  # df
+  
+}
+
+retrieve_summary_overall_by_category() %>%
+  filter(d_most_recent_category == "3_information_technology") %>%
+  update_category_names() %>%
+  # filter_by_highest_2019_dollars_most_recent_fiscal_year(6) %>%
+  plot_16_9_fiscal_year_2019_dollars_bar(labs(
+    title = "",
+    x = "Fiscal year",
+    y = "Total estimated IT contract spending \n(constant 2019 dollars)",
+    color = "",
+    shape = ""
+  ), 5)
+
+ggsave_16_9_default_options("plots/f004_it_spending_overall_by_fiscal_year.png", 6)
