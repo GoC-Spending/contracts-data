@@ -74,8 +74,10 @@ comparison_costs %>%
 
 # Updated plots for presentation graphics =================
 
-ggsave_16_9_default_options <- function(filename, custom_height = 7) {
-  ggsave(filename, dpi = "print", width = 11, height = custom_height, units = "in")
+# Top 10 vendors (IT consulting services) by year, line chart ======
+
+ggsave_16_9_default_options <- function(filename, custom_height = 7, custom_width = 11) {
+  ggsave(filename, dpi = "print", width = custom_width, height = custom_height, units = "in")
   
 }
 
@@ -121,7 +123,8 @@ plot_16_9_fiscal_year_2019_dollars <- function(df, custom_labels = labs(), num_l
       legend.position = "right",
       legend.direction = "horizontal",
       legend.margin=margin(),
-      legend.text = element_text(size = rel(0.65)),
+      legend.text = element_text(size = rel(0.80)),
+      
       panel.background = element_rect(fill="#FFFFFF", colour = "#f5f5f5"),
       plot.background = element_rect(fill="#FAFAFA", colour = "#FAFAFA"),
       
@@ -129,7 +132,6 @@ plot_16_9_fiscal_year_2019_dollars <- function(df, custom_labels = labs(), num_l
       axis.ticks = element_line(size=0.7, colour = "#f5f5f5"),
       
       legend.background = element_rect(fill="#FAFAFA"),
-      # legend.box.background = element_rect(fill="#FFFFFF"),
       legend.key = element_rect(fill = "#FFFFFF", colour = "#f5f5f5"),
       
     ) + 
@@ -311,3 +313,4 @@ x %>%
     fill = ""
   ))
 
+ggsave_16_9_default_options("plots/f003_top_departments_by_it_contracting_spend_most_recent_fiscal_year.png", 6)
