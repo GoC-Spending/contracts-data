@@ -1326,7 +1326,7 @@ retrieve_duration_segments_by_it_subcategory() %>%
   write_csv(str_c("data/testing/tmp-", today(), "-table-contract-duration-segmentation.csv"))
 
 
-retrieve_it_consulting_staff_count_estimate_v1 <- function(fiscal_year = 2021, per_diem_low_end = 1000, per_diem_high_end = 2400, output_overall_contractor_staff_counts = FALSE) {
+retrieve_it_consulting_staff_count_estimate_v1 <- function(fiscal_year = 2021, per_diem_low_end = 800, per_diem_high_end = 1400, output_overall_contractor_staff_counts = FALSE, output_by_spending_totals = FALSE) {
   
   # Thanks to
   # https://www.workingdays.ca/Federal%20Holidays.htm
@@ -1400,14 +1400,28 @@ retrieve_it_consulting_staff_count_estimate_v1 <- function(fiscal_year = 2021, p
       sum_contractor_staff_high_end_count = sum(contractor_staff_high_end_count, na.rm = TRUE),
     )
   
-  in_house_it_staff_by_department %>%
-    left_join(contractor_staff_estimates, by = c(department = "owner_org")) %>%
+  if(output_by_spending_totals == TRUE) {
+    
+    output <- contractor_staff_estimates %>%
+      left_join(in_house_it_staff_by_department, by = c(owner_org = "department")) %>%
+      arrange(desc(sum_consulting_services_value))
+    
+  }
+  else {
+    
+    output <- in_house_it_staff_by_department %>%
+      left_join(contractor_staff_estimates, by = c(department = "owner_org")) %>%
+      rename(
+        owner_org = "department"
+      )
+    
+    
+  }
+  
+  output %>%
     mutate(
       sum_contractor_staff_low_end_percentage = sum_contractor_staff_low_end_count / it_staff_count,
       sum_contractor_staff_high_end_percentage = sum_contractor_staff_high_end_count / it_staff_count
-    ) %>%
-    rename(
-      owner_org = "department"
     ) %>%
     left_join(owner_org_names, by = "owner_org") %>%
     select(! c(fiscal_year, owner_org_name_fr)) %>%
@@ -1420,7 +1434,7 @@ retrieve_it_consulting_staff_count_estimate_v1 <- function(fiscal_year = 2021, p
   
 }
 
-retrieve_it_consulting_staff_count_estimate_v2 <- function(fiscal_year = 2021, per_diem_low_end = 1000, per_diem_high_end = 2400, output_overall_contractor_staff_counts = FALSE) {
+retrieve_it_consulting_staff_count_estimate_v2 <- function(fiscal_year = 2021, per_diem_low_end = 800, per_diem_high_end = 1400, output_overall_contractor_staff_counts = FALSE, output_by_spending_totals = FALSE) {
   
   # Thanks to
   # https://www.workingdays.ca/Federal%20Holidays.htm
@@ -1474,14 +1488,30 @@ retrieve_it_consulting_staff_count_estimate_v2 <- function(fiscal_year = 2021, p
   }
   
   
-  in_house_it_staff_by_department %>%
-    left_join(contract_spending_target_fiscal_year, by = c(department = "owner_org")) %>%
+  if(output_by_spending_totals == TRUE) {
+    
+    output <- contract_spending_target_fiscal_year %>%
+      left_join(in_house_it_staff_by_department, by = c(owner_org = "department")) %>%
+      arrange(desc(d_value_per_working_day))
+    
+  }
+  else {
+    
+    output <- in_house_it_staff_by_department %>%
+      left_join(contract_spending_target_fiscal_year, by = c(department = "owner_org")) %>%
+      rename(
+        owner_org = "department"
+      )
+    
+    
+  }
+  
+  output %>%
     mutate(
       sum_contractor_staff_low_end_percentage = contractor_staff_low_end_count / it_staff_count,
       sum_contractor_staff_high_end_percentage = contractor_staff_high_end_count / it_staff_count
     ) %>%
     rename(
-      owner_org = "department",
       # For consistency with v1
       sum_contractor_staff_low_end_count = "contractor_staff_low_end_count",
       sum_contractor_staff_high_end_count = "contractor_staff_high_end_count"
@@ -1495,7 +1525,7 @@ retrieve_it_consulting_staff_count_estimate_v2 <- function(fiscal_year = 2021, p
   
 }
 
-retrieve_it_consulting_staff_count_estimate_v3 <- function(fiscal_year = 2021, per_diem_low_end = 1000, per_diem_high_end = 2400) {
+retrieve_it_consulting_staff_count_estimate_v3 <- function(fiscal_year = 2021, per_diem_low_end = 800, per_diem_high_end = 1400) {
   
   # Estimated total # of IT contractors, approx. 60,000
   # based on https://itac.ca/wp-content/uploads/2019/05/ITAC-Commercial-first-doc-mar2019.pdf
@@ -1599,6 +1629,15 @@ retrieve_it_consulting_staff_count_estimate_v3() %>%
 retrieve_it_consulting_staff_count_estimate_v1(output_overall_contractor_staff_counts = TRUE)
 
 retrieve_it_consulting_staff_count_estimate_v2(output_overall_contractor_staff_counts = TRUE)
+
+# Sort by total spending instead of in-house IT staff
+retrieve_it_consulting_staff_count_estimate_v1(output_by_spending_totals = TRUE) %>% 
+  helper_columns_it_consulting_staff %>%
+  write_csv(str_c("data/testing/tmp-", today(), "-consulting-staff-count-estimate-v1-spend-sort.csv"))
+
+retrieve_it_consulting_staff_count_estimate_v2(output_by_spending_totals = TRUE) %>% 
+  helper_columns_it_consulting_staff %>%
+  write_csv(str_c("data/testing/tmp-", today(), "-consulting-staff-count-estimate-v2-spend-sort.csv"))
 
 
 # Miscellaeous extra findings =============================
