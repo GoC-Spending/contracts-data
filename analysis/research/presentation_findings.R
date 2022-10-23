@@ -169,3 +169,145 @@ retrieve_summary_vendors_by_it_subcategories() %>%
   ), 10)
 
 ggsave_16_9_default_options("plots/f002_it_consulting_services_top_10_overall_vendors_by_fiscal_year.png", 6)
+
+
+# Top 10 vendors (IT overall) by subcategory in 2021-2022 ===========
+
+plot_16_9_it_subcategory_breakdown <- function(df, custom_labels = labs(), num_legend_rows = 2) {
+
+  df <- df %>%
+    group_by(vendor) %>%
+    mutate(
+      overall_total = sum(total)
+    )
+  
+  ggplot(df) +
+    geom_col(aes(
+      x = reorder(vendor, overall_total),
+      y = total,
+      fill = d_most_recent_it_subcategory,
+    )) +
+    # theme(aspect.ratio=3/1) + 
+    theme(
+      # Thanks to
+      # https://stackoverflow.com/a/42556457/756641
+      # plot.title = element_text(hjust = 0.0),
+      # Thanks to
+      # https://stackoverflow.com/a/14942760/756641
+      axis.text = element_text(size = rel(0.80), colour = "black"),
+      axis.title = element_text(size = rel(0.8), colour = "black"),
+      legend.position = "right",
+      legend.direction = "vertical",
+      legend.margin=margin(),
+      
+      panel.background = element_rect(fill="#FFFFFF", colour = "#f5f5f5"),
+      plot.background = element_rect(fill="#FAFAFA", colour = "#FAFAFA"),
+      
+      panel.grid.major = element_line(size=0.7, colour = "#f5f5f5"),
+      axis.ticks = element_line(size=0.7, colour = "#f5f5f5"),
+      
+      legend.background = element_rect(fill="#FAFAFA"),
+      legend.key = element_rect(fill = "#FFFFFF", colour = "#f5f5f5"),
+      
+    ) + 
+    guides(
+      fill = guide_legend(nrow = num_legend_rows)
+    ) + 
+    scale_y_continuous(
+      limits = c(0, NA),
+      labels = label_dollar(scale_cut = cut_short_scale())
+    ) +
+    coord_flip() +
+    custom_labels
+  
+}
+
+
+retrieve_overall_top_10_it_vendors_most_recent_fiscal_year_by_it_subcategory() %>%
+  update_it_subcategory_names() %>%
+  plot_16_9_it_subcategory_breakdown(labs(
+    title = "",
+    x = NULL,
+    y = "Total estimated contract spending (2021-2022)",
+    fill = ""
+  ), 4)
+
+ggsave_16_9_default_options("plots/f001_top_vendors_by_it_subcategories_most_recent_fiscal_year.png", 6)
+
+
+# Estimated # of IT consultants by department =============
+
+plot_16_9_consultant_count <- function(df, custom_labels = labs(), num_legend_rows = 2) {
+  
+  df <- df %>%
+    rename(
+      vendor = "owner_org_name_en",
+      overall_total = "overall_value"
+    ) %>%
+    mutate(
+      overall_total = as.double(overall_total)
+    )
+  
+  ggplot(df, aes(
+    x = reorder(vendor, overall_total),
+    y = overall_total,
+  )) +
+    geom_col(aes(
+      fill = overall_total,
+    )) +
+    geom_text(aes(label = contractor_staff_range), 
+              vjust = 0.4, 
+              hjust = -0.05,
+              size = 3.2,
+              
+              ) +
+    # theme(aspect.ratio=3/1) + 
+    theme(
+      # Thanks to
+      # https://stackoverflow.com/a/42556457/756641
+      # plot.title = element_text(hjust = 0.0),
+      # Thanks to
+      # https://stackoverflow.com/a/14942760/756641
+      axis.text = element_text(size = rel(0.80), colour = "black"),
+      axis.title = element_text(size = rel(0.8), colour = "black"),
+      legend.position = "none",
+      legend.direction = "vertical",
+      legend.margin=margin(),
+      
+      panel.background = element_rect(fill="#FFFFFF", colour = "#f5f5f5"),
+      plot.background = element_rect(fill="#FAFAFA", colour = "#FAFAFA"),
+      
+      panel.grid.major = element_line(size=0.7, colour = "#f5f5f5"),
+      axis.ticks = element_line(size=0.7, colour = "#f5f5f5"),
+      
+      legend.background = element_rect(fill="#FAFAFA"),
+      legend.key = element_rect(fill = "#FFFFFF", colour = "#f5f5f5"),
+      
+    ) + 
+    guides(
+      fill = guide_legend(nrow = num_legend_rows)
+    ) + 
+    scale_y_continuous(
+      limits = c(0, 390000000),
+      labels = label_dollar(scale_cut = cut_short_scale())
+    ) +
+    coord_flip() +
+    custom_labels
+  
+}
+
+
+x <- retrieve_it_consulting_staff_count_estimate_v2() %>%
+  helper_columns_it_consulting_staff() %>%
+  mutate(
+    contractor_staff_range = str_c(contractor_staff_range, " IT contractors")
+  )
+  
+x %>%
+  plot_16_9_consultant_count(labs(
+    title = "",
+    x = NULL,
+    y = "Total estimated spending on IT consultants and contractors (2021-2022)",
+    fill = ""
+  ))
+
