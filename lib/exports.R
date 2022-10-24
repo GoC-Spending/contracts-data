@@ -165,7 +165,7 @@ get_summary_included_vendors <- function() {
   
   # Include the more recent vendors that exceed the annual threshold in the past 2 years (or the # of years defined in summary_vendor_recent_threshold_years)
   # Note: revisit this to enable it in the future:
-  # top_n_vendors <- union(top_n_vendors, recent_top_vendors)
+  top_n_vendors <- union(top_n_vendors, recent_top_vendors)
   
   return(top_n_vendors)
 }
