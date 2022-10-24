@@ -41,14 +41,14 @@ fpcc-cpac,0.66,27
 hc-sc,0.99,7549
 iaac-aeic,0.98,297
 ic,0.8,6425
-iic-iac,0.74,156
-ijc-cmi,0.62,174
+iic-iac,0.73,186
+ijc-cmi,0.63,182
 infc,1.27,564
 irb-cisr,1.38,1435
 isc-sac,0.94,3207
 jus,1.12,2042
 lac-bac,1.11,667
-mgerc-ceegm,0.87,72
+mgerc-ceegm,0.87,73
 mpcc-cppm,1.02,129
 nbc-ccbn,0.5,213
 nfb-onf,0.61,1134
