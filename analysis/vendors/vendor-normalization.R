@@ -102,18 +102,30 @@ look_up_vendor_name_and_save_tmp_output <- function(vendor_name_to_look_up, norm
   
 }
 
-# Run the lookup and optionally provide the already-normalized name if it's already in the matching table
-# look_up_vendor_name_and_save_tmp_output("qm", "QM Environmental")
-look_up_vendor_name_and_save_tmp_output("McGill", "McGill University")
-
-
-
-# Once reviewed, load this back into the vendor normalization table
-new_vendor_matching_rows <- read_csv("data/testing/tmp-vendor-exports.csv")
-
-vendor_matching <- vendor_matching %>%
-  bind_rows(new_vendor_matching_rows)
-
-if(option_update_vendor_csv) {
-  regenerate_vendor_normalization_csv(FALSE)
+update_vendor_normalization_csv_with_new_rows <- function(vendor_matching) {
+  
+  # Once reviewed, load this back into the vendor normalization table
+  new_vendor_matching_rows <- read_csv("data/testing/tmp-vendor-exports.csv")
+  
+  vendor_matching <- vendor_matching %>%
+    bind_rows(new_vendor_matching_rows)
+  
+  if(option_update_vendor_csv) {
+    regenerate_vendor_normalization_csv(FALSE)
+  }
+  
+  vendor_matching
+  
 }
+
+# Run the lookup and optionally provide the already-normalized name if it's already in the matching table
+
+look_up_vendor_name_and_save_tmp_output("iog","INSTITUTE ON GOVERNANCE")
+
+# look_up_vendor_name_and_save_tmp_output("INNOCAR")
+
+# Then, update the vendor normalization table, once updated
+
+vendor_matching <- update_vendor_normalization_csv_with_new_rows(vendor_matching)
+
+
