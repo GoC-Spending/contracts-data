@@ -526,8 +526,8 @@ contracts_individual_entries <- contracts %>%
 
 # TODO: Confirm if this is unhelpful later.
 # Removes the original "contracts" object to save on system memory:
-print("Reminder: removing the 'contracts' data frame to save memory.")
-rm(contracts)
+# print("Reminder: removing the 'contracts' data frame to save memory.")
+# rm(contracts)
 
 
 

@@ -120,9 +120,9 @@ update_vendor_normalization_csv_with_new_rows <- function(vendor_matching) {
 
 # Run the lookup and optionally provide the already-normalized name if it's already in the matching table
 
-look_up_vendor_name_and_save_tmp_output("iog","INSTITUTE ON GOVERNANCE")
+look_up_vendor_name_and_save_tmp_output("yourte","Biome Canada")
 
-# look_up_vendor_name_and_save_tmp_output("INNOCAR")
+# look_up_vendor_name_and_save_tmp_output("winmar")
 
 # Then, update the vendor normalization table, once updated
 
