@@ -1,9 +1,9 @@
 d_most_recent_it_subcategory,d_fiscal_year,total,total_constant_2019_dollars
 it_consulting_services,2017-2018,27864573.09,28584349.46
 it_consulting_services,2018-2019,21545533.60,21886664.76
-it_consulting_services,2019-2020,23272738.09,23068165.33
-it_consulting_services,2020-2021,24285427.55,23071718.58
-it_consulting_services,2021-2022,34298761.85,31878859.20
+it_consulting_services,2019-2020,23269507.46,23065008.81
+it_consulting_services,2020-2021,24258835.46,23046671.26
+it_consulting_services,2021-2022,34242875.04,31825216.62
 it_other,2017-2018,659044.85,676122.86
 it_other,2018-2019,824303.01,836734.08
 it_other,2019-2020,709077.55,703672.12
@@ -12,4 +12,4 @@ it_software_licensing,2017-2018,291052.18,298573.02
 it_software_licensing,2018-2019,486183.48,493542.88
 it_software_licensing,2019-2020,781684.84,774756.73
 it_software_licensing,2020-2021,866710.47,823024.20
-it_software_licensing,2021-2022,574231.98,534156.91
+it_software_licensing,2021-2022,578840.21,538435.39
