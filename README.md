@@ -10,7 +10,7 @@ Inflation adjustments are done using Statistics Canada data via the [cansim pack
 
 This analysis uses the [R programming language](https://en.wikipedia.org/wiki/R_(programming_language)) and [R Studio](https://posit.co/products/open-source/rstudio/), although it could be run with other R environments.
 
-Running this analysis in R Studio typically requires about 20 GB of RAM; **we’d recommend running it on a computer with at least 32 GB**. A typical run-through takes between 3 and 4 hours to complete.
+Running this analysis in R Studio typically requires about 20 GB of RAM; **we’d recommend running it on a computer with at least 32 GB**. A typical run-through takes between 5 and 6 hours to complete.
 
 ## Running the analysis
 
