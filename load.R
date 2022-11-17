@@ -800,6 +800,13 @@ meta_categories <- category_labels %>%
   ) %>%
   select(name, filepath)
 
+meta_it_subcategories <- it_subcategory_labels %>%
+  rename(
+    name = it_subcategory_name,
+    filepath = original_it_subcategory
+  ) %>%
+  select(name, filepath)
+
 # TODO: add friendly names to IT subcategory labels
 
 # Export CSV files of summary tables =============
@@ -855,6 +862,8 @@ if(option_update_summary_csv_files == TRUE) {
       write_csv(str_c(output_meta_path, "departments.csv"))
     meta_categories %>%
       write_csv(str_c(output_meta_path, "categories.csv"))
+    meta_it_subcategories %>%
+      write_csv(str_c(output_meta_path, "it_subcategories.csv"))
   }
   
   
