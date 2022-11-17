@@ -16,9 +16,9 @@ Running this analysis in R Studio typically requires about 20 GB of RAM; **we’
 
 The main analysis takes place in [`load.R`](https://github.com/goc-spending/contracts-data/blob/main/load.R). This does the following steps:
 
-- Downloads the latest copy of the source data from open.canada.ca
-- Retrieves the latest inflation index data from Statistics Canada using cansim
-- Conducts the analysis described on the Methodology page
+- Downloads the latest copy of the source data from [open.canada.ca](https://open.canada.ca/data/en/dataset/d8f85d91-7dec-4fd1-8055-483b77225d8b)
+- Retrieves the latest inflation index data from Statistics Canada using [cansim](https://cran.r-project.org/web/packages/cansim/index.html)
+- Conducts the analysis described on the [Methodology](https://govcanadacontracts.ca/methodology/) page
 - Exports a variety of summary CSV files to the [`data/out`](https://github.com/goc-spending/contracts-data/tree/main/data/out) folder
 - Updates the [run log](https://github.com/goc-spending/contracts-data/blob/main/data/out/run_log.csv) with metadata from the completed analysis run
 
@@ -26,7 +26,7 @@ The main analysis takes place in [`load.R`](https://github.com/goc-spending/cont
 
 Summary CSV files are produced each time the analysis runs in the [`data/out`](https://github.com/goc-spending/contracts-data/tree/main/data/out) folder. This includes:
 
-- overall trends [across core federal public service departments](https://github.com/goc-spending/contracts-data/tree/main/data/out/overall/core), [the Department of National Defence](https://github.com/goc-spending/contracts-data/tree/main/data/out/overall/dnd), and [all public sector departments and agencies included in the source dataset](https://github.com/goc-spending/contracts-data/tree/main/data/out/overall/all)
+- overall trends [across core federal public service departments](https://github.com/goc-spending/contracts-data/tree/main/data/out/overall/core), the [Department of National Defence](https://github.com/goc-spending/contracts-data/tree/main/data/out/overall/dnd), and [all public sector departments and agencies included in the source dataset](https://github.com/goc-spending/contracts-data/tree/main/data/out/overall/all)
 - [trends by department or agency](https://github.com/goc-spending/contracts-data/tree/main/data/out/departments)
 - [trends by category](https://github.com/goc-spending/contracts-data/tree/main/data/out/categories)
 - [trends by IT subcategory](https://github.com/goc-spending/contracts-data/tree/main/data/out/it_subcategories)
