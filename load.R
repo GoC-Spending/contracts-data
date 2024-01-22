@@ -16,7 +16,7 @@ add_log_entry("start_time", run_start_time)
 
 # Summary parameters (used below)
 summary_start_fiscal_year_short <- 2017
-summary_end_fiscal_year_short <- 2021
+summary_end_fiscal_year_short <- 2022
 summary_vendor_annual_total_threshold <- 1000000
 summary_vendor_recent_threshold_years <- 2
 
@@ -679,10 +679,20 @@ if(option_filter_enabled == FALSE) {
 }
 
 
+# Optional bulk exports
+# TODO: add option flag
 
+contract_spending_overall_ongoing %>% 
+  # slice_head(n = 20) %>% 
+  arrange(owner_org, d_overall_start_date, d_vendor_name, desc(d_overall_end_date)) %>% 
+    write_csv("../contracts-data-bulk-output/2023-06-07/contract_spending_overall_ongoing.csv", na = "")
 
+contract_spending_overall %>% 
+  # slice_head(n = 20) %>% 
+  arrange(owner_org, d_overall_start_date, d_vendor_name, desc(d_overall_end_date)) %>% 
+  write_csv("../contracts-data-bulk-output/2023-06-07/contract_spending_overall.csv", na = "")
 
-
+# zip::zip("../contracts-data-bulk-output/2023-06-07/contract_spending_overall_ongoing.csv.zip", "../contracts-data-bulk-output/2023-06-07/contract_spending_overall_ongoing.csv")
 
 # Summary by owner_org, vendor, and category =======
 

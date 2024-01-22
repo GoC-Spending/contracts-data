@@ -1,22 +1,20 @@
 time,name,value
-2022-11-15 21:55:34,load_helper_scripts,
-2022-11-15 21:55:42,start_time,2022-11-15 21:55:42
-2022-11-15 21:55:42,csv_date,2022-11-15
-2022-11-15 21:55:42,start_csv_download,
-2022-11-15 21:55:42,csv_source,remote
-2022-11-15 21:58:00,finish_csv_download,
-2022-11-15 21:59:48,total_csv_entries,943653
-2022-11-15 21:59:48,summary_start_fiscal_year,2017-2018
-2022-11-15 21:59:48,summary_end_fiscal_year,2021-2022
-2022-11-15 22:01:52,start_amendment_grouping,
-2022-11-15 22:10:16,finish_amendment_grouping,
-2022-11-15 23:31:43,start_inflation_calculations,
-2022-11-15 23:31:43,inflation_price_index_vector,v62307266
-2022-11-15 23:41:08,finish_inflation_calculations,
-2022-11-15 23:41:10,start_summary_exports,
-2022-11-15 23:49:03,start_research_findings_export,
-2022-11-15 23:49:31,finish_research_findings_export,
-2022-11-16 03:34:16,finish_summary_exports,
-2022-11-16 03:34:17,end_time,2022-11-16 03:34:17
-2022-11-16 03:34:17,run_duration_hours,5.64
-2022-11-16 03:34:17,run_memory_mb,7371.5
+2023-10-16 22:04:26,load_helper_scripts,
+2023-10-16 22:04:34,start_time,2023-10-16 22:04:34
+2023-10-16 22:04:34,csv_date,2023-10-16
+2023-10-16 22:04:34,csv_source,pre-downloaded
+2023-10-16 22:06:33,total_csv_entries,1015505
+2023-10-16 22:06:33,summary_start_fiscal_year,2017-2018
+2023-10-16 22:06:33,summary_end_fiscal_year,2022-2023
+2023-10-16 22:08:52,start_amendment_grouping,
+2023-10-16 22:18:17,finish_amendment_grouping,
+2023-10-16 23:49:27,start_inflation_calculations,
+2023-10-16 23:49:27,inflation_price_index_vector,v62307266
+2023-10-17 00:05:50,finish_inflation_calculations,
+2023-10-17 00:05:51,start_summary_exports,
+2023-10-17 00:12:51,start_research_findings_export,
+2023-10-17 00:13:43,finish_research_findings_export,
+2023-10-17 06:40:27,finish_summary_exports,
+2023-10-17 06:40:28,end_time,2023-10-17 06:40:28
+2023-10-17 06:40:28,run_duration_hours,8.6
+2023-10-17 06:40:28,run_memory_mb,8756.7

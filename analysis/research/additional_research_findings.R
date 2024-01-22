@@ -539,10 +539,51 @@ a711_references_open_source <- function(df, summarize_results = TRUE) {
   
 }
 
+a712_references_standing_offer <- function(df, summarize_results = TRUE) {
+  
+  open_source_options <- "standing offer|standing-offer|supply-arrangement|tbips"
+  
+  df <- df %>%
+    mutate(
+      is_open_source = case_when(
+        str_detect(d_overall_description_comments_extended, open_source_options) ~ 1,
+        TRUE ~ 0
+      )
+    )
+  
+  if(summarize_results == TRUE) {
+    
+    df %>%
+      summarise(
+        contracts = n(),
+        contracts_that_reference_standing_offer = sum(is_open_source, na.rm = TRUE),
+        percentage = contracts_that_reference_standing_offer / contracts
+      ) %>%
+      exports_round_percentages()
+    
+  }
+  else {
+    
+    df %>%
+      filter(is_open_source == 1)
+    
+  }
+  
+  
+}
+
 # Key finding:
 contract_spending_overall_ongoing %>%
   filter_to_it_consulting_services_and_software_licensing() %>% 
   a711_references_open_source()
+
+contract_spending_overall_ongoing %>%
+  filter_to_it_consulting_services_and_software_licensing() %>% 
+  a712_references_standing_offer()
+
+contract_spending_overall_active %>%
+  filter_to_it_consulting_services() %>% 
+  a712_references_standing_offer()
 
 
 # IP terms ======================================
@@ -937,6 +978,58 @@ retrieve_summary_vendors_by_it_subcategories() %>%
   pull(overall_total_constant_2019_dollars)
 
 
+# Major management consulting firms
+# Same approach as above but not limited to IT
+
+retrieve_summary_vendors_overall <- function(requested_vendors_list = c()) {
+  
+  if(is_empty(requested_vendors_list)) {
+    
+    requested_vendors_list <- summary_vendors %>%
+      select(vendor, summary_by_fiscal_year) %>%
+      unnest(cols = c(summary_by_fiscal_year)) %>%
+      filter_to_it_consulting_services %>%
+      mutate(
+        total = as.double(total),
+        total_constant_2019_dollars = as.double(total_constant_2019_dollars)
+      ) %>%
+      group_by(vendor) %>%
+      mutate(
+        overall_total_constant_2019_dollars = sum(total_constant_2019_dollars)
+      ) %>%
+      ungroup() %>%
+      select(vendor, overall_total_constant_2019_dollars) %>%
+      distinct() %>%
+      arrange(desc(overall_total_constant_2019_dollars)) %>%
+      slice_head(n = 10) %>%
+      pull(vendor)
+    
+  }
+  
+  
+  df <- summary_vendors %>%
+    filter(vendor %in% requested_vendors_list) %>%
+    select(vendor, summary_by_fiscal_year) %>%
+    unnest(cols = c(summary_by_fiscal_year)) 
+  
+  
+  df
+  
+}
+
+requested_management_consultants_list <- c(
+  "DELOITTE",
+  "ACCENTURE",
+  "PRICEWATERHOUSE COOPERS",
+  "KPMG",
+  "ERNST YOUNG",
+  "MCKINSEY AND COMPANY"
+)
+
+retrieve_summary_vendors_overall(requested_management_consultants_list) %>% 
+  write_csv(str_c("data/testing/tmp-", today(), "-major-management-consultants-overall.csv"))
+
+
 
 # Top 10 IT vendors in 2021-2022 by IT subcategory
 
@@ -1147,7 +1240,7 @@ retrieve_overall_top_10_it_vendors_most_recent_fiscal_year_by_it_subcategory() %
   plot_it_subcategory_breakdown(labs(
     title = "Top 10 IT vendors by estimated contract value \nand IT subcategory",
     x = NULL,
-    y = "Total estimated contract value (2021-2022)",
+    y = "Total estimated contract value (UPDATEME 2021-2022)",
     fill = "IT subcategory"
   ), 2)
 
@@ -1157,7 +1250,7 @@ ggsave_stacked_bar_chart_options("plots/p004_top_vendors_by_it_subcategories_mos
 retrieve_overall_top_10_it_vendors_by_it_subcategory() %>%
   update_it_subcategory_names() %>%
   plot_it_subcategory_breakdown(labs(
-    title = "Top 10 IT vendors by estimated contract value \nand IT subcategory (2017-2018 to 2021-2022)",
+    title = "Top 10 IT vendors by estimated contract value \nand IT subcategory (2017-2018 to UPDATEME 2021-2022)",
     x = NULL,
     y = "Total estimated contract value (constant 2019 dollars)",
     fill = "IT subcategory"

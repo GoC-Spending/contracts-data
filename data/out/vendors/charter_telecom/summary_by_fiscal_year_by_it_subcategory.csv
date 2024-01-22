@@ -1,8 +1,10 @@
 d_most_recent_it_subcategory,d_fiscal_year,total,total_constant_2019_dollars
-it_devices_equipment,2019-2020,9842.62,9604.43
-it_devices_equipment,2020-2021,292569.45,278271.75
-it_devices_equipment,2021-2022,318242.89,295471.02
-it_other,2020-2021,803358.72,756457.05
-it_other,2021-2022,5144314.63,4776213.20
-it_software_licensing,2020-2021,6849.61,6449.71
-it_software_licensing,2021-2022,35665.18,33300.99
+it_devices_equipment,2019-2020,9842.62,9617.96
+it_devices_equipment,2020-2021,292569.45,278774.78
+it_devices_equipment,2021-2022,318242.89,295878.58
+it_devices_equipment,2022-2023,318242.89,284765.07
+it_other,2020-2021,804056.70,757643.12
+it_other,2021-2022,5148784.10,4786956.71
+it_other,2022-2023,5148784.10,4607153.60
+it_software_licensing,2020-2021,6849.61,6454.22
+it_software_licensing,2021-2022,35665.18,33350.36
