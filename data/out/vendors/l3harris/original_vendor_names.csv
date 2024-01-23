@@ -1,15 +1,15 @@
 normalized_vendor_name,original_vendor_name
-L3HARRIS,L-3 Communications MAS (Canada) Inc.
 L3HARRIS,L-3 Technologies MAS Inc
 L3HARRIS,L-3 COMMUNICATIONS MAS (CANADA) INC.
 L3HARRIS,Harris Canada Inc
 L3HARRIS,L-3 Communications Electronic Systems Inc.
+L3HARRIS,L-3 Communications MAS (Canada) Inc.
 L3HARRIS,HARRIS CANADA INC
 L3HARRIS,L-3 Communications MAPPS Inc.
-L3HARRIS,L3 MAPPS Inc.
 L3HARRIS,L-3 Communications MAPPS Inc
-L3HARRIS,"L-3 Communications Sonoma EO, Inc"
+L3HARRIS,L3 MAPPS Inc.
 L3HARRIS,L-3 COMMUNICATIONS CORPORATION
+L3HARRIS,"L-3 Communications Sonoma EO, Inc"
 L3HARRIS,Harris RF Communications
 L3HARRIS,Harris Global Communications Inc. (L3-Harris)
 L3HARRIS,"L-3 Communications CMRO, a division of L-3 Communications MAS (Canada)"
@@ -23,10 +23,10 @@ L3HARRIS,L3Harris
 L3HARRIS,"Harris Corporation, RF Communications Division"
 L3HARRIS,Harris Global Communications
 L3HARRIS,L-3 Communications Sonoma EO
-L3HARRIS,L3 TECHNOLOGIES MAS Inc. operating as L3 MAS Inc.
 L3HARRIS,"L-3 COMMUNICATIONS CMRO, A DIVISION OF L-3 COMMUNICATIONS MAS (CANADA)"
 L3HARRIS,L-3 Electronic System Services
 L3HARRIS,L3Harris Technologies Inc
+L3HARRIS,L3 TECHNOLOGIES MAS Inc. operating as L3 MAS Inc.
 L3HARRIS,Harris Global Communications Inc.
 L3HARRIS,L3 MAPPS INC.
 L3HARRIS,Harris Canada Systems Inc
@@ -59,7 +59,6 @@ L3HARRIS,Harris RF Communicatons
 L3HARRIS,L-3 Communications Westwood Corporation
 L3HARRIS,Harris Corporation - CSNV
 L3HARRIS,HARRIS CORP.
-L3HARRIS,L3HARRIS TECHNOLOGIES
 L3HARRIS,HARRIS GLOBAL COMMUNICATIONS INC.
 L3HARRIS,harris rf communications
 L3HARRIS,harris RF Communications
@@ -72,7 +71,6 @@ L3HARRIS,L-3 COMMUNICATIONS MAS (CANADA) INC
 L3HARRIS,L3 Communications EO/IR Inc
 L3HARRIS,"L-3 Communications CMRO, a div. of L-3 Communications MAS (Canada) Inc"
 L3HARRIS,"L-3 Communications, Essco"
-L3HARRIS,L3 TECHNOLOGIES MAS INC.
 L3HARRIS,L-3 Technologies Ess Inc
 L3HARRIS,L-3 Communications EO/IR Inc.
 L3HARRIS,L-3 Communications
@@ -99,14 +97,15 @@ L3HARRIS,L3 ESSCO INC
 L3HARRIS,L-3 COMMUNICATIONS ESSCO
 L3HARRIS,L3 APPLIED TECHNOLOGIES
 L3HARRIS,L-3 COMMUNICATIONS ELECTRONICS SYSTEMS
-L3HARRIS,HARRIS GLOBAL COMMUNICATIONS INC
 L3HARRIS,L3 COMMUNICATIONS - FL
 L3HARRIS,L-3 COMMUNICATIONS CORPORATION -
+L3HARRIS,HARRIS GLOBAL COMMUNICATIONS INC
 L3HARRIS,harrisrf communications
 L3HARRIS,L3 TECHNOLOGIES MAS Inc
 L3HARRIS,HARRIS RF COMMUNICATIONS
 L3HARRIS,Harris Canada Inc.
 L3HARRIS,HARRIS rf COMMUNICATIONS
+L3HARRIS,L3 TECHNOLOGIES MAS INC.
 L3HARRIS,HARRIS CANADA
 L3HARRIS,Harris Corporation- Communications (NV)
 L3HARRIS,Harris Corporation inc.

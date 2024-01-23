@@ -1240,7 +1240,7 @@ retrieve_overall_top_10_it_vendors_most_recent_fiscal_year_by_it_subcategory() %
   plot_it_subcategory_breakdown(labs(
     title = "Top 10 IT vendors by estimated contract value \nand IT subcategory",
     x = NULL,
-    y = "Total estimated contract value (UPDATEME 2021-2022)",
+    y = "Total estimated contract value (2021-2022)",
     fill = "IT subcategory"
   ), 2)
 
@@ -1250,7 +1250,7 @@ ggsave_stacked_bar_chart_options("plots/p004_top_vendors_by_it_subcategories_mos
 retrieve_overall_top_10_it_vendors_by_it_subcategory() %>%
   update_it_subcategory_names() %>%
   plot_it_subcategory_breakdown(labs(
-    title = "Top 10 IT vendors by estimated contract value \nand IT subcategory (2017-2018 to UPDATEME 2021-2022)",
+    title = "Top 10 IT vendors by estimated contract value \nand IT subcategory (2017-2018 to 2021-2022)",
     x = NULL,
     y = "Total estimated contract value (constant 2019 dollars)",
     fill = "IT subcategory"

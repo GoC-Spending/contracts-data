@@ -1,8 +1,6 @@
 d_most_recent_it_subcategory,d_fiscal_year,total,total_constant_2019_dollars
-it_consulting_services,2017-2018,29816.85,30668.37
-it_consulting_services,2018-2019,83945.90,86030.71
-it_consulting_services,2022-2023,113005.06,100988.74
-it_other,2019-2020,39364.29,38508.05
-it_other,2020-2021,72036.65,68715.88
-it_other,2021-2022,79045.25,73010.20
-it_other,2022-2023,74463.79,66051.68
+it_consulting_services,2017-2018,29816.85,30638.52
+it_consulting_services,2018-2019,83945.90,85959.93
+it_other,2019-2020,39364.29,38472.89
+it_other,2020-2021,72036.65,68584.80
+it_other,2021-2022,79045.25,73492.07
