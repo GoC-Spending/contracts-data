@@ -1615,7 +1615,7 @@ retrieve_it_consulting_staff_count_estimate_v2 <- function(fiscal_year = 2021, p
     relocate(owner_org, owner_org_name_en) %>%
     exports_round_percentages() %>%
     exports_round_totals() %>%
-    arrange(it_staff_count, desc()) %>%
+    arrange(desc(it_staff_count)) %>%
     slice_head(n = 10)
   
 }
