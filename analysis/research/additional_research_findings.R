@@ -1527,6 +1527,7 @@ retrieve_it_consulting_staff_count_estimate_v1 <- function(fiscal_year = 2021, p
   
 }
 
+# Key finding (v2 is used in the analysis paper table) 
 retrieve_it_consulting_staff_count_estimate_v2 <- function(fiscal_year = 2021, per_diem_low_end = 800, per_diem_high_end = 1400, output_overall_contractor_staff_counts = FALSE, output_by_spending_totals = FALSE) {
   
   # Thanks to
@@ -1614,6 +1615,7 @@ retrieve_it_consulting_staff_count_estimate_v2 <- function(fiscal_year = 2021, p
     relocate(owner_org, owner_org_name_en) %>%
     exports_round_percentages() %>%
     exports_round_totals() %>%
+    arrange(it_staff_count, desc()) %>%
     slice_head(n = 10)
   
 }
