@@ -465,7 +465,7 @@ contract_spending_overall_active %>%
   a623_handbook_rule_duration()
 
 # Key finding:
-# "Amongst these ‘rule breaking’ contracts, the average contract value was [$25M], with a range of [just over $2M] to [$1.08B]."
+# "Amongst these ‘rule breaking’ contracts, the average contract length was 4.3 years, with a range of just over 3 years to 17.6 years in duration"
 contract_spending_overall_active %>% 
   filter_to_it_consulting_services_and_software_licensing() %>% 
   a623_handbook_rule_duration(TRUE)
@@ -1182,6 +1182,66 @@ retrieve_overall_top_10_it_vendors_by_it_subcategory_versus_total_it_spending <-
     pull(overall_percentage)
   
 }
+
+retrieve_overall_top_10_it_consulting_services_vendors_versus_total_it_consulting_services_spending <- function() {
+  
+  # Updated function - get the top 10 specifically for IT consulting services
+  # rather than a subset of the overall IT category top 10.
+  
+  top_it_vendors <- retrieve_summary_vendors_by_it_subcategories() %>% 
+    filter_to_it_consulting_services() %>%
+    select(! d_most_recent_it_subcategory) %>% 
+    group_by(vendor) %>%
+    mutate(
+      total_constant_2019_dollars = as.double(total_constant_2019_dollars),
+      overall_total_constant_2019_dollars = sum(total_constant_2019_dollars, na.rm = TRUE)
+    ) %>%
+    ungroup() %>%
+    arrange(desc(overall_total_constant_2019_dollars)) %>% 
+    select(vendor, overall_total_constant_2019_dollars) %>% 
+    distinct()
+  
+  all_it_consulting_services_spending_overall_constant_2019_dollars <- summary_it_subcategories %>%
+    filter(it_subcategory == "it_consulting_services") %>%
+    select(summary_by_fiscal_year) %>%
+    unnest(cols = c(summary_by_fiscal_year)) %>%
+    mutate(
+      total = as.double(total),
+      total_constant_2019_dollars = as.double(total_constant_2019_dollars)
+    ) %>%
+    mutate(
+      overall_total_constant_2019_dollars = sum(total_constant_2019_dollars)
+    ) %>% 
+    select(overall_total_constant_2019_dollars) %>%
+    distinct() %>%
+    pull(overall_total_constant_2019_dollars)
+  
+  top_it_vendors <- top_it_vendors %>%
+    mutate(
+      all_it_consulting_services_spending_overall_constant_2019_dollars = !!all_it_consulting_services_spending_overall_constant_2019_dollars
+    ) %>%
+    mutate(
+      percentage = overall_total_constant_2019_dollars / all_it_consulting_services_spending_overall_constant_2019_dollars
+    )
+  
+  # Export a CSV of these 10 firms' IT consulting services totals for any additional analysis
+  top_it_vendors %>% 
+    write_csv(str_c("data/testing/tmp-", today(), "-top-10-it-consulting-firms-as-percentage-of-total.csv"))
+  
+  # Return the cumulative percentage
+  top_it_vendors %>%
+    mutate(
+      overall_percentage = sum(percentage)
+    ) %>%
+    select(overall_percentage) %>%
+    distinct() %>%
+    pull(overall_percentage)
+  
+}
+
+# Key finding
+# "IT consulting services contracts with these 10 firms... amounting to 37% of total spending in this subcategory."
+retrieve_overall_top_10_it_consulting_services_vendors_versus_total_it_consulting_services_spending()
 
 
 plot_it_subcategory_breakdown <- function(df, custom_labels = labs(), num_legend_rows = 2) {
