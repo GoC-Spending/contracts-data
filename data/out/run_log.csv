@@ -1,19 +1,19 @@
 time,name,value
-2024-03-18 15:06:24,load_helper_scripts,
-2024-03-18 15:06:34,start_time,2024-03-18 15:06:34
-2024-03-18 15:06:34,csv_source,local/testing
-2024-03-18 15:08:27,total_csv_entries,943653
-2024-03-18 15:08:27,summary_start_fiscal_year,2017-2018
-2024-03-18 15:08:27,summary_end_fiscal_year,2021-2022
-2024-03-18 15:10:36,start_amendment_grouping,
-2024-03-18 15:19:30,finish_amendment_grouping,
-2024-03-18 16:43:01,start_inflation_calculations,
-2024-03-18 16:43:01,inflation_price_index_vector,v62307266
-2024-03-18 16:53:43,finish_inflation_calculations,
-2024-03-18 16:53:44,start_summary_exports,
-2024-03-18 17:01:43,start_research_findings_export,
-2024-03-18 17:02:14,finish_research_findings_export,
-2024-03-18 20:58:26,finish_summary_exports,
-2024-03-18 20:58:26,end_time,2024-03-18 20:58:26
-2024-03-18 20:58:26,run_duration_hours,5.86
-2024-03-18 20:58:26,run_memory_mb,7382.2
+2024-06-01 21:16:11,load_helper_scripts,
+2024-06-01 21:16:21,start_time,2024-06-01 21:16:21
+2024-06-01 21:16:21,csv_source,local/testing
+2024-06-01 21:18:08,total_csv_entries,943653
+2024-06-01 21:18:08,summary_start_fiscal_year,2017-2018
+2024-06-01 21:18:08,summary_end_fiscal_year,2021-2022
+2024-06-01 21:20:17,start_amendment_grouping,
+2024-06-01 21:28:41,finish_amendment_grouping,
+2024-06-01 23:03:45,start_inflation_calculations,
+2024-06-01 23:03:46,inflation_price_index_vector,v62307266
+2024-06-01 23:12:57,finish_inflation_calculations,
+2024-06-01 23:12:59,start_summary_exports,
+2024-06-01 23:16:46,start_research_findings_export,
+2024-06-01 23:17:16,finish_research_findings_export,
+2024-06-02 03:10:51,finish_summary_exports,
+2024-06-02 03:10:52,end_time,2024-06-02 03:10:52
+2024-06-02 03:10:52,run_duration_hours,5.91
+2024-06-02 03:10:52,run_memory_mb,7375.7
