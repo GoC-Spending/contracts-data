@@ -853,6 +853,9 @@ update_it_subcategory_names <- function(df) {
 ggsave_default_options <- function(filename, custom_height = 6.5) {
   ggsave(filename, dpi = "print", width = 6.5, height = custom_height, units = "in")
   
+  # Also save a vector copy (note: .wmf format is Windows-only!)
+  ggsave(str_replace(filename, ".png", ".wmf"), dpi = "print", width = 6.5, height = custom_height, units = "in")
+  
 }
 
 # retrieve_summary_overall_by_category() %>%
@@ -1036,6 +1039,9 @@ retrieve_summary_vendors_overall(requested_management_consultants_list) %>%
 ggsave_stacked_bar_chart_options <- function(filename, custom_height = 6.5) {
   
   ggsave(filename, dpi = "print", width = 6.5, height = custom_height, units = "in")
+  
+  # Also save a vector copy (note: .wmf format is Windows-only!)
+  ggsave(str_replace(filename, ".png", ".wmf"), dpi = "print", width = 6.5, height = custom_height, units = "in")
   
 }
 
