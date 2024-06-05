@@ -816,7 +816,10 @@ plot_fiscal_year_2019_dollars <- function(df, custom_labels = labs(), num_legend
     # https://stackoverflow.com/a/41148368/756641
     # https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003833#s9
     scale_shape_manual(values = c(16, 17, 15, 18, 3, 4, 8, 1, 2, 0, seq(5, 7), 9, 10, 12, 14)) +
-    custom_labels
+    custom_labels +
+    # Thanks to the "Hue and grey scales" section of the ggplot book.
+    scale_fill_grey() +
+    scale_color_grey()
   
   # df
   
@@ -1299,7 +1302,10 @@ plot_it_subcategory_breakdown <- function(df, custom_labels = labs(), num_legend
       labels = label_dollar(scale_cut = cut_short_scale())
     ) +
     coord_flip() +
-    custom_labels
+    custom_labels +
+    # Thanks to the "Hue and grey scales" section of the ggplot book.
+    scale_fill_grey() +
+    scale_color_grey()
 
 }
 
