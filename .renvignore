@@ -1,0 +1,4 @@
+# renv ignore file (for dependency searching)
+
+# Ignore data folder
+data/
