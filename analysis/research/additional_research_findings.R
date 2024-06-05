@@ -856,6 +856,8 @@ ggsave_default_options <- function(filename, custom_height = 6.5) {
   # Also save a vector copy (note: .wmf format is Windows-only!)
   ggsave(str_replace(filename, ".png", ".wmf"), dpi = "print", width = 6.5, height = custom_height, units = "in")
   
+  ggsave(str_replace(filename, ".png", ".svg"), device = "svg", dpi = "print", width = 6.5, height = custom_height, units = "in")
+  
 }
 
 # retrieve_summary_overall_by_category() %>%
@@ -1042,6 +1044,8 @@ ggsave_stacked_bar_chart_options <- function(filename, custom_height = 6.5) {
   
   # Also save a vector copy (note: .wmf format is Windows-only!)
   ggsave(str_replace(filename, ".png", ".wmf"), dpi = "print", width = 6.5, height = custom_height, units = "in")
+  
+  ggsave(str_replace(filename, ".png", ".svg"), device = "svg", dpi = "print", width = 6.5, height = custom_height, units = "in")
   
 }
 
