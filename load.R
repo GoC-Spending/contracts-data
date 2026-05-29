@@ -450,7 +450,7 @@ contract_spending_overall <- contracts %>%
     # Note: this previously ordered by d_original_original_value, but in some cases that
     # led to amendment percentage increase errors (due to inconsistent data entry by departments).
     # TODO: review how this handles NA entries, hopefully na.omit() works well here.
-    d_original_contract_value = first(na.omit(d_original_original_value), order_by = d_reporting_period),
+    d_original_contract_value = first(na.omit(d_original_original_value)),
     d_overall_contract_value = last(na.omit(d_contract_value)),
     d_daily_contract_value = d_overall_contract_value / as.integer(d_overall_end_date - d_overall_start_date + 1), # The +1 is added so it's inclusive of the start and end dates themselves.
     # Avoid multiple entries appearing due to previous amendment totals
@@ -472,6 +472,11 @@ contract_spending_overall <- contract_spending_overall %>%
 # Remove spurious contracts with date entry errors that lead to 100+ year long contracts, etc.
 # Note: this removes some contracts from all subsequent calculations
 # Future work could involve intelligently fixing dates, e.g. a "2122" end date typically should be "2022" if the start date was 2021, etc.
+
+# 2024-10-24 addition - temporarily include outliers for a maximum time calculation
+contract_spending_overall_with_outliers_included <- contract_spending_overall %>%
+  calculate_overall_duration(FALSE)
+
 # This removes about 106 contracts (as of source data from 2022-09-30).
 contract_spending_overall <- contract_spending_overall %>%
   calculate_overall_duration(TRUE)
