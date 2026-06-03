@@ -88,11 +88,31 @@ get_contracts_csv_locally_or_from_url <- function(contract_col_types) {
   }
   
   # Import the CSV file
-  contracts <- read_csv(
-    local_path,
-    col_types = contract_col_types
-  ) %>%
+  # contracts <- read_csv(
+  #   local_path,
+  #   col_types = contract_col_types,
+  #   lazy = TRUE,
+  #   n_max = 200
+  # )
+  
+  # Updated 2026-05-028 to avoid memory allocation errors (now that the CSV file is larger)
+  # Thanks to
+  # https://www.reddit.com/r/RStudio/comments/yel5p8/comment/iu0ix2w/
+  # Will this have any downstream unexpected consequences? Let's find out!
+  contracts <- data.table::fread(file = local_path, verbose = TRUE)
+  
+  contracts <- as_tibble(contracts)
+  
+  contracts <- contracts %>%
     clean_names()
+  
+  # Convert integer dates (Idates) to dates
+  contracts <- contracts %>%
+    mutate(
+      contract_date = as.Date(contract_date),
+      contract_period_start = as.Date(contract_period_start),
+      delivery_date = as.Date(delivery_date),
+    )
   
   return(contracts)
   
