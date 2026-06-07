@@ -253,6 +253,11 @@ get_summary_overall_by_fiscal_year_by_criteria <- function(summary_type, groupin
   # Using !!! in the group_by function (in place of across(all_of())) does not work.
   
   summary_overall_total_by_fiscal_year_by_criteria <- contract_spending_by_date %>%
+    # Update 2026-06-06 - limit in these overall totals to the subset of 5 years specified
+    filter(
+      d_fiscal_year_short >= summary_start_fiscal_year_short,
+      d_fiscal_year_short <= summary_end_fiscal_year_short,
+    ) %>% 
     filter_by_summary_type(summary_type) %>%
     filter_vendors_if_required(filter_vendors) %>%
     group_by(across(all_of(grouping_column)), d_fiscal_year_short) %>%
@@ -271,6 +276,11 @@ get_summary_overall_by_fiscal_year_by_criteria <- function(summary_type, groupin
 get_summary_overall_by_fiscal_year <- function(summary_type) {
   
   summary_overall_total_by_fiscal_year <- contract_spending_by_date %>%
+    # Update 2026-06-06 - limit in these overall totals to the subset of 5 years specified
+    filter(
+      d_fiscal_year_short >= summary_start_fiscal_year_short,
+      d_fiscal_year_short <= summary_end_fiscal_year_short,
+    ) %>% 
     filter_by_summary_type(summary_type) %>%
     group_by(d_fiscal_year_short) %>%
     summarize_fiscal_year_totals() %>%
@@ -359,6 +369,11 @@ get_summary_overall_by_criteria <- function(summary_type, grouping_column, filte
 
   
   summary_overall_total_by_criteria <- contract_spending_by_date %>%
+    # Update 2026-06-06 - limit in these overall totals to the subset of 5 years specified
+    filter(
+      d_fiscal_year_short >= summary_start_fiscal_year_short,
+      d_fiscal_year_short <= summary_end_fiscal_year_short,
+    ) %>% 
     filter_by_summary_type(summary_type) %>%
     filter_vendors_if_required(filter_vendors) %>%
     group_by(across(all_of(grouping_column))) %>%
