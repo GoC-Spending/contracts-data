@@ -485,6 +485,8 @@ select_by_grouping_column_if_required <- function(df, grouping_column) {
 get_summary_by_fiscal_year_by_specific_entity <- function(filter_column, filter_search, grouping_column = FALSE, filter_vendors = FALSE) {
   
   output <- contract_spending_by_date %>%
+    # 2026-06-08 note:
+    # Because this groups by fiscal year, we don't need to filter down to the 5 year recent range
     filter(across(all_of(filter_column)) == !!filter_search) %>%
     filter_vendors_if_required(filter_vendors) %>%
     group_by_grouping_column_and_fiscal_year_if_required(grouping_column) %>%
@@ -542,6 +544,11 @@ get_summary_overall_total_by_vendor_by_owner <- function(owner_org) {
   # https://stackoverflow.com/a/46763370/756641
   # Note: this uses the same overall top_n_vendors (now summary_included_vendors) calculated previously (based on average annual spending above the summary threshold amount).
   output <- contract_spending_by_date %>%
+    # Update 2026-06-08 - limit in these overall totals to the subset of 5 years specified
+    filter(
+      d_fiscal_year_short >= summary_start_fiscal_year_short,
+      d_fiscal_year_short <= summary_end_fiscal_year_short,
+    ) %>% 
     filter(owner_org == !!owner_org) %>%
     filter(d_vendor_name %in% summary_included_vendors) %>%
     group_by(d_vendor_name) %>%
@@ -588,6 +595,11 @@ get_summary_total_by_vendor_and_fiscal_year_by_owner <- function(owner_org) {
 get_summary_total_by_category_by_owner_org <- function(owner_org) {
   
   output <- contract_spending_by_date %>%
+    # Update 2026-06-08 - limit in these overall totals to the subset of 5 years specified
+    filter(
+      d_fiscal_year_short >= summary_start_fiscal_year_short,
+      d_fiscal_year_short <= summary_end_fiscal_year_short,
+    ) %>% 
     filter(owner_org == !!owner_org) %>%
     group_by(d_most_recent_category) %>%
     summarise(
@@ -608,6 +620,11 @@ get_summary_total_by_category_by_owner_org <- function(owner_org) {
 get_summary_total_by_it_subcategory_by_owner_org <- function(owner_org) {
   
   output <- contract_spending_by_date %>%
+    # Update 2026-06-08 - limit in these overall totals to the subset of 5 years specified
+    filter(
+      d_fiscal_year_short >= summary_start_fiscal_year_short,
+      d_fiscal_year_short <= summary_end_fiscal_year_short,
+    ) %>% 
     filter(owner_org == !!owner_org) %>%
     filter(!is.na(d_most_recent_it_subcategory)) %>%
     group_by(d_most_recent_it_subcategory) %>%
@@ -760,6 +777,11 @@ get_summary_total_by_fiscal_year_and_it_subcategory_by_vendor <- function(reques
 get_summary_total_by_category_by_vendor <- function(requested_vendor_name) {
   
   output <- contract_spending_by_date %>%
+    # Update 2026-06-08 - limit in these overall totals to the subset of 5 years specified
+    filter(
+      d_fiscal_year_short >= summary_start_fiscal_year_short,
+      d_fiscal_year_short <= summary_end_fiscal_year_short,
+    ) %>% 
     filter(d_vendor_name == !!requested_vendor_name) %>%
     group_by(d_most_recent_category) %>%
     summarise(
@@ -779,6 +801,11 @@ get_summary_total_by_category_by_vendor <- function(requested_vendor_name) {
 get_summary_total_by_it_subcategory_by_vendor <- function(requested_vendor_name) {
   
   output <- contract_spending_by_date %>%
+    # Update 2026-06-08 - limit in these overall totals to the subset of 5 years specified
+    filter(
+      d_fiscal_year_short >= summary_start_fiscal_year_short,
+      d_fiscal_year_short <= summary_end_fiscal_year_short,
+    ) %>% 
     filter(d_vendor_name == !!requested_vendor_name) %>%
     filter(!is.na(d_most_recent_it_subcategory)) %>%
     group_by(d_most_recent_it_subcategory) %>%
@@ -889,6 +916,11 @@ get_summary_total_by_fiscal_year_by_category <- function(category) {
 get_summary_overall_total_by_vendor_by_category <- function(category) {
   
   output <- contract_spending_by_date %>%
+    # Update 2026-06-08 - limit in these overall totals to the subset of 5 years specified
+    filter(
+      d_fiscal_year_short >= summary_start_fiscal_year_short,
+      d_fiscal_year_short <= summary_end_fiscal_year_short,
+    ) %>% 
     filter(d_most_recent_category == !!category) %>%
     filter(d_vendor_name %in% summary_included_vendors) %>%
     group_by(d_vendor_name) %>%
@@ -907,6 +939,11 @@ get_summary_overall_total_by_vendor_by_category <- function(category) {
 get_summary_overall_total_by_owner_org_by_category <- function(category) {
   
   output <- contract_spending_by_date %>%
+    # Update 2026-06-08 - limit in these overall totals to the subset of 5 years specified
+    filter(
+      d_fiscal_year_short >= summary_start_fiscal_year_short,
+      d_fiscal_year_short <= summary_end_fiscal_year_short,
+    ) %>% 
     filter(d_most_recent_category == !!category) %>%
     group_by(owner_org) %>%
     summarise(
@@ -945,6 +982,11 @@ get_summary_total_by_fiscal_year_by_it_subcategory <- function(it_subcategory) {
 get_summary_overall_total_by_vendor_by_it_subcategory <- function(it_subcategory) {
   
   output <- contract_spending_by_date %>%
+    # Update 2026-06-08 - limit in these overall totals to the subset of 5 years specified
+    filter(
+      d_fiscal_year_short >= summary_start_fiscal_year_short,
+      d_fiscal_year_short <= summary_end_fiscal_year_short,
+    ) %>% 
     filter(d_most_recent_it_subcategory == !!it_subcategory) %>%
     filter(d_vendor_name %in% summary_included_vendors) %>%
     group_by(d_vendor_name) %>%
@@ -963,6 +1005,11 @@ get_summary_overall_total_by_vendor_by_it_subcategory <- function(it_subcategory
 get_summary_overall_total_by_owner_org_by_it_subcategory <- function(it_subcategory) {
   
   output <- contract_spending_by_date %>%
+    # Update 2026-06-08 - limit in these overall totals to the subset of 5 years specified
+    filter(
+      d_fiscal_year_short >= summary_start_fiscal_year_short,
+      d_fiscal_year_short <= summary_end_fiscal_year_short,
+    ) %>% 
     filter(d_most_recent_it_subcategory == !!it_subcategory) %>%
     group_by(owner_org) %>%
     summarise(

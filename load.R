@@ -134,6 +134,7 @@ if(! (is.na(option_filter_to_vendor) | option_filter_to_vendor == "")) {
 add_log_entry("total_csv_entries", count(contracts))
 
 # Start and end year for calculations
+add_log_entry("summary_earliest_usable_fiscal_year_short", convert_start_year_to_fiscal_year(summary_earliest_usable_fiscal_year_short))
 add_log_entry("summary_start_fiscal_year", convert_start_year_to_fiscal_year(summary_start_fiscal_year_short))
 add_log_entry("summary_end_fiscal_year", convert_start_year_to_fiscal_year(summary_end_fiscal_year_short))
 
@@ -573,7 +574,7 @@ contract_spending_by_date <- contract_spending_by_date %>%
 # Note: this applies to all of the calculations that follow.
 contract_spending_by_date <- contract_spending_by_date %>%
   filter(
-    d_fiscal_year_short >= summary_start_fiscal_year_short,
+    d_fiscal_year_short >= summary_earliest_usable_fiscal_year_short,
     d_fiscal_year_short <= summary_end_fiscal_year_short,
   ) 
   
