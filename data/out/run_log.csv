@@ -1,21 +1,22 @@
 time,name,value
-2026-06-02 21:39:38,load_helper_scripts,
-2026-06-02 21:39:50,start_time,2026-06-02 21:39:50
-2026-06-02 21:39:50,csv_date,2026-06-02
-2026-06-02 21:39:50,start_csv_download,
-2026-06-02 21:39:50,csv_source,remote
-2026-06-02 21:41:48,finish_csv_download,
-2026-06-02 21:41:55,option_filter_to_department,dnd-mdn
-2026-06-02 21:42:28,total_csv_entries,353290
-2026-06-02 21:42:28,summary_start_fiscal_year,2021-2022
-2026-06-02 21:42:28,summary_end_fiscal_year,2025-2026
-2026-06-02 21:43:13,start_amendment_grouping,
-2026-06-02 21:49:17,finish_amendment_grouping,
-2026-06-02 22:24:04,start_inflation_calculations,
-2026-06-02 22:24:04,inflation_price_index_vector,v62307266
-2026-06-02 22:25:14,finish_inflation_calculations,
-2026-06-02 22:25:14,start_summary_exports,
-2026-06-02 22:46:18,finish_summary_exports,
-2026-06-02 22:46:19,end_time,2026-06-02 22:46:19
-2026-06-02 22:46:19,run_duration_hours,1.11
-2026-06-02 22:46:19,run_memory_mb,1871.7
+2026-06-08 22:02:49,load_helper_scripts,
+2026-06-08 22:03:05,start_time,2026-06-08 22:03:05
+2026-06-08 22:03:05,csv_date,2026-06-08
+2026-06-08 22:03:05,start_csv_download,
+2026-06-08 22:03:05,csv_source,remote
+2026-06-08 22:05:06,finish_csv_download,
+2026-06-08 22:05:13,option_filter_to_department,dnd-mdn
+2026-06-08 22:05:46,total_csv_entries,353290
+2026-06-08 22:05:46,summary_earliest_usable_fiscal_year_short,2017-2018
+2026-06-08 22:05:46,summary_start_fiscal_year,2021-2022
+2026-06-08 22:05:46,summary_end_fiscal_year,2025-2026
+2026-06-08 22:06:31,start_amendment_grouping,
+2026-06-08 22:12:30,finish_amendment_grouping,
+2026-06-08 22:47:13,start_inflation_calculations,
+2026-06-08 22:47:13,inflation_price_index_vector,v62307266
+2026-06-08 22:49:19,finish_inflation_calculations,
+2026-06-08 22:49:19,start_summary_exports,
+2026-06-09 00:04:31,finish_summary_exports,
+2026-06-09 00:04:31,end_time,2026-06-09 00:04:31
+2026-06-09 00:04:31,run_duration_hours,2.02
+2026-06-09 00:04:31,run_memory_mb,2818.3
