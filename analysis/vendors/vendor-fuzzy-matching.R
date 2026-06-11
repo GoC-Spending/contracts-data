@@ -3,7 +3,8 @@ source("lib/helpers.R")
 source("lib/amendments.R")
 source("lib/vendors.R")
 
-vendors_above_annual_threshold <- read_csv("data/testing/2022-07-06-vendors-above-annual-threshold.csv")
+# vendors_above_annual_threshold <- read_csv("data/testing/2022-07-06-vendors-above-annual-threshold.csv")
+vendors_above_annual_threshold <- read_csv("data/testing/2026-06-09-vendors-above-annual-threshold.csv")
 
 option_str_length_cutoff <- 20L
 
@@ -69,7 +70,7 @@ option_update_vendor_csv <- TRUE
 # Do matches
 # and *then* do a fuzzy comparison
 
-replace_common_keywords <- function(vendor_name) {
+replace_common_keywords <- function(vendor_name, expanded_list = TRUE) {
   
   # Adapted from clean_vendor_names in vendors.R
   # This represents frequently-misspelled or forgotten suffixes
@@ -93,6 +94,98 @@ replace_common_keywords <- function(vendor_name) {
     "GROUP"
     
   )
+  
+  # 2026-06-10 add additional common words here
+  if(expanded_list) {
+    str$pattern <- c(
+      str$pattern,
+      "SERVICES", 
+      "SYSTEMS", 
+      "AND", 
+      "OTTAWA", 
+      "TECHNOLOGY", 
+      "DIVISION", 
+      "COMPANY", 
+      "IN", 
+      "COMMUNICATIONS", 
+      "MANAGEMENT", 
+      "INTERNATIONAL", 
+      "INFORMATION", 
+      "DE", 
+      "GLOBAL", 
+      "IT", 
+      "CONSULTANTS", 
+      "JOINT", 
+      "RESOURCES", 
+      "HUMAN", 
+      "VENTURE", 
+      "ASSOCIATES", 
+      "GENERAL", 
+      "SECURITY", 
+      "BUSINESS", 
+      "ENGINEERING", 
+      "CANADA", 
+      "ENERGY", 
+      "FUEL", 
+      "TORONTO", 
+      "DU", 
+      "SOCIETY", 
+      "LES", 
+      "PRODUCTS", 
+      "HR", 
+      "ENVIRONMENTAL", 
+      "AVIATION", 
+      "CENTRE", 
+      "PROFESSIONAL", 
+      "SYSTEM", 
+      "SERVICE", 
+      "ALBERTA", 
+      "SOFTWARE", 
+      "ON", 
+      "RESEARCH", 
+      "DEFENCE", 
+      "INTEGRATED", 
+      "ADVANCED", 
+      "WORLD", 
+      "MOTOR", 
+      "INDUSTRIES", 
+      "EQUIPMENT", 
+      "ELECTRONICS", 
+      "ATLANTIC", 
+      "OF", 
+      "AIR", 
+      "TRAINING", 
+      "SOLUTION", 
+      "ENTERPRISE", 
+      "GROUPE", 
+      "COMMUNICATION", 
+      "EDMONTON", 
+      "STAFFING", 
+      "SCIENCES", 
+      "BUILDING", 
+      "MARINE", 
+      "NORTHERN", 
+      "CALGARY", 
+      "ET", 
+      "FOR", 
+      "NATIONAL", 
+      "MULTINATIONAL", 
+      "PARTNERSHIP", 
+      "INSTITUTE", 
+      "NETWORK", 
+      "DES", 
+      "AS", 
+      "DEFENSE", 
+      "AEROSPACE", 
+      "KINGSTON", 
+      "WINNIPEG", 
+      "CONTRACTING", 
+      "RESELLER", 
+      "OFFICE", 
+      "OR"
+    )
+  }
+
   
   # Include a leading and trailing space for the suffixes below
   # on the rare chance that they form part of a company's actual name.
@@ -197,3 +290,201 @@ vendor_matching <- vendor_matching %>%
 if(option_update_vendor_csv) {
   regenerate_vendor_normalization_csv(FALSE)
 }
+
+
+# Experiment 3
+
+# Take the list of large vendors above
+# Also use vendor_matching table
+
+source_vendor_matching <- vendor_matching
+
+source_vendor_matching_canonical_names <- vendor_matching %>% 
+  select(parent_company) %>% 
+  mutate(
+    company_name = parent_company
+  ) %>% 
+  distinct()
+
+source_vendor_matching <- source_vendor_matching %>% 
+  bind_rows(source_vendor_matching_canonical_names) %>% 
+  distinct() %>% 
+  arrange(parent_company, company_name)
+
+# Source vendor matching includes parent/child rows for the canonical name
+# which isn't included in the original vendor matching CSV
+# but is useful here.
+
+source_vendor_matching <- source_vendor_matching %>% 
+  rename(
+    canonical_name = "parent_company",
+    variation_name = "company_name"
+  ) 
+
+# replace_common_keywords
+# We'll do this here so we can still eventually match back to canonical_name values
+source_vendor_matching <- source_vendor_matching %>% 
+  mutate(
+    variation_name = replace_common_keywords(variation_name)
+  )
+
+
+source_vendor_matching_variations <- source_vendor_matching %>% 
+  select(variation_name) %>% 
+  distinct()
+
+# Experiment 3b. variation single words
+
+source_vendor_matching_variations <- source_vendor_matching_variations %>% 
+  mutate(
+    variation_name_words = variation_name
+  ) %>% 
+  separate_longer_delim(variation_name_words, delim = " ")
+
+
+vendors_above_annual_threshold_e3 <- vendors_above_annual_threshold %>% 
+  rename(
+    variation_name = "parent_company"
+  ) %>% 
+  mutate(
+    variation_name_words = variation_name
+  ) %>% 
+  separate_longer_delim(variation_name_words, delim = " ")
+
+
+matched_vendor_variation_name_words <- source_vendor_matching_variations %>%
+  stringdist_inner_join(vendors_above_annual_threshold_e3, by = "variation_name_words", method="jw", distance_col = "distance")
+
+
+# Steps: 
+# 1. exclude highly common words
+# 2. set a distance threshold and filter by it
+# 3. merge back to just canonical_name and variation names
+# 4. manually confirm in a Google spreadsheet
+
+threshold_highly_common_percentage = 0.03
+threshold_distance_maximum = 0.09
+
+# matched_vendor_variation_name_words %>% count(variation_name_words.x, sort = TRUE) %>% View()
+
+matched_vendor_variation_name_words <- matched_vendor_variation_name_words %>% 
+  add_count(variation_name_words.x, name = "count") %>%
+  mutate(
+    percentage = count / n()
+  )
+
+# Before we filter, see if there are any common words we want to add to the exclude list above
+common_words_to_add <- matched_vendor_variation_name_words %>% 
+  arrange(desc(percentage)) %>% 
+  select(variation_name_words.x) %>% 
+  distinct() %>% 
+  filter(
+    str_length(variation_name_words.x) > 1
+  ) %>% 
+  slice_head(n = 200)
+
+dput(common_words_to_add)
+
+matched_vendor_variation_name_words <- matched_vendor_variation_name_words %>% 
+  filter(
+    percentage < threshold_highly_common_percentage
+  )
+
+matched_vendor_variation_name_words <- matched_vendor_variation_name_words %>% 
+  filter(
+    distance < threshold_distance_maximum
+  )
+
+matched_vendor_variation_name_words <- matched_vendor_variation_name_words %>% 
+  filter(
+    str_length(variation_name_words.x) > 1L
+  )
+
+# Prep for manual checking
+matched_vendor_variation_name_words <- matched_vendor_variation_name_words %>% 
+  mutate(
+    matches = NA
+  ) %>% 
+  rename(
+    source_variation_name = "variation_name.x",
+    new_variation_name = "variation_name.y",
+    keyword = "variation_name_words.x"
+  ) %>% 
+  select(
+    ! any_of(
+      c(
+        "variation_name_words.y"
+      )
+    )
+  ) %>% 
+  relocate(
+    matches,
+    source_variation_name,
+    new_variation_name,
+    keyword,
+    everything()
+  ) %>% 
+  arrange(
+    source_variation_name,
+    new_variation_name,
+    keyword
+  )
+
+# Filter to remove tuples? Not necessary here. But we can remove identical entries.
+matched_vendor_variation_name_words <- matched_vendor_variation_name_words %>% 
+  filter(source_variation_name != new_variation_name)
+
+
+matched_vendor_variation_name_words %>% 
+  write_csv(str_c("data/testing/", today(), "-matched-vendor-variation-name-words-e3.csv"))
+
+
+# Experiment 3a. don't match individual words
+# Just match against the existing vendor matching CSV
+
+threshold_distance_maximum = 0.25
+
+source_vendor_matching_variations <- source_vendor_matching %>% 
+  select(variation_name) %>% 
+  distinct()
+
+
+vendors_above_annual_threshold_e3 <- vendors_above_annual_threshold %>% 
+  rename(
+    variation_name = "parent_company"
+  ) %>% 
+  mutate(
+    variation_name = replace_common_keywords(variation_name)
+  )
+
+matched_vendor_variation_name <- source_vendor_matching_variations %>%
+  stringdist_inner_join(vendors_above_annual_threshold_e3, by = "variation_name", method="jw", distance_col = "distance")
+
+matched_vendor_variation_name <- matched_vendor_variation_name %>% 
+  filter(distance > 0) %>% 
+  filter(distance < threshold_distance_maximum)
+
+# matched_vendor_variation_name <- matched_vendor_variation_name %>% 
+#   arrange(distance)
+
+# Prep for manual checking
+matched_vendor_variation_name <- matched_vendor_variation_name %>% 
+  mutate(
+    matches = NA
+  ) %>% 
+  rename(
+    source_variation_name = "variation_name.x",
+    new_variation_name = "variation_name.y",
+  ) %>% 
+  relocate(
+    matches,
+    source_variation_name,
+    new_variation_name
+  ) %>% 
+  arrange(
+    source_variation_name,
+    new_variation_name
+  )
+
+matched_vendor_variation_name %>% 
+  write_csv(str_c("data/testing/", today(), "-matched-vendor-variation-name-e3.csv"))
