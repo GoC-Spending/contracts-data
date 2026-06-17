@@ -61,12 +61,23 @@ if(option_download_remotely == TRUE) {
   add_log_entry("csv_source", "local/testing")
   print(option_local_contracts_data_source)
   # Previous version (for local operations)
-  # Import the CSV file
-  contracts <- read_csv(
-    option_local_contracts_data_source,
-    col_types = contract_col_types
-  ) %>%
+  
+  # Update 2026-06-16, changing this to use fread similar to the update to helpers.R
+  contracts <- data.table::fread(file = option_local_contracts_data_source, verbose = TRUE)
+  
+  contracts <- as_tibble(contracts)
+  
+  contracts <- contracts %>%
     clean_names()
+  
+  # Convert integer dates (Idates) to dates
+  contracts <- contracts %>%
+    mutate(
+      contract_date = as.Date(contract_date),
+      contract_period_start = as.Date(contract_period_start),
+      delivery_date = as.Date(delivery_date),
+    )
+
   
   if(option_local_remove_derived_columns == TRUE) {
     # If you're loading previously exported contracts testing data
